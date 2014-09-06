@@ -3,8 +3,12 @@
    You can adapt this file completely to your liking, but it should at least
    contain the root `toctree` directive.
 
-Welcome to Finite element course's documentation!
-=================================================
+
+This web page will hold the documentation for the module on the
+numerical analysis and implementation of the finite element method
+which will be taught to masters students in the Department of
+Mathematics at Imperial College London in Spring 2015. Further details
+will appear here closer to the start of the module.
 
 Contents:
 

@@ -11,13 +11,11 @@
  */
 
 @import url("basic.css");
-@import url("nobile-fontfacekit/stylesheet.css");
-@import url("neuton-fontfacekit/stylesheet.css");
 
 /* -- page layout ----------------------------------------------------------- */
 
 body {
-    font-family: "Nobile", sans-serif;
+    font-family: Verdana, Geneva, sans-serif;
     font-size: 14px;
     background-color: #ffffff;
     color: #ffffff;
@@ -163,7 +161,7 @@ div.youtube{
 /* -- body styles ----------------------------------------------------------- */
 
 a, a .pre {
-    color: #000080;
+    color: #41075B;
     text-decoration: none;
     word-wrap: break-word;
 }
@@ -178,7 +176,7 @@ div.body h3,
 div.body h4,
 div.body h5,
 div.body h6 {
-    font-family: "NeutonRegular", sans-serif;
+    font-family: Verdana, Geneva, sans-serif;
     background-color: #ffffff;
     font-weight: normal;
     color: #222;
@@ -254,7 +252,7 @@ div.note {
 
 #finat-package h2 {
     background-color: #fafafa;                   
-    border: 2px solid #000080;
+    border: 2px solid #41075B;
 	border-right-style: none;
 	border-left-style: none;
 	padding: 10px 20px 10px 60px;
@@ -321,7 +319,7 @@ h2 tt.py-mod {
 }
 
 .viewcode-back {
-    font-family: "Nobile", sans-serif;
+    font-family: Verdana, Geneva, sans-serif;
 }
 
 div.viewcode-block:target {
@@ -362,7 +360,7 @@ a:hover em.std-term {
 }
 
 .download {
-    font-family: "Nobile", sans-serif;
+    font-family: Verdana, Geneva, sans-serif;
 	font-weight: normal;
 	font-style: normal;
 }
