@@ -1,0 +1,4 @@
+This is the Sphinx theme for the FInAT web page
+It was originally based on the Firedrake web page,
+which was based on the dolfin-adjoint theme,
+which was in turn based oh the FEniCS project theme.
