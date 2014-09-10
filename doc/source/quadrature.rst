@@ -27,17 +27,25 @@ together comprise a *quadrature rule*. For an arbitrary function
 :math:`f`, quadrature is only an approximiation to the integral. The
 global truncation error in this approximation is invariably of the
 form :math:`O(h^n)` where :math:`h` is the diameter of the 
-element. The integer :math:`n` is termed the *degree* of the
-quadrature rule.
+element. 
+
+If :math:`f` is a polynomial in `X` with degree :math:`p` such that
+:math:`p\leq n-2` then it is easy to show that integration using a
+quadrature rule of degree :math:`n` results in exactly zero error. The
+largest :math:`p` such that a given quadrature rule integrates all
+polynomials of degree :math:`p` without error is termed the *degree of
+precision* of the quadrature rule.
+
 
 Exact and incomplete quadrature
 -------------------------------
 
-If :math:`f` is a polynomial in `X` with degree :math:`p` such that
-:math:`p\leq n-1` then it is easy to show that integration using a
-quadrature rule of degree :math:`n` results in exactly zero error. In
-this case we refer to the quadrature as *exact* or *complete*. In any
-other case we refer to the quadrature as *incomplete*.
+In the finite element method, integrands are very frequently
+polynomial. If the quadrature rule employed for a particular interval
+has a sufficiently high degree of precision such that there is no
+quadrature error in the integration, we refer to the quadrature as
+*exact* or *complete*. In any other case we refer to the quadrature as
+*incomplete*.
 
 Typically, higher degree quadrature rules have more quadrature points
 than lower degree rules. This results in a trade-off between the
@@ -78,13 +86,7 @@ while if we employ a quadratic function then we arrive at Simpson's rule:
 
    \int_0^h f(X) \mathrm{d} X = \frac{h}{6}f(0) + \frac{2h}{3}f\left(\frac{h}{2}\right) + \frac{h}{6}f(h) + O(h^5)
 
-Note that these error terms are *local* truncation errors which depend
-on the interval of integration being of the variable length
-:math:`h`. If any of these rules is employed to integrate :math:`f`
-over a fixed interval :math:`(a,b)` by dividing into subintervals of
-length :math:`h`, then summing over the :math:`(b-a)/h` intervals will
-result in a *global* truncation error one degree lower than the local
-truncation error.
+
 
 Quadrature rules on reference elements
 --------------------------------------
@@ -93,8 +95,55 @@ As a practical matter, we wish to write down quadrature rules as
 arrays of numbers, independent of :math:`h`. In order to achieve this,
 we will write the quadrature rules for a single, *reference
 element*. When we wish to actually integrate a function over cell, we
-will change coordinates to the reference cell. We write :math:`x` for the coordinates in the 
+will change coordinates to the reference cell. We will return to the
+mechanics of this process later, but for now it means that we need
+only consider quadrature rules on the reference cells we choose.
+
+A commonly employed one dimensional reference cell is the unit
+interval :math:`[0,1]`, and that is the one we shall adopt here (the
+other popular alternative is the interval :math:`[-1, 1]`, which some
+prefer due to its symmetry about the origin).
+
+Having adopted a convention for the reference element, we can simply
+express quadrature rules as lists of quadrature points with
+corresponding quadrature weights. For example Simpson's rule becomes:
+
+.. math::
+   
+   w = \left[ \frac{1}{6}, \frac{2}{3}, \frac{1}{6} \right]
+
+   X = \left[ (0), (0.5), (1)\right].
+
+We choose to write the quadrature points as 1-tuples for consistency
+with the :math:`n`\-dimensional case, in which the points will be
+:math:`n`\-tuples.
+
+In two dimensions, the cells employed most commonly are triangles and
+quadrilaterals. For simplicity, in this course we will only consider
+implementing the finite element method on triangles. The choice of a
+reference interval implies a natural choice of reference triangle. For
+the unit interval the natural correspondence is with the triangle with
+vertices :math:`[(0,0), (1,0), (0,1)]`, though different choices of
+vertex numbering are possible.
+
+The lowest order quadrature rule on this triangle is a single point
+quadrature:
+
+.. math::
+
+   w = \left[ \frac{1}{2} \right]
+
+   X = \left[ \left(\frac{1}{3}, \frac{1}{3}  \right) \right] 
+
+This rule has a degree of precision of 1.
+
+
+Some observations on features of quadrature rules
+-------------------------------------------------
+
 
 
 Implementing quadrature rules in Python
 ---------------------------------------
+
+
