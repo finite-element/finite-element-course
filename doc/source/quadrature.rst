@@ -13,7 +13,7 @@ it's the generalisation of the trapezoidal rule and Simpson's rule for
 integration.
 
 The core idea of quadrature is that the integral of a function
-:math:`f(X)` over a reference element :math:`e` can be approximated as
+:math:`f(X)` over an element :math:`e` can be approximated as
 a weighted sum of function values evaluated at particular points:
 
 .. math::
@@ -25,9 +25,13 @@ corresponding set :math:`\{w_q\}` the set of *quadrature weights*. A
 set of quadrature points and their corresponding quadrature weights
 together comprise a *quadrature rule*. For an arbitrary function
 :math:`f`, quadrature is only an approximiation to the integral. The
-error in this approximation is invariably of the form :math:`O(h^n)`
-where :math:`h` is the diameter of the reference element. The integer
-:math:`n` is termed the *degree* of the quadrature rule.
+global truncation error in this approximation is invariably of the
+form :math:`O(h^n)` where :math:`h` is the diameter of the 
+element. The integer :math:`n` is termed the *degree* of the
+quadrature rule.
+
+Exact and incomplete quadrature
+-------------------------------
 
 If :math:`f` is a polynomial in `X` with degree :math:`p` such that
 :math:`p\leq n-1` then it is easy to show that integration using a
@@ -53,9 +57,9 @@ midpoint rule:
 
 .. math::
 
-   \int_0^h f(X) \d X = hf(0.5h) + O(h)
+   \int_0^h f(X) \mathrm{d} X = hf(0.5h) + O(h^3)
 
-In other words, a first order approximation to the integral of
+In other words, an approximation to the integral of
 :math:`f` over an interval can be calculated by multiplying the value
 of :math:`f` at the mid-point of the interval by the length of the
 interval. This amounts to approximating the function over the integral
@@ -66,4 +70,31 @@ the interval, then we arrive at the trapezoidal (or trapezium) rule:
 
 .. math::
 
-   \int_0^h f(X) \d X = \frac{h}{2}f(0) + \frac{h}{2}f(1) + O(h^
+   \int_0^h f(X) \mathrm{d} X = \frac{h}{2}f(0) + \frac{h}{2}f(h) + O(h^4)
+
+while if we employ a quadratic function then we arrive at Simpson's rule:
+
+.. math::
+
+   \int_0^h f(X) \mathrm{d} X = \frac{h}{6}f(0) + \frac{2h}{3}f\left(\frac{h}{2}\right) + \frac{h}{6}f(h) + O(h^5)
+
+Note that these error terms are *local* truncation errors which depend
+on the interval of integration being of the variable length
+:math:`h`. If any of these rules is employed to integrate :math:`f`
+over a fixed interval :math:`(a,b)` by dividing into subintervals of
+length :math:`h`, then summing over the :math:`(b-a)/h` intervals will
+result in a *global* truncation error one degree lower than the local
+truncation error.
+
+Quadrature rules on reference elements
+--------------------------------------
+
+As a practical matter, we wish to write down quadrature rules as
+arrays of numbers, independent of :math:`h`. In order to achieve this,
+we will write the quadrature rules for a single, *reference
+element*. When we wish to actually integrate a function over cell, we
+will change coordinates to the reference cell. We write :math:`x` for the coordinates in the 
+
+
+Implementing quadrature rules in Python
+---------------------------------------
