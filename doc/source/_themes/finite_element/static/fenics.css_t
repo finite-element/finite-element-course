@@ -246,11 +246,11 @@ div.note {
 	background: #e1ecfe url(dialog-note.png) no-repeat 10px 8px;
 }
 
-#finat-package #id1 {
+#fe-utils-package #id1 {
     display: none;
 }
 
-#finat-package h2 {
+#fe-utils-package h2 {
     background-color: #fafafa;                   
     border: 2px solid #41075B;
 	border-right-style: none;
@@ -258,7 +258,7 @@ div.note {
 	padding: 10px 20px 10px 60px;
 }
 
-#finat-package div.section>dl {
+#fe-utils-package div.section>dl {
     border: 2px solid #ddd;
 	border-right-style: none;
 	border-bottom-style: none;
