@@ -672,3 +672,15 @@ img[alt="build status"] {
     width: 25%;
     text-align: center;
 }
+
+.theoremenv_counter:before {
+    content: " ";
+}
+
+.theoremenv_caption {
+    font-weight: bold;
+}
+
+.theoremenv_body {
+    margin-left: 1em;
+}
