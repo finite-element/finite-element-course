@@ -8,10 +8,10 @@ class Mesh(object):
     respectively."""
     def __init__(self, vertices, element_vertices):
         """
-        :param vertices: an vertex_count x dim array of the coordinates of 
+        :param vertices: an vertex_count x dim array of the coordinates of
           the vertices in the mesh.
-        :param element_vertices: an element_count x (dim+1) array of the 
-          indices of the vertices of which each element is made up.  
+        :param element_vertices: an element_count x (dim+1) array of the
+          indices of the vertices of which each element is made up.
         """
 
         self.dim = vertices.shape(1)
@@ -53,6 +53,17 @@ class Mesh(object):
             """The indices of the edges incident to each element (only for 2D
             meshes)."""
 
+        if self.dim == 2:
+            self.entity_counts = (vertices.shape(0),
+                                  self.edge_vertices.shape(0),
+                                  self.element.vertices.shape(0))
+            """The number of entities of each dimension in the mesh. So
+            :attr:`entity_counts(0)` is the number of vertices in the
+            mesh."""
+        else:
+            self.entity_counts = (vertices.shape(0),
+                                  self.element_vertices.shape(0))
+
     def adjacency(self, dim1, dim2):
         """Return the set of `dim2` entities adjacent to each `dim1`
         entity. For example if `dim1==2` and `dim2==1` then return the list of
@@ -88,4 +99,3 @@ class UnitSquareMesh(Mesh):
 
         super(UnitSquareMesh, self).__init__(mesh["vertices"],
                                              mesh["triangles"])
-        
