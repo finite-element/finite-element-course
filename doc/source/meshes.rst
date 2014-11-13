@@ -29,3 +29,14 @@ are working, so we will simply refer to the *dimension* of the mesh.
 Armed with these definitions we are able to define names for
 topological entities of various dimension and codimension:
 
+=========== ========= ===========
+entity name dimension codimension
+=========== ========= ===========
+vertex      0
+edge        1
+face        2
+facet                 1
+cell                  0
+=========== ========= ===========
+
+foo

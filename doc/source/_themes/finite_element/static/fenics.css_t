@@ -338,8 +338,13 @@ table.imagegrid td{
     text-align: center;
 }
 
+table.docutils {
+    margin: auto;
+}
+
 table.docutils td {
     padding: 0.5em;
+    border: 0px;
 }
 
 table.highlighttable {
