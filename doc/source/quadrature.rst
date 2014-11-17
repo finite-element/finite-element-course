@@ -138,11 +138,6 @@ quadrature:
 This rule has a degree of precision of 1.
 
 
-Some observations on features of quadrature rules
--------------------------------------------------
-
-
-
 Implementing quadrature rules in Python
 ---------------------------------------
 

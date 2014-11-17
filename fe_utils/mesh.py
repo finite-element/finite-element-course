@@ -92,7 +92,11 @@ class Mesh(object):
 
 
 class UnitSquareMesh(Mesh):
+    """A triangulated :class:`Mesh` of the unit square."""
     def __init__(self, nx, ny):
+        """
+        :param nx: The number of cells in the 
+        """
         points = list((x, y) for x in np.arange(nx) for y in np.arange(ny))
 
         mesh = triangle.triangulate({"vertices": points})
