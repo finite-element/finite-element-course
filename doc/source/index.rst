@@ -13,9 +13,12 @@ will appear here closer to the start of the module.
 Contents:
 
 .. toctree::
+   :numbered:
    :maxdepth: 2
 
-
+   quadrature
+   finite_elements
+   meshes
 
 Indices and tables
 ==================

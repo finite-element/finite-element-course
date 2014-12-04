@@ -16,10 +16,10 @@ class ReferenceCell(object):
         self.vertices = np.array(vertices, dtype=np.double)
 
         """The geometric and topological dimension of the reference cell."""
-        self.dim = self.vertices.shape[0]
+        self.dim = self.vertices.shape[1]
 
         if self.dim != len(topology) - 1:
-            raise ValueError("Dimension missmatch between vertices and topology.")
+            raise ValueError("Dimension mismatch between vertices and topology.")
 
 ReferenceInterval = ReferenceCell(vertices=[[0.], [1.]],
                                   topology={0: {0: [0],

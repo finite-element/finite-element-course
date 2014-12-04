@@ -15,8 +15,9 @@ class Mesh(object):
         """
 
         self.dim = vertices.shape(1)
-        """The spatial dimension of the mesh. Immersed manifolds are not
-        supported."""
+        """The geometric and topological dimension of the mesh. Immersed
+        manifolds are not supported.
+        """
 
         if self.dim not in (1, 2):
             raise ValueError("Only 1D and 2D meshes are supported")
@@ -95,7 +96,8 @@ class UnitSquareMesh(Mesh):
     """A triangulated :class:`Mesh` of the unit square."""
     def __init__(self, nx, ny):
         """
-        :param nx: The number of cells in the 
+        :param nx: The number of cells in the x direction.
+        :param ny: The number of cells in the y direction.
         """
         points = list((x, y) for x in np.arange(nx) for y in np.arange(ny))
 
