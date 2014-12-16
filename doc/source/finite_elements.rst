@@ -7,6 +7,8 @@ At the core of the finite element method is the representation of
 finite-dimensional function spaces over elements. This concept was
 formalised by Ciarlet CITE:
 
+.. _def-ciarlet:
+
 .. definition:: 
 
    A *finite element* is a triple `(K, P, N)` in which `K` is a cell,
@@ -116,6 +118,47 @@ function normal or tangent to the boundary of the cell at some point.
 
 In this course we will only consider point evaluation nodes. The use of several other forms of node are covered in [CITE KIRBY 2005]
 
+The Lagrange element nodes
+--------------------------
+
+The number of coefficients of a degree `n` polynomial in `d`
+dimensions is given by `\begin{pmatrix}n+d-1\\ d\end{pmatrix}`. The
+simplest set of nodes which we can employ is simply to place these
+nodes in a regular grid over the reference cell. Given the classical
+relationship between binomial coefficients and `Pascal's triangle
+<http://mathworld.wolfram.com/PascalsTriangle.html>`_ (and between
+trinomial coefficients and Pascal's pyramid), it is unsurprising that
+this produces the correct number of nodes.
+
+The set of equally spaced points of degree `n` on the triangle is:
+
+.. math::
+   :label: lattice
+
+   L_n = \left\{\left(\frac{i}{n}, \frac{j}{n}\right)\middle| 0 \leq i+j \leq n\right\}
+  
+The finite elements with this set of nodes are called the *equispaced
+Lagrange* elements and are the most commonly used elements for
+relatively low order computations. 
+
+.. note::
+
+   At higher order the equispaced Lagrange basis is poorly conditioned
+   and creates unwanted oscillations in the solutions. However for
+   this course Lagrange elements will be sufficient.
+
+.. _ex-lagrange-points:
+
+.. exercise::
+   
+   Use :eq:`lattice` to implement
+   :func:`~fe_utils.finite_elements.lagrange_points`. Make sure your
+   algorithm also works for one-dimensional elements.
+
+.. hint::
+   
+   :func:`scipy.special.comb` may come in useful in implementing these functions.
+
 
 .. _sec-vandermonde:
 Solving for basis functions
@@ -167,47 +210,6 @@ to include powers of `z`.
    advantageous to employ a different basis in the construction of the
    Vandermonde matrix. See [CITE KIRBY2004] for an example.
 
-The Lagrange element nodes
---------------------------
-
-The number of coefficients of a degree `n` polynomial in `d`
-dimensions is given by `\begin{pmatrix}n+d-1\\ d\end{pmatrix}`. The
-simplest set of nodes which we can employ is simply to place these
-nodes in a regular grid over the reference cell. Given the classical
-relationship between binomial coefficients and `Pascal's triangle
-<http://mathworld.wolfram.com/PascalsTriangle.html>`_ (and between
-trinomial coefficients and Pascal's pyramid), it is unsurprising that
-this produces the correct number of nodes.
-
-The set of equally spaced points of degree `n` on the triangle is:
-
-.. math::
-   :label: lattice
-
-   L_n = \left\{\left(\frac{i}{n}, \frac{j}{n}\right)\middle| 0 \leq i+j \leq n\right\}
-  
-The finite elements with this set of nodes are called the *equispaced
-Lagrange* elements and are the most commonly used elements for
-relatively low order computations. 
-
-.. note::
-
-   At higher order the equispaced Lagrange basis is poorly conditioned
-   and creates unwanted oscillations in the solutions. However for
-   this course Lagrange elements will be sufficient.
-
-
-Implementing finite elements in python
---------------------------------------
-
-.. _ex-lagrange-points:
-
-.. exercise::
-   
-   Use :eq:`lattice` to implement
-   :func:`~fe_utils.finite_elements.lagrange_points`. Make sure your
-   algorithm also works for one-dimensional elements.
-
 .. _ex-vandermonde:
 
 .. exercise::
@@ -223,7 +225,20 @@ Implementing finite elements in python
    You can use numpy array operations to construct whole columns of
    the matrix at once.
 
-.. _ex-lagrange:
+Implementing finite elements in Python
+--------------------------------------
+
+The :ref:`Ciarlet triple <def-ciarlet>` `(K, P, N)` also provides a
+good abstraction for the implementation of software objects
+corresponding to finite elements. In our case `K` will be a
+:class:`~fe_utils.reference_elements.ReferenceCell`. In this course we
+will only implement finite element spaces consisting of complete
+polynomial spaces so we will specify `P` by providing the maximum
+degree of the polynomials in the space. Since we will only deal with
+point evaluation nodes, we can represent `N` by a series of points at
+which the evaluation should occur.
+
+.. _ex-finite-element:
 
 .. exercise::
 
@@ -232,6 +247,145 @@ Implementing finite elements in python
    method. You should construct a Vandermonde matrix for the nodes and
    invert it to create the basis function coeffs. Store these as
    ``self.basis_coeffs``.
+
+Implementing the Lagrange Elements
+----------------------------------
+
+The :class:`~fe_utils.finite_elements.FiniteElement` class implements
+a general finite element object assuming we have provided the cell,
+polynomial, degree and nodes. The
+:class:`~fe_utils.finite_elements.LagrangeElement` class is a
+`subclass
+<https://docs.python.org/2/tutorial/classes.html#inheritance>`_ of
+:class:`~fe_utils.finite_elements.FiniteElement` which will implement
+the particular case of the equispaced Lagrange elements.
+
+.. exercise::
+
+   Implement the :meth:`__init__` method of
+   :class:`~fe_utils.finite_elements.LagrangeElement`. Use
+   :func:`~fe_utils.finite_elements.lagrange_points` to obtain the
+   nodes.
+
+
+Tabulating basis functions
+--------------------------
+
+A core operation in the finite element method is integrating
+expressions involving functions in finite element spaces. This is
+usually accomplished using :doc:`numerical quadrature
+<quadrature>`. This means that we need to be able to evaluate the
+basis functions at a set of quadrature points. The operation of
+evaluating a set of basis functions at a set of points is called
+*tabulation*.
+
+.. _ex-tabulate:
+
+.. exercise::
+   
+   Implement :meth:`~fe_utils.finite_elements.FiniteElement.tabulate`.
+   You can use a Vandermonde matrix to evaluate the polynomial terms
+   and take the matrix product of this with the basis function
+   coefficients. The method should have at most two executable
+   lines. For the purposes of this exercise, ignore the ``grad``
+   argument.
+
+
+Gradients of basis functions
+----------------------------
+
+A function `f` defined over a single finite element with basis
+`\{\phi_i\}` is represented by a weighted sum of that basis:
+
+.. math::
+
+   f = \sum_i f_i\phi_i
+
+In order to be able to represent and solve PDEs, we will naturally
+also have terms incorporating derivatives. Since the coefficients
+`f_i` are spatially constant, derivative operators pass through to
+apply to the basis functions:
+
+.. math::
+
+   \nabla f  = \sum_i f_i\nabla\phi_i
+
+This means that we will need to be able to evaluate the gradient of
+the basis functions at quadrature points. 
+
+.. exercise::
+   
+   Extend :meth:`~fe_utils.finite_elements.vandermonde_matrix` so that
+   setting ``grad`` to ``True`` produces a rank 3 generalised
+   Vandermonde tensor whose indices represent points, gradient
+   component and basis function respectively. That is, each entry of
+   `V` is replaced by a vector of the gradient of that polynomial
+   term. For example, the entry `x^2y^3` would be replaced by the
+   vector `[ 2xy^2, 3x^2y^2 ]`.
+
+.. exercise::
+
+   Extend :meth:`~fe_utils.finite_elements.FiniteElement.tabulate` to
+   pass the ``grad`` argument through to
+   :meth:`~fe_utils.finite_elements.vandermonde_matrix`. Then
+   generalise the matrix product in
+   :meth:`~fe_utils.finite_elements.FiniteElement.tabulate` so that
+   the result of this function (when ``grad`` is true) is a rank 3
+   tensor:
+
+   .. math::
+
+      \mathrm{T}_{ijk} = \nabla(\phi_j(X_i))\cdot \mathbf{e}_k
+
+   where `\mathbf{e}_0\ldots\mathbf{e}_{\dim -1}` is the coordinate
+   basis on the reference cell.
+
+.. hint::
+
+   The :func:`numpy.einsum` function implements generalised tensor
+   contractions using `Einstein summation notation
+   <http://mathworld.wolfram.com/EinsteinSummation.html>`_. For
+   example, ``A = numpy.einsum("ijk,jl->ilk",T, C)`` is equivalent to
+   `A_{ilk} = \sum_j T_{ijk} C_{il}`.
+
+Interpolating functions to the finite element nodes
+---------------------------------------------------
+
+Recall once again that a function can be represented on a single finite element as:
+
+.. math::
+
+   f = \sum_i f_i\phi_i
+
+Since `\{\phi_i\}` is a nodal basis, it follows immediately that:
+
+.. math::
+   
+   f_i = \phi_i^*(f)
+
+where `\phi_i^*` is the node associated with the basis function
+`\phi_i`. Since we are only interested in nodes which are the point
+evaluation of their function input, we know that:
+
+.. math::
+
+   f_i = f(X_i)
+
+where `X_i` is the point associated with the `i`-th node.
+
+.. exercise::
+
+   Implement :meth:`~fe_utils.finite_elements.FiniteElement.interpolate`.
+
+Testing your finite elements
+----------------------------
+
+By combining interpolation, tabulation, and integration we can
+formulate a tests of the correctness and completeness of our finite
+element implementation.
+
+
+
 
 
 

@@ -250,7 +250,7 @@ man_pages = [
 #  dir menu entry, description, category)
 texinfo_documents = [
   ('index', 'Finiteelementcourse', u'Finite element course Documentation',
-   u'David A. Ham and Colin J. Cotter', 'Finiteelementcourse', 'One line description of project.',
+   u'David A. Ham and Colin J. Cotter', 'Finiteelementcourse', 'A masters level finite element course in the Department of Mathematics at Imperial College London',
    'Miscellaneous'),
 ]
 
@@ -268,4 +268,6 @@ texinfo_documents = [
 
 
 # Example configuration for intersphinx: refer to the Python standard library.
-intersphinx_mapping = {'http://docs.python.org/': None}
+intersphinx_mapping = {'python': ('http://docs.python.org/', None),
+                       'scipy': ('http://docs.scipy.org/doc/scipy-dev/reference/', None),
+                       'numpy': ('http://docs.scipy.org/doc/numpy/', None)}
