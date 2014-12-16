@@ -59,6 +59,9 @@ html: apidoc
 	@echo
 	@echo "Build finished. The HTML pages are in $(BUILDDIR)/html."
 
+livehtml:
+	sphinx-autobuild -b html $(ALLSPHINXOPTS) $(BUILDDIR)/html
+
 dirhtml: apidoc
 	$(SPHINXBUILD) -b dirhtml $(ALLSPHINXOPTS) $(BUILDDIR)/dirhtml
 	@echo
