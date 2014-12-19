@@ -344,7 +344,7 @@ the basis functions at quadrature points.
    The :func:`numpy.einsum` function implements generalised tensor
    contractions using `Einstein summation notation
    <http://mathworld.wolfram.com/EinsteinSummation.html>`_. For
-   example, ``A = numpy.einsum("ijk,jl->ilk",T, C)`` is equivalent to
+   example, ``A = numpy.einsum("ijk,jl->ilk", T, C)`` is equivalent to
    `A_{ilk} = \sum_j T_{ijk} C_{il}`.
 
 Interpolating functions to the finite element nodes

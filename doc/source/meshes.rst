@@ -138,6 +138,15 @@ a given cell.
    Edges 11, 5, and 9 are local edges 0, 1, and 2 of cell 3.
 
 
+Associating data with meshes
+----------------------------
+
+A finite element space over a mesh is constructed by associating a
+finite element with each cell of the mesh. Will refer to the basis
+functions of this mesh as *global* basis functions, while those of the
+finite element itself we will refer to as *local* basis functions. The 
+
+
 Mesh geometry
 -------------
 
