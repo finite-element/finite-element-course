@@ -5,7 +5,7 @@ Constructing finite elements
 
 At the core of the finite element method is the representation of
 finite-dimensional function spaces over elements. This concept was
-formalised by Ciarlet CITE:
+formalised by :cite:`Ciarlet2002`:
 
 .. _def-ciarlet:
 
@@ -21,12 +21,11 @@ basis for `P`. It turns out to be most convenient to specify the set
 of nodes for an element, and then derive an appropriate basis for
 `P` from that. In particular:
 
-.. definition:: 
+.. definition::
 
    Let `N = \{n_j\}` be a basis for `P^*`.  A *nodal
    basis*, `\{\phi_i\}` for `P` is a basis for `P`
    with the property that `n_j(\phi_i) = \delta_{ij}`.
-
 
 A worked example
 ----------------
@@ -36,7 +35,7 @@ linear polynomials on a triangle. We first need to define our
 reference cell. The obvious choice is the triangle with vertices
 `\{(0,0), (1,0), (0,1)\}` 
 
-Functions in this space have the form `a + bx+ cy`. So the
+Functions in this space have the form `a + bx + cy`. So the
 function space has three unknown parameters, and its basis (and dual
 basis) will therefore have three members. In order to ensure the correct
 continuity between elements, the dual basis we need to use is the
@@ -116,7 +115,7 @@ of the function at some point. For some vector-valued function spaces,
 the nodes may be given by the evaluation of the components of the
 function normal or tangent to the boundary of the cell at some point.
 
-In this course we will only consider point evaluation nodes. The use of several other forms of node are covered in [CITE KIRBY 2005]
+In this course we will only consider point evaluation nodes. The implementation of several other forms of node are covered in :cite:`Kirby2004`.
 
 The Lagrange element nodes
 --------------------------
@@ -208,7 +207,7 @@ to include powers of `z`.
    The power series basis for polynomial spaces employed here becomes
    increasingly ill-conditioned at higher order, so it may be
    advantageous to employ a different basis in the construction of the
-   Vandermonde matrix. See [CITE KIRBY2004] for an example.
+   Vandermonde matrix. See :cite:`Kirby2004` for an example.
 
 .. _ex-vandermonde:
 

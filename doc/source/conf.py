@@ -33,7 +33,8 @@ extensions = [
     'sphinx.ext.intersphinx',
     'sphinx.ext.mathjax',
     'sphinx.ext.viewcode',
-    'clatex_builder'
+    'clatex_builder',
+    'sphinxcontrib.bibtex'
 ]
 # Both the class’ and the __init__ method’s docstring are concatenated and
 # inserted into the class definition
@@ -265,6 +266,8 @@ texinfo_documents = [
 
 # If true, do not generate a @detailmenu in the "Top" node's menu.
 #texinfo_no_detailmenu = False
+
+numfig = True
 
 
 # Example configuration for intersphinx: refer to the Python standard library.

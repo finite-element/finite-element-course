@@ -306,6 +306,9 @@ p.admonition-title:after {
 
 pre, code {
     font-family: Consolas, "andale mono", "lucida console", monospace;
+ }
+
+.highlight pre {
     font-size: 14px;
     line-height: 17px;
     background-color: #fafafa;
@@ -348,6 +351,10 @@ table.imagegrid td{
 
 table.docutils {
     margin: auto;
+}
+
+table.citation {
+    margin-left: 1px;
 }
 
 table.docutils td {
@@ -607,9 +614,10 @@ div.span-6 {
     margin-right:10px;
     margin-left: 20px;
 }
-div.last {
+/*div.last {
     float:right;
-}
+}*/
+
 
 .footer-nav ul li{
     padding: 0.2em;
@@ -696,4 +704,18 @@ img[alt="build status"] {
 
 .theoremenv_body {
     margin-left: 1em;
+}
+
+div.figure {
+    text-align: center;
+    border: 1px solid #000;
+    padding: 0px;
+    padding-top: 14px;
+}
+
+.figure p.caption {
+    text-align: left;
+    position: static;
+    width: auto;
+    margin-bottom: 0pt;
 }
