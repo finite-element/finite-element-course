@@ -144,7 +144,13 @@ Associating data with meshes
 A finite element space over a mesh is constructed by associating a
 finite element with each cell of the mesh. Will refer to the basis
 functions of this mesh as *global* basis functions, while those of the
-finite element itself we will refer to as *local* basis functions. The 
+finite element itself we will refer to as *local* basis functions. We
+can establish the relationship between the finite element and each
+cell of the mesh by associating the nodes (and therefore the local
+basis functions) of the finite element with the topological entities
+of the mesh.
+
+
 
 
 Mesh geometry
