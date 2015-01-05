@@ -120,6 +120,9 @@ a given cell.
 
     (i_0, \ldots i_k) = \operatorname{Adj}_{d_1,0}(i) \quad \Longrightarrow \quad i_0 < \ldots <i_k
 
+   A consequence of this convention is that the global orientation of
+   all the entities making up a cell also matches their local
+   orientation.
    
 .. example::
 
@@ -129,7 +132,7 @@ a given cell.
 
       \operatorname{Adj}_{2,0}(3) = (1,5,8).
 
-   In other words, vertices 1, 5 and 8 are adjacent to cell 3. Simularly:
+   In other words, vertices 1, 5 and 8 are adjacent to cell 3. Similarly:
 
    .. math::
 
@@ -148,7 +151,25 @@ finite element itself we will refer to as *local* basis functions. We
 can establish the relationship between the finite element and each
 cell of the mesh by associating the nodes (and therefore the local
 basis functions) of the finite element with the topological entities
-of the mesh.
+of the mesh. This is a two stage process. First, we associate the
+nodes of the finite element with the local topological entities of the
+reference cell. This is often referred to as *local numbering*. Then
+we associate the correct number of degrees of freedom with each global
+mesh entity. This is the *global numbering*.
+
+Local numbering and continuity
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+Which nodes should be associated with which topological entities? The
+answer to this question depends on the degree of continuity required
+between adjacent cells. The nodes associated with topological entites
+on the boundaries of cells (the vertices in one dimension, the
+vertices and edges in two dimensions, and the vertices, edges and
+faces in three dimensions) are shared between cells. The basis
+functions associated with nodes on the cell boundary will therefore be
+continuous between the cells which share that boundary.  
+
+For the Lagrange element family, we require global `C_0` continuity.
 
 
 
