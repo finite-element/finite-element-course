@@ -120,8 +120,8 @@ In this course we will only consider point evaluation nodes. The implementation 
 The Lagrange element nodes
 --------------------------
 
-The number of coefficients of a degree `n` polynomial in `d`
-dimensions is given by `\begin{pmatrix}n+d-1\\ d\end{pmatrix}`. The
+The number of coefficients of a degree `p` polynomial in `d`
+dimensions is given by `\begin{pmatrix}p+d-1\\ d\end{pmatrix}`. The
 simplest set of nodes which we can employ is simply to place these
 nodes in a regular grid over the reference cell. Given the classical
 relationship between binomial coefficients and `Pascal's triangle
@@ -129,12 +129,12 @@ relationship between binomial coefficients and `Pascal's triangle
 trinomial coefficients and Pascal's pyramid), it is unsurprising that
 this produces the correct number of nodes.
 
-The set of equally spaced points of degree `n` on the triangle is:
+The set of equally spaced points of degree `p` on the triangle is:
 
 .. math::
    :label: lattice
 
-   L_n = \left\{\left(\frac{i}{n}, \frac{j}{n}\right)\middle| 0 \leq i+j \leq n\right\}
+   \left\{\left(\frac{i}{p}, \frac{j}{p}\right)\middle| 0 \leq i+j \leq p\right\}
   
 The finite elements with this set of nodes are called the *equispaced
 Lagrange* elements and are the most commonly used elements for
@@ -264,7 +264,8 @@ the particular case of the equispaced Lagrange elements.
    Implement the :meth:`__init__` method of
    :class:`~fe_utils.finite_elements.LagrangeElement`. Use
    :func:`~fe_utils.finite_elements.lagrange_points` to obtain the
-   nodes.
+   nodes. For the purpose of this exercise, you may ignore the
+   ``entity_nodes`` argument.
 
 
 Tabulating basis functions

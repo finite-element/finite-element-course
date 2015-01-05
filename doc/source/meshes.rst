@@ -141,24 +141,25 @@ a given cell.
    Edges 11, 5, and 9 are local edges 0, 1, and 2 of cell 3.
 
 
-Associating data with meshes
-----------------------------
+Function spaces: associating data with meshes
+=============================================
 
 A finite element space over a mesh is constructed by associating a
 finite element with each cell of the mesh. Will refer to the basis
-functions of this mesh as *global* basis functions, while those of the
-finite element itself we will refer to as *local* basis functions. We
-can establish the relationship between the finite element and each
-cell of the mesh by associating the nodes (and therefore the local
-basis functions) of the finite element with the topological entities
-of the mesh. This is a two stage process. First, we associate the
-nodes of the finite element with the local topological entities of the
-reference cell. This is often referred to as *local numbering*. Then
-we associate the correct number of degrees of freedom with each global
-mesh entity. This is the *global numbering*.
+functions of this finite element space as *global* basis functions,
+while those of the finite element itself we will refer to as *local*
+basis functions. We can establish the relationship between the finite
+element and each cell of the mesh by associating the nodes (and
+therefore the local basis functions) of the finite element with the
+topological entities of the mesh. This is a two stage process. First,
+we associate the nodes of the finite element with the local
+topological entities of the reference cell. This is often referred to
+as *local numbering*. Then we associate the correct number of degrees
+of freedom with each global mesh entity. This is the *global
+numbering*.
 
 Local numbering and continuity
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+------------------------------
 
 Which nodes should be associated with which topological entities? The
 answer to this question depends on the degree of continuity required
@@ -169,9 +170,93 @@ faces in three dimensions) are shared between cells. The basis
 functions associated with nodes on the cell boundary will therefore be
 continuous between the cells which share that boundary.  
 
-For the Lagrange element family, we require global `C_0` continuity.
+For the Lagrange element family, we require global `C_0`
+continuity. This implies that the basis functions are continuous
+everywhere. This has the following implications for the association of
+basis functions with local topological entites:
 
+vertices
+  At the function vertices we can achieve continuity by requiring
+  that there be a node associated with each mesh vertex. The basis
+  function associated with that node will therefore be continuous. Since
+  we have a nodal basis, all the other basis functions will vanish at
+  the vertex so the global space will be continuous at this point.
 
+edges
+  Where the finite element space has at least 2 dimensions we need to
+  ensure continuity along edges. The restriction of a degree `p`
+  polynomial over a `d`-dimensional cell to an edge of that cell will
+  be a one dimensional degree `p` polynomial. To fully specify this
+  polynomial along an edge requires `p+1` nodes. However there will
+  already be two nodes associated with the vertices of the edge, so
+  `p-1` additional nodes will be associated with the edge. 
+
+faces
+  For three-dimensional (tetrahedral) elements, the basis
+  functions must also be continuous across faces. This requires that
+  sufficient nodes lie on the face to fully specify a two dimensional
+  degree `p` polynomial. However the vertices and edges of the face
+  already have nodes associated with them, so the number of nodes
+  required to be associated with the face itself is actually the
+  number required to represent a degree `p-2` polynomial in two
+  dimensions: `\begin{pmatrix}p-1\\ 2\end{pmatrix}`.
+
+:numref:`figlagrange-nodes` illustrates the association of nodes with
+reference entities for Lagrange elements on triangles. The numbering
+of nodes will depend on how
+:func:`~fe_utils.finite_elements.lagrange_points` is implemented. The
+numbering used here is just one of the obvious choices.
+
+.. _figlagrange-nodes:
+
+.. figure:: lagrange_nodes.svg
+   :width: 70%
+
+   Association of nodes with reference entities for the degree 1, 2,
+   and 3 equispaced Lagrange elements on triangles. Black nodes are
+   associated with vertices, red nodes with edges and blue nodes with
+   the cell (face). The numbering of the nodes is arbitrary.
+
+Implementing local numbering
+----------------------------
+
+Local numbering can be implemented by adding an additional data
+structure to the :class:`~fe_utils.finite_elements.FiniteElement`
+class. For each local entity this must record the local nodes
+associated with that entity. This can be achieved using a dictionary
+of dictionaries structure. For example employing the local numbering
+of nodes employed in :numref:`figlagrange-nodes`, the ``entity_node``
+list for the degree three equispaced Lagrange element on a triangle is
+given by::
+
+  entity_node = {0: {0: [0],
+                     1: [3],
+                     2: [9]},
+                 1: {0: [6, 8],
+                     1: [4, 7],
+                     2: [1, 2]},
+                 2: {0: [5]}}
+
+Note that the order of the nodes in each list is important: it must
+always consistently reflect the orientation of the relevant entity in
+order that all the cells which share that entity consistently
+interpret the nodes. In this case this has been achieved by listing
+the nodes in order given by the direction of the orientation of each edge. 
+
+.. exercise::
+
+   Extend the :meth:`__init__` method of
+   :class:`~fe_utils.finite_elements.LagrangeElement` so that it
+   passes the correct ``entity_node`` dictionary to the
+   :class:`~fe_utils.finite_elements.FiniteElement` it creates.
+
+.. hint::
+
+   You can either work out the right algorithm to generate
+   ``entity_nodes`` with the right node indices, or you can modify
+   :func:`~fe_utils.finite_elements.lagrange_points` so that it
+   produces the nodes in entity order, thus making the construction of
+   ``entity_nodes`` straightforward.
 
 
 Mesh geometry

@@ -37,7 +37,7 @@ def vandermonde_matrix(cell, degree, points, grad=False):
 
 
 class FiniteElement(object):
-    def __init__(self, cell, degree, nodes):
+    def __init__(self, cell, degree, nodes, entity_nodes=None):
         """A finite element defined over cell.
         
         :param cell: the :class:`~.reference_elements.ReferenceCell`
@@ -47,6 +47,8 @@ class FiniteElement(object):
             spans the complete polynomial space.
         :param nodes: a list of coordinate tuples corresponding to 
             the nodes of the element.
+        :param entity_nodes: a dictionary of dictionaries such that 
+            entity_nodes[d][i] is the list of nodes associated with entity `(d, i)`.
 
         Most of the implementation of this class is left as exercises.
         """
@@ -54,7 +56,8 @@ class FiniteElement(object):
         self.cell = cell
         self.degree = degree 
         self.nodes = nodes
-
+        self.entity_nodes = entity_nodes
+        
         # Replace this exception with some code which sets 
         # self.basis_coefs
         # to an array of basis function coefficients.

@@ -718,4 +718,5 @@ div.figure {
     position: static;
     width: auto;
     margin-bottom: 0pt;
+    height: auto;
 }
