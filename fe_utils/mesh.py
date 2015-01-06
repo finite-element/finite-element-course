@@ -6,12 +6,12 @@ import itertools
 class Mesh(object):
     """A one or two dimensional mesh composed of intervals or triangles
     respectively."""
-    def __init__(self, vertices, element_vertices):
+    def __init__(self, vertices, cell_vertices):
         """
         :param vertices: an vertex_count x dim array of the coordinates of
           the vertices in the mesh.
-        :param element_vertices: an element_count x (dim+1) array of the
-          indices of the vertices of which each element is made up.
+        :param cell_vertices: an cell_count x (dim+1) array of the
+          indices of the vertices of which each cell is made up.
         """
 
         self.dim = vertices.shape(1)
@@ -25,12 +25,12 @@ class Mesh(object):
         self.vertices = vertices
         """The coordinates of all the vertices in the mesh."""
 
-        self.element_vertices = element_vertices
-        """The indices of the vertices incident to element."""
+        self.cell_vertices = cell_vertices
+        """The indices of the vertices incident to cell."""
 
         if self.dim == 2:
             self.edge_vertices = np.unique(tuple(sorted(e))
-                                           for t in element_vertices
+                                           for t in cell_vertices
                                            for e in itertools.combinations(t, 2))
             """The indices of the vertices incident to edge (only for 2D
             meshes)."""
@@ -45,25 +45,25 @@ class Mesh(object):
             # each local edge index.
             local_edge_vertices = np.array([[1, 2], [0, 2], [0, 1]])
 
-            self.element_edges = np.fromiter(
+            self.cell_edges = np.fromiter(
                 (edge_dict[tuple(t.take(local_edge_vertices[e]))]
                  for e in range(3)
-                 for t in self.element_vertices),
+                 for t in self.cell_vertices),
                 dtype=np.int32,
-                count=self.element_vertices.size).reshape((-1, 3))
-            """The indices of the edges incident to each element (only for 2D
+                count=self.cell_vertices.size).reshape((-1, 3))
+            """The indices of the edges incident to each cell (only for 2D
             meshes)."""
 
         if self.dim == 2:
             self.entity_counts = (vertices.shape(0),
                                   self.edge_vertices.shape(0),
-                                  self.element.vertices.shape(0))
+                                  self.cell.vertices.shape(0))
             """The number of entities of each dimension in the mesh. So
             :attr:`entity_counts(0)` is the number of vertices in the
             mesh."""
         else:
             self.entity_counts = (vertices.shape(0),
-                                  self.element_vertices.shape(0))
+                                  self.cell_vertices.shape(0))
 
     def adjacency(self, dim1, dim2):
         """Return the set of `dim2` entities adjacent to each `dim1`
@@ -73,7 +73,7 @@ class Mesh(object):
         This operation is only defined where `self.dim > dim1 > dim2`.
 
         This method is simply a more systematic way of accessing
-        :attr:`edge_vertices`, :attr:`element_edges` and :attr:`element_vertices`.
+        :attr:`edge_vertices`, :attr:`cell_edges` and :attr:`cell_vertices`.
         """
 
         if dim2 >= dim1:
@@ -87,9 +87,9 @@ class Mesh(object):
             return self.edge_vertices
         elif dim1 == 2:
             if dim2 == 0:
-                return self.element_vertices
+                return self.cell_vertices
             else:
-                return self.element_edges
+                return self.cell_edges
 
 
 class UnitSquareMesh(Mesh):

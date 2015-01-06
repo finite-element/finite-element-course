@@ -21,12 +21,15 @@ class ReferenceCell(object):
         if self.dim != len(topology) - 1:
             raise ValueError("Dimension mismatch between vertices and topology.")
 
+#: A :class:`ReferenceCell` storing the geometry and topology of the interval [0, 1].
 ReferenceInterval = ReferenceCell(vertices=[[0.], [1.]],
                                   topology={0: {0: [0],
                                                 1: [1]},
                                             1: {0: [0, 1]}}
                               )
 
+#: A :class:`ReferenceCell` storing the geometry and topology of the triangle
+#: with vertices [[0., 0.], [1., 0.], [0., 1.]].
 ReferenceTriangle = ReferenceCell(vertices=[[0., 0.], [1., 0.], [0., 1.]],
                                   topology={0: {0: [0],
                                                 1: [1],

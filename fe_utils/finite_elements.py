@@ -1,4 +1,4 @@
-from reference_elements import ReferenceInterval, ReferenceTriangle
+from .reference_elements import ReferenceInterval, ReferenceTriangle
 import numpy as np
 
 
@@ -74,11 +74,11 @@ class FiniteElement(object):
             tabulation of the gradient of the basis.
 
         :result: an array containing the value of each basis function
-        at each quadrature point. If `grad` is `True`, the gradient
-        vector of each basis vector at each quadrature point is
-        returned as a rank 3 array.
+            at each quadrature point. If `grad` is `True`, the gradient
+            vector of each basis vector at each quadrature point is
+            returned as a rank 3 array.
 
-        The implementation of this class is left as an :ref:`exercise
+        The implementation of this method is left as an :ref:`exercise
         <ex-tabulate>`.
 
         """
@@ -95,7 +95,7 @@ class FiniteElement(object):
         :returns: A vector containing the value of ``fn`` at each node
            of this element.
 
-        The implementation of this class is left as an :ref:`exercise
+        The implementation of this method is left as an :ref:`exercise
         <ex-interpolate>`.
 
         """

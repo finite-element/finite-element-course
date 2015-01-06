@@ -156,7 +156,7 @@ relatively low order computations.
 
 .. hint::
    
-   :func:`scipy.special.comb` may come in useful in implementing these functions.
+   :func:`scipy.misc.comb` may come in useful in implementing these functions.
 
 
 .. _sec-vandermonde:
@@ -258,6 +258,8 @@ polynomial, degree and nodes. The
 <https://docs.python.org/2/tutorial/classes.html#inheritance>`_ of
 :class:`~fe_utils.finite_elements.FiniteElement` which will implement
 the particular case of the equispaced Lagrange elements.
+
+.. _ex-lagrange-element:
 
 .. exercise::
 
@@ -373,6 +375,8 @@ evaluation of their function input, we know that:
 
 where `X_i` is the point associated with the `i`-th node.
 
+.. _ex-interpolate:
+
 .. exercise::
 
    Implement :meth:`~fe_utils.finite_elements.FiniteElement.interpolate`.
@@ -384,26 +388,6 @@ By combining interpolation, tabulation, and integration we can
 formulate a tests of the correctness and completeness of our finite
 element implementation.
 
-
-
-
-
-
-Associating nodes with the mesh topology
-----------------------------------------
-
-In the worked example we asserted that evaluation at the vertices was
-the correct set of nodes. Let's now establish that more rigorously. We
-associate nodes with topological entitities of the cell: nodes may be
-associated with the vertices, edges, or faces of the cell, or with the
-interior of the cell itself. When we stitch together cells to form the
-mesh, those nodes associated with topological entities on the boundary
-of the cell will be shared by more than one cell. This enforces some
-level of function continuity between cells since the function is
-forced to take the nodal value in both cells.
-
-Let's assume for the moment that we wish our finite element space to
-have `C0` continuity over the mesh.
 
 .. rubric:: Footnotes
 

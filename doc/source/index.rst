@@ -19,6 +19,7 @@ Contents:
    quadrature
    finite_elements
    meshes
+   function_spaces
    bibliography
 
 Indices and tables
