@@ -1,14 +1,40 @@
-.. Finite element course documentation master file, created by
-   sphinx-quickstart on Sat Sep  6 21:48:49 2014.
-   You can adapt this file completely to your liking, but it should at least
-   contain the root `toctree` directive.
 
+This is the webpage for the `Imperial College London Mathematics
+<http://www.imperial.ac.uk/maths>`_ masters module M5MA47 Finite
+Elements: numerical analysis and implementation. Other people are
+welcome to make use of the material here. The authors welcome feedback
+and would particularly appreciate an `email
+<mailto:david.ham@imperial.ac.uk>`_ if this material is used to teach
+anywhere.
 
-This web page will hold the documentation for the module on the
-numerical analysis and implementation of the finite element method
-which will be taught to masters students in the Department of
-Mathematics at Imperial College London in Spring 2015. Further details
-will appear here closer to the start of the module.
+.. toctree::
+
+   practicalities
+
+Part 1: Numerical analysis
+--------------------------
+
+The theory part of the module will consist of two hours per week
+primarily composed of letures, with occasional tutorials. This part of
+the module will be led by `Dr Colin Cotter
+<http://www.imperial.ac.uk/people/colin.cotter>`_.
+
+The text for this part of the module is Brenner and Scott *The
+Mathematical Theory of Finite Element Methods*. Imperial College has
+fortunately paid for PDF access to this book, so it is accessible from
+the Imperial College network at `Springer Link
+<http://link.springer.com/book/10.1007%2F978-0-387-75934-0>`_.
+
+Part 2: Implementation
+----------------------
+
+The implementation part of the module aims to give the students a
+deeper understanding of the finite element method through writing
+software to solve finite element problems in one and two dimensions.
+
+This part of the module will be taught by `Dr David Ham
+<http://www.imperial.ac.uk/people/david.ham>`_ in two hours per week
+of computer laboratory time.
 
 Contents:
 
@@ -29,4 +55,3 @@ Indices and tables
 * :ref:`genindex`
 * :ref:`modindex`
 * :ref:`search`
-

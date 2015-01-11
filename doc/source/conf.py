@@ -56,6 +56,8 @@ master_doc = 'index'
 project = u'Finite element course'
 copyright = u'2014, David A. Ham and Colin J. Cotter'
 
+mathjax_path = "https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"
+
 # The version info for the project you're documenting, acts as replacement for
 # |version| and |release|, also used in various other places throughout the
 # built documents.
