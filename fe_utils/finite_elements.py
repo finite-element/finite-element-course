@@ -57,10 +57,14 @@ class FiniteElement(object):
         self.degree = degree 
         self.nodes = nodes
         self.entity_nodes = entity_nodes
+
+        if entity_nodes:
+            self.nodes_per_entity = np.array([len(entity_nodes[d][0])
+                                              for d in range(cell.dim+1)])
         
         # Replace this exception with some code which sets 
         # self.basis_coefs
-        # to an array of basis function coefficients.
+        # to an array of polynomial coefficients defining the basis functions.
         raise NotImplementedError        
 
 

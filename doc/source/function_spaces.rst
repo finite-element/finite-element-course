@@ -184,6 +184,13 @@ Implementing function spaces in Python
 As noted above, a finite element space associates a mesh and a finite
 element, and contains (in some form) a global numbering of the nodes. 
 
+.. _ex-function-space:
+
+.. exercise::
+   
+   Implement the :meth:`__init__` method of
+   :class:`fe_utils.function_space.FunctionSpace`. The key operation
+   is to implement ``self.cell_nodes`` using :eq:`cellnode`. 
 
 .. rubric:: Footnotes
 

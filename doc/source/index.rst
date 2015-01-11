@@ -20,6 +20,7 @@ Contents:
    finite_elements
    meshes
    function_spaces
+   functions
    bibliography
 
 Indices and tables
