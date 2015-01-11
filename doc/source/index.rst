@@ -36,6 +36,10 @@ This part of the module will be taught by `Dr David Ham
 <http://www.imperial.ac.uk/people/david.ham>`_ in two hours per week
 of computer laboratory time.
 
+.. toctree::
+
+   tools
+
 Contents:
 
 .. toctree::
