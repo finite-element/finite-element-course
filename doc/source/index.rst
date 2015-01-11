@@ -47,7 +47,7 @@ Contents:
    meshes
    function_spaces
    functions
-   bibliography
+   zbibliography
 
 Indices and tables
 ==================
