@@ -10,6 +10,7 @@ anywhere.
 .. toctree::
 
    practicalities
+   implementation
 
 Part 1: Numerical analysis
 --------------------------
@@ -37,6 +38,7 @@ This part of the module will be taught by `Dr David Ham
 of computer laboratory time.
 
 .. toctree::
+   :maxdepth: 3
 
    tools
 
