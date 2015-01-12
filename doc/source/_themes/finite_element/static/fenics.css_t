@@ -721,3 +721,5 @@ div.figure {
     margin-bottom: 0pt;
     height: auto;
 }
+
+span.strikethrough { text-decoration: line-through; }

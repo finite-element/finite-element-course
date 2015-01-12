@@ -10,7 +10,6 @@ anywhere.
 .. toctree::
 
    practicalities
-   implementation
 
 Part 1: Numerical analysis
 --------------------------
@@ -41,8 +40,9 @@ of computer laboratory time.
    :maxdepth: 3
 
    tools
+   implementation
 
-Contents:
+Implementation exercise contents:
 
 .. toctree::
    :numbered:

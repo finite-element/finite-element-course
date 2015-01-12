@@ -84,5 +84,20 @@ to `the main repository
 top right there is an eye icon. Select the drop-down box and ensure
 that ``All issues`` and ``all pull requests`` are selected.
 
+How to do the implementation exercises
+--------------------------------------
+
+The implementation exercises build up a finite element library from
+its component parts. Quite a lot of the coding infrastructure you will
+need is provided already. Your task is to write the crucial
+mathematical operations at key points. The mathematical operations
+required are described on this website, interspersed with exercises
+which require you to implement and test parts of the mathematics.
+
+The code on which you will build is in the ``fe_utils`` directory of
+your repository. The code has embedded documentation which is used to
+build the :doc:`fe_utils` web documentation.
+
+
 .. |git-branch| image:: git-branch.svg
    :height: 20px

@@ -133,9 +133,29 @@ provides this facility, which they call `gists`. For this you'll want
 a GitHub account so head over there and `sign up
 <https://github.com>`_.
 
-Once you've signed up and logged in, you can navigate to
-`https://gist.github.com`_ and there's a very simple webpage into which
+Once you've signed up and logged in, you can navigate to https://gist.github.com and there's a very simple webpage into which
 you can paste your code or output. You should also set the language so
 that GitHub formats your gist correctly. Click `create public gist`
 and you're done. You can then paste the URL of your gist page into an
 email or into a Bitbucket issue.
+
+.. role:: strikethrough
+
+Raising :strikethrough:`hell` issues
+------------------------------------
+
+If you have problems you can't solve yourself, you can share them with
+the class by `raising an issue on Bitbucket <https://bitbucket.org/finiteelement/finite_element_course/issues/new>`_. When you do this, here are
+some tips which will help get your problem fixed:
+
+Be precise 
+  "It didn't work" is useless. "I typed ``import fe_utils'' and
+  recieved the following error.`` is much better.
+
+Provide a minimal failing example
+  Post the smallest piece of code which exhibits the problem. This
+  makes finding the issue much easier.
+
+Use gists 
+  Copy exactly what happened, complete with error messages,
+  into a gist and post the link in the issue.
