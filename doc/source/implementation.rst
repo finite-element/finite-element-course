@@ -18,6 +18,9 @@ Obtaining the skeleton code
 
 This section assumes you've already done the :ref:`Bitbucket tutorial <bitbucket-git>`.
 
+Setting up your Bitbucket fork
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
 You'll need your own fork of the finite element repository so that you
 can add your implementation. First, `log in to bitbucket
 <https://bitbucket.org/account/signin/>`_. Next you can `create a fork
@@ -31,3 +34,55 @@ of the repository
    to your repository. This will ensure that the lecturer can see your
    work to provide help, feedback and marking.
 
+Your new fork only has a master branch. You'll want to leave that
+alone to collect any updates which happen on the main repository. You
+will actually work on a branch, which we will call ``implementation``.
+
+ * Click on the branch icon |git-branch| on the left.
+ * Now click on ``create branch`` on the extreme right.
+ * Enter ``implementation`` as the branch name.
+
+Cloning a local copy
+~~~~~~~~~~~~~~~~~~~~
+
+At the command line on your working machine type::
+
+  git clone git@bitbucket.org:<USERNAME>/finite_element_course.git
+
+substituting your Bitbucket username for <USERNAME>. Next::
+
+  cd finite_element_course
+  git checkout implementation
+
+Your working directory is now a current checkout of your
+implementation branch.
+
+Pointing Python at the code
+~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+You'll need Python to be able to find the ``fe_utils`` module from
+wherever it is running. To do this, you need to add your repository
+directory to the ``PYTHONPATH`` environment variable. **In your
+repository directory** type the following::
+
+  cat >> ~/.bashrc << foo                                             
+  export PYTHONPATH=\$PYTHONPATH:$PWD
+  foo
+
+The above line will update your ``PYTHONPATH`` every time you log
+in. **Just this once** you need to update it for the current session::
+
+  export PYTHONPATH=$PYTHONPATH:$PWD
+
+Watching for updates and issues
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+You should make sure you are notified of all updates on the main
+repository and all issues anyone raises. For this, you should navigate
+to `the main repository
+<https://bitbucket.org/finiteelement/finite_element_course>`. On the
+top right there is an eye icon. Select the drop-down box and ensure
+that ``All issues`` and ``all pull requests`` are selected.
+
+.. |git-branch| image:: git-branch.svg
+   :height: 20px
