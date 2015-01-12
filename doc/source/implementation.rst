@@ -98,6 +98,24 @@ The code on which you will build is in the ``fe_utils`` directory of
 your repository. The code has embedded documentation which is used to
 build the :doc:`fe_utils` web documentation.
 
+As you do the exercises, **commit your code** to your repository. This
+will build up your finite element library. You should commit code
+early and often - small commits are easier to understand and debug
+than large ones. **Never** commit back to the ``master`` branch of your
+fork, that should always remain a clean copy of the main repository.
+
+Pull requests for feedback
+~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+There will be a formal opportunity to recieve feedback on your code
+progress every two weeks. To take part, you should set up a pull
+request from your ``implementation`` branch to the ``master`` branch
+of your repository. This will enable the lecturer to write line by
+line comments on your code. Make sure the pull request is against the
+``master`` branch of your private fork - if you pull request against
+the main repository then the whole class will be able to plagiarise
+your work and laugh at your mistakes!
+
 
 .. |git-branch| image:: git-branch.svg
    :height: 20px
