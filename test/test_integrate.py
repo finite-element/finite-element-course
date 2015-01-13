@@ -3,7 +3,7 @@ import pytest
 from fe_utils import gauss_quadrature, ReferenceTriangle, ReferenceInterval
 
 
-# Test quadrature for polynomials of degree up to
+# Test quadrature for polynomials of degree up to 8
 @pytest.mark.parametrize('degree, quad_degree',
                          [(d, q)
                           for q in range(1, 8)
@@ -20,7 +20,7 @@ def test_integrate_interval(degree, quad_degree):
     assert round(numeric - analytic, 12) == 0
 
 
-# Test quadrature for polynomials of degree up to
+# Test quadrature for polynomials of degree up to 8
 @pytest.mark.parametrize('degree, quad_degree',
                          [(d, q)
                           for q in range(1, 8)
