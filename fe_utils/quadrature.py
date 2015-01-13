@@ -67,9 +67,9 @@ def gauss_quadrature(cell, degree):
 
         q1 = gauss_quadrature(ReferenceInterval, degree)
 
-        points = np.array([p[0], q[0] * 1 - p[0]] for p in q1.points for q in q1.points)
-        # The weights need to be halved so the sum is .5 rather than 1.
-        weights = np.array(p * q / 2. for p in q1.weights for q in q1.weights)
+        points = np.array([p[0], q[0] * (1 - p[0])] for p in q1.points for q in q1.points)
+
+        weights = np.array(p * q * (1 - p[0]) for p in q1.weights for q in q1.weights)
 
     else:
         raise ValueError("Unknown reference cell")
