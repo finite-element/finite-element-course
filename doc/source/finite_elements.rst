@@ -112,7 +112,7 @@ Types of node
 We have just encountered nodes given by the evaluation of the function
 at a given point. Other forms of functional are also suitable for use
 as finite element nodes. Examples include the integral of the function
-of ver the cell or some sub-entity and the evaluation of the gradient
+over the cell or some sub-entity and the evaluation of the gradient
 of the function at some point. For some vector-valued function spaces,
 the nodes may be given by the evaluation of the components of the
 function normal or tangent to the boundary of the cell at some point.
@@ -123,7 +123,7 @@ The Lagrange element nodes
 --------------------------
 
 The number of coefficients of a degree `p` polynomial in `d`
-dimensions is given by `\begin{pmatrix}p+d-1\\ d\end{pmatrix}`. The
+dimensions is given by `\begin{pmatrix}p+d\\ d\end{pmatrix}`. The
 simplest set of nodes which we can employ is simply to place these
 nodes in a regular grid over the reference cell. Given the classical
 relationship between binomial coefficients and `Pascal's triangle
@@ -154,12 +154,20 @@ relatively low order computations.
    
    Use :eq:`lattice` to implement
    :func:`~fe_utils.finite_elements.lagrange_points`. Make sure your
-   algorithm also works for one-dimensional elements.
+   algorithm also works for one-dimensional elements. Some basic tests
+   for your code are to be found in
+   ``tests/test_lagrange_points.py``. You can also test your lagrange
+   points on the triangle by running:: 
+
+     python tests/plot_lagrange_points.py degree
+   
+   Where degree is the degree of the points to print.
 
 .. hint::
    
-   :func:`scipy.misc.comb` may come in useful in implementing these functions.
-
+   The lagrange points can be generated very simply using `list
+   comprehensions
+   <https://docs.python.org/2/tutorial/datastructures.html#list-comprehensions>`_.
 
 .. _sec-vandermonde:
 Solving for basis functions

@@ -181,7 +181,7 @@ interval:
 where `(\{X'_q\}, \{w'_q\})` is the quadrature rule on the interval
 `[-1, 1]` and `(\{X_q\}, \{w_q\})` is the rule on the unit interval.
 
-Legendre-Gauß quadrature is optimal in the sense that it uses the
+Legendre-Gauß quadrature on the interval is optimal in the sense that it uses the
 minimum possible number of points for each degree of precision.
 
 Extending Legendre-Gauß quadrature to two dimensions
@@ -195,9 +195,9 @@ rules:
 .. math::
    :label: squarequad
 
-   X_\textrm{sq} = \{ (x_p, x_q)\ |\ x_p, x_q \in X \}
+   X_\textrm{sq} = \left\{ (x_p, x_q)\ \middle|\ x_p, x_q \in X \right\}
 
-   w_\textrm{sq} = \{ w_p w_q\ |\ w_p, w_q \in w \}
+   w_\textrm{sq} = \left\{ w_p w_q\ \middle|\ w_p, w_q \in w \right\}
 
 where `(X, w)` is an interval quadrature rule. Furthermore, the degree
 of accuracy of `(X_\textrm{sq}, w_\textrm{sq})` will be the same as
@@ -213,18 +213,30 @@ edge. The Duffy transform maps the unit square to the unit triangle:
    (x_\textrm{tri},\ y_\textrm{tri}) = 
      \left(x_\textrm{sq},\ y_\textrm{sq}(1 - x_\textrm{sq})\right)
 
+.. _figmesh:
+
+.. figure:: duffy.svg
+   :width: 60%
+
+   The Duffy transform maps a square to a triangle by collapsing one side.
+
 By composing the Duffy transform with :eq:`squarequad` we can arrive
 at a quadrature rule for the triangle:
 
 .. math::
    :label: triquad
 
-   X_\textrm{tri} =\left\{ \left(x_p, x_q(1 - x_p\right)\ \middle|\ x_p, x_q \in X \right\}
+   X_\textrm{tri} =\left\{ \left(x_p, x_q(1 - x_p)\right)\ \middle|\ x_p \in X_h, x_q \in X_v \right\}
 
-   w_\textrm{tri} = \{ w_p w_q\ |\ w_p, w_q \in w \}
+   w_\textrm{tri} = \left\{ w_p w_q(1 - x_p)\ \middle|\ w_p \in w_h, w_q \in w_v \right\}
 
-Once again, the degree of precision of `(X_\textrm{tri},
-w_\textrm{tri})` will be the same as that of `(X, w)`.
+where `(X_v, w_v)` is a reference interval quadrature rule with degree
+of precision `n` and `(X_h, w_h)` is a reference interval quadrature
+rule with degree of precision `n+1`. The combined quadrature rule
+`(X_\textrm{tri}, w_\textrm{tri})` will then be `n`. The additional
+degree of precision required for `(X_h, w_h)` is because the Duffy
+transform effectively increases the polynomial degree of the integrand
+by one.
 
 Implementing quadrature rules in Python
 ---------------------------------------
@@ -251,3 +263,10 @@ cell.
 
    Make sure you commit your modifications and push them to your fork
    of the course repository.
+
+.. hint::
+
+   You can implement
+   :meth:`~fe_utils.quadrature.QuadratureRule.integrate` in one line
+   using the Python intrinsic function :func:`map` and
+   :func:`numpy.dot`.
