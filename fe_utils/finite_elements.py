@@ -1,10 +1,9 @@
-from .reference_elements import ReferenceInterval, ReferenceTriangle
 import numpy as np
 
 
 def lagrange_points(cell, degree):
     """Construct the locations of the equispaced Lagrange nodes on cell.
-    
+
     :param cell: the :class:`~.reference_elements.ReferenceCell`
     :param degree: the degree of polynomials for which to construct nodes.
 
@@ -13,7 +12,7 @@ def lagrange_points(cell, degree):
     The implementation of this function is left as an :ref:`exercise
     <ex-lagrange-points>`.
     """
-    
+
     raise NotImplementedError
 
 
@@ -21,7 +20,6 @@ def vandermonde_matrix(cell, degree, points, grad=False):
     """Construct the generalised Vandermonde matrix for polynomials of the
     specified degree on the cell provided.
 
-    
     :param cell: the :class:`~.reference_elements.ReferenceCell`
     :param degree: the degree of polynomials for which to construct the matrix.
     :param points: a list of coordinate tuples corresponding to the points.
@@ -39,34 +37,33 @@ def vandermonde_matrix(cell, degree, points, grad=False):
 class FiniteElement(object):
     def __init__(self, cell, degree, nodes, entity_nodes=None):
         """A finite element defined over cell.
-        
+
         :param cell: the :class:`~.reference_elements.ReferenceCell`
-            over which the element is defined.  
+            over which the element is defined.
         :param degree: the
             polynomial degree of the element. We assume the element
             spans the complete polynomial space.
-        :param nodes: a list of coordinate tuples corresponding to 
+        :param nodes: a list of coordinate tuples corresponding to
             the nodes of the element.
-        :param entity_nodes: a dictionary of dictionaries such that 
+        :param entity_nodes: a dictionary of dictionaries such that
             entity_nodes[d][i] is the list of nodes associated with entity `(d, i)`.
 
         Most of the implementation of this class is left as exercises.
         """
-        
+
         self.cell = cell
-        self.degree = degree 
+        self.degree = degree
         self.nodes = nodes
         self.entity_nodes = entity_nodes
 
         if entity_nodes:
             self.nodes_per_entity = np.array([len(entity_nodes[d][0])
                                               for d in range(cell.dim+1)])
-        
-        # Replace this exception with some code which sets 
+
+        # Replace this exception with some code which sets
         # self.basis_coefs
         # to an array of polynomial coefficients defining the basis functions.
-        raise NotImplementedError        
-
+        raise NotImplementedError
 
     def tabulate(self, points, grad=False):
         """Evaluate the basis functions of this finite element at the points
@@ -74,7 +71,7 @@ class FiniteElement(object):
 
         :param points: a list of coordinate tuples at which to
             tabulate the basis.
-        :param grad: whether to return the tabulation of the basis or the 
+        :param grad: whether to return the tabulation of the basis or the
             tabulation of the gradient of the basis.
 
         :result: an array containing the value of each basis function
@@ -86,11 +83,11 @@ class FiniteElement(object):
         <ex-tabulate>`.
 
         """
-        
+
         raise NotImplementedError
 
     def interpolate(self, fn):
-        """Interpolate fn onto this finite element by evaluating it 
+        """Interpolate fn onto this finite element by evaluating it
         at each of the nodes.
 
         :param fn: A function ``fn(X)`` which takes a coordinate
@@ -103,22 +100,20 @@ class FiniteElement(object):
         <ex-interpolate>`.
 
         """
-        
+
         raise NotImplementedError
 
 
-        
 class LagrangeElement(FiniteElement):
-    
-    def __init__(cell, degree):
+    def __init__(self, cell, degree):
         """An equispaced Lagrange finite element.
-        
+
         :param cell: the :class:`~.reference_elements.ReferenceCell`
-            over which the element is defined.  
+            over which the element is defined.
         :param degree: the
             polynomial degree of the element. We assume the element
             spans the complete polynomial space.
-        
+
         The implementation of this class is left as an :ref:`exercise
         <ex-lagrange-element>`.
         """
