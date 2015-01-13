@@ -62,6 +62,9 @@ def gauss_quadrature(cell, degree):
         # Rescale the weights to sum to 1 instead of 2.
         weights = weights / 2.
 
+        # We expect points to be an n x dim array.
+        points.shape = [points.shape[0], 1]
+
     elif cell is ReferenceTriangle:
         # The 2D rule is obtained using the 1D rule and the Duffy Transform.
 
