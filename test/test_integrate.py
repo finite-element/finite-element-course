@@ -15,7 +15,7 @@ def test_integrate_interval(degree, quad_degree):
     analytic = 1./(degree+1) - 1./(degree+2)
 
     # Check that the answer is correct to 12 DP.
-    assert round(numeric - analytic, 12)) == 0
+    assert round(numeric - analytic, 12) == 0
                          
 
 if __name__ == '__main__':
