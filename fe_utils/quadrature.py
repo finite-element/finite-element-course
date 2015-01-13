@@ -53,7 +53,8 @@ def gauss_quadrature(cell, degree):
         # We can obtain the 1D gauss-legendre rule from numpy and change coordinates.
 
         # Gauss-legendre quadrature has degree = 2 * npoints - 1
-        npoints = int((degree + 1) / 2)
+        # The extra + 1 deals with truncation.
+        npoints = int((degree + 1 + 1) / 2)
 
         points, weights = leggauss(npoints)
 
@@ -72,7 +73,9 @@ def gauss_quadrature(cell, degree):
 
         points = np.array([p[0], q[0] * (1 - p[0])] for p in q1.points for q in q1.points)
 
-        weights = np.array(p * q * (1 - p[0]) for p in q1.weights for q in q1.weights)
+        weights = np.array(p * q * (1 - x[0]) 
+                           for p, x in zip(q1.weights, q1.points) 
+                           for q in q1.weights)
 
     else:
         raise ValueError("Unknown reference cell")
