@@ -37,10 +37,12 @@ This part of the module will be taught by `Dr David Ham
 of computer laboratory time.
 
 .. toctree::
+   :maxdepth: 3
 
    tools
+   implementation
 
-Contents:
+Implementation exercise contents:
 
 .. toctree::
    :numbered:

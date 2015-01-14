@@ -306,6 +306,7 @@ p.admonition-title:after {
 
 pre, code {
     font-family: Consolas, "andale mono", "lucida console", monospace;
+    background-color: #dadada;
  }
 
 .highlight pre {
@@ -720,3 +721,5 @@ div.figure {
     margin-bottom: 0pt;
     height: auto;
 }
+
+span.strikethrough { text-decoration: line-through; }
