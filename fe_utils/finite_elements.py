@@ -78,9 +78,9 @@ class FiniteElement(object):
             tabulation of the gradient of the basis.
 
         :result: an array containing the value of each basis function
-            at each quadrature point. If `grad` is `True`, the gradient
-            vector of each basis vector at each quadrature point is
-            returned as a rank 3 array.
+            at each point. If `grad` is `True`, the gradient vector of
+            each basis vector at each point is returned as a rank 3
+            array.
 
         The implementation of this method is left as an :ref:`exercise
         <ex-tabulate>`.
