@@ -11,8 +11,10 @@ from math import *
 parser = ArgumentParser(description="""Plot the a function interpolated onto the reference element.""")
 parser.add_argument("function", type=str, nargs=1,
                     help="An expression in the coordinate vector x. E.g. sin(x[0])")
-parser.add_argument("dimension", type=int, nargs=1, choices=(1, 2))
-parser.add_argument("degree", type=int, nargs=1)
+parser.add_argument("dimension", type=int, nargs=1, choices=(1, 2),
+                    help="Dimension of reference cell.")
+parser.add_argument("degree", type=int, nargs=1,
+                    help="Degree of basis functions.")
 args = parser.parse_args()
 dim = args.dimension[0]
 degree = args.degree[0]
