@@ -116,6 +116,22 @@ line comments on your code. Make sure the pull request is against the
 the main repository then the whole class will be able to plagiarise
 your work and laugh at your mistakes!
 
+Testing your work
+-----------------
+
+As you complete the exercises, there will often be test scripts which
+exercise the code you have just written. These are located in the
+``test`` directory and employ the `pytest <http://pytest.org/>`_
+testing framework. You run the tests with:: 
+
+   py.test test_script.py
+
+replacing ``test_script.py`` with the appropriate options. The ``-x``
+option to ``py.test`` will cause the test to stop at the first failure
+it finds, which is often the best place to start fixing a problem. For
+those familiar with debuggers, the ``--pdb`` option will drop you into
+the Python debugger at the first error.
+
 
 .. |git-branch| image:: git-branch.svg
    :height: 20px
