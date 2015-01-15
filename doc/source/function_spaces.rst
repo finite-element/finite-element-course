@@ -196,8 +196,10 @@ element, and contains (in some form) a global numbering of the nodes.
 .. exercise::
    
    Implement the :meth:`__init__` method of
-   :class:`fe_utils.function_space.FunctionSpace`. The key operation
-   is to implement ``self.cell_nodes`` using :eq:`cellnode`. 
+   :class:`fe_utils.function_spaces.FunctionSpace`. The key operation
+   is to set
+   :attr:`~fe_utils.function_spaces.FunctionSpace.cell_nodes` using
+   :eq:`eqcellnode`.
 
 .. rubric:: Footnotes
 
