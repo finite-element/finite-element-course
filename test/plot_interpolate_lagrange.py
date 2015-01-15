@@ -1,9 +1,7 @@
 from matplotlib import pyplot as plt
-from mpl_toolkits.mplot3d import Axes3D
 from argparse import ArgumentParser
 from fe_utils.finite_elements import lagrange_points
 from fe_utils import ReferenceTriangle, ReferenceInterval, LagrangeElement
-from argparse import ArgumentParser
 from matplotlib import cm
 import numpy as np
 from math import *
