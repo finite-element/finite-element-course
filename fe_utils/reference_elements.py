@@ -11,7 +11,7 @@ class ReferenceCell(object):
         :param topology: a dictionary of dictionaries such that topology[d][i]
           is the list of vertices incident to the `i`-th `d`-entity.
         """
-        
+
         #: The vertices making up each topological entity of the reference cell.
         self.topology = topology
 
