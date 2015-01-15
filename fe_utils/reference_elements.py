@@ -3,7 +3,7 @@ import numpy as np
 
 class ReferenceCell(object):
 
-    def __init__(self, vertices, topology):
+    def __init__(self, vertices, topology, name):
         """An object storing the geometry and topology of the reference cell.
 
         :param vertices: a list of coordinate vectors corresponding to
@@ -12,21 +12,30 @@ class ReferenceCell(object):
           is the list of vertices incident to the `i`-th `d`-entity.
         """
 
+        #: The vertices making up each topological entity of the reference cell.
         self.topology = topology
 
+        #: The list of coordinate veritices of the reference cell.
         self.vertices = np.array(vertices, dtype=np.double)
 
-        """The geometric and topological dimension of the reference cell."""
+        self.name = name
+
+        #: The geometric and topological dimension of the reference cell.
         self.dim = self.vertices.shape[1]
 
         if self.dim != len(topology) - 1:
             raise ValueError("Dimension mismatch between vertices and topology.")
 
+    def __repr__(self):
+
+        return self.name
+
 #: A :class:`ReferenceCell` storing the geometry and topology of the interval [0, 1].
 ReferenceInterval = ReferenceCell(vertices=[[0.], [1.]],
                                   topology={0: {0: [0],
                                                 1: [1]},
-                                            1: {0: [0, 1]}})
+                                            1: {0: [0, 1]}},
+                                  name="ReferenceInterval")
 
 #: A :class:`ReferenceCell` storing the geometry and topology of the triangle
 #: with vertices [[0., 0.], [1., 0.], [0., 1.]].
@@ -37,4 +46,5 @@ ReferenceTriangle = ReferenceCell(vertices=[[0., 0.], [1., 0.], [0., 1.]],
                                             1: {0: [1, 2],
                                                 1: [0, 2],
                                                 2: [0, 1]},
-                                            2: {0: [0, 1, 2]}})
+                                            2: {0: [0, 1, 2]}},
+                                  name="ReferenceTriangle")

@@ -54,10 +54,3 @@ Implementation exercise contents:
    function_spaces
    functions
    zbibliography
-
-Indices and tables
-==================
-
-* :ref:`genindex`
-* :ref:`modindex`
-* :ref:`search`
