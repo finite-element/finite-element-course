@@ -15,7 +15,7 @@ Part 1: Numerical analysis
 --------------------------
 
 The theory part of the module will consist of two hours per week
-primarily composed of letures, with occasional tutorials. This part of
+primarily composed of lectures, with occasional tutorials. This part of
 the module will be led by `Dr Colin Cotter
 <http://www.imperial.ac.uk/people/colin.cotter>`_.
 
@@ -54,10 +54,3 @@ Implementation exercise contents:
    function_spaces
    functions
    zbibliography
-
-Indices and tables
-==================
-
-* :ref:`genindex`
-* :ref:`modindex`
-* :ref:`search`

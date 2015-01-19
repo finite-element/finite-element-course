@@ -60,7 +60,7 @@ implementation branch.
 Pointing Python at the code
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-You'll need Python to be able to find the ``fe_utils`` module from
+You'll need Python to be able to find the ``fe_utils`` package from
 wherever it is running. To do this, you need to add your repository
 directory to the ``PYTHONPATH`` environment variable. **In your
 repository directory** type the following::
@@ -82,7 +82,13 @@ repository and all issues anyone raises. For this, you should navigate
 to `the main repository
 <https://bitbucket.org/finiteelement/finite_element_course>`. On the
 top right there is an eye icon. Select the drop-down box and ensure
-that ``All issues`` and ``all pull requests`` are selected.
+that ``All issues`` and ``all commits`` are selected.
+
+Skeleton code documentation
+---------------------------
+
+There is web documentation for the complete :doc:`fe_utils`. There is
+also an :ref:`alphabetical index <genindex>` and a :ref:`search page<search>`.
 
 How to do the implementation exercises
 --------------------------------------
@@ -132,6 +138,21 @@ it finds, which is often the best place to start fixing a problem. For
 those familiar with debuggers, the ``--pdb`` option will drop you into
 the Python debugger at the first error.
 
+Coding style and commenting
+---------------------------
+
+Computer code is not just functional, it also conveys information to
+the reader. It is important to write clear, intelligible code. **The
+readability and clarity of your code will count for marks**.
+
+The Python community has agreed standards for coding, which are
+documented in `PEP8
+<https://www.python.org/dev/peps/pep-0008/>`_. There are programs and
+editor modes which can help you with this. The skeleton implementation
+follows PEP8 quite closely. You are encouraged, especially if you are
+a more experienced programmer, to follow PEP8 in your
+implementation. However nobody is going to lose marks for PEP8
+failures.
 
 .. |git-branch| image:: git-branch.svg
    :height: 20px
