@@ -14,7 +14,7 @@ class Mesh(object):
           indices of the vertices of which each cell is made up.
         """
 
-        self.dim = vertices.shape(1)
+        self.dim = vertices.shape[1]
         """The geometric and topological dimension of the mesh. Immersed
         manifolds are not supported.
         """
@@ -55,15 +55,15 @@ class Mesh(object):
             meshes)."""
 
         if self.dim == 2:
-            self.entity_counts = np.array((vertices.shape(0),
-                                           self.edge_vertices.shape(0),
-                                           self.cell.vertices.shape(0)))
+            self.entity_counts = np.array((vertices.shape[0],
+                                           self.edge_vertices.shape[0],
+                                           self.cell_vertices.shape[0]))
             """The number of entities of each dimension in the mesh. So
             :attr:`entity_counts(0)` is the number of vertices in the
             mesh."""
         else:
-            self.entity_counts = np.array((vertices.shape(0),
-                                           self.cell_vertices.shape(0)))
+            self.entity_counts = np.array((vertices.shape[0],
+                                           self.cell_vertices.shape[0]))
 
     def adjacency(self, dim1, dim2):
         """Return the set of `dim2` entities adjacent to each `dim1`

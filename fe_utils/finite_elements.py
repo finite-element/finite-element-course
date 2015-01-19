@@ -68,6 +68,9 @@ class FiniteElement(object):
         # to an array of polynomial coefficients defining the basis functions.
         raise NotImplementedError
 
+        #: The number of nodes in this element.
+        self.node_count = nodes.shape[0]
+
     def tabulate(self, points, grad=False):
         """Evaluate the basis functions of this finite element at the points
         provided.
