@@ -120,6 +120,18 @@ the unit interval the natural correspondence is with the triangle with
 vertices `[(0,0), (1,0), (0,1)]`, though different choices of
 vertex numbering are possible.
 
+Python implementations of reference elements
+--------------------------------------------
+
+The :class:`~fe_utils.reference_elements.ReferenceCell` class provides
+Python objects encoding the geometry and topology of the reference
+cell. At this stage, the relevant information is the dimension of the
+reference cell and the list of vertices. The topology will become
+important when we consider :doc:`meshes`. The reference cells we will
+require for this course are the
+:data:`~fe_utils.reference_elements.ReferenceInterval` and
+:data:`~fe_utils.reference_elements.ReferenceTriangle`.
+
 Quadrature rules on reference elements
 --------------------------------------
 
@@ -154,6 +166,7 @@ This rule has a degree of precision of 1.
 
    The weights of a quadrature rule always sum to the volume of the
    reference element. Why is this?
+
 
 Legendre-Gauß quadrature in one dimension
 -----------------------------------------

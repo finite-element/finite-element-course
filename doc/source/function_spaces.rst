@@ -113,6 +113,8 @@ the nodes in order given by the direction of the orientation of each edge.
    passes the correct ``entity_node`` dictionary to the
    :class:`~fe_utils.finite_elements.FiniteElement` it creates.
 
+   The ``test/test_entity_nodes.py`` script tests this functionality.
+
 .. hint::
 
    You can either work out the right algorithm to generate
@@ -120,6 +122,11 @@ the nodes in order given by the direction of the orientation of each edge.
    :func:`~fe_utils.finite_elements.lagrange_points` so that it
    produces the nodes in entity order, thus making the construction of
    ``entity_nodes`` straightforward.
+
+   You may find the
+   :meth:`~fe_utils.reference_elements.ReferenceCell.point_in_entity`
+   method of the :class:`~fe_utils.reference_elements.ReferenceCell`
+   class useful.
 
 Global numbering
 ----------------
@@ -189,8 +196,10 @@ element, and contains (in some form) a global numbering of the nodes.
 .. exercise::
    
    Implement the :meth:`__init__` method of
-   :class:`fe_utils.function_space.FunctionSpace`. The key operation
-   is to implement ``self.cell_nodes`` using :eq:`cellnode`. 
+   :class:`fe_utils.function_spaces.FunctionSpace`. The key operation
+   is to set
+   :attr:`~fe_utils.function_spaces.FunctionSpace.cell_nodes` using
+   :eq:`eqcellnode`.
 
 .. rubric:: Footnotes
 
