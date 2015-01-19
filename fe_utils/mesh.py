@@ -47,8 +47,8 @@ class Mesh(object):
 
             self.cell_edges = np.fromiter(
                 (edge_dict[tuple(t.take(local_edge_vertices[e]))]
-                 for e in range(3)
-                 for t in self.cell_vertices),
+                 for t in self.cell_vertices
+                 for e in range(3)),
                 dtype=np.int32,
                 count=self.cell_vertices.size).reshape((-1, 3))
             """The indices of the edges incident to each cell (only for 2D
@@ -99,9 +99,11 @@ class UnitSquareMesh(Mesh):
         :param nx: The number of cells in the x direction.
         :param ny: The number of cells in the y direction.
         """
-        points = list((x, y) for x in np.arange(nx) for y in np.arange(ny))
+        points = list((x, y)
+                      for x in np.linspace(0, 1, nx + 1)
+                      for y in np.linspace(0, 1, nx + 1))
 
         mesh = triangle.triangulate({"vertices": points})
 
         super(UnitSquareMesh, self).__init__(mesh["vertices"],
-                                             mesh["triangles"])
+                                             np.sort(mesh["triangles"]))
