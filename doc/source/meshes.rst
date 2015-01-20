@@ -77,7 +77,7 @@ share the number of the opposite vertex. The orientation of the edges
 is also shown, this is always from the lower numbered vertex to the
 higher numbered one.
 
-The :class:`~fe_utils.reference_cells.ReferenceCell` class stores the
+The :class:`~fe_utils.reference_elements.ReferenceCell` class stores the
 local topology of the reference cell. `Read the source
 <_modules/fe_utils/reference_elements.html>`_ and ensure that you
 understand the way in which this information is encoded.

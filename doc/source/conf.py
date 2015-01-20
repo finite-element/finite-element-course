@@ -34,7 +34,8 @@ extensions = [
     'sphinx.ext.mathjax',
     'sphinx.ext.viewcode',
     'clatex_builder',
-    'sphinxcontrib.bibtex'
+    'sphinxcontrib.bibtex',
+    'sphinxcontrib.autoprogram'
 ]
 # Both the class’ and the __init__ method’s docstring are concatenated and
 # inserted into the class definition

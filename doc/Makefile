@@ -7,7 +7,7 @@ SPHINXBUILD   = sphinx-build
 PAPER         =
 BUILDDIR      = build
 
-PYTHONPATH := $(PWD)/..:$(PWD)/sphinx_latex:$(PYTHONPATH) 
+PYTHONPATH := $(PWD)/..:$(PWD)/../test:$(PWD)/sphinx_latex:$(PYTHONPATH) 
 
 # User-friendly check for sphinx-build
 ifeq ($(shell which $(SPHINXBUILD) >/dev/null 2>&1; echo $$?), 1)
