@@ -25,6 +25,11 @@ fortunately paid for PDF access to this book, so it is accessible from
 the Imperial College network at `Springer Link
 <http://link.springer.com/book/10.1007%2F978-0-387-75934-0>`_.
 
+Problem sheets
+~~~~~~~~~~~~~~
+
+* `Examples sheet 1 <_static/FE_examples1.pdf>`_
+
 Part 2: Implementation
 ----------------------
 

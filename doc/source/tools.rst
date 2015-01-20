@@ -115,7 +115,7 @@ executing commands on the Linux command line. For example you use the
 command line to work with the revision control system, to run your
 code and to run the tests provided. If you're not familiar with the
 Linux command line, then a brief guide `is available here
-<http://www.tuxarena.com/static/intro_linux_cli.php>`. That guide
+<http://www.tuxarena.com/static/intro_linux_cli.php>`_. That guide
 focusses on the Bash shell, which is the one we will use.
 
 Python
