@@ -161,7 +161,7 @@ relatively low order computations.
 
      python test/plot_lagrange_points.py degree
    
-   Where degree is the degree of the points to plot. See also.
+   Where degree is the degree of the points to plot.
 
 .. hint::
    

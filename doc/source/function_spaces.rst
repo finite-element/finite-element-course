@@ -201,6 +201,11 @@ element, and contains (in some form) a global numbering of the nodes.
    :attr:`~fe_utils.function_spaces.FunctionSpace.cell_nodes` using
    :eq:`eqcellnode`.
 
+   You can plot the numbering you have created with the
+   ``test/plot_function_space_nodes.py`` script. As usual, run the
+   script passing the ``-h`` option to discover the required
+   arguments.
+
 .. rubric:: Footnotes
 
 .. [#globalnumbering]  Many correct global numberings are possible,
