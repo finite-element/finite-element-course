@@ -77,7 +77,7 @@ share the number of the opposite vertex. The orientation of the edges
 is also shown, this is always from the lower numbered vertex to the
 higher numbered one.
 
-The :class:`~fe_utils.reference_cells.ReferenceCell` class stores the
+The :class:`~fe_utils.reference_elements.ReferenceCell` class stores the
 local topology of the reference cell. `Read the source
 <_modules/fe_utils/reference_elements.html>`_ and ensure that you
 understand the way in which this information is encoded.
@@ -168,9 +168,20 @@ mesh objects in 1 and 2 dimensions. Given the list of vertices making
 up each cell, it constructs the rest of the adjacency function. It
 also records the coordinates of the vertices.
 
-The :class:`~fe_utils.mesh.UnitSquareMesh` function creates a
+The :class:`~fe_utils.mesh.UnitSquareMesh` class creates a
 :class:`~fe_utils.mesh.Mesh` object corresponding to a regular
-triangular mesh of a unit square.
+triangular mesh of a unit square. Similarly, the
+:class:`~fe_utils.mesh.UnitIntervalMesh` class performs the
+corresponding (rather trivial) function for a unit one dimensional
+mesh.
+
+You can observe the numbering of mesh entities in these meshes using
+the ``test/plot_mesh.py`` script. Run::
+
+  python test/plot_mesh.py -h
+
+for usage instructions.
+
 
 
 .. rubric:: Footnotes

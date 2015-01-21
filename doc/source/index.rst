@@ -15,7 +15,7 @@ Part 1: Numerical analysis
 --------------------------
 
 The theory part of the module will consist of two hours per week
-primarily composed of letures, with occasional tutorials. This part of
+primarily composed of lectures, with occasional tutorials. This part of
 the module will be led by `Dr Colin Cotter
 <http://www.imperial.ac.uk/people/colin.cotter>`_.
 
@@ -24,6 +24,11 @@ Mathematical Theory of Finite Element Methods*. Imperial College has
 fortunately paid for PDF access to this book, so it is accessible from
 the Imperial College network at `Springer Link
 <http://link.springer.com/book/10.1007%2F978-0-387-75934-0>`_.
+
+Problem sheets
+~~~~~~~~~~~~~~
+
+* `Examples sheet 1 <_static/FE_examples1.pdf>`_
 
 Part 2: Implementation
 ----------------------

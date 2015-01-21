@@ -84,6 +84,31 @@ to `the main repository
 top right there is an eye icon. Select the drop-down box and ensure
 that ``All issues`` and ``all commits`` are selected.
 
+Updating your fork
+~~~~~~~~~~~~~~~~~~
+
+When you see that the main repository has been updated, you'll need to
+update your fork to incorporate those changes. It is possible to do
+this using git commands on the command line, but there is a more
+simple graphical way to do it:
+
+#. Make sure you have commited all your local changes **and** pushed
+   them to bitbucket.
+#. Navigate to the bitbucket overview page for your repository. If
+   there are changes to the main repository which are not yet in your
+   fork, there will be a blue box on the right saying ``This fork is n
+   commits behind finiteelement/finite_element_course.`` You should
+   click on ``Sync now.``
+#. A window will appear confirming that you want to sync the
+   repositories. Click ``Sync``.
+#. Click on the branches icon: |git-branch|. Move your mouse over the
+   ``implementation`` row and an elipsis (...) will appear on the
+   right. Click on the elipsis and select ``Sync branch`` from the
+   menu that appears.
+#. A window will appear confirming that you want to sync the
+   branches. Click ``Sync``.
+#. Update your local copy of the repository by typing ``git pull``.
+
 Skeleton code documentation
 ---------------------------
 
