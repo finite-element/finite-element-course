@@ -5,7 +5,7 @@ import numpy as np
 
 class QuadratureRule(object):
     def __init__(self, cell, degree, points, weights):
-        """A qaudrature rule implementing integration of the reference cell
+        """A quadrature rule implementing integration of the reference cell
         provided.
 
         :param cell: the :class:`~.ReferenceCell` over which this quadrature
