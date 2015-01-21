@@ -49,8 +49,8 @@ Starting PuTTY (SSH)
      moves around the screen. This demonstrates that the graphical
      program forwarding is working.
 
-Using your own machine
-~~~~~~~~~~~~~~~~~~~~~~
+Using your own Linux machine
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 If you plan to use your own machine for the module, you will need a
 basic scientific Python toolchain and the visualisation package
@@ -58,9 +58,65 @@ Paraview. On Ubuntu and its relatives, this can be achieved with::
 
   sudo apt-get install ipython python-scipy python-pytest python-matplotlib paraview
 
-If you wish to use MacOS then please consult the lecturer as we will
-have to work through the install for that operating system.
+Using your own Mac
+~~~~~~~~~~~~~~~~~~
 
+This is an experimental set of instructions for obtaining the software
+you need on Mac. Please say if you encounter any trouble.
+
+We recommend using `Homebrew <http://brew.sh>`__ as a package manager
+for the required packages on Mac OS systems.  Obtaining a build
+environment for PyOP2 consists of the following:
+
+1. Install Xcode.  For OS X 10.9 (Mavericks) this is possible through
+   the App Store.  For earlier versions, try
+   https://developer.apple.com/downloads (note that on OS X 10.7
+   (Lion) you will need to obtain Xcode 4.6 rather than Xcode 5)
+
+2. If you did not install Xcode 5, you will need to additionally
+   install the Xcode command line tools through the downloads section
+   of Xcode's preferences
+
+3. Install homebrew, following the instructions at http://brew.sh
+
+4. Install an up-to-date Python via homebrew::
+
+     brew install python
+
+   .. note::
+
+      Do not follow the instructions to update pip, since they
+      currently result in a broken pip installation (see
+      https://github.com/Homebrew/homebrew/issues/26900)
+
+5. Install numpy via homebrew::
+
+     brew tap homebrew/python
+     brew install numpy
+
+6. Install python dependencies via pip::
+
+     pip install decorator
+     pip install cython
+     pip install ipython
+     pip install matplotlib
+     pip install triangle
+     pip install pytest
+     pip install flake8
+
+7. Download and install a Paraview binary from the `paraview website <http://www.paraview.org>`_.
+
+
+The command line
+----------------
+
+A lot of the routine activity involved in this module revolves around
+executing commands on the Linux command line. For example you use the
+command line to work with the revision control system, to run your
+code and to run the tests provided. If you're not familiar with the
+Linux command line, then a brief guide `is available here
+<http://www.tuxarena.com/static/intro_linux_cli.php>`_. That guide
+focusses on the Bash shell, which is the one we will use.
 
 Python
 ------

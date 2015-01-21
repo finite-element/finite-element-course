@@ -159,9 +159,9 @@ relatively low order computations.
    ``test/test_lagrange_points.py``. You can also test your lagrange
    points on the triangle by running:: 
 
-     py.test test/plot_lagrange_points.py degree
+     python test/plot_lagrange_points.py degree
    
-   Where degree is the degree of the points to print.
+   Where degree is the degree of the points to plot.
 
 .. hint::
    
@@ -293,7 +293,7 @@ the particular case of the equispaced Lagrange elements.
    **After** you have implemented
    :meth:`~fe_utils.finite_elements.FiniteElement.tabulate` in the
    next exercise, you can use
-   ``test/plot_lagrange_basis_functions.py`` to visualise your
+   ``plot_lagrange_basis_functions.py`` to visualise your
    Lagrange basis functions.
 
 Tabulating basis functions

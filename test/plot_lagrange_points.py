@@ -4,19 +4,22 @@ from fe_utils import ReferenceTriangle
 from argparse import ArgumentParser
 
 parser = ArgumentParser(description="""Plot the nodes on the reference triangle""")
-parser.add_argument("degree", type=int, nargs=1)
-args = parser.parse_args()
+parser.add_argument("degree", type=int, nargs=1,
+                    help="The degree of Lagrange polynomials for which to plot the nodes")
 
-fig = plt.figure()
-ax = fig.add_subplot(111)
+if __name__=="__main__":
+    args = parser.parse_args()
 
-p = lagrange_points(ReferenceTriangle, args.degree[0])
+    fig = plt.figure()
+    ax = fig.add_subplot(111)
 
-plt.plot(p[:, 0], p[:, 1], 'bo')
+    p = lagrange_points(ReferenceTriangle, args.degree[0])
 
-for i, x in enumerate(p):
-    ax.annotate(str(i), xy=x, xytext=(10, 0), textcoords='offset points')
+    plt.plot(p[:, 0], p[:, 1], 'bo')
 
-ax.axis([-.1, 1.1, -.1, 1.1])
+    for i, x in enumerate(p):
+        ax.annotate(str(i), xy=x, xytext=(10, 0), textcoords='offset points')
 
-plt.show()
+    ax.axis([-.1, 1.1, -.1, 1.1])
+    
+    plt.show()
