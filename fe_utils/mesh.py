@@ -119,7 +119,7 @@ class UnitSquareMesh(Mesh):
         """
         points = list((x, y)
                       for x in np.linspace(0, 1, nx + 1)
-                      for y in np.linspace(0, 1, nx + 1))
+                      for y in np.linspace(0, 1, ny + 1))
 
         mesh = triangle.triangulate({"vertices": points})
 

@@ -13,11 +13,11 @@ parser.add_argument("dimension", type=int, nargs=1, choices=(1, 2),
 parser.add_argument("degree", type=int, nargs=1,
                     help="Degree of polynomial basis.")
 
-if __name__=="__main__":
+if __name__ == "__main__":
     args = parser.parse_args()
     dim = args.dimension[0]
     degree = args.degree[0]
-   
+
     cells = (None, ReferenceInterval, ReferenceTriangle)
 
     fe = LagrangeElement(cells[dim], degree)
@@ -32,7 +32,7 @@ if __name__=="__main__":
 
         for y_ in y.T:
             plt.plot(x, y_)
-            
+
     if dim == 2:
         x = lagrange_points(ReferenceTriangle, 20)
         z = fe.tabulate(x)
