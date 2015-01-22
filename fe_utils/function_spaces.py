@@ -155,6 +155,6 @@ class Function(object):
                      for i in range(degree - j)]
                     # Down triangles.
                     + [np.add(np.sum(range(degree + 2 - j, degree + 2)),
-                              (i+1, i + degree + 1 - j, i + degree + 1 - j + 1))
+                              (i+1, i + degree + 1 - j + 1, i + degree + 1 - j))
                        for j in range(degree - 1)
                        for i in range(degree - 1 - j)]))
