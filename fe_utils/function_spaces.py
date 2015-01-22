@@ -1,9 +1,10 @@
+from __future__ import division
 import numpy as np
 from . import ReferenceTriangle, ReferenceInterval
-from .finite_element import LagrangeElement, lagrange_points
+from .finite_elements import LagrangeElement, lagrange_points
 from matplotlib import pyplot as plt
 from mpl_toolkits.mplot3d import Axes3D
-from matplotlib import cm
+from matplotlib.tri import Triangulation
 
 
 class FunctionSpace(object):
@@ -33,6 +34,11 @@ class FunctionSpace(object):
 
         #: The total number of nodes in the function space.
         self.node_count = np.dot(element.nodes_per_entity, mesh.entity_counts)
+
+    def __repr__(self):
+        return "%s(%s, %s)" % (self.__class__.__name__,
+                               self.mesh,
+                               self.element)
 
 
 class Function(object):
@@ -69,10 +75,10 @@ class Function(object):
 
         # Create a map from the vertices to the element nodes on the
         # reference cell.
-        cg1 = LagrangeElement(fs.cell, 1)
+        cg1 = LagrangeElement(fs.element.cell, 1)
         coord_map = cg1.tabulate(fs.element.nodes)
 
-        for c in fs.mesh.entity_counts[-1]:
+        for c in range(fs.mesh.entity_counts[-1]):
             # Interpolate the coordinates to the cell nodes.
             vertex_coords = fs.mesh.vertex_coords[fs.mesh.cell_vertices[c, :], :]
             node_coords = np.dot(coord_map, vertex_coords)
@@ -80,7 +86,10 @@ class Function(object):
             self.values[fs.cell_nodes[c, :]] = [fn(x) for x in node_coords]
 
     def plot(self, subdivisions=None):
-        """Plot the value of this :class:`Function`.
+        """Plot the value of this :class:`Function`. This is quite a low
+        performance plotting routine so it will perform poorly on
+        larger meshes, but it has the advantage of supporting higher
+        order function spaces than many widely available libraries.
 
         :param subdivisions: The number of points in each direction to
           use in representing each element. The default is
@@ -94,39 +103,58 @@ class Function(object):
 
         d = subdivisions or (2 * (fs.element.degree + 1) if fs.element.degree > 1 else 2)
 
-        # Interpolation rule for element values.
-        local_coords = lagrange_points(fs.element.cell, d)
+        if fs.element.cell is ReferenceInterval:
+            fig = plt.figure()
+            fig.add_subplot(111)
+            # Interpolation rule for element values.
+            local_coords = lagrange_points(fs.element.cell, d)
+
+        elif fs.element.cell is ReferenceTriangle:
+            fig = plt.figure()
+            ax = fig.gca(projection='3d')
+            local_coords, triangles = self._lagrange_triangles(d)
+
+        else:
+            raise ValueError("Unknown reference cell: %s" % fs.element.cell)
+
         function_map = fs.element.tabulate(local_coords)
 
         # Interpolation rule for coordinates.
-        cg1 = LagrangeElement(fs.cell, 1)
-        coord_map = cg1.tabulate(fs.element.nodes)
+        cg1 = LagrangeElement(fs.element.cell, 1)
+        coord_map = cg1.tabulate(local_coords)
 
-        values = set()
-
-        for c in fs.mesh.entity_counts[-1]:
+        for c in range(fs.mesh.entity_counts[-1]):
             vertex_coords = fs.mesh.vertex_coords[fs.mesh.cell_vertices[c, :], :]
             x = np.dot(coord_map, vertex_coords)
 
-            local_function_coefs = fs.values[fs.cell_nodes[c, :]]
+            local_function_coefs = self.values[fs.cell_nodes[c, :]]
             v = np.dot(function_map, local_function_coefs)
 
-            values.update(zip(x, v))
+            if fs.element.cell is ReferenceInterval:
 
-        if fs.element.cell is ReferenceInterval:
-            x, v = map(np.array, zip(*sorted(values)))
+                plt.plot(x[:, 0], v, 'k')
 
-            fig = plt.figure()
-            fig.add_subplot(111)
-
-            plt.plot(x, v)
-
-        else:
-            x, v = map(np.array, zip(*values))
-
-            fig = plt.figure()
-            ax = fig.gca(projection='3d')
-
-            ax.plot_trisurf(x[:, 0], x[:, 1], v, cmap=cm.RdBu, linewidth=0)
+            else:
+                ax.plot_trisurf(Triangulation(x[:, 0], x[:, 1], triangles),
+                                v, linewidth=0)
 
         plt.show()
+
+    @staticmethod
+    def _lagrange_triangles(degree):
+        # Triangles linking hte Lagrange points.
+
+        return (np.array([[i / degree, j / degree]
+                          for j in range(degree + 1)
+                          for i in range(degree + 1 - j)]),
+                np.array(
+                    # Up triangles
+                    [np.add(np.sum(range(degree + 2 - j, degree + 2)),
+                            (i, i + 1, i + degree + 1 - j))
+                     for j in range(degree)
+                     for i in range(degree - j)]
+                    # Down triangles.
+                    + [np.add(np.sum(range(degree + 2 - j, degree + 2)),
+                              (i+1, i + degree + 1 - j, i + degree + 1 - j + 1))
+                       for j in range(degree - 1)
+                       for i in range(degree - 1 - j)]))

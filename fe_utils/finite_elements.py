@@ -109,6 +109,11 @@ class FiniteElement(object):
 
         raise NotImplementedError
 
+    def __repr__(self):
+        return "%s(%s, %s)" % (self.__class__.__name__,
+                               self.cell,
+                               self.degree)
+
 
 class LagrangeElement(FiniteElement):
     def __init__(self, cell, degree):
