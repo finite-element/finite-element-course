@@ -188,8 +188,9 @@ the corresponding degree `n` generalised Vandermonde matrix is given by:
     1 & x_m & y_m & x_m^2 & x_my_m & y_m^2 & \ldots & x_m^n & x_m^{n-1}y_m & \ldots & x_my_m^{n-1} & y_m^n \\
     \end{bmatrix}
 
-The equation for the complete set of basis function polynomial coefficients 
-is then:
+If we construct the Vandermonde matrix for the nodes of a finite
+element, then the equation for the complete set of basis function
+polynomial coefficients is:
 
 .. math::
    :label: vdm-equation
