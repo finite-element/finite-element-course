@@ -179,5 +179,26 @@ a more experienced programmer, to follow PEP8 in your
 implementation. However nobody is going to lose marks for PEP8
 failures.
 
+Tips and tricks for the implementation exercise
+-----------------------------------------------
+
+Work from the documentation.
+   The notes, and particularly the exercise specifications, contain
+   important information about how and what to implement. If you just
+   read the source code then you will miss out on important
+   information.
+Read the hints
+   The pink sections in the notes starting with a lightbulb are
+   hints. Usually they contain suggestions about how to go about
+   writing your answer, or suggest Python functions which you might
+   find useful.
+Don't forget the 1D case
+   Your finite element library needs to work in one and two dimensions.
+Return a :class:`numpy.array`
+   Many of the functions you have to write return arrays. Make sure
+   you actually return an array and not a list (it's usually fine to
+   build the answer as a list, but convert it to an array before you
+   return it).
+
 .. |git-branch| image:: git-branch.svg
    :height: 20px
