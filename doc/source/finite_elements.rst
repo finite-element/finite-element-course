@@ -258,8 +258,8 @@ which the evaluation should occur.
    Implement the rest of the
    :class:`~fe_utils.finite_elements.FiniteElement` :meth:`__init__`
    method. You should construct a Vandermonde matrix for the nodes and
-   invert it to create the basis function coeffs. Store these as
-   ``self.basis_coeffs``. 
+   invert it to create the basis function coefs. Store these as
+   ``self.basis_coefs``. 
 
    Some basic tests of your implementation are in
    ``test/test_init_finite_element.py``.
