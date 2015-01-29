@@ -83,7 +83,9 @@ class FiniteElement(object):
         :result: an array containing the value of each basis function
             at each point. If `grad` is `True`, the gradient vector of
             each basis vector at each point is returned as a rank 3
-            array.
+            array. The shape of the array is (points, nodes) if
+            ``grad`` is ``False`` and (points, nodes, dim) if ``grad``
+            is ``True``.
 
         The implementation of this method is left as an :ref:`exercise
         <ex-tabulate>`.
