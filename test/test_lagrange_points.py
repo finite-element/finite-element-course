@@ -6,6 +6,21 @@ from scipy.misc import comb
 import numpy as np
 
 
+# Test that the right type is returned.
+@pytest.mark.parametrize('cell', (ReferenceInterval, ReferenceTriangle))
+def test_point_type(cell):
+
+    assert isinstance(lagrange_points(cell, 1), np.ndarray), \
+        "Return type of lagrange_points must be numpy array"
+
+
+# Test that the right shape is returned in the 1D case.
+def test_point_shape():
+
+    assert lagrange_points(ReferenceInterval, 1).shape == (2, 1), \
+        "In 1D, lagrange_points must return a list of 1-vectors, not a list of floats"
+
+
 # Test number of points for polynomials of degree up to 8
 @pytest.mark.parametrize('cell, degree',
                          [(c, d)
