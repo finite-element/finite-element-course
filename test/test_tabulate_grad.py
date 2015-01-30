@@ -4,6 +4,18 @@ from fe_utils import ReferenceTriangle, ReferenceInterval, LagrangeElement
 import numpy as np
 
 
+@pytest.mark.parametrize('cell', (ReferenceInterval, ReferenceTriangle))
+def test_tabulate_matrix_rank(cell):
+    fe = LagrangeElement(cell, 2)
+
+    points = np.ones((4, cell.dim))
+
+    t = fe.tabulate(points, grad=True)
+
+    assert len(t.shape) == 3, \
+        "tabulate with grad=True must return a rank 3 array, not rank %s" % len(t.shape)
+
+
 @pytest.mark.parametrize('cell, degree',
                          [(c, d)
                           for c in (ReferenceInterval, ReferenceTriangle)
@@ -12,9 +24,13 @@ def test_tabulate_grad_shape(cell, degree):
     """Check that tabulating at the nodes produces the identity matrix."""
     fe = LagrangeElement(cell, degree)
 
-    vals = fe.tabulate([[0] * cell.dim], grad=True)
+    vals = fe.tabulate(np.array([[0] * cell.dim]), grad=True)
 
-    assert vals.shape == (1, fe.nodes.shape[0], cell.dim)
+    correct_shape = (1, fe.nodes.shape[0], cell.dim)
+
+    assert vals.shape == correct_shape, \
+        "tabulate should have returned an array of shape %s, not %s"\
+        % (correct_shape, vals.shape)
 
 
 def test_tabulate_grad_1D():
