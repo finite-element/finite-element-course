@@ -6,6 +6,28 @@ import numpy as np
 from scipy.misc import comb
 
 
+@pytest.mark.parametrize('cell', (ReferenceInterval, ReferenceTriangle))
+def test_vandermond_matrix_type(cell):
+
+    points = np.ones((4, cell.dim))
+
+    v = vandermonde_matrix(cell, 2, points)
+
+    assert isinstance(v, np.ndarray), \
+        "vandermonde matrix must return a numpy array, not a %s" % type(v)
+
+
+@pytest.mark.parametrize('cell', (ReferenceInterval, ReferenceTriangle))
+def test_vandermond_matrix_rank(cell):
+
+    points = np.ones((4, cell.dim))
+
+    v = vandermonde_matrix(cell, 2, points)
+
+    assert len(v.shape) == 2, \
+        "vandermonde matrix must return a rank 2 array, not rank %s" % len(v.shape)
+
+
 @pytest.mark.parametrize('cell, degree',
                          [(c, d)
                           for c in (ReferenceInterval, ReferenceTriangle)
@@ -16,7 +38,11 @@ def test_vandermonde_matrix_size(cell, degree):
 
     shape = vandermonde_matrix(cell, degree, points).shape
 
-    assert shape == (1, int(comb(degree + cell.dim, cell.dim)))
+    correct_shape = (1, np.round(comb(degree + cell.dim, cell.dim)))
+
+    assert shape == correct_shape, \
+        "vandermonde matrix should have returned an array of shape %s, not %s"\
+        % (correct_shape, shape)
 
 
 @pytest.mark.parametrize('degree', range(8))
