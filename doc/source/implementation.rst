@@ -136,7 +136,7 @@ than large ones. **Never** commit back to the ``master`` branch of your
 fork, that should always remain a clean copy of the main repository.
 
 Pull requests for feedback
-~~~~~~~~~~~~~~~~~~~~~~~~~~
+--------------------------
 
 There will be a formal opportunity to recieve feedback on your code
 progress every two weeks. To take part, you should set up a pull
@@ -146,6 +146,24 @@ line comments on your code. Make sure the pull request is against the
 ``master`` branch of your private fork - if you pull request against
 the main repository then the whole class will be able to plagiarise
 your work and laugh at your mistakes!
+
+Creating your pull request
+~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+#. Click on the pull request icon |pullrequest| on the left of your
+   fork's bitbucket page. 
+#. On the top right of the pull requests screen click on ``Create pull
+   request``.
+#. Change the **left** dropdown box to ``implementation``.
+#. Change the **top right** dropdown box to list your fork instead of
+   the main repository. Leave the bottom right box set to ``master``.
+#. Type a suitable title in the title box. For example 
+   ``Request for feedback 30/1/15``.
+#. If you have any comments you would like to pass on to the lecturer
+   (for example questions about how you should have done a particular
+   exercise) then type these in the ``Decription`` box.
+#. Click ``Create pull request``.
+
 
 Testing your work
 -----------------
@@ -201,4 +219,7 @@ Return a :class:`numpy.array`
    return it).
 
 .. |git-branch| image:: git-branch.svg
+   :height: 20px
+
+.. |pullrequest| image:: _static/pullrequest.png
    :height: 20px
