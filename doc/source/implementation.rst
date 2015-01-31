@@ -161,7 +161,7 @@ Creating your pull request
    ``Request for feedback 30/1/15``.
 #. If you have any comments you would like to pass on to the lecturer
    (for example questions about how you should have done a particular
-   exercise) then type these in the ``Decription`` box.
+   exercise) then type these in the ``Description`` box.
 #. Click ``Create pull request``.
 
 
