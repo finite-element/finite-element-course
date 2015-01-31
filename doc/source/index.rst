@@ -11,6 +11,10 @@ anywhere.
 
    practicalities
 
+.. image:: _static/brenner_scott.png
+   :align: right
+   :width: 20ex
+
 Part 1: Numerical analysis
 --------------------------
 
