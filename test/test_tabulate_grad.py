@@ -39,7 +39,14 @@ def test_tabulate_grad_1D():
 
     vals = fe.tabulate([[0]], grad=True)
 
-    assert ((vals - np.array([[[-1], [1]]])).round(12) == 0).all()
+    correct_answer = np.array([[[-1], [1]]], dtype=np.double)
+
+    print "Your answer is:"
+    print vals
+    print "The correct answer is:"
+    print correct_answer
+
+    assert ((vals - correct_answer).round(12) == 0).all()
 
 
 def test_tabulate_grad_2D():
@@ -48,7 +55,14 @@ def test_tabulate_grad_2D():
 
     vals = fe.tabulate([[0, 0]], grad=True)
 
-    assert ((vals - np.array([[[-1, -1], [1, 0], [0, 1]]])).round(12) == 0).all()
+    correct_answer = np.array([[[-1, -1], [1, 0], [0, 1]]], dtype=np.double)
+
+    print "Your answer is:"
+    print vals
+    print "The correct answer is:"
+    print correct_answer
+
+    assert ((vals - correct_answer).round(12) == 0).all()
 
 
 if __name__ == '__main__':
