@@ -37,7 +37,7 @@ def test_tabulate_grad_1D():
     """Check that tabulating the gradient of a first degree element is correct."""
     fe = LagrangeElement(ReferenceInterval, 1)
 
-    vals = fe.tabulate([[0]], grad=True)
+    vals = fe.tabulate(np.array([[0]]), grad=True)
 
     correct_answer = np.array([[[-1], [1]]], dtype=np.double)
 
@@ -53,7 +53,7 @@ def test_tabulate_grad_2D():
     """Check that tabulating the gradient of a first degree element is correct."""
     fe = LagrangeElement(ReferenceTriangle, 1)
 
-    vals = fe.tabulate([[0, 0]], grad=True)
+    vals = fe.tabulate(np.array([[0, 0]]), grad=True)
 
     correct_answer = np.array([[[-1, -1], [1, 0], [0, 1]]], dtype=np.double)
 
