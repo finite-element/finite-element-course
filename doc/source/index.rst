@@ -32,7 +32,8 @@ the Imperial College network at `Springer Link
 Problem sheets
 ~~~~~~~~~~~~~~
 
-* `Examples sheet 1 <_static/FE_examples1.pdf>`_
+* `Examples sheet 1 <_static/FE_examples1.pdf>`_ and
+  `answers <_static/FE_examples1_solns.pdf>`_.
 
 Part 2: Implementation
 ----------------------
