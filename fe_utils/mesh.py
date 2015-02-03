@@ -94,6 +94,15 @@ class Mesh(object):
             else:
                 return self.cell_edges
 
+    def jacobian(self, c):
+        """Return the Jacobian matrix for the specified cell.
+
+        :param c: The number of the cell for which to return the Jacobian.
+        :result: The Jacobian for cell ``c``.
+        """
+
+        raise NotImplementedError
+
 
 class UnitIntervalMesh(Mesh):
     """A mesh of the unit interval."""

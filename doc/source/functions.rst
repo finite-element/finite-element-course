@@ -33,13 +33,15 @@ which we wish to approximate in as a function `f(x)` in some finite
 element space `V`. In other words, we want to find the `f_i` such that:
 
 .. math::
+   :label:
 
-  \sum_i f_i \phi_i(x) \approx g(x)
+   \sum_i f_i \phi_i(x) \approx g(x)
 
 The simplest way to do this is to *interpolate* `g(x)` onto `V`. In
 other words, we evaluate:
 
 .. math::
+   :label:
 
    f_i = n_i(g(x))
 
@@ -47,6 +49,7 @@ where `n_i` is the node associated with `\phi_i`. Since we are only
 concerned with point evaluation nodes, this is equivalent to:
 
 .. math::
+   :label:
 
    f_i = g(x_i)
 
@@ -66,10 +69,11 @@ local coordinates will be written as `X` and global coordinates as
 coordinates are the linear interpolation of the global coordinate
 values at the cell vertices. In other words, if `\{\psi_j\}` is the
 local basis for the **linear** lagrange elements on the reference cell and
-`\hat{X}_j` are the corresponding global vertex locations on a cell `c`
+`\hat{x}_j` are the corresponding global vertex locations on a cell `c`
 then:
 
 .. math::
+   :label: change
 
    x = \sum_j \hat{x}_j \psi_j(X) \quad \forall x \in c.
 
@@ -80,14 +84,16 @@ evaluate all the basis functions of an element at a known set of
 points. So if we write:
 
 .. math::
+   :label: foo0
 
-   M_{i,j} = \psi_j(X_i)
+   A_{i,j} = \psi_j(X_i)
 
 where {X_i} are the node points of our finite element, then:
 
 .. math::
+   :label: foo1
 
-   x = M\cdot \hat{x}
+   x = A\cdot \hat{x}
 
 Where `\hat{x}` is the `(\dim+1, \dim)` array whose rows are the current
 element vertex coordinates, and `x` is the `(\textrm{nodes}, \dim)` array whose
@@ -158,3 +164,122 @@ interpolates a user-provided function onto the
    the programming constructs used in
    :meth:`~fe_utils.function_spaces.Function.interpolate` will be
    needed when you implement integration.
+
+Integration
+-----------
+
+We now come to one of the fundamental operations in the finite element
+method: integrating a :class:`~fe_utils.function_spaces.Function` over
+the domain. The full finite element method actually requires the
+integration of expressions of unknown test and trial functions, but we
+will start with the more straightforward case of integrating a single,
+known, :class:`~fe_utils.function_spaces.Function` over a domain
+`\Omega`:
+
+.. math::
+   :label:
+
+   \int_\Omega f \mathrm{d} x \quad f \in V
+
+where `\mathrm{d}x` should be understood as being the volume measure
+with the correct dimension for the domain and `V` is some finite
+element space over `Omega`. We can express this integral as a sum of
+integrals over individual cells:
+
+.. math::
+   :label:
+
+   \int_\Omega f \mathrm{d} x = \sum_{c\in\Omega} \int_c f \mathrm{d} x.
+
+So we have in fact reduced the integration problem to the problem of
+integrating `f` over each cell. In :doc:`a previous part <quadrature>`
+of the module we implemented quadrature rules which enable us to
+integrate over specified reference cells. If we can express the
+integral over some arbitrary cell `c` as an integral over a reference
+cell `c_0` then we are done. In fact this simply requires us to employ
+the change of variables formula for integration:
+
+.. math::
+   :label:
+
+   \int_{c} f(x) \mathrm{d} x = \int_{c_0} f(X) |J|\mathrm{d} X
+
+where `|J|` is the determinant of the Jacobian matrix. `J` is given by:
+
+.. math::
+   :label: jacobian_def 
+
+   J_{\alpha\beta} = \frac{\partial x_\alpha}{\partial X_\beta}.
+
+.. hint::
+
+   We will generally adopt the convention of using Greek letters to
+   indicate indices in spatial dimensions, while we will use Roman
+   letters in the sequence `i,j,\ldots` for basis function indices. We
+   will continue to use `q` for the index over the quadrature points.
+
+Evaluating :eq:`jacobian_def` depends on having an expression for `x` in
+terms of `X`. Fortunately, :eq:`change` is exactly this expression,
+and applying the usual rule for differentiating functions in finite
+element spaces produces:
+
+.. math::
+   :label: jacobian
+
+   J_{\alpha\beta} = \sum_j (\tilde{x}_j)_\alpha \nabla_\beta\psi_j(X)
+
+where `\{\psi_j\}` is once again the degree 1 Lagrange basis and
+`\{\tilde{x}_j\}` are the coordinates of the corresponding vertices of
+cell `c`. The presence of `X` in :eq:`jacobian` implies that the
+Jacobian varies spatially across the reference cell. However since
+`\{\psi_j\}` is the degree 1 Lagrange basis, the gradients of the
+basis functions are constant over the cell and so it does not matter
+at which point in the cell the Jacobian is evaluated. For example we
+might choose to evaluate the Jacobian at the cell origin `X=0`.
+
+.. hint::
+
+   When using simplices with curved sides, and on all but the simplest
+   quadrilateral or hexahedral meshes, the change of coordinates
+   will not be affine. In that case, to preserve full accuracy it will be
+   necessary to compute the Jacobian at every quadrature
+   point. However, non-affine coordinate transforms are beyond the
+   scope of this course.
+
+Expressing the function in the finite element basis
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+Let `\{\phi_i(X)\}` be a local basis for `V` on the reference element
+`c_0`. Then our integral becomes:
+
+.. math::
+   :label:
+
+   \int_c f(x)\mathrm{d}x  = \int_{c_0} \sum_i F(M(c,i))\,\phi_i(X)\, |J|\,\mathrm{d} X
+
+where `F` is the vector of global coefficient values of `f`, and `M` is :ref:`the cell node map <cell-node>`.
+
+Numerical quadrature
+~~~~~~~~~~~~~~~~~~~~
+
+The actual evaluation of the integral will employ the quadrature rules
+we discussed in :doc:`a previous section <quadrature>`. Let `\{X_q\},
+\{w_q\}` be a quadrature rule of sufficient degree of precision that
+the quadrature is exact. Then:
+
+.. math::
+   :label:
+
+   \int_c f(x)\mathrm{d}x  = \sum_q \sum_i F(M(c,i))\,\phi_i(X_q)\, |J|\,w_q
+
+Implementing integration
+~~~~~~~~~~~~~~~~~~~~~~~~
+
+.. exercise::
+
+   Implement Jacobian
+
+.. exercise:: 
+
+   Implement the actual integration
+

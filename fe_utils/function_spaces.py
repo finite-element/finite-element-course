@@ -142,7 +142,7 @@ class Function(object):
 
     @staticmethod
     def _lagrange_triangles(degree):
-        # Triangles linking hte Lagrange points.
+        # Triangles linking the Lagrange points.
 
         return (np.array([[i / degree, j / degree]
                           for j in range(degree + 1)
@@ -158,3 +158,10 @@ class Function(object):
                               (i+1, i + degree + 1 - j + 1, i + degree + 1 - j))
                        for j in range(degree - 1)
                        for i in range(degree - 1 - j)]))
+
+    def integrate(self):
+        """Integrate this :class:`Function` over the domain.
+
+        :result: The integral (a scalar)."""
+
+        raise NotImplementedError
