@@ -55,14 +55,17 @@ def test_tabulate_grad_2D():
 
     vals = fe.tabulate(np.array([[0, 0]]), grad=True)
 
-    correct_answer = np.array([[[-1, -1], [1, 0], [0, 1]]], dtype=np.double)
+    # The order of this list depends on the order in which the nodes were defined.
+    gradients = np.array([[-1., -1.] if (n == [0., 0.]).all() else n
+                          for n in fe.nodes])
 
     print "Your answer is:"
     print vals
     print "The correct answer is:"
-    print correct_answer
+    print gradients
 
-    assert ((vals - correct_answer).round(12) == 0).all()
+    assert ((vals - gradients).round() == 0).all()
+
 
 
 if __name__ == '__main__':
