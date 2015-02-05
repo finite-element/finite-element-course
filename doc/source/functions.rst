@@ -154,7 +154,7 @@ interpolates a user-provided function onto the
    
    Read and understand the
    :meth:`~fe_utils.function_spaces.Function.interpolate` method. Use
-   ``test/plot_sin_function.py` to investigate interpolating different
+   ``test/plot_sin_function.py`` to investigate interpolating different
    functions onto finite element spaces at differering resolutions and
    polynomial degrees.
 
@@ -183,7 +183,7 @@ known, :class:`~fe_utils.function_spaces.Function` over a domain
 
 where `\mathrm{d}x` should be understood as being the volume measure
 with the correct dimension for the domain and `V` is some finite
-element space over `Omega`. We can express this integral as a sum of
+element space over `\Omega`. We can express this integral as a sum of
 integrals over individual cells:
 
 .. math::
