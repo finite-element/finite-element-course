@@ -1,6 +1,8 @@
 import triangle
 import numpy as np
 import itertools
+from .finite_elements import LagrangeElement
+from .reference_elements import ReferenceTriangle, ReferenceInterval
 
 
 class Mesh(object):
@@ -64,6 +66,8 @@ class Mesh(object):
         else:
             self.entity_counts = np.array((vertex_coords.shape[0],
                                            self.cell_vertices.shape[0]))
+
+        self.cell = (ReferenceInterval, ReferenceTriangle)[self.dim]
 
     def adjacency(self, dim1, dim2):
         """Return the set of `dim2` entities adjacent to each `dim1`
