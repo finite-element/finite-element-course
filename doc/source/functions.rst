@@ -268,7 +268,7 @@ we discussed in :doc:`a previous section <quadrature>`. Let `\{X_q\},
 the quadrature is exact. Then:
 
 .. math::
-   :label:
+   :label: integration
 
    \int_c f(x)\mathrm{d}x  = \sum_q \sum_i F(M(c,i))\,\phi_i(X_q)\, |J|\,w_q
 
@@ -277,9 +277,34 @@ Implementing integration
 
 .. exercise::
 
-   Implement Jacobian
+   Use :eq:`jacobian` to implement the
+   :meth:`~fe_utils.mesh.Mesh.jacobian` method of
+   :class:`~fe_utils.mesh.Mesh`. ``tests/test_jacobian.py`` is
+   available for you to test your results.
+
+.. hint::
+
+   The `\nabla_\beta\psi_j(X)` factor in :eq:`jacobian` is the same
+   for every cell in the mesh. You could make your implementation more
+   efficient by precalculating this term in the :meth:`__init__`
+   method of :class:`~fe_utils.mesh.Mesh`.
 
 .. exercise:: 
 
-   Implement the actual integration
+   Use :eq:`integration` to implement
+   :meth:`~fe_utils.function_spaces.Function.integrate`.
+
+.. hint::
+
+   Your method will need to:
+
+   #. Construct a suitable :class:`~fe_utils.quadrature.QuadratureRule`.
+   #. :meth:`~fe_utils.finite_elements.FiniteElement.tabulate` the
+      basis functions at each qaudrature point.
+   #. Visit each cell in turn.
+   #. Construct the :meth:`~fe_utils.mesh.Mesh.jacobian` for that cell
+      and take its determinant (:func:`numpy.linalg.det` will be
+      useful here).
+   #. Reduce all of the arrays you have constructed to a contribution
+      to the integral (:func:`numpy.einsum` may be useful for this).
 
