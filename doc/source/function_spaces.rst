@@ -152,6 +152,8 @@ associated with `(d, i)` is therefore:
 
    [G(d, i), \ldots, G(d,i) + N_d]
 
+.. _cell-node:
+
 The cell-node map
 -----------------
 
