@@ -64,4 +64,5 @@ Implementation exercise contents:
    meshes
    function_spaces
    functions
+   finite_element_problems
    zbibliography

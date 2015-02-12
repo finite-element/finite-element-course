@@ -58,6 +58,8 @@ where `x_i` is the coordinate vector of the point defining the node
 node points, and so far we have only defined the node points in
 *local* coordinates on the reference element. 
 
+.. _coordinates:
+
 Changing coordinates between reference and physical space
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
@@ -67,7 +69,7 @@ space*. We'll use case to distinguish local and global objects, so
 local coordinates will be written as `X` and global coordinates as
 `x`. The key observation is that within each cell, the global
 coordinates are the linear interpolation of the global coordinate
-values at the cell vertices. In other words, if `\{\psi_j\}` is the
+values at the cell vertices. In other words, if `\{\Psi_j\}` is the
 local basis for the **linear** lagrange elements on the reference cell and
 `\hat{x}_j` are the corresponding global vertex locations on a cell `c`
 then:
@@ -75,7 +77,7 @@ then:
 .. math::
    :label: change
 
-   x = \sum_j \hat{x}_j \psi_j(X) \quad \forall x \in c.
+   x = \sum_j \hat{x}_j \Psi_j(X) \quad \forall x \in c.
 
 Remember that we know the location of the nodes in local coordinates,
 and we have the
@@ -86,7 +88,7 @@ points. So if we write:
 .. math::
    :label: foo0
 
-   A_{i,j} = \psi_j(X_i)
+   A_{i,j} = \Psi_j(X_i)
 
 where {X_i} are the node points of our finite element, then:
 
@@ -227,13 +229,13 @@ element spaces produces:
 .. math::
    :label: jacobian
 
-   J_{\alpha\beta} = \sum_j (\tilde{x}_j)_\alpha \nabla_\beta\psi_j(X)
+   J_{\alpha\beta} = \sum_j (\tilde{x}_j)_\alpha \nabla_\beta\Psi_j(X)
 
-where `\{\psi_j\}` is once again the degree 1 Lagrange basis and
+where `\{\Psi_j\}` is once again the degree 1 Lagrange basis and
 `\{\tilde{x}_j\}` are the coordinates of the corresponding vertices of
 cell `c`. The presence of `X` in :eq:`jacobian` implies that the
 Jacobian varies spatially across the reference cell. However since
-`\{\psi_j\}` is the degree 1 Lagrange basis, the gradients of the
+`\{\Psi_j\}` is the degree 1 Lagrange basis, the gradients of the
 basis functions are constant over the cell and so it does not matter
 at which point in the cell the Jacobian is evaluated. For example we
 might choose to evaluate the Jacobian at the cell origin `X=0`.
@@ -250,13 +252,13 @@ might choose to evaluate the Jacobian at the cell origin `X=0`.
 Expressing the function in the finite element basis
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-Let `\{\phi_i(X)\}` be a local basis for `V` on the reference element
+Let `\{\Phi_i(X)\}` be a **local** basis for `V` on the reference element
 `c_0`. Then our integral becomes:
 
 .. math::
    :label:
 
-   \int_c f(x)\mathrm{d}x  = \int_{c_0} \sum_i F(M(c,i))\,\phi_i(X)\, |J|\,\mathrm{d} X
+   \int_c f(x)\mathrm{d}x  = \int_{c_0} \sum_i F(M(c,i))\,\Phi_i(X)\, |J|\,\mathrm{d} X
 
 where `F` is the vector of global coefficient values of `f`, and `M` is :ref:`the cell node map <cell-node>`.
 
@@ -271,7 +273,7 @@ the quadrature is exact. Then:
 .. math::
    :label: integration
 
-   \int_c f(x)\mathrm{d}x  = \sum_q \sum_i F(M(c,i))\,\phi_i(X_q)\, |J|\,w_q
+   \int_c f(x)\mathrm{d}x  = \sum_q \sum_i F(M(c,i))\,\Phi_i(X_q)\, |J|\,w_q
 
 Implementing integration
 ~~~~~~~~~~~~~~~~~~~~~~~~
@@ -285,7 +287,7 @@ Implementing integration
 
 .. hint::
 
-   The `\nabla_\beta\psi_j(X)` factor in :eq:`jacobian` is the same
+   The `\nabla_\beta\Psi_j(X)` factor in :eq:`jacobian` is the same
    for every cell in the mesh. You could make your implementation more
    efficient by precalculating this term in the :meth:`__init__`
    method of :class:`~fe_utils.mesh.Mesh`.
