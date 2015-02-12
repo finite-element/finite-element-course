@@ -4,23 +4,15 @@ from fe_utils import UnitSquareMesh, UnitIntervalMesh, \
     FunctionSpace, LagrangeElement, Function
 
 
-@pytest.fixture
-def square():
+@pytest.mark.parametrize('degree, mesh',
+                         [(d, m)
+                          for d in range(1, 8)
+                          for m in (UnitIntervalMesh(2),
+                                    UnitSquareMesh(2, 2))])
+def test_integrate_unit_interval(degree, mesh):
 
-    return UnitSquareMesh(2, 2)
-
-
-@pytest.fixture
-def interval():
-
-    return UnitIntervalMesh(2)
-
-
-@pytest.mark.parametrize('degree', range(1, 8))
-def test_integrate_unit_interval(degree, interval):
-
-    fe = LagrangeElement(interval.cell, degree)
-    fs = FunctionSpace(interval, fe)
+    fe = LagrangeElement(mesh.cell, degree)
+    fs = FunctionSpace(mesh, fe)
 
     f = Function(fs)
 

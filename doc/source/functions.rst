@@ -204,7 +204,8 @@ the change of variables formula for integration:
 
    \int_{c} f(x) \mathrm{d} x = \int_{c_0} f(X) |J|\mathrm{d} X
 
-where `|J|` is the determinant of the Jacobian matrix. `J` is given by:
+where `|J|` is the absolute value of the determinant of the Jacobian
+matrix. `J` is given by:
 
 .. math::
    :label: jacobian_def 
@@ -293,6 +294,8 @@ Implementing integration
 
    Use :eq:`integral_sum` and :eq:`integration` to implement
    :meth:`~fe_utils.function_spaces.Function.integrate`.
+   ``tests/test_integrate_function.py`` may be used to test your
+   implementation.
 
 .. hint::
 
@@ -303,8 +306,8 @@ Implementing integration
       basis functions at each qaudrature point.
    #. Visit each cell in turn.
    #. Construct the :meth:`~fe_utils.mesh.Mesh.jacobian` for that cell
-      and take its determinant (:func:`numpy.linalg.det` will be
-      useful here).
+      and take the absolute value of its determinant (:func:`numpy.abs`
+      and :func:`numpy.linalg.det` will be useful here).
    #. Sum all of the arrays you have constructed over the correct
       indices to a contribution to the integral (:func:`numpy.einsum`
       may be useful for this).
