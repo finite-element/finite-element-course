@@ -61,7 +61,7 @@ class Mesh(object):
                                            self.edge_vertices.shape[0],
                                            self.cell_vertices.shape[0]))
             """The number of entities of each dimension in the mesh. So
-            :attr:`entity_counts(0)` is the number of vertices in the
+            :attr:`entity_counts[0]` is the number of vertices in the
             mesh."""
         else:
             self.entity_counts = np.array((vertex_coords.shape[0],
