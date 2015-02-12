@@ -187,7 +187,7 @@ element space over `\Omega`. We can express this integral as a sum of
 integrals over individual cells:
 
 .. math::
-   :label:
+   :label: integral_sum
 
    \int_\Omega f \mathrm{d} x = \sum_{c\in\Omega} \int_c f \mathrm{d} x.
 
@@ -291,7 +291,7 @@ Implementing integration
 
 .. exercise:: 
 
-   Use :eq:`integration` to implement
+   Use :eq:`integral_sum` and :eq:`integration` to implement
    :meth:`~fe_utils.function_spaces.Function.integrate`.
 
 .. hint::
@@ -305,6 +305,7 @@ Implementing integration
    #. Construct the :meth:`~fe_utils.mesh.Mesh.jacobian` for that cell
       and take its determinant (:func:`numpy.linalg.det` will be
       useful here).
-   #. Reduce all of the arrays you have constructed to a contribution
-      to the integral (:func:`numpy.einsum` may be useful for this).
+   #. Sum all of the arrays you have constructed over the correct
+      indices to a contribution to the integral (:func:`numpy.einsum`
+      may be useful for this).
 
