@@ -150,7 +150,7 @@ associated with `(d, i)` is therefore:
 
 .. math::
 
-   [G(d, i), \ldots, G(d,i) + N_d]
+   [G(d, i), \ldots, G(d,i) + N_d - 1]
 
 .. _cell-node:
 
@@ -174,7 +174,7 @@ local node numbers. The entries in this map will have the following values:
 .. math::
    :label: eqcellnode
 
-   M(c, e(\delta, \epsilon)) = [G(\delta, i), \ldots, G(\delta,i) + N_\delta] \qquad\forall \delta\leq\dim(c), \forall \epsilon < E_d
+   M(c, e(\delta, \epsilon)) = [G(\delta, i), \ldots, G(\delta,i) + N_\delta - 1] \qquad\forall \delta\leq\dim(c), \forall \epsilon < E_d
 
 where:
 
