@@ -16,7 +16,7 @@ def test_vandermonde_matrix_grad_shape(cell, degree):
 
     shape = vandermonde_matrix(cell, degree, points, grad=True).shape
 
-    correct_shape = (1, int(comb(degree + cell.dim, cell.dim)), cell.dim)
+    correct_shape = (1, round(comb(degree + cell.dim, cell.dim)), cell.dim)
 
     assert shape == correct_shape, \
         "vandermonde matrix should have returned an array of shape %s, not %s"\
