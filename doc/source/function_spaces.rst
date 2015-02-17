@@ -174,13 +174,13 @@ local node numbers. The entries in this map will have the following values:
 .. math::
    :label: eqcellnode
 
-   M(c, e(\delta, \epsilon)) = [G(\delta, i), \ldots, G(\delta,i) + N_\delta - 1] \qquad\forall \delta\leq\dim(c), \forall \epsilon < E_d
+   M(c, e(\delta, \epsilon)) = [G(\delta, i), \ldots, G(\delta,i) + N_\delta - 1] \qquad\forall \delta\leq\dim(c), \forall \epsilon < E_\delta
 
 where:
 
 .. math::
 
-   i = \operatorname{Adj}_{\dim(c), \delta}[\epsilon],
+   i = \operatorname{Adj}_{\dim(c), \delta}[c, \epsilon],
 
 `e(\delta, \epsilon)` is the local entity-node list for this finite
 element for the `(\delta, \epsilon)` local entity,
@@ -207,6 +207,22 @@ element, and contains (in some form) a global numbering of the nodes.
    ``test/plot_function_space_nodes.py`` script. As usual, run the
    script passing the ``-h`` option to discover the required
    arguments.
+
+.. hint::
+
+   Many of the terms in :eq:`eqcellnode` are implemented in the
+   objects in :mod:`fe_utils`. For example:
+
+   * `\operatorname{Adj}_{\dim(c), \delta}` is implemented by the
+     :meth:`~fe_utils.meshes.Mesh.adjacency` method of the
+     :class:`~fe_utils.meshes.Mesh`.
+
+   * You have `e(\delta, \epsilon)` as
+     :data:`~fe_utils.finite_elements.FiniteElement.entity_nodes`. Note
+     that in this case you need separate square brackets for each
+     index::
+
+           element.entity_nodes[delta][epsilon]
 
 .. rubric:: Footnotes
 
