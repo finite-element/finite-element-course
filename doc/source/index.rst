@@ -36,6 +36,12 @@ Problem sheets
   `answers <_static/FE_examples1_solns.pdf>`_.
 * `Examples sheet 2 <_static/FE_examples2.pdf>`_
 
+Mock exam paper
+~~~~~~~~~~~~~~~
+
+* `A mock exam paper <_static/FE_mock_paper.pdf>`_.
+
+
 Part 2: Implementation
 ----------------------
 
