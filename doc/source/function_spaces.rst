@@ -174,7 +174,7 @@ local node numbers. The entries in this map will have the following values:
 .. math::
    :label: eqcellnode
 
-   M(c, e(\delta, \epsilon)) = [G(\delta, i), \ldots, G(\delta,i) + N_\delta - 1] \qquad\forall \delta\leq\dim(c), \forall \epsilon < E_\delta
+   M(c, e(\delta, \epsilon)) = [G(\delta, i), \ldots, G(\delta,i) + N_\delta - 1] \qquad\forall 0\leq\delta\leq\dim(c), \forall 0\leq\epsilon < \hat{E}_\delta
 
 where:
 
@@ -185,7 +185,14 @@ where:
 `e(\delta, \epsilon)` is the local entity-node list for this finite
 element for the `(\delta, \epsilon)` local entity,
 `\operatorname{Adj}` has the meaning given under :ref:`secadjacency`,
-and `G`, `N` and `E` have the meanings given above.
+`\hat{E}_\delta` is the number of dimension `\delta` entities in each
+cell, and `G` and `N` have the meanings given above. This algorithm
+requires a trivial extension to adjacency:
+
+.. math::
+
+   \operatorname{Adj}_{\dim(c),\dim(c)}[c, 0] = c
+
 
 Implementing function spaces in Python
 --------------------------------------
