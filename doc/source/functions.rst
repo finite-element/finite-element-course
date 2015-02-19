@@ -127,7 +127,7 @@ values. This is best illustrated using some Python code.
 Suppose ``f`` is a :class:`~fe_utils.function_spaces.Function` and,
 for brevity, ``fs = f.function_space``, the
 :class:`~fe_utils.function_spaces.FunctionSpace` associated with
-``f``. Then the vertex indices of cell number ``c`` is::
+``f``. Then the vertex indices of cell number ``c`` are::
 
   fs.mesh.cell_vertices[c, :]
 
