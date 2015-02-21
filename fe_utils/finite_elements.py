@@ -2,6 +2,7 @@
 from __future__ import division
 import numpy as np
 from .reference_elements import ReferenceInterval, ReferenceTriangle
+np.seterr(invalid='ignore', divide='ignore')
 
 
 def lagrange_points(cell, degree):
