@@ -11,7 +11,8 @@ parser.add_argument("resolution", type=int, nargs=1,
                     help="The number of cells in each direction on the mesh.")
 parser.add_argument("degree", type=int, nargs=1,
                     help="The degree of the polynomial basis for the function space.")
-if __name__=="__main__":
+
+if __name__ == "__main__":
     args = parser.parse_args()
     resolution = args.resolution[0]
     degree = args.degree[0]

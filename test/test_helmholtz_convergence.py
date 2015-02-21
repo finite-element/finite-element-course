@@ -1,4 +1,4 @@
-'''Test that the sample helmhomtz problem converges at approximately the right rate.'''
+'''Test that the sample helmholtz problem converges at approximately the right rate.'''
 from __future__ import division
 import pytest
 from .solve_helmholtz import solve_helmholtz
