@@ -174,7 +174,7 @@ local node numbers. The entries in this map will have the following values:
 .. math::
    :label: eqcellnode
 
-   M(c, e(\delta, \epsilon)) = [G(\delta, i), \ldots, G(\delta,i) + N_\delta - 1] \qquad\forall 0\leq\delta\leq\dim(c), \forall 0\leq\epsilon < \hat{E}_\delta
+   M[c, e(\delta, \epsilon)] = [G(\delta, i), \ldots, G(\delta,i) + N_\delta - 1] \qquad\forall 0\leq\delta\leq\dim(c), \forall 0\leq\epsilon < \hat{E}_\delta
 
 where:
 
@@ -230,6 +230,16 @@ element, and contains (in some form) a global numbering of the nodes.
      index::
 
            element.entity_nodes[delta][epsilon]
+
+.. hint::
+
+   :attr:`~fe_utils.function_spaces.FunctionSpace.cell_nodes` needs to
+         be integer-valued. If you choose to use :func:`numpy.zeros`
+         to create a matrix which you then populate with values, you
+         need to explicitly specify that you want a matrix of
+         zeros. This can be achieved by passing the ``dtype`` argument
+         to :func:`numpy.zeros`. For example ``numpy.zeros((nrows,
+         ncols), dtype=int)``.
 
 .. rubric:: Footnotes
 

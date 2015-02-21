@@ -167,6 +167,8 @@ interpolates a user-provided function onto the
    :meth:`~fe_utils.function_spaces.Function.interpolate` will be
    needed when you implement integration.
 
+.. _integration:
+
 Integration
 -----------
 
