@@ -16,7 +16,7 @@ class FunctionSpace(object):
         :param element: The :class:`~.finite_elements.FiniteElement` of this space.
 
         Most of the implementation of this class is left as an :ref:`exercise
-        <ex-function_space>`.
+        <ex-function-space>`.
         """
 
         #: The :class:`~.mesh.Mesh` on which this space is built.
@@ -28,8 +28,10 @@ class FunctionSpace(object):
 
         # Implement global numbering in order to produce the global
         # cell node list for this space.
-        #: The global cell node list. This is a two-dimensional in which each row
-        #: lists the global nodes incident to the corresponding cell.
+        #: The global cell node list. This is a two-dimensional array in
+        #: which each row lists the global nodes incident to the corresponding
+        #: cell. The implementation of this member is left as an
+        #: :ref:`exercise <ex-function-space>`
         self.cell_nodes = None
 
         #: The total number of nodes in the function space.

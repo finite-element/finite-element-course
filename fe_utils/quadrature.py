@@ -16,9 +16,16 @@ class QuadratureRule(object):
         :weights: the corresponding vector of quadrature weights.
         """
 
+        #: The :class:`~.ReferenceCell` over which this quadrature
+        #: rule is defined.
         self.cell = cell
+        #: Two dimensional array, the rows of which form the position
+        #: vectors of the quadrature points.
         self.points = np.array(points, dtype=np.double)
+        #: The corresponding array of quadrature weights.
         self.weights = np.array(weights, dtype=np.double)
+        #: The degree of precision of the quadrature rule.
+        self.degree = degree
 
         if self.cell.dim != self.points.shape[1]:
             raise ValueError(

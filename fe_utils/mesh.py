@@ -67,6 +67,8 @@ class Mesh(object):
             self.entity_counts = np.array((vertex_coords.shape[0],
                                            self.cell_vertices.shape[0]))
 
+        #: The :class:`~.reference_elements.ReferenceCell` of which this
+        #: :class:`Mesh` is composed.
         self.cell = (0, ReferenceInterval, ReferenceTriangle)[self.dim]
 
     def adjacency(self, dim1, dim2):
@@ -74,7 +76,7 @@ class Mesh(object):
         entity. For example if `dim1==2` and `dim2==1` then return the list of
         edges (1D entities) adjacent to each triangle (2D entity).
 
-        This operation is only defined where `self.dim > dim1 > dim2`.
+        This operation is only defined where `self.dim >= dim1 > dim2`.
 
         This method is simply a more systematic way of accessing
         :attr:`edge_vertices`, :attr:`cell_edges` and :attr:`cell_vertices`.

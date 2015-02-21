@@ -55,12 +55,22 @@ class FiniteElement(object):
         Most of the implementation of this class is left as exercises.
         """
 
+        #: The :class:`~.reference_elements.ReferenceCell`
+        #: over which the element is defined.
         self.cell = cell
+        #: The polynomial degree of the element. We assume the element
+        #: spans the complete polynomial space.
         self.degree = degree
+        #: The list of coordinate tuples corresponding to the nodes of
+        #: the element.
         self.nodes = nodes
+        #: A dictionary of dictionaries such that ``entity_nodes[d][i]``
+        #: is the list of nodes associated with entity `(d, i)`.
         self.entity_nodes = entity_nodes
 
         if entity_nodes:
+            #: ``nodes_per_entity[d]`` is the number of entities
+            #: associated with an entity of dimension d.
             self.nodes_per_entity = np.array([len(entity_nodes[d][0])
                                               for d in range(cell.dim+1)])
 
