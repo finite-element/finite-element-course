@@ -30,7 +30,7 @@ becomes, find `u\in V` such that:
    :label: weak_helmholtz
 
    \int_\Omega \nabla v \cdot \nabla u + vu\, \mathrm{d} x
-   - \underbrace{\int_\Gamma \nabla u \cdot \mathbf{n}\, \mathrm{d} s}_{=0} = 
+   - \underbrace{\int_\Gamma v \nabla u \cdot \mathbf{n}\, \mathrm{d} s}_{=0} = 
    \int_\Omega v f\, \mathrm{d} x \qquad \forall v \in V
 
 If we write `\{\phi_i\}_{i=0}^{n-1}` for our basis for `V`, and recall that
@@ -447,7 +447,7 @@ Implementing finite element problems
       python tests/solve_helmholtz.py --help
 
    for guidance on using the script to view the solution, the analytic
-   solution and the error in your solution. In addtion,
+   solution and the error in your solution. In addition,
    ``tests/test_helmholtz_convergence.py`` contains tests that the
    helmholtz solver converges at the correct rate for degree 1, 2 and
    3 polynomials.

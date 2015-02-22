@@ -71,4 +71,5 @@ Implementation exercise contents:
    function_spaces
    functions
    finite_element_problems
+   boundary_conditions
    zbibliography

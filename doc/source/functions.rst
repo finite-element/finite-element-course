@@ -316,3 +316,9 @@ Implementing integration
       indices to a contribution to the integral (:func:`numpy.einsum`
       may be useful for this).
 
+.. hint::
+   
+   You might choose to read ahead before implementing
+   :meth:`~fe_utils.function_spaces.Function.integrate`, since the
+   :func:`errornorm` function is very similar and may provide a useful
+   template for your work.
