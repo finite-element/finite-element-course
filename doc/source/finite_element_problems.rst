@@ -41,7 +41,7 @@ each function in the basis then the problem is now, find coefficients `u_i` such
    :label:
 
    \int_\Omega \sum_{j}\left(\nabla \phi_i \cdot \nabla (u_j\phi_j) + \phi_i u_j\phi_j\right)\, \mathrm{d} x
-   = \int_\Omega \sum_k\phi_i f_k\phi_k\, \mathrm{d} x \qquad \forall\, 0\leq i < n 
+   = \int_\Omega \phi_i\, \sum_k f_k\phi_k\, \mathrm{d} x \qquad \forall\, 0\leq i < n 
 
 Since the left hand side is linear in the scalar coefficients `u_j`, we can move them out of the integral:
 
@@ -49,7 +49,7 @@ Since the left hand side is linear in the scalar coefficients `u_j`, we can move
    :label:
 
    \sum_{j}\left(\int_\Omega \nabla \phi_i \cdot \nabla \phi_j + \phi_i\phi_j\, \mathrm{d} x\, u_j\right)
-   = \int_\Omega \sum_k\phi_i f_k\phi_k\, \mathrm{d} x \qquad \forall\, 0\leq i < n 
+   = \int_\Omega \phi_i\,\sum_k f_k\phi_k\, \mathrm{d} x \qquad \forall\, 0\leq i < n 
 
 We can write this as a matrix equation:
 
@@ -73,7 +73,7 @@ where:
 .. math::
    :label: eq_rhs
 
-   \mathbf{f}_i = \int_\Omega \sum_k\phi_i f_k\phi_k\, \mathrm{d} x
+   \mathbf{f}_i = \int_\Omega \phi_i\,\sum_k f_k\phi_k\, \mathrm{d} x
 
 
 Assembling the right hand side
@@ -86,7 +86,7 @@ element spaces. For example, :eq:`eq_rhs` can be rewritten as:
 .. math::
    :label:
 
-   \mathbf{f}_i = \sum_c \int_c \phi_i f_k\phi_k\,  \mathrm{d} x
+   \mathbf{f}_i = \sum_c \int_c \phi_i \,\sum_k f_k\phi_k\,  \mathrm{d} x
 
 This has a practical impact once we realise that only a few basis
 functions are non-zero in each element. This enables us to write an
@@ -116,7 +116,7 @@ By choosing a suitable quadrature rule, `\{X_q\}, \{w_q\}`, we can
 write this as:
 
 .. math::
-   :label:
+   :label: rhs_index
 
    \mathbf{f}_{M(c, \hat{i})} \stackrel{+}{=} \left(\sum_q \Phi(X_q)_{\hat{i}}\, \left(\sum_{\hat{k}}\,f_{\hat{k}}\,\Phi(X_q)_{\hat{k}}\right)\,w_q\,\right) |J| \qquad \forall 0 \leq \hat{i} < N,\, \forall c
 
@@ -192,11 +192,11 @@ We can start by pulling back :eq:`eq_lhs` to local coordinates:
       \cdot \left(J^{-T}\nabla_X \Phi_{\hat{j}}\right) + \Phi_{\hat{i}}\Phi_{\hat{j}}\,|J|\right) \mathrm{d} X
       \quad\forall 0\leq \hat{i},\hat{j}\leq N,\, \forall c
 
-We can now employ a suitable quadrature rule, `\{X_q\}, \{w_q\}`, to
+We now employ a suitable quadrature rule, `\{X_q\}, \{w_q\}`, to
 calculate the integral:
 
 .. math::
-   :label:
+   :label: lhs_assemble
 
    \mathrm{A}_{M(c, \hat{i}),M(c, \hat{j})} \stackrel{+}{=}
    \sum_q \left(J^{-T}\nabla_X \Phi_i(X_q)\right)
@@ -207,12 +207,103 @@ Some readers may find this easier to read using index notation over
 the geometric dimensions:
 
 .. math::
-   :label:
+   :label: lhs_index
 
    \mathrm{A}_{M(c, \hat{i}),M(c, \hat{j})} \stackrel{+}{=}
    \sum_q \left(\sum_{\alpha\beta\gamma}J^{-1}_{\beta\alpha}\left(\nabla_X \Phi_i(X_q)\right)_\beta\,
    J^{-1}_{\gamma\alpha}\left(\nabla_X \Phi_j(X_q)\right)_\gamma\right) + \Phi_i(X_q)\Phi_j(X_q)\,|J|\,w_q
    \quad\forall 0\leq \hat{i},\hat{j}\leq N,\, \forall c
+
+A note on matrix insertion
+~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+For each cell `c`, the right hand sides of equations
+:eq:`lhs_assemble` and :eq:`lhs_index` have two free indices,
+`\hat{i}` and `\hat{j}`. The equation therefore assembles a local
+`N\times N` matrix corresponding to one integral for each test
+function, trial function pair on the current element. This is then
+added to the global matrix at the row and column pairs given by the
+cell node map `M(c, \hat{i})` and `M(c, \hat{j})`.
+
+.. _figmatrix-insertion:
+
+.. figure:: global_assembly.svg
+   :width: 70%
+
+   Computing integrals for each local test and trial function produces
+   a local dense (in this case, `3\times 3`) matrix. The entries in
+   this matrix are added to the corresponding global row and column
+   positions in the global matrix.
+
+.. hint::
+
+   One might naïvely expect that if ``nodes`` is the vector of global
+   node numbers for the current cell, ``m`` is the matrix of local
+   integral values and ``A`` is the global matrix, then the Python
+   code might look like::
+
+       A[nodes, nodes] += m # DON'T DO THIS!
+
+   Unfortunately, :mod:`numpy` interprets this as an instruction to
+   insert a vector into the diagonal of ``A``, and will complain that
+   the two-dimensional right hand side dows not match the
+   one-dimensional left hand side. Instead, one has to employ the
+   :func:`numpy.ix_` function::
+
+       A[np.ix_(nodes, nodes)] += m # DO THIS!
+
+   No such problem exists for adding values into the global right hand
+   side vector. IF ``l`` is the global right hand side vector and
+   ``v`` is the vector of local right hand integrals, then the
+   following will work just fine::
+
+       l[nodes] += v
+
+
+Sparse matrices
+~~~~~~~~~~~~~~~
+
+Each row of the global matrix corresponds to a single global basis
+function. The number of non-zeros in this row is equal to the number
+of other basis functions which are non-zero in the elements where the
+original basis function is non-zero. The maximum number of non-zeros
+on a row may vary from a handful for a low degree finite element to a
+few hundred for a fairly high degree element. The important point is
+that it is essentially independent of the size of the mesh. This means
+that as the number of cells in the mesh increases, the proportion of
+the matrix entries on each row which have the value zero increases.
+
+For example, a degree 4 Lagrange finite element space defined on
+`64\times 64` unit square triangular mesh has about 66000 nodes. The
+full global matrix therefore has more that 4 billion entries and, at 8
+bytes per matrix entry, will consume around 35 gigabytes of memory!
+However, there are actually only around 23 nonzeros per row, so more
+than 99.9% of the entries in the matrix are zeroes.
+
+Instead of storing the complete matrix, sparse matrix formats store
+only those entries in the matrix which are nonzero. They also have to
+store some metadata to describe where in the matrix the non-zero
+entries are stored. There are various different sparse matrix formats
+available, which make different trade-offs between memory usage,
+insertion speed, and the speed of different matrix
+operations. However, if we make the (conservative) assumption that a
+sparse matrix takes 16 bytes to store each nonzero value, instead of 8
+bytes, then we discover that in the example above, we would use less
+than 25 megabytes to store the matrix. The time taken to solving the
+matrix system will also be vastly reduced since operations on zeros
+are avoided.
+
+.. hint::
+
+   The :mod:`scipy.sparse` package provides convenient interfaces
+   which enable Python code to employ a variety of sparse matrix
+   formats using essentially identical operations to the dense matrix
+   case. The skeleton code already contains commands to construct
+   empty sparse matrices and to solve the resulting linear system. You
+   may, if you wish, experiment with choosing other sparse formats
+   from :mod:`scipy.sparse`, but it is very strongly suggested that
+   you do **not** switch to a dense numpy array; unless, that is, you
+   particularly enjoy running out of memory on your computer!
 
 
 The method of manufactured solutions
@@ -339,3 +430,30 @@ solutions, produces an estimate of the rate of convergence:
 Implementing finite element problems
 ------------------------------------
 
+.. exercise::
+
+   ``tests/solve_helmholtz.py`` contains a partial implementation of
+   the finite element method to solve :eq:`weak_helmholtz` with `f`
+   chosen as in :eq:`f_def`. Your task is to implement the
+   :func:`assemble` function using :eq:`rhs_index`, and
+   :eq:`lhs_assemble` or :eq:`lhs_index`. The comments in the
+   :func:`assemble` function provide some guidance as to the steps
+   involved. You may also wish to consult the :func:`errornorm`
+   function in ``tests/solve_helmholtz.py`` as a guide to the
+   structure of the code required.
+
+   Run::
+
+      python tests/solve_helmholtz.py --help
+
+   for guidance on using the script to view the solution, the analytic
+   solution and the error in your solution. In addtion,
+   ``tests/test_helmholtz_convergence.py`` contains tests that the
+   helmholtz solver converges at the correct rate for degree 1, 2 and
+   3 polynomials.
+
+   .. warning::
+
+      ``tests/test_helmholtz_convergence.py`` may take many seconds or
+      even a couple of minutes to run, as it has to solve on some
+      rather fine meshes in order to check convergence.
