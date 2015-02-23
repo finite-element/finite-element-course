@@ -32,7 +32,6 @@
       :align: right
       :width: 20ex
 
-
    Part 1: Numerical analysis
    --------------------------
 
@@ -58,6 +57,12 @@
    ~~~~~~~~~~~~~~~
 
    * `A mock exam paper <_static/FE_mock_paper.pdf>`_.
+
+   Mastery exercise
+   ~~~~~~~~~~~~~~~~
+
+   * `The mastery exercise <_static/mastery.pdf>`_. It
+     is due by 1600 on Friday 1 May.
 
    Part 2: Implementation
    ----------------------
