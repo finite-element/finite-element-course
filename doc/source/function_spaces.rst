@@ -72,7 +72,7 @@ numbering used here is just one of the obvious choices.
 
 .. _figlagrange-nodes:
 
-.. figure:: lagrange_nodes.svg
+.. figure:: lagrange_nodes.*
    :width: 70%
 
    Association of nodes with reference entities for the degree 1, 2,

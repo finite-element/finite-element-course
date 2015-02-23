@@ -1,65 +1,89 @@
+.. only:: clatex
 
-This is the webpage for the `Imperial College London Mathematics
-<http://www.imperial.ac.uk/maths>`_ masters module M5MA47 Finite
-Elements: numerical analysis and implementation. Other people are
-welcome to make use of the material here. The authors welcome feedback
-and would particularly appreciate an `email
-<mailto:david.ham@imperial.ac.uk>`_ if this material is used to teach
-anywhere.
+   ============================================
+   Finite elements, analysis and implementation
+   ============================================
 
-.. toctree::
+   .. raw:: latex
 
-   practicalities
+      \frontmatter
 
-.. image:: _static/brenner_scott.png
-   :align: right
-   :width: 20ex
+   ===================================================
+   M5MA47 Finite elements: analysis and implementation
+   ===================================================
 
-Part 1: Numerical analysis
---------------------------
+   .. include:: implementation.rst
 
-The theory part of the module will consist of two hours per week
-primarily composed of lectures, with occasional tutorials. This part of
-the module will be led by `Dr Colin Cotter
-<http://www.imperial.ac.uk/people/colin.cotter>`_.
+.. only:: html
 
-The text for this part of the module is Brenner and Scott *The
-Mathematical Theory of Finite Element Methods*. Imperial College has
-fortunately paid for PDF access to this book, so it is accessible from
-the Imperial College network at `Springer Link
-<http://link.springer.com/book/10.1007%2F978-0-387-75934-0>`_.
+   This is the webpage for the `Imperial College London Mathematics
+   <http://www.imperial.ac.uk/maths>`_ masters module M5MA47 Finite
+   Elements: numerical analysis and implementation. Other people are
+   welcome to make use of the material here. The authors welcome feedback
+   and would particularly appreciate an `email
+   <mailto:david.ham@imperial.ac.uk>`_ if this material is used to teach
+   anywhere.
 
-Problem sheets
-~~~~~~~~~~~~~~
+   .. toctree::
 
-* `Examples sheet 1 <_static/FE_examples1.pdf>`_ and
-  `answers <_static/FE_examples1_solns.pdf>`_.
-* `Examples sheet 2 <_static/FE_examples2.pdf>`_
+      practicalities
 
-Mock exam paper
-~~~~~~~~~~~~~~~
-
-* `A mock exam paper <_static/FE_mock_paper.pdf>`_.
+   .. image:: _static/brenner_scott.png
+      :align: right
+      :width: 20ex
 
 
-Part 2: Implementation
-----------------------
+   Part 1: Numerical analysis
+   --------------------------
 
-The implementation part of the module aims to give the students a
-deeper understanding of the finite element method through writing
-software to solve finite element problems in one and two dimensions.
+   The theory part of the module will consist of two hours per week
+   primarily composed of lectures, with occasional tutorials. This part of
+   the module will be led by `Dr Colin Cotter
+   <http://www.imperial.ac.uk/people/colin.cotter>`_.
 
-This part of the module will be taught by `Dr David Ham
-<http://www.imperial.ac.uk/people/david.ham>`_ in two hours per week
-of computer laboratory time.
+   The text for this part of the module is Brenner and Scott *The
+   Mathematical Theory of Finite Element Methods*. Imperial College has
+   fortunately paid for PDF access to this book, so it is accessible from
+   the Imperial College network at `Springer Link
+   <http://link.springer.com/book/10.1007%2F978-0-387-75934-0>`_.
 
-.. toctree::
-   :maxdepth: 3
+   Problem sheets
+   ~~~~~~~~~~~~~~
 
-   tools
-   implementation
+   * `Examples sheet 1 <_static/FE_examples1.pdf>`_ and
+     `answers <_static/FE_examples1_solns.pdf>`_.
+   * `Examples sheet 2 <_static/FE_examples2.pdf>`_
 
-Implementation exercise contents:
+   Mock exam paper
+   ~~~~~~~~~~~~~~~
+
+   * `A mock exam paper <_static/FE_mock_paper.pdf>`_.
+
+   Part 2: Implementation
+   ----------------------
+
+   The implementation part of the module aims to give the students a
+   deeper understanding of the finite element method through writing
+   software to solve finite element problems in one and two dimensions.
+
+   This part of the module will be taught by `Dr David Ham
+   <http://www.imperial.ac.uk/people/david.ham>`_ in two hours per week
+   of computer laboratory time.
+
+.. only:: html
+
+   .. toctree::
+      :maxdepth: 3
+
+      tools
+      implementation
+
+   Implementation exercise contents:
+
+
+.. raw:: latex
+         
+   \mainmatter
 
 .. toctree::
    :numbered:

@@ -13,6 +13,46 @@ week. Some of this time will involve explanations at the board, but
 much of the time will be an opportunity to develop your finite element
 implementation and receive help on how to do so.
 
+Formalities and marking scheme
+------------------------------
+
+The implementation exercise is due at the end of term. That is, by
+1700 on Friday 27 March. You must submit your work by emailing the
+lecturer the git commit code for the version of the code you would
+like marked. You can convenently find this code on the commits page
+for your repository on bitbucket. For the avoidance of doubt, the
+commit you submit must date from before the deadline!
+
+The marking scheme will be as follows:
+
+High first (80-100) 
+  All parts of the implementation are correct and all tests pass. The
+  code style is always very clear and the implementation of every
+  exercise is transparent and elegant.
+Bare first (75-80)
+  The implementation is correct but let down somewhat by poor coding
+  style. Alternatively, submissions which are correct and well
+  written up to and including solving the Helmholtz problem but
+  which do not include a correct solution to boundary conditions will
+  earn a bare first.
+Upper second (60-75)
+  Most of the exercise is correctly implemented, but there are some
+  test failures, or there are significant failures in coding style or
+  in the transparency and elegance of solutions.
+Lower second (45-60)
+  There are significant failings in the implementation resulting in
+  many test failures, and/or the coding style and elegance are
+  sufficiently poor that the code is hard to understand.
+Third (30-45)
+  The implementation is substantially incomplete. Correct
+  implementations are provided for some of the earlier exercises but
+  the more advanced parts of the implementation exercise have not been
+  attempted or do not work.
+Fail (0-30)
+  The implementation is absent or is not correct even for the more
+  elementary exercises.
+
+
 Obtaining the skeleton code
 ---------------------------
 
@@ -218,8 +258,10 @@ Return a :class:`numpy.array`
    build the answer as a list, but convert it to an array before you
    return it).
 
-.. |git-branch| image:: git-branch.svg
+.. |git-branch| image:: git-branch.*
    :height: 20px
+   :width: 3ex
 
 .. |pullrequest| image:: _static/pullrequest.png
    :height: 20px
+   :width: 3ex

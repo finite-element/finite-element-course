@@ -61,7 +61,7 @@ mesh with the topological entities labelled.
 
 .. _figmesh:
 
-.. figure:: mesh.svg
+.. figure:: mesh.*
    :width: 80%
 
    A triangular mesh showing labelled topological entities: vertices
@@ -84,7 +84,7 @@ understand the way in which this information is encoded.
 
 .. _figreferenceentities:
 
-.. figure:: entities.svg
+.. figure:: entities.*
    :width: 50%
 
    Local numbering and orientation of the reference entities.

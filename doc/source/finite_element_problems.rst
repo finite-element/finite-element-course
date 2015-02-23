@@ -227,7 +227,7 @@ cell node map `M(c, \hat{i})` and `M(c, \hat{j})`.
 
 .. _figmatrix-insertion:
 
-.. figure:: global_assembly.svg
+.. figure:: global_assembly.*
    :width: 70%
 
    Computing integrals for each local test and trial function produces

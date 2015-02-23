@@ -228,7 +228,7 @@ edge. The Duffy transform maps the unit square to the unit triangle:
 
 .. _figmesh:
 
-.. figure:: duffy.svg
+.. figure:: duffy.*
    :width: 60%
 
    The Duffy transform maps a square to a triangle by collapsing one side.
