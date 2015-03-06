@@ -189,7 +189,7 @@ We can start by pulling back :eq:`eq_lhs` to local coordinates:
 
    \mathrm{A}_{M(c, \hat{i}),M(c, \hat{j})} \stackrel{+}{=}
     \int_c\left( \left(J^{-T}\nabla_X \Phi_{\hat{i}}\right)
-      \cdot \left(J^{-T}\nabla_X \Phi_{\hat{j}}\right) + \Phi_{\hat{i}}\Phi_{\hat{j}}\,|J|\right) \mathrm{d} X
+      \cdot \left(J^{-T}\nabla_X \Phi_{\hat{j}}\right) + \Phi_{\hat{i}}\Phi_{\hat{j}}\right)|J|\, \mathrm{d} X
       \quad\forall 0\leq \hat{i},\hat{j}\leq N,\, \forall c
 
 We now employ a suitable quadrature rule, `\{X_q\}, \{w_q\}`, to
@@ -199,8 +199,8 @@ calculate the integral:
    :label: lhs_assemble
 
    \mathrm{A}_{M(c, \hat{i}),M(c, \hat{j})} \stackrel{+}{=}
-   \sum_q \left(J^{-T}\nabla_X \Phi_i(X_q)\right)
-   \cdot \left(J^{-T}\nabla_X \Phi_j(X_q)\right) + \Phi_i(X_q)\Phi_j(X_q)\,|J|\,w_q
+   \sum_q \bigg(\left(J^{-T}\nabla_X \Phi_i(X_q)\right)
+   \cdot \left(J^{-T}\nabla_X \Phi_j(X_q)\right) + \Phi_i(X_q)\Phi_j(X_q)\bigg)|J|\,w_q
    \quad\forall 0\leq \hat{i},\hat{j}\leq N,\, \forall c
 
 Some readers may find this easier to read using index notation over
@@ -211,7 +211,7 @@ the geometric dimensions:
 
    \mathrm{A}_{M(c, \hat{i}),M(c, \hat{j})} \stackrel{+}{=}
    \sum_q \left(\sum_{\alpha\beta\gamma}J^{-1}_{\beta\alpha}\left(\nabla_X \Phi_i(X_q)\right)_\beta\,
-   J^{-1}_{\gamma\alpha}\left(\nabla_X \Phi_j(X_q)\right)_\gamma\right) + \Phi_i(X_q)\Phi_j(X_q)\,|J|\,w_q
+   J^{-1}_{\gamma\alpha}\left(\nabla_X \Phi_j(X_q)\right)_\gamma + \Phi_i(X_q)\Phi_j(X_q)\right)|J|\,w_q
    \quad\forall 0\leq \hat{i},\hat{j}\leq N,\, \forall c
 
 A note on matrix insertion
