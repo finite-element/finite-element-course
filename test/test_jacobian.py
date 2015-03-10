@@ -48,11 +48,11 @@ def test_jacobian_1d():
 
     m = UnitIntervalMesh(2)
 
-    assert (np.linalg.det(m.jacobian(1)) - .5).round() == 0
+    assert (np.abs(np.linalg.det(m.jacobian(1))) - .5).round(12) == 0
 
 
 def test_jacobian_2d():
 
     m = UnitSquareMesh(2, 2)
 
-    assert (np.linalg.det(m.jacobian(1)) - .125).round() == 0
+    assert (np.abs(np.linalg.det(m.jacobian(1))) - .125).round(12) == 0
