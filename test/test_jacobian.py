@@ -55,4 +55,4 @@ def test_jacobian_2d():
 
     m = UnitSquareMesh(2, 2)
 
-    assert (np.abs(np.linalg.det(m.jacobian(1))) - .125).round(12) == 0
+    assert (np.abs(np.linalg.det(m.jacobian(1))) - .25).round(12) == 0
