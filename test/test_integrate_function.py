@@ -9,7 +9,25 @@ from fe_utils import UnitSquareMesh, UnitIntervalMesh, \
                           for d in range(1, 8)
                           for m in (UnitIntervalMesh(2),
                                     UnitSquareMesh(2, 2))])
-def test_integrate_unit_interval(degree, mesh):
+def test_integrate_result_type(degree, mesh):
+
+    fe = LagrangeElement(mesh.cell, degree)
+    fs = FunctionSpace(mesh, fe)
+
+    f = Function(fs)
+
+    i = f.integrate()
+
+    assert isinstance(i, float), "Integrate must return a float, not a %s" % \
+        str(type(i))
+
+
+@pytest.mark.parametrize('degree, mesh',
+                         [(d, m)
+                          for d in range(1, 8)
+                          for m in (UnitIntervalMesh(2),
+                                    UnitSquareMesh(2, 2))])
+def test_integrate_function(degree, mesh):
 
     fe = LagrangeElement(mesh.cell, degree)
     fs = FunctionSpace(mesh, fe)
@@ -24,7 +42,7 @@ def test_integrate_unit_interval(degree, mesh):
 
     assert round(numeric - analytic, 12) == 0, \
         "Integration error, analytic solution %g, your solution %g" % \
-        (numeric, analytic)
+        (analytic, numeric)
 
 
 if __name__ == '__main__':
