@@ -1,4 +1,4 @@
-import triangle
+from scipy.spatial import Delaunay
 import numpy as np
 import itertools
 from .finite_elements import LagrangeElement
@@ -136,7 +136,7 @@ class UnitSquareMesh(Mesh):
                       for x in np.linspace(0, 1, nx + 1)
                       for y in np.linspace(0, 1, ny + 1))
 
-        mesh = triangle.triangulate({"vertices": points})
+        mesh = Delaunay(points)
 
-        super(UnitSquareMesh, self).__init__(mesh["vertices"],
-                                             mesh["triangles"])
+        super(UnitSquareMesh, self).__init__(mesh.points,
+                                             mesh.simplices)
