@@ -1,7 +1,7 @@
 '''Test that the sample poisson problem converges at approximately the right rate.'''
 from __future__ import division
 import pytest
-from .solve_poisson import solve_poisson
+from solve_poisson import solve_poisson
 import numpy as np
 
 
