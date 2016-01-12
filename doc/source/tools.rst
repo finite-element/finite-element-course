@@ -5,49 +5,28 @@ Access to computers
 -------------------
 
 You'll need access to a suitable computer for the implementation
-work. If you have your own laptop running Linux (or possibly MacOS)
-then you are welcome to use that. It may be possible to do the module
-using a Python installation on Windows, but this is a very unsupported
-option. For other Department of Mathematics students, the server
-``mpe1.ma.ac.uk.uk`` is available for your work on this module and can
-be accessed over ssh from anywhere on the Imperial network.
+work. The machines in Huxley 410 have suitable software installed, or you can use your own laptop running Windows, Linux, or OS X. 
 
-Connecting to ``mpe1`` from a lab machine
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Using the Windows machines in Huxley 410
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-The Machines in 410 run Windows, but have X servers and SSH clients
-which enable you to log into a remote Linux machine and run graphical
-programs as if they were running locally.
+1. From the start menu run `Git Bash`. This provides you with a Bash
+   (Unix) command line from which you can run the git revision
+   control software to manage your source code.
 
-Starting XMing
-..............
+2. Run `Enthought Canopy`. There should be a shortcut link on the left
+   hand side of the desktop. Alternatively, you can find it via the
+   start menu. The first time you run Canopy on a particular machine,
+   one or two popup windows will appear. You should agree to whatever
+   they ask!
 
- 1. Run ``XLaunch`` from the Start menu. 
- 2. You should now see a window titled ``Display settings``. Select ``Multiple windows`` and set ``Display number`` to 0. (These should be the default settings).
- 3. Now click ``Next`` and continue to click ``Next`` on the next two windows.
- 4. On the ``Finish configuration`` screen click ``Finish``.
- 5. The Window will now disappear. This is normal. Xming is running in the background and waiting for an X program to start.
+3. Launch the editor by clicking on the `Editor` button.
 
-Starting PuTTY (SSH)
-....................
+4. Once you have cloned your git repositiory (more on this later), you
+   will need to type "cd H:\finite_element_course" on the Python
+   command line at the beginning of each session in order to ensure
+   you are running from the correct directory.
 
-
- 6. Run ``PuTTY`` from the Start menu.
- 7. Set the host name to ``mpe1``. If you are not a Department of
-    Mathematics student, you'll need to use another machine here, and
-    you'll need to type the full hostname (e.g. ``foo.ese.ic.ac.uk``).
- 8. In the left window select ``SSH`` (second to last) and under that select ``X``.
- 9. Select the tick box ``Enable X11 forwarding``.
- 10. Set ``X display location`` to ``:0.0``.
- 11. You may wish to return to the ``Session`` section and save this
-     configuration for future use. The name of the machine you are
-     logging into (e.g. ``mpe1``) is a good name for the session name.
- 12. Click ``Open``. If you get a warning window about the host key, click ``OK``.
- 13. Log in using your Imperial College username and password.
- 14. Test the setup by running ``xeyes`` on the command line. You
-     should see a pair of eyes which follow the mouse pointer as it
-     moves around the screen. This demonstrates that the graphical
-     program forwarding is working.
 
 Using your own Linux machine
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -68,7 +47,7 @@ We recommend using `Homebrew <http://brew.sh>`__ as a package manager
 for the required packages on Mac OS systems.  Obtaining a build
 environment for PyOP2 consists of the following:
 
-1. Install Xcode.  For OS X 10.9 (Mavericks) this is possible through
+1. Install Xcode.  For OS X 10.9 (Mavericks)  and later, this is possible through
    the App Store.  For earlier versions, try
    https://developer.apple.com/downloads (note that on OS X 10.7
    (Lion) you will need to obtain Xcode 4.6 rather than Xcode 5)
@@ -83,12 +62,6 @@ environment for PyOP2 consists of the following:
 
      brew install python
 
-   .. note::
-
-      Do not follow the instructions to update pip, since they
-      currently result in a broken pip installation (see
-      https://github.com/Homebrew/homebrew/issues/26900)
-
 5. Install numpy via homebrew::
 
      brew tap homebrew/python
@@ -97,26 +70,22 @@ environment for PyOP2 consists of the following:
 6. Install python dependencies via pip::
 
      pip install decorator
-     pip install cython
      pip install ipython
      pip install matplotlib
-     pip install triangle
      pip install pytest
      pip install flake8
-
-7. Download and install a Paraview binary from the `paraview website <http://www.paraview.org>`_.
+     pip install scipy
 
 
 The command line
 ----------------
 
 A lot of the routine activity involved in this module revolves around
-executing commands on the Linux command line. For example you use the
-command line to work with the revision control system, to run your
-code and to run the tests provided. If you're not familiar with the
-Linux command line, then a brief guide `is available here
-<http://www.tuxarena.com/static/intro_linux_cli.php>`_. That guide
-focusses on the Bash shell, which is the one we will use.
+executing commands on the Bash command line. For example you use the
+command line to work with the revision control system. If you're not
+familiar with the Linux command line, then a brief guide `is available
+here <http://www.tuxarena.com/static/intro_linux_cli.php>`_. That
+guide focusses on the Bash shell, which is the one we will use.
 
 Python
 ------
