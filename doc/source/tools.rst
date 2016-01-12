@@ -23,10 +23,28 @@ Using the Windows machines in Huxley 410
 3. Launch the editor by clicking on the `Editor` button.
 
 4. Once you have cloned your git repositiory (more on this later), you
-   will need to type "cd H:\finite_element_course" on the Python
+   will need to type the following command on the Python
    command line at the beginning of each session in order to ensure
-   you are running from the correct directory.
+   you are running from the correct directory::
 
+     cd H:\finite_element_course
+     
+Using your own Windows machine
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+In order to use your own Windows machine, you'll simply need Python
+(with the right packages) and git. We recommend you install Enthought
+Canopy, but other Windows Python distributions should also work.
+
+1. Download and install `Enthought Canopy Express` from `here <https://store.enthought.com/#canopy-individual>`_.
+
+2. Download and install `git` from `here <https://git-scm.com/download/win>`_.
+
+3. You should now be able to use git and Python exactly as in Huxley
+   410, except that the directory where your finite element source
+   code lives will be different (and may depend on how your Windows
+   machine is set up).
+     
 
 Using your own Linux machine
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -138,14 +156,49 @@ offers unlimited private repositories to academic users.
 Getting started with git and Bitbucket
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-The good folks over at Bitbucket have fortunately provided a good
-tutorial for getting started with the tools. The tutorial is called
-`Bitbucket 201
-<https://confluence.atlassian.com/display/BITBUCKET/Bitbucket+201+Bitbucket+with+Git+and+Mercurial>`_
-and you'll want to work through that first. Bitbucket supports two
-revision control systems: git and mercurial. We'll be exclusively
-using git so you can ignore the instructions in the tutorial for using
-mercurial.
+The very first thing you'll need is a Bitbucket account. Follow the tutorial `here <https://confluence.atlassian.com/bitbucket/sign-up-for-bitbucket-cloud-728138044.html>`_.
+
+.. note::
+
+   Make sure you use your Imperial College email address on
+   Bitbucket. This will get you an academic account with unlimited
+   private repositories.
+
+Next you need to do just a little Git setup. At the `Git Bash` command
+line, type the following::
+  
+  git config --global user.name "Jane Bloggs"
+
+Obviously you put in your own name rather than "Jane Bloggs". Similarly, you need to set your email::
+
+  git config --global user.email "Jane.Bloggs12@imperial.ac.uk"
+
+Once again, you obviously use your own email address. Now there is a
+small setting which makes the output of git colourful and therefore a
+lot easier to read::
+  
+  git config --global color.ui "auto"
+
+Finally, you need to tell git which text editor you will use to edit commit messages::
+
+  git FIXME
+
+If you are using your own computer and have a different choice of text
+editor, you can set that instead. The nice people over at Software
+Carpentry have some examples `here
+<http://swcarpentry.github.io/git-novice/02-setup.html>`_.
+
+.. hint::
+
+   If you are a more confident computer user, you could go ahead and
+   set up git to work with ssh, the secure shell. This will save a lot
+   of password typing but it's not essential so if you are not so
+   confident with computers, you can skip this bit. The instructions
+   are `here
+   <https://confluence.atlassian.com/bitbucket/set-up-ssh-for-git-728138079.html>`_.
+
+Now go and do the `git tutorial <https://confluence.atlassian.com/bitbucket/git-tutorial-keep-track-of-your-space-station-locations-759857287.html>`_ over at Bitbucket. You also need to do the `collaboration tutorial <https://confluence.atlassian.com/bitbucket/tutorial-request-to-update-a-teammate-s-repository-774243385.html>`_.
+
 
 Sharing your problems with gists
 --------------------------------
