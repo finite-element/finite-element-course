@@ -18,4 +18,4 @@ def test_init_finite_element(cell):
 
 if __name__ == '__main__':
     import os
-    pytest.main(os.path.abspath(__file__))
+    pytest.main([os.path.abspath(__file__)])

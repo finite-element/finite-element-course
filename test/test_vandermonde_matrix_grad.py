@@ -63,4 +63,4 @@ def test_vandermonde_matrix_grad_values_2D(degree):
 
 if __name__ == '__main__':
     import os
-    pytest.main(os.path.abspath(__file__))
+    pytest.main([os.path.abspath(__file__)])

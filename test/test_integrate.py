@@ -40,4 +40,4 @@ def test_integrate_triangle(dim, degree, quad_degree):
 
 if __name__ == '__main__':
     import os
-    pytest.main(os.path.abspath(__file__))
+    pytest.main([os.path.abspath(__file__)])
