@@ -58,5 +58,5 @@ def test_tabulate_at_nodes(cell, degree):
 
 
 if __name__ == '__main__':
-    import os
-    pytest.main([os.path.abspath(__file__)])
+    import sys
+    pytest.main(sys.argv)

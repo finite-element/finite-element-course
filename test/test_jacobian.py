@@ -56,3 +56,8 @@ def test_jacobian_2d():
     m = UnitSquareMesh(2, 2)
 
     assert (np.abs(np.linalg.det(m.jacobian(1))) - .25).round(12) == 0
+
+
+if __name__ == '__main__':
+    import sys
+    pytest.main(sys.argv)

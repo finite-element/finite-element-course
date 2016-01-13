@@ -19,3 +19,8 @@ def test_convergence(degree):
     print "Expected: %s" % (degree + 1)
 
     assert (convergence_rate > 0.9 * (degree + 1)).all()
+
+
+if __name__ == '__main__':
+    import sys
+    pytest.main(sys.argv)

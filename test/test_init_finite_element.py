@@ -17,5 +17,5 @@ def test_init_finite_element(cell):
     assert (np.round(np.dot(fe.basis_coefs, v) - np.eye(cell.dim+1)) == 0).all()
 
 if __name__ == '__main__':
-    import os
-    pytest.main([os.path.abspath(__file__)])
+    import sys
+    pytest.main(sys.argv)
