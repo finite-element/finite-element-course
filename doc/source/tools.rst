@@ -179,15 +179,6 @@ lot easier to read::
   
   git config --global color.ui "auto"
 
-Finally, you need to tell git which text editor you will use to edit commit messages::
-
-  git FIXME
-
-If you are using your own computer and have a different choice of text
-editor, you can set that instead. The nice people over at Software
-Carpentry have some examples `here
-<http://swcarpentry.github.io/git-novice/02-setup.html>`_.
-
 .. hint::
 
    If you are a more confident computer user, you could go ahead and

@@ -8,16 +8,16 @@ the opportunity to pick up valuable scientific computing skills in
 coding, software engineering and rigorous testing.
 
 There will be no conventional lectures for this part of the
-module. Instead, there will be a two hour computer lab session every
-week. Some of this time will involve explanations at the board, but
-much of the time will be an opportunity to develop your finite element
-implementation and receive help on how to do so.
+module. Instead, there will be eigteen 1 hour computer lab sessions
+during the term. Some of this time will involve explanations at the
+board, but much of the time will be an opportunity to develop your
+finite element implementation and receive help on how to do so.
 
 Formalities and marking scheme
 ------------------------------
 
 The implementation exercise is due at the end of term. That is, by
-1700 on Friday 27 March. You must submit your work by emailing the
+1700 on Wednesday 23 March. You must submit your work by emailing the
 lecturer the git commit code for the version of the code you would
 like marked. You can convenently find this code on the commits page
 for your repository on bitbucket. For the avoidance of doubt, the
@@ -25,33 +25,44 @@ commit you submit must date from before the deadline!
 
 The marking scheme will be as follows:
 
-High first (80-100) 
+High first (80-100)
+  As for bare first, but additionally the extension (mastery)
+  component of the implementaton exercise has been completed correctly
+  and clearly.
+Bare first (75-80)  
   All parts of the implementation are correct and all tests pass. The
   code style is always very clear and the implementation of every
   exercise is transparent and elegant.
-Bare first (75-80)
+Upper second (60-75)
   The implementation is correct but let down somewhat by poor coding
   style. Alternatively, submissions which are correct and well
   written up to and including solving the Helmholtz problem but
   which do not include a correct solution to boundary conditions will
-  earn a bare first.
-Upper second (60-75)
+  earn an upper second.
+Lower second (45-60)
   Most of the exercise is correctly implemented, but there are some
   test failures, or there are significant failures in coding style or
   in the transparency and elegance of solutions.
-Lower second (45-60)
+Third (30-45)
   There are significant failings in the implementation resulting in
   many test failures, and/or the coding style and elegance are
   sufficiently poor that the code is hard to understand.
-Third (30-45)
+Fail (0-30)
   The implementation is substantially incomplete. Correct
-  implementations are provided for some of the earlier exercises but
+  implementations may have been provided for some of the earlier exercises but
   the more advanced parts of the implementation exercise have not been
   attempted or do not work.
-Fail (0-30)
-  The implementation is absent or is not correct even for the more
-  elementary exercises.
 
+Extension (mastery) exercise
+----------------------------
+
+Completing the core implementation exercise will result in (at most) a
+mark of 80% for the implementation part of the module. The remaining
+20% will be allocated to an extension exercise which will be issued in
+the middle of the term. This is intended to enable the students who
+are doing best in the module to demonstrate their mastery of the
+material by implementing work which goes beyond the main body of work.
+  
 
 Obtaining the skeleton code
 ---------------------------
