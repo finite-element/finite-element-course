@@ -272,10 +272,14 @@ cell.
    A test script for your method is provided in the ``test`` directory
    as ``test_integrate.py``. Run this script to test your code::
 
-      python test_integrate.py
+      py.test tests/test_integrate.py
 
-   Make sure you commit your modifications and push them to your fork
-   of the course repository.
+   from the Bash command line or::
+
+     run tests/test_integrate.py
+
+   from Python. Make sure you commit your modifications and push them
+   to your fork of the course repository.
 
 .. hint::
 

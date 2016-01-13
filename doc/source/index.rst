@@ -17,12 +17,12 @@
 .. only:: html
 
    This is the webpage for the `Imperial College London Mathematics
-   <http://www.imperial.ac.uk/maths>`_ masters module M5MA47 Finite
-   Elements: numerical analysis and implementation. Other people are
-   welcome to make use of the material here. The authors welcome feedback
-   and would particularly appreciate an `email
-   <mailto:david.ham@imperial.ac.uk>`_ if this material is used to teach
-   anywhere.
+   <http://www.imperial.ac.uk/maths>`_ final year and masters module
+   M4A47/M5A47 Finite Elements: numerical analysis and
+   implementation. Other people are welcome to make use of the
+   material here. The authors welcome feedback and would particularly
+   appreciate an `email <mailto:david.ham@imperial.ac.uk>`_ if this
+   material is used to teach anywhere.
 
    .. toctree::
 
@@ -46,24 +46,6 @@
    the Imperial College network at `Springer Link
    <http://link.springer.com/book/10.1007%2F978-0-387-75934-0>`_.
 
-   Problem sheets
-   ~~~~~~~~~~~~~~
-
-   * `Examples sheet 1 <_static/FE_examples1.pdf>`_ and
-     `answers <_static/FE_examples1_solns.pdf>`_.
-   * `Examples sheet 2 <_static/FE_examples2.pdf>`_ and `answers <_static/FE_examples2_solns.pdf>`_.
-   * `Examples sheet 3 <_static/FE_examples3.pdf>`_ and `answers <_static/FE_examples3_solns.pdf>`_.
-
-   Mock exam paper
-   ~~~~~~~~~~~~~~~
-
-   * `A mock exam paper <_static/FE_mock_paper.pdf>`_.
-
-   Mastery exercise
-   ~~~~~~~~~~~~~~~~
-
-   * `The mastery exercise <_static/mastery.pdf>`_. It
-     is due by 1600 on Friday 1 May.
 
    Part 2: Implementation
    ----------------------

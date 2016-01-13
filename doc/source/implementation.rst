@@ -98,9 +98,10 @@ Cloning a local copy
 
 At the command line on your working machine type::
 
-  git clone git@bitbucket.org:<USERNAME>/finite_element_course.git
+  git clone <url>
 
-substituting your Bitbucket username for <USERNAME>. Next::
+Substituting your git repository url for <url>. Your git repository
+url is at the top right of your repository page on Bitbucket. Next::
 
   cd finite_element_course
   git checkout implementation
@@ -108,8 +109,19 @@ substituting your Bitbucket username for <USERNAME>. Next::
 Your working directory is now a current checkout of your
 implementation branch.
 
-Pointing Python at the code
-~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Pointing Python at the code on Windows
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+
+By far the easiest way to have your Python find the code is to ensure
+your working directory is the right one. Type the following at the
+Python command line::
+
+  cd h:\finite_element_course
+
+
+Pointing Python at the code on OS X or Linux
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 You'll need Python to be able to find the ``fe_utils`` package from
 wherever it is running. To do this, you need to add your repository
@@ -226,11 +238,16 @@ testing framework. You run the tests with::
 
    py.test test_script.py
 
-replacing ``test_script.py`` with the appropriate options. The ``-x``
-option to ``py.test`` will cause the test to stop at the first failure
-it finds, which is often the best place to start fixing a problem. For
-those familiar with debuggers, the ``--pdb`` option will drop you into
-the Python debugger at the first error.
+on the Bash command line or:
+
+   run test/test_script.py
+
+from within Python, replacing ``test_script.py`` with the appropriate
+test file name. The ``-x`` option to ``py.test`` will cause the test
+to stop at the first failure it finds, which is often the best place
+to start fixing a problem. For those familiar with debuggers, the
+``--pdb`` option will drop you into the Python debugger at the first
+error.
 
 Coding style and commenting
 ---------------------------

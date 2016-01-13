@@ -33,13 +33,6 @@ simple language with similarities to Matlab. Students who are not
 familiar with Python will need to acquire some familiarity with the
 language, for example by doing one of the suggested tutorials.
 
-Timetable
----------
-
-The module timetable is available online `here
-<http://wwwf.imperial.ac.uk/~csisson/14/2/fnt/m135181.html>`_. It is
-anticipated that theory lectures will be held in weeks 1-9 of term and
-that implementation labs will occur in weeks 1-8 and week 10.
 
 Assessment
 ----------
@@ -63,15 +56,19 @@ nights and feedback will be provided before the next Friday lab.
 Mastery
 .......
 
-All Department of Mathematics masters courses must contain a mastery
-component. For MSc students this form part of the specific mastery
-mark in your degree. For MPE students the mastery component will be
-incorporated into your module mark in a standard way across all
-modules.
+All Department of Mathematics fourth year and masters courses must
+contain a mastery component.
 
-The mastery component of this module will be a short project in which
-you will derive the weak form of a PDE and solve the resulting finite
-element problem using your implementation code. You will demonstrate
-the correct convergence rate and submit a short report containing the
-derivations and the numerical results. The mastery project will be
-handed out approximately half way through term.
+The mastery component of this module will be the extension exercise to
+the implementation project. The mastery project will be handed out
+approximately half way through term.
+
+
+Course email list
+-----------------
+
+There is an email list for this module which will be used to
+communicate during the term and to which you need to subscribe. Please
+subscribe `here
+<https://mailman.ic.ac.uk/mailman/listinfo/finite-element-course>`_. Failure
+to subscribe to the email list will not be regarded as an excuse!
