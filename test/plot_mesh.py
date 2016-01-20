@@ -1,6 +1,6 @@
 from matplotlib import pyplot as plt
-from fe_utils import ReferenceTriangle, LagrangeElement, UnitSquareMesh, \
-    ReferenceInterval, UnitIntervalMesh, FunctionSpace
+from fe_utils import ReferenceTriangle, UnitSquareMesh, \
+    ReferenceInterval, UnitIntervalMesh
 from argparse import ArgumentParser
 import numpy as np
 
@@ -9,7 +9,9 @@ parser.add_argument("dimension", type=int, nargs=1, choices=(1, 2),
                     help="Dimension of the domain.")
 parser.add_argument("resolution", type=int, nargs=1,
                     help="The number of cells in each direction of the mesh.")
-if __name__=="__main__":
+
+
+if __name__ == "__main__":
     args = parser.parse_args()
     resolution = args.resolution[0]
     cell = (None, ReferenceInterval, ReferenceTriangle)[args.dimension[0]]
@@ -48,7 +50,6 @@ if __name__=="__main__":
         ax.axis(np.add(ax.axis(), [-.1, .1, -.1, .1]))
     else:
         plt.plot(mesh.vertex_coords[:, 0], 0 * mesh.vertex_coords[:, 0], 'ko')
-
 
         ax.axis([-.1, 1.1, -.1, .1])
 
