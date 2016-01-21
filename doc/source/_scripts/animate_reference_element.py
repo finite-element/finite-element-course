@@ -140,9 +140,10 @@ class DrawEdges(CellScene):
                 self.anim.caption("From vertex %d to vertex %d." % (j0, j1))
                 self.ar = self.anim.ax.annotate("", v0 + .2 * dx, v0 + .05 * dx, arrowprops={"color": "blue",
                                                                                              "headlength": 20})
+                return self.ar,
             elif ii < self.anim.fps:
                 self.ar.xy = v0 + (.2 + .75 * (ii / self.anim.fps)) * dx
-            return self.ar,
+                return self.ar,
         elif ii == 0:
             return self.anim.caption("Notice that that last edge appears to run backwards!"),
 

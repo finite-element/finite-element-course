@@ -27,7 +27,7 @@ we term the set `\{X_q\}` the set of *quadrature points* and the
 corresponding set `\{w_q\}` the set of *quadrature weights*. A set of
 quadrature points and their corresponding quadrature weights together
 comprise a *quadrature rule* for `e`. For an arbitrary function `f`,
-quadrature is only an approximiation to the integral. The global
+quadrature is only an approximation to the integral. The global
 truncation error in this approximation is invariably of the form
 `O(h^n)` where `h` is the diameter of the element.
 
@@ -200,7 +200,7 @@ minimum possible number of points for each degree of precision.
 Extending Legendre-Gauß quadrature to two dimensions
 ----------------------------------------------------
 
-We can form a unit square by taking the cartesian product of two unit
+We can form a unit square by taking the Cartesian product of two unit
 intervals: `(0, 1)\otimes (0, 1)`. Similarly, we can form a quadrature
 rule on a unit square by taking the product of two interval quadrature
 rules:
@@ -272,11 +272,11 @@ cell.
    A test script for your method is provided in the ``test`` directory
    as ``test_integrate.py``. Run this script to test your code::
 
-      py.test tests/test_integrate.py
+      py.test test/test_integrate.py
 
    from the Bash command line or::
 
-     run tests/test_integrate.py
+     run test/test_integrate.py
 
    from Python. Make sure you commit your modifications and push them
    to your fork of the course repository.
