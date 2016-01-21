@@ -238,7 +238,7 @@ testing framework. You run the tests with::
 
    py.test test_script.py
 
-on the Bash command line or:
+on the Bash command line or::
 
    !py.test test/test_script.py
 
