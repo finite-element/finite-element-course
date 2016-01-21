@@ -276,7 +276,7 @@ cell.
 
    from the Bash command line or::
 
-     run test/test_integrate.py
+     !py.test test/test_integrate.py
 
    from Python. Make sure you commit your modifications and push them
    to your fork of the course repository.

@@ -159,7 +159,7 @@ relatively low order computations.
    ``test/test_lagrange_points.py``. You can also test your lagrange
    points on the triangle by running:: 
 
-     python test/plot_lagrange_points.py degree
+     py.test test/plot_lagrange_points.py degree
    
    Where degree is the degree of the points to plot.
 
@@ -427,13 +427,13 @@ where `X_i` is the point associated with the `i`-th node.
    functions of your choice interpolated onto any of the finite
    elements you can make::
 
-     python test/plot_interpolate_lagrange.py "sin(2*pi*x[0])" 2 5
+     py.test test/plot_interpolate_lagrange.py "sin(2*pi*x[0])" 2 5
 
    .. hint::
 
       You can find help on the arguments to this function with::
       
-        python test/plot_interpolate_lagrange.py -h
+        py.test test/plot_interpolate_lagrange.py -h
 
 .. rubric:: Footnotes
 

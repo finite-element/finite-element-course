@@ -240,7 +240,7 @@ testing framework. You run the tests with::
 
 on the Bash command line or:
 
-   run test/test_script.py
+   !py.test test/test_script.py
 
 from within Python, replacing ``test_script.py`` with the appropriate
 test file name. The ``-x`` option to ``py.test`` will cause the test
@@ -248,6 +248,7 @@ to stop at the first failure it finds, which is often the best place
 to start fixing a problem. For those familiar with debuggers, the
 ``--pdb`` option will drop you into the Python debugger at the first
 error.
+
 
 Coding style and commenting
 ---------------------------

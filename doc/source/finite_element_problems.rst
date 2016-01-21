@@ -444,7 +444,7 @@ Implementing finite element problems
 
    Run::
 
-      python tests/solve_helmholtz.py --help
+      py.test tests/solve_helmholtz.py --help
 
    for guidance on using the script to view the solution, the analytic
    solution and the error in your solution. In addition,

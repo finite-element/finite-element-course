@@ -178,7 +178,7 @@ mesh.
 You can observe the numbering of mesh entities in these meshes using
 the ``test/plot_mesh.py`` script. Run::
 
-  python test/plot_mesh.py -h
+  py.test test/plot_mesh.py -h
 
 for usage instructions.
 

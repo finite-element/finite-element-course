@@ -121,7 +121,7 @@ With this definition, :eq:`weakpoisson` has solution:
    likely to be helpful in implementing the boundary conditions. As
    before, run::
 
-     python tests/solve_poisson.py --help
+     py.test tests/solve_poisson.py --help
      
    for instructions (they are the same as for
    ``tests/solve_helmholtz.py``). Similarly,
