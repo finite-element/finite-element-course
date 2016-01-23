@@ -427,13 +427,13 @@ where `X_i` is the point associated with the `i`-th node.
    functions of your choice interpolated onto any of the finite
    elements you can make::
 
-     py.test test/plot_interpolate_lagrange.py "sin(2*pi*x[0])" 2 5
+     python test/plot_interpolate_lagrange.py "sin(2*pi*x[0])" 2 5
 
    .. hint::
 
       You can find help on the arguments to this function with::
       
-        py.test test/plot_interpolate_lagrange.py -h
+        python test/plot_interpolate_lagrange.py -h
 
 .. rubric:: Footnotes
 
