@@ -429,6 +429,10 @@ where `X_i` is the point associated with the `i`-th node.
 
      python test/plot_interpolate_lagrange.py "sin(2*pi*x[0])" 2 5
 
+   From the Enthought Canopy Python command line, you would instead write::
+
+     run test/plot_interpolate_lagrange.py "sin(2*pi*x[0])" 2 5
+
    .. hint::
 
       You can find help on the arguments to this function with::
