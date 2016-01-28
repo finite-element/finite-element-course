@@ -159,8 +159,12 @@ relatively low order computations.
    ``test/test_lagrange_points.py``. You can also test your lagrange
    points on the triangle by running:: 
 
-     py.test test/plot_lagrange_points.py degree
+     python test/plot_lagrange_points.py degree
    
+   From the Enthought Canopy Python command line, you would instead write::
+
+     run test/plot_lagrange_points.py degree
+
    Where degree is the degree of the points to plot.
 
 .. hint::
