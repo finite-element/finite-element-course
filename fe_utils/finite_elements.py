@@ -11,10 +11,12 @@ def lagrange_points(cell, degree):
     :param cell: the :class:`~.reference_elements.ReferenceCell`
     :param degree: the degree of polynomials for which to construct nodes.
 
-    :returns: the list of coordinate tuples corresponding to the nodes.
+    :returns: a rank 2 :class:`~numpy.array` whose rows are the
+        coordinates of the nodes.
 
     The implementation of this function is left as an :ref:`exercise
     <ex-lagrange-points>`.
+
     """
 
     raise NotImplementedError
