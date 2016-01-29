@@ -46,6 +46,10 @@
    the Imperial College network at `Springer Link
    <http://link.springer.com/book/10.1007%2F978-0-387-75934-0>`_.
 
+   Exercises:
+   ~~~~~~~~~~
+
+   * `Examples sheet 1 <_static/FE_examples1.pdf>`_
 
    Part 2: Implementation
    ----------------------
