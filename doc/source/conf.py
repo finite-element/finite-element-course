@@ -32,6 +32,7 @@ extensions = [
     'sphinx.ext.autodoc',
     'sphinx.ext.intersphinx',
     'sphinx.ext.mathjax',
+    'sphinxcontrib.youtube',
     'sphinx.ext.viewcode',
     'clatex_builder',
     'sphinxcontrib.bibtex'

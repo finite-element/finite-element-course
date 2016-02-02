@@ -82,6 +82,16 @@ local topology of the reference cell. `Read the source
 <_modules/fe_utils/reference_elements.html>`_ and ensure that you
 understand the way in which this information is encoded.
 
+.. only:: html
+
+  The following animation of the numbering of the topological entities
+  on the reference cell may help in understanding this.
+          
+  .. container:: youtube
+
+    .. youtube:: 7A7JU7bGw0E?modestbranding=1;controls=0;rel=0
+       :width: 400px
+
 .. _figreferenceentities:
 
 .. figure:: entities.*
