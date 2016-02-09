@@ -30,7 +30,7 @@ def test_point_count(cell, degree):
 
     p = lagrange_points(cell, degree)
 
-    assert p.shape[0] == comb(degree + cell.dim, cell.dim)
+    assert p.shape[0] == np.round(comb(degree + cell.dim, cell.dim))
 
 
 # Check that the average of the points is the circumcentre.

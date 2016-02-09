@@ -44,7 +44,7 @@ def test_vandermonde_matrix_grad_values_1D(degree):
 @pytest.mark.parametrize('degree', range(8))
 def test_vandermonde_matrix_grad_values_2D(degree):
 
-    points = np.array([[0, 0], [1, 0], [0, 1]])
+    points = np.array([[0., 0.], [1., 0.], [0., 1.]])
 
     V = vandermonde_matrix(ReferenceTriangle, degree, points, grad=True)
 

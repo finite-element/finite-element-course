@@ -48,7 +48,7 @@ def test_vandermonde_matrix_size(cell, degree):
 @pytest.mark.parametrize('degree', range(8))
 def test_vandermonde_matrix_values_1D(degree):
 
-    points = np.array([[0], [1], [2]])
+    points = np.array([[0.], [1.], [2.]])
 
     V = vandermonde_matrix(ReferenceInterval, degree, points)
 
@@ -67,7 +67,7 @@ def test_vandermonde_matrix_values_1D(degree):
 @pytest.mark.parametrize('degree', range(8))
 def test_vandermonde_matrix_values_2D(degree):
 
-    points = np.array([[0, 0], [1, 1], [1, 0], [0, 1]])
+    points = np.array([[0., 0.], [1., 1.], [1., 0.], [0., 1.]])
 
     V = vandermonde_matrix(ReferenceTriangle, degree, points)
 
