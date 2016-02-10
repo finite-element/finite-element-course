@@ -88,4 +88,5 @@
    functions
    finite_element_problems
    boundary_conditions
+   nonlinear_problems
    zbibliography
