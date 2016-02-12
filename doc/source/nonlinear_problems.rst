@@ -144,7 +144,7 @@ Next, we can work out the boundary case by assuming `v=\phi_i`, one of the basis
    &= n_i(\hat{u}) \qquad \textrm{since } n_i(\cdot) \textrm{ is linear.}
    \end{split}
 
-Once again, we can observe that `J` is linear in `\hat{u}`. Indeed, if choose `\hat{u} = \phi_j` for some `phi_j` in the basis if `V` then the definition of a nodal basis gives us:
+Once again, we can observe that `J` is linear in `\hat{u}`. Indeed, if choose `\hat{u} = \phi_j` for some `\phi_j` in the basis if `V` then the definition of a nodal basis gives us:
 
 .. math::
    :label:
@@ -196,11 +196,28 @@ For our nonlinear diffusion problem, the matrix `J` is given by:
 
    J(u^n; \phi_i, \phi_j) =
    \begin{cases}
-   \int_\Omega \nabla \phi_i \cdot \left(\phi_j \nabla u^n + (u^n + 1) \nabla \phi_j \right) \, \mathrm{d} x & \phi_i\in V_0\\
+   \displaystyle\int_\Omega \nabla \phi_i \cdot \left(\phi_j \nabla u^n + (u^n + 1) \nabla \phi_j \right) \, \mathrm{d} x & \phi_i\in V_0\\
    \delta_{ij} & \phi_i \in V_\Gamma,
    \end{cases}
 
 and the right hand side vector `f` is given by :eq:`residual`.
+
+Stopping criteria for Newton's method
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+Since Newton's method is an iterative algorithm, it creates a
+(hopefully convergent) sequence of approximations to the correct
+solution to the original nonlinear problem. How do we know when to
+accept the solution and terminate the algorithm?
+
+We don't know how close any iterate to the exact solution (for that
+would be begging the question). However we do know how well our
+solution fulfills the equation: that is exactly the definition of the
+residual. We can therefore evaluate the residual after each step, and
+halt when the residual becomes, in some sense, small enough.
+
+
+
 
 Implementing a nonlinear problem
 --------------------------------
