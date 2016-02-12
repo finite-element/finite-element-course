@@ -235,8 +235,8 @@ Implementing a nonlinear problem
 .. hint::
 
    You can either implement your own Newton solver, or install the
-   :python:`scipy` package and work out how to use the
-   :python:`scipy.optimize.newton_krylov` function.
+   :py:mod:`scipy` package and work out how to use the
+   :py:func:`scipy.optimize.newton_krylov` function.
 
 .. hint::
 
