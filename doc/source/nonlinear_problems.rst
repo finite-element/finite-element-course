@@ -8,7 +8,7 @@ The finite element method may also be employed to numerically solve
 *nonlinear* PDEs. In order to do this, we can employ the classical
 technique for solving nonlinear systems: we employ an iterative scheme
 such as Newton's method to create a sequence of linear problems whose
-solutions enable us to converge on the correct solution to the
+solutions converge to the correct solution to the
 nonlinear problem.
 
 .. note::
@@ -59,7 +59,7 @@ linear matrix system to solve.
 Residual form
 -------------
 
-The general form of a non-linear problem is, find `u\in V` such that:
+The general weak form of a non-linear problem is, find `u\in V` such that:
 
 .. math::
    :label:
@@ -69,7 +69,7 @@ The general form of a non-linear problem is, find `u\in V` such that:
 The use of a semicolon is a common convention to indicate that `f` is
 assumed to be linear in the arguments after the semicolon, but might
 be nonlinear in the arguments before the semicolon. In this case,
-we're observing that `f` may be nonlinear in `u` but is (by
+we observe that `f` may be nonlinear in `u` but is (by
 construction) linear in `v`.
 
 The function `f` is called the *residual* of the nonlinear system. In
@@ -102,23 +102,30 @@ So for our model problem, we now have a full statement of the residual in terms 
       n_i(u) - n_i(b) & \phi_i\in V_\Gamma
    \end{cases}
 
+.. hint::
+   
+   Evaluating the residual requires that the boundary condition be
+   evaluated at the boundary nodes. A simple (if slightly inefficient)
+   way to achieve this is to interpolate the boundary condition onto a
+   function `\hat{b}\in V`.
+   
    
 Linearisation and Gâteaux Derivatives
 -------------------------------------
 
-The residual is the tool we need in order to be able to linearise our
+Having stated our PDE in residual form, we now need to linearise the
 problem and thereby employ a technique such as Newton's method. In
 order to linearise the residual, we need to differentiate it with
 respect to `u`. Since `u` is not a scalar real variable, but is
-instead a function in `V`, the appropriate derivative is the Gâteaux
-Derivative, given by:
+instead a function in `V`, the appropriate form of differentiation is
+the Gâteaux Derivative, given by:
 
 .. math::
    :label:
       
-   J(u; v, \hat{u}) = \lim_{\epsilon\rightarrow 0}\frac{f(u+\epsilon\hat{u}; v)-f(u; v)}{\epsilon}
+   J(u; v, \hat{u}) = \lim_{\epsilon\rightarrow 0}\frac{f(u+\epsilon\hat{u}; v)-f(u; v)}{\epsilon}.
 
-where the new argument `\hat{u}\in V` indicates the "direction" in
+Here, the new argument `\hat{u}\in V` indicates the "direction" in
 which the derivative is to be taken. Let's work through the Gâteaux
 Derivative for the residual of our model problem. Assume first that
 `v\in V_0`. Then:
@@ -127,7 +134,7 @@ Derivative for the residual of our model problem. Assume first that
    :label:
 
    \begin{split}
-   J(u; v, \hat{u}) &= \lim_{\epsilon\rightarrow 0}\frac{\displaystyle\int_\Omega \nabla v \cdot \left((u +\epsilon\hat{u} + 1) \nabla (u + \epsilon\hat{u})\right) + vg \, \mathrm{d} x - \displaystyle\int_\Omega \nabla v \cdot \left((u + 1) \nabla u\right) + vg \, \mathrm{d} x}{\epsilon}\\
+   J(u; v, \hat{u}) &= \lim_{\epsilon\rightarrow 0}\frac{\displaystyle\int_\Omega \nabla v \cdot \left((u +\epsilon\hat{u} + 1) \nabla (u + \epsilon\hat{u})\right) - vg \, \mathrm{d} x - \displaystyle\int_\Omega \nabla v \cdot \left((u + 1) \nabla u\right) - vg \, \mathrm{d} x}{\epsilon}\\
    &= \lim_{\epsilon\rightarrow 0}\frac{\displaystyle\int_\Omega \nabla v \cdot \left(\epsilon\hat{u} \nabla u + (u + 1) \nabla (\epsilon\hat{u}) + \epsilon\hat{u} \nabla (\epsilon\hat{u})\right) \, \mathrm{d} x}{\epsilon}\\
    &= \int_\Omega \nabla v \cdot \left(\hat{u} \nabla u + (u + 1) \nabla \hat{u} \right) \, \mathrm{d} x.\\
    \end{split}
@@ -200,7 +207,8 @@ For our nonlinear diffusion problem, the matrix `J` is given by:
    \delta_{ij} & \phi_i \in V_\Gamma,
    \end{cases}
 
-and the right hand side vector `f` is given by :eq:`residual`.
+and the right hand side vector `f` is given by :eq:`residual`. This
+matrix, `J`, is termed the *Jacobian matrix* of `f`.
 
 Stopping criteria for Newton's method
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -210,13 +218,112 @@ Since Newton's method is an iterative algorithm, it creates a
 solution to the original nonlinear problem. How do we know when to
 accept the solution and terminate the algorithm?
 
-We don't know how close any iterate to the exact solution (for that
-would be begging the question). However we do know how well our
-solution fulfills the equation: that is exactly the definition of the
-residual. We can therefore evaluate the residual after each step, and
-halt when the residual becomes, in some sense, small enough.
+The answer is that the update, `\hat{u}` which is calculated at each
+step of Newton's method is itself an approximation to the error in the
+solution. It is therefore appropriate to stop Newton's method when
+this error estimate becomes sufficiently small in the `L^2` norm.
+
+The observant reader will observe that `\hat{u}` is in fact
+an estimate of the error in the *previous* step. This is indeed true:
+the Newton step is both an estimate of the previous error and a
+correction to that error. However, having calculated the error
+estimate, it is utterly unreasonable to not apply the corresponding
+correction.
+
+.. note::
+
+   Another commonly employed stopping mechanism is to consider the
+   size of the residual `f`. However, the residual is not actually a
+   function in `V`, but is actually a linear operator in `V^*`. Common
+   practice would be to identify `f` with a function in `V` by simply
+   taking the function whose coefficients match those of `f`. The
+   `L^2` or `l^2` norm is then taken of this function and this value
+   is used to determine when convergence has occured.
+
+   This approach effectively assumes that the Riesz map on `V` is the
+   trivial operator which identifies the basis function
+   coefficients. This would be legitimate were the inner product on
+   `V` the `l^2` dot product. However, since the inner product on `V`
+   is defined by an integral, the mesh resolution is effectively
+   encoded into `f`. This means that this approach produces
+   convergence rates which depend on the level of mesh refinement.
+   
+   Avoiding this mesh dependency requires the evaluation of an
+   operator norm or, equivalently, the solution of a linear system in
+   order to find the Riesz representer of `f` in `V`. However, since
+   the error-estimator approach given above is both an actual estimate
+   of the error in the solution, and requires no additional linear
+   solves, it should be regarded as a preferable approach. For a full
+   treatment of Newton methods, see :cite:`Deuflhard2011`.
 
 
+Stopping threshold values
+~~~~~~~~~~~~~~~~~~~~~~~~~
+
+What, then, qualifies as a sufficiently small value of our error
+estimate? There are two usual approaches:
+
+relative tolerance
+   Convergence is deemed to occur when the estimate
+   becomes sufficiently small compared with the first error estimate
+   calculated.  This is generally the more defensible approach since
+   it takes into account the overall scale of the solution. `10^{-6}`
+   would be a reasonably common relative tolerance.
+
+absolute tolerance
+   Computers employ finite precision arithmetic, so there is a limit
+   to the accuracy which can ever be achieved. This is a difficult
+   value to estimate, since it depends on the number and nature of
+   operations undertaken in the algorithm. A common approach is to set
+   this to a very small value (e.g. `10^{-50}`) initially, in order to
+   attempt to ensure that the relative tolerance threshold is
+   hit. Only if it becomes apparent that the problem being solved is
+   in a regime for which machine precision is a problem is a higher
+   absolute tolerance set.
+
+It is important to realise that both of these criteria involve making
+essentially arbitrary judgements about the scale of error which is
+tolerable. There is also a clear trade-off between the level of error
+tolerated and the cost of performing a large number of Newton
+steps. For realistic problems, it is therefore frequently expedient
+and/or necessary to tune the convergence criteria to the particular
+case.
+
+In making these judgements, it is also important to remember that the
+error in the Newton solver is just one of the many sources of error in
+a calculation. It is pointless to expend computational effort in an
+attempt to drive the level of error in this component of the solver to
+a level which will be swamped by a larger error occurring somewhere
+else in the process.
+
+Failure modes
+~~~~~~~~~~~~~
+
+Just as with the Newton method for scalar problems, Newton iteration
+is not guaranteed to converge for all nonlinear problems or for all
+initial guesses. If Newton's method fails to converge, then the
+algorithm presented so far constitutes an infinite loop. It is
+therefore necessary to define some circumstances in which the
+algorithm should terminate having failed to find a solution. Two such
+circumstances are commonly employed:
+
+maximum iterations
+   It is a reasonable heuristic that Newton's method has failed if it
+   takes a very large number of iterations. What constitutes "too
+   many" is once again a somewhat arbitrary judgement, although if the
+   approach takes many tens of iterations this should always be cause
+   for reconsideration!
+
+diverged error estimate
+   Newton's method is not guaranteed to produce a sequence of
+   iterations which monotonically decrease the error, however if the
+   error estimate has increased to, say, hundreds or thousands of
+   times its initial value, this would once again be grounds for the
+   algorithm to fail.
+
+Note that these failure modes are heuristic: having the algorithm
+terminate for these reasons is really an instruction to the user to
+think again about the problem, the solver, and the initial guess.
 
 
 Implementing a nonlinear problem
@@ -237,6 +344,7 @@ Implementing a nonlinear problem
    degree 1 Lagrange elements over the unit square domain.
 
    .. math::
+      :label: mastery
    
       -\nabla\cdot\left((u^2+1)\nabla u\right) = g
 
@@ -246,17 +354,63 @@ Implementing a nonlinear problem
    that your solution solves the equations. Make sure your boundary
    condition function `b` is consistent with your chosen solution!
 
+   Your submitted answer will consist of:
+   
+   1. A written component containing your derivation of:
+      
+      a. The weak form of :eq:`mastery`; and 
+
+      b. the Jacobian; and
+
+      c. the forcing term required by your choice of manufactured solution.
+
+      A neatly hand-written or a typed submission are equally acceptable.
+
+   2. A file named ``mastery.py`` in the ``test`` directory of your
+      implementation. Running::
+
+        python mastery.py
+
+      should solve :eq:`mastery` at a number of mesh resolutions and
+      print out the convergence of the error in the solution. This
+      should approach second order as the mesh is refined. Submit by
+      email the git sha for the version of the implementation you wish
+      to have marked.
+      
    Provide test code which demonstrates that your solution converges
    at the correct rate.
 
 .. hint::
 
+   When employing the method of manufactured solutions, it is
+   expeditious to choose a very simple solution. However, in order to
+   avoid unfortunate corner cases which will not fully test your code,
+   you should avoid linear solution functions, and also functions
+   which are constant in either the `x[0]` or `x[1]` direction.
+   
+.. hint::
+
    You can either implement your own Newton solver, or install the
    :py:mod:`scipy` package and work out how to use the
-   :py:func:`scipy.optimize.newton_krylov` function.
+   :py:func:`scipy.optimize.newton_krylov` function. For this simple
+   case, a hand-coded Newton solver is probably the simplest
+   approach. However, for problems which are larger and more complex,
+   it will be advantageous to employ a technique more advanced than
+   simple Newton and the case for using a well-engineered third party
+   implementation is strong.
 
 .. hint::
 
-   You'll need to implement some form of stopping criterion for your
-   Newton solver iteration. A common criterion is to stop when the
-   `L^2` norm of the residual has decreased by a large enough factor.
+   It is an exceptionally useful aid to debugging to have your Newton
+   iteration print out the value of the error norm and the iteration
+   number for each iteration.
+   
+.. hint::
+
+   You could insert a parameter of `\alpha` in front of the `u^2` term
+   in the equation. By setting `\alpha` to 0, you reduce your problem
+   to the linear case. You can use the linear case to test your code
+   initially, before setting `\alpha=1` for the actual exercise. Note
+   that, in the linear case, Newton's method will converge in exactly
+   one iteration (although your algorithm will have to actually
+   calculate two steps in order to know that convergence has occurred).
