@@ -246,7 +246,7 @@ cell node map `M(c, \hat{i})` and `M(c, \hat{j})`.
 
    Unfortunately, :mod:`numpy` interprets this as an instruction to
    insert a vector into the diagonal of ``A``, and will complain that
-   the two-dimensional right hand side dows not match the
+   the two-dimensional right hand side does not match the
    one-dimensional left hand side. Instead, one has to employ the
    :func:`numpy.ix_` function::
 

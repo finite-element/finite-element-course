@@ -134,5 +134,6 @@ Inhomogeneous Dirichlet conditions
 
 The algorithm described here can be extended to inhomogeneous systems
 by setting the entries in the global vector to the value of the
-boundary condition at the corresponding boundary node. However the
-implementation of this is beyond the scope of this module.
+boundary condition at the corresponding boundary node. This additional
+step is required for the mastery exercise, but will be explained in
+more detail in the next section.
