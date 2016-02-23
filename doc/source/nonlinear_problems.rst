@@ -151,7 +151,9 @@ Next, we can work out the boundary case by assuming `v=\phi_i`, one of the basis
    &= n_i(\hat{u}) \qquad \textrm{since } n_i(\cdot) \textrm{ is linear.}
    \end{split}
 
-Once again, we can observe that `J` is linear in `\hat{u}`. Indeed, if choose `\hat{u} = \phi_j` for some `\phi_j` in the basis if `V` then the definition of a nodal basis gives us:
+Once again, we can observe that `J` is linear in `\hat{u}`. Indeed, if
+we choose `\hat{u} = \phi_j` for some `\phi_j` in the basis if `V`
+then the definition of a nodal basis gives us:
 
 .. math::
    :label:

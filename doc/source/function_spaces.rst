@@ -145,10 +145,11 @@ entity. The formula for the first global node associated with entity
 
 where `N_d` is the number of nodes which this finite element
 associates with each entity of dimension `d`, and `E_d` is the number
-of dimension `d` entities in the mesh. The full list of entities
-associated with `(d, i)` is therefore:
+of dimension `d` entities in the mesh. The full list of nodes
+associated with entity `(d, i)` is therefore:
 
 .. math::
+   :label:
 
    [G(d, i), \ldots, G(d,i) + N_d - 1]
 
@@ -179,6 +180,7 @@ local node numbers. The entries in this map will have the following values:
 where:
 
 .. math::
+   :label:
 
    i = \operatorname{Adj}_{\dim(c), \delta}[c, \epsilon],
 
@@ -190,10 +192,17 @@ cell, and `G` and `N` have the meanings given above. This algorithm
 requires a trivial extension to adjacency:
 
 .. math::
+   :label:
 
    \operatorname{Adj}_{\dim(c),\dim(c)}[c, 0] = c
 
-
+.. hint::
+   
+   In :eq:`eqcellnode`, notice that for each value of `\delta` and
+   `\epsilon`, `e(\delta, \epsilon)` is a vector of indices, so the
+   equation sets the value of zero, one, or more defined entries in row `c`
+   of `M` for each `\delta` and `\epsilon`.
+   
 Implementing function spaces in Python
 --------------------------------------
 
