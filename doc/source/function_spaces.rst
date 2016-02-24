@@ -243,12 +243,11 @@ element, and contains (in some form) a global numbering of the nodes.
 .. hint::
 
    :attr:`~fe_utils.function_spaces.FunctionSpace.cell_nodes` needs to
-         be integer-valued. If you choose to use :func:`numpy.zeros`
-         to create a matrix which you then populate with values, you
-         need to explicitly specify that you want a matrix of
-         zeros. This can be achieved by passing the ``dtype`` argument
-         to :func:`numpy.zeros`. For example ``numpy.zeros((nrows,
-         ncols), dtype=int)``.
+   be integer-valued. If you choose to use :func:`numpy.zeros`
+   to create a matrix which you then populate with values, you
+   need to explicitly specify that you want a matrix of
+   zeros. This can be achieved by passing the ``dtype`` argument
+   to :func:`numpy.zeros`. For example ``numpy.zeros((nrows, ncols), dtype=int)``.
 
 .. rubric:: Footnotes
 
