@@ -27,10 +27,11 @@ if __name__ == "__main__":
 
     nodes = np.empty((fs.node_count, cell.dim))
     cg1 = LagrangeElement(cell, 1)
+    cg1fs = FunctionSpace(mesh, cg1)
     coord_map = cg1.tabulate(fe.nodes)
     for c in range(mesh.entity_counts[-1]):
         # Interpolate the coordinates to the cell nodes.
-        vertex_coords = mesh.vertex_coords[mesh.cell_vertices[c, :], :]
+        vertex_coords = mesh.vertex_coords[cg1fs.cell_nodes[c, :], :]
         lcoords = np.dot(coord_map, vertex_coords)
 
         # Insert the resulting cells into the global set.
