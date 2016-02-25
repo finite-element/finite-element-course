@@ -76,6 +76,10 @@ class Mesh(object):
         entity. For example if `dim1==2` and `dim2==1` then return the list of
         edges (1D entities) adjacent to each triangle (2D entity).
 
+        The return value is a rank 2 :class:`numpy.array` such that
+        ``adjacency(dim1, dim2)[e1, :]`` is the list of dim2 entities
+        adjacent to entity ``(dim1, e1)``.
+
         This operation is only defined where `self.dim >= dim1 > dim2`.
 
         This method is simply a more systematic way of accessing

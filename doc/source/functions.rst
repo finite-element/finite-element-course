@@ -124,21 +124,27 @@ with the :class:`~fe_utils.mesh.Mesh`, and the
 list of values. We need to use *indirect addressing* to access these
 values. This is best illustrated using some Python code.
 
-Suppose ``f`` is a :class:`~fe_utils.function_spaces.Function` and,
-for brevity, ``fs = f.function_space``, the
+Suppose ``f`` is a :class:`~fe_utils.function_spaces.Function`.
+For brevity, we write ``fs = f.function_space``, the
 :class:`~fe_utils.function_spaces.FunctionSpace` associated with
-``f``. Then the vertex indices of cell number ``c`` are::
+``f``. Now, we first need a linear element and a corresponding
+:class:`~fe_utils.function_spaces.FunctionSpace`::
 
-  fs.mesh.cell_vertices[c, :]
+  cg1 = fe_utils.LagrangeElement(fs.mesh.cell, 1)
+  cg1fs = fe_utils.FunctionSpace(fs.mesh, cg1)
+
+Then the vertex indices of cell number ``c`` in the correct order for the linear Lagrange element are::
+
+  cg1fs.cell_nodes[c, :]
 
 and therefore the set of coordinate vectors for the vertices of
 element ``c`` are::
 
-  fs.mesh.vertex_coords[fs.mesh.cell_vertices[c, :], :]
+  fs.mesh.vertex_coords[cg1fs.cell_nodes[c, :], :]
 
-That is, the ``cell_vertices`` array is used to look up the right
+That is, the ``cg1fs.cell_nodes`` array is used to look up the right
 vertex coordinates. By a similar process we can access the values
-associated with the nodes element c::
+associated with the nodes of element ``c``::
 
   f.values[fs.cell_nodes[c, :]]
 
