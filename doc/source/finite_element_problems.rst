@@ -253,7 +253,7 @@ cell node map `M(c, \hat{i})` and `M(c, \hat{j})`.
        A[np.ix_(nodes, nodes)] += m # DO THIS!
 
    No such problem exists for adding values into the global right hand
-   side vector. IF ``l`` is the global right hand side vector and
+   side vector. If ``l`` is the global right hand side vector and
    ``v`` is the vector of local right hand integrals, then the
    following will work just fine::
 
@@ -432,28 +432,28 @@ Implementing finite element problems
 
 .. exercise::
 
-   ``tests/solve_helmholtz.py`` contains a partial implementation of
+   ``test/solve_helmholtz.py`` contains a partial implementation of
    the finite element method to solve :eq:`weak_helmholtz` with `f`
    chosen as in :eq:`f_def`. Your task is to implement the
    :func:`assemble` function using :eq:`rhs_index`, and
    :eq:`lhs_assemble` or :eq:`lhs_index`. The comments in the
    :func:`assemble` function provide some guidance as to the steps
    involved. You may also wish to consult the :func:`errornorm`
-   function in ``tests/solve_helmholtz.py`` as a guide to the
+   function in ``test/solve_helmholtz.py`` as a guide to the
    structure of the code required.
 
    Run::
 
-      py.test tests/solve_helmholtz.py --help
+      py.test test/solve_helmholtz.py --help
 
    for guidance on using the script to view the solution, the analytic
    solution and the error in your solution. In addition,
-   ``tests/test_helmholtz_convergence.py`` contains tests that the
+   ``test/test_helmholtz_convergence.py`` contains tests that the
    helmholtz solver converges at the correct rate for degree 1, 2 and
    3 polynomials.
 
    .. warning::
 
-      ``tests/test_helmholtz_convergence.py`` may take many seconds or
+      ``test/test_helmholtz_convergence.py`` may take many seconds or
       even a couple of minutes to run, as it has to solve on some
       rather fine meshes in order to check convergence.
