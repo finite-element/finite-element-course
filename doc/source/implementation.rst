@@ -143,7 +143,7 @@ Watching for updates and issues
 You should make sure you are notified of all updates on the main
 repository and all issues anyone raises. For this, you should navigate
 to `the main repository
-<https://bitbucket.org/finiteelement/finite_element_course>`. On the
+<https://bitbucket.org/finiteelement/finite_element_course>`_. On the
 top right there is an eye icon. Select the drop-down box and ensure
 that ``All issues`` and ``all commits`` are selected.
 

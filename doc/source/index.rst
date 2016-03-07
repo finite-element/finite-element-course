@@ -50,7 +50,14 @@
    ~~~~~~~~~~
 
    * `Examples sheet 1 <_static/FE_examples1.pdf>`_ and `solutions <_static/FE_examples1_solns.pdf>`_
-   * `Examples sheet 2 <_static/FE_examples2.pdf>`_
+   * `Examples sheet 2 <_static/FE_examples2.pdf>`_ and `solutions <_static/FE_examples2_solns.pdf>`_
+   * `Examples sheet 3 <_static/FE_examples3.pdf>`_
+     
+   Past exam papers
+   ~~~~~~~~~~~~~~~~
+
+   * `2015 exam paper <_static/FE2015-exam-revised.pdf>`_ and `solutions <_static/FE2015-exam-soln.pdf>`_
+   * `Mock exam paper <_static/FE_mock_paper.pdf>`_
 
    Part 2: Implementation
    ----------------------
