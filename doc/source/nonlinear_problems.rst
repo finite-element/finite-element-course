@@ -98,7 +98,7 @@ So for our model problem, we now have a full statement of the residual in terms 
    :label: residual
 
    f(u; \phi_i) = \begin{cases}
-      \displaystyle\int_\Omega \nabla \phi_i \cdot \left((u + 1) \nabla u\right) - vg \, \mathrm{d} x & \phi_i\in V_0\\
+      \displaystyle\int_\Omega \nabla \phi_i \cdot \left((u + 1) \nabla u\right) - \phi_i g \, \mathrm{d} x & \phi_i\in V_0\\
       n_i(u) - n_i(b) & \phi_i\in V_\Gamma
    \end{cases}
 
