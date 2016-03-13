@@ -199,8 +199,8 @@ calculate the integral:
    :label: lhs_assemble
 
    \mathrm{A}_{M(c, \hat{i}),M(c, \hat{j})} \stackrel{+}{=}
-   \sum_q \bigg(\left(J^{-T}\nabla_X \Phi_i(X_q)\right)
-   \cdot \left(J^{-T}\nabla_X \Phi_j(X_q)\right) + \Phi_i(X_q)\Phi_j(X_q)\bigg)|J|\,w_q
+   \sum_q \bigg(\left(J^{-T}\nabla_X \Phi_{\hat{i}}(X_q)\right)
+   \cdot \left(J^{-T}\nabla_X \Phi_{\hat{j}}(X_q)\right) + \Phi_{\hat{i}}(X_q)\Phi_{\hat{j}}(X_q)\bigg)|J|\,w_q
    \quad\forall 0\leq \hat{i},\hat{j}< N,\, \forall c
 
 Some readers may find this easier to read using index notation over
@@ -210,8 +210,8 @@ the geometric dimensions:
    :label: lhs_index
 
    \mathrm{A}_{M(c, \hat{i}),M(c, \hat{j})} \stackrel{+}{=}
-   \sum_q \left(\sum_{\alpha\beta\gamma}J^{-1}_{\beta\alpha}\left(\nabla_X \Phi_i(X_q)\right)_\beta\,
-   J^{-1}_{\gamma\alpha}\left(\nabla_X \Phi_j(X_q)\right)_\gamma + \Phi_i(X_q)\Phi_j(X_q)\right)|J|\,w_q
+   \sum_q \left(\sum_{\alpha\beta\gamma}J^{-1}_{\beta\alpha}\left(\nabla_X \Phi_{\hat{i}}(X_q)\right)_\beta\,
+   J^{-1}_{\gamma\alpha}\left(\nabla_X \Phi_{\hat{j}}(X_q)\right)_\gamma + \Phi_{\hat{i}}(X_q)\Phi_{\hat{j}}(X_q)\right)|J|\,w_q
    \quad\forall 0\leq \hat{i},\hat{j}< N,\, \forall c
 
 A note on matrix insertion
