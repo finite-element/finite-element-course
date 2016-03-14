@@ -112,20 +112,20 @@ With this definition, :eq:`weakpoisson` has solution:
 
 .. exercise::
 
-   ``tests/solve_poisson.py`` contains a partial implementation of
+   ``test/solve_poisson.py`` contains a partial implementation of
    this problem. You need to implement the :func:`assemble`
    function. You should base your implementation on your
-   ``tests/solve_helmholtz.py`` but take into account the difference
+   ``test/solve_helmholtz.py`` but take into account the difference
    in the equation, and the boundary conditions. The
-   :func:`boundary_nodes` function in ``tests/solve_poisson.py`` is
+   :func:`boundary_nodes` function in ``test/solve_poisson.py`` is
    likely to be helpful in implementing the boundary conditions. As
    before, run::
 
-     py.test tests/solve_poisson.py --help
+     py.test test/solve_poisson.py --help
      
    for instructions (they are the same as for
-   ``tests/solve_helmholtz.py``). Similarly,
-   ``tests/test_poisson_convergence.py`` contains convergence tests
+   ``test/solve_helmholtz.py``). Similarly,
+   ``test/test_poisson_convergence.py`` contains convergence tests
    for this problem.
 
 
