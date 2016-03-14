@@ -103,7 +103,7 @@ Now for each cell `c`, we execute:
 .. math::
    :label:
 
-   \mathbf{f}_{M(c, \hat{i})} \stackrel{+}{=} \int_c \Phi_{\hat{i}}\, \left(\sum_{\hat{k}}\,f_{\hat{k}}\,\Phi_{\hat{k}}\right)\,|J|\,\mathrm{d} X \qquad \forall 0 \leq \hat{i} < N
+   \mathbf{f}_{M(c, \hat{i})} \stackrel{+}{=} \int_c \Phi_{\hat{i}}\, \left(\sum_{\hat{k}}\,f_{M(c,\hat{k})}\,\Phi_{\hat{k}}\right)\,|J|\,\mathrm{d} X \qquad \forall 0 \leq \hat{i} < N
 
 Where `M` is the cell-node map for the finite element space `V`, `N`
 is the number of nodes per element in `V`, and
@@ -118,7 +118,7 @@ write this as:
 .. math::
    :label: rhs_index
 
-   \mathbf{f}_{M(c, \hat{i})} \stackrel{+}{=} \left(\sum_q \Phi(X_q)_{\hat{i}}\, \left(\sum_{\hat{k}}\,f_{\hat{k}}\,\Phi(X_q)_{\hat{k}}\right)\,w_q\,\right) |J| \qquad \forall 0 \leq \hat{i} < N,\, \forall c
+   \mathbf{f}_{M(c, \hat{i})} \stackrel{+}{=} \left(\sum_q \Phi(X_q)_{\hat{i}}\, \left(\sum_{\hat{k}}\,f_{M(c,\hat{k})}\,\Phi(X_q)_{\hat{k}}\right)\,w_q\,\right) |J| \qquad \forall 0 \leq \hat{i} < N,\, \forall c
 
 
 Assembling the left hand side matrix
