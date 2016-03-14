@@ -290,7 +290,7 @@ Implementing integration
 
    Use :eq:`jacobian` to implement the
    :meth:`~fe_utils.mesh.Mesh.jacobian` method of
-   :class:`~fe_utils.mesh.Mesh`. ``tests/test_jacobian.py`` is
+   :class:`~fe_utils.mesh.Mesh`. ``test/test_jacobian.py`` is
    available for you to test your results.
 
 .. hint::
@@ -304,7 +304,7 @@ Implementing integration
 
    Use :eq:`integral_sum` and :eq:`integration` to implement
    :meth:`~fe_utils.function_spaces.Function.integrate`.
-   ``tests/test_integrate_function.py`` may be used to test your
+   ``test/test_integrate_function.py`` may be used to test your
    implementation.
 
 .. hint::
@@ -313,7 +313,7 @@ Implementing integration
 
    #. Construct a suitable :class:`~fe_utils.quadrature.QuadratureRule`.
    #. :meth:`~fe_utils.finite_elements.FiniteElement.tabulate` the
-      basis functions at each qaudrature point.
+      basis functions at each quadrature point.
    #. Visit each cell in turn.
    #. Construct the :meth:`~fe_utils.mesh.Mesh.jacobian` for that cell
       and take the absolute value of its determinant (:func:`numpy.abs`
