@@ -79,10 +79,11 @@ class Function(object):
         # reference cell.
         cg1 = LagrangeElement(fs.element.cell, 1)
         coord_map = cg1.tabulate(fs.element.nodes)
+        cg1fs = FunctionSpace(fs.mesh, cg1)
 
         for c in range(fs.mesh.entity_counts[-1]):
             # Interpolate the coordinates to the cell nodes.
-            vertex_coords = fs.mesh.vertex_coords[fs.mesh.cell_vertices[c, :], :]
+            vertex_coords = fs.mesh.vertex_coords[cg1fs.cell_nodes[c, :], :]
             node_coords = np.dot(coord_map, vertex_coords)
 
             self.values[fs.cell_nodes[c, :]] = [fn(x) for x in node_coords]
@@ -124,9 +125,10 @@ class Function(object):
         # Interpolation rule for coordinates.
         cg1 = LagrangeElement(fs.element.cell, 1)
         coord_map = cg1.tabulate(local_coords)
+        cg1fs = FunctionSpace(fs.mesh, cg1)
 
         for c in range(fs.mesh.entity_counts[-1]):
-            vertex_coords = fs.mesh.vertex_coords[fs.mesh.cell_vertices[c, :], :]
+            vertex_coords = fs.mesh.vertex_coords[cg1fs.cell_nodes[c, :], :]
             x = np.dot(coord_map, vertex_coords)
 
             local_function_coefs = self.values[fs.cell_nodes[c, :]]
