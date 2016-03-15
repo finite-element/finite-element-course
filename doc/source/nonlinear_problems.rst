@@ -44,7 +44,7 @@ find `u\in V` such that:
 .. math::
    :label: weakdiffusion
 
-   \int_\Omega \nabla v_0 \cdot (u + 1) \nabla u \, \mathrm{d} x = \int_\Omega vg \qquad \forall v_0 \in V_0
+   \int_\Omega \nabla v_0 \cdot (u + 1) \nabla u \, \mathrm{d} x = \int_\Omega vg \, \mathrm{d} x \qquad \forall v_0 \in V_0
 
    u_\Gamma = b.
 
