@@ -196,7 +196,7 @@ terms of basis functions:
 .. math::
    :label:
 
-   J(u^n; \phi_i, \phi_j) \hat{u}_j = - f(u^n; \phi_j).
+   J(u^n; \phi_i, \phi_j) \hat{u}_j = - f(u^n; \phi_i).
 
 For our nonlinear diffusion problem, the matrix `J` is given by:
 
