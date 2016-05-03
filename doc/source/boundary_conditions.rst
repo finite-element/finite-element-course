@@ -57,7 +57,7 @@ There are a number of features of this equation which require some explanation:
 #. The surface integral now cancels because `v_0` is guaranteed to be
    zero everywhere on the boundary.
 #. The `u_\Gamma` definition actually implies that `u_\Gamma=0`
-   everywhere, since all of the nodes in `V_0` lie on the boundary.
+   everywhere, since all of the nodes in `V_\Gamma` lie on the boundary.
 
 This means that the weak form is actually:
 

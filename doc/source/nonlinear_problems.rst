@@ -44,7 +44,7 @@ find `u\in V` such that:
 .. math::
    :label: weakdiffusion
 
-   \int_\Omega \nabla v_0 \cdot (u + 1) \nabla u \, \mathrm{d} x = \int_\Omega vg \qquad \forall v_0 \in V_0
+   \int_\Omega \nabla v_0 \cdot (u + 1) \nabla u \, \mathrm{d} x = \int_\Omega vg \, \mathrm{d} x \qquad \forall v_0 \in V_0
 
    u_\Gamma = b.
 
@@ -196,7 +196,7 @@ terms of basis functions:
 .. math::
    :label:
 
-   J(u^n; \phi_i, \phi_j) \hat{u}_j = - f(u^n; \phi_j).
+   J(u^n; \phi_i, \phi_j) \hat{u}_j = - f(u^n; \phi_i).
 
 For our nonlinear diffusion problem, the matrix `J` is given by:
 
