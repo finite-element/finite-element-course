@@ -27,7 +27,9 @@ Using the Windows machines in Huxley 410
    command line at the beginning of each session in order to ensure
    you are running from the correct directory::
 
-     cd H:\finite_element_course
+     cd H:\finite-element-course
+
+   replacing username with your GitHub username.
      
 Using your own Windows machine
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -50,10 +52,9 @@ Using your own Linux machine
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 If you plan to use your own machine for the module, you will need a
-basic scientific Python toolchain and the visualisation package
-Paraview. On Ubuntu and its relatives, this can be achieved with::
+basic scientific Python toolchain. On Ubuntu and its relatives, this can be achieved with::
 
-  sudo apt-get install ipython python-scipy python-pytest python-matplotlib paraview
+  sudo apt-get install ipython python-scipy python-pytest python-matplotlib
 
 Using your own Mac
 ~~~~~~~~~~~~~~~~~~
@@ -130,7 +131,7 @@ Numpy matrices.
 
 .. _bitbucket-git:
 
-Bitbucket and git
+GitHub and git
 -----------------
 
 Revision control is a mechanism for recording and managing different
@@ -148,21 +149,20 @@ time and to submit your work for feedback and, eventually, marking.
 We will be using the revision control system `git
 <http://git-scm.com/>`_, which is the current state of the art and is
 widely adopted. We'll be combining git with the online hosting service
-`Bitbucket <http://bitbucket.org>`_. Bitbucket is one of the two
-leading revision control hosting services, the other is `GitHub
-<http://github.org>`_. We've chosen Bitbucket for teaching because it
-offers unlimited private repositories to academic users.
+ `GitHub <http://github.org>`_.
+ 
+Getting started with git and GitHub
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-Getting started with git and Bitbucket
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-
-The very first thing you'll need is a Bitbucket account. Follow the tutorial `here <https://confluence.atlassian.com/bitbucket/sign-up-for-bitbucket-cloud-728138044.html>`_.
-
+The very first thing you'll need is a GitHub account. Navigate to `GitHub <https://github.com/>`_ and sign up.
 .. note::
 
    Make sure you use your Imperial College email address on
-   Bitbucket. This will get you an academic account with unlimited
-   private repositories.
+   GitHub. This enables you to request unlimited free private GitHub
+   repositories and other goodies by `applying here
+   <https://education.github.com/pack>`_. You don't strictly need this
+   for this module, but there are some nice things in there that you
+   might want anyway.
 
 Next you need to do just a little Git setup. At the `Git Bash` command
 line, type the following::
@@ -186,9 +186,9 @@ lot easier to read::
    of password typing but it's not essential so if you are not so
    confident with computers, you can skip this bit. The instructions
    are `here
-   <https://confluence.atlassian.com/bitbucket/set-up-ssh-for-git-728138079.html>`_.
+   <https://help.github.com/articles/generating-an-ssh-key/>`_.
 
-Now go and do the `git tutorial <https://confluence.atlassian.com/bitbucket/git-tutorial-keep-track-of-your-space-station-locations-759857287.html>`_ over at Bitbucket. You also need to do the `collaboration tutorial <https://confluence.atlassian.com/bitbucket/tutorial-request-to-update-a-teammate-s-repository-774243385.html>`_.
+Now go and do the `git tutorial <https://swcarpentry.github.io/git-novice/>`_ over at Software Carpentry.
 
 
 Sharing your problems with gists
@@ -197,16 +197,14 @@ Sharing your problems with gists
 At some points during the module, you're sure to create bugs in your
 code that you don't know how to fix. If you're not in class at the
 time, you'll need a convenient way to share a piece of code or output
-with the lecturer and the class. GitHub (the other hosting service)
-provides this facility, which they call `gists`. For this you'll want
-a GitHub account so head over there and `sign up
-<https://github.com>`_.
+with the lecturer and the class. GitHub
+provides this facility, which they call `gists`. 
 
 Once you've signed up and logged in, you can navigate to https://gist.github.com and there's a very simple webpage into which
 you can paste your code or output. You should also set the language so
 that GitHub formats your gist correctly. Click `create public gist`
 and you're done. You can then paste the URL of your gist page into an
-email or into a Bitbucket issue.
+email or into a GitHub issue.
 
 .. role:: strikethrough
 
@@ -214,7 +212,7 @@ Raising :strikethrough:`hell` issues
 ------------------------------------
 
 If you have problems you can't solve yourself, you can share them with
-the class by `raising an issue on Bitbucket <https://bitbucket.org/finiteelement/finite_element_course/issues/new>`_. When you do this, here are
+the class by `raising an issue on GitHub <https://github.com/finite-element/finite-element-course/issues>`_. When you do this, here are
 some tips which will help get your problem fixed:
 
 Be precise 

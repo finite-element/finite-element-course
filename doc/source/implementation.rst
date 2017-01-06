@@ -17,11 +17,10 @@ Formalities and marking scheme
 ------------------------------
 
 The implementation exercise is due at the end of term. That is, by
-1700 on Wednesday 23 March. You must submit your work by emailing the
-lecturer the git commit code for the version of the code you would
-like marked. You can convenently find this code on the commits page
-for your repository on bitbucket. For the avoidance of doubt, the
-commit you submit must date from before the deadline!
+1600 on Friday 24 March. You must submit your work uploading the git
+commit code on Blackboard. You can convenently find this code on the
+commits page for your repository on github. For the avoidance of
+doubt, the commit you submit must date from before the deadline!
 
 The marking scheme will be as follows:
 
@@ -67,27 +66,14 @@ material by implementing work which goes beyond the main body of work.
 Obtaining the skeleton code
 ---------------------------
 
-This section assumes you've already done the :ref:`Bitbucket tutorial <bitbucket-git>`.
+This section assumes you've already done the :ref:`Git tutorial <bitbucket-git>`.
 
-Setting up your Bitbucket fork
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Setting uo your repository
+~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-You'll need your own fork of the finite element repository so that you
-can add your implementation. First, `log in to bitbucket
-<https://bitbucket.org/account/signin/>`_. Next you can `create a fork
-of the repository
-<https://bitbucket.org/finiteelement/finite_element_course/fork>`_.
-
- * **Select** ``This is a private repository`` (this prevents plagiarism)
- * **Unselect** ``Issue tracking`` (all issues should go to the main project)
- * Click ``Fork repository`` to create your own repository.
- * On the right, click on ``Send invitation`` and invite ``David_Ham``
-   to your repository. This will ensure that the lecturer can see your
-   work to provide help, feedback and marking.
-
-Your new fork only has a master branch. You'll want to leave that
-alone to collect any updates which happen on the main repository. You
-will actually work on a branch, which we will call ``implementation``.
+We're using a tool called `GitHub classroom
+<https://classroom.github.com>`_ to automate the creation of your
+copies of the repository. To obtain your copy click here.
 
  * Click on the branch icon |git-branch| on the left.
  * Now click on ``create branch`` on the extreme right.
@@ -98,27 +84,36 @@ Cloning a local copy
 
 At the command line on your working machine type::
 
-  git clone <url>
+  git clone <url> finite-element-course
 
 Substituting your git repository url for <url>. Your git repository
-url is at the top right of your repository page on Bitbucket. Next::
+url can be found by clicking on `clone or download` at the top right of your repository page on GitHub. Next::
 
-  cd finite_element_course
-  git checkout implementation
+  cd finite-element-course
+
+Setting up an implementation branch
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+We'll keep the master branch of your repository in the original
+condition so we can compare to it later, and collect any updates which
+occur during the term. Instead, we'll create an implementation branch
+to actually work on:
+
+  git checkout -b implementation
 
 Your working directory is now a current checkout of your
-implementation branch.
+implementation branch. You'll also want to push this branch to GitHub:
+
+  git push --set-upstream origin implementation
 
 Pointing Python at the code on Windows
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-
 
 By far the easiest way to have your Python find the code is to ensure
 your working directory is the right one. Type the following at the
 Python command line::
 
-  cd h:\finite_element_course
-
+  cd h:\finite-element-course
 
 Pointing Python at the code on OS X or Linux
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -143,35 +138,30 @@ Watching for updates and issues
 You should make sure you are notified of all updates on the main
 repository and all issues anyone raises. For this, you should navigate
 to `the main repository
-<https://bitbucket.org/finiteelement/finite_element_course>`_. On the
-top right there is an eye icon. Select the drop-down box and ensure
-that ``All issues`` and ``all commits`` are selected.
+<https://github.com/finite-element/finite-element-course>`_. On the
+top right there is an eye icon. Select the drop-down box and switch to
+``watching``.
 
 Updating your fork
 ~~~~~~~~~~~~~~~~~~
 
 When you see that the main repository has been updated, you'll need to
-update your fork to incorporate those changes. It is possible to do
-this using git commands on the command line, but there is a more
-simple graphical way to do it:
+update your repository to incorporate those changes. *Just this once*,
+you need to tell your local git repo about the main repository::
 
+  git remote add upstream https://github.com/finite-element/finite-element-course.git
+
+Now, *every time* you want to update you do the following:
+  
 #. Make sure you have commited all your local changes **and** pushed
-   them to bitbucket.
-#. Navigate to the bitbucket overview page for your repository. If
-   there are changes to the main repository which are not yet in your
-   fork, there will be a blue box on the right saying ``This fork is n
-   commits behind finiteelement/finite_element_course.`` You should
-   click on ``Sync now.``
-#. A window will appear confirming that you want to sync the
-   repositories. Click ``Sync``.
-#. Click on the branches icon: |git-branch|. Move your mouse over the
-   ``implementation`` row and an elipsis (...) will appear on the
-   right. Click on the elipsis and select ``Sync branch`` from the
-   menu that appears.
-#. A window will appear confirming that you want to sync the
-   branches. Click ``Sync``.
-#. Update your local copy of the repository by typing ``git pull``.
+   them to GitHub.
+#. Execute the following commands::
 
+   git checkout master
+   git pull upstream master
+   git checkout implementation
+   git pull
+   
 Skeleton code documentation
 ---------------------------
 
@@ -202,13 +192,10 @@ Pull requests for feedback
 --------------------------
 
 There will be a formal opportunity to recieve feedback on your code
-progress every two weeks. To take part, you should set up a pull
+progress twice during the term. To take part, you should set up a pull
 request from your ``implementation`` branch to the ``master`` branch
 of your repository. This will enable the lecturer to write line by
-line comments on your code. Make sure the pull request is against the
-``master`` branch of your private fork - if you pull request against
-the main repository then the whole class will be able to plagiarise
-your work and laugh at your mistakes!
+line comments on your code. 
 
 Creating your pull request
 ~~~~~~~~~~~~~~~~~~~~~~~~~~
