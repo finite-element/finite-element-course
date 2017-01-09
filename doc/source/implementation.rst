@@ -157,10 +157,12 @@ Now, *every time* you want to update you do the following:
    them to GitHub.
 #. Execute the following commands::
 
-   git checkout master
-   git pull upstream master
-   git checkout implementation
-   git pull
+   git checkout master          # Switch to the master branch.
+   git pull upstream master     # Update from the main repository.
+   git push                     # Push the updated master branch to GitHub.
+   git checkout implementation  # Switch back to the implementation branch.
+   git merge master             # Merge the new changes from master into implementation.
+   git push                     # Push the updated implementation branch to GitHub.
    
 Skeleton code documentation
 ---------------------------

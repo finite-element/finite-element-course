@@ -49,9 +49,6 @@
    Exercises:
    ~~~~~~~~~~
 
-   * `Examples sheet 1 <_static/FE_examples1.pdf>`_ and `solutions <_static/FE_examples1_solns.pdf>`_
-   * `Examples sheet 2 <_static/FE_examples2.pdf>`_ and `solutions <_static/FE_examples2_solns.pdf>`_
-   * `Examples sheet 3 <_static/FE_examples3.pdf>`_ and `solutions <_static/FE_examples3_solns.pdf>`_
      
    Past exam papers
    ~~~~~~~~~~~~~~~~
