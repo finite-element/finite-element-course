@@ -202,13 +202,10 @@ line comments on your code.
 Creating your pull request
 ~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-#. Click on the pull request icon |pullrequest| on the left of your
-   fork's bitbucket page. 
-#. On the top right of the pull requests screen click on ``Create pull
-   request``.
-#. Change the **left** dropdown box to ``implementation``.
-#. Change the **top right** dropdown box to list your fork instead of
-   the main repository. Leave the bottom right box set to ``master``.
+#. Click on the ``New pull request`` button at the top of your
+   repository page on GitHub.
+#. Make sure **left** dropdown box ("base") is set to ``master``.
+#. Make sure **right** dropdown box ("compare") is set to ``implementation``.
 #. Type a suitable title in the title box. For example 
    ``Request for feedback 30/1/15``.
 #. If you have any comments you would like to pass on to the lecturer
