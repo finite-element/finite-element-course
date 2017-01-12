@@ -202,7 +202,7 @@ integrals over individual cells:
    \int_\Omega f \mathrm{d} x = \sum_{c\in\Omega} \int_c f \mathrm{d} x.
 
 So we have in fact reduced the integration problem to the problem of
-integrating `f` over each cell. In :doc:`a previous part <quadrature>`
+integrating `f` over each cell. In :doc:`a previous part <1_quadrature>`
 of the module we implemented quadrature rules which enable us to
 integrate over specified reference cells. If we can express the
 integral over some arbitrary cell `c` as an integral over a reference
@@ -274,7 +274,7 @@ Numerical quadrature
 ~~~~~~~~~~~~~~~~~~~~
 
 The actual evaluation of the integral will employ the quadrature rules
-we discussed in :doc:`a previous section <quadrature>`. Let `\{X_q\},
+we discussed in :doc:`a previous section <1_quadrature>`. Let `\{X_q\},
 \{w_q\}` be a quadrature rule of sufficient degree of precision that
 the quadrature is exact. Then:
 

@@ -348,7 +348,7 @@ Implementing a nonlinear problem
    .. math::
       :label: mastery
    
-      -\nabla\cdot\nabla u\right + \sin(u) = g
+      -\nabla\cdot\nabla u + \sin(u) = g
 
       u = b \textrm{ on } \Gamma
 

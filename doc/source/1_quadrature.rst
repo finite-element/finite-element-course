@@ -127,7 +127,7 @@ The :class:`~fe_utils.reference_elements.ReferenceCell` class provides
 Python objects encoding the geometry and topology of the reference
 cell. At this stage, the relevant information is the dimension of the
 reference cell and the list of vertices. The topology will become
-important when we consider :doc:`meshes`. The reference cells we will
+important when we consider :doc:`meshes <3_meshes>`. The reference cells we will
 require for this course are the
 :data:`~fe_utils.reference_elements.ReferenceInterval` and
 :data:`~fe_utils.reference_elements.ReferenceTriangle`.
@@ -226,7 +226,7 @@ edge. The Duffy transform maps the unit square to the unit triangle:
    (x_\textrm{tri},\ y_\textrm{tri}) = 
      \left(x_\textrm{sq},\ y_\textrm{sq}(1 - x_\textrm{sq})\right)
 
-.. _figmesh:
+.. _figduffy:
 
 .. figure:: duffy.*
    :width: 60%

@@ -174,6 +174,7 @@ relatively low order computations.
    <https://docs.python.org/2/tutorial/datastructures.html#list-comprehensions>`_.
 
 .. _sec-vandermonde:
+
 Solving for basis functions
 ---------------------------
 
@@ -307,7 +308,7 @@ Tabulating basis functions
 A core operation in the finite element method is integrating
 expressions involving functions in finite element spaces. This is
 usually accomplished using :doc:`numerical quadrature
-<quadrature>`. This means that we need to be able to evaluate the
+<1_quadrature>`. This means that we need to be able to evaluate the
 basis functions at a set of quadrature points. The operation of
 evaluating a set of basis functions at a set of points is called
 *tabulation*.

@@ -92,12 +92,12 @@
    :numbered:
    :maxdepth: 2
 
-   quadrature
-   finite_elements
-   meshes
-   function_spaces
-   functions
-   finite_element_problems
-   boundary_conditions
-   nonlinear_problems
+   1_quadrature
+   2_finite_elements
+   3_meshes
+   4_function_spaces
+   5_functions
+   6_finite_element_problems
+   7_boundary_conditions
+   8_nonlinear_problems
    zbibliography

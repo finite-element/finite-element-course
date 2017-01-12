@@ -90,7 +90,7 @@ understand the way in which this information is encoded.
   .. container:: youtube
 
     .. youtube:: 7A7JU7bGw0E?modestbranding=1;controls=0;rel=0
-       :width: 400px
+       :width: 600px
 
 .. _figreferenceentities:
 
