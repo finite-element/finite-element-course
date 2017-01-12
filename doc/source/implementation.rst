@@ -71,9 +71,8 @@ This section assumes you've already done the :ref:`Git tutorial <bitbucket-git>`
 Setting uo your repository
 ~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-We're using a tool called `GitHub classroom
-<https://classroom.github.com>`_ to automate the creation of your
-copies of the repository. To obtain your copy click here.
+We're using a tool called `GitHub classroom <https://classroom.github.com>`_ to automate the creation of your
+copies of the repository. To obtain your copy click `here <https://classroom.github.com/assignment-invitations/ed47949f8a828bfc57b563ce0a4c1a7c>`_.
 
  * Click on the branch icon |git-branch| on the left.
  * Now click on ``create branch`` on the extreme right.

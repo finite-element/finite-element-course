@@ -49,9 +49,9 @@ The assessment of your finite element implementation will occur in a
 single submission at the end of term. However feedback on your
 progress will be available during the term. Informal feedback will be
 available during the labs, and you will have the opportunity to submit
-your code for formal feedback every two weeks during the term. The
+your code for formal feedback twice during the term. The
 deadline for formal feedback submissions will be midnight on Sunday
-nights and feedback will be provided before the next Friday lab.
+nights and feedback will be provided before the next Thursday lab.
 
 Mastery
 .......
@@ -60,15 +60,10 @@ All Department of Mathematics fourth year and masters courses must
 contain a mastery component.
 
 The mastery component of this module will be the extension exercise to
-the implementation project. The mastery project will be handed out
-approximately half way through term.
+the implementation project.
 
+Blackboard
+----------
 
-Course email list
------------------
-
-There is an email list for this module which will be used to
-communicate during the term and to which you need to subscribe. Please
-subscribe `here
-<https://mailman.ic.ac.uk/mailman/listinfo/finite-element-course>`_. Failure
-to subscribe to the email list will not be regarded as an excuse!
+Important announcements and the coursework submission will be conducted
+via Blackboard. Please ensure you are enrolled in this module on Blackboard!
