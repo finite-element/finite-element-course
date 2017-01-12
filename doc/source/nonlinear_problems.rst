@@ -348,7 +348,7 @@ Implementing a nonlinear problem
    .. math::
       :label: mastery
    
-      -\nabla\cdot\left((u^2+1)\nabla u\right) = g
+      -\nabla\cdot\nabla u\right + \sin(u) = g
 
       u = b \textrm{ on } \Gamma
 
@@ -409,7 +409,7 @@ Implementing a nonlinear problem
    
 .. hint::
 
-   You could insert a parameter of `\alpha` in front of the `u^2` term
+   You could insert a parameter of `\alpha` in front of the `\sin(u)` term
    in the equation. By setting `\alpha` to 0, you reduce your problem
    to the linear case. You can use the linear case to test your code
    initially, before setting `\alpha=1` for the actual exercise. Note
