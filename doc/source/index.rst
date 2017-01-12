@@ -46,6 +46,11 @@
    the Imperial College network at `Springer Link
    <http://link.springer.com/book/10.1007%2F978-0-387-75934-0>`_.
 
+   Lecture slides:
+   ~~~~~~~~~~~~~~~
+
+   * `Lecture 1 <_static/Lecture1.pdf>`_
+   
    Exercises:
    ~~~~~~~~~~
 
