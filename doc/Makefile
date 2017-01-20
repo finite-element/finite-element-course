@@ -55,7 +55,7 @@ apidoc: $(GENERATED_FILES)
 	PYTHONPATH=$(PWD)/..:$(PYTHONPATH) sphinx-apidoc ../fe_utils -o source/ -f -T
 
 html: apidoc
-	$(SPHINXBUILD) -b html $(ALLSPHINXOPTS) $(BUILDDIR)/html
+	PYTHONPATH=$(PWD)/..:$(PYTHONPATH) $(SPHINXBUILD) -b html $(ALLSPHINXOPTS) $(BUILDDIR)/html
 	@echo
 	@echo "Build finished. The HTML pages are in $(BUILDDIR)/html."
 
