@@ -50,6 +50,7 @@
    ~~~~~~~~~~~~~~~
 
    * `Lecture 1 <_static/Lecture1.pdf>`_
+   * `Lecture 2 <_static/Lecture2.pdf>`_
    
    Exercises:
    ~~~~~~~~~~
