@@ -2,13 +2,7 @@ from __future__ import division
 from matplotlib import pyplot as plt
 from fe_utils import ReferenceTriangle
 import numpy as np
-from animation_tools import Animation, Scene, Title
-
-
-class CellScene(Scene):
-    def __init__(self, cell, anim):
-        super(CellScene, self).__init__(anim)
-        self.cell = cell
+from animation_tools import Animation, Scene, CellScene, Title
 
 
 class BuildTriangle(CellScene):

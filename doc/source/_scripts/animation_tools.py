@@ -68,6 +68,12 @@ class Scene(object):
         raise NotImplementedError
 
 
+class CellScene(Scene):
+    def __init__(self, cell, anim):
+        super(CellScene, self).__init__(anim)
+        self.cell = cell
+
+
 class Title(Scene):
     def __init__(self, anim, text):
         super(Title, self).__init__(anim)
