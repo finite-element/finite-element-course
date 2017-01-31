@@ -2,9 +2,10 @@ from __future__ import division
 from matplotlib import pyplot as plt
 from fe_utils import ReferenceTriangle
 import numpy as np
-from animation_tools import Animation, Scene, CellScene, Title
+from animation_tools import Animation, Scene, CellScene, Title, Pause
 from matplotlib.text import Annotation
 from matplotlib.lines import Line2D
+from matplotlib.colors import to_rgb
 
 
 class DrawReferenceTriangle(CellScene):
@@ -26,7 +27,7 @@ class DrawReferenceTriangle(CellScene):
                 nodes += plt.plot(v[0], v[1], 'ko', markersize=20)
                 nodes.append(self.anim.ax.annotate('(%s, %s)' % (0, j), xy=v, xytext=(10, 10),
                                                    textcoords='offset points', color="black"))
-                self.entites[0][j] = nodes[-1]
+                self.entities[0][j] = nodes[-1]
                 j0 = min(j, (j+1) % 3)
                 j1 = max(j, (j+1) % 3)
                 v0 = self.cell.vertices[j0]
@@ -102,7 +103,7 @@ class DrawP3Triangle(CellScene):
                 nodes += plt.plot(p[0], p[1], 'ko', markersize=20)
                 nodes.append(self.anim.ax.annotate('%s' % j, xy=p, xytext=(10, 10),
                                                    textcoords='offset points', color="black"))
-                self.pointlabels.append[nodes[-1]]
+                self.pointlabels.append(nodes[-1])
 
             self.nodes = nodes[1:]
 
@@ -130,9 +131,13 @@ class DrawP3Triangle(CellScene):
         return int(round(1 * self.anim.fps))
 
 
+def format_dict(d):
+    return "{" + ("\n" + " " * 14).join(["%s: %s" % i for i in d.iteritems()]) + "\n}"
+
+
 class EntityDofScene(Scene):
     entity_dofs = {0: {0: [0], 1: [3], 2: [9]},
-                   1: {0: [6, 8], 1: [7, 4], 2: [1, 2]},
+                   1: {0: [1, 2], 1: [6, 8], 2: [4, 7]},
                    2: {0: [5]}}
 
     def __init__(self, delay, rt, p3, a):
@@ -144,18 +149,40 @@ class EntityDofScene(Scene):
         self.current_dofs = {}
 
     def __call__(self, i):
-        for d in self.entity_dofs:
-            self.current_dofs[d] = {}
-            for e in self.entity_dofs[d]:
-                self.current_dofs[d][e] = []
-                # Make rt.entities[d][e] yellow.
-                for dof in self.entity_dofs[d][e]:
-                    # 
-                    self.current_dofs[d][e].append(dof)
+        if i == 0:
+            text = self.anim.ax.annotate("entity_node = " + format_dict({}), xy=(-.4, 0.1), color="black")
+            self.anim.caption("The entity node list lists the nodes on each entity in order.")
+
+            def iterator():
+                for d in self.entity_dofs:
+                    self.current_dofs[d] = {}
+                    for e in self.entity_dofs[d]:
+                        self.current_dofs[d][e] = []
+                        # Make rt.entities[d][e] yellow.
+                        entity = self.rt.entities[d][e]
+                        ei = 0.
+                        ec = np.array(to_rgb(entity.get_color()))
+                        entity.set_color((1., 1., 0.))
+                        for dof in self.entity_dofs[d][e]:
+                            point = self.p3.pointlabels[dof]
+                            pi = 0.
+                            point.set_color((1., 1., 0.))
+                            # Make p3 dof yellow.
+                            self.current_dofs[d][e].append(dof)
+                            text.set_text("entity_node = " + format_dict(self.current_dofs))
+                            yield [text, entity]
+                            for i in range(self.delay):
+                                ei = min(ei+1., self.delay)
+                                pi = min(pi+1., self.delay)
+                                entity.set_color(ei/self.delay*ec + (1 - ei/self.delay)*np.array((1., 1., 0)))
+                                point.set_color((1 - pi/self.delay)*np.array((1., 1., 0)))
+                                yield [text, entity]
+            self.iterator = iterator()
+        return next(self.iterator, None)
 
     @property
     def frames(self):
-        return int(round(1 * self.anim.fps))
+        return int(round(self.delay * (3 + 10)))
 
 
 class MorphScene(Scene):
@@ -184,11 +211,13 @@ a = Animation(fps=30)
 
 cell = ReferenceTriangle
 
-a.add_scene(Title(a, "Numbering a global function space"))
+a.add_scene(Title(a, "Constructing the entity to node mapping"))
 rt = DrawReferenceTriangle(cell, (0., 0.), 1., a)
 a.add_scene(rt)
-a.add_scene(MorphScene(rt, (.8, .8), 0.66, 3))
+a.add_scene(MorphScene(rt, (.8, .8), 0.66, 2.5))
 p3 = DrawP3Triangle(cell, (0., 0.), 1., a)
 a.add_scene(p3)
-a.add_scene(MorphScene(p3, (.8, -.2), 0.66, 3))
-a.save("global_numbering.mp4")
+a.add_scene(MorphScene(p3, (-.2, .8), 0.66, 2.5))
+a.add_scene(Pause(0.5, a))
+a.add_scene(EntityDofScene(30, rt, p3, a))
+a.save("entity_node.mp4")

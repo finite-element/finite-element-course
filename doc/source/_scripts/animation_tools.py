@@ -68,6 +68,19 @@ class Scene(object):
         raise NotImplementedError
 
 
+class Pause(Scene):
+    def __init__(self, duration, anim):
+        super(Pause, self).__init__(anim)
+        self.duration = duration
+
+    def __call__(self, i):
+        return
+
+    @property
+    def frames(self):
+        return int(round(self.anim.fps * self.duration))
+
+
 class CellScene(Scene):
     def __init__(self, cell, anim):
         super(CellScene, self).__init__(anim)
