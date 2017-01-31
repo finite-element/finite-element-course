@@ -55,6 +55,7 @@
    Exercises:
    ~~~~~~~~~~
 
+   * `Exercise 1 <_static/FE_examples1.pdf>`_
      
    Past exam papers
    ~~~~~~~~~~~~~~~~
