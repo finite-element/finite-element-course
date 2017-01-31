@@ -79,7 +79,7 @@ numbering used here is just one of the obvious choices.
    and 3 equispaced Lagrange elements on triangles. Black nodes are
    associated with vertices, red nodes with edges and blue nodes with
    the cell (face). The numbering of the nodes is arbitrary.
-
+   
 Implementing local numbering
 ----------------------------
 
@@ -89,7 +89,7 @@ class. For each local entity this must record the local nodes
 associated with that entity. This can be achieved using a dictionary
 of dictionaries structure. For example employing the local numbering
 of nodes employed in :numref:`figlagrange-nodes`, the ``entity_node``
-list for the degree three equispaced Lagrange element on a triangle is
+dictionary for the degree three equispaced Lagrange element on a triangle is
 given by::
 
   entity_node = {0: {0: [0],
@@ -105,6 +105,16 @@ always consistently reflect the orientation of the relevant entity in
 order that all the cells which share that entity consistently
 interpret the nodes. In this case this has been achieved by listing
 the nodes in order given by the direction of the orientation of each edge. 
+
+.. only:: html
+
+  The following animation illustrates the construction of the ``entity_node`` dictionary.
+          
+  .. container:: youtube
+
+    .. youtube:: DtmdYaeTGGg?modestbranding=1;controls=0;rel=0
+       :width: 100%
+
 
 .. exercise::
 
