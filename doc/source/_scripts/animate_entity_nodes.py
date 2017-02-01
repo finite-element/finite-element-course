@@ -28,8 +28,8 @@ class DrawReferenceTriangle(CellScene):
                 nodes.append(self.anim.ax.annotate('(%s, %s)' % (0, j), xy=v, xytext=(10, 10),
                                                    textcoords='offset points', color="black"))
                 self.entities[0][j] = nodes[-1]
-                j0 = min(j, (j+1) % 3)
-                j1 = max(j, (j+1) % 3)
+                j0 = min((j+1) % 3, (j+2) % 3)
+                j1 = max((j+1) % 3, (j+2) % 3)
                 v0 = self.cell.vertices[j0]
                 v1 = self.cell.vertices[j1]
                 dx = v1 - v0
@@ -137,7 +137,7 @@ def format_dict(d):
 
 class EntityDofScene(Scene):
     entity_dofs = {0: {0: [0], 1: [3], 2: [9]},
-                   1: {0: [1, 2], 1: [6, 8], 2: [4, 7]},
+                   1: {0: [6, 8], 1: [4, 7], 2: [1, 2]},
                    2: {0: [5]}}
 
     def __init__(self, delay, rt, p3, a):
