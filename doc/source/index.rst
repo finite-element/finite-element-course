@@ -56,6 +56,7 @@
    ~~~~~~~~~~
 
    * `Exercise 1 <_static/FE_examples1.pdf>`_
+   * `Exercise 1 with solutions <_static/FE_examples1_solns.pdf>`_
      
    Past exam papers
    ~~~~~~~~~~~~~~~~
