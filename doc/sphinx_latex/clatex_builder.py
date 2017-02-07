@@ -34,9 +34,9 @@ from sphinx.util.osutil import SEP, copyfile
 from sphinx.util.console import bold, darkgreen
 from clatex_writer import CustomLaTeXWriter as LaTeXWriter
 from sphinx.ext.mathbase import math_role
-from sphinx.ext.mathbase import eq_role
+#from sphinx.ext.mathbase import eq_role
 from sphinx.ext.mathbase import MathDirective
-from sphinx.ext.mathbase import number_equations
+#from sphinx.ext.mathbase import number_equations
 
 import clatex_sphinx
 
@@ -206,8 +206,8 @@ def setup(app):
     app.add_builder(LaTeXBuilder)
 
     app.add_role('math', math_role)
-    app.add_role('eq', eq_role)
+#    app.add_role('eq', eq_role)
     app.add_directive('math', MathDirective)
-    app.connect('doctree-resolved', number_equations)
+#    app.connect('doctree-resolved', number_equations)
 
     clatex_sphinx.setup(app)
