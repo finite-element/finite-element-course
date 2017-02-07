@@ -357,7 +357,7 @@ the basis functions at quadrature points.
    component and basis function respectively. That is, each entry of
    `V` is replaced by a vector of the gradient of that polynomial
    term. For example, the entry `x^2y^3` would be replaced by the
-   vector `[ 2xy^2, 3x^2y^2 ]`.
+   vector `[ 2xy^3, 3x^2y^2 ]`.
 
    The ``test/test_vandermonde_matrix_grad.py`` file has tests of this
    extension. You should also ensure that you still pass
