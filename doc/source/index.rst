@@ -49,8 +49,9 @@
    Lecture slides:
    ~~~~~~~~~~~~~~~
 
-   * `Lecture 1 <_static/Lecture1.pdf>`_
-   * `Lecture 2 <_static/Lecture2.pdf>`_
+   * `Lectures part 1 <_static/Lecture1.pdf>`_
+   * `Lectures part 2 <_static/Lecture2.pdf>`_
+   * `Lectures part 3 <_static/Lecture3.pdf>`_
    
    Exercises:
    ~~~~~~~~~~
