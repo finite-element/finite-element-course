@@ -65,6 +65,7 @@
    ~~~~~~~~~~~~~~~~
 
    * `2015 exam paper <_static/FE2015-exam-revised.pdf>`_ and `solutions <_static/FE2015-exam-soln.pdf>`_
+   * `2016 exam paper <_static/FE2016-exam.pdf>`_ and `solutions <_static/FE2016-exam-soln.pdf>`_
    * `Mock exam paper <_static/FE_mock_paper.pdf>`_
    * `revision checklist <_static/revision-checklist.pdf>`_
 
