@@ -8,7 +8,7 @@ the opportunity to pick up valuable scientific computing skills in
 coding, software engineering and rigorous testing.
 
 There will be no conventional lectures for this part of the
-module. Instead, there will be eigteen 1 hour computer lab sessions
+module. Instead, there will be twice weekly 1 hour computer lab sessions
 during the term. Some of this time will involve explanations at the
 board, but much of the time will be an opportunity to develop your
 finite element implementation and receive help on how to do so.
@@ -68,7 +68,7 @@ Obtaining the skeleton code
 
 This section assumes you've already done the :ref:`Git tutorial <bitbucket-git>`.
 
-Setting uo your repository
+Setting up your repository
 ~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 We're using a tool called `GitHub classroom <https://classroom.github.com>`_ to automate the creation of your

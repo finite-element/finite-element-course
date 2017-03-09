@@ -28,6 +28,7 @@ from sphinx import addnodes
 from sphinx.util import texescape
 from sphinx.locale import _
 from sphinx.builders import Builder
+from sphinx.builders.latex import LaTeXBuilder as PlainLaTeXBuilder
 from sphinx.environment import NoUri
 from sphinx.util.nodes import inline_all_toctrees
 from sphinx.util.osutil import SEP, copyfile
@@ -40,7 +41,7 @@ from sphinx.ext.mathbase import MathDirective
 
 import clatex_sphinx
 
-class LaTeXBuilder(Builder):
+class LaTeXBuilder(PlainLaTeXBuilder):
     """
     Builds LaTeX output to create PDF.
     """
@@ -49,10 +50,10 @@ class LaTeXBuilder(Builder):
     supported_image_types = ['application/pdf', 'image/png',
                              'image/gif', 'image/jpeg']
 
-    def init(self):
-        self.docnames = []
-        self.document_data = []
-        texescape.init()
+#    def init(self):
+        # self.docnames = []
+        # self.document_data = []
+        # texescape.init()
 
     def get_outdated_docs(self):
         return 'all documents' # for now
@@ -93,6 +94,7 @@ class LaTeXBuilder(Builder):
             components=(docwriter,)).get_default_values()
 
         self.init_document_data()
+        self.write_stylesheet()
 
         for entry in self.document_data:
             docname, targetname, title, author, docclass = entry[:5]
@@ -133,7 +135,7 @@ class LaTeXBuilder(Builder):
                 new_sect += node
             tree = new_tree
         largetree = inline_all_toctrees(self, self.docnames, indexfile, tree,
-                                        darkgreen)
+                                        darkgreen, [])
         largetree['docname'] = indexfile
         for docname in appendices:
             appendix = self.env.get_doctree(docname)
