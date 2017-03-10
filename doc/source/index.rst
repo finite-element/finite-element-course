@@ -53,6 +53,7 @@
    * `Lectures part 2 <_static/Lecture2.pdf>`_
    * `Lectures part 3 <_static/Lecture3.pdf>`_
    * `Lectures part 4 <_static/Lecture4.pdf>`_
+   * `Lectures part 5 <_static/Lecture5.pdf>`_
    
    Exercises:
    ~~~~~~~~~~
