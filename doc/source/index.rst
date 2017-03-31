@@ -63,6 +63,7 @@
    * `Exercise 2 <_static/FE_examples2.pdf>`_
    * `Exercise 2 with solutions <_static/FE_examples2_solns.pdf>`_
    * `Exercise 3 <_static/FE_examples3.pdf>`_
+   * `Exercise 3 with solutions <_static/FE_examples3_solns.pdf>`_
    
    Past exam papers
    ~~~~~~~~~~~~~~~~
