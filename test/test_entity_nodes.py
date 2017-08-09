@@ -28,7 +28,7 @@ def test_nodes_on_correct_entity(cell, degree):
     fe = LagrangeElement(cell, degree)
 
     for d in range(cell.dim+1):
-        for e, nodes in fe.entity_nodes[d].iteritems():
+        for e, nodes in fe.entity_nodes[d].items():
             for n in nodes:
                 assert cell.point_in_entity(fe.nodes[n], (d, e))
 
@@ -45,7 +45,7 @@ def test_edge_orientation(cell, degree):
     # Only test edges.
     d = 1
 
-    for e, nodes in fe.entity_nodes[d].iteritems():
+    for e, nodes in fe.entity_nodes[d].items():
         vertices = [np.array(cell.vertices[v]) for v in cell.topology[d][e]]
 
         # Project the nodes onto the edge.
