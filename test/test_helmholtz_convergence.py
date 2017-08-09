@@ -1,7 +1,7 @@
 '''Test that the sample helmholtz problem converges at approximately the right rate.'''
 from __future__ import division
 import pytest
-from solve_helmholtz import solve_helmholtz
+from fe_utils.solvers.helmholtz import solve_helmholtz
 import numpy as np
 
 
@@ -15,8 +15,8 @@ def test_convergence(degree):
     convergence_rate = np.array([np.log(error[i]/error[i+1])/np.log(res[i+1]/res[i])
                                  for i in range(len(res)-1)])
 
-    print "Achieved convergence rates: %s" % convergence_rate
-    print "Expected: %s" % (degree + 1)
+    print("Achieved convergence rates: %s" % convergence_rate)
+    print("Expected: %s" % (degree + 1))
 
     assert (convergence_rate > 0.9 * (degree + 1)).all()
 

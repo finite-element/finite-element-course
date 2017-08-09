@@ -56,10 +56,10 @@ def test_vandermonde_matrix_values_1D(degree):
                     [1] * V.shape[1],
                     [2**d for d in range(V.shape[1])]])
 
-    print "Vandermonde matrix is:"
-    print V
-    print "Correct answer is:"
-    print V_t
+    print("Vandermonde matrix is:")
+    print(V)
+    print("Correct answer is:")
+    print(V_t)
 
     assert (V == V_t).all()
 
@@ -76,10 +76,10 @@ def test_vandermonde_matrix_values_2D(degree):
                     [1 if p == 0 else 0 for d in range(degree+1) for p in range(d+1)],
                     [1 if p == d else 0 for d in range(degree+1) for p in range(d+1)]])
 
-    print "Vandermonde matrix is:"
-    print V
-    print "Correct answer is:"
-    print V_t
+    print("Vandermonde matrix is:")
+    print(V)
+    print("Correct answer is:")
+    print(V_t)
 
     assert (V == V_t).all()
 

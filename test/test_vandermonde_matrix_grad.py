@@ -33,10 +33,10 @@ def test_vandermonde_matrix_grad_values_1D(degree):
     V_t = np.array([[0] + ([1] if degree > 0 else []) + [0] * (V.shape[1]-2),
                     range(V.shape[1])]).reshape((2, V.shape[1], 1))
 
-    print "Vandermonde matrix is:"
-    print V
-    print "Correct answer is:"
-    print V_t
+    print("Vandermonde matrix is:")
+    print(V)
+    print("Correct answer is:")
+    print(V_t)
 
     assert (V == V_t).all()
 
@@ -53,10 +53,10 @@ def test_vandermonde_matrix_grad_values_2D(degree):
                     [[d, 0] if p == 0 else [0, 1] if p == 1 else [0, 0] for d in range(degree+1) for p in range(d+1)],
                     [[0, d] if p == d else [1, 0] if p == d - 1 else [0, 0] for d in range(degree+1) for p in range(d+1)]])
 
-    print "Vandermonde matrix is:"
-    print V
-    print "Correct answer is:"
-    print V_t
+    print("Vandermonde matrix is:")
+    print(V)
+    print("Correct answer is:")
+    print(V_t)
 
     assert (V == V_t).all()
 

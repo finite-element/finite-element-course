@@ -41,10 +41,10 @@ def test_tabulate_grad_1D():
 
     correct_answer = np.array([[[-1], [1]]], dtype=np.double)
 
-    print "Your answer is:"
-    print vals
-    print "The correct answer is:"
-    print correct_answer
+    print("Your answer is:")
+    print(vals)
+    print("The correct answer is:")
+    print(correct_answer)
 
     assert ((vals - correct_answer).round(12) == 0).all()
 
@@ -59,10 +59,10 @@ def test_tabulate_grad_2D():
     gradients = np.array([[-1., -1.] if (n == [0., 0.]).all() else n
                           for n in fe.nodes])
 
-    print "Your answer is:"
-    print vals
-    print "The correct answer is:"
-    print gradients
+    print("Your answer is:")
+    print(vals)
+    print("The correct answer is:")
+    print(gradients)
 
     assert ((vals - gradients).round() == 0).all()
 
