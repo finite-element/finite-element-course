@@ -1,4 +1,4 @@
-#! /usr/bin/env python3
+#! /usr/bin/env python
 from matplotlib import pyplot as plt
 from fe_utils import ReferenceTriangle, ReferenceInterval, \
     LagrangeElement, UnitSquareMesh, UnitIntervalMesh, FunctionSpace
