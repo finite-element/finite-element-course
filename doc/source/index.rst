@@ -49,21 +49,13 @@
    Lecture slides:
    ~~~~~~~~~~~~~~~
 
-   * `Lectures part 1 <_static/Lecture1.pdf>`_
-   * `Lectures part 2 <_static/Lecture2.pdf>`_
-   * `Lectures part 3 <_static/Lecture3.pdf>`_
-   * `Lectures part 4 <_static/Lecture4.pdf>`_
-   * `Lectures part 5 <_static/Lecture5.pdf>`_
+   Slides will be made available as the module progresses.
+
    
    Exercises:
    ~~~~~~~~~~
 
-   * `Exercise 1 <_static/FE_examples1.pdf>`_
-   * `Exercise 1 with solutions <_static/FE_examples1_solns.pdf>`_
-   * `Exercise 2 <_static/FE_examples2.pdf>`_
-   * `Exercise 2 with solutions <_static/FE_examples2_solns.pdf>`_
-   * `Exercise 3 <_static/FE_examples3.pdf>`_
-   * `Exercise 3 with solutions <_static/FE_examples3_solns.pdf>`_
+   Exercises will be posted ahead of the first problems class.
    
    Past exam papers
    ~~~~~~~~~~~~~~~~

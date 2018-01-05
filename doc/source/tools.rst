@@ -5,37 +5,18 @@ Access to computers
 -------------------
 
 You'll need access to a suitable computer for the implementation
-work. The machines in Huxley 410 have suitable software installed, or you can use your own laptop running Windows, Linux, or OS X. 
+work. The machines in Huxley 410 have suitable software installed, or you can use your own laptop running Windows, Linux, or macOS. 
 
 Using the Windows machines in Huxley 410
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-1. From the start menu run `Git Bash`. This provides you with a Bash
-   (Unix) command line from which you can run the git revision
-   control software to manage your source code.
+A new Python environment is in development by ICT. The instructions here will be updated before the first lab session.
 
-2. Run `Enthought Canopy`. There should be a shortcut link on the left
-   hand side of the desktop. Alternatively, you can find it via the
-   start menu. The first time you run Canopy on a particular machine,
-   one or two popup windows will appear. You should agree to whatever
-   they ask!
-
-3. Launch the editor by clicking on the `Editor` button.
-
-4. Once you have cloned your git repositiory (more on this later), you
-   will need to type the following command on the Python
-   command line at the beginning of each session in order to ensure
-   you are running from the correct directory::
-
-     cd H:\finite-element-course
-
-   replacing username with your GitHub username.
-     
 Using your own Windows machine
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-In order to use your own Windows machine, you'll simply need Python
-(with the right packages) and git. We recommend you install Enthought
+In order to use your own Windows machine, you'll simply need Python 3
+(with the right packages) and git. One option is to install Enthought
 Canopy, but other Windows Python distributions should also work.
 
 1. Download and install `Enthought Canopy Express` from `here <https://store.enthought.com/#canopy-individual>`_.
@@ -52,9 +33,9 @@ Using your own Linux machine
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 If you plan to use your own machine for the module, you will need a
-basic scientific Python toolchain. On Ubuntu and its relatives, this can be achieved with::
+basic  Python toolchain. On Ubuntu and its relatives, this can be achieved with::
 
-  sudo apt-get install ipython python-scipy python-pytest python-matplotlib
+  sudo apt-get install python3 git
 
 Using your own Mac
 ~~~~~~~~~~~~~~~~~~
@@ -79,21 +60,7 @@ environment for PyOP2 consists of the following:
 
 4. Install an up-to-date Python via homebrew::
 
-     brew install python
-
-5. Install numpy via homebrew::
-
-     brew tap homebrew/python
-     brew install numpy
-
-6. Install python dependencies via pip::
-
-     pip install decorator
-     pip install ipython
-     pip install matplotlib
-     pip install pytest
-     pip install flake8
-     pip install scipy
+     brew install python3
 
 
 The command line
@@ -112,13 +79,13 @@ Python
 Your implementation will be written in Python based on a code skeleton
 provided. This means that you'll need a certain familiarity with the
 Python language. But don't panic! Python is a very easy language to
-work with.
+work with. This module will use Python 3. 
 
 If you haven't done any Python before, then go through `the official
-Python tutorial <https://docs.python.org/2/tutorial/index.html>`_. If
+Python tutorial <https://docs.python.org/3/tutorial/index.html>`_. If
 you have done a little Python, one feature we will be using a lot is
 classes, so if that is new to you you should at least review `the
-classes chapter <https://docs.python.org/2/tutorial/classes.html>`_.
+classes chapter <https://docs.python.org/3/tutorial/classes.html>`_.
 
 The Matlab-like array features of Python are provided by `Numpy
 <http://www.numpy.org/>`_ for which there is a `helpful tutorial

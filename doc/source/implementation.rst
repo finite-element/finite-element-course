@@ -102,31 +102,44 @@ implementation branch. You'll also want to push this branch to GitHub:
 
   git push --set-upstream origin implementation
 
-Pointing Python at the code on Windows
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Setting up your venv
+~~~~~~~~~~~~~~~~~~~~
 
-By far the easiest way to have your Python find the code is to ensure
-your working directory is the right one. Type the following at the
-Python command line::
+We're going to use a Python venv. This is a private Python environment
+in which we'll install the packages we need, including our own
+implementation exercise. This minimises interference between this
+project and anything else which might be using Python on the
+system. We don't want to install the venv inside our git repository,
+so type::
 
-  cd h:\finite-element-course
+  cd ..
 
-Pointing Python at the code on OS X or Linux
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Now we can run a script from the git repository to make the venv::
 
-You'll need Python to be able to find the ``fe_utils`` package from
-wherever it is running. To do this, you need to add your repository
-directory to the ``PYTHONPATH`` environment variable. **In your
-repository directory** type the following::
+  ./finite-element-course/scripts/fe_install_venv venv
 
-  cat >> ~/.bashrc << foo                                             
-  export PYTHONPATH=\$PYTHONPATH:$PWD
-  foo
+Activating your venv
+~~~~~~~~~~~~~~~~~~~~
 
-The above line will update your ``PYTHONPATH`` every time you log
-in. **Just this once** you need to update it for the current session::
+**Every time** you want to work on the implementation exercise, you need
+to activate the venv. You do this with::
 
-  export PYTHONPATH=$PYTHONPATH:$PWD
+  source venv/bin/activate
+
+Obviously if you are typing this in a directory other than the one
+containing the venv, you need to modify the path accordingly.
+
+Installing your implementation exercise
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+Your implementation exercise is also a Python package so **just once**
+after creating the venv, you need to install it. **With the venv active ** type::
+
+  cd finite-element-course
+  pip install -e .
+
+Dont forget that dot, it's important! (The dot tells Python to install the package in the current directory).
+
 
 Watching for updates and issues
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
