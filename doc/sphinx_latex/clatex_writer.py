@@ -115,7 +115,7 @@ class CustomLaTeXTranslator(sphinx.writers.latex.LaTeXTranslator, nodes.NodeVisi
     def visit_transition(self, node):
         try:
             self.body.append(self.elements['transition'])
-        except Exception, e:
+        except Exception as e:
             print('ERROR: %s' % e)
 
     def __init__(self, document, builder):
@@ -128,7 +128,7 @@ class CustomLaTeXTranslator(sphinx.writers.latex.LaTeXTranslator, nodes.NodeVisi
         self.elements = self.default_elements.copy()
         if type(builder.config.clatex_makeidx) == bool:
             if builder.config.clatex_makeidx:
-                makeidx = '\usepackage{makeidx}\n\makeindex'
+                makeidx = r'\usepackage{makeidx}\n\makeindex'
             else:
                 makeidx = ''
         else:

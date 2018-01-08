@@ -285,5 +285,4 @@ cell.
 
    You can implement
    :meth:`~fe_utils.quadrature.QuadratureRule.integrate` in one line
-   using the Python intrinsic function :func:`map` and
-   :func:`numpy.dot`.
+   using :func:`numpy.vectorize` and :func:`numpy.dot`.

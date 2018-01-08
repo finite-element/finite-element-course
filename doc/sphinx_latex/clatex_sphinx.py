@@ -375,7 +375,7 @@ class Counter(object):
             instance._init = False
             return instance
         else:
-            instance = super(Counter, cls).__new__(cls, name, value, within)
+            instance = super(Counter, cls).__new__(cls)
             instance._init = True
             return instance
 

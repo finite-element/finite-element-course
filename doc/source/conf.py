@@ -274,7 +274,7 @@ numfig = True
 
 
 # Example configuration for intersphinx: refer to the Python standard library.
-intersphinx_mapping = {'python': ('http://docs.python.org/', None),
+intersphinx_mapping = {'python': ('http://docs.python.org/3/', None),
                        'scipy': ('http://docs.scipy.org/doc/scipy-dev/reference/', None),
                        'numpy': ('http://docs.scipy.org/doc/numpy/', None),
                        'matplotlib': ('http://matplotlib.org/', None)}
