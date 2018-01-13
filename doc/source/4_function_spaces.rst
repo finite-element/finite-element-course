@@ -60,9 +60,9 @@ faces
   number required to represent a degree `p-2` polynomial in two
   dimensions: `\begin{pmatrix}p-1\\ 2\end{pmatrix}`.
 
-This pattern holds more generally: the number of nodes which must be
-associated with a local topological entity of degree `d` is
-`\begin{pmatrix}p-1\\ d\end{pmatrix}`.
+This pattern holds more generally: for a `C_0` function space, the
+number of nodes which must be associated with a local topological
+entity of degree `d` is `\begin{pmatrix}p-1\\ d\end{pmatrix}`.
 
 :numref:`figlagrange-nodes` illustrates the association of nodes with
 reference entities for Lagrange elements on triangles. The numbering
@@ -123,7 +123,7 @@ the nodes in order given by the direction of the orientation of each edge.
    passes the correct ``entity_node`` dictionary to the
    :class:`~fe_utils.finite_elements.FiniteElement` it creates.
 
-   The ``test/test_entity_nodes.py`` script tests this functionality.
+   The ``test/test_08_entity_nodes.py`` script tests this functionality.
 
 .. hint::
 
@@ -230,7 +230,7 @@ element, and contains (in some form) a global numbering of the nodes.
    :eq:`eqcellnode`.
 
    You can plot the numbering you have created with the
-   ``test/plot_function_space_nodes.py`` script. As usual, run the
+   ``plot_function_space_nodes`` script. As usual, run the
    script passing the ``-h`` option to discover the required
    arguments.
 
@@ -240,8 +240,8 @@ element, and contains (in some form) a global numbering of the nodes.
    objects in :mod:`fe_utils`. For example:
 
    * `\operatorname{Adj}_{\dim(c), \delta}` is implemented by the
-     :meth:`~fe_utils.meshes.Mesh.adjacency` method of the
-     :class:`~fe_utils.meshes.Mesh`.
+     :meth:`~fe_utils.mesh.Mesh.adjacency` method of the
+     :class:`~fe_utils.mesh.Mesh`.
 
    * You have `e(\delta, \epsilon)` as
      :data:`~fe_utils.finite_elements.FiniteElement.entity_nodes`. Note
@@ -256,7 +256,7 @@ element, and contains (in some form) a global numbering of the nodes.
    be integer-valued. If you choose to use :func:`numpy.zeros`
    to create a matrix which you then populate with values, you
    need to explicitly specify that you want a matrix of
-   zeros. This can be achieved by passing the ``dtype`` argument
+   integers. This can be achieved by passing the ``dtype`` argument
    to :func:`numpy.zeros`. For example ``numpy.zeros((nrows, ncols), dtype=int)``.
 
 .. rubric:: Footnotes

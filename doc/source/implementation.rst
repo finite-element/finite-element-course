@@ -24,29 +24,25 @@ doubt, the commit you submit must date from before the deadline!
 
 The marking scheme will be as follows:
 
-High first (80-100)
+High first/distinction (80-100)
   As for bare first, but additionally the extension (mastery)
   component of the implementaton exercise has been completed correctly
   and clearly.
-Bare first (75-80)  
+Bare first/distinction (70-80)  
   All parts of the implementation are correct and all tests pass. The
   code style is always very clear and the implementation of every
   exercise is transparent and elegant.
-Upper second (60-75)
+Upper second/merit (60-70)
   The implementation is correct but let down somewhat by poor coding
   style. Alternatively, submissions which are correct and well
   written up to and including solving the Helmholtz problem but
   which do not include a correct solution to boundary conditions will
   earn an upper second.
-Lower second (45-60)
-  Most of the exercise is correctly implemented, but there are some
-  test failures, or there are significant failures in coding style or
-  in the transparency and elegance of solutions.
-Third (30-45)
+Lower second/pass (50-60)
   There are significant failings in the implementation resulting in
-  many test failures, and/or the coding style and elegance are
+  many test failures, and/or the coding style is
   sufficiently poor that the code is hard to understand.
-Fail (0-30)
+Fail (0-50)
   The implementation is substantially incomplete. Correct
   implementations may have been provided for some of the earlier exercises but
   the more advanced parts of the implementation exercise have not been
@@ -72,7 +68,7 @@ Setting up your repository
 ~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 We're using a tool called `GitHub classroom <https://classroom.github.com>`_ to automate the creation of your
-copies of the repository. To obtain your copy click `here <https://classroom.github.com/assignment-invitations/ed47949f8a828bfc57b563ce0a4c1a7c>`_.
+copies of the repository. To obtain your copy click `here <https://classroom.github.com/a/4GWLuxoA>`_.
 
 
 Cloning a local copy
@@ -133,12 +129,13 @@ Installing your implementation exercise
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 Your implementation exercise is also a Python package so **just once**
-after creating the venv, you need to install it. **With the venv active ** type::
+after creating the venv, you need to install it. **With the venv active** type::
 
-  cd finite-element-course
-  pip install -e .
+  pip install -e finite-element-course/
 
-Dont forget that dot, it's important! (The dot tells Python to install the package in the current directory).
+Dont forget that slash, it's important! (The slash tells Python to
+install the package in the given directory rather than searching the
+Python package archives for a package by that name).
 
 
 Watching for updates and issues
@@ -165,13 +162,30 @@ Now, *every time* you want to update you do the following:
 #. Make sure you have commited all your local changes **and** pushed
    them to GitHub.
 #. Execute the following commands::
+   
+     git checkout master          # Switch to the master branch.
+     git pull upstream master     # Update from the main repository.
+     git push                     # Push the updated master branch to GitHub.
+     git checkout implementation  # Switch back to the implementation branch.
+     git merge master             # Merge the new changes from master into implementation.
+     git push                     # Push the updated implementation branch to GitHub.
 
-   git checkout master          # Switch to the master branch.
-   git pull upstream master     # Update from the main repository.
-   git push                     # Push the updated master branch to GitHub.
-   git checkout implementation  # Switch back to the implementation branch.
-   git merge master             # Merge the new changes from master into implementation.
-   git push                     # Push the updated implementation branch to GitHub.
+Editing code
+~~~~~~~~~~~~
+
+In order to write the code required for the implementation exercise,
+you'll need to use a Python-aware text editor. There are many such
+editors available and you can use any you like. The script which set
+up the virtual environment installed `Spyder
+<https://pythonhosted.org/spyder/>`_, which is one good option. Other
+editors are `listed here
+<https://wiki.python.org/moin/PythonEditors>`_. With your venv active,
+you can launch spyder by typing::
+
+  spyder3
+
+Don't forget the 3. If you leave that off you'll end up running an old
+Python 2 version of Spyder which won't know anything about your venv.
    
 Skeleton code documentation
 ---------------------------
@@ -276,7 +290,7 @@ Read the hints
    find useful.
 Don't forget the 1D case
    Your finite element library needs to work in one and two dimensions.
-Return a :class:`numpy.array`
+Return a :func:`numpy.array`
    Many of the functions you have to write return arrays. Make sure
    you actually return an array and not a list (it's usually fine to
    build the answer as a list, but convert it to an array before you

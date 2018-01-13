@@ -8,5 +8,5 @@ python3 -m venv $1 --without-pip
 . $1/bin/activate
 curl https://bootstrap.pypa.io/get-pip.py | python3
 $1/bin/pip install -U pip
-$1/bin/pip install ipython matplotlib numpy scipy pytest
+$1/bin/pip install ipython matplotlib numpy scipy pytest spyder
 

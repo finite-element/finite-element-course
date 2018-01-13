@@ -1,4 +1,3 @@
-from __future__ import division
 import numpy as np
 from . import ReferenceTriangle, ReferenceInterval
 from .finite_elements import LagrangeElement, lagrange_points

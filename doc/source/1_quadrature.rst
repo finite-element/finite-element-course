@@ -272,11 +272,11 @@ cell.
    A test script for your method is provided in the ``test`` directory
    as ``test_integrate.py``. Run this script to test your code::
 
-      py.test test/test_integrate.py
+      py.test test/test_01_integrate.py
 
    from the Bash command line or::
 
-     !py.test test/test_integrate.py
+     !py.test test/test_01_integrate.py
 
    from Python. Make sure you commit your modifications and push them
    to your fork of the course repository.
@@ -285,4 +285,8 @@ cell.
 
    You can implement
    :meth:`~fe_utils.quadrature.QuadratureRule.integrate` in one line
-   using :func:`numpy.vectorize` and :func:`numpy.dot`.
+   using :class:`numpy.vectorize` and :func:`numpy.dot`.
+
+.. hint::
+
+   Don't forget to activate your Python venv!
