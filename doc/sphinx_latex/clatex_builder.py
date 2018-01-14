@@ -165,7 +165,7 @@ class LaTeXBuilder(PlainLaTeXBuilder):
         # copy image files
         if self.images:
             self.info(bold('copying images...'), nonl=1)
-            for src, dest in self.images.iteritems():
+            for src, dest in self.images.items():
                 self.info(' '+src, nonl=1)
                 copyfile(path.join(self.srcdir, src),
                          path.join(self.outdir, dest))

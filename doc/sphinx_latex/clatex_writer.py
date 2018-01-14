@@ -155,14 +155,14 @@ class CustomLaTeXTranslator(sphinx.writers.latex.LaTeXTranslator, nodes.NodeVisi
         # the second item is the default for the master file and can be changed
         # by .. highlight:: directive in the master file
         self.hlsettingstack = 2 * [[builder.config.highlight_language,
-                                    sys.maxint]]
+                                    sys.maxsize]]
         self.footnotestack = []
         self.curfilestack = []
         self.handled_abbrs = set()
-        if builder.config.latex_use_parts:
+        if builder.config.latex_toplevel_sectioning == 'part':
             self.top_sectionlevel = 0
         else:
-            if builder.config.clatex_use_chapters:
+            if builder.config.latex_toplevel_sectioning == 'chapter':
                 self.top_sectionlevel = 1
             else:
                 self.top_sectionlevel = 2

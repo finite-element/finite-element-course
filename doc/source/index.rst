@@ -73,8 +73,10 @@
    software to solve finite element problems in one and two dimensions.
 
    This part of the module will be taught by `Dr David Ham
-   <http://www.imperial.ac.uk/people/david.ham>`_ in two hours per week
-   of computer laboratory time.
+   <http://www.imperial.ac.uk/people/david.ham>`_ in two hours per
+   week of computer laboratory time. A PDF version of the
+   implementation exercise notes is `available here
+   <Finiteelementcourse.pdf>`_.
 
 .. only:: html
 

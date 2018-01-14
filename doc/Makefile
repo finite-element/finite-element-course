@@ -57,10 +57,11 @@ apidoc: $(GENERATED_FILES)
 webgit:
 	git clone git@github.com:finite-element/finite-element.github.io.git webgit
 
-html: apidoc webgit
+html: apidoc webgit latexpdf
 	rm $(BUILDDIR)/html || rm -rf $(BUILDDIR)/html
 	ln -s $(PWD)/webgit $(BUILDDIR)/html
 	PYTHONPATH=$(PWD)/..:$(PYTHONPATH) $(SPHINXBUILD) -b html $(ALLSPHINXOPTS) $(BUILDDIR)/html
+	cp $(BUILDDIR)/latex/Finiteelementcourse.pdf $(BUILDDIR)/html
 	@echo
 	@echo "Build finished. The HTML pages are in $(BUILDDIR)/html."
 
@@ -127,9 +128,10 @@ latex: apidoc
 	      "(use \`make latexpdf' here to do that automatically)."
 
 latexpdf: apidoc
-	$(SPHINXBUILD) -b clatex $(ALLSPHINXOPTS) $(BUILDDIR)/latex
+	PYTHONPATH=$(PWD)/..:$(PYTHONPATH) $(SPHINXBUILD) -b clatex $(ALLSPHINXOPTS) $(BUILDDIR)/latex
 	@echo "Running LaTeX files through pdflatex..."
-	$(MAKE) -C $(BUILDDIR)/latex all-pdf
+# $(MAKE) -C $(BUILDDIR)/latex all-pdf
+	cd $(BUILDDIR)/latex; latexmk -pdf
 	@echo "pdflatex finished; the PDF files are in $(BUILDDIR)/latex."
 
 latexpdfja: apidoc
