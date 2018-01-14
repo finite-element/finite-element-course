@@ -65,9 +65,7 @@ html: apidoc webgit
 	@echo "Build finished. The HTML pages are in $(BUILDDIR)/html."
 
 make publish:
-	cd webgit
-	git commit -am "Website build"
-	git push --force
+	cd webgit; git add -A; git commit -am "Website build"; git push --force
 
 livehtml:
 	sphinx-autobuild -b html $(ALLSPHINXOPTS) $(BUILDDIR)/html
