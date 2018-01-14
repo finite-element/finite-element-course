@@ -54,10 +54,20 @@ clean:
 apidoc: $(GENERATED_FILES)
 	PYTHONPATH=$(PWD)/..:$(PYTHONPATH) sphinx-apidoc ../fe_utils -o source/ -f -T
 
-html: apidoc
+webgit:
+	git clone git@github.com:finite-element/finite-element.github.io.git webgit
+
+html: apidoc webgit
+	rm $(BUILDDIR)/html || rm -rf $(BUILDDIR)/html
+	ln -s $(PWD)/webgit $(BUILDDIR)/html
 	PYTHONPATH=$(PWD)/..:$(PYTHONPATH) $(SPHINXBUILD) -b html $(ALLSPHINXOPTS) $(BUILDDIR)/html
 	@echo
 	@echo "Build finished. The HTML pages are in $(BUILDDIR)/html."
+
+make publish:
+	cd webgit
+	git commit -am "Website build"
+	git push --force
 
 livehtml:
 	sphinx-autobuild -b html $(ALLSPHINXOPTS) $(BUILDDIR)/html

@@ -46,7 +46,7 @@ with `u_0 \in V_0` and `u_\Gamma \in V_\Gamma` such that:
    \mathbf{n}\, \mathrm{d} s}_{=0} = \int_\Omega v_0\, f\, \mathrm{d} x
    \qquad \forall v_0 \in V_0
 
-   u_\Gamma = 0 \textrm{ on } \Gamma
+   u_\Gamma = 0 \qquad \textrm{ on } \Gamma
 
 There are a number of features of this equation which require some explanation:
 
@@ -112,20 +112,20 @@ With this definition, :eq:`weakpoisson` has solution:
 
 .. exercise::
 
-   ``test/solve_poisson.py`` contains a partial implementation of
+   ``fe_utils/solvers/poisson.py`` contains a partial implementation of
    this problem. You need to implement the :func:`assemble`
    function. You should base your implementation on your
-   ``test/solve_helmholtz.py`` but take into account the difference
+   ``fe_utils/solvers/helmholtz.py`` but take into account the difference
    in the equation, and the boundary conditions. The
-   :func:`boundary_nodes` function in ``test/solve_poisson.py`` is
+   :func:`fe_utils.solvers.poisson.boundary_nodes` function in ``fe_utils/solvers/poisson.py`` is
    likely to be helpful in implementing the boundary conditions. As
    before, run::
 
-     py.test test/solve_poisson.py --help
+     python fe_utils/solvers/poisson.py --help
      
    for instructions (they are the same as for
-   ``test/solve_helmholtz.py``). Similarly,
-   ``test/test_poisson_convergence.py`` contains convergence tests
+   ``fe_utils/solvers/helmholtz.py``). Similarly,
+   ``test/test_13_poisson_convergence.py`` contains convergence tests
    for this problem.
 
 

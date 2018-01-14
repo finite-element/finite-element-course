@@ -444,23 +444,23 @@ Implementing finite element problems
 
    Run::
 
-      py.test test/solve_helmholtz.py --help
+      python fe_utils/solvers/helmholtz.py --help
 
    for guidance on using the script to view the solution, the analytic
    solution and the error in your solution. In addition,
-   ``test/test_helmholtz_convergence.py`` contains tests that the
+   ``test/test_12_helmholtz_convergence.py`` contains tests that the
    helmholtz solver converges at the correct rate for degree 1, 2 and
    3 polynomials.
 
    .. warning::
 
-      ``test/test_helmholtz_convergence.py`` may take many seconds or
+      ``test/test_12_helmholtz_convergence.py`` may take many seconds or
       even a couple of minutes to run, as it has to solve on some
       rather fine meshes in order to check convergence.
 
       .. rubric:: Footnotes
 
-.. [#helmholtz] Strictly speaking this is positive definite Helmholtz
+.. [#helmholtz] Strictly speaking this is the positive definite Helmholtz
                 problem. Changing the sign on `u` produces the
                 indefinite Helmholtz problem, which is significantly
                 harder to solve.
