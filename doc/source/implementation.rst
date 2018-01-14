@@ -125,19 +125,6 @@ to activate the venv. You do this with::
 Obviously if you are typing this in a directory other than the one
 containing the venv, you need to modify the path accordingly.
 
-Installing your implementation exercise
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-
-Your implementation exercise is also a Python package so **just once**
-after creating the venv, you need to install it. **With the venv active** type::
-
-  pip install -e finite-element-course/
-
-Dont forget that slash, it's important! (The slash tells Python to
-install the package in the given directory rather than searching the
-Python package archives for a package by that name).
-
-
 Watching for updates and issues
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
@@ -249,7 +236,7 @@ testing framework. You run the tests with::
 
 on the Bash command line or::
 
-   !py.test test/test_script.py
+   !py.test test_script.py
 
 from within Python, replacing ``test_script.py`` with the appropriate
 test file name. The ``-x`` option to ``py.test`` will cause the test
@@ -257,6 +244,13 @@ to stop at the first failure it finds, which is often the best place
 to start fixing a problem. For those familiar with debuggers, the
 ``--pdb`` option will drop you into the Python debugger at the first
 error.
+
+You can also run all the tests by running ``py.test`` on the tests
+directory. This works particularly well with the -x option, resulting
+in the tests being run in course order and stopping at the first
+failing test::
+
+  py.test -x tests/
 
 
 Coding style and commenting

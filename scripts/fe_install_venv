@@ -1,4 +1,5 @@
 #! /usr/bin/env bash
+set -e
 if [ $# -eq 0 ]
   then
     echo "Please pass a name for your venv as the first argument."
@@ -9,4 +10,4 @@ python3 -m venv $1 --without-pip
 curl https://bootstrap.pypa.io/get-pip.py | python3
 $1/bin/pip install -U pip
 $1/bin/pip install ipython matplotlib numpy scipy pytest spyder
-
+$1/bin/pip install -e $(dirname $0)/..
