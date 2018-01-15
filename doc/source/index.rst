@@ -49,9 +49,12 @@
    Lecture slides:
    ~~~~~~~~~~~~~~~
 
+      * `Lecture notes part 1 <_static/Lecture1.pdf>`_
+      * `Lecture notes part 2 <_static/Lecture2.pdf>`_
+   
    Slides will be made available as the module progresses.
 
-   
+	      
    Exercises:
    ~~~~~~~~~~
 
