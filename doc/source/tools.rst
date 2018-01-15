@@ -10,8 +10,46 @@ work. The machines in Huxley 410 have suitable software installed, or you can us
 Using the Windows machines in Huxley 410
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-A new Python environment is in development by ICT. The instructions here will be updated before the first lab session.
+The Python installations on the department's Windows machines are
+limited in functionality and don't support everything we need. We're
+therefore going to use the Linux Virtual Machines which are installed
+on the lab machines.
 
+1. Double click the "OEL7" icon on the Windows desktop.
+
+2. When the login window appears, log in using your Imperial College
+   username and password. You probably also want to select full screen
+   mode from the `view` menu.
+
+3. Open `firefox` from the `Applications` menu and navigate to this
+   page so that you can copy and paste commands straight into the
+   terminal.
+
+4. Open `terminal` from the `Applications` menu and run the following command::
+
+     /mnt/python_venvs/setup/setup-python.sh
+
+5. We also need to set one configuration variable to enable plotting from Python::
+
+     echo "backend: Qt5Agg" >> ~/.config/matplotlib/matplotlibrc
+
+There should now be a directory called `pythonhome` in your home
+directory (type `ls` to check). `pythonhome` is a network file share
+which persists between logins, you need to do all your work in this
+directory, because your home directory is specific to each machine and
+gets wiped when the machine reboots.
+
+There is also a file called `pythonhome/imp-config`. This file
+contains a list of configuration directories which will be stored on
+the network share. If you need any additional files to persist between
+logins, you can add them here.
+
+.. warning::
+
+   If you save work anywhere other than in `pythonhome`, it is likely
+   that that work will be irevocably lost!
+
+     
 Using your own Windows machine
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
@@ -22,11 +60,6 @@ Canopy, but other Windows Python distributions should also work.
 1. Download and install `Enthought Canopy Express` from `here <https://store.enthought.com/#canopy-individual>`_.
 
 2. Download and install `git` from `here <https://git-scm.com/download/win>`_.
-
-3. You should now be able to use git and Python exactly as in Huxley
-   410, except that the directory where your finite element source
-   code lives will be different (and may depend on how your Windows
-   machine is set up).
      
 
 Using your own Linux machine

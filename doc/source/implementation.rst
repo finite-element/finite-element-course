@@ -79,24 +79,7 @@ At the command line on your working machine type::
   git clone <url> finite-element-course
 
 Substituting your git repository url for <url>. Your git repository
-url can be found by clicking on `clone or download` at the top right of your repository page on GitHub. Next::
-
-  cd finite-element-course
-
-Setting up an implementation branch
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-
-We'll keep the master branch of your repository in the original
-condition so we can compare to it later, and collect any updates which
-occur during the term. Instead, we'll create an implementation branch
-to actually work on:
-
-  git checkout -b implementation
-
-Your working directory is now a current checkout of your
-implementation branch. You'll also want to push this branch to GitHub:
-
-  git push --set-upstream origin implementation
+url can be found by clicking on `clone or download` at the top right of your repository page on GitHub. 
 
 Setting up your venv
 ~~~~~~~~~~~~~~~~~~~~
@@ -114,6 +97,9 @@ Now we can run a script from the git repository to make the venv::
 
   ./finite-element-course/scripts/fe_install_venv venv
 
+This has to install several packages in the venv, so it might take a
+few minutes to run.
+
 Activating your venv
 ~~~~~~~~~~~~~~~~~~~~
 
@@ -124,6 +110,22 @@ to activate the venv. You do this with::
 
 Obviously if you are typing this in a directory other than the one
 containing the venv, you need to modify the path accordingly.
+
+Setting up an implementation branch
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+We'll keep the master branch of your repository in the original
+condition so we can compare to it later, and collect any updates which
+occur during the term. Instead, we'll create an implementation branch
+to actually work on::
+
+  cd finite-element-course
+  git checkout -b implementation
+
+Your working directory is now a current checkout of your
+implementation branch. You'll also want to push this branch to GitHub::
+
+  git push --set-upstream origin implementation
 
 Watching for updates and issues
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
