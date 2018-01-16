@@ -59,6 +59,7 @@ webgit:
 
 html: apidoc webgit latexpdf
 	rm $(BUILDDIR)/html || rm -rf $(BUILDDIR)/html
+	install -d $(BUILDDIR)
 	ln -s $(PWD)/webgit $(BUILDDIR)/html
 	PYTHONPATH=$(PWD)/..:$(PYTHONPATH) $(SPHINXBUILD) -b html $(ALLSPHINXOPTS) $(BUILDDIR)/html
 	cp $(BUILDDIR)/latex/Finiteelementcourse.pdf $(BUILDDIR)/html
