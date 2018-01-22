@@ -270,7 +270,7 @@ cell.
    left unimplemented. Using :eq:`quadrature`, implement this method.
 
    A test script for your method is provided in the ``test`` directory
-   as ``test_integrate.py``. Run this script to test your code::
+   as ``test_01_integrate.py``. Run this script to test your code::
 
       py.test test/test_01_integrate.py
 

@@ -88,12 +88,7 @@ We're going to use a Python venv. This is a private Python environment
 in which we'll install the packages we need, including our own
 implementation exercise. This minimises interference between this
 project and anything else which might be using Python on the
-system. We don't want to install the venv inside our git repository,
-so type::
-
-  cd ..
-
-Now we can run a script from the git repository to make the venv::
+system. We can run a script from the git repository to make the venv::
 
   ./finite-element-course/scripts/fe_install_venv venv
 
@@ -164,17 +159,10 @@ Editing code
 
 In order to write the code required for the implementation exercise,
 you'll need to use a Python-aware text editor. There are many such
-editors available and you can use any you like. The script which set
-up the virtual environment installed `Spyder
-<https://pythonhosted.org/spyder/>`_, which is one good option. Other
-editors are `listed here
-<https://wiki.python.org/moin/PythonEditors>`_. With your venv active,
-you can launch spyder by typing::
+editors available and you can use any you like. One good option is
+called `atom` and is already installed in Huxley 410. You run it buy typing::
 
-  spyder3
-
-Don't forget the 3. If you leave that off you'll end up running an old
-Python 2 version of Spyder which won't know anything about your venv.
+  atom
    
 Skeleton code documentation
 ---------------------------
