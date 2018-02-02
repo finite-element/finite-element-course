@@ -51,6 +51,7 @@
 
       * `Lecture notes part 1 <_static/Lecture1.pdf>`_
       * `Lecture notes part 2 <_static/Lecture2.pdf>`_
+      * `Lecture notes part 3 <_static/Lecture3.pdf>`_
       * `Lecture videos <https://imperial.cloud.panopto.eu/Panopto/Pages/Sessions/List.aspx?folderID=3dd00d9b-811b-4b2f-babe-a86900a087fa>`_
    Slides will be made available as the module progresses.
 
@@ -58,6 +59,10 @@
    Exercises:
    ~~~~~~~~~~
 
+   * `Problem sheet 1 <_static/FE_examples1.pdf>`_
+   * `Problem sheet 2 <_static/FE_examples2.pdf>`_
+   * `Problem sheet 3 <_static/FE_examples3.pdf>`_
+   
    Exercises will be posted ahead of the first problems class.
    
    Past exam papers
