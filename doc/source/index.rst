@@ -52,6 +52,7 @@
       * `Lecture notes part 1 <_static/Lecture1.pdf>`_
       * `Lecture notes part 2 <_static/Lecture2.pdf>`_
       * `Lecture notes part 3 <_static/Lecture3.pdf>`_
+      * `Lecture notes part 4 <_static/Lecture4.pdf>`_
       * `Lecture videos <https://imperial.cloud.panopto.eu/Panopto/Pages/Sessions/List.aspx?folderID=3dd00d9b-811b-4b2f-babe-a86900a087fa>`_
    Slides will be made available as the module progresses.
 
