@@ -95,13 +95,22 @@ system. We can run a script from the git repository to make the venv::
 This has to install several packages in the venv, so it might take a
 few minutes to run.
 
+On Windows, the set of commands is somewhat different. In this case
+you would run::
+
+  ./finite-element-course/scripts/fe_install_venv_win venv
+
 Activating your venv
 ~~~~~~~~~~~~~~~~~~~~
 
 **Every time** you want to work on the implementation exercise, you need
-to activate the venv. You do this with::
+to activate the venv. On Linux or Mac do this with::
 
   source venv/bin/activate
+
+while on Windows the command is::
+
+  source venv/Scripts/activate
 
 Obviously if you are typing this in a directory other than the one
 containing the venv, you need to modify the path accordingly.
