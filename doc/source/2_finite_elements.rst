@@ -364,6 +364,13 @@ the basis functions at quadrature points.
    The :meth:`~numpy.ndarray.transpose` method of numpy arrays enables
    generalised transposes swapping any dimensions.
 
+.. hint::
+
+   At least one of the natural ways of implementing this function
+   results in a whole load of :data:`nan` values in the generalised
+   Vandermonde matrix. In this case, you might find
+   :func:`numpy.nan_to_num` useful.
+
 .. exercise::
 
    Extend :meth:`~fe_utils.finite_elements.FiniteElement.tabulate` to
