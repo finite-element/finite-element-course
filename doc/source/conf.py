@@ -55,7 +55,7 @@ master_doc = 'index'
 
 # General information about the project.
 project = u'Finite element course'
-copyright = u'2014, David A. Ham and Colin J. Cotter'
+copyright = u'2014-2018, David A. Ham and Colin J. Cotter'
 
 mathjax_path = "https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"
 
