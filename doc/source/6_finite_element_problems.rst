@@ -458,7 +458,7 @@ Implementing finite element problems
       even a couple of minutes to run, as it has to solve on some
       rather fine meshes in order to check convergence.
 
-      .. rubric:: Footnotes
+.. rubric:: Footnotes
 
 .. [#helmholtz] Strictly speaking this is the positive definite Helmholtz
                 problem. Changing the sign on `u` produces the
