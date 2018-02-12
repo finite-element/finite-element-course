@@ -167,7 +167,9 @@ entities in space. Provided we restrict our attention to meshes in
 which the element edges are straight (ie not curved), we can represent
 the geometry of the mesh by simply recording the coordinates of the
 vertices. The positions of the higher dimensional entities then just
-interpolate the vertices of which they are composed.
+interpolate the vertices of which they are composed. We will later
+observe that this is equivalent to representing the geometry in a
+vector-valued piecewise linear finite element space.
 
 
 A mesh implementation in Python
@@ -186,9 +188,9 @@ corresponding (rather trivial) function for a unit one dimensional
 mesh.
 
 You can observe the numbering of mesh entities in these meshes using
-the ``test/plot_mesh.py`` script. Run::
+the ``plot_mesh`` script. Run::
 
-  py.test test/plot_mesh.py -h
+  plot_mesh -h
 
 for usage instructions.
 

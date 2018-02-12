@@ -55,7 +55,7 @@ master_doc = 'index'
 
 # General information about the project.
 project = u'Finite element course'
-copyright = u'2014, David A. Ham and Colin J. Cotter'
+copyright = u'2014-2018, David A. Ham and Colin J. Cotter'
 
 mathjax_path = "https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"
 
@@ -220,6 +220,7 @@ latex_documents = [
 # For "manual" documents, if this is true, then toplevel headings are parts,
 # not chapters.
 #latex_use_parts = False
+latex_toplevel_sectioning = "chapter"
 
 # If true, show page references after internal links.
 #latex_show_pagerefs = False
@@ -274,7 +275,7 @@ numfig = True
 
 
 # Example configuration for intersphinx: refer to the Python standard library.
-intersphinx_mapping = {'python': ('http://docs.python.org/', None),
+intersphinx_mapping = {'python': ('http://docs.python.org/3/', None),
                        'scipy': ('http://docs.scipy.org/doc/scipy-dev/reference/', None),
                        'numpy': ('http://docs.scipy.org/doc/numpy/', None),
                        'matplotlib': ('http://matplotlib.org/', None)}

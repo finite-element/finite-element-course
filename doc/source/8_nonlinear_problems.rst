@@ -73,14 +73,14 @@ we observe that `f` may be nonlinear in `u` but is (by
 construction) linear in `v`.
 
 The function `f` is called the *residual* of the nonlinear system. In
-essence, if `u` is not a solution to the nonlinear problem, then `f(u;
-v)` will be nonzero for some `v\in V`. Since the residual is linear in
-`v`, it suffices to define the residual for each `\phi_i` in the basis
-of `V`. For `\phi_i\in V_0`, the residual is just the weak form of the
-equation, but what do we do for the boundary? The simple answer is
-that we need a linear functional which is zero if the boundary
-condition is satisfied at this test function, and nonzero
-otherwise. The simplest example of such a functional is:
+essence, `f(u; v) = 0 \ \forall v\in V` if and only if `u` is a weak
+solution to the PDE. Since the residual is linear in `v`, it suffices
+to define the residual for each `\phi_i` in the basis of `V`. For
+`\phi_i\in V_0`, the residual is just the weak form of the equation,
+but what do we do for the boundary? The simple answer is that we need
+a linear functional which is zero if the boundary condition is
+satisfied at this test function, and nonzero otherwise. The simplest
+example of such a functional is:
 
 .. math::
    :label:
@@ -342,77 +342,81 @@ Implementing a nonlinear problem
 
 .. exercise::
 
-   Write a Python program which solves the following problem using
-   degree 1 Lagrange elements over the unit square domain.
+   Burgers' equation is a very simplified model of fluid flow. Here we
+   will consider the steady, viscous form of this equation in one
+   dimension.
+
+   Implement :func:`~fe_utils.solvers.burgers.solve_burgers` so that it solves
+   the following problem using degree 1 Lagrange elements over the
+   unit interval domain:
 
    .. math::
       :label: mastery
-   
-      -\nabla\cdot\nabla u + \sin(u) = g
 
-      u = b \textrm{ on } \Gamma
+        \frac{1}{2}\frac{\partial}{\partial x}\left(u^2\right) -
+        \frac{\partial^2 u}{\partial x^2} = g
 
-   Select a solution and compute the required forcing function `g` so
-   that your solution solves the equations. Make sure your boundary
-   condition function `b` is consistent with your chosen solution!
+        u = 1 \quad \textrm{at } x=0
+
+        \frac{\partial u}{\partial x} = 0  \quad \textrm{at } x=1.
+
+   Select the solution:
+
+   .. math::
+      u = (1 - x)^2
+
+   and compute the required forcing function `g` so
+   that this solution solves the equations. 
 
    Your submitted answer will consist of:
-   
+
    1. A written component containing your derivation of:
-      
-      a. The weak form of :eq:`mastery`; and 
 
-      b. the Jacobian; and
+        a. The weak form of :eq:`mastery`; and 
 
-      c. the forcing term required by your choice of manufactured solution.
+        b. the Jacobian; and
+
+        c. the forcing term required by the choice of manufactured solution.
 
       A neatly hand-written or a typed submission are equally acceptable.
 
-   2. A file named ``mastery.py`` in the ``test`` directory of your
-      implementation. Running::
+   2. The code to implement the solution. This should be in
+      ``fe_utils.solvers.burgers.py`` in your implementation. A
+      convergence test for your code is provided in
+      ``test/test_14_burgers_convergence.py``.
 
-        python mastery.py
+   The submission of your mastery exercise, and indeed the entire
+   implementation exercise will be on Blackboard. You will submit a
+   PDF containing the derivations above, and the git sha1 for the
+   commit you would like to have marked.
 
-      should solve :eq:`mastery` at a number of mesh resolutions and
-      print out the convergence of the error in the solution. This
-      should approach second order as the mesh is refined. Submit by
-      email the git sha for the version of the implementation you wish
-      to have marked.
-      
-   Provide test code which demonstrates that your solution converges
-   at the correct rate.
+   .. hint::
+      In deriving the weak form, only the Laplacian operator needs to
+      be integrated by parts.
 
-.. hint::
+   .. hint::
 
-   When employing the method of manufactured solutions, it is
-   expeditious to choose a very simple solution. However, in order to
-   avoid unfortunate corner cases which will not fully test your code,
-   you should avoid linear solution functions, and also functions
-   which are constant in either the `x[0]` or `x[1]` direction.
-   
-.. hint::
+      You can either implement your own Newton solver, or install the
+      :py:mod:`scipy` package and work out how to use the
+      :py:func:`scipy.optimize.newton_krylov` function. For this simple
+      case, a hand-coded Newton solver is probably the simplest
+      approach. However, for problems which are larger and more complex,
+      it will be advantageous to employ a technique more advanced than
+      simple Newton and the case for using a well-engineered third party
+      implementation is strong.
 
-   You can either implement your own Newton solver, or install the
-   :py:mod:`scipy` package and work out how to use the
-   :py:func:`scipy.optimize.newton_krylov` function. For this simple
-   case, a hand-coded Newton solver is probably the simplest
-   approach. However, for problems which are larger and more complex,
-   it will be advantageous to employ a technique more advanced than
-   simple Newton and the case for using a well-engineered third party
-   implementation is strong.
+   .. hint::
 
-.. hint::
+      It is an exceptionally useful aid to debugging to have your Newton
+      iteration print out the value of the error norm and the iteration
+      number for each iteration.
 
-   It is an exceptionally useful aid to debugging to have your Newton
-   iteration print out the value of the error norm and the iteration
-   number for each iteration.
-   
-.. hint::
+   .. hint::
 
-   You could insert a parameter of `\alpha` in front of the `\sin(u)` term
-   in the equation. By setting `\alpha` to 0, you reduce your problem
-   to the linear case. You can use the linear case to test your code
-   initially, before setting `\alpha=1` for the actual exercise. Note
-   that, in the linear case, Newton's method will converge in exactly
-   one iteration (although your algorithm will have to actually
-   calculate two steps in order to know that convergence has occurred).
+      You could insert a parameter of `\alpha` in front of the quadratic term
+      in the equation. By setting `\alpha` to 0, you reduce your problem
+      to the linear case. You can use the linear case to test your code
+      initially, before setting `\alpha=1` for the actual exercise. Note
+      that, in the linear case, Newton's method will converge in exactly
+      one iteration (although your algorithm will have to actually
+      calculate two steps in order to know that convergence has occurred).

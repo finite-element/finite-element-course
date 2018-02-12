@@ -6,10 +6,10 @@
 
 
 Having constructed functions in finite element spaces and integrated
-them, over the domain, we now have the tools in place to actually
+them over the domain, we now have the tools in place to actually
 assemble and solve a simple finite element problem. To avoid having to
 explicitly deal with boundary conditions, we choose in the first
-instance to solve a Helmholtz problem, find `u` in some finite element
+instance to solve a Helmholtz problem [#helmholtz]_, find `u` in some finite element
 space `V` such that:
 
 .. math::
@@ -432,28 +432,35 @@ Implementing finite element problems
 
 .. exercise::
 
-   ``test/solve_helmholtz.py`` contains a partial implementation of
+   ``fe_utils/solvers/helmholtz.py`` contains a partial implementation of
    the finite element method to solve :eq:`weak_helmholtz` with `f`
    chosen as in :eq:`f_def`. Your task is to implement the
-   :func:`assemble` function using :eq:`rhs_index`, and
+   :func:`~fe_utils.solvers.helmholtz.assemble` function using :eq:`rhs_index`, and
    :eq:`lhs_assemble` or :eq:`lhs_index`. The comments in the
-   :func:`assemble` function provide some guidance as to the steps
-   involved. You may also wish to consult the :func:`errornorm`
-   function in ``test/solve_helmholtz.py`` as a guide to the
+   :func:`~fe_utils.solvers.helmholtz.assemble` function provide some guidance as to the steps
+   involved. You may also wish to consult the :func:`~fe_utils.utils.errornorm`
+   function as a guide to the
    structure of the code required.
 
    Run::
 
-      py.test test/solve_helmholtz.py --help
+      python fe_utils/solvers/helmholtz.py --help
 
    for guidance on using the script to view the solution, the analytic
    solution and the error in your solution. In addition,
-   ``test/test_helmholtz_convergence.py`` contains tests that the
+   ``test/test_12_helmholtz_convergence.py`` contains tests that the
    helmholtz solver converges at the correct rate for degree 1, 2 and
    3 polynomials.
 
    .. warning::
 
-      ``test/test_helmholtz_convergence.py`` may take many seconds or
+      ``test/test_12_helmholtz_convergence.py`` may take many seconds or
       even a couple of minutes to run, as it has to solve on some
       rather fine meshes in order to check convergence.
+
+.. rubric:: Footnotes
+
+.. [#helmholtz] Strictly speaking this is the positive definite Helmholtz
+                problem. Changing the sign on `u` produces the
+                indefinite Helmholtz problem, which is significantly
+                harder to solve.

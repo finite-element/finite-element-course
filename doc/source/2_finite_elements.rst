@@ -156,22 +156,18 @@ relatively low order computations.
    :func:`~fe_utils.finite_elements.lagrange_points`. Make sure your
    algorithm also works for one-dimensional elements. Some basic tests
    for your code are to be found in
-   ``test/test_lagrange_points.py``. You can also test your lagrange
+   ``test/test_02_lagrange_points.py``. You can also test your lagrange
    points on the triangle by running:: 
 
-     python test/plot_lagrange_points.py degree
+     plot_lagrange_points degree
    
-   From the Enthought Canopy Python command line, you would instead write::
-
-     run test/plot_lagrange_points.py degree
-
-   Where degree is the degree of the points to plot.
+   Where :data:`degree` is the degree of the points to plot.
 
 .. hint::
    
    The lagrange points can be generated very simply using `list
    comprehensions
-   <https://docs.python.org/2/tutorial/datastructures.html#list-comprehensions>`_.
+   <https://docs.python.org/3/tutorial/datastructures.html#list-comprehensions>`_.
 
 .. _sec-vandermonde:
 
@@ -235,7 +231,7 @@ to include powers of `z`.
    powers of `x` and `y`. For the purposes of this exercise you should
    ignore the ``grad`` argument.
 
-   Tests for this function are in ``test/test_vandermonde_matrix.py``
+   Tests for this function are in ``test/test_03_vandermonde_matrix.py``
 
 .. hint::
 
@@ -267,7 +263,7 @@ which the evaluation should occur.
    ``self.basis_coefs``. 
 
    Some basic tests of your implementation are in
-   ``test/test_init_finite_element.py``.
+   ``test/test_04_init_finite_element.py``.
 
 .. hint::
    The :func:`numpy.linalg.inv` function may be
@@ -282,7 +278,7 @@ a general finite element object assuming we have provided the cell,
 polynomial, degree and nodes. The
 :class:`~fe_utils.finite_elements.LagrangeElement` class is a
 `subclass
-<https://docs.python.org/2/tutorial/classes.html#inheritance>`_ of
+<https://docs.python.org/3/tutorial/classes.html#inheritance>`_ of
 :class:`~fe_utils.finite_elements.FiniteElement` which will implement
 the particular case of the equispaced Lagrange elements.
 
@@ -299,7 +295,7 @@ the particular case of the equispaced Lagrange elements.
    **After** you have implemented
    :meth:`~fe_utils.finite_elements.FiniteElement.tabulate` in the
    next exercise, you can use
-   ``plot_lagrange_basis_functions.py`` to visualise your
+   ``plot_lagrange_basis_functions`` to visualise your
    Lagrange basis functions.
 
 Tabulating basis functions
@@ -324,7 +320,7 @@ evaluating a set of basis functions at a set of points is called
    lines. For the purposes of this exercise, ignore the ``grad``
    argument.
 
-   The test file ``test/test_tabulate.py`` checks that tabulating the
+   The test file ``test/test_05_tabulate.py`` checks that tabulating the
    nodes of a finite element produces the identity matrix.
 
 Gradients of basis functions
@@ -359,14 +355,21 @@ the basis functions at quadrature points.
    term. For example, the entry `x^2y^3` would be replaced by the
    vector `[ 2xy^3, 3x^2y^2 ]`.
 
-   The ``test/test_vandermonde_matrix_grad.py`` file has tests of this
+   The ``test/test_06_vandermonde_matrix_grad.py`` file has tests of this
    extension. You should also ensure that you still pass
-   ``test/test_vandermonde_matrix.py``.
+   ``test/test_03_vandermonde_matrix.py``.
 
 .. hint:: 
 
    The :meth:`~numpy.ndarray.transpose` method of numpy arrays enables
    generalised transposes swapping any dimensions.
+
+.. hint::
+
+   At least one of the natural ways of implementing this function
+   results in a whole load of :data:`nan` values in the generalised
+   Vandermonde matrix. In this case, you might find
+   :func:`numpy.nan_to_num` useful.
 
 .. exercise::
 
@@ -385,17 +388,20 @@ the basis functions at quadrature points.
    where `\mathbf{e}_0\ldots\mathbf{e}_{\dim -1}` is the coordinate
    basis on the reference cell.
 
-   The ``test/test_tabulate_grad.py`` script tests this
+   The ``test/test_07_tabulate_grad.py`` script tests this
    extension. Once again, make sure you still pass
-   ``test/test_tabulate.py``
+   ``test/test_05_tabulate.py``
 
 .. hint::
 
    The :func:`numpy.einsum` function implements generalised tensor
    contractions using `Einstein summation notation
    <http://mathworld.wolfram.com/EinsteinSummation.html>`_. For
-   example, ``A = numpy.einsum("ijk,jl->ilk", T, C)`` is equivalent to
-   `A_{ilk} = \sum_j T_{ijk} C_{jl}`.
+   example::
+
+     A = numpy.einsum("ijk,jl->ilk", T, C)
+
+   is equivalent to `A_{ilk} = \sum_j T_{ijk} C_{jl}`.
 
 Interpolating functions to the finite element nodes
 ---------------------------------------------------
@@ -428,21 +434,17 @@ where `X_i` is the point associated with the `i`-th node.
 
    Implement :meth:`~fe_utils.finite_elements.FiniteElement.interpolate`.
 
-   Once you have done this, you can use the script provided to plot
-   functions of your choice interpolated onto any of the finite
-   elements you can make::
+Once you have done this, you can use the script provided to plot
+functions of your choice interpolated onto any of the finite
+elements you can make::
 
-     python test/plot_interpolate_lagrange.py "sin(2*pi*x[0])" 2 5
+  plot_interpolate_lagrange "sin(2*pi*x[0])" 2 5
 
-   From the Enthought Canopy Python command line, you would instead write::
+.. hint::
 
-     run test/plot_interpolate_lagrange.py "sin(2*pi*x[0])" 2 5
-
-   .. hint::
-
-      You can find help on the arguments to this function with::
+   You can find help on the arguments to this function with::
       
-        python test/plot_interpolate_lagrange.py -h
+     plot_interpolate_lagrange -h
 
 .. rubric:: Footnotes
 

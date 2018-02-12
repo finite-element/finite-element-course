@@ -1,0 +1,13 @@
+#! /usr/bin/env bash
+set -e
+if [ $# -eq 0 ]
+  then
+    echo "Please pass a name for your venv as the first argument."
+fi
+
+python -m venv $1 --without-pip
+. $1/Scripts/activate
+curl https://bootstrap.pypa.io/get-pip.py | python
+$1/Scripts/pip install -U pip
+$1/Scripts/pip install ipython matplotlib numpy scipy pytest spyder
+$1/Scripts/pip install -e $(dirname $0)/..

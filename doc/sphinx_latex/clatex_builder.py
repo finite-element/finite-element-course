@@ -28,19 +28,20 @@ from sphinx import addnodes
 from sphinx.util import texescape
 from sphinx.locale import _
 from sphinx.builders import Builder
+from sphinx.builders.latex import LaTeXBuilder as PlainLaTeXBuilder
 from sphinx.environment import NoUri
 from sphinx.util.nodes import inline_all_toctrees
 from sphinx.util.osutil import SEP, copyfile
 from sphinx.util.console import bold, darkgreen
 from clatex_writer import CustomLaTeXWriter as LaTeXWriter
 from sphinx.ext.mathbase import math_role
-from sphinx.ext.mathbase import eq_role
+#from sphinx.ext.mathbase import eq_role
 from sphinx.ext.mathbase import MathDirective
-from sphinx.ext.mathbase import number_equations
+#from sphinx.ext.mathbase import number_equations
 
 import clatex_sphinx
 
-class LaTeXBuilder(Builder):
+class LaTeXBuilder(PlainLaTeXBuilder):
     """
     Builds LaTeX output to create PDF.
     """
@@ -49,10 +50,10 @@ class LaTeXBuilder(Builder):
     supported_image_types = ['application/pdf', 'image/png',
                              'image/gif', 'image/jpeg']
 
-    def init(self):
-        self.docnames = []
-        self.document_data = []
-        texescape.init()
+#    def init(self):
+        # self.docnames = []
+        # self.document_data = []
+        # texescape.init()
 
     def get_outdated_docs(self):
         return 'all documents' # for now
@@ -93,6 +94,7 @@ class LaTeXBuilder(Builder):
             components=(docwriter,)).get_default_values()
 
         self.init_document_data()
+        self.write_stylesheet()
 
         for entry in self.document_data:
             docname, targetname, title, author, docclass = entry[:5]
@@ -133,7 +135,7 @@ class LaTeXBuilder(Builder):
                 new_sect += node
             tree = new_tree
         largetree = inline_all_toctrees(self, self.docnames, indexfile, tree,
-                                        darkgreen)
+                                        darkgreen, [])
         largetree['docname'] = indexfile
         for docname in appendices:
             appendix = self.env.get_doctree(docname)
@@ -163,7 +165,7 @@ class LaTeXBuilder(Builder):
         # copy image files
         if self.images:
             self.info(bold('copying images...'), nonl=1)
-            for src, dest in self.images.iteritems():
+            for src, dest in self.images.items():
                 self.info(' '+src, nonl=1)
                 copyfile(path.join(self.srcdir, src),
                          path.join(self.outdir, dest))
@@ -206,8 +208,8 @@ def setup(app):
     app.add_builder(LaTeXBuilder)
 
     app.add_role('math', math_role)
-    app.add_role('eq', eq_role)
+#    app.add_role('eq', eq_role)
     app.add_directive('math', MathDirective)
-    app.connect('doctree-resolved', number_equations)
+#    app.connect('doctree-resolved', number_equations)
 
     clatex_sphinx.setup(app)

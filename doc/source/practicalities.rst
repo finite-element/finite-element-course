@@ -11,15 +11,15 @@ The module is led by `Dr Colin Cotter
 Accreditation
 -------------
 
-This module is an accredited elective in the `MSc in Applied
+This module is an accredited elective for fourth year mathematics and
+JMC undergraduates. It is also approved for the `MSc in Applied
 Mathematics
-<http://www.imperial.ac.uk/study/pg/courses/mathematics/applied-mathematics/>`_
-and the `MRes in Mathematics of Planet Earth <http://mpecdt.org>`_. It
-is also an approved elective for second and third year PhD students in
-the `CDT in Fluid Dymanics Accross Scales
-<http://www3.imperial.ac.uk/fluidscdt>`_. Other masters and PhD
-students wishing to take the module should contact the lecturers in
-the first instance.
+<http://www.imperial.ac.uk/study/pg/courses/mathematics/applied-mathematics/>`_,
+`MRes in Mathematics of Planet Earth <http://mpecdt.org>`_, and for
+second and third year PhD students in the `CDT in Fluid Dymanics
+Accross Scales <http://www3.imperial.ac.uk/fluidscdt>`_. Third year
+undergraduates, and other masters and PhD students wishing to take the
+module should contact the lecturers in the first instance.
 
 Assumed knowledge
 -----------------

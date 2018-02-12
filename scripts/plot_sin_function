@@ -1,0 +1,15 @@
+#! /usr/bin/env python
+from fe_utils import *
+from math import sin, pi
+
+m = UnitSquareMesh(2, 2)
+
+fe = LagrangeElement(ReferenceTriangle, 4)
+
+fs = fs = FunctionSpace(m, fe)
+
+f = Function(fs)
+
+f.interpolate(lambda x: sin(2*pi*x[0])*sin(2*pi*x[1]))
+
+f.plot()
