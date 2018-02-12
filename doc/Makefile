@@ -58,6 +58,8 @@ webgit:
 	git clone git@github.com:finite-element/finite-element.github.io.git webgit
 
 html: apidoc webgit latexpdf
+	rm webgit/* || true
+	rm -rf $(BUILDDIR)/doctrees || true
 	rm $(BUILDDIR)/html || rm -rf $(BUILDDIR)/html
 	install -d $(BUILDDIR)
 	ln -s $(PWD)/webgit $(BUILDDIR)/html

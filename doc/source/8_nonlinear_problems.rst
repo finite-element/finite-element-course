@@ -353,12 +353,12 @@ Implementing a nonlinear problem
    .. math::
       :label: mastery
 
-        \frac{1}{2}\frac{\partial}{\partial x}\left(u^2\right) - \nabla\cdot\nabla u = g
+        \frac{1}{2}\frac{\partial}{\partial x}\left(u^2\right) -
+        \frac{\partial^2 u}{\partial x^2} = g
 
         u = 1 \quad \textrm{at } x=0
 
-        \frac{\partial u}{\partial x} = 0 \left( = \nabla u \cdot
-        \mathbf{n}\right) \quad \textrm{at } x=1.
+        \frac{\partial u}{\partial x} = 0  \quad \textrm{at } x=1.
 
    Select the solution:
 
