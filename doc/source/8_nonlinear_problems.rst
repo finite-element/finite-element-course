@@ -346,7 +346,7 @@ Implementing a nonlinear problem
    will consider the steady, viscous form of this equation in one
    dimension.
 
-   Implement :func:`~fe_utils.burgers.solve_burgers` so that it solves
+   Implement :func:`~fe_utils.solvers.burgers.solve_burgers` so that it solves
    the following problem using degree 1 Lagrange elements over the
    unit interval domain:
 
