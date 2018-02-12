@@ -1,15 +1,16 @@
 #!/usr/bin/env python
 import os
-import github
-import git
+import github  # Install pygithub
+import git     # Install gitpython
 from argparse import ArgumentParser, RawDescriptionHelpFormatter
 import subprocess
+import sys
 
 parser = ArgumentParser(description="""Helper script to mark finite element assignments.""")
 
 parser.add_argument("--update", action="store_true", help="Update all student repositories.")
 parser.add_argument("--checkout", type=str, action="store", metavar=("REPO"),
-                        help="checkout finite-element/fe-2017-REPO.")
+                        help="checkout finite-element/fe-2018-REPO.")
 parser.add_argument("--test", action="store_true", help="Execute tests")
 args = parser.parse_args()
 
@@ -20,29 +21,29 @@ if args.update:
     org = g.get_organization("finite-element")
 
     for r in org.get_repos():
-        if r.name.startswith("fe-2017"):
+        if r.name.startswith("fe-2018"):
             uname = r.name[8:]
-            print "Looking for remote %s" % uname
+            print("Looking for remote %s" % uname)
             try:
                 remote = repo.remote(uname)
-                print "Found"
+                print("Found")
             except ValueError:
-                print "Not found. Creating"
+                print("Not found. Creating")
                 remote = repo.create_remote(uname, r.ssh_url)
-            print "Fetching"
+            print("Fetching")
             remote.fetch()
 
 if args.checkout:
     user = args.checkout
-    print "Checking out head for %s" % user
+    print("Checking out head for %s" % user)
     head = repo.create_head(user, commit = "/%s/implementation" % user)
     repo.head.reference = head
     repo.head.reset(working_tree=True)
-    print "success"
+    print("success")
 
 if args.test:
     os.environ["PYTHONPATH"] = repo.working_tree_dir
     try:
         subprocess.check_output(["py.test"])
     except subprocess.CalledProcessError as e:
-        print e.output
+        sys.stdout.write(e.output.decode("utf8"))
