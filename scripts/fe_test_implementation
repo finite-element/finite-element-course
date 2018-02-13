@@ -12,6 +12,7 @@ parser.add_argument("--update", action="store_true", help="Update all student re
 parser.add_argument("--checkout", type=str, action="store", metavar=("REPO"),
                         help="checkout finite-element/fe-2018-REPO.")
 parser.add_argument("--test", action="store_true", help="Execute tests")
+parser.add_argument("-x", action="store_true", help="Stop on first test fail")
 args = parser.parse_args()
 
 repo = git.Repo(".")
@@ -43,7 +44,8 @@ if args.checkout:
 
 if args.test:
     os.environ["PYTHONPATH"] = repo.working_tree_dir
+    test_args = ["-x"] if args.x else []
     try:
-        subprocess.check_output(["py.test"])
+        subprocess.check_output(["py.test"] + test_args)
     except subprocess.CalledProcessError as e:
         sys.stdout.write(e.output.decode("utf8"))
