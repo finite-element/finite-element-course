@@ -1,0 +1,51 @@
+#!/usr/bin/env python
+import os
+import github  # Install pygithub
+import git     # Install gitpython
+from argparse import ArgumentParser, RawDescriptionHelpFormatter
+import subprocess
+import sys
+
+parser = ArgumentParser(description="""Helper script to mark finite element assignments.""")
+
+parser.add_argument("--update", action="store_true", help="Update all student repositories.")
+parser.add_argument("--checkout", type=str, action="store", metavar=("REPO"),
+                        help="checkout finite-element/fe-2018-REPO.")
+parser.add_argument("--test", action="store_true", help="Execute tests")
+parser.add_argument("-x", action="store_true", help="Stop on first test fail")
+args = parser.parse_args()
+
+repo = git.Repo(".")
+
+if args.update:
+    g = github.Github(os.environ["GITHUB_OAUTH"])
+    org = g.get_organization("finite-element")
+
+    for r in org.get_repos():
+        if r.name.startswith("fe-2018"):
+            uname = r.name[8:]
+            print("Looking for remote %s" % uname)
+            try:
+                remote = repo.remote(uname)
+                print("Found")
+            except ValueError:
+                print("Not found. Creating")
+                remote = repo.create_remote(uname, r.ssh_url)
+            print("Fetching")
+            remote.fetch()
+
+if args.checkout:
+    user = args.checkout
+    print("Checking out head for %s" % user)
+    head = repo.create_head(user, commit = "/%s/implementation" % user)
+    repo.head.reference = head
+    repo.head.reset(working_tree=True)
+    print("success")
+
+if args.test:
+    os.environ["PYTHONPATH"] = repo.working_tree_dir
+    test_args = ["-x"] if args.x else []
+    try:
+        subprocess.check_output(["py.test"] + test_args)
+    except subprocess.CalledProcessError as e:
+        sys.stdout.write(e.output.decode("utf8"))
