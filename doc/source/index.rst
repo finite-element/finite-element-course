@@ -60,9 +60,9 @@
    Exercises:
    ~~~~~~~~~~
 
-   * `Problem sheet 1 <_static/FE_examples1.pdf>`_
-   * `Problem sheet 2 <_static/FE_examples2.pdf>`_
-   * `Problem sheet 3 <_static/FE_examples3.pdf>`_
+   * `Problem sheet 1 <_static/FE_examples1.pdf>`_ and `solutions <_static/FE_examples1_solns.pdf>`_
+   * `Problem sheet 2 <_static/FE_examples2.pdf>`_ and `solutions <_static/FE_examples2_solns.pdf>`_
+   * `Problem sheet 3 <_static/FE_examples3.pdf>`_ and `solutions <_static/FE_examples3_solns.pdf>`_
    
    Exercises will be posted ahead of the first problems class.
    
@@ -71,6 +71,7 @@
 
    * `2015 exam paper <_static/FE2015-exam-revised.pdf>`_ and `solutions <_static/FE2015-exam-soln.pdf>`_
    * `2016 exam paper <_static/FE2016-exam.pdf>`_ and `solutions <_static/FE2016-exam-soln.pdf>`_
+   * `2017 exam paper <_static/FE2017-exam.pdf>`_ and `solutions <_static/FE2017-exam-soln.pdf>`_
    * `Mock exam paper <_static/FE_mock_paper.pdf>`_
    * `revision checklist <_static/revision-checklist.pdf>`_
 
