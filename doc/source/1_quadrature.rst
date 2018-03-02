@@ -285,7 +285,9 @@ cell.
 
    You can implement
    :meth:`~fe_utils.quadrature.QuadratureRule.integrate` in one line
-   using :class:`numpy.vectorize` and :func:`numpy.dot`.
+   using a `list
+   comprehension
+   <https://docs.python.org/3/tutorial/datastructures.html#list-comprehensions>`_ and :func:`numpy.dot`.
 
 .. hint::
 

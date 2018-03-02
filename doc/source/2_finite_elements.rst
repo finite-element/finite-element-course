@@ -163,12 +163,6 @@ relatively low order computations.
    
    Where :data:`degree` is the degree of the points to plot.
 
-.. hint::
-   
-   The lagrange points can be generated very simply using `list
-   comprehensions
-   <https://docs.python.org/3/tutorial/datastructures.html#list-comprehensions>`_.
-
 .. _sec-vandermonde:
 
 Solving for basis functions
