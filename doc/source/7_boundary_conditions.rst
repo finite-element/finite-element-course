@@ -64,7 +64,7 @@ This means that the weak form is actually:
 .. math::
    :label: weakpoisson
 
-   \int_\Omega \nabla v \cdot \nabla u \, \mathrm{d} x
+   \int_\Omega \nabla v_0 \cdot \nabla u \, \mathrm{d} x
     = \int_\Omega v_0\, f\, \mathrm{d} x
    \qquad \forall v_0 \in V_0
 
