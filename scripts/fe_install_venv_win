@@ -9,5 +9,5 @@ python -m venv $1 --without-pip
 . $1/Scripts/activate
 curl https://bootstrap.pypa.io/get-pip.py | python
 $1/Scripts/pip install -U pip
-$1/Scripts/pip install ipython matplotlib numpy scipy pytest spyder
+$1/Scripts/pip install ipython matplotlib numpy scipy pytest
 $1/Scripts/pip install -e $(dirname $0)/..

@@ -5,7 +5,7 @@ Nonlinear problems
 ==================
 
 The finite element method may also be employed to numerically solve
-*nonlinear* PDEs. In order to do this, we can employ the classical
+*nonlinear* PDEs. In order to do this, we can apply the classical
 technique for solving nonlinear systems: we employ an iterative scheme
 such as Newton's method to create a sequence of linear problems whose
 solutions converge to the correct solution to the
@@ -17,6 +17,8 @@ nonlinear problem.
    is explicitly intended to test whether you can bring together what
    has been learned in the rest of the module in order to go beyond
    what has been covered in lectures and labs.
+
+   This exercise is not a part of the third year version of this module.
 
 
 A model problem
@@ -331,92 +333,5 @@ think again about the problem, the solver, and the initial guess.
 Implementing a nonlinear problem
 --------------------------------
 
-.. note::
+This problem will be released in the middle of the term.
 
-   This problem is intentionally stated in more general terms than the
-   previous ones. It is your responsibility to decide on a code
-   structure, to derive a method of manufactured solutions answer, and
-   to create the convergence tests which demonstrate that your
-   solution is correct.
-
-
-.. exercise::
-
-   Burgers' equation is a very simplified model of fluid flow. Here we
-   will consider the steady, viscous form of this equation in one
-   dimension.
-
-   Implement :func:`~fe_utils.solvers.burgers.solve_burgers` so that it solves
-   the following problem using degree 1 Lagrange elements over the
-   unit interval domain:
-
-   .. math::
-      :label: mastery
-
-        \frac{1}{2}\frac{\partial}{\partial x}\left(u^2\right) -
-        \frac{\partial^2 u}{\partial x^2} = g
-
-        u = 1 \quad \textrm{at } x=0
-
-        \frac{\partial u}{\partial x} = 0  \quad \textrm{at } x=1.
-
-   Select the solution:
-
-   .. math::
-      u = (1 - x)^2
-
-   and compute the required forcing function `g` so
-   that this solution solves the equations. 
-
-   Your submitted answer will consist of:
-
-   1. A written component containing your derivation of:
-
-        a. The weak form of :eq:`mastery`; and 
-
-        b. the Jacobian; and
-
-        c. the forcing term required by the choice of manufactured solution.
-
-      A neatly hand-written or a typed submission are equally acceptable.
-
-   2. The code to implement the solution. This should be in
-      ``fe_utils.solvers.burgers.py`` in your implementation. A
-      convergence test for your code is provided in
-      ``test/test_14_burgers_convergence.py``.
-
-   The submission of your mastery exercise, and indeed the entire
-   implementation exercise will be on Blackboard. You will submit a
-   PDF containing the derivations above, and the git sha1 for the
-   commit you would like to have marked.
-
-   .. hint::
-      In deriving the weak form, only the Laplacian operator needs to
-      be integrated by parts.
-
-   .. hint::
-
-      You can either implement your own Newton solver, or install the
-      :py:mod:`scipy` package and work out how to use the
-      :py:func:`scipy.optimize.newton_krylov` function. For this simple
-      case, a hand-coded Newton solver is probably the simplest
-      approach. However, for problems which are larger and more complex,
-      it will be advantageous to employ a technique more advanced than
-      simple Newton and the case for using a well-engineered third party
-      implementation is strong.
-
-   .. hint::
-
-      It is an exceptionally useful aid to debugging to have your Newton
-      iteration print out the value of the error norm and the iteration
-      number for each iteration.
-
-   .. hint::
-
-      You could insert a parameter of `\alpha` in front of the quadratic term
-      in the equation. By setting `\alpha` to 0, you reduce your problem
-      to the linear case. You can use the linear case to test your code
-      initially, before setting `\alpha=1` for the actual exercise. Note
-      that, in the linear case, Newton's method will converge in exactly
-      one iteration (although your algorithm will have to actually
-      calculate two steps in order to know that convergence has occurred).

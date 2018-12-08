@@ -17,18 +17,14 @@ Formalities and marking scheme
 ------------------------------
 
 The implementation exercise is due at the end of term. That is, by
-1600 on Friday 24 March. You must submit your work uploading the git
+1600 on Friday 22 March. You must submit your work uploading the git
 commit code on Blackboard. You can convenently find this code on the
 commits page for your repository on github. For the avoidance of
 doubt, the commit you submit must date from before the deadline!
 
 The marking scheme will be as follows:
 
-High first/distinction (80-100)
-  As for bare first, but additionally the extension (mastery)
-  component of the implementaton exercise has been completed correctly
-  and clearly.
-Bare first/distinction (70-80)  
+First/distinction (70-100)  
   All parts of the implementation are correct and all tests pass. The
   code style is always very clear and the implementation of every
   exercise is transparent and elegant.
@@ -51,13 +47,10 @@ Fail (0-50)
 Extension (mastery) exercise
 ----------------------------
 
-Completing the core implementation exercise will result in (at most) a
-mark of 80% for the implementation part of the module. The remaining
-20% will be allocated to an extension exercise which will be issued in
-the middle of the term. This is intended to enable the students who
-are doing best in the module to demonstrate their mastery of the
-material by implementing work which goes beyond the main body of work.
-  
+Fourth year and masters students must also complete the mastery
+exercise, which will be issued half way through the term. This will be
+worth 20% of the implementation exercise marks and will be marked on
+the same scheme as above.   
 
 Obtaining the skeleton code
 ---------------------------
@@ -68,7 +61,7 @@ Setting up your repository
 ~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 We're using a tool called `GitHub classroom <https://classroom.github.com>`_ to automate the creation of your
-copies of the repository. To obtain your copy click `here <https://classroom.github.com/a/4GWLuxoA>`_.
+copies of the repository. This will be available at the start of the term.
 
 
 Cloning a local copy
@@ -162,16 +155,6 @@ Now, *every time* you want to update you do the following:
      git checkout implementation  # Switch back to the implementation branch.
      git merge master             # Merge the new changes from master into implementation.
      git push                     # Push the updated implementation branch to GitHub.
-
-Editing code
-~~~~~~~~~~~~
-
-In order to write the code required for the implementation exercise,
-you'll need to use a Python-aware text editor. There are many such
-editors available and you can use any you like. One good option is
-called `atom` and is already installed in Huxley 410. You run it buy typing::
-
-  atom
    
 Skeleton code documentation
 ---------------------------
@@ -216,7 +199,7 @@ Creating your pull request
 #. Make sure **left** dropdown box ("base") is set to ``master``.
 #. Make sure **right** dropdown box ("compare") is set to ``implementation``.
 #. Type a suitable title in the title box. For example 
-   ``Request for feedback 30/1/15``.
+   ``Request for feedback 30/1/18``.
 #. If you have any comments you would like to pass on to the lecturer
    (for example questions about how you should have done a particular
    exercise) then type these in the ``Description`` box.
@@ -233,11 +216,7 @@ testing framework. You run the tests with::
 
    py.test test_script.py
 
-on the Bash command line or::
-
-   !py.test test_script.py
-
-from within Python, replacing ``test_script.py`` with the appropriate
+from the bash command line, replacing ``test_script.py`` with the appropriate
 test file name. The ``-x`` option to ``py.test`` will cause the test
 to stop at the first failure it finds, which is often the best place
 to start fixing a problem. For those familiar with debuggers, the

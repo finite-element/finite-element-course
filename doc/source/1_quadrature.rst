@@ -36,7 +36,7 @@ If `f` is a polynomial in `X` with degree `p` such that
 quadrature rule of degree `n` results in exactly zero error. 
 
 .. _degree-of-precision:
-.. definition::
+.. proof:definition::
 
    The *degree of precision* of a quadrature rule is the largest `p`
    such that the quadrature rule integrates all polynomials of degree
@@ -264,7 +264,7 @@ cell.
 
 .. _ex-integrate:
 
-.. exercise::
+.. proof:exercise::
 
    The :meth:`~fe_utils.quadrature.QuadratureRule.integrate` method is
    left unimplemented. Using :eq:`quadrature`, implement this method.
@@ -274,11 +274,7 @@ cell.
 
       py.test test/test_01_integrate.py
 
-   from the Bash command line or::
-
-     !py.test test/test_01_integrate.py
-
-   from Python. Make sure you commit your modifications and push them
+   from the Bash command line. Make sure you commit your modifications and push them
    to your fork of the course repository.
 
 .. hint::

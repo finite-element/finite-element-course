@@ -110,7 +110,7 @@ With this definition, :eq:`weakpoisson` has solution:
 
    u = \sin(4 \pi x_0) (x_1 - 1)^2 x_1^2
 
-.. exercise::
+.. proof:exercise::
 
    ``fe_utils/solvers/poisson.py`` contains a partial implementation of
    this problem. You need to implement the :func:`assemble`

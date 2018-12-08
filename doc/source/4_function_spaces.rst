@@ -116,7 +116,7 @@ the nodes in order given by the direction of the orientation of each edge.
        :width: 100%
 
 
-.. exercise::
+.. proof:exercise::
 
    Extend the :meth:`__init__` method of
    :class:`~fe_utils.finite_elements.LagrangeElement` so that it
@@ -221,7 +221,7 @@ element, and contains (in some form) a global numbering of the nodes.
 
 .. _ex-function-space:
 
-.. exercise::
+.. proof:exercise::
    
    Implement the :meth:`__init__` method of
    :class:`fe_utils.function_spaces.FunctionSpace`. The key operation
