@@ -17,7 +17,7 @@ Formalities and marking scheme
 ------------------------------
 
 The implementation exercise is due at the end of term. That is, by
-1600 on Friday 24 March. You must submit your work uploading the git
+1600 on Friday 22 March. You must submit your work uploading the git
 commit code on Blackboard. You can convenently find this code on the
 commits page for your repository on github. For the avoidance of
 doubt, the commit you submit must date from before the deadline!
@@ -155,16 +155,6 @@ Now, *every time* you want to update you do the following:
      git checkout implementation  # Switch back to the implementation branch.
      git merge master             # Merge the new changes from master into implementation.
      git push                     # Push the updated implementation branch to GitHub.
-
-Editing code
-~~~~~~~~~~~~
-
-In order to write the code required for the implementation exercise,
-you'll need to use a Python-aware text editor. There are many such
-editors available and you can use any you like. One good option is
-called `atom` and is already installed in Huxley 410. You run it buy typing::
-
-  atom
    
 Skeleton code documentation
 ---------------------------
@@ -226,11 +216,7 @@ testing framework. You run the tests with::
 
    py.test test_script.py
 
-on the Bash command line or::
-
-   !py.test test_script.py
-
-from within Python, replacing ``test_script.py`` with the appropriate
+from the bash command line, replacing ``test_script.py`` with the appropriate
 test file name. The ``-x`` option to ``py.test`` will cause the test
 to stop at the first failure it finds, which is often the best place
 to start fixing a problem. For those familiar with debuggers, the

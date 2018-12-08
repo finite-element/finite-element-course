@@ -5,51 +5,17 @@ Access to computers
 -------------------
 
 You'll need access to a suitable computer for the implementation
-work. The machines in Huxley 410 have suitable software installed, or you can use your own laptop running Windows, Linux, or macOS. 
+work. You can either use the machines in the maths department labs, or you can use your own laptop running Windows, Linux, or macOS.
+The core requirements are Python 3, git, and a Python-aware text editor.
 
-Using the Windows machines in Huxley 410
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Using the Windows machines in the maths department
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-The Python installations on the department's Windows machines are
-limited in functionality and don't support everything we need. We're
-therefore going to use the Linux Virtual Machines which are installed
-on the lab machines.
+The departmental Windows machines have all the right software
+installed. Run ``git Bash`` from the start menu to launch a terminal in
+which you can run all the git and test commands we will need.
 
-1. Double click the "OEL7" icon on the Windows desktop.
 
-2. When the login window appears, log in using your Imperial College
-   username and password. You probably also want to select full screen
-   mode from the `view` menu.
-
-3. Open `firefox` from the `Applications` menu and navigate to this
-   page so that you can copy and paste commands straight into the
-   terminal.
-
-4. Open `terminal` from the `Applications` menu and run the following command::
-
-     /mnt/python_venvs/setup/setup-python.sh
-
-5. We also need to set one configuration variable to enable plotting from Python::
-
-     echo "backend: Qt5Agg" >> ~/.config/matplotlib/matplotlibrc
-
-There should now be a directory called `pythonhome` in your home
-directory (type `ls` to check). `pythonhome` is a network file share
-which persists between logins, you need to do all your work in this
-directory, because your home directory is specific to each machine and
-gets wiped when the machine reboots.
-
-There is also a file called `pythonhome/imp-config`. This file
-contains a list of configuration directories which will be stored on
-the network share. If you need any additional files to persist between
-logins, you can add them here.
-
-.. warning::
-
-   If you save work anywhere other than in `pythonhome`, it is likely
-   that that work will be irevocably lost!
-
-     
 Using your own Windows machine
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
@@ -73,27 +39,24 @@ basic  Python toolchain. On Ubuntu and its relatives, this can be achieved with:
 Using your own Mac
 ~~~~~~~~~~~~~~~~~~
 
-This is an experimental set of instructions for obtaining the software
-you need on Mac. Please say if you encounter any trouble.
-
 We recommend using `Homebrew <http://brew.sh>`__ as a package manager
-for the required packages on Mac OS systems.  Obtaining a build
-environment for PyOP2 consists of the following:
+for the required packages on Mac OS systems, however other ways of getting Python 3 may well work.
 
-1. Install Xcode.  For OS X 10.9 (Mavericks)  and later, this is possible through
-   the App Store.  For earlier versions, try
-   https://developer.apple.com/downloads (note that on OS X 10.7
-   (Lion) you will need to obtain Xcode 4.6 rather than Xcode 5)
+1. Install homebrew, following the instructions at http://brew.sh.
 
-2. If you did not install Xcode 5, you will need to additionally
-   install the Xcode command line tools through the downloads section
-   of Xcode's preferences
-
-3. Install homebrew, following the instructions at http://brew.sh
-
-4. Install an up-to-date Python via homebrew::
+2. Install an up-to-date Python via homebrew::
 
      brew install python3
+
+Editing code
+~~~~~~~~~~~~
+
+In order to write the code required for the implementation exercise,
+you'll need to use a Python-aware text editor. There are many such
+editors available and you can use any you like. One good option is
+called `atom` which is available on the `software hub
+<https://softwarehub.imperial.ac.uk/>`_ at Imperial or can be
+downloaded `here <http://brew.sh>`_.
 
 
 The command line
@@ -148,9 +111,8 @@ time and to submit your work for feedback and, eventually, marking.
 
 We will be using the revision control system `git
 <http://git-scm.com/>`_, which is the current state of the art and is
-widely adopted. We'll be combining git with the online hosting service
- `GitHub <http://github.org>`_.
- 
+widely adopted. We'll be combining git with the online hosting service `GitHub <http://github.org>`_.
+
 Getting started with git and GitHub
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
@@ -216,8 +178,8 @@ the class by `raising an issue on GitHub <https://github.com/finite-element/fini
 some tips which will help get your problem fixed:
 
 Be precise 
-  "It didn't work" is useless. "I typed ``import fe_utils'' and
-  recieved the following error.`` is much better.
+  "It didn't work" is useless. "I typed ``import fe_utils`` and
+  recieved the following error." is much better.
 
 Provide a minimal failing example
   Post the smallest piece of code which exhibits the problem. This
