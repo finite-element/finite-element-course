@@ -56,7 +56,7 @@ you'll need to use a Python-aware text editor. There are many such
 editors available and you can use any you like. One good option is
 called `atom` which is available on the `software hub
 <https://softwarehub.imperial.ac.uk/>`_ at Imperial or can be
-downloaded `here <http://brew.sh>`_.
+downloaded `here <http://atom.io>`_.
 
 
 The command line
