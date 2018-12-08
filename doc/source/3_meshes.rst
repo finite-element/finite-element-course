@@ -16,7 +16,7 @@ Mesh entities
 A mesh is composed of *topological entities*, such as vertices, edges,
 polygons and polyhedra.
 
-.. definition:: 
+.. proof:definition:: 
 
    The *(topological) dimension* of a mesh is the largest
    dimension among all of the topological entities in a mesh.
@@ -27,7 +27,7 @@ immersed in `\mathbb{R}^3`) so the topological dimension of the
 mesh will always match the geometric dimension of space in which we
 are working, so we will simply refer to the *dimension* of the mesh.
 
-.. definition::
+.. proof:definition::
 
    A topological entity of *codimension* `n` is a topological
    entity of dimension `d-n` where `d` is the dimension of the
@@ -114,7 +114,7 @@ the cell itself. One of the roles of the mesh is therefore to provide
 a lookup facility for the lower-dimensional mesh entities adjacent to
 a given cell.
 
-.. definition::
+.. proof:definition::
 
    Given a mesh `M`, then for each `\dim(M) \geq d_1 > d_2 \geq 0`
    the *adjacency* function `\operatorname{Adj}_{d_1,d_2}:\,
@@ -141,7 +141,7 @@ a given cell.
    all the entities making up a cell also matches their local
    orientation.
    
-.. example::
+.. proof:example::
 
    In the mesh shown in :numref:`figmesh` we have:
    

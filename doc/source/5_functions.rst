@@ -158,7 +158,7 @@ addressing, we can provide the
 interpolates a user-provided function onto the
 :class:`~fe_utils.function_spaces.Function`.
 
-.. exercise::
+.. proof:exercise::
    
    Read and understand the
    :meth:`~fe_utils.function_spaces.Function.interpolate` method. Use
@@ -286,7 +286,7 @@ the quadrature is exact. Then:
 Implementing integration
 ~~~~~~~~~~~~~~~~~~~~~~~~
 
-.. exercise::
+.. proof:exercise::
 
    Use :eq:`jacobian` to implement the
    :meth:`~fe_utils.mesh.Mesh.jacobian` method of
@@ -300,7 +300,7 @@ Implementing integration
    efficient by precalculating this term in the :meth:`__init__`
    method of :class:`~fe_utils.mesh.Mesh`.
 
-.. exercise:: 
+.. proof:exercise:: 
 
    Use :eq:`integral_sum` and :eq:`integration` to implement
    :meth:`~fe_utils.function_spaces.Function.integrate`.

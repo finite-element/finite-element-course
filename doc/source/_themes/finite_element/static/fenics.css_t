@@ -712,6 +712,18 @@ img[alt="build status"] {
     margin-left: 1em;
 }
 
+.proof-title {
+    font-weight: bold;
+}
+
+div.proof {
+    border: 2px solid #999999;
+	border-right-style: none;
+	border-left-style: none;
+	padding: 10px 10px 10px 10px;
+	background: #eeeeee;
+}
+
 div.figure {
     text-align: center;
     border: 1px solid #000;

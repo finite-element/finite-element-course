@@ -430,7 +430,7 @@ solutions, produces an estimate of the rate of convergence:
 Implementing finite element problems
 ------------------------------------
 
-.. exercise::
+.. proof:exercise::
 
    ``fe_utils/solvers/helmholtz.py`` contains a partial implementation of
    the finite element method to solve :eq:`weak_helmholtz` with `f`
