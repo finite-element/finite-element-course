@@ -1,13 +1,12 @@
-"""Solve a model Burgers problem using the finite element method.
+"""Solve a nonlinear problem using the finite element method.
 If run as a script, the result is plotted. This file can also be
 imported as a module and convergence tests run on the solver.
 """
 from argparse import ArgumentParser
 
 
-def solve_burgers(resolution, analytic=False, return_error=False):
-    """This function should solve Burgers' equation on a
-    :class:`~fe_utils.mesh.UnitIntervalMesh` with the given resolution. It
+def solve_mastery(resolution, analytic=False, return_error=False):
+    """This function should solve the mastery problem with the given resolution. It
     should return both the solution :class:`~fe_utils.function_spaces.Function` and
     the :math:`L^2` error in the solution.
 
@@ -24,7 +23,7 @@ def solve_burgers(resolution, analytic=False, return_error=False):
 if __name__ == "__main__":
 
     parser = ArgumentParser(
-        description="""Solve a Burgers problem on the unit interval.""")
+        description="""Solve the mastery problem.""")
     parser.add_argument("--analytic", action="store_true",
                         help="Plot the analytic solution instead of solving the finite element problem.")
     parser.add_argument("--error", action="store_true",
@@ -36,6 +35,6 @@ if __name__ == "__main__":
     analytic = args.analytic
     plot_error = args.error
 
-    u, error = solve_burgers(resolution, analytic, plot_error)
+    u, error = solve_mastery(resolution, analytic, plot_error)
 
     u.plot()

@@ -1,6 +1,6 @@
-'''Test that the sample poisson problem converges at approximately the right rate.'''
+'''Test that the mastery problem converges at approximately the right rate.'''
 import pytest
-from fe_utils.solvers.burgers import solve_burgers
+from fe_utils.solvers.mastery import solve_mastery
 import numpy as np
 
 
@@ -8,7 +8,7 @@ def test_convergence():
 
     res = [2**i for i in range(4, 7)]
 
-    error = [solve_burgers(r)[1] for r in res]
+    error = [solve_mastery(r)[1] for r in res]
 
     convergence_rate = np.array([np.log(error[i]/error[i+1])/np.log(res[i+1]/res[i])
                                  for i in range(len(res)-1)])
