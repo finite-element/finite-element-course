@@ -34,7 +34,7 @@ extensions = [
     'sphinx.ext.mathjax',
     'sphinxcontrib.youtube',
     'sphinx.ext.viewcode',
-    'clatex_builder',
+    'sphinxcontrib.proof',
     'sphinxcontrib.bibtex'
 ]
 # Both the class’ and the __init__ method’s docstring are concatenated and
@@ -106,6 +106,20 @@ pygments_style = 'sphinx'
 # If true, keep warnings as "system message" paragraphs in the built documents.
 #keep_warnings = False
 
+
+proof_theorem_types = {
+    "algorithm": "Algorithm",
+    "conjecture": "Conjecture",
+    "corollary": "Corollary",
+    "definition": "Definition",
+    "example": "Example",
+    "lemma": "Lemma",
+    "observation": "Observation",
+    "proof": "Proof",
+    "property": "Property",
+    "theorem": "Theorem",
+    "exercise": "Exercise",
+}
 
 # -- Options for HTML output ----------------------------------------------
 
@@ -202,7 +216,7 @@ latex_elements = {
 #'pointsize': '10pt',
 
 # Additional stuff for the LaTeX preamble.
-#'preamble': '',
+    'preamble': r'\setcounter{MaxMatrixCols}{20}',
 }
 
 # Grouping the document tree into LaTeX files. List of tuples
@@ -233,6 +247,7 @@ latex_toplevel_sectioning = "chapter"
 
 # If false, no module index is generated.
 #latex_domain_indices = True
+latex_docclass = {"manual": "book"}
 
 
 # -- Options for manual page output ---------------------------------------

@@ -11,7 +11,7 @@ formalised by :cite:`Ciarlet2002`:
 
 .. _def-ciarlet:
 
-.. definition:: 
+.. proof:definition:: 
 
    A *finite element* is a triple `(K, P, N)` in which `K` is a cell,
    `P` is a space of functions `K\rightarrow\mathbb{R}^n` and `N`, the
@@ -23,7 +23,7 @@ basis for `P`. It turns out to be most convenient to specify the set
 of nodes for an element, and then derive an appropriate basis for
 `P` from that. In particular:
 
-.. definition::
+.. proof:definition::
 
    Let `N = \{n_j\}` be a basis for `P^*`.  A *nodal
    basis*, `\{\phi_i\}` for `P` is a basis for `P`
@@ -150,7 +150,7 @@ relatively low order computations.
 
 .. _ex-lagrange-points:
 
-.. exercise::
+.. proof:exercise::
    
    Use :eq:`lattice` to implement
    :func:`~fe_utils.finite_elements.lagrange_points`. Make sure your
@@ -217,7 +217,7 @@ to include powers of `z`.
 
 .. _ex-vandermonde:
 
-.. exercise::
+.. proof:exercise::
 
    Use :eq:`Vandermonde` to implement
    :func:`~fe_utils.finite_elements.vandermonde_matrix`. Think
@@ -248,7 +248,7 @@ which the evaluation should occur.
 
 .. _ex-finite-element:
 
-.. exercise::
+.. proof:exercise::
 
    Implement the rest of the
    :class:`~fe_utils.finite_elements.FiniteElement` :meth:`__init__`
@@ -278,7 +278,7 @@ the particular case of the equispaced Lagrange elements.
 
 .. _ex-lagrange-element:
 
-.. exercise::
+.. proof:exercise::
 
    Implement the :meth:`__init__` method of
    :class:`~fe_utils.finite_elements.LagrangeElement`. Use
@@ -305,7 +305,7 @@ evaluating a set of basis functions at a set of points is called
 
 .. _ex-tabulate:
 
-.. exercise::
+.. proof:exercise::
    
    Implement :meth:`~fe_utils.finite_elements.FiniteElement.tabulate`.
    You can use a Vandermonde matrix to evaluate the polynomial terms
@@ -339,7 +339,7 @@ apply to the basis functions:
 This means that we will need to be able to evaluate the gradient of
 the basis functions at quadrature points. 
 
-.. exercise::
+.. proof:exercise::
    
    Extend :meth:`~fe_utils.finite_elements.vandermonde_matrix` so that
    setting ``grad`` to ``True`` produces a rank 3 generalised
@@ -365,7 +365,7 @@ the basis functions at quadrature points.
    Vandermonde matrix. In this case, you might find
    :func:`numpy.nan_to_num` useful.
 
-.. exercise::
+.. proof:exercise::
 
    Extend :meth:`~fe_utils.finite_elements.FiniteElement.tabulate` to
    pass the ``grad`` argument through to
@@ -424,7 +424,7 @@ where `X_i` is the point associated with the `i`-th node.
 
 .. _ex-interpolate:
 
-.. exercise::
+.. proof:exercise::
 
    Implement :meth:`~fe_utils.finite_elements.FiniteElement.interpolate`.
 
