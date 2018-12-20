@@ -8,22 +8,23 @@ You'll need access to a suitable computer for the implementation
 work. You can either use the machines in the maths department labs, or you can use your own laptop running Windows, Linux, or macOS.
 The core requirements are Python 3, git, and a Python-aware text editor.
 
-Using the Windows machines in the maths department
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Using the Windows machines in the computer labs
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-The departmental Windows machines have all the right software
-installed. Run ``git Bash`` from the start menu to launch a terminal in
-which you can run all the git and test commands we will need.
-
+Imperial's lab machines have the software you need installed, in some
+cases via the `Software Hub`. To get started, double click the
+`Software Hub` icon on the desktop or `click here
+<https://softwarehub.imperial.ac.uk/>`_. From there you can run `git`,
+which will give you a terminal to run git and Python commands, and
+`atom`, which will provide you with an editor.
 
 Using your own Windows machine
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 In order to use your own Windows machine, you'll simply need Python 3
-(with the right packages) and git. One option is to install Enthought
-Canopy, but other Windows Python distributions should also work.
+(with the right packages) and git. One option is to install Anaconda, but other Windows Python distributions should also work.
 
-1. Download and install `Enthought Canopy Express` from `here <https://store.enthought.com/#canopy-individual>`_.
+1. Download and install `Anaconda` from `here <https://www.anaconda.com>`_.
 
 2. Download and install `git` from `here <https://git-scm.com/download/win>`_.
      
@@ -55,7 +56,7 @@ In order to write the code required for the implementation exercise,
 you'll need to use a Python-aware text editor. There are many such
 editors available and you can use any you like. One good option is
 called `atom` which is available on the `software hub
-<https://softwarehub.imperial.ac.uk/>`_ at Imperial or can be
+<https://softwarehub.imperial.ac.uk/>`_ At Imperial or can be
 downloaded `here <http://atom.io>`_.
 
 
