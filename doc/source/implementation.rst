@@ -61,7 +61,7 @@ Setting up your repository
 ~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 We're using a tool called `GitHub classroom <https://classroom.github.com>`_ to automate the creation of your
-copies of the repository. This will be available at the start of the term.
+copies of the repository. To create your repository, `click here <https://classroom.github.com/a/p7YGdXBw>`_.
 
 
 Cloning a local copy
@@ -199,7 +199,7 @@ Creating your pull request
 #. Make sure **left** dropdown box ("base") is set to ``master``.
 #. Make sure **right** dropdown box ("compare") is set to ``implementation``.
 #. Type a suitable title in the title box. For example 
-   ``Request for feedback 30/1/18``.
+   ``Request for feedback 30/1/19``.
 #. If you have any comments you would like to pass on to the lecturer
    (for example questions about how you should have done a particular
    exercise) then type these in the ``Description`` box.
