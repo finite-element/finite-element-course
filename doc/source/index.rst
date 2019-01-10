@@ -45,8 +45,9 @@
    Lecture slides:
    ~~~~~~~~~~~~~~~
 
-   Slides will be made available as the module progresses.
-
+   * `The first set of lecture slides <_static/Lecture1.pdf>`_
+   
+Slides will be made available as the module progresses.
 	      
    Exercises:
    ~~~~~~~~~~
@@ -55,11 +56,14 @@
    
    Past exam papers
    ~~~~~~~~~~~~~~~~
-
+   Please note that for 2015-2018, there was no mastery component in the
+   examination, and so there were four questions. In 2019 there will be
+   four questions plus one mastery question for 4th year/Masters credits.
+   
    * `2015 exam paper <_static/FE2015-exam-revised.pdf>`_ and `solutions <_static/FE2015-exam-soln.pdf>`_
    * `2016 exam paper <_static/FE2016-exam.pdf>`_ and `solutions <_static/FE2016-exam-soln.pdf>`_
    * `2017 exam paper <_static/FEExam-2017.pdf>`_ and `solutions <_static/FEExam-2017-soln.pdf>`_
-   * `Mock exam paper <_static/FE_mock_paper.pdf>`_
+   * `2018 exam paper <_static/FEExam-2018.pdf>`_ and `solutions <_static/FEExam-2018-soln.pdf>`_
    * `revision checklist <_static/revision-checklist.pdf>`_
 
    Part 2: Implementation
