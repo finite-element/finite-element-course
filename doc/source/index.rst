@@ -46,9 +46,8 @@
    ~~~~~~~~~~~~~~~
 
    * `The first set of lecture slides <_static/Lecture1.pdf>`_
+   * `The second set of lecture slides <_static/Lecture2.pdf>`_
    
-Slides will be made available as the module progresses.
-	      
    Exercises:
    ~~~~~~~~~~
    
