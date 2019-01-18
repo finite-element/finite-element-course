@@ -3,7 +3,7 @@ import pytest
 from fe_utils import ReferenceTriangle, ReferenceInterval
 from fe_utils.finite_elements import vandermonde_matrix
 import numpy as np
-from scipy.misc import comb
+from scipy.special import comb
 
 
 @pytest.mark.parametrize('cell, degree',

@@ -1,7 +1,7 @@
 """Test the entity_node assignment for Lagrange elements"""
 import pytest
 from fe_utils import LagrangeElement, ReferenceTriangle, ReferenceInterval
-from scipy.misc import comb
+from scipy.special import comb
 import numpy as np
 
 

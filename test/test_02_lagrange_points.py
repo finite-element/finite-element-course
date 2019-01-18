@@ -2,7 +2,7 @@
 import pytest
 from fe_utils import ReferenceTriangle, ReferenceInterval
 from fe_utils.finite_elements import lagrange_points
-from scipy.misc import comb
+from scipy.special import comb
 import numpy as np
 
 
