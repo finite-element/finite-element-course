@@ -217,7 +217,7 @@ equal to the number of coefficients of a degree `n` polynomial. If
 this is the case, then it follows immediately that:
 
 .. math::
-   :label:
+   :label: coef-definition
    
    \mathrm{C} = \mathrm{V}^{-1}
 
@@ -228,7 +228,7 @@ to include powers of `z`.
 
 .. note::
 
-   The power series basis for polynomial spaces employed here becomes
+   The monomial basis for polynomial spaces employed here becomes
    increasingly ill-conditioned at higher order, so it may be
    advantageous to employ a different basis in the construction of the
    Vandermonde matrix. See :cite:`Kirby2004` for an example.
@@ -335,6 +335,20 @@ basis functions at a set of quadrature points. The operation of
 evaluating a set of basis functions at a set of points is called
 *tabulation*.
 
+Recall that the coefficients of the basis functions are defined with
+respect to the monomial basis in :eq:`coef-definition`. To tabulate
+the basis functions at a particular set of points therefore requires
+that the monomial basis be evaluated at that set of points. In other
+words, the Vandermonde matrix needs to be evaluated at the quadrature
+points. Suppose we have a set of points `\{X_i\}` and a set of basis
+functions `\{\phi_j\}` with coefficents with respect to the monomial
+basis given by the matrix `C`. Then the tabulation matrix is given by:
+
+.. math::
+   :label:
+
+      T_{ij} = \phi_j(X_i) = \sum_b V(X_i)_b C_{bj} = (V(X_:) \cdot C)_{ij}
+
 .. _ex-tabulate:
 
 .. proof:exercise::
@@ -361,6 +375,7 @@ A function `f` defined over a single finite element with basis
 `\{\phi_i\}` is represented by a weighted sum of that basis:
 
 .. math::
+   :label:
 
    f = \sum_i f_i\phi_i
 
@@ -370,11 +385,25 @@ also have terms incorporating derivatives. Since the coefficients
 apply to the basis functions:
 
 .. math::
+   :label:
 
    \nabla f  = \sum_i f_i\nabla\phi_i
 
 This means that we will need to be able to evaluate the gradient of
-the basis functions at quadrature points. 
+the basis functions at quadrature points. Recall once again that the
+basis functions are evaluated by multiplying the Vandermonde matrix
+evaluated at the relevant points by the matrix of basis function
+coefficients. Hence:
+
+.. math::
+   :label:
+
+      \nabla\phi(X) = \nabla\left( V(X) \cdot C \right) = \left(\nabla V(X)\right) \cdot C
+
+The last step follows because `C` is not a function of `X`, so it passes
+through `\nabla`. The effect of this is that evaluating the gradient
+of a function in a finite element field just requires the evaluation
+of the gradient of the Vandermonde matrix.
 
 .. proof:exercise::
    
