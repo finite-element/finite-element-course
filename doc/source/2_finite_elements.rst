@@ -5,6 +5,11 @@
 Constructing finite elements
 ============================
 
+.. hint::
+
+   A video recording of the introduction to this chapter is available `here <https://www.youtube.com/embed/FIYq9EjXsRo>`_
+
+
 At the core of the finite element method is the representation of
 finite-dimensional function spaces over elements. This concept was
 formalised by :cite:`Ciarlet2002`:
@@ -31,6 +36,10 @@ of nodes for an element, and then derive an appropriate basis for
 
 A worked example
 ----------------
+
+.. hint::
+
+   A video recording of this section is available `here <https://www.youtube.com/embed/Zztjq_fQynU>`_
 
 To illustrate the construction of a nodal basis, let's consider the
 linear polynomials on a triangle. We first need to define our
@@ -122,6 +131,11 @@ In this course we will only consider point evaluation nodes. The implementation 
 The Lagrange element nodes
 --------------------------
 
+.. hint::
+
+   A video recording of this section is available `here <https://www.youtube.com/embed/_YeZ7k7cAYw>`_
+
+
 The number of coefficients of a degree `p` polynomial in `d`
 dimensions is given by `\begin{pmatrix}p+d\\ d\end{pmatrix}`. The
 simplest set of nodes which we can employ is simply to place these
@@ -167,6 +181,10 @@ relatively low order computations.
 
 Solving for basis functions
 ---------------------------
+
+.. hint::
+
+   A video recording of this section is available `here <https://www.youtube.com/embed/lPI5Th5w-54>`_
 
 The matrix in :eq:`phimat` is a *generalised Vandermonde* [#vandermonde]_
 matrix . Given a list of points `(x_i,y_i) \in \mathbb{R}^2, 0\leq i< m`
@@ -236,6 +254,11 @@ to include powers of `z`.
 Implementing finite elements in Python
 --------------------------------------
 
+.. hint::
+
+   A video recording of this section is available `here <https://www.youtube.com/embed/u4WVv6VxZzA>`_
+
+
 The :ref:`Ciarlet triple <def-ciarlet>` `(K, P, N)` also provides a
 good abstraction for the implementation of software objects
 corresponding to finite elements. In our case `K` will be a
@@ -267,6 +290,10 @@ which the evaluation should occur.
 Implementing the Lagrange Elements
 ----------------------------------
 
+.. hint::
+
+   A video recording of this section is available `here <https://www.youtube.com/embed/Y4Cn0sO9Rl4>`_
+
 The :class:`~fe_utils.finite_elements.FiniteElement` class implements
 a general finite element object assuming we have provided the cell,
 polynomial, degree and nodes. The
@@ -295,6 +322,11 @@ the particular case of the equispaced Lagrange elements.
 Tabulating basis functions
 --------------------------
 
+.. hint::
+
+   A video recording of this section is available `here <https://www.youtube.com/embed/R7Pln8NJEZQ>`_
+
+
 A core operation in the finite element method is integrating
 expressions involving functions in finite element spaces. This is
 usually accomplished using :doc:`numerical quadrature
@@ -319,6 +351,11 @@ evaluating a set of basis functions at a set of points is called
 
 Gradients of basis functions
 ----------------------------
+
+.. hint::
+
+   A video recording of this section is available `here <https://www.youtube.com/embed/oC-0i4XHl4U>`_
+
 
 A function `f` defined over a single finite element with basis
 `\{\phi_i\}` is represented by a weighted sum of that basis:

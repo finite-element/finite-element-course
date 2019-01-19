@@ -7,7 +7,6 @@ Numerical quadrature
 
    A video recording of this tutorial is available `here <https://www.youtube.com/embed/cVn1IhvrwSA>`_
 
-
 The core computational operation with which we are concerned in the
 finite element method is the integration of a function over a known
 reference element. It's no big surprise, therefore, that this
