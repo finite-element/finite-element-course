@@ -47,7 +47,8 @@
 
    * `The first set of lecture slides <_static/Lecture1.pdf>`_
    * `The second set of lecture slides <_static/Lecture2.pdf>`_
-   
+   * `The third set of lecture slides <_static/Lecture3.pdf>`_
+
    Exercises:
    ~~~~~~~~~~
    
