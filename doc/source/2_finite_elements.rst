@@ -30,9 +30,9 @@ of nodes for an element, and then derive an appropriate basis for
 
 .. proof:definition::
 
-   Let `N = \{n_j\}` be a basis for `P^*`.  A *nodal
+   Let `N = \{\phi^*_j\}` be a basis for `P^*`.  A *nodal
    basis*, `\{\phi_i\}` for `P` is a basis for `P`
-   with the property that `n_j(\phi_i) = \delta_{ij}`.
+   with the property that `\phi^*_j(\phi_i) = \delta_{ij}`.
 
 A worked example
 ----------------
@@ -55,11 +55,11 @@ evaluation of the function at each of the cell vertices. That is:
 .. math::
   :label:
 
-  n_0(f) = f\left((0,0)\right)
+  \phi^*_0(f) = f\left((0,0)\right)
 
-  n_1(f) = f\left((1,0)\right)
+  \phi^*_1(f) = f\left((1,0)\right)
 
-  n_2(f) = f\left((0,1)\right)
+  \phi^*_2(f) = f\left((0,1)\right)
 
 We know that `\phi_i` has the form `a + bx + cy` so now we can
 use the definition of the nodal basis to determine the unknown
@@ -69,9 +69,9 @@ coefficients:
   :label:
 
   \begin{pmatrix}
-  n_0(\phi_i)\\
-  n_1(\phi_i)\\
-  n_2(\phi_i)
+  \phi^*_0(\phi_i)\\
+  \phi^*_1(\phi_i)\\
+  \phi^*_2(\phi_i)
   \end{pmatrix}
   =
   \begin{pmatrix}
@@ -91,9 +91,9 @@ So for `\phi_0` we have:
   1 & 0 & 1\\
   \end{bmatrix}
   \begin{bmatrix}
-  a\\
-  b\\
-  c\\
+  a_0\\
+  b_0\\
+  c_0\\
   \end{bmatrix}
   = 
   \begin{bmatrix}
@@ -102,8 +102,30 @@ So for `\phi_0` we have:
   0
   \end{bmatrix}
 
-Which has solution `\phi_0 = 1 - x - y`. By a similar process,
-we can establish that the full basis is given by:
+Which has solution `\phi_0 = 1 - x - y`. We can write the equations
+for all the basis functions at once as a single matrix equation:
+
+.. math::
+  :label: phimat
+
+  \begin{bmatrix}
+  1 & 0 & 0\\
+  1 & 1 & 0\\
+  1 & 0 & 1\\
+  \end{bmatrix}
+  \begin{bmatrix}
+  a_0 & a_1 & a_2\\
+  b_0 & b_1 & b_2\\
+  c_0 & c_1 & c_2\\
+  \end{bmatrix}
+  =
+  \begin{bmatrix}
+  1 & 0 & 0\\
+  0 & 1 & 0\\
+  0 & 0 & 1
+  \end{bmatrix}
+
+By which we establish that the full basis is given by:
 
 .. math::
    :label:
@@ -409,8 +431,15 @@ of the gradient of the Vandermonde matrix.
    
    Extend :meth:`~fe_utils.finite_elements.vandermonde_matrix` so that
    setting ``grad`` to ``True`` produces a rank 3 generalised
-   Vandermonde tensor whose indices represent points, gradient
-   component and basis function respectively. That is, each entry of
+   Vandermonde tensor whose indices represent points, monomial basis function,
+   and gradient component respectively. That is:
+
+   .. math::
+      :label:
+
+         \nabla V_{ijk} = \frac{\partial V_j(X_i)}{\partial x_k}
+
+   In other words, each entry of
    `V` is replaced by a vector of the gradient of that polynomial
    term. For example, the entry `x^2y^3` would be replaced by the
    vector `[ 2xy^3, 3x^2y^2 ]`.
