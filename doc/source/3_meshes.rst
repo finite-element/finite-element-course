@@ -3,6 +3,11 @@
 Meshes
 ======
 
+.. hint::
+
+   A video recording of this chapter is available `here <https://www.youtube.com/embed/h4L1fCSmvWc>`_
+
+
 When employing the finite element method, we represent the domain on
 which we wish to solve our PDE as a mesh. In order to work with
 meshes, we need to have a somewhat more formal mathematical notion of

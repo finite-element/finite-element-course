@@ -483,6 +483,10 @@ of the gradient of the Vandermonde matrix.
 
 .. hint::
 
+   A video recording of this exercise is available `here <https://www.youtube.com/embed/wWHLhEti_mQ>`_
+
+.. hint::
+
    The :func:`numpy.einsum` function implements generalised tensor
    contractions using `Einstein summation notation
    <http://mathworld.wolfram.com/EinsteinSummation.html>`_. For
@@ -494,6 +498,11 @@ of the gradient of the Vandermonde matrix.
 
 Interpolating functions to the finite element nodes
 ---------------------------------------------------
+
+.. hint::
+
+   A video recording of this section is available `here <https://www.youtube.com/embed/cQaylSfRcRI>`_
+
 
 Recall once again that a function can be represented on a single finite element as:
 
