@@ -20,6 +20,10 @@ numbering*.
 Local numbering and continuity
 ------------------------------
 
+.. hint::
+
+   A video recording of this section is available `here <https://www.youtube.com/embed/JwUmZt2aknU>`_
+
 Which nodes should be associated with which topological entities? The
 answer to this question depends on the degree of continuity required
 between adjacent cells. The nodes associated with topological entites
@@ -83,6 +87,12 @@ numbering used here is just one of the obvious choices.
 Implementing local numbering
 ----------------------------
 
+
+.. hint::
+
+   A video recording of this section is available `here <https://www.youtube.com/embed/HswJShGI8X8>`_
+
+
 Local numbering can be implemented by adding an additional data
 structure to the :class:`~fe_utils.finite_elements.FiniteElement`
 class. For each local entity this must record the local nodes
@@ -141,6 +151,10 @@ the nodes in order given by the direction of the orientation of each edge.
 Global numbering
 ----------------
 
+.. hint::
+
+   A video recording of this section is available `here <https://www.youtube.com/embed/AgkunNycPWo>`_
+
 Given a mesh and a finite element, the global numbering task is to
 uniquely associate the appropriate number of global node numbers with
 each global entity. One such numbering [#globalnumbering]_ is to
@@ -167,6 +181,11 @@ associated with entity `(d, i)` is therefore:
 
 The cell-node map
 -----------------
+
+.. hint::
+
+   A video recording of this section is available `here <https://www.youtube.com/embed/VHq3xJ-O9xc>`_
+
 
 The primary use to which we wish to put the finite element spaces we
 are constructing is, naturally, the solution of finite element
@@ -215,6 +234,11 @@ requires a trivial extension to adjacency:
    
 Implementing function spaces in Python
 --------------------------------------
+
+.. hint::
+
+   A video recording of this section is available `here <https://www.youtube.com/embed/cLVi-5DKZO8>`_
+
 
 As noted above, a finite element space associates a mesh and a finite
 element, and contains (in some form) a global numbering of the nodes. 
