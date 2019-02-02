@@ -185,6 +185,11 @@ fork, that should always remain a clean copy of the main repository.
 Pull requests for feedback
 --------------------------
 
+.. hint::
+
+   A video about creating pull requests is available `here <https://www.youtube.com/embed/JPCG-kcfQHE>`_
+
+
 There will be a formal opportunity to recieve feedback on your code
 progress twice during the term. To take part, you should set up a pull
 request from your ``implementation`` branch to the ``master`` branch

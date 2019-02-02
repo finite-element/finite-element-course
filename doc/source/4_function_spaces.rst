@@ -4,7 +4,7 @@ Function spaces: associating data with meshes
 =============================================
 
 A finite element space over a mesh is constructed by associating a
-finite element with each cell of the mesh. Will refer to the basis
+finite element with each cell of the mesh. We will refer to the basis
 functions of this finite element space as *global* basis functions,
 while those of the finite element itself we will refer to as *local*
 basis functions. We can establish the relationship between the finite

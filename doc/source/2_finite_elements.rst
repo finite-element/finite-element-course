@@ -471,6 +471,7 @@ of the gradient of the Vandermonde matrix.
    tensor:
 
    .. math::
+      :label:
 
       \mathrm{T}_{ijk} = \nabla(\phi_j(X_i))\cdot \mathbf{e}_k
 
@@ -507,12 +508,14 @@ Interpolating functions to the finite element nodes
 Recall once again that a function can be represented on a single finite element as:
 
 .. math::
+   :label:
 
    f = \sum_i f_i\phi_i
 
 Since `\{\phi_i\}` is a nodal basis, it follows immediately that:
 
 .. math::
+   :label:
    
    f_i = \phi_i^*(f)
 
@@ -521,6 +524,7 @@ where `\phi_i^*` is the node associated with the basis function
 evaluation of their function input, we know that:
 
 .. math::
+   :label:
 
    f_i = f(X_i)
 
