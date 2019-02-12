@@ -49,10 +49,12 @@
    * `The second set of lecture slides <_static/Lecture2.pdf>`_
    * `The third set of lecture slides <_static/Lecture3.pdf>`_
 
-   Exercises:
+   Class test:
    ~~~~~~~~~~
+   * `Test 1 <_static/FE_test1.pdf>`_ and `solutions
+     <_static/FE_test1_solns.pdf>`_ .
    
-   Exercises will be posted ahead of the first problems class.
+
    
    Past exam papers
    ~~~~~~~~~~~~~~~~
