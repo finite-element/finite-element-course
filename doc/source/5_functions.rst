@@ -17,6 +17,10 @@ stitching together the local basis functions defined by the
 A python implementation of functions in finite element spaces
 -------------------------------------------------------------
 
+.. hint::
+
+   A video recording of this section is available `here <https://www.youtube.com/embed/HTTCzLZw-ao>`_
+
 The :class:`~fe_utils.function_spaces.Function` class provides a
 simple implementation of function storage. The input is a
 :class:`~fe_utils.function_spaces.FunctionSpace` which defines the
@@ -27,6 +31,10 @@ freedom values, one for each node in the
 
 Interpolating values into finite element spaces
 -----------------------------------------------
+
+.. hint::
+
+   A video recording of this section is available `here <https://www.youtube.com/embed/WXiE8Yx_m0Q>`_
 
 Suppose we have a function `g(x): \mathbb{R}^n \rightarrow \mathbb{R}`
 which we wish to approximate as a function `f(x)` in some finite
@@ -115,6 +123,10 @@ for that node.
 Looking up cell coordinates and values
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
+.. hint::
+
+   A video recording of this section is available `here <https://www.youtube.com/embed/ZmUPyydAasY>`_
+
 In the previous section we used the vertex coordinates of a cell to
 find the node coordinates, and then we calculated
 :class:`~fe_utils.function_spaces.Function` values at those
@@ -151,6 +163,10 @@ associated with the nodes of element ``c``::
 A Python implementation of interpolation
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
+.. hint::
+
+   A video recording of this section is available `here <https://www.youtube.com/embed/Bb_9iRsTUgc>`_
+
 Putting together the change of coordinates with the right indirect
 addressing, we can provide the
 :class:`~fe_utils.function_spaces.Function` class with a
@@ -177,6 +193,11 @@ interpolates a user-provided function onto the
 
 Integration
 -----------
+
+.. hint::
+
+   A video recording of this section is available `here <https://www.youtube.com/embed/hvPR8CUwq3Q>`_
+
 
 We now come to one of the fundamental operations in the finite element
 method: integrating a :class:`~fe_utils.function_spaces.Function` over
@@ -260,6 +281,10 @@ might choose to evaluate the Jacobian at the cell origin `X=0`.
 Expressing the function in the finite element basis
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
+.. hint::
+
+   A video recording of this section is available `here <https://www.youtube.com/embed/qKX3BGbbj58>`_
+
 Let `\{\Phi_i(X)\}` be a **local** basis for `V` on the reference element
 `c_0`. Then our integral becomes:
 
@@ -273,6 +298,10 @@ where `F` is the vector of global coefficient values of `f`, and `M` is :ref:`th
 Numerical quadrature
 ~~~~~~~~~~~~~~~~~~~~
 
+.. hint::
+
+   A video recording of this section is available `here <https://www.youtube.com/embed/5zby5uZUye0>`_
+
 The actual evaluation of the integral will employ the quadrature rules
 we discussed in :doc:`a previous section <1_quadrature>`. Let `\{X_q\},
 \{w_q\}` be a quadrature rule of sufficient degree of precision that
@@ -285,6 +314,11 @@ the quadrature is exact. Then:
 
 Implementing integration
 ~~~~~~~~~~~~~~~~~~~~~~~~
+
+.. hint::
+
+   A video recording of this section is available `here <https://www.youtube.com/embed/XTUc2VcWKMU>`_
+
 
 .. proof:exercise::
 
