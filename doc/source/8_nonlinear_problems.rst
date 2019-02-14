@@ -87,11 +87,11 @@ example of such a functional is:
 .. math::
    :label:
 
-   f(u; \phi_i) = n_i(u) - n_i(b)
+   f(u; \phi_i) = \phi^*_i(u) - \phi^*_i(b)
 
-where `n_i` is the node associated with basis function `\phi_i`. For
-point evaluation nodes, `n_i(u)` is the value of the proposed solution
-at node point `i` and `n_i(b)` is just the boundary condition
+where `\phi^*_i` is the node associated with basis function `\phi_i`. For
+point evaluation nodes, `\phi^*_i(u)` is the value of the proposed solution
+at node point `i` and `\phi^*_i(b)` is just the boundary condition
 evaluated at that same point.
 
 So for our model problem, we now have a full statement of the residual in terms of a basis function `\phi_i`:
@@ -101,7 +101,7 @@ So for our model problem, we now have a full statement of the residual in terms 
 
    f(u; \phi_i) = \begin{cases}
       \displaystyle\int_\Omega \nabla \phi_i \cdot \left((u + 1) \nabla u\right) - \phi_i g \, \mathrm{d} x & \phi_i\in V_0\\
-      n_i(u) - n_i(b) & \phi_i\in V_\Gamma
+      \phi^*_i(u) - \phi^*_i(b) & \phi_i\in V_\Gamma
    \end{cases}
 
 .. hint::
@@ -149,8 +149,8 @@ Next, we can work out the boundary case by assuming `v=\phi_i`, one of the basis
    :label:
 
    \begin{split}
-   J(u; \phi_i, \hat{u}) &= \lim_{\epsilon\rightarrow 0}\frac{n_i(u+\epsilon\hat{u}) - n_i(b) - \left(n_i(u) - n_i(b)\right)}{\epsilon}\\
-   &= n_i(\hat{u}) \qquad \textrm{since } n_i(\cdot) \textrm{ is linear.}
+   J(u; \phi_i, \hat{u}) &= \lim_{\epsilon\rightarrow 0}\frac{\phi^*_i(u+\epsilon\hat{u}) - \phi^*_i(b) - \left(\phi^*_i(u) - \phi^*_i(b)\right)}{\epsilon}\\
+   &= \phi^*_i(\hat{u}) \qquad \textrm{since } \phi^*_i(\cdot) \textrm{ is linear.}
    \end{split}
 
 Once again, we can observe that `J` is linear in `\hat{u}`. Indeed, if
@@ -236,6 +236,8 @@ correction.
 
 .. note::
 
+   Note!
+   
    Another commonly employed stopping mechanism is to consider the
    size of the residual `f`. However, the residual is not actually a
    function in `V`, but is actually a linear operator in `V^*`. Common
