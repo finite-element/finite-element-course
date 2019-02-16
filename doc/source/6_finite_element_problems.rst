@@ -4,6 +4,9 @@
  Assembling and solving finite element problems
 ================================================
 
+.. hint::
+
+   A video recording of this section is available `here <https://www.youtube.com/embed/Dn_xGn2WayY>`_
 
 Having constructed functions in finite element spaces and integrated
 them over the domain, we now have the tools in place to actually
@@ -79,6 +82,10 @@ where:
 Assembling the right hand side
 ------------------------------
 
+.. hint::
+
+   A video recording of this section is available `here <https://www.youtube.com/embed/H-eLGYwzpcI>`_
+
 The assembly of these integrals exploits the same decomposition
 property we exploited previously to integrate functions in finite
 element spaces. For example, :eq:`eq_rhs` can be rewritten as:
@@ -123,6 +130,11 @@ write this as:
 
 Assembling the left hand side matrix
 ------------------------------------
+
+.. hint::
+
+   A video recording of this section is available `here <https://www.youtube.com/embed/yQ5vJpCeJaU>`_
+
 
 The left hand side matrix follows a similar pattern, however there are
 two new complications. First, we have two unbound indices (`i` and
@@ -179,6 +191,11 @@ inverse of the cell Jacobian matrix.
 
 The assembly algorithm
 ~~~~~~~~~~~~~~~~~~~~~~
+
+.. hint::
+
+   A video recording of this section is available `here <https://www.youtube.com/embed/e20G9pjr7IA>`_
+
 
 We can start by pulling back :eq:`eq_lhs` to local coordinates:
 
@@ -262,6 +279,11 @@ cell node map `M(c, \hat{i})` and `M(c, \hat{j})`.
 
 Sparse matrices
 ~~~~~~~~~~~~~~~
+
+.. hint::
+
+   A video recording of this section is available `here <https://www.youtube.com/embed/YYyDOTrrgzU>`_
+
 
 Each row of the global matrix corresponds to a single global basis
 function. The number of non-zeros in this row is equal to the number
