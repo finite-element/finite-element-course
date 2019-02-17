@@ -344,7 +344,7 @@ Implementing a nonlinear problem
    solution is correct.
 
 
-.. exercise::
+.. proof:exercise::
 
    Implement :func:`~fe_utils.solvers.burgers.solve_burgers` so that it solves
    the following problem using degree 1 Lagrange elements over the
@@ -357,7 +357,7 @@ Implementing a nonlinear problem
 
       u = b \textrm{ on } \Gamma
 
-   Select the solution `u=xy` and compute the required forcing function `g` so
+   Select the solution `u=x^2y^2` and compute the required forcing function `g` so
    that your solution solves the equations. Make sure your boundary
    condition function `b` is consistent with your chosen solution!
 
@@ -369,7 +369,7 @@ Implementing a nonlinear problem
 
       b. the Jacobian; and
 
-      c. the forcing term required by your choice of manufactured solution.
+   c. the forcing term implied by the specified manufactured solution.
 
       A neatly hand-written or a typed submission are equally acceptable.
 
@@ -383,8 +383,6 @@ Implementing a nonlinear problem
       PDF containing the derivations above, and the git sha1 for the
       commit you would like to have marked.
       
-   Provide test code which demonstrates that your solution converges
-   at the correct rate.
 
    .. hint::
 
@@ -399,9 +397,11 @@ Implementing a nonlinear problem
 
    .. hint::
 
-      It is an exceptionally useful aid to debugging to have your Newton
-      iteration print out the value of the error norm and the iteration
-      number for each iteration.
+      It is an exceptionally useful aid to debugging to have your
+      Newton iteration print out the value of the error norm and the
+      iteration number for each iteration. If you wish to see the
+      printed output while running the test, you can pass the ``-s``
+      option to ``py.test``.
 
    .. hint::
 
