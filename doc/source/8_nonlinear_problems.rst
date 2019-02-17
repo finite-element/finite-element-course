@@ -335,5 +335,80 @@ think again about the problem, the solver, and the initial guess.
 Implementing a nonlinear problem
 --------------------------------
 
-This problem will be released in the middle of the term.
+.. note::
 
+   This problem is intentionally stated in more general terms than the
+   previous ones. It is your responsibility to decide on a code
+   structure, to derive a method of manufactured solutions answer, and
+   to create the convergence tests which demonstrate that your
+   solution is correct.
+
+
+.. exercise::
+
+   Implement :func:`~fe_utils.solvers.burgers.solve_burgers` so that it solves
+   the following problem using degree 1 Lagrange elements over the
+   unit square domain:
+
+   .. math::
+      :label: mastery
+   
+      -\nabla\cdot\left((u^2+1)\nabla u\right) = g
+
+      u = b \textrm{ on } \Gamma
+
+   Select the solution `u=xy` and compute the required forcing function `g` so
+   that your solution solves the equations. Make sure your boundary
+   condition function `b` is consistent with your chosen solution!
+
+   Your submitted answer will consist of:
+   
+   1. A written component containing your derivation of:
+      
+      a. The weak form of :eq:`mastery`; and 
+
+      b. the Jacobian; and
+
+      c. the forcing term required by your choice of manufactured solution.
+
+      A neatly hand-written or a typed submission are equally acceptable.
+
+   2. The code to implement the solution. This should be in
+      ``fe_utils.solvers.mastery.py`` in your implementation. A
+      convergence test for your code is provided in
+      ``test/test_13_mastery_convergence.py``.
+
+      The submission of your mastery exercise, and indeed the entire
+      implementation exercise will be on Blackboard. You will submit a
+      PDF containing the derivations above, and the git sha1 for the
+      commit you would like to have marked.
+      
+   Provide test code which demonstrates that your solution converges
+   at the correct rate.
+
+   .. hint::
+
+      You can either implement your own Newton solver, or install the
+      :py:mod:`scipy` package and work out how to use the
+      :py:func:`scipy.optimize.newton_krylov` function. For this simple
+      case, a hand-coded Newton solver is probably the simplest
+      approach. However, for problems which are larger and more complex,
+      it will be advantageous to employ a technique more advanced than
+      simple Newton and the case for using a well-engineered third party
+      implementation is strong.
+
+   .. hint::
+
+      It is an exceptionally useful aid to debugging to have your Newton
+      iteration print out the value of the error norm and the iteration
+      number for each iteration.
+
+   .. hint::
+
+      You could insert a parameter of `\alpha` in front of the quadratic term
+      in the equation. By setting `\alpha` to 0, you reduce your problem
+      to the linear case. You can use the linear case to test your code
+      initially, before setting `\alpha=1` for the actual exercise. Note
+      that, in the linear case, Newton's method will converge in exactly
+      one iteration (although your algorithm will have to actually
+      calculate two steps in order to know that convergence has occurred).
