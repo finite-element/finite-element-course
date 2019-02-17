@@ -50,7 +50,7 @@
    * `The third set of lecture slides <_static/Lecture3.pdf>`_
 
    Class test:
-   ~~~~~~~~~~
+   ~~~~~~~~~~~
    * `Test 1 <_static/FE_test1.pdf>`_ and `solutions
      <_static/FE_test1_solns.pdf>`_ .
    
