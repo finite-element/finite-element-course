@@ -346,7 +346,7 @@ Implementing a nonlinear problem
 
 .. proof:exercise::
 
-   Implement :func:`~fe_utils.solvers.burgers.solve_burgers` so that it solves
+   Implement :func:`~fe_utils.solvers.mastery.solve_mastery` so that it solves
    the following problem using degree 1 Lagrange elements over the
    unit square domain:
 
