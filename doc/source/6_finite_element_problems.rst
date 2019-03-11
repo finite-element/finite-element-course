@@ -470,7 +470,7 @@ Implementing finite element problems
 
    for guidance on using the script to view the solution, the analytic
    solution and the error in your solution. In addition,
-   ``test/test_12_helmholtz_convergence.py`` contains tests that the
+   ``test/test_11_helmholtz_convergence.py`` contains tests that the
    helmholtz solver converges at the correct rate for degree 1, 2 and
    3 polynomials.
 

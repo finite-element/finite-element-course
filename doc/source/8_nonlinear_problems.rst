@@ -376,7 +376,7 @@ Implementing a nonlinear problem
    2. The code to implement the solution. This should be in
       ``fe_utils.solvers.mastery.py`` in your implementation. A
       convergence test for your code is provided in
-      ``test/test_13_mastery_convergence.py``.
+      ``test/test_12_mastery_convergence.py``.
 
       The submission of your mastery exercise, and indeed the entire
       implementation exercise will be on Blackboard. You will submit a

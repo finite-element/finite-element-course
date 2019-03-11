@@ -125,7 +125,7 @@ With this definition, :eq:`weakpoisson` has solution:
      
    for instructions (they are the same as for
    ``fe_utils/solvers/helmholtz.py``). Similarly,
-   ``test/test_13_poisson_convergence.py`` contains convergence tests
+   ``test/test_12_poisson_convergence.py`` contains convergence tests
    for this problem.
 
 
