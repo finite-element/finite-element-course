@@ -56,6 +56,8 @@
      <_static/FE_test1_solns.pdf>`_ .
    * `Test 2 <_static/FE_test2.pdf>`_ and `solutions
      <_static/test2_solns_slides.pdf>`_ .
+   * `Test 3 <_static/FE_test3.pdf>`_ and `solutions
+     <_static/test3_solns_slides.pdf>`_ .
    
    Past exam papers
    ~~~~~~~~~~~~~~~~
