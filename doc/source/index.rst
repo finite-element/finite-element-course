@@ -49,12 +49,6 @@
    * `The second set of lecture slides <_static/Lecture2.pdf>`_
    * `The third set of lecture slides <_static/Lecture3.pdf>`_
    * `The fourth set of lecture slides <_static/Lecture4.pdf>`_
-
-   Class test:
-   ~~~~~~~~~~~
-   * `Test 1 <_static/FE_test1.pdf>`_.
-   * `Test 2 <_static/FE_test2.pdf>`_.
-   * `Test 3 <_static/FE_test3.pdf>`_.
    
    Past exam papers
    ~~~~~~~~~~~~~~~~
