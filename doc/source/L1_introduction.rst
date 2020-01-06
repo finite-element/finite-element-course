@@ -200,7 +200,9 @@ Towards the finite element discretisation
 
 We will now use the finite element derivative to develop the finite
 element discretisation. We assume that we have a solution `u` to
-Equation :eq:`eq:strong_Poisson` that is smooth (i.e. `u\in C^1`).
+Equation :eq:`eq:strong_Poisson` that is smooth (i.e. `u\in C^1`). (Later,
+we will consider more general types of solutions to this equation, but this
+assumption just motivates things for the time being.)
 
 We take `v\in \mathring{V}_h`, multiply by Equation :eq:`eq:strong_Poisson`, and integrate over the domain. Integration by parts in each triangle then gives
 
@@ -254,7 +256,7 @@ this equation holds for all `v\in \mathring{V}_h` and when we restrict
       \int_\Omega vf \, d x, \quad \forall v\in \mathring{V}_h.
 
 We now present some numerical results for the case `f = 2\pi^2\sin(\pi
-x)\sin(\pi y)'.
+x)\sin(\pi y)`.
 
 .. _figplots:
 
