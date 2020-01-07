@@ -147,6 +147,7 @@ Due to these equivalences, we do not need to distinguish between
 strong, weak and finite element first derivatives for `C^0` finite
 element functions. All derivatives are assumed to be weak from now on.
 
+
 Sobolev spaces
 --------------
 
