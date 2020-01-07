@@ -50,7 +50,7 @@
       :maxdepth: 2
 
       L1_introduction
-
+      L2_fespaces
    
    Lecture slides:
    ~~~~~~~~~~~~~~~
