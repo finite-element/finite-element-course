@@ -483,8 +483,8 @@ With this in mind it is useful to consider `h`-independent definitions
 of `\|\cdot\|_V` (such as the `L^2` and `H^1` norms), which is why we
 introduced them.
 
-Solveability of some finite element discretisations
----------------------------------------------------
+Solveability and stability of some finite element discretisations
+-----------------------------------------------------------------
 
 In this section we will introduce some tools for showing coercivity
 and continuity of bilinear forms, illustrated with finite element
@@ -708,7 +708,8 @@ problem with pure Neumann conditions.
    .. math::
       |b(u,v)| \leq |u|_{H^1}|v|_{H^1} \leq \|u\|_{H^1}\|v\|_{H^1}.
 
-
+The coercivity constant is independent of `h`, so the approximation is stable.
+      
 Proving the coercivity for the Poisson problem with Dirichlet or
 partial Dirichlet boundary conditions requires some additional
 results. We start by showing that the divergence theorem also applies
@@ -840,6 +841,8 @@ Poisson problem with (full or partial) Dirichlet conditions.
       
       \|v\|_{H^1(\Omega)}^2 \leq (1+C_1^2)b(v,v).
 
+The coercivity constant is independent of `h`, so the approximation is stable.
+      
 In this section, We have developed some techniques for showing that
 variational problems arising from finite element discretisations for
 Helmholtz and Poisson problems have unique solutions, that are stable
