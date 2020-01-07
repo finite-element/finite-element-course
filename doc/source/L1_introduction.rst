@@ -247,7 +247,7 @@ this equation holds for all `v\in \mathring{V}_h` and when we restrict
 .. proof:definition::
   
    The finite element approximation `u_h \in \mathring{V}_h` to the
-   solution `u` of Poisson's equation is defined by
+   solution `u_h` of Poisson's equation is defined by
    
    .. math::
       :label: eq:fe_poisson

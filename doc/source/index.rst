@@ -33,7 +33,7 @@
 
    The theory part of the module will consist of two hours per week
    primarily composed of lectures, with occasional tutorials. This part of
-   the module will be led by `Dr Colin Cotter
+   the module will be led by `Prof. Colin Cotter
    <http://www.imperial.ac.uk/people/colin.cotter>`_.
 
    The text for this part of the module is Brenner and Scott *The
@@ -51,7 +51,8 @@
 
       L1_introduction
       L2_fespaces
-   
+      L3_feprobs
+
    Lecture slides:
    ~~~~~~~~~~~~~~~
 
