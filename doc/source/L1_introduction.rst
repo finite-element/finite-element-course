@@ -22,7 +22,7 @@ Poisson's equation in the unit square
 In this introduction we concentrate on the specific model problem of
 Poisson's equation in the unit square.
 
-.. proof:definition::
+.. proof:definition:: Poisson's equation in the unit square
 
    Let `\Omega=[0,1]\times[0,1]`. For a given function `f`, we seek `u` such
    that
@@ -51,7 +51,7 @@ Triangulations
 The description of our finite element method starts by considering
 a triangulation.
 
-.. proof:definition::
+.. proof:definition:: Triangulation
 
    Let `\Omega` be a polygonal subdomain of `\mathbb{R}^2`. A triangulation
    `\mathcal{T}` of `\Omega` is a set of triangles `\{K_i\}_{i=1}^N`, such
@@ -72,7 +72,7 @@ space of possible functions under these choices a finite element
 space.  In this introduction, we will just consider the following
 space.
 
-.. proof:definition::
+.. proof:definition:: The `P1` finite element space
 
   Let `\mathcal{T}` be a triangulation of `\Omega`. Then the P1 finite
   element space is a space `V_h` containing all functions `v` such that
@@ -161,7 +161,7 @@ Functions in `V_h` do not have derivatives everywhere. This means that
 we have to work with a more general definition (and later we shall
 learn when it does and does not work).
 
-.. proof:definition::
+.. proof:definition:: Finite element partial derivative
 
    The finite element partial derivative
    `\frac{\partial^{FE}}{\partial x_i}u` of `u` is defined in
@@ -317,7 +317,7 @@ The finite element approximation above is only useful if we can
 actually compute it. To do this, we need to construct an efficient
 basis for `P1`, which we call the nodal basis.
 
-.. proof:definition::
+.. proof:definition:: P1 nodal basis
 
    Let `\{z_i\}_{i=1}^{M}` indicate the vertices in the triangulation
    `\mathcal{T}`. For each vertex `z_i`, we define a basis function
