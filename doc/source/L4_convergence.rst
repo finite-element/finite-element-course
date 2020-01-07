@@ -1,14 +1,13 @@
 .. default-role:: math
 
-==============================================
- Convergence of finite element approximations
-==============================================
+Convergence of finite element approximations
+============================================
 
 In this section we develop tools to prove convergence of finite
 element approximations to the exact solutions of PDEs.
 
 Weak derivatives
-================
+----------------
 
 Consider a triangulation `\mathcal{T}` with recursively refined
 triangulations `\mathcal{T}_h` and corresponding finite element spaces
