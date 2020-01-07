@@ -33,7 +33,7 @@
 
    The theory part of the module will consist of two hours per week
    primarily composed of lectures, with occasional tutorials. This part of
-   the module will be led by `Dr Colin Cotter
+   the module will be led by `Prof. Colin Cotter
    <http://www.imperial.ac.uk/people/colin.cotter>`_.
 
    The text for this part of the module is Brenner and Scott *The
@@ -41,6 +41,18 @@
    fortunately paid for PDF access to this book, so it is accessible from
    the Imperial College network at `Springer Link
    <http://link.springer.com/book/10.1007%2F978-0-387-75934-0>`_.
+
+   Lecture notes:
+   ~~~~~~~~~~~~~~
+
+   .. toctree::
+      :numbered:
+      :maxdepth: 2
+
+      L1_introduction
+      L2_fespaces
+      L3_feprobs
+      L4_convergence
 
    Lecture slides:
    ~~~~~~~~~~~~~~~
