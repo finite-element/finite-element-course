@@ -52,6 +52,7 @@
       L1_introduction
       L2_fespaces
       L3_feprobs
+      L4_convergence
 
    Lecture slides:
    ~~~~~~~~~~~~~~~
