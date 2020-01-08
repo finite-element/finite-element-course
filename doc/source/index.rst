@@ -14,7 +14,7 @@
 
    This is the webpage for the `Imperial College London Mathematics
    <http://www.imperial.ac.uk/maths>`_  module
-   M345A47 Finite Elements: numerical analysis and
+   MATH96063/MATH97017/MATH97095 Finite Elements: numerical analysis and
    implementation. Other people are welcome to make use of the
    material here. The authors welcome feedback and would particularly
    appreciate an `email <mailto:david.ham@imperial.ac.uk>`_ if this
@@ -65,7 +65,7 @@
    Past exam papers
    ~~~~~~~~~~~~~~~~
    Please note that for 2015-2018, there was no mastery component in the
-   examination, and so there were four questions. In 2019 there will be
+   examination, and so there were four questions. From 2019 on there are
    four questions plus one mastery question for 4th year/Masters credits.
    
    * `2015 exam paper <_static/FE2015-exam-revised.pdf>`_ and `solutions <_static/FE2015-exam-soln.pdf>`_
