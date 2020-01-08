@@ -265,7 +265,7 @@ Since `H^k` is a Hilbert space, the Lax-Milgram theorem can be used to
 analyse, the existence of a unique solution to an `H^k` linear
 variational problem.
 
-For example, the Helmholtz problem solveability is immediate.
+For example, the Helmholtz problem solvability is immediate.
 
 .. proof:theorem:: Well-posedness for (modified) Helmholtz)
 
@@ -808,7 +808,7 @@ applied to analysis of other elliptic PDEs, using the following programme.
    
 #. Continuity and coercivity (and hence well-posedness) for the Galerkin
    approximation is assured since `V_h \subset H^k`. This means that
-   the Galerkin approximation is solveable and stable.
+   the Galerkin approximation is solvable and stable.
 
 #. The estimate of the error estimate in terms of `h` comes from
    C\'ea's lemma plus the error estimate for the nodal interpolation
@@ -842,7 +842,7 @@ developed.
   that are only continuous at edge centres, so the functions are not
   in `C^0` and the functions do not have a weak derivative. However,
   using the finite element derivative in the weak form for `H^1` elliptic
-  problems still gives a solveable system that converges at the optimal
+  problems still gives a solvable system that converges at the optimal
   rate. Additional techniques have been
   developed to analyse this.
 

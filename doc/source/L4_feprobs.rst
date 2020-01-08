@@ -1,6 +1,6 @@
 .. default-role:: math
 
-Finite element problems: solveability and stability
+Finite element problems: solvability and stability
 ===================================================
 
 In section 1, we saw the example of a finite element approximation
@@ -20,7 +20,7 @@ for Poisson's equation in the unit square, which we now recall below.
 A fundamental question is whether the solution `u_h` exists and is
 unique. This question is of practical interest because if these
 conditions are not satisfied, then the matrix-vector system for the
-basis coefficients of `u_h` will not be solveable. To answer this
+basis coefficients of `u_h` will not be solvable. To answer this
 question for this approximation (and others for related equations), we
 will use some general mathematical machinery about linear problems
 defined on Hilbert spaces. It will turn out that this machinery will
@@ -157,7 +157,7 @@ products.
 
    See a course on vector spaces.
 
-Our solveability conditions will make use of norms that measure the
+Our solvability conditions will make use of norms that measure the
 size of elements of a vector space (the size of finite element
 functions, in our case).
 
@@ -425,7 +425,7 @@ of linear PDEs.
       \int_\Omega u \, d x = 0.
 
 We now introduce two important properties of bilinear forms that determine
-whether a linear variational problem is solveable or not. The first is
+whether a linear variational problem is solvable or not. The first is
 continuity.
 
 .. proof:definition:: Continuous bilinear form
@@ -467,9 +467,9 @@ problems.
 
    See a course or textbook on Hilbert spaces.
 
-We are going to use this result to show solveability for finite
+We are going to use this result to show solvability for finite
 element discretisations. In particular, we also want to know that our
-finite element discretisation continues to be solveable as the maximum
+finite element discretisation continues to be solvable as the maximum
 triangle edge diameter `h` goes to zero. This motivates the following
 definition.
 
@@ -488,7 +488,7 @@ With this in mind it is useful to consider `h`-independent definitions
 of `\|\cdot\|_V` (such as the `L^2` and `H^1` norms), which is why we
 introduced them.
 
-Solveability and stability of some finite element discretisations
+Solvability and stability of some finite element discretisations
 -----------------------------------------------------------------
 
 In this section we will introduce some tools for showing coercivity
@@ -674,7 +674,7 @@ problem, coercivity comes instead from the following mean estimate.
 
    which has the required form.
 
-The mean estimate can now be used to show solveability for the Poisson
+The mean estimate can now be used to show solvability for the Poisson
 problem with pure Neumann conditions.
 
 .. proof:theorem:: Solving the Poisson problem with pure Neumann conditions
@@ -792,7 +792,7 @@ norm of the function restricted to the boundary.
    where we have used the geometric-arithmetic mean inequality `2ab \leq
    a^2+b^2`. 
 
-We can now use the trace inequality to estabilish solveability for the
+We can now use the trace inequality to estabilish solvability for the
 Poisson problem with (full or partial) Dirichlet conditions.
       
 .. proof:theorem:: Solving the Poisson problem with partial Dirichlet conditions
