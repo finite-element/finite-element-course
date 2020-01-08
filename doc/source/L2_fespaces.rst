@@ -624,75 +624,8 @@ We now apply this to a few examples, which can be proved as exercises.
    The finite element space built from the `C^1` global decomposition
    built from the quintic Argyris element is called the Argyris finite
    element space.
-
-Interpolation operators
------------------------
-
-Next we investigate how continuous functions can be approximated by
-finite element functions.
-
-.. proof:definition:: Local interpolant
-
-   Given a finite element `(K,\mathcal{P},\mathcal{N})`, with
-   corresponding nodal basis `\{\phi_i\}_{i=0}^k`. Let `v`
-   be a function such that `N_i(v)` is well-defined for all `i`.
-   Then the local interpolant `\mathcal{I}_K` is an operator
-   mapping `v` to `\mathcal{P}` such that
-
-   .. math::
-      
-      (I_Kv)(x) = \sum_{i=0}^kN_i(v)\phi_i(x).
-
-We now discuss some useful properties of the local interpolant.
-      
-.. _Ilinear:
-
-.. proof:lemma:: 
-  
-   The operator `I_K` is linear.
-
-.. proof:proof::
-   Exercise.
-
-.. _I_same_nodes:
    
-.. proof:lemma::
-
-   .. math::
-      
-      N_i(I_K(v)) = N_i(v), \, \forall\,  0\leq i\leq k.
-
-.. proof:proof::
-   Exercise.
-
-.. _I_projection
-
-.. proof:lemma::
-      
-   `I_K` is the identity when restricted to `\mathcal{P}`.
-
-.. proof:proof::
-   Exercise.
-
-By combining together the local interpolants in each triangle of the
-triangulation, we obtain the global interpolant into the finite
-element space.
-   
-.. proof:definition:: Global interpolant
-
-   Let `V_h` be a finite element space constructed from a triangulation
-   `\mathcal{T}_h` with finite elements
-   `(K_i,\mathcal{P}_i,\mathcal{N}_i)`, each with a `C^m` geometric
-   decomposition. The global interpolant `\mathcal{I}_h` is defined by
-   '\mathcal{I}_hu \in V_h' such that
-   
-   .. math::
-
-      \mathcal{I}_hu|_K = I_Ku
-
-   for each `K \in \mathcal{T}_h`.
-
 In this section, we have built a theoretical toolbox for the
-construction of and interpolation to finite element spaces. In the
-next section, we move on to studying the solveability of finite
-element approximations.
+construction of finite element spaces. In the next section, we move on
+to studying how well we can approximate continuous functions as finite
+element functions.

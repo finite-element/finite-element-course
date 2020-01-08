@@ -65,21 +65,6 @@ Next we will define a space containing the generalised derivative.
       \right
       \}.
 
-To discuss higher order derivatives, we introduce the multi-index.
-
-.. proof:definition:: Multi-index.
-
-   For `d`-dimensional space, a multi-index `\alpha=(\alpha_1,\ldots,\alpha_d)`
-   assigns the number of partial derivatives in each Cartesian direction.
-   We write `|\alpha|=\sum_{i=1}^d\alpha_i`.
-
-This means we can write mixed partial derivatives, for example if
-`\alpha=(1,2)` then
-
-.. math::
-
-   D^\alpha u = \frac{\partial^3 u}{\partial x\partial y^2}.
-
 Finally we are in a position to introduce the generalisation of the
 derivative itself.
       
@@ -164,28 +149,7 @@ of finite element approximations as `h\to 0`.
       H^1(\Omega) = \left\{
       u\in L^1_{loc}: \|u\|_{H^1(\Omega)}<\infty\right\}.
 
-To generalise this we first need to define some higher derivative norms.
-
-.. proof:definition:: `H^k` seminorm and norm
-
-   The `H^k` seminorm is defined as
-
-   .. math::
-
-      |u|_{H^k}^2 = \sum_{|\alpha|=k}\int_\Omega |D^\alpha u|^2 \, dx,
-
-   where the sum is taken over all multi-indices of size `k` i.e. all the
-   derivatives are of degree `k`.
-
-   The `H^k` norm is defined as
-
-   .. math::
-
-      \|u\|_{H^k}^2 = \sum_{i=0}^k |u|_{H^i}^2.
-
-   where we conventionally write `|u|_{H^0}=\|u\|_{L^2}`.
-
-The Sobolev space `H^k` is then the space of all functions
+Going further, the Sobolev space `H^k` is the space of all functions
 with finite `H^k` norm.
       
 .. proof:definition:: The Sobolev space `H^k`
@@ -196,6 +160,9 @@ with finite `H^k` norm.
 
       H^k(\Omega) = \left\{
       u\in L^1_{loc}: \|u\|_{H^k(\Omega)}<\infty\right\}
+
+Since `\|u\|_{H^k(\Omega)} \leq \|u\|_{H^l(\Omega)}` for `k<l`,
+we have `H^k \subset H^l` for `k<l`.
       
 If we are to consider limits of finite element functions in these
 Sobolev spaces, then it is important that they are closed, i.e.
