@@ -51,16 +51,9 @@
 
       L1_introduction
       L2_fespaces
-      L3_feprobs
-      L4_convergence
-
-   Lecture slides:
-   ~~~~~~~~~~~~~~~
-
-   * `The first set of lecture slides <_static/Lecture1.pdf>`_
-   * `The second set of lecture slides <_static/Lecture2.pdf>`_
-   * `The third set of lecture slides <_static/Lecture3.pdf>`_
-   * `The fourth set of lecture slides <_static/Lecture4.pdf>`_
+      L3_interpolation
+      L4_feprobs
+      L5_convergence
    
    Past exam papers
    ~~~~~~~~~~~~~~~~

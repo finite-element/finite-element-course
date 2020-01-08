@@ -84,10 +84,11 @@ Here are two important examples of bilinear forms on finite element spaces.
    Let `V_h` be a finite element space. The following are bilinear
    forms on `V_h`,
 
-.. math::
+   .. math::
 
-   b(u,v) = \int_\Omega u  v \, d x, 
-   b(u,v) = \int_\Omega \nabla u \cdot \nabla v \, d x.
+      b(u,v) = \int_\Omega u  v \, d x, 
+
+      b(u,v) = \int_\Omega \nabla u \cdot \nabla v \, d x.
 
 To turn a vector space into a Hilbert space, we need to select an
 inner product.
@@ -176,7 +177,7 @@ For inner product spaces, there is a natural choice of norm.
    Let `(V,(\cdot,\cdot))` be an inner product space. Then `\|v\|=\sqrt{(v,v)}`
    defines a norm on `V`.
 
-.. proof:proofs::
+.. proof:proof::
    
    From bilinearity we have
 
@@ -194,11 +195,15 @@ For inner product spaces, there is a natural choice of norm.
 
    .. math::
 
-      \|u+v\|^2  = (u+v,u+v) 
-      = (u,u) + 2(u,v) + (v,v) 
-      = \|u\|^2 + 2(u,v) + \|v\|^2 
-      \leq \|u\|^2 + 2\|u\|\|v\| + \|v\|^2 \quad \mbox{[Schwarz]}, 
-      = (\|u\|+\|v\|)^2,
+      \|u+v\|^2  &= (u+v,u+v)
+      
+      &= (u,u) + 2(u,v) + (v,v)
+      
+      &= \|u\|^2 + 2(u,v) + \|v\|^2
+      
+      &\leq \|u\|^2 + 2\|u\|\|v\| + \|v\|^2 \quad \mbox{[Schwarz]},
+      
+      &= (\|u\|+\|v\|)^2,
 
    hence `\|u+v\|\leq \|u\|+\|v\|`.
 
@@ -381,9 +386,9 @@ of linear PDEs.
 
    .. math::
    
-      b(u,v) = \int_\Omega uv + \nabla u \cdot \nabla v \, d x,
+      b(u,v) &= \int_\Omega uv + \nabla u \cdot \nabla v \, d x,
 
-      F(v) = \int_\Omega vf \, d x,
+      F(v) &= \int_\Omega vf \, d x,
 
    and `V` is the Pk continuous finite element space on a triangulation
    of `\Omega`.
@@ -394,9 +399,9 @@ of linear PDEs.
 
    .. math::
       
-      b(u,v) = \int_\Omega \nabla u \cdot \nabla v \, d x,
+      b(u,v) &= \int_\Omega \nabla u \cdot \nabla v \, d x,
 
-      F(v) = \int_\Omega vf \, d x,
+      F(v) &= \int_\Omega vf \, d x,
 
    and `V` is the subspace of the Pk continuous finite element space on a
    triangulation of `\Omega` such that functions vanishes on
@@ -408,9 +413,9 @@ of linear PDEs.
 
    .. math::
 
-      b(u,v) = \int_\Omega \nabla u \cdot \nabla v \, d x,
+      b(u,v) &= \int_\Omega \nabla u \cdot \nabla v \, d x,
 
-      F(v) = \int_\Omega vf \, d x,
+      F(v) &= \int_\Omega vf \, d x,
 
    and `V` is the subspace of the Pk continuous finite element space on a
    triangulation of `\Omega` such that functions satisfy
@@ -583,9 +588,9 @@ problem this comes from the following mean estimate.
 
    .. math::
 
-      f(s_{i+1}) - f(s_i) = \int_{s_i}^{s_{i+1}} f'(s) \, ds
+      f(s_{i+1}) - f(s_i) &= \int_{s_i}^{s_{i+1}} f'(s) \, ds
 
-      = \int_{s_i}^{s_{i+1}} \nabla u(y+s(x-y)) \, ds,
+      &= \int_{s_i}^{s_{i+1}} \nabla u(y+s(x-y)) \, ds,
 
    where `\nabla u` is the finite element derivative of `u`. Summing
    this up from `i=0` to `i=k-1`, we obtain
@@ -599,24 +604,24 @@ problem this comes from the following mean estimate.
 
    .. math::
    
-      u(x)-\bar{u} = \frac{1}{|\Omega|}\int_{\Omega}u(x)-u(y)\, d y 
+      u(x)-\bar{u} &= \frac{1}{|\Omega|}\int_{\Omega}u(x)-u(y)\, d y 
 
-      = \frac{1}{|\Omega|}\int_{\Omega}(x-y)\cdot \int_{s=0}^1 \nabla u(y + s(x-y)) \, d s\, d y,
+      &= \frac{1}{|\Omega|}\int_{\Omega}(x-y)\cdot \int_{s=0}^1 \nabla u(y + s(x-y)) \, d s\, d y,
 
    Therefore
 
    .. math::
 
-      \|u-\bar{u}\|^2_{L^2(\Omega)}  =  \frac{1}{|\Omega|^2}\int_{\Omega}
+      \|u-\bar{u}\|^2_{L^2(\Omega)}  &=  \frac{1}{|\Omega|^2}\int_{\Omega}
       \left(\int_\Omega (x-y)\cdot\int_{s=0}^1 \nabla u(y + s(x-y))\, d s
       \, d y\right)^2 \, d x,
       
-      \leq  \frac{1}{|\Omega|^2}\int_{\Omega}
+      &\leq  \frac{1}{|\Omega|^2}\int_{\Omega}
       \int_\Omega |x-y|^2 \, d y
       \int_\Omega  \int_{s=0}^1 |\nabla u(y + s(x-y))|^2\, d s
       \, d y \, d x,  
 
-      \leq  C\int_{\Omega}
+      &\leq  C\int_{\Omega}
       \int_\Omega  \int_{s=0}^1 |\nabla u(y + s(x-y))|^2\, d s
       \, d y \, d x.
 
@@ -630,10 +635,10 @@ problem this comes from the following mean estimate.
 
    .. math::
    
-      I  = \int_\Omega \int_{s=0}^{1/2} \int_\Omega
+      I  &= \int_\Omega \int_{s=0}^{1/2} \int_\Omega
       | \nabla u(y+s(x-y))|^2 \, d y \, d s \, d x,
       
-      II  = \int_\Omega \int_{s=1/2}^2 \int_\Omega
+      II  &= \int_\Omega \int_{s=1/2}^2 \int_\Omega
       | \nabla u(y+s(x-y))|^2 \, d x \, d s \, d y,
 
    which we will now estimate separately.
@@ -644,13 +649,13 @@ problem this comes from the following mean estimate.
 
    .. math::
 
-      I = \int_\Omega \int_{s=0}^{1/2} \frac{1}{(1-s)^2}
+      I &= \int_\Omega \int_{s=0}^{1/2} \frac{1}{(1-s)^2}
       \int_{\Omega'_s} |\nabla u(y')|^2 \, d y' \, d s \, d x,
       
-      \leq \int_\Omega \int_{s=0}^{1/2} \frac{1}{(1-s)^2}
+      &\leq \int_\Omega \int_{s=0}^{1/2} \frac{1}{(1-s)^2}
       \int_{\Omega} |\nabla u(y')|^2 \, d y' \, d s \, d x, 
 
-      = \frac{|\Omega|}{2} |\nabla u|^2_{H^1(\Omega)}.
+      &= \frac{|\Omega|}{2} |\nabla u|^2_{H^1(\Omega)}.
 
    To evaluate `II`, change variables `x \to x' = y + s(x-y)`,
    defining `\Omega'_s\subset \Omega` as the image of `\Omega`
@@ -658,13 +663,13 @@ problem this comes from the following mean estimate.
 
    .. math::
    
-      II = \int_\Omega \int_{s=1/2}^2 \frac{1}{s^2}
+      II &= \int_\Omega \int_{s=1/2}^2 \frac{1}{s^2}
       \int_{\Omega'_s} |\nabla u(x')|^2 \, d x' \, d s \, d y, 
 
-      \leq \int_\Omega \int_{s=0}^{1/2} \frac{1}{s^2}
+      &\leq \int_\Omega \int_{s=0}^{1/2} \frac{1}{s^2}
       \int_{\Omega} |\nabla u(x')|^2 \, d x' \, d s \, d y,
    
-      =|\Omega| |\nabla u|^2_{H^1(\Omega)}.
+      &=|\Omega| |\nabla u|^2_{H^1(\Omega)}.
 
    Combining,
 
@@ -701,11 +706,13 @@ problem with pure Neumann conditions.
    Hence we obtain the coercivity result,
 
    .. math::
+      
       \|u\|_{H^1}^2 = \|u\|_{L^2}^2 + |u|_{H^1}^2 \leq (1+C^2)|u|_{H^1}^2 = (1+C^2)b(u,u).
 
    Continuity follows from Schwarz inequality,
 
    .. math::
+      
       |b(u,v)| \leq |u|_{H^1}|v|_{H^1} \leq \|u\|_{H^1}\|v\|_{H^1}.
 
 The coercivity constant is independent of `h`, so the approximation is stable.
@@ -731,12 +738,12 @@ to finite element derivatives of `C^0` finite element functions.
 
    .. math::
       
-      \int_\Omega\nabla\cdot(\phi u)\, d x  = \sum_{K\in \mathcal{T}}
+      \int_\Omega\nabla\cdot(\phi u)\, d x  &= \sum_{K\in \mathcal{T}}
       \int_K \nabla\cdot(\phi u)\, d x,
    
-      = \sum_{K\in \mathcal{T}} \int_{\partial K}\phi\cdot n_K u\, d S,
+      &= \sum_{K\in \mathcal{T}} \int_{\partial K}\phi\cdot n_K u\, d S,
 
-      = \int_{\partial\Omega} \phi\cdot n u\, d S
+      &= \int_{\partial\Omega} \phi\cdot n u\, d S
       + \underbrace{\int_\Gamma \phi\cdot(n^++n^-)u\, d S}_{=0}.
 
 This allows us to prove the finite element trace theorem, which
@@ -754,7 +761,7 @@ norm of the function restricted to the boundary.
    where `C` is a constant that depends only on the geometry of
    `\Omega`.
 
-.. proof:: 
+.. proof:proof:: 
 
    The first step is to construct a `C^1` function `\xi` satisfying
    `\xi\cdot n=1` on `\Omega`. We do this by finding a triangulation
@@ -767,24 +774,24 @@ norm of the function restricted to the boundary.
 
    .. math::
    
-      \|u\|_{L^2(\partial\Omega)}^2 =
+      \|u\|_{L^2(\partial\Omega)}^2 &=
       \int_{\partial\Omega} u^2 \, d S  = \int_{\partial\Omega}\xi\cdot n u^2\, d S,
 
-      = \int_\Omega \nabla\cdot (\xi u^2)\, d x,
+      &= \int_\Omega \nabla\cdot (\xi u^2)\, d x,
       
-      = \int_\Omega u^2 \nabla\cdot \xi + 2u\xi\cdot\nabla u \, d x,
+      &= \int_\Omega u^2 \nabla\cdot \xi + 2u\xi\cdot\nabla u \, d x,
       
-      \leq \|u\|_{L^2}^2\|\nabla\cdot\xi\|_{\infty} + 2|\xi|_{\infty}
+      &\leq \|u\|_{L^2}^2\|\nabla\cdot\xi\|_{\infty} + 2|\xi|_{\infty}
       \|u\|_{L^2}|u|_{H^1},
 
    So,
 
    .. math::
    
-      \|u\|_{L^2(\partial\Omega)}^2   \leq \|u\|_{L^2}^2\|\nabla\cdot\xi\|_{\infty} + |\xi|_{\infty}
+      \|u\|_{L^2(\partial\Omega)}^2   &\leq \|u\|_{L^2}^2\|\nabla\cdot\xi\|_{\infty} + |\xi|_{\infty}
       \left(\|u\|_{L^2}^2 + |u|_{H^1}^2\right),
       
-      \leq C\|u\|_{H^1}^2,
+      &\leq C\|u\|_{H^1}^2,
 
       where we have used the geometric-arithmetic mean inequality `2ab \leq
       a^2+b^2`. 
@@ -811,12 +818,12 @@ Poisson problem with (full or partial) Dirichlet conditions.
 
    .. math::
    
-      \|v\|_{L^2(\Omega)}  \leq \|v-\bar{v}\|_{L^2(\Omega)} + \|\bar{v}\|_{L^2(\Omega)},
+      \|v\|_{L^2(\Omega)}  &\leq \|v-\bar{v}\|_{L^2(\Omega)} + \|\bar{v}\|_{L^2(\Omega)},
       
-      \leq C|v|_{H^1(\Omega)} + \frac{|\Omega|^{1/2}}{|\Gamma_0|}
+      &\leq C|v|_{H^1(\Omega)} + \frac{|\Omega|^{1/2}}{|\Gamma_0|}
       \left|\int_{\Gamma_0}\bar{v}\, d S\right|,
  
-      \leq C|v|_{H^1(\Omega)} + \frac{|\Omega|^{1/2}}{|\Gamma_0|}
+      &\leq C|v|_{H^1(\Omega)} + \frac{|\Omega|^{1/2}}{|\Gamma_0|}
       \left(\left|\int_{\Gamma_0}v\, d S + \int_{\Gamma_0}\bar{v}-v\, d S\right|\right).
 
    We have

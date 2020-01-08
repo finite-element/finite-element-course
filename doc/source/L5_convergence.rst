@@ -98,10 +98,10 @@ definition.
       \int_\Omega
       \phi \frac{\partial}{\partial x_i}|_{FE}u \, d x  = \sum_{K}\int_K \phi \frac{\partial u}{\partial x_i}\, d x,
       
-      = \sum_K\left(-\int_K \frac{\partial \phi}{\partial x_i} u \, d x + \int_{\partial K}
+      &= \sum_K\left(-\int_K \frac{\partial \phi}{\partial x_i} u \, d x + \int_{\partial K}
       \phi n_i u \, d S\right),
 
-      = -\sum_K\int_K \frac{\partial\phi}{\partial x_i} u \, d x = -\int_\Omega
+      &= -\sum_K\int_K \frac{\partial\phi}{\partial x_i} u \, d x = -\int_\Omega
       \frac{\partial \phi}{\partial x_i} u \, d x,
 
    as required.
@@ -189,9 +189,9 @@ limits remain in the spaces.
       \int_\Omega v^\alpha \phi \, d x  = \lim_{i\to \infty} \int_\Omega
       \phi D^\alpha u_i \, d x,
       
-      = \lim_{i\to \infty} (-1)^{|\alpha|}\int_\Omega u_i D^\alpha\phi \, d x ,
+      &= \lim_{i\to \infty} (-1)^{|\alpha|}\int_\Omega u_i D^\alpha\phi \, d x ,
  
-      = (-1)^{|\alpha|} \int_\Omega v D^\alpha \phi \, d x,
+      &= (-1)^{|\alpha|} \int_\Omega v D^\alpha \phi \, d x,
 
    i.e. `v^\alpha` is the weak derivative of `u` as required.
 
@@ -207,6 +207,8 @@ we can find a sequence of `C^\infty` functions `u_i` converging
 to `u`. This is very useful as we can compute many things using
 `C^\infty` functions and take the limit.
 
+.. _sobolev:
+
 .. proof:theorem:: Sobolev's inequality
 
    Let `\Omega` be an `n`-dimensional domain with Lipschitz boundary, let
@@ -215,15 +217,18 @@ to `u`. This is very useful as we can compute many things using
 
    .. math::
 
-      \|u\|_{L^\infty(\Omega)} = \ess\sup_{x\in \Omega}|u(x)|
+      \|u\|_{L^\infty(\Omega)} = \mathrm{ess}\sup_{x\in \Omega}|u(x)|
       \leq C\|u\|_{H^k(\Omega)}.
 
    Further, there is a `C^0` continuous function in the `L^\infty(\Omega)`
    equivalence class of `u`.
 
-   The interpretation is that if `u\in H^k` then there is a continuous
-   function `u_0` such that the set of points where `u\neq u_0` has
-   zero area/volume.
+Previously we saw this result for continuous functions. Here it is
+presented for `H^k` functions, with an extra statement about the
+existence of a `C^0` function in the equivalence class. The
+interpretation is that if `u\in H^k` then there is a continuous
+function `u_0` such that the set of points where `u\neq u_0` has zero
+area/volume.
 
 .. proof:corollary:: Sobolev's inequality for derivatives
 
@@ -357,7 +362,7 @@ of substituting into the formula and applying integration by parts.
    in the `L^2` sense, i.e. `\|u-\nabla^2 u - f\|_{L^2}=0`. Then
    `u` solves the variational form of the Helmholtz equation.
 
-.. proof::
+.. proof:proof::
    
    `u\in H^2\implies \|u\|_{H^2}<\infty\implies \|u\|_{H^1}<\infty\implies
    u\in H^1`. Multiplying by test function `v\in H^1`, and using the
@@ -403,9 +408,10 @@ instead of just `H^1`.
 
    .. math::
       0 = \int_\Omega uv + \nabla u \cdot \nabla v - fv \, d x
-      = \int_\Omega uv + \nabla u \cdot \nabla v - (u-\nabla^2u)v \, d x
 
-      = \int_{\partial\Omega} \frac{\partial u}{\partial n}v\, d S.
+      &= \int_\Omega uv + \nabla u \cdot \nabla v - (u-\nabla^2u)v \, d x
+
+      &= \int_{\partial\Omega} \frac{\partial u}{\partial n}v\, d S.
 
    We can find arbitrary `v\in L_2(\partial\Omega)`, hence
    `\|\frac{\partial u}{\partial n}\|_{L^2(\partial\Omega)}=0`.
@@ -486,9 +492,9 @@ this question is addressed by Céa's lemma.
       
       \gamma\|u-u_h\|^2_V \leq b(u-u_h,u-u_h),
    
-      = b(u-u_h,u-v) + \underbrace{b(u-u_h,v-u_h)}_{=0},
+      &= b(u-u_h,u-v) + \underbrace{b(u-u_h,v-u_h)}_{=0},
 
-      \leq M\|u-u_h\|_V\|u-v\|_V.
+      &\leq M\|u-u_h\|_V\|u-v\|_V.
 
    So,
 
@@ -498,11 +504,285 @@ this question is addressed by Céa's lemma.
       
    Minimising over all `v` completes the proof.
 
-The interpretation of Céa's lemma is that the error is proportional
-to the minimal error in approximating `u` in `V_h`.
-We can estimate the error in approximating `u` in `V_h`
-if `u\in C^2(\Omega)`, using Taylor series.
-However, if `u\in H^2(\Omega)`, then `u` does not necessarily
-have a degree 2 Taylor polynomial, since derivatives are not defined
-at arbitrary points. We need a more general error formula, which
-we will treat next.
+Interpolation error in `H^k` spaces
+-----------------------------------
+   
+The interpretation of Céa's lemma is that the error is proportional to
+the minimal error in approximating `u` in `V_h`. To do this, we can
+simply choose `v = I_hu` in Céa's lemma, to get
+
+.. math::
+   \|u-u_h\|_V \leq \frac{M}{\gamma}\min_{v\in V_h}
+   \|u-v\|_V \leq \frac{M}{\gamma}\|u - I_hu\|_V.
+
+Hence, Céa's lemma reduces the problem of estimating the error in the
+numerical solution to estimating error in the interpolation.  We have
+already examined this in the section on interpolation operators, but
+in the context of continuous functions. The problem is that we do not
+know that the solution `u` is continuous, only that it is in `H^k` for
+some `k`.
+
+We now quickly revisit the results of the interpolation section to
+extend them to `H^k` spaces. The proofs are mostly identical, so we just
+give the updated result statements and state how to modify the proofs.
+
+Firstly we recall the averaged Taylor polynomial. Since it involves
+only integrals of the derivatives, we can immediately use weak
+derivatives here.
+
+.. proof:definition:: Averaged Taylor polynomial with weak derivatives
+
+   Let `\Omega\subset \mathbb{R}^n` be a domain with diameter `d`, that
+   is star-shaped with respect to a ball `B` with radius `\epsilon`,
+   contained within `\Omega`. For `f\in H^{k+1}(\Omega)` the
+   averaged Taylor polynomial `Q_{k,B}f\in \mathcal{P}_k` is defined
+   as
+
+   .. math::
+   
+      Q_{k,B} f(x) = \frac{1}{|B|}\int_{B} T^kf(y,x) \, d y,
+
+   where `T^kf` is the Taylor polynomial of degree `k` of `f`,
+
+   .. math::
+      T^k f(y,x) = \sum_{|\alpha|\leq k} D^\alpha f(y)\frac{(x-y)^\alpha}{\alpha!},
+
+   evaluated using weak derivatives.
+
+This definition makes sense since the Taylor polynomial coefficients
+are in `L^1_{loc}(\Omega)` and thus their integrals over `B` are defined.
+
+The next step was to examine the error in the Taylor polynomial.
+
+.. proof:theorem::
+   
+   Let `\Omega\subset \mathbb{R}^n` be a domain with diameter `d`, that
+   is star-shaped with respect to a ball `B` with radius `\epsilon`,
+   contained within `\Omega`. There exists a constant `C(k,n)` such that
+   for `0\leq |\beta| \leq k+1` and all `f \in H^{k+1}(\Omega)`,
+
+   .. math::
+
+      \|D^\beta(f-Q_{k,B}f)\|_{L^2} \leq C\frac{|\Omega|^{1/2}}{|B|^{1/2}}
+      d^{k+1-|\beta|}\|\nabla^{k+1}f\|_{L^2(\Omega)}.
+
+.. proof:proof::
+
+   To show this, we assume that `f\in C^\infty(\Omega)`, in which case
+   the result of :numref:`Theorem {number}<taylorerror>` applies. Then
+   we obtain the present result by approximating `f` by a sequence of
+   `C^\infty(\Omega)` functions and passing to the limit.
+   
+We then repeat the following corollary.
+
+.. proof:corollary::
+   
+   Let `K_1` be a triangle with diameter `1`.
+   There exists a constant `C(k,n)` such that
+
+   .. math::
+      
+      \|f-Q_{k,B}f\|_{H^k(K_1)} \leq C|\nabla^{k+1}f|_{H^{k+1}(K_1)}.
+
+.. proof:proof::
+
+   Same as :numref:`Lemma {number}<unittaylorerr>`.
+      
+The next step was the bound on the interpolation operator. Now we just
+have to replace `C^{l,\infty}` with `W^l_\infty` as derivatives may not
+exist at every point.
+
+
+.. proof:lemma::
+   
+   Let `(K_1,\mathcal{P},\mathcal{N})` be a finite element such that
+   `K_1` is a triangle with diameter 1, and such that the nodal
+   variables in `\mathcal{N}` involve only evaluations of functions or
+   evaluations of derivatives of degree `\leq l`, and `\|N_i\|_{W^l_\infty(K_1)'}
+   <\infty`, 
+
+   .. math::
+   
+      \|N_i\|_{W_\infty^l(K_1)'} = \sup_{\|u\|_{W_\infty^l(K_1)}>0}
+      \frac{|N_i(u)|}{\|u\|_{W_\infty^l(K_1)}}.
+
+   Let `u\in H^k(K_1)` with
+   `k>l+n/2`. Then
+
+   .. math::
+
+      \|\mathcal{I}_{K_1}u\|_{H^k(K_1)} \leq C\|u\|_{H^k(K_1)}.
+
+.. proof:proof::
+
+   Same as :numref:`Lemma {number}<Ibound>`. replacing `C^{l,\infty}`
+   with `W^l_\infty`, and using the full version of the Sobolev
+   inequality in :numref:`Lemma {number}<sobolev>`.
+
+The next steps then just follow through.
+
+.. proof:lemma::
+   
+   Let `(K_1,\mathcal{P},\mathcal{N})` be a finite element such that
+   `K_1` has diameter `1`, and such that the nodal variables in
+   `\mathcal{N}` involve only evaluations of functions or evaluations of
+   derivatives of degree `\leq l`, and `\mathcal{P}` contain all
+   polynomials of degree `k` and below, with `k>l+n/2`. Let `u\in
+   H^{k+1}(K_1)`. Then for `i \leq k`, the local interpolation operator
+   satisfies
+
+   .. math::
+      |\mathcal{I}_{K_1}u-u|_{H^i(K_1)} \leq C_1|u|_{H^{k+1}(K_1)}.
+
+.. proof:proof::
+
+   Same as :numref:`Lemma {number}<IerrK1>`.
+      
+.. proof:lemma::
+
+   Let `(K,\mathcal{P},\mathcal{N})` be a finite element such that
+   `K` has diameter `d`, and such that the nodal variables in
+   `\mathcal{N}` involve only evaluations of functions or evaluations of
+   derivatives of degree `\leq l`, and `\mathcal{P}` contains all
+   polynomials of degree `k` and below, with `k>l+n/2`. Let `u\in
+   H^{k+1}(K)`. Then for `i \leq k`, the local interpolation operator
+   satisfies
+
+   .. math::
+
+      |\mathcal{I}_{K}u-u|_{H^i(K)} \leq C_Kd^{k+1-i}|u|_{H^{k+1}(K)}.
+
+   where `C_K` is a constant that depends on the shape of `K` but not
+   the diameter.
+
+.. proof:proof::
+
+   Repeat the scaling argument of :numref:`Lemma {number}<scaling>`.
+
+.. proof:theorem::
+   
+   Let `\mathcal{T}` be a triangulation with finite elements
+   `(K_i,\mathcal{P}_i,\mathcal{N}_i)`, such that the minimum aspect
+   ratio `r` of the triangles `K_i` satisfies `r>0`, and such that the
+   nodal variables in `\mathcal{N}` involve only evaluations of functions
+   or evaluations of derivatives of degree `\leq l`, and `\mathcal{P}`
+   contains all polynomials of degree `k` and below, with `k>l+n/2`. Let
+   `u\in H^{k+1}(\Omega)`.  Let `h` be the maximum over all of the
+   triangle diameters, with `0\leq h<1`. Let `V` be the corresponding
+   `C^r` finite element space.  Then for `i\leq k` and `i \leq r+1`, the
+   global interpolation operator satisfies
+
+   .. math::
+
+      \|\mathcal{I}_{h}u-u\|_{H^i(\Omega)} \leq Ch^{k+1-i}|u|_{H^{k+1}(\Omega)}.
+
+.. proof:proof::
+   
+   Identical to :numref:`Theorem {number}<Iherr>`.
+
+Convergence of the finite element approximation to the Helmholtz problem
+------------------------------------------------------------------------
+   
+Now that we have the required interpolation operator results, we
+can return to applying Céa's lemma to the convergence of the
+finite element approximation to the Helmholtz problem.
+   
+.. proof:corollary::
+
+   The degree `k` Lagrange finite element approximation `u_h` to the
+   solution `u` of the variational Helmholtz problem satisfies
+
+   .. math::
+
+      \|u_h-u\|_{H^1(\Omega)} \leq Ch^k\|u\|_{H^2(\Omega)}.
+
+.. proof:proof::
+      
+   We combine Céa's lemma with the previous estimate, since
+
+   .. math::
+
+      \min_{v\in V_h}
+      \|u-v\|_{H^1(\Omega)} \leq \|u-I_hu\|_{H^1(\Omega)}
+      \leq Ch^k\|u\|_{H^2(\Omega)}.
+
+   having chosen `i=1`.
+
+C\'ea's lemma gives us error estimates in the norm of the space where
+the variational problem is defined, where the continuity and coercivity
+results hold. In the case of the Helmholtz problem, this is `H^1`.
+We would also like estimates of the error in the `L^2` norm, and
+it will turn out that these will have a more rapid convergence rate
+as `h\to 0`.
+
+To do this we quote the following without proof.
+
+.. proof:theorem:: Elliptic regularity
+
+   Let `w` solve the equation
+
+   .. math::
+      
+      w - \nabla^2 w = f, \quad \frac{\partial w}{\partial n}=0 \mbox{ on }\partial\Omega,
+
+   on a convex (results also hold for other types of "nice" domains)
+   domain `\Omega`, with `f\in L^2`. Then there exists constant `C>0`
+   such that
+
+   .. math::
+      
+      |w|_{H^2(\Omega)} \leq C\|f\|_{L^2(\Omega)}.
+
+Similar results hold for general elliptic operators, such as Poisson's
+equation with the types of boundary conditions discussed above.
+Elliptic regularity is great to have, because it says that the
+solution of the `H^1` variational problem is actually in `H^2`,
+provided that `f\in L^2.
+
+We now use this to obtain the following result, using the
+Aubin-Nitsche trick.
+
+.. proof:theorem::
+   
+   The degree `m` Lagrange finite element approximation `u_h` to the
+   solution `u` of the variational Helmholtz problem satisfies
+
+   .. math::
+      
+      \|u_h-u\|_{L^2(\Omega)} \leq Cd^{m+1}\|u\|_{H^2(\Omega)}.
+
+.. proof:proof::
+   
+   We use the Aubin-Nitsche duality argument. Let `w` be the
+   solution of
+
+   .. math::
+   
+      w - \nabla^2 w = u - u_h,
+
+   with the same Neumann boundary conditions as for `u`.
+
+   Since `u - u_h \in H^1(\Omega) \subset L^2(\Omega)`, we have
+   `w \in H^2(\Omega)` by elliptic regularity.
+      
+   Then we have (by multiplying by a test function an integrating by
+   parts),
+
+   .. math::
+      
+      b(w,v) = (u-u_h,v)_{L^2(\Omega)}, \quad \forall v\in H^1(\Omega),
+
+   and so
+
+   .. math::
+      
+      \|u-u_h\|^2_{L^2(\Omega)} &= (u-u_h,u-u_h) = b(w,u-u_h), 
+      = b(w-\mathcal{I}_hw,u-u_h) \mbox{ (orthogonality) },
+      
+      &\leq C\|u-u_h\|_{H^1(\Omega)}\|w-\mathcal{I}_h w\|_{H^1(\Omega)}, 
+
+      &\leq Ch\|u-u_h\|_{H^1(\Omega)} |w|_{H^2(\Omega)} 
+
+      &\leq C_1 h^{m+1} \|u-u_h\|_{L^2(\Omega)}|u|_{H^2(\Omega)}
+
+   and dividing both sides by `\|u-u_h\|_{L^2(\Omega)}` gives the result.

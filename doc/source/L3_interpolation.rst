@@ -198,6 +198,8 @@ integral sense.
 
 Now we develop an estimate of the error `T^kf - f`.
 
+.. _taylorerror:
+
 .. proof:theorem::
    
    Let `\Omega\subset \mathbb{R}^n` be a domain with diameter `d`, that
@@ -225,7 +227,9 @@ Now we develop an estimate of the error `T^kf - f`.
 
    .. math::
 
-      \alpha! = \prod_{i=1}^n \alpha_i!
+      \alpha! = \prod_{i=1}^n \alpha_i!,
+
+   when `f \in C^{m,\infty}` for `m>k`.
 
    Integration over `y` in `B` and dividing by `|B|` gives
 
@@ -240,12 +244,12 @@ Now we develop an estimate of the error `T^kf - f`.
    .. math::
       
       \int_\Omega |f(x)-Q_{k,B}f(x)|^2\, d x
-      \leq C\frac{d^{2(k+1)}}{|B|^2}
+      &\leq C\frac{d^{2(k+1)}}{|B|^2}
       \sum_{|\alpha|=k+1}\int_\Omega
       \left(
       \int_B\int_0^1 |D^\alpha f(ty+(1-t)x)|t^k \, d t\, d y\right)^2\, d x,
       
-      \leq C_0\frac{d^{2(k+1)}}{|B|^2}
+      &\leq C_0\frac{d^{2(k+1)}}{|B|^2}
       \sum_{|\alpha|=k+1}\int_\Omega
       \int_B\int_0^1 |D^\alpha f(ty+(1-t)x)|^2 \, d t\, d y 
       \int_B\int_0^1 t^{2k}\, d t\, d y\,\, d x.
@@ -270,35 +274,35 @@ Now we develop an estimate of the error `T^kf - f`.
 
    .. math::
       
-      I =  \int_B \int_0^{1/2} \int_{\mathbb{R}^n} |g_\alpha(ty+(1-t)x)|^2
+      I &=  \int_B \int_0^{1/2} \int_{\mathbb{R}^n} |g_\alpha(ty+(1-t)x)|^2
       \, d x \, d t\, d y,
       
-      =  \int_B \int_0^{1/2} \int_{\mathbb{R}^n} |g_\alpha((1-t)x)|^2\, d x \, d t
+      &=  \int_B \int_0^{1/2} \int_{\mathbb{R}^n} |g_\alpha((1-t)x)|^2\, d x \, d t
       \, d y,
       
-      =  \int_B \int_0^{1/2} \int_{\mathbb{R}^n} |g_\alpha(z)|^2
+      &=  \int_B \int_0^{1/2} \int_{\mathbb{R}^n} |g_\alpha(z)|^2
       (1-t)^{-n}
       \, d z \, d t
       \, d y,
    
-      \leq  2^{n-1}|B|\int_\Omega |D^\alpha f(z)|^2\, d z.
+   \leq  2^{n-1}|B|\int_\Omega |D^\alpha f(z)|^2\, d z.
 
    Similarly, for `II`,
 
    .. math::
       
-      II =  \int_B \int_{1/2}^1 \int_{\mathbb{R}^n} |g_\alpha(ty+(1-t)x)|^2
+      II &=  \int_B \int_{1/2}^1 \int_{\mathbb{R}^n} |g_\alpha(ty+(1-t)x)|^2
       \, d x \, d t\, d y,
       
-      =  \int_B \int_{1/2}^1 \int_{\mathbb{R}^n} |g_\alpha(ty)|^2\, d x \, d t
+      &=  \int_B \int_{1/2}^1 \int_{\mathbb{R}^n} |g_\alpha(ty)|^2\, d x \, d t
       \, d y, 
 
-      =  \int_B \int_{1/2}^1 \int_{\mathbb{R}^n} |g_\alpha(z)|^2
+      &=  \int_B \int_{1/2}^1 \int_{\mathbb{R}^n} |g_\alpha(z)|^2
       t^{-n}
       \, d z \, d t
       \, d y,
       
-      \leq  2^{n-1}|B|\int_\Omega |D^\alpha f(z)|^2\, d z.
+      &\leq  2^{n-1}|B|\int_\Omega |D^\alpha f(z)|^2\, d z.
 
 
    Hence, we obtain the required bounds for `|\beta|=0`. For higher
@@ -312,7 +316,9 @@ Now we develop an estimate of the error `T^kf - f`.
 
 Now we develop this into an estimate that depends on the diameter
 of the triangle we are interpolating to.
-   
+
+.. _unittaylorerr:
+
 .. proof:corollary::
 
    Let `K_1` be a triangle with diameter `1`.
@@ -336,18 +342,19 @@ We start by looking at a triangle with diameter 1, and then use
 a scaling argument to obtain error estimates in terms of the diameter
 `h`. It begins by getting the following bound.
 
+.. _Ibound:
+
 .. proof:lemma::
 
    Let `(K_1,\mathcal{P},\mathcal{N})` be a finite element such that
    `K_1` is a triangle with diameter 1, and such that the nodal
    variables in `\mathcal{N}` involve only evaluations of functions or
-   evaluations of derivatives of degree `\leq l`, and `\|N_i\|_{W^l_\infty(K_1)'}
-   <\infty`, 
+   evaluations of derivatives of degree `\leq l`, and `\|N_i\|_{C^{l,\infty}(K_1)}'} <\infty`, 
 
    .. math::
 
-      \|N_i\|_{W_\infty^l(K_1)'} = \sup_{\|u\|_{W_\infty^l(K_1)}>0}
-      \frac{|N_i(u)|}{\|u\|_{W_\infty^l(K_1)}}.
+   \|N_i\|_{C^{l,\infty}(K_1)'} = \sup_{\|u\|_{C^{l,\infty}(K_1)}>0}
+   \frac{|N_i(u)|}{\|u\|_{W_\infty^l(K_1)}}.
 
    Let `u\in C^{l,\infty}(\Omega)` with `m\geq m`, and let `k-l > n/2`.
    Then
@@ -362,18 +369,20 @@ a scaling argument to obtain error estimates in terms of the diameter
    
    .. math::
       
-      \| \mathcal{I}_{K_1}u\|_{H^k(K_1)} \leq \sum_{i=1}^k \|\phi_i\|_{H^k(K_1)}|N_i(u)|
+      \| \mathcal{I}_{K_1}u\|_{H^k(K_1)} &\leq \sum_{i=1}^k \|\phi_i\|_{H^k(K_1)}|N_i(u)|
       
-      \leq \underbrace{\sum_{i=1}^k \|\phi_i\|_{H^k(K_1)}\|N_i\|_{C^{l,\infty}(K_1)'}}_{C_0}\|u\|_{C^{l,\infty}(K_1)},
+      &\leq \underbrace{\sum_{i=1}^k \|\phi_i\|_{H^k(K_1)}\|N_i\|_{C^{l,\infty}(K_1)'}}_{C_0}\|u\|_{C^{l,\infty}(K_1)},
       
-      \leq C \|u\|_{H^k(K_1)},
+      &\leq C \|u\|_{H^k(K_1)},
 
    where the Sobolev inequality was used in the last line.
 
 Now we can directly apply this to the interpolation operator error
 estimate on the triangle with diameter 1. It is the standard trick of
 adding and subtracting something, in this case the Taylor polynomial.
-   
+
+.. _IerrK1:
+
 .. proof:lemma::
    
    Let `(K_1,\mathcal{P},\mathcal{N})` be a finite element such that
@@ -392,21 +401,23 @@ adding and subtracting something, in this case the Taylor polynomial.
 
    .. math::
 
-      |\mathcal{I}_{K_1}u-u|_{H^i(K_1)}^2 \leq \|\mathcal{I}_{K_1}u-u\|_{H^k(K_1)}^2 
-      =
+      |\mathcal{I}_{K_1}u-u|_{H^i(K_1)}^2 &\leq \|\mathcal{I}_{K_1}u-u\|_{H^k(K_1)}^2 
+      &=
       \|\mathcal{I}_{K_1}u-Q_{k,B}u + Q_{k,B}u - u\|_{H^k(K_1)}^2
       
-      \leq \|Q_{k,B}u-u\|_{H^k(K_1)}^2 + \|\mathcal{I}(u-Q_{k,B}u)\|_{H^k(K_1)}^2,
+      &\leq \|Q_{k,B}u-u\|_{H^k(K_1)}^2 + \|\mathcal{I}(u-Q_{k,B}u)\|_{H^k(K_1)}^2,
  
-      \leq \|Q_{k,B}u-u\|_{H^k(K_1)}^2 + C^2\|Q_{k,B}u-u\|_{H^k(K_1)}^2,
+      &\leq \|Q_{k,B}u-u\|_{H^k(K_1)}^2 + C^2\|Q_{k,B}u-u\|_{H^k(K_1)}^2,
       
-      \leq (1+C^2)|u|_{H^{k+1}(K_1)}^2,
+      &\leq (1+C^2)|u|_{H^{k+1}(K_1)}^2,
 
    where we used the fact that `I_{K_1}Q_{k,B}u = Q_{k,B}u` in the
    second line and the previous lemma in the third line.
 
 Now we apply a scaling argument to translate this to triangles
 with diameter `h`.
+
+.. _scaling:
 
 .. proof:lemma:: 
 
@@ -427,30 +438,31 @@ with diameter `h`.
    where `C_K` is a constant that depends on the shape of `K` but not
    the diameter.
 
-.. proof::
+.. proof:proof::
    
    Consider the change of variables `x \to \phi(x)=x/d`. This map takes
    `K` to `K_1` with diameter 1. Then
 
    .. math::
 
-      \int_K |D^\beta(I_Ku-u)|^2 \, d x  = d^{-2|\beta|+1}\int_{K_1}|D^\beta(I_{K_1}
+      \int_K |D^\beta(I_Ku-u)|^2 \, d x  &= d^{-2|\beta|+1}\int_{K_1}|D^\beta(I_{K_1}
       u\circ \phi - u\circ \phi)|^2 \, d x,
       
-      \leq C_1^2d^{-2|\beta+1}\sum_{|\alpha|=k+1}\int_{K_1} |D^\alpha u\circ \phi|^2
-      \, d x, 
+      &\leq C_1^2d^{-2|\beta+1}\sum_{|\alpha|=k+1}\int_{K_1} |D^\alpha u\circ \phi|^2\, d x, 
 
-      \leq C_1^2d^{-2|\beta+2(k+1)}\sum_{|\alpha|=k+1}\int_{K} |D^\alpha u|^2
+      &\leq C_1^2d^{-2|\beta+2(k+1)}\sum_{|\alpha|=k+1}\int_{K} |D^\alpha u|^2
       \, d x,
       
-      = C_1^2d^{2(-|\beta| + k + 1)}|u|^2_{H^{k+1}(K)},
+      &= C_1^2d^{2(-|\beta| + k + 1)}|u|^2_{H^{k+1}(K)},
 
    and taking the square root gives the result.
 
 So far we have just developed an error estimate for the local
 interpolant on a single triangle. Now we extend this to finite element
 spaces defined on the whole triangulation.
-   
+
+.. _Iherr:
+
 .. proof:theorem::
 
    Let `\mathcal{T}` be a triangulation with finite elements
@@ -478,13 +490,14 @@ spaces defined on the whole triangulation.
 
    .. math::
       
-      \|\mathcal{I}_{h}u-u\|_{H^i(\Omega)}^2 =
+      \|\mathcal{I}_{h}u-u\|_{H^i(\Omega)}^2 &=
       \sum_{K\in\mathcal{T}}\|\mathcal{I}_{K}u-u\|_{H^i(K)}^2,
       
-      \leq \sum_{K\in\mathcal{T}}C_Kd_K^{2(k+1-i)}|u|_{H^{k+1}(K)}^2,
+      &\leq \sum_{K\in\mathcal{T}}C_Kd_K^{2(k+1-i)}|u|_{H^{k+1}(K)}^2,
       
-      \leq C_{\max}h^{2(k+1-i)}\sum_{K\in\mathcal{T}}|u|_{H^{k+1}(K)}^2,
-      = C_{\max}h^{2(k+1-i)}|u|_{H^{k+1}(\Omega)}^2,
+      &\leq C_{\max}h^{2(k+1-i)}\sum_{K\in\mathcal{T}}|u|_{H^{k+1}(K)}^2,
+      
+      &= C_{\max}h^{2(k+1-i)}|u|_{H^{k+1}(\Omega)}^2,
 
    where the existence of the `C_{\max}=\max_KC_K<\infty` is due to the
    lower bound in the aspect ratio.
