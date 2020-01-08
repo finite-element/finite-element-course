@@ -172,7 +172,7 @@ learn when it does and does not work).
       \frac{\partial^{FE}u}{\partial x_i}|_{K_i}= \frac{\partial u}{\partial x_i}.
 
 Here we see why we needed to introduce `L^2`: we have a definition
-that does give have a unique value on the edge between two adjacent
+that does not have a unique value on the edge between two adjacent
 triangles. This is verified in the following exercises.
 
 .. proof:exercise::
