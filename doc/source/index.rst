@@ -42,6 +42,10 @@
    the Imperial College network at `Springer Link
    <http://link.springer.com/book/10.1007%2F978-0-387-75934-0>`_.
 
+   However, this course has the material rearranged to synchronise the
+   content better between the lecture notes and the implementation
+   exercise.
+   
    Lecture notes:
    ~~~~~~~~~~~~~~
 
