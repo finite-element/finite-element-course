@@ -310,8 +310,8 @@ cosmology, etc. This course is intended as a starting point to
 introduce the general concepts that can be applied in all of these
 areas.
 
-Computer implementation
------------------------
+Practical implementation
+------------------------
 
 The finite element approximation above is only useful if we can
 actually compute it. To do this, we need to construct an efficient
