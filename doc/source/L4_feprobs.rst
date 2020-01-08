@@ -31,9 +31,9 @@ Finite element spaces and other Hilbert spaces
 ----------------------------------------------
 
 In the previous sections, we introduced the concept of finite element
-spaces, which contain certain functions defined on a domain $\Omega$.
+spaces, which contain certain functions defined on a domain `\Omega`.
 Finite element spaces are examples of vector spaces (hence the use
-of the word ``space'').
+of the word "space").
 
 .. proof:definition:: Vector space
 
@@ -51,7 +51,7 @@ of the word ``space'').
 
 .. proof:lemma::
 
-Let `V` be a finite element space. Then `V` is a vector space.
+   Let `V` be a finite element space. Then `V` is a vector space.
 
 .. proof:proof::
    
@@ -86,9 +86,9 @@ Here are two important examples of bilinear forms on finite element spaces.
 
    .. math::
 
-      b(u,v) = \int_\Omega u  v \, d x, 
+      b(u,v) &= \int_\Omega u  v \, d x, 
 
-      b(u,v) = \int_\Omega \nabla u \cdot \nabla v \, d x.
+      b(u,v) &= \int_\Omega \nabla u \cdot \nabla v \, d x.
 
 To turn a vector space into a Hilbert space, we need to select an
 inner product.
@@ -167,7 +167,7 @@ functions, in our case).
 
    #. `\|v\|\geq 0,\,\forall v \in V`,
    #. `\|v\| = 0 \iff v=0`,
-   #. `\|cv\|=|c|\|v\| \forall c\in \mathbb{R}, v\in V`,
+   #. `\|cv\|=|c|\|v\| \,\forall c\in \mathbb{R}, v\in V`,
    #. `\|v+w\| \leq \|v\|+\|w\|`.
 
 For inner product spaces, there is a natural choice of norm.
@@ -212,22 +212,22 @@ We introduce the following useful term.
 .. proof:definition:: Normed space
 
    A vector space `V` with a norm `\|\cdot\|` is called a normed
-vector space, written `(V,\|\cdot\|)`.
+   vector space, written `(V,\|\cdot\|)`.
 
 To finish our discussion of Hilbert spaces, we need to review the
-concept of completeness (encountered in an analysis course). This
-seems not so important since finite element spaces are finite
-dimensional, but later we shall consider sequences of finite element
-spaces with smaller and smaller triangles, where completeness becomes
-important.
+concept of completeness (which you might have encountered in an
+analysis course). This seems not so important since finite element
+spaces are finite dimensional, but later we shall consider sequences
+of finite element spaces with smaller and smaller triangles, where
+completeness becomes important.
 
 Completeness depends on the notion of a Cauchy sequence.
 
 .. proof:definition:: Cauchy sequence
 
    A Cauchy sequence on a normed vector space `(V,\|\cdot\|)` is a
-sequence `\{v_i\}_{i=1}^{\infty}` satisfying `\|v_j-v_k\|\to 0` as
-`j,k\to \infty`.
+   sequence `\{v_i\}_{i=1}^{\infty}` satisfying `\|v_j-v_k\|\to 0` as
+   `j,k\to \infty`.
 
 This definition leads to the definition of completeness.
 
@@ -548,20 +548,12 @@ For the Poisson problem, we have
 
    b(u,v) = \int_\Omega |\nabla u|^2 \, d x = |u|^2_{H^1} \neq \|u\|^2_{H^1}.
 
-Where we introduce the `H^1` seminorm from the following definition.
-
-.. proof:definition:: `H^1` seminorm
-
-   The `H^1` seminorm is defined as
-
-   .. math::
-
-      |u|_{H^1(\Omega)}^2 = \int_\Omega |\nabla u |^2 \, dx.
-
-A seminorm has all the properties of a norm except `|u|= 0 \nRightarrow
-u=0`.  Some additional results are required to show coercivity, as
-`b(u,u)` is not the `H^1` norm squared any more. For the Poisson
-problem this comes from the following mean estimate.
+Where we recall the `H^1` seminorm from the interpolation
+section. Some additional results are required to show coercivity, as
+`b(u,u)` is not the `H^1` norm squared any more. A seminorm has all
+the properties of a norm except `|u|= 0 \nRightarrow u=0`, which is
+precisely what is needed in the Lax-Milgram theorem.  For the Poisson
+problem, coercivity comes instead from the following mean estimate.
 
 .. proof:lemma:: Mean estimate for finite element spaces
 
@@ -580,6 +572,8 @@ problem this comes from the following mean estimate.
 
 .. proof:proof::
 
+   (Very similar to the proof of the estimate for averaged Taylor polynomials.)
+   
    Let `x` and `y` be two points in `\Omega`. We note that
    `f(s)=u(y+s(x-y))` is a `C^0`, piecewise polynomial function of
    `s`. Let `s_0 = 0 < s_1 < s_2 < \ldots < s_{k-1} < s_k = 1` denote the points
@@ -697,6 +691,8 @@ problem with pure Neumann conditions.
    Then for `\bar{V}_h`, the finite element approximation `u_h` exists and the
    discretisation is stable in the `H^1` norm.
 
+.. proof:proof::
+   
    Using the mean estimate, for `u\in\bar{V}_h`, we have
 
    .. math::
@@ -793,8 +789,8 @@ norm of the function restricted to the boundary.
       
       &\leq C\|u\|_{H^1}^2,
 
-      where we have used the geometric-arithmetic mean inequality `2ab \leq
-      a^2+b^2`. 
+   where we have used the geometric-arithmetic mean inequality `2ab \leq
+   a^2+b^2`. 
 
 We can now use the trace inequality to estabilish solveability for the
 Poisson problem with (full or partial) Dirichlet conditions.

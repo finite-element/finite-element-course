@@ -186,7 +186,7 @@ limits remain in the spaces.
 
    .. math::
       
-      \int_\Omega v^\alpha \phi \, d x  = \lim_{i\to \infty} \int_\Omega
+      \int_\Omega v^\alpha \phi \, d x  &= \lim_{i\to \infty} \int_\Omega
       \phi D^\alpha u_i \, d x,
       
       &= \lim_{i\to \infty} (-1)^{|\alpha|}\int_\Omega u_i D^\alpha\phi \, d x ,
@@ -200,7 +200,7 @@ We quote the following much deeper results without proof.
 .. proof:theorem:: `H=W`
 
    Let `\Omega` be any open set. Then `H^k(\Omega)\cap C^\infty(\Omega)`
-is dense in `H^k(\Omega)`.
+   is dense in `H^k(\Omega)`.
 
 The interpretation is that for any function `u\in H^k(\Omega)`,
 we can find a sequence of `C^\infty` functions `u_i` converging
@@ -270,7 +270,7 @@ For example, the Helmholtz problem solveability is immediate.
 .. proof:theorem:: Well-posedness for (modified) Helmholtz)
 
    The Helmholtz variational problem on `H^1` satisfies the conditions
-of the Lax-Milgram theorem.
+   of the Lax-Milgram theorem.
 
 .. proof:proof::
 
@@ -294,7 +294,7 @@ boundary.  We make the following definition.
 .. proof:definition:: Trace of `H^1` functions
 
    Let `u\in H^1(\Omega)` and choose `u_i\in C^\infty(\Omega)` such
-   that `u_i\to u`. We define the \emph{trace} `u|_{\partial\Omega}`
+   that `u_i\to u`. We define the trace `u|_{\partial\Omega}`
    on `\partial\Omega` as the limit of the restriction of `u_i` to
    `\partial\Omega`. This definition is unique from the uniqueness of
    limits.
@@ -490,7 +490,7 @@ this question is addressed by Céa's lemma.
 
    .. math::
       
-      \gamma\|u-u_h\|^2_V \leq b(u-u_h,u-u_h),
+      \gamma\|u-u_h\|^2_V &\leq b(u-u_h,u-u_h),
    
       &= b(u-u_h,u-v) + \underbrace{b(u-u_h,v-u_h)}_{=0},
 
@@ -516,11 +516,11 @@ simply choose `v = I_hu` in Céa's lemma, to get
    \|u-v\|_V \leq \frac{M}{\gamma}\|u - I_hu\|_V.
 
 Hence, Céa's lemma reduces the problem of estimating the error in the
-numerical solution to estimating error in the interpolation.  We have
-already examined this in the section on interpolation operators, but
-in the context of continuous functions. The problem is that we do not
-know that the solution `u` is continuous, only that it is in `H^k` for
-some `k`.
+numerical solution to estimating error in the interpolation of the
+exact solution.  We have already examined this in the section on
+interpolation operators, but in the context of continuous
+functions. The problem is that we do not know that the solution `u` is
+continuous, only that it is in `H^k` for some `k`.
 
 We now quickly revisit the results of the interpolation section to
 extend them to `H^k` spaces. The proofs are mostly identical, so we just
@@ -704,7 +704,7 @@ finite element approximation to the Helmholtz problem.
 
       \min_{v\in V_h}
       \|u-v\|_{H^1(\Omega)} \leq \|u-I_hu\|_{H^1(\Omega)}
-      \leq Ch^k\|u\|_{H^2(\Omega)}.
+      \leq Ch^k\|u\|_{H^2(\Omega)},
 
    having chosen `i=1`.
 
@@ -737,7 +737,7 @@ Similar results hold for general elliptic operators, such as Poisson's
 equation with the types of boundary conditions discussed above.
 Elliptic regularity is great to have, because it says that the
 solution of the `H^1` variational problem is actually in `H^2`,
-provided that `f\in L^2.
+provided that `f\in L^2`.
 
 We now use this to obtain the following result, using the
 Aubin-Nitsche trick.
@@ -786,3 +786,107 @@ Aubin-Nitsche trick.
       &\leq C_1 h^{m+1} \|u-u_h\|_{L^2(\Omega)}|u|_{H^2(\Omega)}
 
    and dividing both sides by `\|u-u_h\|_{L^2(\Omega)}` gives the result.
+
+Thus we gain one order of convergence rate with `h` by using
+the `L^2` norm instead of the `H^1` norm.
+   
+Epilogue
+--------
+   
+This completes our analysis of the convergence of the Galerkin finite
+element approximation to the Helmholtz problem. Similar approaches can be
+applied to analysis of other elliptic PDEs, using the following programme.
+
+#. Find a variational formulation of the PDE with a bilinear form that
+   is continuous and coercive (and hence well-posed by Lax-Milgram) on
+   `H^k` for some `k`.
+#. Find a finite element space `V_h \subset H^k`. For `H^1`, this requires
+   a `C^0` finite element space, and for `H^2`, a `C^1` finite element
+   space is required.
+#. The Galerkin approximation to the variational formulation is obtained
+   by restricting the solution and test functions to `V_h`.
+   
+#. Continuity and coercivity (and hence well-posedness) for the Galerkin
+   approximation is assured since `V_h \subset H^k`. This means that
+   the Galerkin approximation is solveable and stable.
+
+#. The estimate of the error estimate in terms of `h` comes from
+   C\'ea's lemma plus the error estimate for the nodal interpolation
+   operator.
+
+This course only describes the beginning of the subject of finite
+element methods, for which research continues to grow in both theory
+and application. There are many methods and approaches that go beyond
+the basic Galerkin approach described above. These include
+
+* Discontinuous Galerkin methods, which use discontinuous finite
+  element spaces with jump conditions between cells to compensate for
+  not having the required continuity. These problems do not fit into the
+  standard Galerkin framework and new techniques have been developed to
+  derive and analyse them.
+
+* Mixed finite element methods, which consider systems of partial
+  differential equations such as the Poisson equation in first-order
+  form,
+
+.. math::
+
+  u - \nabla p = 0, \quad \nabla\cdot u = f.
+
+The variational forms corresponding to these systems are not coercive,
+but they are well-posed anyway, and additional techniques have been
+developed.
+
+* Non-conforming methods, which work even though `V_h \not\subset
+  H^k`. For example, the Crouzeix-Raviart element uses linear functions
+  that are only continuous at edge centres, so the functions are not
+  in `C^0` and the functions do not have a weak derivative. However,
+  using the finite element derivative in the weak form for `H^1` elliptic
+  problems still gives a solveable system that converges at the optimal
+  rate. Additional techniques have been
+  developed to analyse this.
+
+* Interior penalty methods, which work even though `V_h \not\subset
+  H^k`. These methods are used to solve `H^k` elliptic problems using
+  `H^l` finite element spaces with `l<k`, using jump conditions to
+  obtain a stable discretisation. Additional techniques have been
+  developed to analyse this.
+
+* Stabilised and multiscale methods for finite element approximation
+  of PDEs whose solutions have a wide range of scales, for example
+  they might have boundary layers, turbulent structures or other
+  phenomena. Resolving this features is often too expensive, so the
+  goal is to find robust methods that behave well when the solution is
+  not well resolved.  Additional techniques have been developed to
+  analyse this.
+
+* Hybridisable methods that involve flux functions that are supported
+  only on cell facets.
+  
+* Currently there is a lot of activity around discontinuous
+  Petrov-Galerkin methods, which select optimal test functions to
+  maximise the stability of the discrete operator. This means that
+  they can be applied to problems such as wave propagation which are
+  otherwise very challenging to find stable methods for. Also, these
+  methods come with a bespoke error estimator that can allow for
+  adaptive meshing starting from very coarse meshes. Another new and
+  active area is virtual element methods, where the basis functions
+  are not explicitly defined everywhere (perhaps just on the boundary
+  of cells). This facilitates the use of arbitrary polyhedra as cells,
+  leading to very flexible mesh choices.
+
+All of these methods are driven by the requirements of different physical
+applications.
+
+Other rich areas of finite element research include
+
+* the development of bespoke, efficient iterative solver algorithms on
+  parallel computers for finite element discretisations of PDEs. Here,
+  knowledge of the analysis of the discretisation can lead to solvers
+  that converge in a number of iterations that is independent of the
+  mesh parameter `h`.
+
+* adaptive mesh algorithms that use analytical techniques to estimate
+  or bound the numerical error after the numerical solution has been
+  computed, in order to guide iterative mesh refinement in particular
+  areas of the domain.

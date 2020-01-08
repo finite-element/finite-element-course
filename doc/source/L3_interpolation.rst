@@ -110,7 +110,7 @@ errors.
 
    where the sum is taken over all multi-indices of size `k` i.e. all the
    derivatives are of degree `k`.
-
+   
    The `H^k` norm is defined as
 
    .. math::
@@ -285,7 +285,7 @@ Now we develop an estimate of the error `T^kf - f`.
       \, d z \, d t
       \, d y,
    
-   \leq  2^{n-1}|B|\int_\Omega |D^\alpha f(z)|^2\, d z.
+      &\leq  2^{n-1}|B|\int_\Omega |D^\alpha f(z)|^2\, d z.
 
    Similarly, for `II`,
 
@@ -349,12 +349,14 @@ a scaling argument to obtain error estimates in terms of the diameter
    Let `(K_1,\mathcal{P},\mathcal{N})` be a finite element such that
    `K_1` is a triangle with diameter 1, and such that the nodal
    variables in `\mathcal{N}` involve only evaluations of functions or
-   evaluations of derivatives of degree `\leq l`, and `\|N_i\|_{C^{l,\infty}(K_1)}'} <\infty`, 
+   evaluations of derivatives of degree `\leq l`, and
+   `\|N_i\|_{C^{l,\infty}(K_1)'} <\infty`, 
 
    .. math::
 
-   \|N_i\|_{C^{l,\infty}(K_1)'} = \sup_{\|u\|_{C^{l,\infty}(K_1)}>0}
-   \frac{|N_i(u)|}{\|u\|_{W_\infty^l(K_1)}}.
+      \|N_i\|_{C^{l,\infty}(K_1)'} = \sup_{\|u\|_{C^{l,\infty}(K_1)}>0}
+      \frac{|N_i(u)|}{\|u\|_{W_\infty^l(K_1)}} \qquad \qquad
+      (\mbox{Dual norm of }N_i)
 
    Let `u\in C^{l,\infty}(\Omega)` with `m\geq m`, and let `k-l > n/2`.
    Then
@@ -401,7 +403,8 @@ adding and subtracting something, in this case the Taylor polynomial.
 
    .. math::
 
-      |\mathcal{I}_{K_1}u-u|_{H^i(K_1)}^2 &\leq \|\mathcal{I}_{K_1}u-u\|_{H^k(K_1)}^2 
+      |\mathcal{I}_{K_1}u-u|_{H^i(K_1)}^2 &\leq \|\mathcal{I}_{K_1}u-u\|_{H^k(K_1)}^2
+      
       &=
       \|\mathcal{I}_{K_1}u-Q_{k,B}u + Q_{k,B}u - u\|_{H^k(K_1)}^2
       
