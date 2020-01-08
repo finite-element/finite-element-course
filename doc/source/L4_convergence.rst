@@ -277,6 +277,10 @@ to `u`. This is very useful as we can compute many things using
 
    Just apply Sobolev's inequality to the `m` derivatives of `u`.
 
+
+Variational formulations of PDEs
+--------------------------------
+
 We can now consider linear variational problems defined on `H^k`
 spaces, by taking a bilinear form `b(u,v)` and linear form
 `F(v)`, seeking `u\in H^k` (for chosen `H^k`) such that
@@ -287,8 +291,9 @@ spaces, by taking a bilinear form `b(u,v)` and linear form
 
 Since `H^k` is a Hilbert space, the Lax-Milgram theorem can be used to
 analyse, the existence of a unique solution to an `H^k` linear
-variational problem. For example, the Helmholtz problem solveability
-is immediate.
+variational problem.
+
+For example, the Helmholtz problem solveability is immediate.
 
 .. proof:theorem:: Well-posedness for (modified) Helmholtz)
 
@@ -300,9 +305,19 @@ of the Lax-Milgram theorem.
    The proof for `C^0` finite element spaces extends immediately
    to `H^1`.
 
-Functions in `H^k` make boundary conditions hard to interpret
-since they are not guaranteed to have defined values on the boundary.
-We make the following definition.
+Next, we develop the relationship between solutions of the Helmholtz
+variational problem and the strong-form Helmholtz equation,
+
+.. math::
+
+   u - \nabla^2 u = f, \quad \frac{\partial u}{\partial n} = 0, \mbox{ on } \partial\Omega.
+
+The basic idea is to check that when you take a solution of the
+Helmholtz variational problem and integrate by parts (provided that
+this makes sense) then you reveal that the solution solves the strong
+form equation. Functions in `H^k` make boundary values hard to
+interpret since they are not guaranteed to have defined values on the
+boundary.  We make the following definition.
 
 .. proof:definition:: Trace of `H^1` functions
 
@@ -333,3 +348,194 @@ The interpretation of this result is that if `u\in H^1(\Omega)` then
    Adapt the proof for `C^0` finite element functions, choosing `u\in
    C^\infty(\Omega)`, and pass to the limit in `H^1(\Omega)`. 
 
+This tells us when the integration by parts formula makes sense.
+   
+.. proof:lemma::
+   
+   Let `u\in H^2(\Omega)`, `v\in H^1(\Omega)`. Then
+
+   .. math::
+      \int_\Omega (-\nabla^2 u)v \, d x
+      = \int_\Omega \nabla u\cdot\nabla v \, d x - \int_{\partial \Omega}
+      \frac{\partial u}{\partial n} v\, d S.
+
+.. proof:proof::
+
+   First note that `u\in H^2(\Omega)\implies \nabla u \in (H^1(\Omega))^d`.
+   Then
+
+   .. math
+
+      \| v\nabla u\|_{H^1(\Omega)} \leq  \|v\|_{H^1(\Omega)}\|\nabla u\|_{H^1(\Omega)}
+      \implies v\nabla u \in H^1(\Omega).
+
+   Then, take `v_i\in C^\infty(\Omega)` and `u_i\in C^\infty(\Omega)` converging
+   to `v` and `u`, respectively, and `v_i\nabla u_i\in C^\infty(\Omega)` converges
+   to `v\nabla u`. These satisfy the equation;
+   we obtain the result by passing to the limit.
+
+Now we have everything we need to show that solutions of the strong
+form equation also solve the variational problem. It is just a matter
+of substituting into the formula and applying integration by parts.
+   
+.. proof:lemma::
+
+   For `f\in L^2`,
+   let `u\in H^2(\Omega)` solve
+
+   .. math::
+      
+      u - \nabla^2 u = f, \quad \frac{\partial u}{\partial n} = 0 \mbox{ on } \partial\Omega,
+
+   in the `L^2` sense, i.e. `\|u-\nabla^2 u - f\|_{L^2}=0`. Then
+   `u` solves the variational form of the Helmholtz equation.
+
+.. proof::
+   
+   `u\in H^2\implies \|u\|_{H^2}<\infty\implies \|u\|_{H^1}<\infty\implies
+   u\in H^1`. Multiplying by test function `v\in H^1`, and using the
+   previous proposition gives
+
+   .. math::
+      
+      \int_\Omega uv + \nabla u\cdot\nabla v\, d x = \int_\Omega fv \, d x, 
+      \quad \forall v \in H^1(\Omega),
+
+   as required.
+
+Now we go the other way, showing that solutions of the variational
+problem also solve the strong form equation. To do this, we need to
+assume a bit more smoothness of the solution, that it is in `H^2`
+instead of just `H^1`.
+   
+.. proof:theorem::
+   
+   Let `f\in L^2(\Omega)` and suppose that `u\in H^2(\Omega)` solves the
+   variational Helmholtz equation on a polygonal domain `\Omega`. Then
+   `u` solves the strong form Helmholtz equation with zero Neumann
+   boundary conditions.
+
+.. proof:proof::
+
+   Using integration by parts for `u\in H^2`, `v\in C^\infty_0(\Omega)\in
+   H^1`, we have
+
+   .. math::
+   
+      \int_\Omega (u-\nabla^2 u -f)v\, d x = \int_\Omega uv + \nabla u\cdot\nabla
+      v - vf \, d x = 0.
+
+   It is a standard result that `C^\infty_0(\Omega)` is dense in `L^2(\Omega)`
+   (i.e., every `L^2` function can be approximated arbitrarily closely by
+   a `C^\infty_0` function),
+   and therefore we can choose a sequence of v converging to `u-\nabla^2 u - f`
+   and we obtain `\|u-\nabla^2 u -f \|_{L^2(\Omega)}=0`.
+
+   Now we focus on showing the boundary condition is satisfied.
+   We have
+
+   .. math::
+      0 = \int_\Omega uv + \nabla u \cdot \nabla v - fv \, d x
+      = \int_\Omega uv + \nabla u \cdot \nabla v - (u-\nabla^2u)v \, d x
+
+      = \int_{\partial\Omega} \frac{\partial u}{\partial n}v\, d S.
+
+   We can find arbitrary `v\in L_2(\partial\Omega)`, hence
+   `\|\frac{\partial u}{\partial n}\|_{L^2(\partial\Omega)}=0`.
+
+Galerkin approximations of linear variational problems
+------------------------------------------------------
+
+Going a bit more general again, assume that we have a well-posed
+linear variational problem on `H^k`, connected to a strong form
+PDE. Now we would like to approximate it. This is done in general
+using the Galerkin approximation.
+   
+.. proof:definition:: Galerkin approximation
+
+   Consider a linear variational problem of the form:
+
+   find `u \in H^k` such that
+
+   .. math::
+
+      b(u,v) = F(v), \quad \forall v \in H^k.
+		      
+   For a finite element space `V_h\subset V=H^k(\Omega)`, the Galerkin
+   approximation of this `H^k` variational problem
+   seeks to find `u_h\in V_h` such that
+
+   .. math::
+
+      b(u_h,v) = F(v), \quad \forall v \in V_h.
+
+We just restrict the trial function `u` and the test function `v` to
+the finite element space. `C^0` finite element spaces are subspaces of
+`H^1`, `C^1` finite element spaces are subspaces of `H^2` and so on.
+
+If `b(u,v)` is continuous and coercive on `H^k`, then it is also
+continuous and coercive on `V_h` by the subspace property. Hence,
+we know that the Galerkin approximation exists, is unique and is
+stable. This means that it will be possible to solve the matrix-vector
+equation.
+
+Moving on, if we can solve the equation, we would like to know if it is
+useful. What is the size of the error `u-u_h`? For Galerkin approximations
+this question is addressed by Céa's lemma.
+
+.. proof:theorem:: Céa's lemma.
+   
+   Let `V_h\subset V`, and let `u` solve a linear variational problem
+   on `V`, whilst `u_h` solves the equivalent Galerkin approximation
+   on `V_h`. Then
+
+   .. math::
+      \|u-u_h\|_V \leq \frac{M}{\gamma}\min_{v\in V_h}
+      \|u-v\|_V,
+
+   where `M` and `\gamma` are the continuity and coercivity constants
+   of `b(u,v)`, respectively.
+
+.. proof:proof::
+
+   We have
+
+   .. math::
+   
+      b(u,v) = F(v) \quad \forall v \in V, 
+      b(u_h,v)  = F(v) \quad \forall v \in V_h.
+
+   Choosing `v\in V_h\subset V` means we can use it in both equations,
+   and subtraction and linearity lead to the ``Galerkin orthogonality''
+   condition
+
+   .. math::
+   
+      b(u-u_h,v) = 0, \quad \forall v\in V_h.
+
+   Then, for all `v\in V_h`,
+
+   .. math::
+      
+      \gamma\|u-u_h\|^2_V \leq b(u-u_h,u-u_h),
+   
+      = b(u-u_h,u-v) + \underbrace{b(u-u_h,v-u_h)}_{=0},
+
+      \leq M\|u-u_h\|_V\|u-v\|_V.
+
+   So,
+
+   .. math::
+
+      \gamma\|u-u_h\|_V \leq M|u-v\|_V.
+      
+   Minimising over all `v` completes the proof.
+
+The interpretation of Céa's lemma is that the error is proportional
+to the minimal error in approximating `u` in `V_h`.
+We can estimate the error in approximating `u` in `V_h`
+if `u\in C^2(\Omega)`, using Taylor series.
+However, if `u\in H^2(\Omega)`, then `u` does not necessarily
+have a degree 2 Taylor polynomial, since derivatives are not defined
+at arbitrary points. We need a more general error formula, which
+we will treat next.
