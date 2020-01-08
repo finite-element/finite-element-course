@@ -9,6 +9,9 @@ approximated by finite element functions. We start locally,
 looking at a single finite element, and then move globally to
 function spaces on a triangulation.
 
+Local and global interpolation operators
+----------------------------------------
+
 .. proof:definition:: Local interpolant
 
    Given a finite element `(K,\mathcal{P},\mathcal{N})`, with
@@ -70,6 +73,9 @@ element space.
 
    for each `K \in \mathcal{T}_h`.
 
+Measuring interpolation errors
+------------------------------
+   
 Next we look at how well we can approximate continuous functions using
 the interpolation operator, i.e. we want to measure the approximation
 error `\mathcal{I}_h u - u`. We are interested in integral
@@ -161,6 +167,9 @@ derivatives.
 
    Just apply Sobolev's inequality to the `m` derivatives of `u`.
 
+Approximation by averaged Taylor polynomials
+--------------------------------------------
+   
 The basic tool for analysing interpolation error for continuous
 functions is the Taylor series. Rather than taking the Taylor series
 about a single point, since we are interested in integral quantities,
@@ -318,6 +327,9 @@ of the triangle we are interpolating to.
    Take the maximum over the constants for the derivative contributions
    of the left-hand side with `d=1` and use the previous result.
 
+Local and global interpolation errors
+-------------------------------------
+   
 Now we will use the Taylor polynomial estimates to
 derive error estimates for the local interpolation operator.
 We start by looking at a triangle with diameter 1, and then use
