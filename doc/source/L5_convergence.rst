@@ -829,13 +829,13 @@ the basic Galerkin approach described above. These include
   differential equations such as the Poisson equation in first-order
   form,
 
-.. math::
+  .. math::
 
-  u - \nabla p = 0, \quad \nabla\cdot u = f.
+     u - \nabla p = 0, \quad \nabla\cdot u = f.
 
-The variational forms corresponding to these systems are not coercive,
-but they are well-posed anyway, and additional techniques have been
-developed.
+  The variational forms corresponding to these systems are not coercive,
+  but they are well-posed anyway, and additional techniques have been
+  developed.
 
 * Non-conforming methods, which work even though `V_h \not\subset
   H^k`. For example, the Crouzeix-Raviart element uses linear functions
