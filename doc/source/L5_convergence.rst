@@ -29,12 +29,12 @@ preliminary definitions, starting by considering some very smooth
 functions that vanish on the boundaries together with their
 derivatives (so that we can integrate by parts as much as we like).
 
-.. proof:definition:: Compact support on `\Omega`
+.. proof:definition:: Compact support on \(\Omega\)
 
    A function `u` has compact support on `\Omega` if there exists `\epsilon>0`
    such that `u(x)=0` when `\min_{y\in\partial\Omega}|x-y|<\epsilon`.
 
-.. proof:definition:: `C^\infty_0(\Omega)`
+.. proof:definition:: \(C^\infty_0(\Omega)\)
    
    We denote by `C^\infty_0(\Omega)` the subset of `C^\infty(\Omega)`
    corresponding to functions that have \emph{compact support} on
@@ -42,7 +42,7 @@ derivatives (so that we can integrate by parts as much as we like).
 
 Next we will define a space containing the generalised derivative.
 
-.. proof:definition:: `L^1_{loc}`
+.. proof:definition:: \(L^1_{loc}\)
 		      
    For triangles `K \subset \mathrm{int}\,(\Omega)`, we define
 
@@ -140,7 +140,7 @@ We are now in a position to define a space that contains all `C^0`
 finite element spaces. This means that we can consider the limit
 of finite element approximations as `h\to 0`.
 
-.. proof:definition:: The Sobolev space `H^1`
+.. proof:definition:: The Sobolev space \(H^1\)
 
    `H^1(\Omega)` is the function space defined by
 
@@ -152,7 +152,7 @@ of finite element approximations as `h\to 0`.
 Going further, the Sobolev space `H^k` is the space of all functions
 with finite `H^k` norm.
       
-.. proof:definition:: The Sobolev space `H^k`
+.. proof:definition:: The Sobolev space \(H^k\)
 
    `H^k(\Omega)` is the function space defined by
    
@@ -168,7 +168,7 @@ If we are to consider limits of finite element functions in these
 Sobolev spaces, then it is important that they are closed, i.e.
 limits remain in the spaces.
 
-.. proof:lemma:: `H^k` spaces are Hilbert spaces
+.. proof:lemma:: \(H^k\) spaces are Hilbert spaces
 
    The space `H^k(\Omega)` is closed.
 
@@ -197,7 +197,7 @@ limits remain in the spaces.
 
 We quote the following much deeper results without proof.
 
-.. proof:theorem:: `H=W`
+.. proof:theorem:: \(H=W\)
 
    Let `\Omega` be any open set. Then `H^k(\Omega)\cap C^\infty(\Omega)`
    is dense in `H^k(\Omega)`.
@@ -291,7 +291,7 @@ form equation. Functions in `H^k` make boundary values hard to
 interpret since they are not guaranteed to have defined values on the
 boundary.  We make the following definition.
 
-.. proof:definition:: Trace of `H^1` functions
+.. proof:definition:: Trace of \(H^1\) functions
 
    Let `u\in H^1(\Omega)` and choose `u_i\in C^\infty(\Omega)` such
    that `u_i\to u`. We define the trace `u|_{\partial\Omega}`
@@ -302,7 +302,7 @@ boundary.  We make the following definition.
 We can extend our trace inequality for finite element functions directly
 to `H^1` functions.
 
-.. proof:lemma:: Trace theorem for `H^1` functions
+.. proof:lemma:: Trace theorem for \(H^1\) functions
 		 
    Let `u \in H^1(\Omega)` for a polygonal domain `\Omega`. Then the
    trace `u|_{\partial\Omega}` satisfies 

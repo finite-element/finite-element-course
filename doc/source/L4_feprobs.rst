@@ -111,7 +111,7 @@ an inner product space.
 We now introduce two important examples of inner products for finite
 element spaces.
 
-.. proof:definition:: `L^2` inner product
+.. proof:definition:: \(L^2\) inner product
 		      
    Let `f`, `g` be two functions in `L^2(\Omega)`. The `L^2` inner
    product between `f` and `g` is defined as
@@ -125,7 +125,7 @@ understand functions in `L^2` as being equivalence classes of
 functions under the relation `f\equiv g \iff \int_\Omega (f-g)^2\, d
 x=0`.
 
-.. proof:definition:: `H^1` inner product
+.. proof:definition:: \(H^1\) inner product
 
    Let `f`, `g` be two `C^0` finite element functions. The `H^1` inner
    product between `f` and `g` is defined as
@@ -380,7 +380,7 @@ following way.
 We now discuss some important examples from finite element discretisations
 of linear PDEs.
       
-.. proof:example:: Pk discretisation of (modified) Helmholtz problem with Neumann bcs
+.. proof:example:: \(Pk\) discretisation of (modified) Helmholtz problem with Neumann bcs
 		   
    For some known function `f`, 
 
@@ -393,7 +393,7 @@ of linear PDEs.
    and `V` is the Pk continuous finite element space on a triangulation
    of `\Omega`.
 
-.. proof:example:: Pk discretisation of Poisson equation with partial Dirichlet bcs
+.. proof:example:: \(Pk\) discretisation of Poisson equation with partial Dirichlet bcs
 
    For some known function `f`, 
 
@@ -407,7 +407,7 @@ of linear PDEs.
    triangulation of `\Omega` such that functions vanishes on
    `\Gamma_0\subseteq \partial \Omega`.
 
-.. proof:example:: Pk discretisation of Poisson equation with pure Neumann bcs
+.. proof:example:: \(Pk\) discretisation of Poisson equation with pure Neumann bcs
 
    For some known function `f`, 
 

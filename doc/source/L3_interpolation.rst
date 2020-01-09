@@ -100,7 +100,7 @@ This means we can write mixed partial derivatives, for example if
 Now we can define some norms involving derivatives for measuring
 errors.
 
-.. proof:definition:: `H^k` seminorm and norm
+.. proof:definition:: \(H^k\) seminorm and norm
 
    The `H^k` seminorm is defined as
 
