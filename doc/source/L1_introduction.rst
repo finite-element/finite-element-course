@@ -332,21 +332,22 @@ basis for `P1`, which we call the nodal basis.
       \end{array}
       \right.
 
- We can define a similar basis for `\mathring{V}_h` by removing
- the basis functions `\phi_i` corresponding to vertices `z_i` on
- the Dirichlet boundaries `x=0` and `x=1`.
+   We can define a similar basis for `\mathring{V}_h` by removing
+   the basis functions `\phi_i` corresponding to vertices `z_i` on
+   the Dirichlet boundaries `x=0` and `x=1`; the dimension of the
+   resulting basis is `\bar{M}`.
 
- If we expand `u_h` and `v` in the basis for `\mathring{V}_h`,
+If we expand `u_h` and `v` in the basis for `\mathring{V}_h`,
 
  .. math::
 
-    u_h(x) = \sum_iu_i\phi_i(x), \quad v(x) = \sum_iv_i\phi_i(x),
+    u_h(x) = \sum_{i=1}^{\bar{M}}u_i\phi_i(x), \quad v(x) = \sum_{i=1}^{\bar{M}}v_i\phi_i(x),
 
 into Equation :eq:`eq:fe_poisson`, then we obtain
 
 .. math::
-   \sum_iv_i\left(\sum_j\int_\Omega \nabla \phi_i\cdot \nabla \phi_j
-   \,dx x v_j - \int_\Omega \phi_if\,dx x\right) = 0.
+   \sum_{i=1}^{\bar{M}}v_i\left(\sum_{j=1}^{\bar{M}}\int_\Omega \nabla \phi_i\cdot \nabla \phi_j
+   \,dx v_j - \int_\Omega \phi_if\,dx\right) = 0.
 
 Since this equation must hold for all `v\in \mathring{V}_h`, then
 it must hold for all basis coefficients `v_i`, and we obtain
@@ -399,7 +400,7 @@ points. Further, we shall shortly develop an interpolation operator
 Even further, the matrix `K` is very sparse, since in most triangles,
 both `\phi_i` and `\phi_j` are zero. Any efficient implementation must
 make use of this and avoid computing integrals that return zero.
-\item This motivates the concept of global assembly, the process of
+This motivates the concept of global assembly, the process of
 looping over elements, computing only the contributions to `K` that
 are non-zero from that element. Finally, the sparsity of `K`
 means that the system should be solved using numerical linear algebra
