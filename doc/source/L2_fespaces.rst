@@ -526,10 +526,10 @@ these correspondences.
 We explore this definition through a couple of exercises.
 
 .. proof:exercise::
-   Show that the Lagrange elements of degree `k` have `C^0` geometric decompositions.
+   Show that the Lagrange elements of degree \(k\) have \(C^0\) geometric decompositions.
 
 .. proof:exercise::
-   Show that the Argyris element has a `C^1` geometric decomposition.
+   Show that the Argyris element has a \(C^1\) geometric decomposition.
    
 We now use the geometric decomposition to construct global finite
 element spaces over the whole triangulation (mesh). We just need to
@@ -585,7 +585,7 @@ to choose this association.
 Now we use this global `C^m` geometric decomposition to build a
 finite element space on the triangulation.
    
-.. proof:definition:: Finite element space from a global `C^m` geometric decomposition
+.. proof:definition:: Finite element space from a global \(C^m\) geometric decomposition
 
    Let `\mathcal{T}` be a triangulation with finite elements
    `(K_i,\mathcal{P}_i,\mathcal{N}_i)`, each with a `C^m` geometric
@@ -593,7 +593,7 @@ finite element space on the triangulation.
    discontinuous finite element space. Then the global `C^m`
    geometric decomposition defines a subspace `V` of `\hat{V}`
    consisting of all functions that `u` satisfy
-   `N^w_{1,j}(u|_{K_1})=N^w_{2,j}(u|_{K_2})=\ldots = N^w_{n_w,j}(u|_{K_{n_w}}), \quad, j=1,\ldots,M_w` for all mesh entities `w\in\mathcal{T}`.
+   `N^w_{1,j}(u|_{K_1})=N^w_{2,j}(u|_{K_2})=\ldots = N^w_{n_w,j}(u|_{K_{n_w}}), \quad j=1,\ldots,M_w` for all mesh entities `w\in\mathcal{T}`.
 
 The following result shows that the global `C^m` geometric
 decomposition is a useful definition.

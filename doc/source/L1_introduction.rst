@@ -72,7 +72,7 @@ space of possible functions under these choices a finite element
 space.  In this introduction, we will just consider the following
 space.
 
-.. proof:definition:: The `P1` finite element space
+.. proof:definition:: The \(P1\) finite element space
 
   Let `\mathcal{T}` be a triangulation of `\Omega`. Then the P1 finite
   element space is a space `V_h` containing all functions `v` such that
