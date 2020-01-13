@@ -401,7 +401,7 @@ both `\phi_i` and `\phi_j` are zero. Any efficient implementation must
 make use of this and avoid computing integrals that return zero.
 \item This motivates the concept of global assembly, the process of
 looping over elements, computing only the contributions to `K` that
-are non-zero from that element.  \item Finally, the sparsity of `K`
+are non-zero from that element. Finally, the sparsity of `K`
 means that the system should be solved using numerical linear algebra
 algorithms that can exploit this sparsity.
 
