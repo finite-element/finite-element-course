@@ -193,9 +193,9 @@ This result leads us to introducing the following terminology.
 .. proof:definition:: Unisolvence.
 
    We say that `\mathcal{N}` determines `\mathcal{P}` if it satisfies
-   condition 3 of Lemma :numref:`lemma {number}<dual_condition>`. If
+   condition 3 of :numref:`Lemma {number}<dual_condition>`. If
    this is the case, we say that `(K,\mathcal{P},\mathcal{N})` is
-   \emph{unisolvent}.
+   unisolvent.
 
 We can now go and directly apply this lemma to the 1D Lagrange elements.
    
