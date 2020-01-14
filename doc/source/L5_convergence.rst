@@ -37,7 +37,7 @@ derivatives (so that we can integrate by parts as much as we like).
 .. proof:definition:: \(C^\infty_0(\Omega)\)
    
    We denote by `C^\infty_0(\Omega)` the subset of `C^\infty(\Omega)`
-   corresponding to functions that have \emph{compact support} on
+   corresponding to functions that have compact support on
    `\Omega`.
 
 Next we will define a space containing the generalised derivative.
@@ -708,7 +708,7 @@ finite element approximation to the Helmholtz problem.
 
    having chosen `i=1`.
 
-C\'ea's lemma gives us error estimates in the norm of the space where
+Céa's lemma gives us error estimates in the norm of the space where
 the variational problem is defined, where the continuity and coercivity
 results hold. In the case of the Helmholtz problem, this is `H^1`.
 We would also like estimates of the error in the `L^2` norm, and
@@ -811,7 +811,7 @@ applied to analysis of other elliptic PDEs, using the following programme.
    the Galerkin approximation is solvable and stable.
 
 #. The estimate of the error estimate in terms of `h` comes from
-   C\'ea's lemma plus the error estimate for the nodal interpolation
+   Céa's lemma plus the error estimate for the nodal interpolation
    operator.
 
 This course only describes the beginning of the subject of finite

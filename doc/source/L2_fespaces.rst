@@ -127,6 +127,8 @@ i.e. that the Ciarlet element is well-defined. Then the nodal basis is
 indeed a basis for `\mathcal{P}` by construction. The following lemma
 provides a useful tool for checking this.
 
+.. _dual_condition:
+
 .. proof:lemma:: dual condition
 
    Let `K,\mathcal{P}` be as defined above, and let `\{N_0,N_1,\ldots,N_k\}\in \mathcal{P}'`. Let `\{\psi_0,\psi_1,\ldots,\psi_k\}` be a basis for `\mathcal{P}`.
@@ -190,9 +192,10 @@ This result leads us to introducing the following terminology.
 
 .. proof:definition:: Unisolvence.
 
-   We say that `\mathcal{N}` \emph{determines} `\mathcal{P}` if it
-   satisfies condition 3 of Lemma \ref{lem:dual condition}. If this is
-   the case, we say that `(K,\mathcal{P},\mathcal{N})` is \emph{unisolvent}.
+   We say that `\mathcal{N}` determines `\mathcal{P}` if it satisfies
+   condition 3 of Lemma :numref:`lemma {number}<dual_condition>`. If
+   this is the case, we say that `(K,\mathcal{P},\mathcal{N})` is
+   \emph{unisolvent}.
 
 We can now go and directly apply this lemma to the 1D Lagrange elements.
    

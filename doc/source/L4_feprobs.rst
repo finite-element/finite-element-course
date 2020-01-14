@@ -39,15 +39,16 @@ of the word "space").
 
    A vector space over the real numbers `\mathbb{R}` is a set `V`,
    with an addition operator `+:V\times V\to V`, plus a scalar
-   multiplication operator `*:\mathbb{R}\times V \to V`, such
+   multiplication operator `\times:\mathbb{R}\times V \to V`, such
    that:
 
   #. There exists a unique zero element `e\in V` such that:
-    * `ke = e` for all `k\in \mathbb{R}`,
-    * `0v = e` for all `v \in V`,
+    * `k\times e = e` for all `k\in \mathbb{R}`,
+    * `0\times v = e` for all `v \in V`,
     * `e+v = v` for all `v \in V`.
-  #. `V` is closed under addition and multiplication, \emph{i.e.},
-    `au + v\in V` for all `u,v\in V`, `a\in \mathbb{R}`.
+
+  #. `V` is closed under addition and multiplication, i.e.,
+    `a\times u + v\in V` for all `u,v\in V`, `a\in \mathbb{R}`.
 
 .. proof:lemma::
 
@@ -106,7 +107,7 @@ This enables the following definition.
 .. proof:definition:: Inner product space
 		      
    We call a vector space `(V, (\cdot,\cdot))` equipped with an inner product
-an inner product space.
+   an inner product space.
 
 We now introduce two important examples of inner products for finite
 element spaces.
@@ -185,7 +186,7 @@ For inner product spaces, there is a natural choice of norm.
 
       \|\alpha v\| = \sqrt{(\alpha v,\alpha v)} = \sqrt{\alpha^2( v,v)}=|\alpha|\|v\|,
 
-   from bilinearity, hence property 3.
+   hence property 3.
    
    `\|v\|=( v,v)^{1/2} \geq 0`, hence property 1.
 
