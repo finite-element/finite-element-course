@@ -69,6 +69,7 @@
    * `2016 exam paper <_static/FE2016-exam.pdf>`_ and `solutions <_static/FE2016-exam-soln.pdf>`_
    * `2017 exam paper <_static/FEExam-2017.pdf>`_ and `solutions <_static/FEExam-2017-soln.pdf>`_
    * `2018 exam paper <_static/FEExam-2018.pdf>`_ and `solutions <_static/FEExam-2018-soln.pdf>`_
+   * `2019 exam paper <_static/FEExam-2019.pdf>`_ and `solutions <_static/FEExam-2019-soln.pdf>`_
    * `revision checklist <_static/revision-checklist.pdf>`_
 
    Part 2: Implementation
