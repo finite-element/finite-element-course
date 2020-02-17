@@ -125,7 +125,8 @@ important result (which we will return to much later).
 .. proof:theorem:: Sobolev's inequality (for continuous functions)
 
    Let `\Omega` be an `n`-dimensional domain with Lipschitz boundary,
-   and let `u` be a continuous function.
+   and let `u` be a continuous function with `k` continuous derivatives,
+   i.e. `u \in C^{k,\infty}(\Omega)`.
    Let
    `k` be an integer with `k>n/2`. Then there exists a constant
    `C` (depending only on `\Omega`) such that
@@ -143,7 +144,7 @@ This is extremely useful because it means that we can measure the
 `H^k` norm by integrating and know that it gives an upper bound on the
 value of `u` at each point. We say that `u` is in `C^\infty(\Omega)`
 if `\|u\|_{C^\infty(\Omega)}<\infty`, and Sobolev's inequality tells
-us that this is the case if `\|u\|_{H^k(\Omega)}<\infty` 
+us that this is the case if `\|u\|_{H^k(\Omega)}<\infty`.
 
 This result can be easily extended to
 derivatives.
@@ -151,8 +152,7 @@ derivatives.
 .. proof:corollary:: Sobolev's inequality for derivatives (for continuous functions)
 
    Let `\Omega` be a `n`-dimensional domain with Lipschitz boundary,
-   and let `u` be a continuous function with continuous derivatives
-   up to degree `m`.
+   and let `u \in C^{k,\infty}(\Omega)`
    Let
    `k` be an integer with `k-m>n/2`. Then there exists a constant
    `C` (depending only on `\Omega`) such that
@@ -181,8 +181,8 @@ integral sense.
 .. proof:definition:: Averaged Taylor polynomial
 
    Let `\Omega\subset \mathbb{R}^n` be a domain with diameter `d`, that
-   is star-shaped with respect to a ball `B` with radius `\epsilon`,
-   contained within `\Omega`. For `f\in H^{k+1}(\Omega)` the
+   is star-shaped with respect to a ball `B`
+   contained within `\Omega`. For `f\in C^{k,\infty}` the
    averaged Taylor polynomial `Q_{k,B}f\in \mathcal{P}_k` is defined
    as
 
@@ -193,25 +193,29 @@ integral sense.
    where `T^kf` is the Taylor polynomial of degree `k` of `f`,
 
    .. math::
-      T^k f(y,x) =
-      \sum_{|\alpha|\leq k} D^\alpha f(y)\frac{(x-y)^\alpha}{\alpha!},
+      
+      T^k f(y,x) = \sum_{|\alpha|\leq k} D^\alpha f(y)\frac{(x-y)^\alpha}{\alpha!},
 
+      \alpha! = \prod_{i=1}^n \alpha_i!,
+      
+      x^\alpha = \prod_{i=1}^n x_i^{\alpha_i}.
+
+      
 Now we develop an estimate of the error `T^kf - f`.
 
 .. _taylorerror:
 
 .. proof:theorem::
    
-   Let `\Omega\subset \mathbb{R}^n` be a domain with diameter `d`, that
-   is star-shaped with respect to a ball `B` with radius `\epsilon`,
-   contained within `\Omega`. Let `k` be an integer with `k-m < n/2`.
-   Then there exists a constant `C(k,n)` such that
-   for `0\leq |\beta| \leq k+1` and all `f \in C^{m,\infty}(\Omega)`,
+   Let `\Omega\subset \mathbb{R}^n` be a domain with diameter `d`,
+   that is star-shaped with respect to a ball `B` contained within
+   `\Omega`.  Then there exists a constant `C(k,n)` such that for
+   `0\leq |\beta| \leq k+1` and all `f \in C^{k+1,\infty}(\Omega)`,
 
    .. math::
       
       \|D^\beta(f-Q_{k,B}f)\|_{L^2} \leq C\frac{|\Omega|^{1/2}}{|B|^{1/2}}
-      d^{k+1-|\beta|}\|\nabla^{k+1}f\|_{L^2(\Omega)}.
+      d^{k+1-|\beta|}|f|_{H^{k+1}(\Omega)}.
 
 .. proof:proof::
 
@@ -223,13 +227,7 @@ Now we develop an estimate of the error `T^kf - f`.
       (k+1)\sum_{|\alpha|=k+1}\frac{(x-y)^\alpha}{\alpha!}
       \int_0^1 D^\alpha f(ty + (1-t)x)t^k\, d t,
 
-   where
-
-   .. math::
-
-      \alpha! = \prod_{i=1}^n \alpha_i!,
-
-   when `f \in C^{m,\infty}` for `m>k`.
+   when `f \in C^{k+1,\infty}`.
 
    Integration over `y` in `B` and dividing by `|B|` gives
 
@@ -326,7 +324,7 @@ of the triangle we are interpolating to.
 
    .. math::
       
-      \|f-Q_{k,B}f\|_{H^k(K_1)} \leq C|\nabla^{k+1}f|_{H^{k+1}(K_1)}.
+      \|f-Q_{k,B}f\|_{H^k(K_1)} \leq C|f|_{H^{k+1}(K_1)}.
 
 .. proof:proof::
 
@@ -358,7 +356,7 @@ a scaling argument to obtain error estimates in terms of the diameter
       \frac{|N_i(u)|}{\|u\|_{W_\infty^l(K_1)}} \qquad \qquad
       (\mbox{Dual norm of }N_i)
 
-   Let `u\in C^{l,\infty}(\Omega)` with `m\geq m`, and let `k-l > n/2`.
+   Let `k-l > n/2`, and `u\in C^{k,\infty}(\Omega)`.
    Then
 
    .. math::
@@ -392,7 +390,7 @@ adding and subtracting something, in this case the Taylor polynomial.
    `\mathcal{N}` involve only evaluations of functions or evaluations
    of derivatives of degree `\leq l`, and `\mathcal{P}` contain all
    polynomials of degree `k` and below, with `k>l+n/2`. Let `u\in
-   C^{m,\infty}(K_1)`, with `k+1-m>n/2`. Then for `i \leq k`, the
+   C^{k+1,\infty}(K_1)`. Then for `i \leq k`, the
    local interpolation operator satisfies
 
    .. math::
@@ -430,7 +428,7 @@ with diameter `h`.
    derivatives of degree `\leq l`, and `\mathcal{P}` contains all
    polynomials of degree `k` and below, with `k>l+n/2`.
    Let `u\in
-   C^{m,\infty}(K_1)`, with `k+1-m>n/2`.
+   C^{k+1,\infty}(K_1)`.
    Then for `i \leq k`, the local interpolation operator
    satisfies
 
@@ -468,29 +466,26 @@ spaces defined on the whole triangulation.
 
 .. proof:theorem::
 
-   Let `\mathcal{T}` be a triangulation with finite elements
-   `(K_i,\mathcal{P}_i,\mathcal{N}_i)`, such that the minimum aspect
-   ratio `r` of the triangles `K_i` satisfies `r>0`, and such that the
-   nodal variables in `\mathcal{N}` involve only evaluations of
-   functions or evaluations of derivatives of degree `\leq l`, and
-   `\mathcal{P}` contains all polynomials of degree `k` and below,
-   with `k>l+n/2`.  Let `u\in C^{m,\infty}(K_1)`, with `k+1-m>n/2`.
-   Let `h` be the maximum over all of the
-   triangle diameters, with `0\leq h<1`. Let `V` be the corresponding
-   `C^r` finite element space.  Then for `i\leq k` and `i \leq r+1`, the
-   global interpolation operator satisfies
+   Let `\mathcal{T}` be a triangulation of `\Omega` with finite
+   elements `(K_i,\mathcal{P}_i,\mathcal{N}_i)`, such that the minimum
+   aspect ratio `\gamma` of the triangles `K_i` satisfies `\gamma>0`,
+   and such that the nodal variables in `\mathcal{N}` involve only
+   evaluations of functions or evaluations of derivatives of degree
+   `\leq l`, and `\mathcal{P}` contains all polynomials of degree `k`
+   and below, with `k>l+n/2`.  Let `u\in C^{k+1,\infty}(K_1)`.  Let
+   `h` be the maximum over all of the triangle diameters, with `0\leq
+   h<1`. Then for `i\leq k`, the global interpolation operator
+   satisfies
 
    .. math::
 
       \|\mathcal{I}_{h}u-u\|_{H^i(\Omega)} \leq Ch^{k+1-i}|u|_{H^{k+1}(\Omega)}.
 
+   (Recalling that we use the "broken" finite element derivative in norms
+   for `\mathcal{I}_hu` over `\Omega`.
+      
 .. proof:proof::
    
-   If `V` is a `C^r` finite element space, then `\mathcal{I}_hu` satisfies
-   the conditions of the previous result. 
-   
-   Then we may write
-
    .. math::
       
       \|\mathcal{I}_{h}u-u\|_{H^i(\Omega)}^2 &=
