@@ -335,83 +335,81 @@ think again about the problem, the solver, and the initial guess.
 Implementing a nonlinear problem
 --------------------------------
 
-The mastery exercise will be released by the middle of the term.
+.. note::
 
-..
-   .. note::
+   This problem is intentionally stated in more general terms than the
+   previous ones. It is your responsibility to decide on a code
+   structure, to derive a method of manufactured solutions answer, and
+   to create the convergence tests which demonstrate that your
+   solution is correct.
 
-      This problem is intentionally stated in more general terms than the
-      previous ones. It is your responsibility to decide on a code
-      structure, to derive a method of manufactured solutions answer, and
-      to create the convergence tests which demonstrate that your
-      solution is correct.
+.. proof:exercise::
 
+   The :math:`p`-laplacian is a generalisation of the laplacian from
+   a second derivative to an arbitrary derivative. It is nonlinear for
+   :math:`p\neq2`.
 
-   .. proof:exercise::
+   Implement :func:`~fe_utils.solvers.mastery.solve_mastery` so that it solves
+   the following problem using degree 1 Lagrange elements over the
+   unit square domain:
 
-      Implement :func:`~fe_utils.solvers.mastery.solve_mastery` so that it solves
-      the following problem using degree 1 Lagrange elements over the
-      unit square domain:
+   .. math::
+      :label: mastery
 
-      .. math::
-         :label: mastery
+      -\nabla\cdot\left(|\nabla u|^{p-2} \nabla u\right) = g
 
-         -\nabla\cdot\left((u^2+1)\nabla u\right) = g
+      u = b \textrm{ on } \Gamma
 
-         u = b \textrm{ on } \Gamma
+      p = 4
 
-      Select the solution `u=x^2y^2` and compute the required forcing function `g` so
-      that your solution solves the equations. Make sure your boundary
-      condition function `b` is consistent with your chosen solution!
+   Select the solution `u=e^{xy}` and compute the required forcing function `g` so
+   that your solution solves the equations. Make sure your boundary
+   condition function `b` is consistent with your chosen solution!
 
-      Your submitted answer will consist of:
+   For this problem, it is not possible to use the zero function as an
+   initial guess for Newton's method. A much better choice is to treat
+   the 2-laplacian as an approximation to the 4-laplacian, and
+   therefore to solve Poisson's equation first to obtain a good
+   initial guess for the 4-laplacian problem.
+   
+   Your submitted answer will consist of:
 
-      1. A written component containing your derivation of:
+   1. A written component containing your derivation of:
 
-         a. The weak form of :eq:`mastery`; and 
+      a. The weak form of :eq:`mastery`; and 
 
-         b. the Jacobian; and
+      b. the Jacobian; and
 
-      c. the forcing term implied by the specified manufactured solution.
+      c. the forcing term implied by the specified manufactured solution; and
 
-         A neatly hand-written or a typed submission are equally acceptable.
+      d. an explanation of why the zero function cannot be used as an initial guess for the solution.
 
-      2. The code to implement the solution. This should be in
-         ``fe_utils.solvers.mastery.py`` in your implementation. A
-         convergence test for your code is provided in
-         ``test/test_12_mastery_convergence.py``.
+      A neatly hand-written or a typed submission are equally acceptable.
 
-         The submission of your mastery exercise, and indeed the entire
-         implementation exercise will be on Blackboard. You will submit a
-         PDF containing the derivations above, and the git sha1 for the
-         commit you would like to have marked.
+   2. The code to implement the solution. This should be in
+      ``fe_utils.solvers.mastery.py`` in your implementation. A
+      convergence test for your code is provided in
+      ``test/test_12_mastery_convergence.py``.
 
+      The submission of your mastery exercise, and indeed the entire
+      implementation exercise will be on Blackboard. You will submit a
+      PDF containing the derivations above, and the git sha1 for the
+      commit you would like to have marked.
 
-      .. hint::
+   .. hint::
 
-         You can either implement your own Newton solver, or install the
-         :py:mod:`scipy` package and work out how to use the
-         :py:func:`scipy.optimize.newton_krylov` function. For this simple
-         case, a hand-coded Newton solver is probably the simplest
-         approach. However, for problems which are larger and more complex,
-         it will be advantageous to employ a technique more advanced than
-         simple Newton and the case for using a well-engineered third party
-         implementation is strong.
+      It is an exceptionally useful aid to debugging to have your
+      Newton iteration print out the value of the error norm and the
+      iteration number for each iteration. If you wish to see the
+      printed output while running the test, you can pass the ``-s``
+      option to ``py.test``.
 
-      .. hint::
+   .. hint::
 
-         It is an exceptionally useful aid to debugging to have your
-         Newton iteration print out the value of the error norm and the
-         iteration number for each iteration. If you wish to see the
-         printed output while running the test, you can pass the ``-s``
-         option to ``py.test``.
-
-      .. hint::
-
-         You could insert a parameter of `\alpha` in front of the quadratic term
-         in the equation. By setting `\alpha` to 0, you reduce your problem
-         to the linear case. You can use the linear case to test your code
-         initially, before setting `\alpha=1` for the actual exercise. Note
-         that, in the linear case, Newton's method will converge in exactly
-         one iteration (although your algorithm will have to actually
-         calculate two steps in order to know that convergence has occurred).
+      You could parametrise your code by `p`. By setting `p=2`, you
+      reduce your problem to the linear case. You can use the linear
+      case to test your code initially, before setting `p=4` for the
+      actual exercise. Note that, in the linear case, Newton's method
+      will converge in exactly one iteration (although your algorithm
+      will have to actually calculate two steps in order to know that
+      convergence has occurred).
