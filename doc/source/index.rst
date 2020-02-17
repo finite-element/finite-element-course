@@ -8,8 +8,6 @@
 
       \frontmatter
 
-   .. include:: implementation.rst
-
 .. only:: html
 
    This is the webpage for the `Imperial College London Mathematics
@@ -27,6 +25,9 @@
    .. image:: _static/brenner_scott.png
       :align: right
       :width: 20ex
+
+   A PDF version of the course notes is `available here
+   <Finiteelementcourse.pdf>`_.
 
    Part 1: Numerical analysis
    --------------------------
@@ -49,15 +50,22 @@
    Lecture notes:
    ~~~~~~~~~~~~~~
 
-   .. toctree::
-      :numbered:
-      :maxdepth: 2
+.. raw:: latex
+         
+   \mainmatter
+   \part{Numerical analysis}
+   
+.. toctree::
+   :numbered:
+   :maxdepth: 2
 
-      L1_introduction
-      L2_fespaces
-      L3_interpolation
-      L4_feprobs
-      L5_convergence
+   L1_introduction
+   L2_fespaces
+   L3_interpolation
+   L4_feprobs
+   L5_convergence
+
+.. only:: html
    
    Past exam papers
    ~~~~~~~~~~~~~~~~
@@ -81,11 +89,7 @@
 
    This part of the module will be taught by `Dr David Ham
    <http://www.imperial.ac.uk/people/david.ham>`_ in two hours per
-   week of computer laboratory time. A PDF version of the
-   implementation exercise notes is `available here
-   <Finiteelementcourse.pdf>`_.
-
-.. only:: html
+   week of computer laboratory time. 
 
    .. toctree::
       :maxdepth: 3
@@ -95,10 +99,14 @@
 
    Implementation exercise contents:
 
-
 .. raw:: latex
          
-   \mainmatter
+   \part{Implementation Exercise}
+   \setcounter{chapter}{-1}
+
+.. only:: latex
+
+   .. include:: implementation.rst
 
 .. toctree::
    :numbered:

@@ -505,7 +505,7 @@ vocabulary about the topology of `K`.
 This allows us to define the degree of continuity of the local
 geometric decomposition.
    
-.. proof:definition:: C^m geometric decomposition
+.. proof:definition:: \(C^m\) geometric decomposition
 
    Let `(K,\mathcal{P},\mathcal{N})` be a finite element with
    geometric decomposition `W`. We say that `W` is a `C^m` geometric
@@ -568,24 +568,24 @@ Next we need to associate each nodal variable in each element to a
 vertex, edge or triangle of the triangulation `\mathcal{T}_h`,
 i.e. the global mesh entitles. The following definition explains how
 to choose this association.
-   
-.. proof:definition:: Global `C^m` geometric decomposition
 
-   Let `\mathcal{T}` be a triangulation with finite elements
-   `(K_i,\mathcal{P}_i,\mathcal{N}_i)`, each with a `C^m` geometric
-   decomposition. Assume that for each global mesh entity `w`, the
-   `n_w` triangles containing `w` have finite elements
-   `(K_i,\mathcal{P}_i,\mathcal{N}_i)` each with `M_w` dual basis
-   functions associated with `w`.  Further, each of these basis
-   functions can be enumerated `N^w_{i,j}\in\mathcal{N}_i`,
-   `j=1,\ldots,M_w`, such that
-   `N^w_{1,j}(u|_{K_1})=N^w_{2,j}(u|_{K_2})=\ldots =
-   N^w_{n_w,j}(u|_{K_n}), \quad, j=1,\ldots,M_w`, for all functions
-   `u\in C^m(\Omega)`.
-   
-   This combination of finite elements on `\mathcal{T}` together with
-   the above enumeration of dual basis functions on global mesh
-   entities is called a global `C^m` geometric decomposition.
+.. proof:definition:: Global \(C^m\) geometric decomposition
+
+    Let `\mathcal{T}` be a triangulation with finite elements
+    `(K_i,\mathcal{P}_i,\mathcal{N}_i)`, each with a `C^m` geometric
+    decomposition. Assume that for each global mesh entity `w`, the
+    `n_w` triangles containing `w` have finite elements
+    `(K_i,\mathcal{P}_i,\mathcal{N}_i)` each with `M_w` dual basis
+    functions associated with `w`.  Further, each of these basis
+    functions can be enumerated `N^w_{i,j}\in\mathcal{N}_i`,
+    `j=1,\ldots,M_w`, such that
+    `N^w_{1,j}(u|_{K_1})=N^w_{2,j}(u|_{K_2})=\ldots =
+    N^w_{n_w,j}(u|_{K_n}), \quad, j=1,\ldots,M_w`, for all functions
+    `u\in C^m(\Omega)`.
+
+    This combination of finite elements on `\mathcal{T}` together with
+    the above enumeration of dual basis functions on global mesh
+    entities is called a global `C^m` geometric decomposition.
 
 Now we use this global `C^m` geometric decomposition to build a
 finite element space on the triangulation.

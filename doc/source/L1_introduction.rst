@@ -260,22 +260,22 @@ x)\sin(\pi y)`.
 
 .. _figplots:
 
-.. figure:: level2.*
+.. figure:: _static/level2.png
    :width: 60%
 
    Numerical solution on a `4\times 4` mesh.
 
-.. figure:: level4.*
+.. figure:: _static/level4.png
    :width: 60%
 
    Numerical solution on a `16\times 16` mesh.
 
-.. figure:: level7.*
+.. figure:: _static/level7.png
    :width: 60%
 
    Numerical solution on a `128\times 128` mesh.
 
-.. figure:: poisson_error.*
+.. figure:: _static/poisson_error.png
    :width: 60%
 
    Plot showing error versus mesh resolution. We observe
