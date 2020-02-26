@@ -177,7 +177,7 @@ The Lagrange element nodes
 
 
 The number of coefficients of a degree `p` polynomial in `d`
-dimensions is given by the binomial coefficient `\binom{p+d}{d}`. The
+dimensions is given by the combination `\binom{p+d}{d}`. The
 simplest set of nodes which we can employ is simply to place these
 nodes in a regular grid over the reference cell. Given the classical
 relationship between binomial coefficients and `Pascal's triangle
