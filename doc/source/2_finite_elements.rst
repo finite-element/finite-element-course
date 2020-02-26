@@ -61,7 +61,7 @@ evaluation of the function at each of the cell vertices. That is:
 
   \phi^*_2(f) = f\left((0,1)\right)
 
-We know that `\phi_i` has the form `a + bx + cy` so now we can
+We know that `\phi_i((x,y))` has the form `a_i + b_ix + c_iy` so now we can
 use the definition of the nodal basis to determine the unknown
 coefficients:
 
@@ -85,6 +85,24 @@ So for `\phi_0` we have:
 .. math::
   :label: phimat
 
+  \begin{pmatrix}
+  \phi^*_0(\phi_0)\\
+  \phi^*_1(\phi_0)\\
+  \phi^*_2(\phi_0)
+  \end{pmatrix}
+  =
+  \begin{pmatrix}
+  \phi_0((0,0))\\
+  \phi_0((1,0))\\
+  \phi_0((0,1))\\
+  \end{pmatrix}
+  =
+  \begin{pmatrix}
+  a_0 + b_0(0) + c_0(0)\\
+  a_0 + b_0(1) + c_0(0)\\
+  a_0 + b_0(0) + c_0(1)\\
+  \end{pmatrix}
+  =
   \begin{bmatrix}
   1 & 0 & 0\\
   1 & 1 & 0\\
