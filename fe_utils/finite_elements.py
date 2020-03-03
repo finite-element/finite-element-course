@@ -50,7 +50,7 @@ class FiniteElement(object):
             polynomial degree of the element. We assume the element
             spans the complete polynomial space.
         :param nodes: a list of coordinate tuples corresponding to
-            the nodes of the element.
+            point evaluation node locations on the element.
         :param entity_nodes: a dictionary of dictionaries such that
             entity_nodes[d][i] is the list of nodes associated with entity `(d, i)`.
 
