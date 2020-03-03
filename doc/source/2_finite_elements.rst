@@ -268,10 +268,12 @@ to include powers of `z`.
 
 .. note::
 
-   The monomial basis for polynomial spaces employed here becomes
-   increasingly ill-conditioned at higher order, so it may be
-   advantageous to employ a different basis in the construction of the
-   Vandermonde matrix. See :cite:`Kirby2004` for an example.
+   Here we employ a monomial basis to represent polynomial spaces: any
+   polynomial is given as a linear sum of monomials such as `x`, `xy`
+   or `x^2`. This basis becomes increasingly ill-conditioned at higher
+   order, so it may be advantageous to employ a different basis in the
+   construction of the Vandermonde matrix. See :cite:`Kirby2004` for an
+   example.
 
 .. _ex-vandermonde:
 
