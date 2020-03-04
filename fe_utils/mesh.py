@@ -10,9 +10,9 @@ class Mesh(object):
     respectively."""
     def __init__(self, vertex_coords, cell_vertices):
         """
-        :param vertex_coords: an vertex_count x dim array of the coordinates of
+        :param vertex_coords: a vertex_count x dim array of the coordinates of
           the vertices in the mesh.
-        :param cell_vertices: an cell_count x (dim+1) array of the
+        :param cell_vertices: a cell_count x (dim+1) array of the
           indices of the vertices of which each cell is made up.
         """
 
