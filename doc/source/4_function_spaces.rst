@@ -66,7 +66,7 @@ faces
 
 This pattern holds more generally: for a `C_0` function space, the
 number of nodes which must be associated with a local topological
-entity of degree `d` is `\begin{pmatrix}p-1\\ d\end{pmatrix}`.
+entity of dimension `d` is `\begin{pmatrix}p-1\\ d\end{pmatrix}`.
 
 :numref:`figlagrange-nodes` illustrates the association of nodes with
 reference entities for Lagrange elements on triangles. The numbering
