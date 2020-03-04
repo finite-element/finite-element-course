@@ -9,7 +9,8 @@ class ReferenceCell(object):
         :param vertices: a list of coordinate vectors corresponding to
           the coordinates of the vertices of the cell.
         :param topology: a dictionary of dictionaries such that topology[d][i]
-          is the list of vertices incident to the `i`-th `d`-entity.
+          is the list of vertices incident to the `i`-th entity of dimension 
+          `d`.
         """
 
         #: The vertices making up each topological entity of the reference cell.
