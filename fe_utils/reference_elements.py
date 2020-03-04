@@ -34,7 +34,8 @@ class ReferenceCell(object):
         """ Return true if the point x lies on the entity e.
 
         :param x: The coordinate vector of the point.
-        :param e: The (d, i) pair describing the entity.
+        :param e: The (d, i) pair describing the entity of dimension `d` and
+            index `i`.
         """
 
         vertices = self.topology[e[0]][e[1]]
