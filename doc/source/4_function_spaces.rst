@@ -62,11 +62,11 @@ faces
   already have nodes associated with them, so the number of nodes
   required to be associated with the face itself is actually the
   number required to represent a degree `p-2` polynomial in two
-  dimensions: `\begin{pmatrix}p-1\\ 2\end{pmatrix}`.
+  dimensions given by the combination `\binom{p-1}{2}`.
 
 This pattern holds more generally: for a `C_0` function space, the
 number of nodes which must be associated with a local topological
-entity of dimension `d` is `\begin{pmatrix}p-1\\ d\end{pmatrix}`.
+entity of dimension `d` is `\binom{p-1}{d}`.
 
 :numref:`figlagrange-nodes` illustrates the association of nodes with
 reference entities for Lagrange elements on triangles. The numbering
