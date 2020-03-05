@@ -52,7 +52,8 @@ class FiniteElement(object):
         :param nodes: a list of coordinate tuples corresponding to
             point evaluation node locations on the element.
         :param entity_nodes: a dictionary of dictionaries such that
-            entity_nodes[d][i] is the list of nodes associated with entity `(d, i)`.
+            entity_nodes[d][i] is the list of nodes associated with 
+            entity `(d, i)` of dimension `d` and index `i`.
 
         Most of the implementation of this class is left as exercises.
         """
