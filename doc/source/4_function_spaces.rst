@@ -164,7 +164,8 @@ entity. The formula for the first global node associated with entity
 `(d, i)` is then:
 
 .. math::
-
+   :label:
+   
    G(d, i) = \left(\sum_{\delta < d} N_\delta E_\delta\right) + iN_d
 
 where `N_d` is the number of nodes which this finite element
