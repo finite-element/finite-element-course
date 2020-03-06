@@ -14,8 +14,8 @@ topological entities of the mesh. This is a two stage process. First,
 we associate the nodes of the finite element with the local
 topological entities of the reference cell. This is often referred to
 as *local numbering*. Then we associate the correct number of degrees
-of freedom with each global mesh entity. This is the *global
-numbering*.
+of freedom (i.e. number of basis functions) with each global mesh 
+entity. This is the *global numbering*.
 
 Local numbering and continuity
 ------------------------------
