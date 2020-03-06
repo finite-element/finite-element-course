@@ -169,7 +169,7 @@ entity. The formula for the first global node associated with entity
    G(d, i) = \left(\sum_{\delta < d} N_\delta E_\delta\right) + iN_d
 
 where `N_d` is the number of nodes which this finite element
-associates with each entity of dimension `d`, and `E_d` is the number
+associates with a single entity of dimension `d`, and `E_d` is the number
 of dimension `d` entities in the mesh. The full list of nodes
 associated with entity `(d, i)` is therefore:
 
