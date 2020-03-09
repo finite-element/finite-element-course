@@ -99,15 +99,16 @@ points. So if we write:
 
    A_{i,j} = \Psi_j(X_i)
 
-where {X_i} are the node points of our finite element, then:
+where `\{X_i\}` are the local node points of our finite element, then 
+the vector of global node points `{x_i}` are given by
 
 .. math::
    :label: foo1
 
    x = A\cdot \hat{x}
 
-Where `\hat{x}` is the `(\dim+1, \dim)` array whose rows are the current
-element vertex coordinates, and `x` is the `(\textrm{nodes}, \dim)` array whose
+where `\hat{x}` is the `(\dim+1, \dim)` array whose rows are the current
+element vertex coordinates. Specifically, `x` is the `(\textrm{nodes}, \dim)` array whose
 rows are the global coordinates of the nodes in the current
 element. We can then apply `g()` to each row of `x` in turn and record
 the result as the :class:`~fe_utils.function_spaces.Function` value
