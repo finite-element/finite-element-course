@@ -53,8 +53,9 @@ other words, we evaluate:
 
    f_i = n_i(g(x))
 
-where `n_i` is the node associated with `\phi_i`. Since we are only
-concerned with point evaluation nodes, this is equivalent to:
+where `n_i` is the  node associated with `\phi_i` as considered over the
+entire mesh (*globally*). Since we are only concerned with point 
+evaluation nodes, this is equivalent to:
 
 .. math::
    :label:
