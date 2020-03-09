@@ -76,18 +76,12 @@ We'll refer to coordinates on the global mesh as being in *physical
 space* while those on the reference element are in *local
 space*. We'll use case to distinguish local and global objects, so
 local coordinates will be written as `X` and global coordinates as
-`x`. 
-
-Within a reference cell, the local coordinates `X` are the linear
-interpolation of the local coordinate values at the reference cell vertices.
-Local coordinates can therefore be thought of as a vector-valued finite
-element function space with basis functions the vector coordinate of
-the reference cell's vertices. Similarly, global coordinates `x` are the
-the linear interpolation of the global coordinate values at vertices of 
-the cell in which the coordinate is found. Bringing this together, 
-if `\{\Psi_j\}` is the local basis for the **linear** lagrange elements 
-on the reference cell and `\hat{x}_j` are the corresponding global 
-vertex locations on a cell `c` then:
+`x`. The key observation is that within each cell, the global
+coordinates are the linear interpolation of the global coordinate
+values at the cell vertices. In other words, if `\{\Psi_j\}` is the
+local basis for the **linear** lagrange elements on the reference cell and
+`\hat{x}_j` are the corresponding global vertex locations on a cell `c`
+then:
 
 .. math::
    :label: change
@@ -105,7 +99,7 @@ points. So if we write:
 
    A_{i,j} = \Psi_j(X_i)
 
-where `\{X_i\}` are the node points of our finite element, then:
+where {X_i} are the node points of our finite element, then:
 
 .. math::
    :label: foo1
