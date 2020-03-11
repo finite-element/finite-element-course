@@ -46,6 +46,7 @@ each function in the basis then the problem is now, find coefficients `u_i` such
    \int_\Omega \sum_{j}\left(\nabla \phi_i \cdot \nabla (u_j\phi_j) + \phi_i u_j\phi_j\right)\, \mathrm{d} x
    = \int_\Omega \phi_i\, \sum_k f_k\phi_k\, \mathrm{d} x \qquad \forall\, 0\leq i < n 
 
+Note that since :eq:`weak_helmholtz` is linear in `v = \sum_{i}v_i\phi_i` we are able to drop the coefficients `v_i`.
 Since the left hand side is linear in the scalar coefficients `u_j`, we can move them out of the integral:
 
 .. math::
