@@ -100,7 +100,7 @@ points. So if we write:
    A_{i,j} = \Psi_j(X_i)
 
 where `\{X_i\}` are the local node points of our finite element, then 
-the vector of global node points `{x_i}` are given by
+the vector of global node points `\{x_i\}` are given by
 
 .. math::
    :label: foo1
