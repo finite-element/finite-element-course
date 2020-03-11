@@ -92,7 +92,7 @@ property we exploited previously to integrate functions in finite
 element spaces. For example, :eq:`eq_rhs` can be rewritten as:
 
 .. math::
-   :label:
+   :label: rhs_init
 
    \mathbf{f}_i = \sum_c \int_c \phi_i \,\sum_k f_k\phi_k\,  \mathrm{d} x
 
@@ -198,7 +198,7 @@ The assembly algorithm
    A video recording of this section is available `here <https://www.youtube.com/embed/e20G9pjr7IA>`_
 
 
-We can start by pulling back :eq:`eq_lhs` to local coordinates:
+We can start by transforming :eq:`eq_lhs` to local coordinates (referred to as *pulling back*) and considering it in the algorithmic form used for the right hand side in :eq:`rhs_init` to :eq:`rhs_index`:
 
 .. math::
    :label:
