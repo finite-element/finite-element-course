@@ -354,7 +354,7 @@ To illustrate this algorithm, suppose we wish to construct `f` such that:
 
    \tilde{u} = \cos(4\pi x_0) x_1^2(1 - x_1)^2
 
-is a solution to :eq:`helmholtz` defined on a domain `\Gamma` bounded by a square with vertices at the points `(0,0)`, `(0,1)`, `(1,0)` and `(1,1)` (often referred to as the unit square). It is simple to verify that
+is a solution to :eq:`helmholtz` defined on a domain `\Gamma` bounded by the unit square (a square with vertices at the points `(0,0)`, `(0,1)`, `(1,0)` and `(1,1)`). It is simple to verify that
 `\tilde{u}` satisfies the boundary conditions. We then note that:
 
 .. math::
