@@ -193,18 +193,21 @@ where `\hat{u} \in V` is the solution to:
 
 In fact, :eq:`newton_update` is simply a linear finite element
 problem! To make this explicit, we can expand `v` and `\hat{u}` in
-terms of basis functions:
+terms of basis functions `\{\phi_i\}_{i=0}^{n-1} \in V` such that 
+`v = \sum_{i}v_i\phi_i` and `\hat{u} = \sum_{j}\hat{u}_j\phi_j`. We 
+note, as previously, that we we can drop the coefficients `v_i` giving:
 
 .. math::
    :label:
 
-   J(u^n; \phi_i, \phi_j) \hat{u}_j = - f(u^n; \phi_i).
+   \sum_{j} J(u^n; \phi_i, \phi_j) \hat{u}_j = - f(u^n; \phi_i) \qquad \forall\, 0\leq i < n .
 
 For our nonlinear diffusion problem, the matrix `J` is given by:
 
 .. math::
    :label:
 
+   J_{ij} = 
    J(u^n; \phi_i, \phi_j) =
    \begin{cases}
    \displaystyle\int_\Omega \nabla \phi_i \cdot \left(\phi_j \nabla u^n + (u^n + 1) \nabla \phi_j \right) \, \mathrm{d} x & \phi_i\in V_0\\
