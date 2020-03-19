@@ -51,8 +51,8 @@ find `u\in V` such that:
    u_\Gamma = b.
 
 Once more, `V_0` is the subspace of `V` spanned by basis functions which
-vanish on the boundary, `V = V_0 \oplus V_\Gamma`, and `u = u_0 +
-u_\Gamma` with `u_0\in V_0` and `u_\Gamma\in V_\Gamma`. This is
+vanish on the boundary, `V = V_0 \oplus V_\Gamma`, and `u = u_0 + u_\Gamma` 
+with `u_0\in V_0` and `u_\Gamma\in V_\Gamma`. This is
 corresponds directly with the weak form of the Poisson equation we
 already met. However, :eq:`weakdiffusion` is still nonlinear in `u` so
 we cannot simply substitute `u = u_i\phi_i` in order to obtain a
