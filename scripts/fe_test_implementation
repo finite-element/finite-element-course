@@ -6,7 +6,7 @@ from argparse import ArgumentParser, RawDescriptionHelpFormatter
 import subprocess
 import sys
 
-year = 2019
+year = 2020
 
 parser = ArgumentParser(description="""Helper script to mark finite element assignments.""")
 
