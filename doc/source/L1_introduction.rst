@@ -310,6 +310,45 @@ cosmology, etc. This course is intended as a starting point to
 introduce the general concepts that can be applied in all of these
 areas.
 
+.. proof:exercise::
+
+   Derive a finite element approximation for the following problem.
+
+   Find `u` such that
+
+      .. math::
+
+	 -\nabla\cdot \left((2+\sin(2\pi x))\nabla u\right) =
+	 \exp(\cos(2\pi x)),
+
+   with boundary conditions `u=0` on the entire boundary.
+
+.. proof:exercise::
+
+   Derive a finite element approximation for the following problem.
+
+   Find `u` such that
+
+      .. math::
+
+	 -\nabla^2 u = \exp(xy),
+
+   in the `1\times 1` square region as above, with boundary conditions
+   `u=x(1-x)` on the entire boundary.
+
+.. proof:exercise::
+
+   Derive a finite element approximation for the following problem.
+
+   Find `u` such that
+
+      .. math::
+
+	 -\nabla^2 u = \frac{1}{1 + x^2 + y^2},
+
+   in the `1\times 1` square region, with boundary conditions
+   `u-\frac{\partial u}{\partial n}=x(1-x)` on the entire boundary.
+   
 Practical implementation
 ------------------------
 
