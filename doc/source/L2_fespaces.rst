@@ -85,7 +85,7 @@ transformation is represented by the Vandermonde matrix.
 
 .. proof:definition:: Vandermonde matrix
 
-   Given a dual basis `\mathcal{N}` and a basis `\{\psi_j\}_{i=0}^k`,
+   Given a dual basis `\mathcal{N}` and a basis `\{\psi_i\}_{i=0}^k`,
   the Vandermonde matrix is the matrix `V` with coefficients
 
    .. math::
