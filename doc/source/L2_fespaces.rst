@@ -561,7 +561,7 @@ between triangles, before defining `C^m` continuous subspaces.
    Let `\mathcal{T}` be a triangulation, with Lagrange elements of
    degree `k`, `(K_i,P_i,\mathcal{N}_i)`, for each triangle `K_i\in
    \mathcal{T}`. The corresponding discontinuous finite element space,
-   denoted P`k`DG, is called the discontinuous Lagrange finite element
+   denoted `Pk` DG, is called the discontinuous Lagrange finite element
    space of degree `k`.
 
 Next we need to associate each nodal variable in each element to a
