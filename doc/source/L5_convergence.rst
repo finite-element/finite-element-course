@@ -694,7 +694,7 @@ finite element approximation to the Helmholtz problem.
 
    .. math::
 
-      \|u_h-u\|_{H^1(\Omega)} \leq Ch^k\|u\|_{H^2(\Omega)}.
+      \|u_h-u\|_{H^1(\Omega)} \leq Ch^k\|u\|_{H^{k+1}(\Omega)}.
 
 .. proof:proof::
       
