@@ -353,7 +353,7 @@ a scaling argument to obtain error estimates in terms of the diameter
    .. math::
 
       \|N_i\|_{C^{l,\infty}(K_1)'} = \sup_{\|u\|_{C^{l,\infty}(K_1)}>0}
-      \frac{|N_i(u)|}{\|u\|_{W_\infty^l(K_1)}} \qquad \qquad
+      \frac{|N_i(u)|}{\|u\|_{C^{l,\infty}(K_1)}} \qquad \qquad
       (\mbox{Dual norm of }N_i)
 
    Let `k-l > n/2`, and `u\in C^{k,\infty}(\Omega)`.
