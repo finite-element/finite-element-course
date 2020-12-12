@@ -704,7 +704,7 @@ finite element approximation to the Helmholtz problem.
 
       \min_{v\in V_h}
       \|u-v\|_{H^1(\Omega)} \leq \|u-I_hu\|_{H^1(\Omega)}
-      \leq Ch^k\|u\|_{H^2(\Omega)},
+      \leq Ch^k\|u\|_{H^{k+1}}(\Omega)},
 
    having chosen `i=1`.
 
@@ -744,12 +744,12 @@ Aubin-Nitsche trick.
 
 .. proof:theorem::
    
-   The degree `m` Lagrange finite element approximation `u_h` to the
+   The degree `k` Lagrange finite element approximation `u_h` to the
    solution `u` of the variational Helmholtz problem satisfies
 
    .. math::
       
-      \|u_h-u\|_{L^2(\Omega)} \leq Cd^{m+1}\|u\|_{H^2(\Omega)}.
+      \|u_h-u\|_{L^2(\Omega)} \leq Ch^{k+1}\|u\|_{H^{k+1}(\Omega)}.
 
 .. proof:proof::
    
