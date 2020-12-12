@@ -214,7 +214,7 @@ Now we develop an estimate of the error `T^kf - f`.
 
    .. math::
       
-      \|D^\beta(f-Q_{k,B}f)\|_{L^2} \leq C\frac{|\Omega|^{1/2}}{|B|^{1/2}}
+      \|D^\beta(f-Q_{k,B}f)\|_{L^2(\Omega)} \leq C\frac{|\Omega|^{1/2}}{|B|^{1/2}}
       d^{k+1-|\beta|}|f|_{H^{k+1}(\Omega)}.
 
 .. proof:proof::
