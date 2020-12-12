@@ -783,7 +783,7 @@ Aubin-Nitsche trick.
 
       &\leq Ch\|u-u_h\|_{H^1(\Omega)} |w|_{H^2(\Omega)} 
 
-      &\leq C_1 h^{k+1} \|u-u_h\|_{L^2(\Omega)}|u|_{H^{k+1}(\Omega)}
+      &\leq C_1 h^{k+1} |u|_{H^{k+1}(\Omega)\|u-u_h\|_{L^2(\Omega)}}
 
    and dividing both sides by `\|u-u_h\|_{L^2(\Omega)}` gives the result.
 
