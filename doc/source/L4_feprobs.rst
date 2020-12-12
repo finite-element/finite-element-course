@@ -579,13 +579,13 @@ problem, coercivity comes instead from the following mean estimate.
    `f(s)=u(y+s(x-y))` is a `C^0`, piecewise polynomial function of
    `s`. Let `s_0 = 0 < s_1 < s_2 < \ldots < s_{k-1} < s_k = 1` denote the points
    where `y+s(x-y)` intersects a triangle edge or vertex. Then
-   `f` is a continuous function when restricted to each interval `[s_i,s_i+1]`, `i=0,\ldots,k-1`. This means that
+   `f` is a continuous function when restricted to each interval `[s_i,s_{i+1}]`, `i=0,\ldots,k-1`. This means that
 
    .. math::
 
       f(s_{i+1}) - f(s_i) &= \int_{s_i}^{s_{i+1}} f'(s) \, ds
 
-      &= \int_{s_i}^{s_{i+1}} \nabla u(y+s(x-y)) \, ds,
+      &= \int_{s_i}^{s_{i+1}} (x-y)\cdot\nabla u(y+s(x-y)) \, ds,
 
    where `\nabla u` is the finite element derivative of `u`. Summing
    this up from `i=0` to `i=k-1`, we obtain
