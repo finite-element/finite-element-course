@@ -547,7 +547,7 @@ For the Poisson problem, we have
 
 .. math::
 
-   b(u,v) = \int_\Omega |\nabla u|^2 \, d x = |u|^2_{H^1} \neq \|u\|^2_{H^1}.
+   b(u,u) = \int_\Omega |\nabla u|^2 \, d x = |u|^2_{H^1} \neq \|u\|^2_{H^1}.
 
 Where we recall the `H^1` seminorm from the interpolation
 section. Some additional results are required to show coercivity, as
