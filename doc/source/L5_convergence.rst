@@ -704,7 +704,7 @@ finite element approximation to the Helmholtz problem.
 
       \min_{v\in V_h}
       \|u-v\|_{H^1(\Omega)} \leq \|u-I_hu\|_{H^1(\Omega)}
-      \leq Ch^k\|u\|_{H^{k+1}}(\Omega)},
+      \leq Ch^k\|u\|_{H^{k+1}}(\Omega),
 
    having chosen `i=1`.
 
