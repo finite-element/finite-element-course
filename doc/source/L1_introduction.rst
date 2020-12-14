@@ -328,6 +328,19 @@ The finite element approximation is then defined by requiring that
 this equation holds for all `v\in \mathring{V}_h` and when we restrict
 `u\in \mathring{V}_h`.
 
+.. dropdown:: A video recording of this section is available here.
+		  
+    .. container:: vimeo
+
+        .. raw:: html
+
+            <iframe src="https://player.vimeo.com/video/490693961"
+            frameborder="0" allow="autoplay; fullscreen"
+            allowfullscreen></iframe>
+
+    Imperial students can also `watch this video on Panopto <https://imperial.cloud.panopto.eu/Panopto/Pages/Viewer.aspx?id=099aeda2-0a23-4c88-ad0b-ac2c01051715>`_
+
+
 .. proof:definition::
   
    The finite element approximation `u_h \in \mathring{V}_h` to the
@@ -339,6 +352,18 @@ this equation holds for all `v\in \mathring{V}_h` and when we restrict
       \int_\Omega \nabla v \cdot \nabla u_h \, d x =
       \int_\Omega vf \, d x, \quad \forall v\in \mathring{V}_h.
 
+.. dropdown:: A video recording of this section is available here.
+		  
+    .. container:: vimeo
+
+        .. raw:: html
+
+            <iframe src="https://player.vimeo.com/video/490693998"
+            frameborder="0" allow="autoplay; fullscreen"
+            allowfullscreen></iframe>
+
+    Imperial students can also `watch this video on Panopto <https://imperial.cloud.panopto.eu/Panopto/Pages/Viewer.aspx?id=f4cb8c0c-4664-4a21-8043-ac2c010738da>`_
+      
 We now present some numerical results for the case `f = 2\pi^2\sin(\pi
 x)\sin(\pi y)`.
 
@@ -368,6 +393,18 @@ x)\sin(\pi y)`.
 
 We see that for this example, the error is decreasing as we increase
 the number of triangles, for the meshes considered.
+
+.. dropdown:: A video recording of this section is available here.
+		  
+    .. container:: vimeo
+
+        .. raw:: html
+
+            <iframe src="https://player.vimeo.com/video/490693824"
+            frameborder="0" allow="autoplay; fullscreen"
+            allowfullscreen></iframe>
+
+    Imperial students can also `watch this video on Panopto <https://imperial.cloud.panopto.eu/Panopto/Pages/Viewer.aspx?id=8319e621-155a-43a1-b181-ac8d00aed113>`_
 
 In general, our formulation raises a number of questions.
 
@@ -436,6 +473,18 @@ areas.
 Practical implementation
 ------------------------
 
+.. dropdown:: A video recording of this section is available here.
+		  
+    .. container:: vimeo
+
+        .. raw:: html
+
+            <iframe src="https://player.vimeo.com/video/490693738"
+            frameborder="0" allow="autoplay; fullscreen"
+            allowfullscreen></iframe>
+
+    Imperial students can also `watch this video on Panopto <https://imperial.cloud.panopto.eu/Panopto/Pages/Viewer.aspx?id=11e55d12-a0fc-42ed-b609-ac8d00af7068>`_
+
 The finite element approximation above is only useful if we can
 actually compute it. To do this, we need to construct an efficient
 basis for `P1`, which we call the nodal basis.
@@ -496,6 +545,18 @@ but we do not currently know that `K` is invertible. This is
 equivalent to the finite element approximation having a unique
 solution `u_h`, which we shall establish in later sections. This
 motivates why we care that `u_h` exists and is unique.
+
+.. dropdown:: A video recording of this section is available here.
+		  
+    .. container:: vimeo
+
+        .. raw:: html
+
+            <iframe src="https://player.vimeo.com/video/490693615"
+            frameborder="0" allow="autoplay; fullscreen"
+            allowfullscreen></iframe>
+
+    Imperial students can also `watch this video on Panopto <https://imperial.cloud.panopto.eu/Panopto/Pages/Viewer.aspx?id=9be9b911-c291-4c90-b3ac-ac8d00c0e814>`_
 
 Putting solvability aside for the moment, the goal of the
 implementation sections of this course is to explain how to
