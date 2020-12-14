@@ -149,11 +149,11 @@ errors.
 
         .. raw:: html
 
-            <iframe src="https://player.vimeo.com/video/490673003"
+            <iframe src="https://player.vimeo.com/video/490673099"
             frameborder="0" allow="autoplay; fullscreen"
             allowfullscreen></iframe>
 
-    Imperial students can also `watch this video on Panopto <https://imperial.cloud.panopto.eu/Panopto/Pages/Viewer.aspx?id=62d286c0-1efd-4b8a-9570-ac8e00f3835d>`_
+    Imperial students can also `watch this video on Panopto <https://imperial.cloud.panopto.eu/Panopto/Pages/Viewer.aspx?id=efbbb34b-ae76-4150-98e2-ac8e00f12d27>`_
    
 To help to estimate interpolation errors, we quote the following
 important result (which we will return to much later).
@@ -205,7 +205,19 @@ derivatives.
 
 Approximation by averaged Taylor polynomials
 --------------------------------------------
-   
+
+.. dropdown:: A video recording of this section is available here.
+		  
+    .. container:: vimeo
+
+        .. raw:: html
+
+            <iframe src="https://player.vimeo.com/video/490673003"
+            frameborder="0" allow="autoplay; fullscreen"
+            allowfullscreen></iframe>
+
+    Imperial students can also `watch this video on Panopto <https://imperial.cloud.panopto.eu/Panopto/Pages/Viewer.aspx?id=62d286c0-1efd-4b8a-9570-ac8e00f3835d>`_
+
 The basic tool for analysing interpolation error for continuous
 functions is the Taylor series. Rather than taking the Taylor series
 about a single point, since we are interested in integral quantities,
