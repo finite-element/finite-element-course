@@ -113,19 +113,6 @@ Our first finite element space
 
     Imperial students can also `watch this video on Panopto <https://imperial.cloud.panopto.eu/Panopto/Pages/Viewer.aspx?id=2a222f38-92ce-478e-946c-ac2b0120bf58>`_
 
-.. dropdown:: A video recording of this section is available here.
-		  
-    .. container:: vimeo
-
-        .. raw:: html
-
-            <iframe src="https://player.vimeo.com/video/XXX"
-            frameborder="0" allow="autoplay; fullscreen"
-            allowfullscreen></iframe>
-
-    Imperial students can also `watch this video on Panopto <https://imperial.cloud.panopto.eu/Panopto/Pages/Viewer.aspx?id=XXX>`_
-
-
 The idea is that we will approximate functions which are polynomial
 (at some chosen degree) when restricted to each triangle, with some
 chosen continuity conditions between triangles. We shall call the
@@ -159,6 +146,18 @@ conditions. These will emerge later.
 
 Integral formulations and `L_2`
 -------------------------------
+
+.. dropdown:: A video recording of this section is available here.
+		  
+    .. container:: vimeo
+
+        .. raw:: html
+
+            <iframe src="https://player.vimeo.com/video/490697738"
+            frameborder="0" allow="autoplay; fullscreen"
+            allowfullscreen></iframe>
+
+    Imperial students can also `watch this video on Panopto <https://imperial.cloud.panopto.eu/Panopto/Pages/Viewer.aspx?id=10377186-f51a-49e2-8b0b-ac2b012265df>`_
 
 The finite element method is based upon integral formulations of
 partial differential equations. Rather than checking if two functions
@@ -218,6 +217,18 @@ motivates the `L^2` function space.
 Finite element derivative
 -------------------------
 
+.. dropdown:: A video recording of this section is available here.
+		  
+    .. container:: vimeo
+
+        .. raw:: html
+
+            <iframe src="https://player.vimeo.com/video/490697597"
+            frameborder="0" allow="autoplay; fullscreen"
+            allowfullscreen></iframe>
+
+    Imperial students can also `watch this video on Panopto <https://imperial.cloud.panopto.eu/Panopto/Pages/Viewer.aspx?id=897d8372-11bd-4904-a1db-ac2c00fc7835>`_
+
 Functions in `V_h` do not have derivatives everywhere. This means that
 we have to work with a more general definition (and later we shall
 learn when it does and does not work).
@@ -258,6 +269,18 @@ contains both of these definitions.
 
 Towards the finite element discretisation
 -----------------------------------------
+
+.. dropdown:: A video recording of this section is available here.
+		  
+    .. container:: vimeo
+
+        .. raw:: html
+
+            <iframe src="https://player.vimeo.com/video/490697493"
+            frameborder="0" allow="autoplay; fullscreen"
+            allowfullscreen></iframe>
+
+    Imperial students can also `watch this video on Panopto <https://imperial.cloud.panopto.eu/Panopto/Pages/Viewer.aspx?id=7740df4e-bc02-4997-8c75-ac2c00fe54eb>`_
 
 We will now use the finite element derivative to develop the finite
 element discretisation. We assume that we have a solution `u` to
