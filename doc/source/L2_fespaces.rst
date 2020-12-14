@@ -280,7 +280,19 @@ We can now go and directly apply this lemma to the 1D Lagrange elements.
 
 2D and 3D finite elements
 -------------------------
-   
+
+.. dropdown:: A video recording of this section is available here.
+		  
+    .. container:: vimeo
+
+        .. raw:: html
+
+            <iframe src="https://player.vimeo.com/video/490692347"
+            frameborder="0" allow="autoplay; fullscreen"
+            allowfullscreen></iframe>
+
+    Imperial students can also `watch this video on Panopto <https://imperial.cloud.panopto.eu/Panopto/Pages/Viewer.aspx?id=e5501a7d-81f1-47f1-8000-ac8d00ce89fb>`_
+
 We would like to construct some finite elements with 2D and 3D domains
 `K`. The fundamental theorem of algebra does not directly help us
 there, but the following lemma is useful when checking that
@@ -336,6 +348,18 @@ there, but the following lemma is useful when checking that
 
    with `\deg(Q)=k-1`.
 
+.. dropdown:: A video recording of this section is available here.
+		  
+    .. container:: vimeo
+
+        .. raw:: html
+
+            <iframe src="https://player.vimeo.com/video/490692245"
+            frameborder="0" allow="autoplay; fullscreen"
+            allowfullscreen></iframe>
+
+    Imperial students can also `watch this video on Panopto <https://imperial.cloud.panopto.eu/Panopto/Pages/Viewer.aspx?id=b2674f92-8a03-4685-98e7-ac8e00a15a88>`_
+   
 Equipped with this tool we can consider some finite elements in two
 dimensions.
 
@@ -362,7 +386,19 @@ We illustrate this for the cases `k=1,2`.
 		   
    The nodal basis for P2 elements is point evaluation at the three
    vertices, plus point evaluation at the three edge centres.
-  
+
+.. dropdown:: A video recording of this section is available here.
+		  
+    .. container:: vimeo
+
+        .. raw:: html
+
+            <iframe src="https://player.vimeo.com/video/490692065"
+            frameborder="0" allow="autoplay; fullscreen"
+            allowfullscreen></iframe>
+
+    Imperial students can also `watch this video on Panopto <https://imperial.cloud.panopto.eu/Panopto/Pages/Viewer.aspx?id=1d6a0060-361f-4c03-af32-ac8d00cc637e>`_
+   
 We now need to check that that the degree `k` Lagrange element is a
 finite element, i.e. that `\mathcal{N}` determines `\mathcal{P}`. We will
 first do this for `P1`.
@@ -391,6 +427,18 @@ first do this for `P1`.
    since `L_1(z_1)\neq 0`, and hence `p(x)\equiv 0`. This means
    that `\mathcal{N}` determines `\mathcal{P}`.
 
+.. dropdown:: A video recording of this section is available here.
+		  
+    .. container:: vimeo
+
+        .. raw:: html
+
+            <iframe src="https://player.vimeo.com/video/490691995"
+            frameborder="0" allow="autoplay; fullscreen"
+            allowfullscreen></iframe>
+
+    Imperial students can also `watch this video on Panopto <https://imperial.cloud.panopto.eu/Panopto/Pages/Viewer.aspx?id=5fbdc104-9b38-4e7f-9c61-ac8d00c7d4ac>`_
+   
 This technique can then be extended to degree 2.
    
 .. proof:lemma::
