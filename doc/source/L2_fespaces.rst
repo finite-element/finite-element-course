@@ -18,6 +18,18 @@ seeing how function continuity is enforced between cells.
 Ciarlet's finite element
 ------------------------
 
+.. dropdown:: A video recording of this section is available here.
+		  
+    .. container:: vimeo
+
+        .. raw:: html
+
+            <iframe src="https://player.vimeo.com/video/490693460"
+            frameborder="0" allow="autoplay; fullscreen"
+            allowfullscreen></iframe>
+
+    Imperial students can also `watch this video on Panopto <https://imperial.cloud.panopto.eu/Panopto/Pages/Viewer.aspx?id=e79807c3-c73b-42ec-b5f9-ac8d00c7b4c6>`_
+
 The first part of the definition is formalised by Ciarlet's definition
 of a finite element.
 
@@ -43,6 +55,18 @@ For the cases considered in this course, `K` will be a polygon such as a triangl
    Show that the four examples above are all linear functions from `P` to `\mathbb{R}`.
 
 Ciarlet's finite element provides us with a standard way to define a basis for the `P`, called the nodal basis.
+
+.. dropdown:: A video recording of this section is available here.
+		  
+    .. container:: vimeo
+
+        .. raw:: html
+
+            <iframe src="https://player.vimeo.com/video/490693258"
+            frameborder="0" allow="autoplay; fullscreen"
+            allowfullscreen></iframe>
+
+    Imperial students can also `watch this video on Panopto <https://imperial.cloud.panopto.eu/Panopto/Pages/Viewer.aspx?id=9d432870-a298-4e6e-b495-ac8d00cc6411>`_
 
 .. proof:definition:: (local) nodal basis
 		      
@@ -78,7 +102,19 @@ We now introduce our first example of a Ciarlet element.
 
 Vandermonde matrix and unisolvence
 ----------------------------------
-      
+
+.. dropdown:: A video recording of this section is available here.
+		  
+    .. container:: vimeo
+
+        .. raw:: html
+
+            <iframe src="https://player.vimeo.com/video/490693083"
+            frameborder="0" allow="autoplay; fullscreen"
+            allowfullscreen></iframe>
+
+    Imperial students can also `watch this video on Panopto <https://imperial.cloud.panopto.eu/Panopto/Pages/Viewer.aspx?id=f3fb54fb-f83e-41b8-a537-ac8d00d03589>`_
+
 More generally, It is useful computationally to write the nodal basis
 in terms of another arbitrary basis `\{\psi_i\}_{i=0}^k`. This
 transformation is represented by the Vandermonde matrix.
@@ -121,6 +157,18 @@ This relationship is made clear by the following lemma.
 
    where `\mu` is the matrix with coefficients `\mu_{ij}`, and `V` is the matrix with coefficients `N_j(\psi_i)`.
 
+.. dropdown:: A video recording of this section is available here.
+		  
+    .. container:: vimeo
+
+        .. raw:: html
+
+            <iframe src="https://player.vimeo.com/video/490692882"
+            frameborder="0" allow="autoplay; fullscreen"
+            allowfullscreen></iframe>
+
+    Imperial students can also `watch this video on Panopto <https://imperial.cloud.panopto.eu/Panopto/Pages/Viewer.aspx?id=6f9d4bb7-4a90-40f7-8eae-ac8d00ce8ac7>`_
+   
 Given a triple `(K,\mathcal{P},\mathcal{N})`, it is necessary to
 verify that `\mathcal{N}` is indeed a basis for `\mathcal{P}'`,
 i.e. that the Ciarlet element is well-defined. Then the nodal basis is
@@ -188,6 +236,18 @@ provides a useful tool for checking this.
    which is equivalent to `V^T` being invertible, which is equivalent to
    `V` being invertible, and so (3) is equivalent to (2).
 
+.. dropdown:: A video recording of this section is available here.
+		  
+    .. container:: vimeo
+
+        .. raw:: html
+
+            <iframe src="https://player.vimeo.com/video/490692719"
+            frameborder="0" allow="autoplay; fullscreen"
+            allowfullscreen></iframe>
+
+    Imperial students can also `watch this video on Panopto <https://imperial.cloud.panopto.eu/Panopto/Pages/Viewer.aspx?id=97d9a7b6-7837-4591-9180-ac8e0099484c>`_
+   
 This result leads us to introducing the following terminology.
 
 .. proof:definition:: Unisolvence.
