@@ -3,6 +3,18 @@
 Finite element problems: solvability and stability
 ===================================================
 
+.. dropdown:: A video recording of this section is available here.
+		  
+    .. container:: vimeo
+
+        .. raw:: html
+
+            <iframe src="https://player.vimeo.com/video/490671279"
+            frameborder="0" allow="autoplay; fullscreen"
+            allowfullscreen></iframe>
+
+    Imperial students can also `watch this video on Panopto <https://imperial.cloud.panopto.eu/Panopto/Pages/Viewer.aspx?id=fd348dc9-840d-41ac-8906-ac8f00b77a93>`_
+
 In section 1, we saw the example of a finite element approximation
 for Poisson's equation in the unit square, which we now recall below.
 
@@ -252,6 +264,18 @@ spaces as subspaces of infinite dimensional Hilbert spaces.
 
 Linear forms on Hilbert spaces
 ------------------------------
+
+.. dropdown:: A video recording of this section is available here.
+		  
+    .. container:: vimeo
+
+        .. raw:: html
+
+            <iframe src="https://player.vimeo.com/video/490671029"
+            frameborder="0" allow="autoplay; fullscreen"
+            allowfullscreen></iframe>
+
+    Imperial students can also `watch this video on Panopto <https://imperial.cloud.panopto.eu/Panopto/Pages/Viewer.aspx?id=723914b3-4d55-476e-a8ef-ac8f00bca305>`_
 
 We will now build some structures on Hilbert spaces that allow us to
 discuss variational problems on them, which includes finite element

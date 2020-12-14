@@ -406,7 +406,7 @@ of the triangle we are interpolating to.
 Local and global interpolation errors
 -------------------------------------
 
-.. dropdown:: A second video recording of this section is available here.
+.. dropdown:: A video recording of this section is available here.
 		  
     .. container:: vimeo
 
@@ -461,6 +461,18 @@ a scaling argument to obtain error estimates in terms of the diameter
 
    where the Sobolev inequality was used in the last line.
 
+.. dropdown:: A video recording of this section is available here.
+		  
+    .. container:: vimeo
+
+        .. raw:: html
+
+            <iframe src="https://player.vimeo.com/video/490672190"
+            frameborder="0" allow="autoplay; fullscreen"
+            allowfullscreen></iframe>
+
+    Imperial students can also `watch this video on Panopto <https://imperial.cloud.panopto.eu/Panopto/Pages/Viewer.aspx?id=7eecb6d2-3a85-4a5a-b748-ac8f00addb0d>`_
+   
 Now we can directly apply this to the interpolation operator error
 estimate on the triangle with diameter 1. It is the standard trick of
 adding and subtracting something, in this case the Taylor polynomial.
@@ -499,6 +511,18 @@ adding and subtracting something, in this case the Taylor polynomial.
    where we used the fact that `I_{K_1}Q_{k,B}u = Q_{k,B}u` in the
    second line and the previous lemma in the third line.
 
+.. dropdown:: A video recording of this section is available here.
+		  
+    .. container:: vimeo
+
+        .. raw:: html
+
+            <iframe src="https://player.vimeo.com/video/490671682"
+            frameborder="0" allow="autoplay; fullscreen"
+            allowfullscreen></iframe>
+
+    Imperial students can also `watch this video on Panopto <https://imperial.cloud.panopto.eu/Panopto/Pages/Viewer.aspx?id=0269bbf5-8928-453a-83c7-ac8f00ad2f1a>`_
+   
 Now we apply a scaling argument to translate this to triangles
 with diameter `h`.
 
@@ -542,6 +566,18 @@ with diameter `h`.
 
    and taking the square root gives the result.
 
+.. dropdown:: A video recording of this section is available here.
+		  
+    .. container:: vimeo
+
+        .. raw:: html
+
+            <iframe src="https://player.vimeo.com/video/490671577"
+            frameborder="0" allow="autoplay; fullscreen"
+            allowfullscreen></iframe>
+
+    Imperial students can also `watch this video on Panopto <https://imperial.cloud.panopto.eu/Panopto/Pages/Viewer.aspx?id=c1e7b2ce-4169-4fd7-a730-ac8f00b06e45>`_
+   
 So far we have just developed an error estimate for the local
 interpolant on a single triangle. Now we extend this to finite element
 spaces defined on the whole triangulation.
