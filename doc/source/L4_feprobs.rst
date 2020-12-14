@@ -389,6 +389,18 @@ The following famous theorem states that the converse is also true.
 Variational problems on Hilbert spaces
 --------------------------------------
 
+.. dropdown:: A video recording of this section is available here.
+		  
+    .. container:: vimeo
+
+        .. raw:: html
+
+            <iframe src="https://player.vimeo.com/video/490670887"
+            frameborder="0" allow="autoplay; fullscreen"
+            allowfullscreen></iframe>
+
+    Imperial students can also `watch this video on Panopto <https://imperial.cloud.panopto.eu/Panopto/Pages/Viewer.aspx?id=fd348dc9-840d-41ac-8906-ac8f00b77a93>`_
+
 We will consider finite element methods that can be formulated in the
 following way.
 
@@ -449,6 +461,18 @@ of linear PDEs.
 
       \int_\Omega u \, d x = 0.
 
+.. dropdown:: A video recording of this section is available here.
+		  
+    .. container:: vimeo
+
+        .. raw:: html
+
+            <iframe src="https://player.vimeo.com/video/490670764"
+            frameborder="0" allow="autoplay; fullscreen"
+            allowfullscreen></iframe>
+
+    Imperial students can also `watch this video on Panopto <https://imperial.cloud.panopto.eu/Panopto/Pages/Viewer.aspx?id=39973b08-a56a-41e6-b1c8-ac8f00c5b325>`_
+      
 We now introduce two important properties of bilinear forms that determine
 whether a linear variational problem is solvable or not. The first is
 continuity.
@@ -520,6 +544,18 @@ In this section we will introduce some tools for showing coercivity
 and continuity of bilinear forms, illustrated with finite element
 approximations of some linear PDEs where they may be applied.
 
+.. dropdown:: A video recording of this section is available here.
+		  
+    .. container:: vimeo
+
+        .. raw:: html
+
+            <iframe src="https://player.vimeo.com/video/490670624"
+            frameborder="0" allow="autoplay; fullscreen"
+            allowfullscreen></iframe>
+
+    Imperial students can also `watch this video on Panopto <https://imperial.cloud.panopto.eu/Panopto/Pages/Viewer.aspx?id=eca48c8e-3823-4653-8b4e-ac8f00c7c5ce>`_
+
 We start with the simplest example, for which continuity and
 coercivity are immediate.
 
@@ -580,6 +616,18 @@ the properties of a norm except `|u|= 0 \nRightarrow u=0`, which is
 precisely what is needed in the Lax-Milgram theorem.  For the Poisson
 problem, coercivity comes instead from the following mean estimate.
 
+.. Dropdown:: A video recording of this section is available here.
+		  
+    .. container:: vimeo
+
+        .. raw:: html
+
+            <iframe src="https://player.vimeo.com/video/490670529"
+            frameborder="0" allow="autoplay; fullscreen"
+            allowfullscreen></iframe>
+
+    Imperial students can also `watch this video on Panopto <https://imperial.cloud.panopto.eu/Panopto/Pages/Viewer.aspx?id=e17f74a6-97ec-47fd-bcf4-ac8f00c9b784>`_
+
 .. proof:lemma:: Mean estimate for finite element spaces
 
    Let `u` be a member of a `C^0` finite element space, and define
@@ -595,6 +643,30 @@ problem, coercivity comes instead from the following mean estimate.
 
       \|u-\bar{u}\|_{L^2} \leq C|u|_{H^1}.
 
+.. Dropdown:: A video recording of the first part of this section is available here.
+		  
+    .. container:: vimeo
+
+        .. raw:: html
+
+            <iframe src="https://player.vimeo.com/video/490670428"
+            frameborder="0" allow="autoplay; fullscreen"
+            allowfullscreen></iframe>
+
+    Imperial students can also `watch this video on Panopto <https://imperial.cloud.panopto.eu/Panopto/Pages/Viewer.aspx?id=610a0d00-6e89-4e7f-a7d1-ac8f00cc9fe5>`_
+
+.. Dropdown:: A video recording of the second part of section is available here.
+		  
+    .. container:: vimeo
+
+        .. raw:: html
+
+            <iframe src="https://player.vimeo.com/video/490670299"
+            frameborder="0" allow="autoplay; fullscreen"
+            allowfullscreen></iframe>
+
+    Imperial students can also `watch this video on Panopto <https://imperial.cloud.panopto.eu/Panopto/Pages/Viewer.aspx?id=aac8613a-f8f2-474f-bbe5-ac8f00cdbc26>`_
+      
 .. proof:proof::
 
    (Very similar to the proof of the estimate for averaged Taylor polynomials.)
@@ -699,6 +771,18 @@ problem, coercivity comes instead from the following mean estimate.
 
    which has the required form.
 
+.. Dropdown:: A video recording of this section is available here.
+		  
+    .. container:: vimeo
+
+        .. raw:: html
+
+            <iframe src="https://player.vimeo.com/video/490670236"
+            frameborder="0" allow="autoplay; fullscreen"
+            allowfullscreen></iframe>
+
+    Imperial students can also `watch this video on Panopto <https://imperial.cloud.panopto.eu/Panopto/Pages/Viewer.aspx?id=9652e5bd-ef4a-45e8-9a41-ac8f00ceae9d>`_
+   
 The mean estimate can now be used to show solvability for the Poisson
 problem with pure Neumann conditions.
 
