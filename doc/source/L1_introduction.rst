@@ -3,6 +3,18 @@
 Introduction
 ============
 
+.. dropdown:: A video recording of this section is available here.
+
+    .. container:: vimeo
+
+        .. raw:: html
+
+            <iframe src="https://player.vimeo.com/video/490698097"
+            frameborder="0" allow="autoplay; fullscreen"
+            allowfullscreen></iframe>
+
+    Imperial students can also `watch this video on Panopto <https://imperial.cloud.panopto.eu/Panopto/Pages/Viewer.aspx?id=6aca04a5-7fd9-4d9d-9178-ac2b0115718d>`_
+
 In this section we provide an introduction that establishes some
 initial ideas about how the finite element method works and what it is
 about.
@@ -18,6 +30,7 @@ implementation. In this course we blend these two directions together.
 
 Poisson's equation in the unit square
 -------------------------------------
+
 
 In this introduction we concentrate on the specific model problem of
 Poisson's equation in the unit square.
