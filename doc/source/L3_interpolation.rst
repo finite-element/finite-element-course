@@ -4,6 +4,18 @@
 Interpolation operators
 =======================
 
+.. dropdown:: A video recording of this section is available here.
+		  
+    .. container:: vimeo
+
+        .. raw:: html
+
+            <iframe src="https://player.vimeo.com/video/490673290"
+            frameborder="0" allow="autoplay; fullscreen"
+            allowfullscreen></iframe>
+
+    Imperial students can also `watch this video on Panopto <https://imperial.cloud.panopto.eu/Panopto/Pages/Viewer.aspx?id=f3b6a076-d90c-42c5-90a4-ac8e00ed6b79>`_
+
 In this section we investigate how continuous functions can be
 approximated by finite element functions. We start locally,
 looking at a single finite element, and then move globally to
@@ -75,7 +87,19 @@ element space.
 
 Measuring interpolation errors
 ------------------------------
-   
+
+.. dropdown:: A video recording of this section is available here.
+		  
+    .. container:: vimeo
+
+        .. raw:: html
+
+            <iframe src="https://player.vimeo.com/video/490673157"
+            frameborder="0" allow="autoplay; fullscreen"
+            allowfullscreen></iframe>
+
+    Imperial students can also `watch this video on Panopto <https://imperial.cloud.panopto.eu/Panopto/Pages/Viewer.aspx?id=e811ac32-0c1c-43ee-b661-ac8e00ee051e>`_
+
 Next we look at how well we can approximate continuous functions using
 the interpolation operator, i.e. we want to measure the approximation
 error `\mathcal{I}_h u - u`. We are interested in integral
@@ -119,6 +143,18 @@ errors.
 
    where we conventionally write `|u|_{H^0}=\|u\|_{L^2}`.
 
+.. dropdown:: A video recording of this section is available here.
+		  
+    .. container:: vimeo
+
+        .. raw:: html
+
+            <iframe src="https://player.vimeo.com/video/490673003"
+            frameborder="0" allow="autoplay; fullscreen"
+            allowfullscreen></iframe>
+
+    Imperial students can also `watch this video on Panopto <https://imperial.cloud.panopto.eu/Panopto/Pages/Viewer.aspx?id=62d286c0-1efd-4b8a-9570-ac8e00f3835d>`_
+   
 To help to estimate interpolation errors, we quote the following
 important result (which we will return to much later).
 
