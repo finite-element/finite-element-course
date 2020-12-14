@@ -821,7 +821,19 @@ problem with pure Neumann conditions.
       |b(u,v)| \leq |u|_{H^1}|v|_{H^1} \leq \|u\|_{H^1}\|v\|_{H^1}.
 
 The coercivity constant is independent of `h`, so the approximation is stable.
-      
+
+.. Dropdown:: A video recording of this section is available here.
+		  
+    .. container:: vimeo
+
+        .. raw:: html
+
+            <iframe src="https://player.vimeo.com/video/490669992"
+            frameborder="0" allow="autoplay; fullscreen"
+            allowfullscreen></iframe>
+
+    Imperial students can also `watch this video on Panopto <https://imperial.cloud.panopto.eu/Panopto/Pages/Viewer.aspx?id=58a9dd17-1ae8-4b9e-9781-ac8f0101a3c3>`_
+
 Proving the coercivity for the Poisson problem with Dirichlet or
 partial Dirichlet boundary conditions requires some additional
 results. We start by showing that the divergence theorem also applies
@@ -901,6 +913,18 @@ norm of the function restricted to the boundary.
    where we have used the geometric-arithmetic mean inequality `2ab \leq
    a^2+b^2`. 
 
+.. Dropdown:: A video recording of this section is available here.
+		  
+    .. container:: vimeo
+
+        .. raw:: html
+
+            <iframe src="https://player.vimeo.com/video/490669782"
+            frameborder="0" allow="autoplay; fullscreen"
+            allowfullscreen></iframe>
+
+    Imperial students can also `watch this video on Panopto <https://imperial.cloud.panopto.eu/Panopto/Pages/Viewer.aspx?id=1bc37dc7-ef3e-43f5-b111-ac8f010287cf>`_
+   
 We can now use the trace inequality to estabilish solvability for the
 Poisson problem with (full or partial) Dirichlet conditions.
       

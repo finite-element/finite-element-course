@@ -6,6 +6,18 @@ Convergence of finite element approximations
 In this section we develop tools to prove convergence of finite
 element approximations to the exact solutions of PDEs.
 
+.. Dropdown:: A video recording of this section is available here.
+		  
+    .. container:: vimeo
+
+        .. raw:: html
+
+            <iframe src="https://player.vimeo.com/video/490669563"
+            frameborder="0" allow="autoplay; fullscreen"
+            allowfullscreen></iframe>
+
+    Imperial students can also `watch this video on Panopto <https://imperial.cloud.panopto.eu/Panopto/Pages/Viewer.aspx?id=5d2d1721-725f-43ef-bcdd-ac8f01056006>`_
+
 Weak derivatives
 ----------------
 
