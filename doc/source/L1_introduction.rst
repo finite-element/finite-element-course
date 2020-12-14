@@ -31,6 +31,17 @@ implementation. In this course we blend these two directions together.
 Poisson's equation in the unit square
 -------------------------------------
 
+.. dropdown:: A video recording of this section is available here.
+
+    .. container:: vimeo
+
+        .. raw:: html
+
+            <iframe src="https://player.vimeo.com/video/490697959"
+            frameborder="0" allow="autoplay; fullscreen"
+            allowfullscreen></iframe>
+
+    Imperial students can also `watch this video on Panopto <https://imperial.cloud.panopto.eu/Panopto/Pages/Viewer.aspx?id=id=c6be8b35-aa19-4e33-8d25-ac2b011caba3>`_
 
 In this introduction we concentrate on the specific model problem of
 Poisson's equation in the unit square.
@@ -61,6 +72,18 @@ strengths of the finite element method.
 Triangulations
 --------------
 
+.. dropdown:: A video recording of this section is available here.
+		  
+    .. container:: vimeo
+
+        .. raw:: html
+
+            <iframe src="https://player.vimeo.com/video/490697890"
+            frameborder="0" allow="autoplay; fullscreen"
+            allowfullscreen></iframe>
+
+    Imperial students can also `watch this video on Panopto <https://imperial.cloud.panopto.eu/Panopto/Pages/Viewer.aspx?id=db13f3fa-b3cb-41d1-b888-ac2b011f11e3>`_
+
 The description of our finite element method starts by considering
 a triangulation.
 
@@ -77,6 +100,31 @@ a triangulation.
 
 Our first finite element space
 ------------------------------
+
+.. dropdown:: A video recording of this section is available here.
+		  
+    .. container:: vimeo
+
+        .. raw:: html
+
+            <iframe src="https://player.vimeo.com/video/490697877"
+            frameborder="0" allow="autoplay; fullscreen"
+            allowfullscreen></iframe>
+
+    Imperial students can also `watch this video on Panopto <https://imperial.cloud.panopto.eu/Panopto/Pages/Viewer.aspx?id=2a222f38-92ce-478e-946c-ac2b0120bf58>`_
+
+.. dropdown:: A video recording of this section is available here.
+		  
+    .. container:: vimeo
+
+        .. raw:: html
+
+            <iframe src="https://player.vimeo.com/video/XXX"
+            frameborder="0" allow="autoplay; fullscreen"
+            allowfullscreen></iframe>
+
+    Imperial students can also `watch this video on Panopto <https://imperial.cloud.panopto.eu/Panopto/Pages/Viewer.aspx?id=XXX>`_
+
 
 The idea is that we will approximate functions which are polynomial
 (at some chosen degree) when restricted to each triangle, with some
