@@ -148,6 +148,18 @@ element functions. All derivatives are assumed to be weak from now on.
 Sobolev spaces
 --------------
 
+.. Dropdown:: A video recording of this section is available here.
+		  
+    .. container:: vimeo
+
+        .. raw:: html
+
+            <iframe src="https://player.vimeo.com/video/490880876"
+            frameborder="0" allow="autoplay; fullscreen"
+            allowfullscreen></iframe>
+
+    Imperial students can also `watch this video on Panopto <https://imperial.cloud.panopto.eu/Panopto/Pages/Viewer.aspx?id=ab4667ea-fb50-461e-940f-ac8f010c13fa>`_
+
 We are now in a position to define a space that contains all `C^0`
 finite element spaces. This means that we can consider the limit
 of finite element approximations as `h\to 0`.
@@ -265,6 +277,18 @@ area/volume.
 Variational formulations of PDEs
 --------------------------------
 
+.. Dropdown:: A video recording of this section is available here.
+		  
+    .. container:: vimeo
+
+        .. raw:: html
+
+            <iframe src="https://player.vimeo.com/video/490669306"
+            frameborder="0" allow="autoplay; fullscreen"
+            allowfullscreen></iframe>
+
+    Imperial students can also `watch this video on Panopto <https://imperial.cloud.panopto.eu/Panopto/Pages/Viewer.aspx?id=4ac5a081-3109-4b2f-86df-ac8f010fa52c>`_
+
 We can now consider linear variational problems defined on `H^k`
 spaces, by taking a bilinear form `b(u,v)` and linear form
 `F(v)`, seeking `u\in H^k` (for chosen `H^k`) such that
@@ -358,6 +382,18 @@ This tells us when the integration by parts formula makes sense.
    to `v\nabla u`. These satisfy the equation;
    we obtain the result by passing to the limit.
 
+.. Dropdown:: A video recording of this section is available here.
+		  
+    .. container:: vimeo
+
+        .. raw:: html
+
+            <iframe src="https://player.vimeo.com/video/490668791"
+            frameborder="0" allow="autoplay; fullscreen"
+            allowfullscreen></iframe>
+
+    Imperial students can also `watch this video on Panopto <https://imperial.cloud.panopto.eu/Panopto/Pages/Viewer.aspx?id=11a1d9f5-c1e9-41c1-9207-ac8f01127eac>`_
+   
 Now we have everything we need to show that solutions of the strong
 form equation also solve the variational problem. It is just a matter
 of substituting into the formula and applying integration by parts.
@@ -431,6 +467,18 @@ instead of just `H^1`.
 Galerkin approximations of linear variational problems
 ------------------------------------------------------
 
+.. Dropdown:: A video recording of this section is available here.
+		  
+    .. container:: vimeo
+
+        .. raw:: html
+
+            <iframe src="https://player.vimeo.com/video/490668756"
+            frameborder="0" allow="autoplay; fullscreen"
+            allowfullscreen></iframe>
+
+    Imperial students can also `watch this video on Panopto <https://imperial.cloud.panopto.eu/Panopto/Pages/Viewer.aspx?id=63ad7174-ffe3-44bf-bd94-ac8f011498d9>`_
+
 Going a bit more general again, assume that we have a well-posed
 linear variational problem on `H^k`, connected to a strong form
 PDE. Now we would like to approximate it. This is done in general
@@ -463,6 +511,18 @@ continuous and coercive on `V_h` by the subspace property. Hence,
 we know that the Galerkin approximation exists, is unique and is
 stable. This means that it will be possible to solve the matrix-vector
 equation.
+
+.. Dropdown:: A video recording of this section is available here.
+		  
+    .. container:: vimeo
+
+        .. raw:: html
+
+            <iframe src="https://player.vimeo.com/video/490668557"
+            frameborder="0" allow="autoplay; fullscreen"
+            allowfullscreen></iframe>
+
+    Imperial students can also `watch this video on Panopto <https://imperial.cloud.panopto.eu/Panopto/Pages/Viewer.aspx?id=5c5e4671-ddb4-4cf2-afce-ac8f01165ff0>`_
 
 Moving on, if we can solve the equation, we would like to know if it is
 useful. What is the size of the error `u-u_h`? For Galerkin approximations
@@ -518,7 +578,19 @@ this question is addressed by Céa's lemma.
 
 Interpolation error in `H^k` spaces
 -----------------------------------
-   
+
+.. Dropdown:: A video recording of this section is available here.
+		  
+    .. container:: vimeo
+
+        .. raw:: html
+
+            <iframe src="https://player.vimeo.com/video/490668557"
+            frameborder="0" allow="autoplay; fullscreen"
+            allowfullscreen></iframe>
+
+    Imperial students can also `watch this video on Panopto <https://imperial.cloud.panopto.eu/Panopto/Pages/Viewer.aspx?id=5c5e4671-ddb4-4cf2-afce-ac8f01165ff0>`_
+
 The interpretation of Céa's lemma is that the error is proportional to
 the minimal error in approximating `u` in `V_h`. To do this, we can
 simply choose `v = I_hu` in Céa's lemma, to get
@@ -533,6 +605,18 @@ exact solution.  We have already examined this in the section on
 interpolation operators, but in the context of continuous
 functions. The problem is that we do not know that the solution `u` is
 continuous, only that it is in `H^k` for some `k`.
+
+.. Dropdown:: A video recording of this section is available here.
+		  
+    .. container:: vimeo
+
+        .. raw:: html
+
+            <iframe src="https://player.vimeo.com/video/490668426"
+            frameborder="0" allow="autoplay; fullscreen"
+            allowfullscreen></iframe>
+
+    Imperial students can also `watch this video on Panopto <https://imperial.cloud.panopto.eu/Panopto/Pages/Viewer.aspx?id=b473bf39-8d5b-4d2f-b051-ac8f01192b68>`_
 
 We now quickly revisit the results of the interpolation section to
 extend them to `H^k` spaces. The proofs are mostly identical, so we just
@@ -694,7 +778,19 @@ The next steps then just follow through.
 
 Convergence of the finite element approximation to the Helmholtz problem
 ------------------------------------------------------------------------
-   
+
+.. Dropdown:: A video recording of this section is available here.
+		  
+    .. container:: vimeo
+
+        .. raw:: html
+
+            <iframe src="https://player.vimeo.com/video/490668331"
+            frameborder="0" allow="autoplay; fullscreen"
+            allowfullscreen></iframe>
+
+    Imperial students can also `watch this video on Panopto <https://imperial.cloud.panopto.eu/Panopto/Pages/Viewer.aspx?id=913ad682-d5b9-4849-8dc8-ac8f0120d5e8>`_
+
 Now that we have the required interpolation operator results, we
 can return to applying Céa's lemma to the convergence of the
 finite element approximation to the Helmholtz problem.
@@ -720,6 +816,18 @@ finite element approximation to the Helmholtz problem.
 
    having chosen `i=1`.
 
+.. Dropdown:: A video recording of this section is available here.
+		  
+    .. container:: vimeo
+
+        .. raw:: html
+
+            <iframe src="https://player.vimeo.com/video/490668178"
+            frameborder="0" allow="autoplay; fullscreen"
+            allowfullscreen></iframe>
+
+    Imperial students can also `watch this video on Panopto <https://imperial.cloud.panopto.eu/Panopto/Pages/Viewer.aspx?id=256886bb-d6bd-41fa-916a-ac8f0126b14b>`_
+   
 Céa's lemma gives us error estimates in the norm of the space where
 the variational problem is defined, where the continuity and coercivity
 results hold. In the case of the Helmholtz problem, this is `H^1`.
