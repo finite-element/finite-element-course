@@ -251,6 +251,30 @@ integral sense.
       
 Now we develop an estimate of the error `T^kf - f`.
 
+.. dropdown:: A first video recording of this section is available here.
+		  
+    .. container:: vimeo
+
+        .. raw:: html
+
+            <iframe src="https://player.vimeo.com/video/490672898"
+            frameborder="0" allow="autoplay; fullscreen"
+            allowfullscreen></iframe>
+
+    Imperial students can also `watch this video on Panopto <https://imperial.cloud.panopto.eu/Panopto/Pages/Viewer.aspx?id=80896f93-3f64-421e-846e-ac8e00f12c99>`_
+
+.. dropdown:: A second video recording of this section is available here.
+		  
+    .. container:: vimeo
+
+        .. raw:: html
+
+            <iframe src="https://player.vimeo.com/video/490672679"
+            frameborder="0" allow="autoplay; fullscreen"
+            allowfullscreen></iframe>
+
+    Imperial students can also `watch this video on Panopto <https://imperial.cloud.panopto.eu/Panopto/Pages/Viewer.aspx?id=cb47271d-b53f-46fc-805b-ac8f00a28be7>`_
+
 .. _taylorerror:
 
 .. proof:theorem::
@@ -264,7 +288,7 @@ Now we develop an estimate of the error `T^kf - f`.
       
       \|D^\beta(f-Q_{k,B}f)\|_{L^2(\Omega)} \leq C\frac{|\Omega|^{1/2}}{|B|^{1/2}}
       d^{k+1-|\beta|}|f|_{H^{k+1}(\Omega)}.
-
+      
 .. proof:proof::
 
    The Taylor remainder theorem (see a calculus textbook) gives
@@ -381,7 +405,19 @@ of the triangle we are interpolating to.
 
 Local and global interpolation errors
 -------------------------------------
-   
+
+.. dropdown:: A second video recording of this section is available here.
+		  
+    .. container:: vimeo
+
+        .. raw:: html
+
+            <iframe src="https://player.vimeo.com/video/490672385"
+            frameborder="0" allow="autoplay; fullscreen"
+            allowfullscreen></iframe>
+
+    Imperial students can also `watch this video on Panopto <https://imperial.cloud.panopto.eu/Panopto/Pages/Viewer.aspx?id=de44e00c-6a67-43ac-88e1-ac8e00ee04aa>`_
+
 Now we will use the Taylor polynomial estimates to
 derive error estimates for the local interpolation operator.
 We start by looking at a triangle with diameter 1, and then use
