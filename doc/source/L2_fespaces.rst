@@ -494,6 +494,18 @@ triangular structure of the Lagrange triangle.
 Some more exotic elements
 -------------------------
 
+.. dropdown:: A video recording of this section is available here.
+		  
+    .. container:: vimeo
+
+        .. raw:: html
+
+            <iframe src="https://player.vimeo.com/video/490691590"
+            frameborder="0" allow="autoplay; fullscreen"
+            allowfullscreen></iframe>
+
+    Imperial students can also `watch this video on Panopto <https://imperial.cloud.panopto.eu/Panopto/Pages/Viewer.aspx?id=495e54dd-23b6-4d92-bcdb-ac8e00ab3829>`_
+
 We now consider some finite elements that involve derivative
 evaluation. The Hermite elements involve evaluation of first
 derivatives as well as point evaluations.
@@ -529,6 +541,18 @@ is solved by the Argyris element.
        
 Global continuity
 -----------------
+
+.. dropdown:: A video recording of this section is available here.
+		  
+    .. container:: vimeo
+
+        .. raw:: html
+
+            <iframe src="https://player.vimeo.com/video/490691454"
+            frameborder="0" allow="autoplay; fullscreen"
+            allowfullscreen></iframe>
+
+    Imperial students can also `watch this video on Panopto <https://imperial.cloud.panopto.eu/Panopto/Pages/Viewer.aspx?id=f384b387-f65a-4f9e-a582-ac8e00b8760e>`_
 
 Next we need to know how to glue finite elements together to form
 spaces defined over a triangulation (mesh). To do this we need to
@@ -583,6 +607,18 @@ variables (and their associated nodal basis functions) appropriately
 to vertices, edges etc. of each triangle `K`. First we need to
 introduce this terminology.
 
+.. dropdown:: A video recording of this section is available here.
+		  
+    .. container:: vimeo
+
+        .. raw:: html
+
+            <iframe src="https://player.vimeo.com/video/490691352"
+            frameborder="0" allow="autoplay; fullscreen"
+            allowfullscreen></iframe>
+
+    Imperial students can also `watch this video on Panopto <https://imperial.cloud.panopto.eu/Panopto/Pages/Viewer.aspx?id=22aab3d8-2041-4c42-9d18-ac8e00be66ab>`_
+
 .. proof:definition:: local and global mesh entities
 
    Let `K` be a triangle. The local mesh entities of `K` are the
@@ -601,6 +637,18 @@ can be assigned to local mesh entities in a geometric decomposition.
    entity `w\in W` such that for any `f\in\mathcal{P}`, `N_i(f)` can be
    calculated from `f` and derivatives of `f` evaluated on `w`.
 
+.. dropdown:: A video recording of this section is available here.
+		  
+    .. container:: vimeo
+
+        .. raw:: html
+
+            <iframe src="https://player.vimeo.com/video/490691251"
+            frameborder="0" allow="autoplay; fullscreen"
+            allowfullscreen></iframe>
+
+    Imperial students can also `watch this video on Panopto <https://imperial.cloud.panopto.eu/Panopto/Pages/Viewer.aspx?id=9f363ae5-0174-4fe1-94e9-ac8e00e7f271>`_
+   
 To discuss `C^m` continuity, we need to introduce some further
 vocabulary about the topology of `K`.
    
@@ -643,6 +691,18 @@ We explore this definition through a couple of exercises.
 
 .. proof:exercise::
    Show that the Argyris element has a \(C^1\) geometric decomposition.
+
+.. dropdown:: A video recording of this section is available here.
+		  
+    .. container:: vimeo
+
+        .. raw:: html
+
+            <iframe src="https://player.vimeo.com/video/490691153"
+            frameborder="0" allow="autoplay; fullscreen"
+            allowfullscreen></iframe>
+
+    Imperial students can also `watch this video on Panopto <https://imperial.cloud.panopto.eu/Panopto/Pages/Viewer.aspx?id=3d816037-2cb7-4eb2-b441-ac8e00ea1551>`_
    
 We now use the geometric decomposition to construct global finite
 element spaces over the whole triangulation (mesh). We just need to
