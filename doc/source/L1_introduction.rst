@@ -41,8 +41,7 @@ Poisson's equation in the unit square
             frameborder="0" allow="autoplay; fullscreen"
             allowfullscreen></iframe>
 
-    Imperial students can also `watch this video on Panopto <https://imperial.cloud.panopto.eu/Panopto/Pages/Viewer.aspx?id=id=c6be8b35-aa19-4e33-8d25-ac2b011caba3>`_
-
+    Imperial students can also `watch this video on Panopto <https://imperial.cloud.panopto.eu/Panopto/Pages/Viewer.aspx?id=c6be8b35-aa19-4e33-8d25-ac2b011caba3>`_
 In this introduction we concentrate on the specific model problem of
 Poisson's equation in the unit square.
 
