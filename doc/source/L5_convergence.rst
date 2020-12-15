@@ -606,18 +606,6 @@ interpolation operators, but in the context of continuous
 functions. The problem is that we do not know that the solution `u` is
 continuous, only that it is in `H^k` for some `k`.
 
-.. Dropdown:: A video recording of this section is available here.
-		  
-    .. container:: vimeo
-
-        .. raw:: html
-
-            <iframe src="https://player.vimeo.com/video/490668426"
-            frameborder="0" allow="autoplay; fullscreen"
-            allowfullscreen></iframe>
-
-    Imperial students can also `watch this video on Panopto <https://imperial.cloud.panopto.eu/Panopto/Pages/Viewer.aspx?id=b473bf39-8d5b-4d2f-b051-ac8f01192b68>`_
-
 We now quickly revisit the results of the interpolation section to
 extend them to `H^k` spaces. The proofs are mostly identical, so we just
 give the updated result statements and state how to modify the proofs.
@@ -815,6 +803,13 @@ finite element approximation to the Helmholtz problem.
       \leq Ch^k\|u\|_{H^{k+1}}(\Omega),
 
    having chosen `i=1`.
+   
+Céa's lemma gives us error estimates in the norm of the space where
+the variational problem is defined, where the continuity and coercivity
+results hold. In the case of the Helmholtz problem, this is `H^1`.
+We would also like estimates of the error in the `L^2` norm, and
+it will turn out that these will have a more rapid convergence rate
+as `h\to 0`.
 
 .. Dropdown:: A video recording of this section is available here.
 		  
@@ -827,13 +822,6 @@ finite element approximation to the Helmholtz problem.
             allowfullscreen></iframe>
 
     Imperial students can also `watch this video on Panopto <https://imperial.cloud.panopto.eu/Panopto/Pages/Viewer.aspx?id=256886bb-d6bd-41fa-916a-ac8f0126b14b>`_
-   
-Céa's lemma gives us error estimates in the norm of the space where
-the variational problem is defined, where the continuity and coercivity
-results hold. In the case of the Helmholtz problem, this is `H^1`.
-We would also like estimates of the error in the `L^2` norm, and
-it will turn out that these will have a more rapid convergence rate
-as `h\to 0`.
 
 To do this we quote the following without proof.
 
