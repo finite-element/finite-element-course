@@ -6,7 +6,7 @@ Convergence of finite element approximations
 In this section we develop tools to prove convergence of finite
 element approximations to the exact solutions of PDEs.
 
-.. Dropdown:: A video recording of this section is available here.
+.. Dropdown:: A video recording of the following material is available here.
 		  
     .. container:: vimeo
 
@@ -148,7 +148,7 @@ element functions. All derivatives are assumed to be weak from now on.
 Sobolev spaces
 --------------
 
-.. Dropdown:: A video recording of this section is available here.
+.. Dropdown:: A video recording of the following material is available here.
 		  
     .. container:: vimeo
 
@@ -277,7 +277,7 @@ area/volume.
 Variational formulations of PDEs
 --------------------------------
 
-.. Dropdown:: A video recording of this section is available here.
+.. Dropdown:: A video recording of the following material is available here.
 		  
     .. container:: vimeo
 
@@ -382,7 +382,7 @@ This tells us when the integration by parts formula makes sense.
    to `v\nabla u`. These satisfy the equation;
    we obtain the result by passing to the limit.
 
-.. Dropdown:: A video recording of this section is available here.
+.. Dropdown:: A video recording of the following material is available here.
 		  
     .. container:: vimeo
 
@@ -467,7 +467,7 @@ instead of just `H^1`.
 Galerkin approximations of linear variational problems
 ------------------------------------------------------
 
-.. Dropdown:: A video recording of this section is available here.
+.. Dropdown:: A video recording of the following material is available here.
 		  
     .. container:: vimeo
 
@@ -512,7 +512,7 @@ we know that the Galerkin approximation exists, is unique and is
 stable. This means that it will be possible to solve the matrix-vector
 equation.
 
-.. Dropdown:: A video recording of this section is available here.
+.. Dropdown:: A video recording of the following material is available here.
 		  
     .. container:: vimeo
 
@@ -579,7 +579,7 @@ this question is addressed by Céa's lemma.
 Interpolation error in `H^k` spaces
 -----------------------------------
 
-.. Dropdown:: A video recording of this section is available here.
+.. Dropdown:: A video recording of the following material is available here.
 		  
     .. container:: vimeo
 
@@ -767,7 +767,7 @@ The next steps then just follow through.
 Convergence of the finite element approximation to the Helmholtz problem
 ------------------------------------------------------------------------
 
-.. Dropdown:: A video recording of this section is available here.
+.. Dropdown:: A video recording of the following material is available here.
 		  
     .. container:: vimeo
 
@@ -811,7 +811,7 @@ We would also like estimates of the error in the `L^2` norm, and
 it will turn out that these will have a more rapid convergence rate
 as `h\to 0`.
 
-.. Dropdown:: A video recording of this section is available here.
+.. Dropdown:: A video recording of the following material is available here.
 		  
     .. container:: vimeo
 

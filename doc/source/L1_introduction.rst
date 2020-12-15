@@ -3,7 +3,7 @@
 Introduction
 ============
 
-.. dropdown:: A video recording of this section is available here.
+.. dropdown:: A video recording of the following material is available here.
 
     .. container:: vimeo
 
@@ -31,7 +31,7 @@ implementation. In this course we blend these two directions together.
 Poisson's equation in the unit square
 -------------------------------------
 
-.. dropdown:: A video recording of this section is available here.
+.. dropdown:: A video recording of the following material is available here.
 
     .. container:: vimeo
 
@@ -71,7 +71,7 @@ strengths of the finite element method.
 Triangulations
 --------------
 
-.. dropdown:: A video recording of this section is available here.
+.. dropdown:: A video recording of the following material is available here.
 		  
     .. container:: vimeo
 
@@ -100,7 +100,7 @@ a triangulation.
 Our first finite element space
 ------------------------------
 
-.. dropdown:: A video recording of this section is available here.
+.. dropdown:: A video recording of the following material is available here.
 		  
     .. container:: vimeo
 
@@ -146,7 +146,7 @@ conditions. These will emerge later.
 Integral formulations and `L_2`
 -------------------------------
 
-.. dropdown:: A video recording of this section is available here.
+.. dropdown:: A video recording of the following material is available here.
 		  
     .. container:: vimeo
 
@@ -216,7 +216,7 @@ motivates the `L^2` function space.
 Finite element derivative
 -------------------------
 
-.. dropdown:: A video recording of this section is available here.
+.. dropdown:: A video recording of the following material is available here.
 		  
     .. container:: vimeo
 
@@ -269,7 +269,7 @@ contains both of these definitions.
 Towards the finite element discretisation
 -----------------------------------------
 
-.. dropdown:: A video recording of this section is available here.
+.. dropdown:: A video recording of the following material is available here.
 		  
     .. container:: vimeo
 
@@ -327,7 +327,7 @@ The finite element approximation is then defined by requiring that
 this equation holds for all `v\in \mathring{V}_h` and when we restrict
 `u\in \mathring{V}_h`.
 
-.. dropdown:: A video recording of this section is available here.
+.. dropdown:: A video recording of the following material is available here.
 		  
     .. container:: vimeo
 
@@ -339,6 +339,7 @@ this equation holds for all `v\in \mathring{V}_h` and when we restrict
 
     Imperial students can also `watch this video on Panopto <https://imperial.cloud.panopto.eu/Panopto/Pages/Viewer.aspx?id=099aeda2-0a23-4c88-ad0b-ac2c01051715>`_
 
+.. _def-discrete-poisson:
 
 .. proof:definition::
   
@@ -351,7 +352,7 @@ this equation holds for all `v\in \mathring{V}_h` and when we restrict
       \int_\Omega \nabla v \cdot \nabla u_h \, d x =
       \int_\Omega vf \, d x, \quad \forall v\in \mathring{V}_h.
 
-.. dropdown:: A video recording of this section is available here.
+.. dropdown:: A video recording of the following material is available here.
 		  
     .. container:: vimeo
 
@@ -393,7 +394,7 @@ x)\sin(\pi y)`.
 We see that for this example, the error is decreasing as we increase
 the number of triangles, for the meshes considered.
 
-.. dropdown:: A video recording of this section is available here.
+.. dropdown:: A video recording of the following material is available here.
 		  
     .. container:: vimeo
 
@@ -472,7 +473,7 @@ areas.
 Practical implementation
 ------------------------
 
-.. dropdown:: A video recording of this section is available here.
+.. dropdown:: A video recording of the following material is available here.
 		  
     .. container:: vimeo
 
@@ -545,7 +546,7 @@ equivalent to the finite element approximation having a unique
 solution `u_h`, which we shall establish in later sections. This
 motivates why we care that `u_h` exists and is unique.
 
-.. dropdown:: A video recording of this section is available here.
+.. dropdown:: A video recording of the following material is available here.
 		  
     .. container:: vimeo
 

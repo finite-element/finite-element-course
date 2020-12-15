@@ -4,7 +4,7 @@
 Interpolation operators
 =======================
 
-.. dropdown:: A video recording of this section is available here.
+.. dropdown:: A video recording of the following material is available here.
 		  
     .. container:: vimeo
 
@@ -88,7 +88,7 @@ element space.
 Measuring interpolation errors
 ------------------------------
 
-.. dropdown:: A video recording of this section is available here.
+.. dropdown:: A video recording of the following material is available here.
 		  
     .. container:: vimeo
 
@@ -143,7 +143,7 @@ errors.
 
    where we conventionally write `|u|_{H^0}=\|u\|_{L^2}`.
 
-.. dropdown:: A video recording of this section is available here.
+.. dropdown:: A video recording of the following material is available here.
 		  
     .. container:: vimeo
 
@@ -206,7 +206,7 @@ derivatives.
 Approximation by averaged Taylor polynomials
 --------------------------------------------
 
-.. dropdown:: A video recording of this section is available here.
+.. dropdown:: A video recording of the following material is available here.
 		  
     .. container:: vimeo
 
@@ -251,7 +251,7 @@ integral sense.
       
 Now we develop an estimate of the error `T^kf - f`.
 
-.. dropdown:: A first video recording of this section is available here.
+.. dropdown:: A first video recording of the following material is available here.
 		  
     .. container:: vimeo
 
@@ -263,7 +263,7 @@ Now we develop an estimate of the error `T^kf - f`.
 
     Imperial students can also `watch this video on Panopto <https://imperial.cloud.panopto.eu/Panopto/Pages/Viewer.aspx?id=80896f93-3f64-421e-846e-ac8e00f12c99>`_
 
-.. dropdown:: A second video recording of this section is available here.
+.. dropdown:: A second video recording of the following material is available here.
 		  
     .. container:: vimeo
 
@@ -406,7 +406,7 @@ of the triangle we are interpolating to.
 Local and global interpolation errors
 -------------------------------------
 
-.. dropdown:: A video recording of this section is available here.
+.. dropdown:: A video recording of the following material is available here.
 		  
     .. container:: vimeo
 
@@ -461,7 +461,7 @@ a scaling argument to obtain error estimates in terms of the diameter
 
    where the Sobolev inequality was used in the last line.
 
-.. dropdown:: A video recording of this section is available here.
+.. dropdown:: A video recording of the following material is available here.
 		  
     .. container:: vimeo
 
@@ -511,7 +511,7 @@ adding and subtracting something, in this case the Taylor polynomial.
    where we used the fact that `I_{K_1}Q_{k,B}u = Q_{k,B}u` in the
    second line and the previous lemma in the third line.
 
-.. dropdown:: A video recording of this section is available here.
+.. dropdown:: A video recording of the following material is available here.
 		  
     .. container:: vimeo
 
@@ -566,7 +566,7 @@ with diameter `h`.
 
    and taking the square root gives the result.
 
-.. dropdown:: A video recording of this section is available here.
+.. dropdown:: A video recording of the following material is available here.
 		  
     .. container:: vimeo
 

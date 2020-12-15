@@ -3,7 +3,7 @@
 Finite element problems: solvability and stability
 ===================================================
 
-.. dropdown:: A video recording of this section is available here.
+.. dropdown:: A video recording of the following material is available here.
 		  
     .. container:: vimeo
 
@@ -265,7 +265,7 @@ spaces as subspaces of infinite dimensional Hilbert spaces.
 Linear forms on Hilbert spaces
 ------------------------------
 
-.. dropdown:: A video recording of this section is available here.
+.. dropdown:: A video recording of the following material is available here.
 		  
     .. container:: vimeo
 
@@ -389,7 +389,7 @@ The following famous theorem states that the converse is also true.
 Variational problems on Hilbert spaces
 --------------------------------------
 
-.. dropdown:: A video recording of this section is available here.
+.. dropdown:: A video recording of the following material is available here.
 		  
     .. container:: vimeo
 
@@ -460,7 +460,7 @@ of linear PDEs.
 
       \int_\Omega u \, d x = 0.
 
-.. dropdown:: A video recording of this section is available here.
+.. dropdown:: A video recording of the following material is available here.
 		  
     .. container:: vimeo
 
@@ -543,7 +543,7 @@ In this section we will introduce some tools for showing coercivity
 and continuity of bilinear forms, illustrated with finite element
 approximations of some linear PDEs where they may be applied.
 
-.. dropdown:: A video recording of this section is available here.
+.. dropdown:: A video recording of the following material is available here.
 		  
     .. container:: vimeo
 
@@ -615,7 +615,7 @@ the properties of a norm except `|u|= 0 \nRightarrow u=0`, which is
 precisely what is needed in the Lax-Milgram theorem.  For the Poisson
 problem, coercivity comes instead from the following mean estimate.
 
-.. Dropdown:: A video recording of this section is available here.
+.. Dropdown:: A video recording of the following material is available here.
 		  
     .. container:: vimeo
 
@@ -642,7 +642,7 @@ problem, coercivity comes instead from the following mean estimate.
 
       \|u-\bar{u}\|_{L^2} \leq C|u|_{H^1}.
 
-.. Dropdown:: A video recording of the first part of this section is available here.
+.. Dropdown:: A video recording of the first part of the following material is available here.
 		  
     .. container:: vimeo
 
@@ -770,7 +770,7 @@ problem, coercivity comes instead from the following mean estimate.
 
    which has the required form.
 
-.. Dropdown:: A video recording of this section is available here.
+.. Dropdown:: A video recording of the following material is available here.
 		  
     .. container:: vimeo
 
@@ -821,7 +821,7 @@ problem with pure Neumann conditions.
 
 The coercivity constant is independent of `h`, so the approximation is stable.
 
-.. Dropdown:: A video recording of this section is available here.
+.. Dropdown:: A video recording of the following material is available here.
 		  
     .. container:: vimeo
 
@@ -912,7 +912,7 @@ norm of the function restricted to the boundary.
    where we have used the geometric-arithmetic mean inequality `2ab \leq
    a^2+b^2`. 
 
-.. Dropdown:: A video recording of this section is available here.
+.. Dropdown:: A video recording of the following material is available here.
 		  
     .. container:: vimeo
 

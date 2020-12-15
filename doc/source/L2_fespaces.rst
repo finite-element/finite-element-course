@@ -18,7 +18,7 @@ seeing how function continuity is enforced between cells.
 Ciarlet's finite element
 ------------------------
 
-.. dropdown:: A video recording of this section is available here.
+.. dropdown:: A video recording of the following material is available here.
 		  
     .. container:: vimeo
 
@@ -56,7 +56,7 @@ For the cases considered in this course, `K` will be a polygon such as a triangl
 
 Ciarlet's finite element provides us with a standard way to define a basis for the `P`, called the nodal basis.
 
-.. dropdown:: A video recording of this section is available here.
+.. dropdown:: A video recording of the following material is available here.
 		  
     .. container:: vimeo
 
@@ -103,7 +103,7 @@ We now introduce our first example of a Ciarlet element.
 Vandermonde matrix and unisolvence
 ----------------------------------
 
-.. dropdown:: A video recording of this section is available here.
+.. dropdown:: A video recording of the following material is available here.
 		  
     .. container:: vimeo
 
@@ -157,7 +157,7 @@ This relationship is made clear by the following lemma.
 
    where `\mu` is the matrix with coefficients `\mu_{ij}`, and `V` is the matrix with coefficients `N_j(\psi_i)`.
 
-.. dropdown:: A video recording of this section is available here.
+.. dropdown:: A video recording of the following material is available here.
 		  
     .. container:: vimeo
 
@@ -236,7 +236,7 @@ provides a useful tool for checking this.
    which is equivalent to `V^T` being invertible, which is equivalent to
    `V` being invertible, and so (3) is equivalent to (2).
 
-.. dropdown:: A video recording of this section is available here.
+.. dropdown:: A video recording of the following material is available here.
 		  
     .. container:: vimeo
 
@@ -281,7 +281,7 @@ We can now go and directly apply this lemma to the 1D Lagrange elements.
 2D and 3D finite elements
 -------------------------
 
-.. dropdown:: A video recording of this section is available here.
+.. dropdown:: A video recording of the following material is available here.
 		  
     .. container:: vimeo
 
@@ -348,7 +348,7 @@ there, but the following lemma is useful when checking that
 
    with `\deg(Q)=k-1`.
 
-.. dropdown:: A video recording of this section is available here.
+.. dropdown:: A video recording of the following material is available here.
 		  
     .. container:: vimeo
 
@@ -387,7 +387,7 @@ We illustrate this for the cases `k=1,2`.
    The nodal basis for P2 elements is point evaluation at the three
    vertices, plus point evaluation at the three edge centres.
 
-.. dropdown:: A video recording of this section is available here.
+.. dropdown:: A video recording of the following material is available here.
 		  
     .. container:: vimeo
 
@@ -427,7 +427,7 @@ first do this for `P1`.
    since `L_1(z_1)\neq 0`, and hence `p(x)\equiv 0`. This means
    that `\mathcal{N}` determines `\mathcal{P}`.
 
-.. dropdown:: A video recording of this section is available here.
+.. dropdown:: A video recording of the following material is available here.
 		  
     .. container:: vimeo
 
@@ -494,7 +494,7 @@ triangular structure of the Lagrange triangle.
 Some more exotic elements
 -------------------------
 
-.. dropdown:: A video recording of this section is available here.
+.. dropdown:: A video recording of the following material is available here.
 		  
     .. container:: vimeo
 
@@ -542,7 +542,7 @@ is solved by the Argyris element.
 Global continuity
 -----------------
 
-.. dropdown:: A video recording of this section is available here.
+.. dropdown:: A video recording of the following material is available here.
 		  
     .. container:: vimeo
 
@@ -607,7 +607,7 @@ variables (and their associated nodal basis functions) appropriately
 to vertices, edges etc. of each triangle `K`. First we need to
 introduce this terminology.
 
-.. dropdown:: A video recording of this section is available here.
+.. dropdown:: A video recording of the following material is available here.
 		  
     .. container:: vimeo
 
@@ -637,7 +637,7 @@ can be assigned to local mesh entities in a geometric decomposition.
    entity `w\in W` such that for any `f\in\mathcal{P}`, `N_i(f)` can be
    calculated from `f` and derivatives of `f` evaluated on `w`.
 
-.. dropdown:: A video recording of this section is available here.
+.. dropdown:: A video recording of the following material is available here.
 		  
     .. container:: vimeo
 
@@ -692,7 +692,7 @@ We explore this definition through a couple of exercises.
 .. proof:exercise::
    Show that the Argyris element has a \(C^1\) geometric decomposition.
 
-.. dropdown:: A video recording of this section is available here.
+.. dropdown:: A video recording of the following material is available here.
 		  
     .. container:: vimeo
 

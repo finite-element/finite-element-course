@@ -66,7 +66,16 @@
    L5_convergence
 
 .. only:: html
+
+   Weekly material
+   ~~~~~~~~~~~~~~~
+
+   The Spring Term weekly material for 2021 for this part of the course is as follows.
+
+   #. Week 1: Up to and including :numref:`Definition {number}<def-discrete-poisson>`
+   #. test
    
+	  
    Past exam papers
    ~~~~~~~~~~~~~~~~
    Please note that for 2015-2018, there was no mastery component in the
