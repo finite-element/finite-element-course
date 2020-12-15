@@ -585,11 +585,11 @@ Interpolation error in `H^k` spaces
 
         .. raw:: html
 
-            <iframe src="https://player.vimeo.com/video/490668557"
+            <iframe src="https://player.vimeo.com/video/490668426"
             frameborder="0" allow="autoplay; fullscreen"
             allowfullscreen></iframe>
 
-    Imperial students can also `watch this video on Panopto <https://imperial.cloud.panopto.eu/Panopto/Pages/Viewer.aspx?id=5c5e4671-ddb4-4cf2-afce-ac8f01165ff0>`_
+    Imperial students can also `watch this video on Panopto <https://imperial.cloud.panopto.eu/Panopto/Pages/Viewer.aspx?id=b473bf39-8d5b-4d2f-b051-ac8f01192b68>`_
 
 The interpretation of Céa's lemma is that the error is proportional to
 the minimal error in approximating `u` in `V_h`. To do this, we can
