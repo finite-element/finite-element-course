@@ -78,6 +78,8 @@ Ciarlet's finite element provides us with a standard way to define a basis for t
 
 We now introduce our first example of a Ciarlet element.
 
+.. _1d_lagrange:
+
 .. proof:definition:: The 1-dimensional Lagrange element
 		    
    The 1-dimensional Lagrange element `(K,\mathcal{P},\mathcal{N})` of
@@ -92,6 +94,8 @@ We now introduce our first example of a Ciarlet element.
       N_i(v) = v(x_i), \, x_i = a + (b-a)i/k, \quad \forall v\in \mathcal{P},\,
       i=0,\ldots,k.
 
+.. _exe-1d-lagrange-basis:
+      
 .. proof:exercise:: 
 
    Show that the nodal basis for `\mathcal{P}` is given by
@@ -100,6 +104,9 @@ We now introduce our first example of a Ciarlet element.
       
       \phi_i(x) = \frac{\prod_{j=0,j\ne i}^k (x-x_j)}{\prod_{j=0,j\ne i}^k (x_i-x_j)}, \quad i=0,\ldots,k.
 
+..
+  end of week 2 material
+      
 Vandermonde matrix and unisolvence
 ----------------------------------
 
@@ -119,6 +126,8 @@ More generally, It is useful computationally to write the nodal basis
 in terms of another arbitrary basis `\{\psi_i\}_{i=0}^k`. This
 transformation is represented by the Vandermonde matrix.
 
+.. _def-vandermonde:
+
 .. proof:definition:: Vandermonde matrix
 
    Given a dual basis `\mathcal{N}` and a basis `\{\psi_i\}_{i=0}^k`,
@@ -129,7 +138,9 @@ transformation is represented by the Vandermonde matrix.
       V_{ij} = N_j(\psi_i).
 
 This relationship is made clear by the following lemma.
-      
+
+.. _lemma-vandermonde:
+
 .. proof:lemma::
       
    The expansion of the nodal basis `\{\phi_i\}_{i=0}^k` in terms
@@ -407,7 +418,7 @@ first do this for `P1`.
 
 .. proof:lemma::
 
-  The degree `1` Lagrange element is a finite element.
+  The degree `1` Lagrange element on a triangle `K` is a finite element.
 
 .. proof:proof::
   
@@ -437,6 +448,9 @@ first do this for `P1`.
             frameborder="0" allow="autoplay; fullscreen"
             allowfullscreen></iframe>
 
+..
+  end of week 3 material
+	    
     Imperial students can also `watch this video on Panopto <https://imperial.cloud.panopto.eu/Panopto/Pages/Viewer.aspx?id=5fbdc104-9b38-4e7f-9c61-ac8d00c7d4ac>`_
    
 This technique can then be extended to degree 2.
@@ -466,7 +480,9 @@ The technique extends further to degree 3.
 Going beyond degree 3, we have more than 1 nodal variable taking point
 evaluation inside the triangle. To deal with this, we use the nested
 triangular structure of the Lagrange triangle.
-   
+
+.. _lem-degk-unisolve:
+
 .. proof:lemma::
    
    The degree `k` Lagrange element is a finite element for `k>3`.
@@ -689,9 +705,11 @@ We explore this definition through a couple of exercises.
 .. proof:exercise::
    Show that the Lagrange elements of degree \(k\) have \(C^0\) geometric decompositions.
 
+.. _exer-argyris:
+   
 .. proof:exercise::
    Show that the Argyris element has a \(C^1\) geometric decomposition.
-
+   
 .. dropdown:: A video recording of the following material is available here.
 		  
     .. container:: vimeo
@@ -702,6 +720,9 @@ We explore this definition through a couple of exercises.
             frameborder="0" allow="autoplay; fullscreen"
             allowfullscreen></iframe>
 
+..
+  end of week 4 material
+	    
     Imperial students can also `watch this video on Panopto <https://imperial.cloud.panopto.eu/Panopto/Pages/Viewer.aspx?id=3d816037-2cb7-4eb2-b441-ac8e00ea1551>`_
    
 We now use the geometric decomposition to construct global finite
@@ -731,7 +752,7 @@ between triangles, before defining `C^m` continuous subspaces.
    \mathcal{T}`. The corresponding discontinuous finite element space,
    denoted `Pk` DG, is called the discontinuous Lagrange finite element
    space of degree `k`.
-
+   
 Next we need to associate each nodal variable in each element to a
 vertex, edge or triangle of the triangulation `\mathcal{T}_h`,
 i.e. the global mesh entitles. The following definition explains how

@@ -352,6 +352,9 @@ this equation holds for all `v\in \mathring{V}_h` and when we restrict
       \int_\Omega \nabla v \cdot \nabla u_h \, d x =
       \int_\Omega vf \, d x, \quad \forall v\in \mathring{V}_h.
 
+..
+   End of week 1 material
+
 .. dropdown:: A video recording of the following material is available here.
 		  
     .. container:: vimeo

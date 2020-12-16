@@ -225,7 +225,9 @@ it makes sense to consider an averaged Taylor series over some region
 inside each cell. This will become important later when we start
 thinking about more general types of derivative that only exist in an
 integral sense.
-   
+
+.. _def-averaged-taylor
+
 .. proof:definition:: Averaged Taylor polynomial
 
    Let `\Omega\subset \mathbb{R}^n` be a domain with diameter `d`, that
@@ -248,7 +250,9 @@ integral sense.
       
       x^\alpha = \prod_{i=1}^n x_i^{\alpha_i}.
 
-      
+..
+  End of week 5 material
+   
 Now we develop an estimate of the error `T^kf - f`.
 
 .. dropdown:: A first video recording of the following material is available here.
@@ -461,6 +465,9 @@ a scaling argument to obtain error estimates in terms of the diameter
 
    where the Sobolev inequality was used in the last line.
 
+..
+  End of week 6 material
+   
 .. dropdown:: A video recording of the following material is available here.
 		  
     .. container:: vimeo
@@ -472,7 +479,7 @@ a scaling argument to obtain error estimates in terms of the diameter
             allowfullscreen></iframe>
 
     Imperial students can also `watch this video on Panopto <https://imperial.cloud.panopto.eu/Panopto/Pages/Viewer.aspx?id=7eecb6d2-3a85-4a5a-b748-ac8f00addb0d>`_
-   
+    
 Now we can directly apply this to the interpolation operator error
 estimate on the triangle with diameter 1. It is the standard trick of
 adding and subtracting something, in this case the Taylor polynomial.
