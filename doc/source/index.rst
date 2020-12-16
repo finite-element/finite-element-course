@@ -75,7 +75,7 @@
    #. Week 1: Up to and including :numref:`Definition {number}<def-discrete-poisson>`.
    #. Week 2: Up to and including :numref:`Exercise {number}<exe-1d-lagrange-basis>`.
    #. Week 3: Up to and including :numref:`Definition {number}<P1unisolve>`.
-   #. Week 4: Up to and including :numref:`Lemma {number}<exer-argyris>`.
+   #. Week 4: Up to and including :numref:`Exercise {number}<exer-argyris>`.
    #. Week 5: Up to and including :numref:`Definition {number}<def-averaged-taylor>`.
    #. Week 6: Up to and including :numref:`Lemma {number}<IerrK1>`.
    #. Week 7: Up to and including :numref:`Theorem {number}<thm-helm>`.

@@ -54,6 +54,15 @@ For the cases considered in this course, `K` will be a polygon such as a triangl
    
    Show that the four examples above are all linear functions from `P` to `\mathbb{R}`.
 
+.. proof:exercise::
+   
+   For a domain `K` and shape space `P`, is the following
+   functional a nodal variable? Explain your answer.
+
+   .. math::
+
+      N_0(p) = \int_K p^2 \,d x.
+   
 Ciarlet's finite element provides us with a standard way to define a basis for the `P`, called the nodal basis.
 
 .. dropdown:: A video recording of the following material is available here.
@@ -452,7 +461,22 @@ first do this for `P1`.
   end of week 3 material
 	    
     Imperial students can also `watch this video on Panopto <https://imperial.cloud.panopto.eu/Panopto/Pages/Viewer.aspx?id=5fbdc104-9b38-4e7f-9c61-ac8d00c7d4ac>`_
-   
+
+.. proof:exercise::
+
+   Let `K` be a rectangle, `P` be the polynomial space spanned by
+   `\{1, x, y, xy\}`, let `\mathcal{N}` be the set of dual elements
+   corresponding to point evaluation at each vertex of the
+   rectangle. Show that `\mathcal{N}` determines the finite element.
+
+.. proof:exercise::
+
+   Let `K` be a triangle, and `P` be
+   the space of quadratic polynomials. Let `N` be the set of nodal
+   variables given by point evaluation at each edge midpoint, plus
+   integral of the function along each edge. Show that `N` does not
+   determine `P`.
+
 This technique can then be extended to degree 2.
    
 .. proof:lemma::
@@ -653,6 +677,23 @@ can be assigned to local mesh entities in a geometric decomposition.
    entity `w\in W` such that for any `f\in\mathcal{P}`, `N_i(f)` can be
    calculated from `f` and derivatives of `f` evaluated on `w`.
 
+.. proof:exercise::
+
+   Consider the finite element defined by:
+
+   #. `K` is the unit interval `[0,1]`
+   #. `P` is the space of quadratic polynomials on `K`,
+   #. The nodal variables are:
+
+      .. math::
+	 
+	 N_0[v] = v(0), N_1[v] = v(1), N_2[v] = \int_0^1 v(x)\,d x.
+
+  Find the corresponding nodal basis for `P` in terms of the monomial
+  basis `\{1, x, x^2\}`. Provide the `C^0` geometric decomposition for
+  the finite element (demonstrating that it is indeed `C^0`).
+
+   
 .. dropdown:: A video recording of the following material is available here.
 		  
     .. container:: vimeo
