@@ -531,6 +531,8 @@ Moving on, if we can solve the equation, we would like to know if it is
 useful. What is the size of the error `u-u_h`? For Galerkin approximations
 this question is addressed by Céa's lemma.
 
+.. _thm-cea:
+
 .. proof:theorem:: Céa's lemma.
    
    Let `V_h\subset V`, and let `u` solve a linear variational problem
@@ -852,6 +854,8 @@ provided that `f\in L^2`.
 
 We now use this to obtain the following result, using the
 Aubin-Nitsche trick.
+
+.. _thm-L2-estimates:
 
 .. proof:theorem::
    

@@ -464,9 +464,6 @@ a scaling argument to obtain error estimates in terms of the diameter
       &\leq C \|u\|_{H^k(K_1)},
 
    where the Sobolev inequality was used in the last line.
-
-..
-  End of week 6 material
    
 .. dropdown:: A video recording of the following material is available here.
 		  
@@ -528,6 +525,9 @@ adding and subtracting something, in this case the Taylor polynomial.
             frameborder="0" allow="autoplay; fullscreen"
             allowfullscreen></iframe>
 
+..
+  End of week 6 material
+	    
     Imperial students can also `watch this video on Panopto <https://imperial.cloud.panopto.eu/Panopto/Pages/Viewer.aspx?id=0269bbf5-8928-453a-83c7-ac8f00ad2f1a>`_
    
 Now we apply a scaling argument to translate this to triangles

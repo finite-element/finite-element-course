@@ -77,12 +77,12 @@
    #. Week 3: Up to and including :numref:`Definition {number}<P1unisolve>`.
    #. Week 4: Up to and including :numref:`Lemma {number}<exer-argyris>`.
    #. Week 5: Up to and including :numref:`Definition {number}<def-averaged-taylor>`.
-   #. Week 6: Up to and including :numref:`Lemma {number}<Ibound>`.
+   #. Week 6: Up to and including :numref:`Lemma {number}<IerrK1>`.
    #. Week 7: Up to and including :numref:`Theorem {number}<thm-helm>`.
    #. Week 8: Up to the end of Section 4.
-   #. Week 9: Up to and including :numref:`Theorem {number}<thm-L2-estimates>`.
+   #. Week 9: Up to and including :numref:`Theorem {number}<thm-cea>`.
    #. Week 10: Up to the end of Section 5.
-	  
+
    Past exam papers
    ~~~~~~~~~~~~~~~~
    Please note that for 2015-2018, there was no mastery component in the
