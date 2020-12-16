@@ -226,7 +226,7 @@ inside each cell. This will become important later when we start
 thinking about more general types of derivative that only exist in an
 integral sense.
 
-.. _def-averaged-taylor
+.. _def-averaged-taylor:
 
 .. proof:definition:: Averaged Taylor polynomial
 

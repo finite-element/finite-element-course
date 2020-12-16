@@ -524,6 +524,9 @@ equation.
 
     Imperial students can also `watch this video on Panopto <https://imperial.cloud.panopto.eu/Panopto/Pages/Viewer.aspx?id=5c5e4671-ddb4-4cf2-afce-ac8f01165ff0>`_
 
+..
+  end of Week 9 material
+    
 Moving on, if we can solve the equation, we would like to know if it is
 useful. What is the size of the error `u-u_h`? For Galerkin approximations
 this question is addressed by Céa's lemma.

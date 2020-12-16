@@ -558,6 +558,8 @@ approximations of some linear PDEs where they may be applied.
 We start with the simplest example, for which continuity and
 coercivity are immediate.
 
+.. _thm-helm:
+
 .. proof:theorem:: Solving the (modified) Helmholtz problem
 
    Let `b`, `L` be the forms from the Helmholtz problem, with
@@ -608,6 +610,9 @@ For the Poisson problem, we have
 
    b(u,u) = \int_\Omega |\nabla u|^2 \, d x = |u|^2_{H^1} \neq \|u\|^2_{H^1}.
 
+..
+  End of Week 7 material
+   
 Where we recall the `H^1` seminorm from the interpolation
 section. Some additional results are required to show coercivity, as
 `b(u,u)` is not the `H^1` norm squared any more. A seminorm has all
@@ -988,3 +993,6 @@ ask what is happening to the numerical solutions as the mesh is
 refined. What are they converging to?
 
 We will address these questions in the next section.
+
+..
+  end of Week 8 material
