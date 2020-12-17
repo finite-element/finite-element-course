@@ -676,16 +676,14 @@ precisely what is needed in the Lax-Milgram theorem.
 .. proof:exercise::
 
    Let `\mathcal{T}_h` be a triangulation on the `1\times 1` unit
-  square domain `\Omega`, and let `V` be a `C^0` Lagrange finite
-  element space of degree `k` defined on `\mathcal{T}_h`. A finite element
-  discretisation for the Poisson equation with Neumann boundary conditions
-  is given by:
-
-  find `u \in V` such that
+   square domain `\Omega`, and let `V` be a `C^0` Lagrange finite
+   element space of degree `k` defined on `\mathcal{T}_h`. A finite element
+   discretisation for the Poisson equation with Neumann boundary conditions
+   is given by: find `u \in V` such that
 
   .. math::
      
-     \int_{\Omega} \nabla v \cdot \nabla u \diff x = \int_\Omega v f \diff x,
+     \int_{\Omega} \nabla v \cdot \nabla u \, d x = \int_\Omega v f \, d x,
      \quad \forall v \in V,
   
   for some known function `f`. Show that the bilinear form for this
