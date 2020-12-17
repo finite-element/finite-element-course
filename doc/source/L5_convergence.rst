@@ -970,7 +970,7 @@ the `L^2` norm instead of the `H^1` norm.
    Let `h` be the maximum triangle diameter of a triangulation
    `T_h` of `\Omega`, with `V_h` the corresponding linear Lagrange
    finite element space. Construct a finite element approximation to
-   Problem ii above.  Briefly give the main arguments as to why the
+   Problem (2.) above.  Briefly give the main arguments as to why the
    `L^2(\Omega)` norm of the error converges to zero quadratically in `h`
    as `h\to 0`, giving your assumptions.
       
