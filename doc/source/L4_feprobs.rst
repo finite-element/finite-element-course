@@ -669,8 +669,30 @@ where we recall the `H^1` seminorm from the interpolation
 section. Some additional results are required to show coercivity, as
 `b(u,u)` is not the `H^1` norm squared any more. A seminorm has all
 the properties of a norm except `|u|= 0 \nRightarrow u=0`, which is
-precisely what is needed in the Lax-Milgram theorem.  For the Poisson
-problem, coercivity comes instead from the following mean estimate.
+precisely what is needed in the Lax-Milgram theorem.
+
+.. _exe-pure-neumann
+
+.. proof:exercise::
+
+   Let `\mathcal{T}_h` be a triangulation on the `1\times 1` unit
+  square domain `\Omega`, and let `V` be a `C^0` Lagrange finite
+  element space of degree `k` defined on `\mathcal{T}_h`. A finite element
+  discretisation for the Poisson equation with Neumann boundary conditions
+  is given by:
+
+  find `u \in V` such that
+
+  .. math::
+     
+     \int_{\Omega} \nabla v \cdot \nabla u \diff x = \int_\Omega v f \diff x,
+     \quad \forall v \in V,
+  
+  for some known function `f`. Show that the bilinear form for this
+  problem is not coercive in `V`.
+
+For the Poisson problem, coercivity comes instead from the following
+mean estimate.
 
 .. Dropdown:: A video recording of the following material is available here.
 		  
