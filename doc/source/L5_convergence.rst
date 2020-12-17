@@ -136,9 +136,9 @@ definition.
    For `u\in C^{|\alpha|}(\Omega)`, the usual ``strong'' derivative
    `D^\alpha` of u is equal to the weak derivative `D_w^\alpha` of `u`.
 
-.. proof:proof::
+.. proof:exercise::
 
-   Exercise. [very similar to previous proof]
+   Prove this lemma.
 
 Due to these equivalences, we do not need to distinguish between
 strong, weak and finite element first derivatives for `C^0` finite
@@ -1005,3 +1005,5 @@ Other rich areas of finite element research include
   or bound the numerical error after the numerical solution has been
   computed, in order to guide iterative mesh refinement in particular
   areas of the domain.
+
+.. end of week 10 material

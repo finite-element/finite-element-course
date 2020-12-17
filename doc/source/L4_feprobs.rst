@@ -1054,7 +1054,34 @@ Poisson problem with (full or partial) Dirichlet conditions.
       \|v\|_{H^1(\Omega)}^2 \leq (1+C_1^2)b(v,v).
 
 The coercivity constant is independent of `h`, so the approximation is stable.
+
+.. proof:exercise::
+   
+   For `f\in L^2(\Omega)`, `\sigma\in C^1(\Omega)`, find a finite element
+   formulation of the problem
+
+   .. math::
+   
+      -\sum_{i=1}^n \pp{}{x_i}\left(\sigma(x)\pp{u}{x_i}\right) = f, 
+      \quad \pp{u}{n}=0\mbox{ on }\partial\Omega.
+
+   If there exist `0<a<b` such that `a<\sigma(x)<b` for all `x\in
+   \Omega`, show continuity and coercive for your formulation
+   with respect to the `H^1` norm.
+
+.. proof:exercise::
+
+   Find a `C^0` finite element formulation for the Poisson equation 
+
+   .. math::
       
+      -\nabla^2 u = f, \quad u=g \mbox{ on }\partial \Omega,
+
+   for a function `g` which is `C^2` and whose restriction to
+   `\partial\Omega` is in `L^2(\partial\Omega)`.
+   Derive conditions under the discretisation 
+   has a unique solution.  
+
 In this section, We have developed some techniques for showing that
 variational problems arising from finite element discretisations for
 Helmholtz and Poisson problems have unique solutions, that are stable
