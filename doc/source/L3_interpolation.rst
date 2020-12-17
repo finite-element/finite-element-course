@@ -253,6 +253,18 @@ integral sense.
       
       x^\alpha = \prod_{i=1}^n x_i^{\alpha_i}.
 
+.. proof:exercise::
+
+   Show that
+   
+   .. math::
+  
+      D^\beta Q_{k,B} f = Q_{k-|\beta|,B}  D^\beta f,
+  
+  where `Q^l_B` is the degree `l` averaged Taylor polynomial of
+  `f`, and `D^\beta` is the `\beta`-th derivative where `\beta` is
+  a multi-index.
+      
 ..
   End of week 5 material
    

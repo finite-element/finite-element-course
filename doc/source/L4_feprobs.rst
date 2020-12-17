@@ -671,7 +671,7 @@ section. Some additional results are required to show coercivity, as
 the properties of a norm except `|u|= 0 \nRightarrow u=0`, which is
 precisely what is needed in the Lax-Milgram theorem.
 
-.. _exe-pure-neumann
+.. _exe-pure-neumann:
 
 .. proof:exercise::
 

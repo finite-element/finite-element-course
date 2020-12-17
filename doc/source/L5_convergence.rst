@@ -808,6 +808,37 @@ finite element approximation to the Helmholtz problem.
       \leq Ch^k\|u\|_{H^{k+1}}(\Omega),
 
    having chosen `i=1`.
+
+.. proof:exercise::
+
+   Consider the variational problem of finding `u\in H^1([0,1])`
+   such that
+
+   .. math::
+
+      \int_0^1 vu + v'u' \, d x = \int_0^1 vx \, d x + v(1) - v(0),
+      \quad \forall v \in H^1([0,1]).
+
+   After dividing the interval `[0,1]` into `N` equispaced cells and
+   forming a `P1` `C^0` finite element space `V_N`, the error
+   `\|u-u_h\|_{H^1}=0` for any `N>0`.
+
+   Explain why this is expected.
+
+.. proof:exercise::
+
+   Let `\mathring{H}^1([0,1])` be the subspace of `H^1([0,1])` such
+   that `u(0)=0`.  Consider the variational problem of finding `u \in
+   \mathring{H}^1([0,1])` with
+   
+   .. math::
+
+      \int_0^1 v'u' \, d x = \int_0^{1/2} v \, d x, \quad \forall v \in \mathring{H}([0,1]).
+
+   The interval `[0,1]` is divided into `3N` equispaced cells (where `N`
+   is a positive integer). After forming a `P1` `C^0` finite element
+   space `V_N`, the error `\|u-u_h\|_{H^1}` is found not to converge to
+   zero. Explain why this is expected.
    
 Céa's lemma gives us error estimates in the norm of the space where
 the variational problem is defined, where the continuity and coercivity
