@@ -1062,8 +1062,8 @@ The coercivity constant is independent of `h`, so the approximation is stable.
 
    .. math::
    
-      -\sum_{i=1}^n \pp{}{x_i}\left(\sigma(x)\pp{u}{x_i}\right) = f, 
-      \quad \pp{u}{n}=0\mbox{ on }\partial\Omega.
+      -\sum_{i=1}^n \frac{\partial}{\partial x_i}\left(\sigma(x)\frac{\partial u}{\partial x_i}\right) = f, 
+      \quad \frac{\partial u}{\partial n}=0\mbox{ on }\partial\Omega.
 
    If there exist `0<a<b` such that `a<\sigma(x)<b` for all `x\in
    \Omega`, show continuity and coercive for your formulation
