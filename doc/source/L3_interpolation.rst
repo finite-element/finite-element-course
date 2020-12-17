@@ -44,8 +44,9 @@ We now discuss some useful properties of the local interpolant.
   
    The operator `I_K` is linear.
 
-.. proof:proof::
-   Exercise.
+.. proof:exercise::
+
+   Prove :numref:`Lemma {number}<Ilinear>`.
 
 .. _I_same_nodes:
    
@@ -55,17 +56,19 @@ We now discuss some useful properties of the local interpolant.
       
       N_i(I_K(v)) = N_i(v), \, \forall\,  0\leq i\leq k.
 
-.. proof:proof::
-   Exercise.
+.. proof:exercise::
 
-.. _I_projection
+   Prove :numref:`Lemma {number}<I_same_nodes>`.
+      
+.. _I_projection:
 
 .. proof:lemma::
       
    `I_K` is the identity when restricted to `\mathcal{P}`.
 
-.. proof:proof::
-   Exercise.
+.. proof:exercise::
+
+   Prove :numref:`Lemma {number}<I_projection>`.
 
 By combining together the local interpolants in each triangle of the
 triangulation, we obtain the global interpolant into the finite

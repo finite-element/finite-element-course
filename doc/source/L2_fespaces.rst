@@ -471,11 +471,11 @@ first do this for `P1`.
 
 .. proof:exercise::
 
-   Let `K` be a triangle, and `P` be
-   the space of quadratic polynomials. Let `N` be the set of nodal
-   variables given by point evaluation at each edge midpoint, plus
-   integral of the function along each edge. Show that `N` does not
-   determine `P`.
+   Let `K` be a triangle, and `P` be the space of quadratic
+   polynomials. Let `N` be the set of nodal variables given by point
+   evaluation at each edge midpoint together with the nodal variables
+   given by integral of the function along each edge. Show that `N`
+   does not determine `P`.
 
 This technique can then be extended to degree 2.
    
@@ -744,11 +744,13 @@ these correspondences.
 We explore this definition through a couple of exercises.
 
 .. proof:exercise::
+   
    Show that the Lagrange elements of degree \(k\) have \(C^0\) geometric decompositions.
 
 .. _exer-argyris:
    
 .. proof:exercise::
+   
    Show that the Argyris element has a \(C^1\) geometric decomposition.
    
 .. dropdown:: A video recording of the following material is available here.
