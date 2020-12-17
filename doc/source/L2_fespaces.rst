@@ -854,7 +854,7 @@ We now apply this to a few examples, which can be proved as exercises.
 .. proof:example::
    
    The finite element space built from the `C^0` global decomposition
-   built from degree `k` Lagrange element is called the degree `k` continuous Lagrange finite element space, denoted P`k`.
+   built from degree `k` Lagrange element is called the degree `k` continuous Lagrange finite element space, denoted `Pk`.
 
 .. proof:example::
    

@@ -610,6 +610,58 @@ For the Poisson problem, we have
 
    b(u,u) = \int_\Omega |\nabla u|^2 \, d x = |u|^2_{H^1} \neq \|u\|^2_{H^1}.
 
+.. proof:exercise::
+   
+   Let `V` be a `C^0` finite element space on `[0,1]`, defined
+   on a one-dimensional mesh with vertices `0=x_0<x_1<x_2<\ldots<x_{n-1}<x_n=1`. Show that
+   `u\in V` satisfies the fundamental theorem of calculus, `i.e.`
+
+   .. math::
+
+      \int_0^1 u' \diff x = u[1] - u[0],
+  
+  where `u'` is the usual finite element derivative defined in `L^2([0,1])`
+  by taking the usual derivative when restricting `u` to any subinterval
+  `[x_k,x_{k+1}]`.
+
+.. proof:exercise::
+  
+  Let
+
+  .. math::
+     
+     a(u,v) = \int_0^1\left(u'v' + u'v + uv\right)\diff x.
+
+  Let `V` be a `C^0` finite element space on `[0,1]` and let
+  `\mathring{V}` be the subspace of functions that vanish at `x=0` and
+  `x=1`.  Using the finite element version of the fundamental theorem of
+  calculus above, prove that
+
+  .. math::
+
+     a(v,v) = \int_0^1\left((v')^2 + v^2\right)\diff x := \|v\|_{H^1}^2, \quad \forall v\in \mathring{V}.
+
+  Hence conclude that the bilinear form is coercive on `\mathring{V}`.
+
+.. proof:exercise::
+
+   Consider the variational problem with bilinear form
+
+   .. math::
+   
+      a(u,v) = \int_0^1 (u'v' + u'v + uv)\diff x,
+
+   corresponding to the differential equation
+
+   .. math::
+      
+      -u'' + u' + u = f.
+
+   Prove that `a(\cdot,\cdot)` is continuous and coercive on a `C^0` finite element space `V` defined on `[0,1]`, with respect to the `H^1` inner product.
+
+   Hints: for continuity, just use the triangle inequality and the
+   relationship between `L^2` and `H^1` norms. For coercivity, try completing the square for the integrand in `a`.
+
 ..
   End of Week 7 material
    
