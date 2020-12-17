@@ -595,21 +595,6 @@ coercivity are immediate.
    The continuity and coercivity constants are both 1, independent
    of `h`, so the discretisation is stable.
 
-For the Helmholtz problem, we have
-
-.. math::
-   
-   b(u,v) = \int_\Omega uv + \nabla u\cdot \nabla v \, d x = (u,v)_{H^1},
-
-i.e. `b(u,v)` is the `H^1` inner of `u` and `v`, which makes the
-continuity and coercivity immediate.
-  
-For the Poisson problem, we have
-
-.. math::
-
-   b(u,u) = \int_\Omega |\nabla u|^2 \, d x = |u|^2_{H^1} \neq \|u\|^2_{H^1}.
-
 .. proof:exercise::
    
    Let `V` be a `C^0` finite element space on `[0,1]`, defined
@@ -664,8 +649,23 @@ For the Poisson problem, we have
 
 ..
   End of Week 7 material
+
+For the Helmholtz problem, we have
+
+.. math::
    
-Where we recall the `H^1` seminorm from the interpolation
+   b(u,v) = \int_\Omega uv + \nabla u\cdot \nabla v \, d x = (u,v)_{H^1},
+
+i.e. `b(u,v)` is the `H^1` inner of `u` and `v`, which makes the
+continuity and coercivity immediate.
+  
+For the Poisson problem, we have
+
+.. math::
+
+   b(u,u) = \int_\Omega |\nabla u|^2 \, d x = |u|^2_{H^1} \neq \|u\|^2_{H^1},
+   
+where we recall the `H^1` seminorm from the interpolation
 section. Some additional results are required to show coercivity, as
 `b(u,u)` is not the `H^1` norm squared any more. A seminorm has all
 the properties of a norm except `|u|= 0 \nRightarrow u=0`, which is
