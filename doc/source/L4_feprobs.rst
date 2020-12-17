@@ -618,7 +618,7 @@ For the Poisson problem, we have
 
    .. math::
 
-      \int_0^1 u' \diff x = u[1] - u[0],
+      \int_0^1 u' \, d x = u[1] - u[0],
   
   where `u'` is the usual finite element derivative defined in `L^2([0,1])`
   by taking the usual derivative when restricting `u` to any subinterval
@@ -630,7 +630,7 @@ For the Poisson problem, we have
 
   .. math::
      
-     a(u,v) = \int_0^1\left(u'v' + u'v + uv\right)\diff x.
+     a(u,v) = \int_0^1\left(u'v' + u'v + uv\right)\, d x.
 
   Let `V` be a `C^0` finite element space on `[0,1]` and let
   `\mathring{V}` be the subspace of functions that vanish at `x=0` and
@@ -639,7 +639,7 @@ For the Poisson problem, we have
 
   .. math::
 
-     a(v,v) = \int_0^1\left((v')^2 + v^2\right)\diff x := \|v\|_{H^1}^2, \quad \forall v\in \mathring{V}.
+     a(v,v) = \int_0^1\left((v')^2 + v^2\right)\, d x := \|v\|_{H^1}^2, \quad \forall v\in \mathring{V}.
 
   Hence conclude that the bilinear form is coercive on `\mathring{V}`.
 
@@ -649,7 +649,7 @@ For the Poisson problem, we have
 
    .. math::
    
-      a(u,v) = \int_0^1 (u'v' + u'v + uv)\diff x,
+      a(u,v) = \int_0^1 (u'v' + u'v + uv)\, d x,
 
    corresponding to the differential equation
 
