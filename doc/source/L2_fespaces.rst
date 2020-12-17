@@ -745,13 +745,13 @@ We explore this definition through a couple of exercises.
 
 .. proof:exercise::
    
-   Show that the Lagrange elements of degree \(k\) have \(C^0\) geometric decompositions.
+   Show that the Lagrange elements of degree `k` have `C^0` geometric decompositions.
 
 .. _exer-argyris:
    
 .. proof:exercise::
    
-   Show that the Argyris element has a \(C^1\) geometric decomposition.
+   Show that the Argyris element has a `C^1` geometric decomposition.
    
 .. dropdown:: A video recording of the following material is available here.
 		  
