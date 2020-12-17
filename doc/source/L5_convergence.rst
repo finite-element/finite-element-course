@@ -936,6 +936,44 @@ Aubin-Nitsche trick.
 Thus we gain one order of convergence rate with `h` by using
 the `L^2` norm instead of the `H^1` norm.
    
+.. proof:exercise::
+
+   Let `\Omega` be a convex polygonal 2D domain. Consider the
+    following two problems.
+ 
+   #. Find `u \in H^2` such that
+
+      .. math::
+
+	 \|\nabla^2 u + f\|_{L^2(\Omega)} = 0, \quad
+	 \|u\|_{L^2(\partial\Omega)}=0,
+      
+      which we write in a shorthand as
+
+      .. math::
+      
+	 -\nabla^2 u = f, \quad u|_{\partial\Omega} = 0.
+
+   #. Find `u \in \mathring{H}^1(\Omega)` such that
+
+      .. math::
+      
+	 \int_\Omega \nabla u \cdot \nabla v \, d x = \int_\Omega f v \, d x,
+	 \quad \forall v \in \mathring{H}^1(\Omega),
+       
+      where `\mathring{H}^1(\Omega)` is the subspace of `H^1(\Omega)`
+      consisting of functions whose trace vanishes on the boundary.
+
+   Under assumptions on `u` which you should state, show that a solution
+   to problem (1.) is a solution to problem (2.).
+
+   Let `h` be the maximum triangle diameter of a triangulation
+   `T_h` of `\Omega`, with `V_h` the corresponding linear Lagrange
+   finite element space. Construct a finite element approximation to
+   Problem ii above.  Briefly give the main arguments as to why the
+   `L^2(\Omega)` norm of the error converges to zero quadratically in `h`
+   as `h\to 0`, giving your assumptions.
+      
 Epilogue
 --------
    
