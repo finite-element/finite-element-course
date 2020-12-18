@@ -437,6 +437,89 @@ Local and global interpolation errors
 
     Imperial students can also `watch this video on Panopto <https://imperial.cloud.panopto.eu/Panopto/Pages/Viewer.aspx?id=de44e00c-6a67-43ac-88e1-ac8e00ee04aa>`_
 
+The following exercises give a specific example of the interpolation error
+results of this section without directly using the previous estimate
+(because they specialise to `L^2`, 1D and linear elements).
+
+.. proof:exercise::
+
+   Let `w\in C^2([0,1])`, with `w(0)=w(1)=0`. Show that
+
+   .. math::
+      
+      \int_0^1 w(x) \,d x \leq c\int_0^1 w''(x) \,d x.
+
+   Hints: use the Schwarz inequality,
+
+   .. math::
+
+      (\int_0^1 f(x)g(x) \, dx)^2 \leq (\int_0^1 f(x)^2 \, dx)
+      (\int_0^1 g(x)^2 \, dx)^2,
+
+   (which we shall discuss in more generality in Section 4), together
+   with Rolle's theorem, that says that if `u` has continuous
+   derivative then for all `x`, there exists `0\leq \xi \leq 1` such
+   that
+
+   .. math::
+
+      u(x) = \int_\xi^x u'(y) \, dy.
+
+.. proof:exercise::
+
+   Using the previous exercise, show that for all `u\in C^2([0,1])`, there
+   exists a constant `c` such that
+
+   .. math::
+
+      \int_0^1 (u(x)-\mathcal{I}_{[0,1]}u(x))^2 \, dx
+      \leq c\int_0^1 u''(x)^2 \, dx,
+
+   where `\mathcal{I}_{[0,1]}` is the interpolator to the finite element
+   with `K=[0,1]`, `P` is the linear polynomials on `K`, and the nodal
+   variables are `N_0[p]=p(0)` and `N_1[p]=p(1)`.
+
+.. proof:exercise::
+
+   Using the previous exercise, show that for all `u\in C^2([a,b])`, there
+   exists a constant `c` such that
+
+   .. math::
+
+      \int_a^b (u(x)-\mathcal{I}_{[a,b]}u(x))^2 \, dx
+      \leq c(b-a)^4\int_a^b u''(x)^2 \, dx,
+
+   where `\mathcal{I}_{[a,b]}` is the interpolator to the finite element
+   with `K=[a,b]`, `P` is the linear polynomials on `K`, and the nodal
+   variables are `N_0[p]=p(a)` and `N_1[p]=p(b)`.
+
+.. proof:exercise::
+
+   Using the previous exercise, show that for a P1 finite element space
+   defined on the interval `[a,b]` with maximum mesh cell width `h`, then
+   there exists a constant `c` such that
+
+   .. math::
+
+      \int_a^b (u(x)-\mathcal{I}_{h}u(x))^2 \, dx
+      \leq ch^4 \int_a^b u''(x)^2 \, dx,
+
+   where `\mathcal{I}_h` is the global nodal interpolator to the P1
+   finite element space.
+
+.. proof:exercise::
+   
+   Under the same assumptions as the previous exercise, prove the following
+   finite element version of Sobolev's inequality,
+
+   .. math::
+
+      \|v\|^2_{C^\infty} \leq C\int_0^1 (v')^2 \, dx,
+
+   for all `v \in V \cap C^1([0,1])`, where `V` is the
+   subspace of the P1 finite element space defined on a subdivision
+   of the interval `[0,1]` containing only functions `v` with `v(0)=0`.
+    
 Now we will use the Taylor polynomial estimates to
 derive error estimates for the local interpolation operator.
 We start by looking at a triangle with diameter 1, and then use
