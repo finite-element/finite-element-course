@@ -527,7 +527,7 @@ adding and subtracting something, in this case the Taylor polynomial.
       
       &\leq (1+C^2)|u|_{H^{k+1}(K_1)}^2,
 
-   where we used the fact that `I_{K_1}Q_{k,B}u = Q_{k,B}u` in the
+   where we used the fact that `\mathcal{I}_{K_1}Q_{k,B}u = Q_{k,B}u` in the
    second line and the previous lemma in the third line.
 
 .. dropdown:: A video recording of the following material is available here.

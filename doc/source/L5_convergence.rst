@@ -598,11 +598,11 @@ Interpolation error in `H^k` spaces
 
 The interpretation of Céa's lemma is that the error is proportional to
 the minimal error in approximating `u` in `V_h`. To do this, we can
-simply choose `v = I_hu` in Céa's lemma, to get
+simply choose `v = \mathcal{I}_hu` in Céa's lemma, to get
 
 .. math::
    \|u-u_h\|_V \leq \frac{M}{\gamma}\min_{v\in V_h}
-   \|u-v\|_V \leq \frac{M}{\gamma}\|u - I_hu\|_V.
+   \|u-v\|_V \leq \frac{M}{\gamma}\|u - \mathcal{I}_hu\|_V.
 
 Hence, Céa's lemma reduces the problem of estimating the error in the
 numerical solution to estimating error in the interpolation of the
@@ -804,7 +804,7 @@ finite element approximation to the Helmholtz problem.
    .. math::
 
       \min_{v\in V_h}
-      \|u-v\|_{H^1(\Omega)} \leq \|u-I_hu\|_{H^1(\Omega)}
+      \|u-v\|_{H^1(\Omega)} \leq \|u-\mathcal{I}_hu\|_{H^1(\Omega)}
       \leq Ch^k\|u\|_{H^{k+1}}(\Omega),
 
    having chosen `i=1`.
