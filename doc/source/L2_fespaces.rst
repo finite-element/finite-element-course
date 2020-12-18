@@ -408,7 +408,17 @@ there, but the following lemma is useful when checking that
             allowfullscreen></iframe>
 
     Imperial students can also `watch this video on Panopto <https://imperial.cloud.panopto.eu/Panopto/Pages/Viewer.aspx?id=b2674f92-8a03-4685-98e7-ac8e00a15a88>`_
-   
+
+.. proof:exercise::
+
+   The following polynomial vanishes on the line `y=-1-x`. Show that
+   it satisfies the result of the previous theorem.
+
+   .. math::
+
+      x^{5} + 5 x^{4} y - x^{4} + 6 x^{3} y^{2} - 4 x^{3} y - 2 x^{2}
+      y^{3} - 2 x^{2} y^{2} - 3 x y^{4} + 4 x y^{3} + y^{5} - y^{4}
+
 Equipped with this tool we can consider some finite elements in two
 dimensions.
 
