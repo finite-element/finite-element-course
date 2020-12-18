@@ -24,19 +24,19 @@ function spaces on a triangulation.
 Local and global interpolation operators
 ----------------------------------------
 
-.. proof:definition:: Local interpolant
+.. proof:definition:: Local interpolator
 
    Given a finite element `(K,\mathcal{P},\mathcal{N})`, with
    corresponding nodal basis `\{\phi_i\}_{i=0}^k`. Let `v`
    be a function such that `N_i(v)` is well-defined for all `i`.
-   Then the local interpolant `\mathcal{I}_K` is an operator
+   Then the local interpolator `\mathcal{I}_K` is an operator
    mapping `v` to `\mathcal{P}` such that
 
    .. math::
       
       (I_Kv)(x) = \sum_{i=0}^kN_i(v)\phi_i(x).
 
-We now discuss some useful properties of the local interpolant.
+We now discuss some useful properties of the local interpolator.
       
 .. _Ilinear:
 
@@ -70,16 +70,16 @@ We now discuss some useful properties of the local interpolant.
 
    Prove :numref:`Lemma {number}<I_projection>`.
 
-By combining together the local interpolants in each triangle of the
-triangulation, we obtain the global interpolant into the finite
+By combining together the local interpolators in each triangle of the
+triangulation, we obtain the global interpolator into the finite
 element space.
    
-.. proof:definition:: Global interpolant
+.. proof:definition:: Global interpolator
 
    Let `V_h` be a finite element space constructed from a triangulation
    `\mathcal{T}_h` with finite elements
    `(K_i,\mathcal{P}_i,\mathcal{N}_i)`, each with a `C^m` geometric
-   decomposition. The global interpolant `\mathcal{I}_h` is defined by
+   decomposition. The global interpolator `\mathcal{I}_h` is defined by
    `\mathcal{I}_hu \in V_h` such that
    
    .. math::
@@ -601,7 +601,7 @@ with diameter `h`.
     Imperial students can also `watch this video on Panopto <https://imperial.cloud.panopto.eu/Panopto/Pages/Viewer.aspx?id=c1e7b2ce-4169-4fd7-a730-ac8f00b06e45>`_
    
 So far we have just developed an error estimate for the local
-interpolant on a single triangle. Now we extend this to finite element
+interpolator on a single triangle. Now we extend this to finite element
 spaces defined on the whole triangulation.
 
 .. _Iherr:
