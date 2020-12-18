@@ -188,7 +188,21 @@ This relationship is made clear by the following lemma.
             allowfullscreen></iframe>
 
     Imperial students can also `watch this video on Panopto <https://imperial.cloud.panopto.eu/Panopto/Pages/Viewer.aspx?id=6f9d4bb7-4a90-40f7-8eae-ac8d00ce8ac7>`_
-   
+
+.. proof:exercise::
+
+   Consider the following finite element.
+
+   * `K` is the interval `[0,1]`.
+   * `P` is the quadratic polynomials on `K`.
+   * The nodal variables are:
+
+     .. math::
+
+	N_0[p] = p(0), \, N_1[p]=p(1), \, N_2=\int_0^1 p \,d x.
+
+   Find the corresponding nodal basis.
+    
 Given a triple `(K,\mathcal{P},\mathcal{N})`, it is necessary to
 verify that `\mathcal{N}` is indeed a basis for `\mathcal{P}'`,
 i.e. that the Ciarlet element is well-defined. Then the nodal basis is
@@ -255,7 +269,7 @@ provides a useful tool for checking this.
 
    which is equivalent to `V^T` being invertible, which is equivalent to
    `V` being invertible, and so (3) is equivalent to (2).
-
+   
 .. dropdown:: A video recording of the following material is available here.
 		  
     .. container:: vimeo
@@ -298,6 +312,21 @@ We can now go and directly apply this lemma to the 1D Lagrange elements.
    a degree `k` polynomial, it must be zero by the fundamental theorem
    of algebra.
 
+.. proof:exercise::
+
+   Consider the following proposed finite element.
+
+   * `K` is the interval `[0,1]`.
+   * `P` is the linear polynomials on `K`.
+   * The nodal variables are:
+
+     .. math::
+
+	N_0[p] = p(0.5), N_1=\int_0^1 p \,d x.
+
+   Is this finite element unisolvent? Explain your answer.
+
+   
 2D and 3D finite elements
 -------------------------
 
