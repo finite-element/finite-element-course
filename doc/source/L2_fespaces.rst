@@ -199,7 +199,7 @@ This relationship is made clear by the following lemma.
 
      .. math::
 
-	N_0[p] = p(0), \, N_1[p]=p(1), \, N_2=\int_0^1 p \,d x.
+	N_0[p] = p(0), \, N_1[p]=p(1), \, N_2=\int_0^1 p(x) \,d x.
 
    Find the corresponding nodal basis.
     
@@ -322,7 +322,7 @@ We can now go and directly apply this lemma to the 1D Lagrange elements.
 
      .. math::
 
-	N_0[p] = p(0.5), N_1=\int_0^1 p \,d x.
+	N_0[p] = p(0.5), N_1=\int_0^1 p(x) \,d x.
 
    Is this finite element unisolvent? Explain your answer.
 
