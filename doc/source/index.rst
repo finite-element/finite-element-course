@@ -13,7 +13,9 @@
    This is the webpage for the `Imperial College London Mathematics
    <http://www.imperial.ac.uk/maths>`_  module
    MATH96063/MATH97017/MATH97095 Finite Elements: numerical analysis and
-   implementation. Other people are welcome to make use of the
+   implementation. There's an introductory video explaining what the module is about `online here <https://player.vimeo.com/video/426777950?autoplay=1>`_.
+
+   Other people are welcome to make use of the
    material here. The authors welcome feedback and would particularly
    appreciate an `email <mailto:david.ham@imperial.ac.uk>`_ if this
    material is used to teach anywhere.
