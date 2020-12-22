@@ -6,6 +6,18 @@ Convergence of finite element approximations
 In this section we develop tools to prove convergence of finite
 element approximations to the exact solutions of PDEs.
 
+.. Dropdown:: A video recording of the following material is available here.
+		  
+    .. container:: vimeo
+
+        .. raw:: html
+
+            <iframe src="https://player.vimeo.com/video/490669563"
+            frameborder="0" allow="autoplay; fullscreen"
+            allowfullscreen></iframe>
+
+    Imperial students can also `watch this video on Panopto <https://imperial.cloud.panopto.eu/Panopto/Pages/Viewer.aspx?id=5d2d1721-725f-43ef-bcdd-ac8f01056006>`_
+
 Weak derivatives
 ----------------
 
@@ -124,9 +136,9 @@ definition.
    For `u\in C^{|\alpha|}(\Omega)`, the usual ``strong'' derivative
    `D^\alpha` of u is equal to the weak derivative `D_w^\alpha` of `u`.
 
-.. proof:proof::
+.. proof:exercise::
 
-   Exercise. [very similar to previous proof]
+   Prove this lemma.
 
 Due to these equivalences, we do not need to distinguish between
 strong, weak and finite element first derivatives for `C^0` finite
@@ -135,6 +147,18 @@ element functions. All derivatives are assumed to be weak from now on.
 
 Sobolev spaces
 --------------
+
+.. Dropdown:: A video recording of the following material is available here.
+		  
+    .. container:: vimeo
+
+        .. raw:: html
+
+            <iframe src="https://player.vimeo.com/video/490880876"
+            frameborder="0" allow="autoplay; fullscreen"
+            allowfullscreen></iframe>
+
+    Imperial students can also `watch this video on Panopto <https://imperial.cloud.panopto.eu/Panopto/Pages/Viewer.aspx?id=ab4667ea-fb50-461e-940f-ac8f010c13fa>`_
 
 We are now in a position to define a space that contains all `C^0`
 finite element spaces. This means that we can consider the limit
@@ -253,6 +277,18 @@ area/volume.
 Variational formulations of PDEs
 --------------------------------
 
+.. Dropdown:: A video recording of the following material is available here.
+		  
+    .. container:: vimeo
+
+        .. raw:: html
+
+            <iframe src="https://player.vimeo.com/video/490669306"
+            frameborder="0" allow="autoplay; fullscreen"
+            allowfullscreen></iframe>
+
+    Imperial students can also `watch this video on Panopto <https://imperial.cloud.panopto.eu/Panopto/Pages/Viewer.aspx?id=4ac5a081-3109-4b2f-86df-ac8f010fa52c>`_
+
 We can now consider linear variational problems defined on `H^k`
 spaces, by taking a bilinear form `b(u,v)` and linear form
 `F(v)`, seeking `u\in H^k` (for chosen `H^k`) such that
@@ -346,6 +382,18 @@ This tells us when the integration by parts formula makes sense.
    to `v\nabla u`. These satisfy the equation;
    we obtain the result by passing to the limit.
 
+.. Dropdown:: A video recording of the following material is available here.
+		  
+    .. container:: vimeo
+
+        .. raw:: html
+
+            <iframe src="https://player.vimeo.com/video/490668791"
+            frameborder="0" allow="autoplay; fullscreen"
+            allowfullscreen></iframe>
+
+    Imperial students can also `watch this video on Panopto <https://imperial.cloud.panopto.eu/Panopto/Pages/Viewer.aspx?id=11a1d9f5-c1e9-41c1-9207-ac8f01127eac>`_
+   
 Now we have everything we need to show that solutions of the strong
 form equation also solve the variational problem. It is just a matter
 of substituting into the formula and applying integration by parts.
@@ -419,6 +467,18 @@ instead of just `H^1`.
 Galerkin approximations of linear variational problems
 ------------------------------------------------------
 
+.. Dropdown:: A video recording of the following material is available here.
+		  
+    .. container:: vimeo
+
+        .. raw:: html
+
+            <iframe src="https://player.vimeo.com/video/490668756"
+            frameborder="0" allow="autoplay; fullscreen"
+            allowfullscreen></iframe>
+
+    Imperial students can also `watch this video on Panopto <https://imperial.cloud.panopto.eu/Panopto/Pages/Viewer.aspx?id=63ad7174-ffe3-44bf-bd94-ac8f011498d9>`_
+
 Going a bit more general again, assume that we have a well-posed
 linear variational problem on `H^k`, connected to a strong form
 PDE. Now we would like to approximate it. This is done in general
@@ -452,9 +512,26 @@ we know that the Galerkin approximation exists, is unique and is
 stable. This means that it will be possible to solve the matrix-vector
 equation.
 
+.. Dropdown:: A video recording of the following material is available here.
+		  
+    .. container:: vimeo
+
+        .. raw:: html
+
+            <iframe src="https://player.vimeo.com/video/490668557"
+            frameborder="0" allow="autoplay; fullscreen"
+            allowfullscreen></iframe>
+
+    Imperial students can also `watch this video on Panopto <https://imperial.cloud.panopto.eu/Panopto/Pages/Viewer.aspx?id=5c5e4671-ddb4-4cf2-afce-ac8f01165ff0>`_
+
+..
+  end of Week 9 material
+    
 Moving on, if we can solve the equation, we would like to know if it is
 useful. What is the size of the error `u-u_h`? For Galerkin approximations
 this question is addressed by Céa's lemma.
+
+.. _thm-cea:
 
 .. proof:theorem:: Céa's lemma.
    
@@ -506,14 +583,26 @@ this question is addressed by Céa's lemma.
 
 Interpolation error in `H^k` spaces
 -----------------------------------
-   
+
+.. Dropdown:: A video recording of the following material is available here.
+		  
+    .. container:: vimeo
+
+        .. raw:: html
+
+            <iframe src="https://player.vimeo.com/video/490668426"
+            frameborder="0" allow="autoplay; fullscreen"
+            allowfullscreen></iframe>
+
+    Imperial students can also `watch this video on Panopto <https://imperial.cloud.panopto.eu/Panopto/Pages/Viewer.aspx?id=b473bf39-8d5b-4d2f-b051-ac8f01192b68>`_
+
 The interpretation of Céa's lemma is that the error is proportional to
 the minimal error in approximating `u` in `V_h`. To do this, we can
-simply choose `v = I_hu` in Céa's lemma, to get
+simply choose `v = \mathcal{I}_hu` in Céa's lemma, to get
 
 .. math::
    \|u-u_h\|_V \leq \frac{M}{\gamma}\min_{v\in V_h}
-   \|u-v\|_V \leq \frac{M}{\gamma}\|u - I_hu\|_V.
+   \|u-v\|_V \leq \frac{M}{\gamma}\|u - \mathcal{I}_hu\|_V.
 
 Hence, Céa's lemma reduces the problem of estimating the error in the
 numerical solution to estimating error in the interpolation of the
@@ -682,7 +771,19 @@ The next steps then just follow through.
 
 Convergence of the finite element approximation to the Helmholtz problem
 ------------------------------------------------------------------------
-   
+
+.. Dropdown:: A video recording of the following material is available here.
+		  
+    .. container:: vimeo
+
+        .. raw:: html
+
+            <iframe src="https://player.vimeo.com/video/490668331"
+            frameborder="0" allow="autoplay; fullscreen"
+            allowfullscreen></iframe>
+
+    Imperial students can also `watch this video on Panopto <https://imperial.cloud.panopto.eu/Panopto/Pages/Viewer.aspx?id=913ad682-d5b9-4849-8dc8-ac8f0120d5e8>`_
+
 Now that we have the required interpolation operator results, we
 can return to applying Céa's lemma to the convergence of the
 finite element approximation to the Helmholtz problem.
@@ -694,7 +795,7 @@ finite element approximation to the Helmholtz problem.
 
    .. math::
 
-      \|u_h-u\|_{H^1(\Omega)} \leq Ch^k\|u\|_{H^2(\Omega)}.
+      \|u_h-u\|_{H^1(\Omega)} \leq Ch^k\|u\|_{H^{k+1}(\Omega)}.
 
 .. proof:proof::
       
@@ -703,17 +804,98 @@ finite element approximation to the Helmholtz problem.
    .. math::
 
       \min_{v\in V_h}
-      \|u-v\|_{H^1(\Omega)} \leq \|u-I_hu\|_{H^1(\Omega)}
-      \leq Ch^k\|u\|_{H^2(\Omega)},
+      \|u-v\|_{H^1(\Omega)} \leq \|u-\mathcal{I}_hu\|_{H^1(\Omega)}
+      \leq Ch^k\|u\|_{H^{k+1}}(\Omega),
 
    having chosen `i=1`.
 
+.. proof:exercise::
+
+   Consider the variational problem of finding `u\in H^1([0,1])`
+   such that
+
+   .. math::
+
+      \int_0^1 vu + v'u' \, d x = \int_0^1 vx \, d x + v(1) - v(0),
+      \quad \forall v \in H^1([0,1]).
+
+   After dividing the interval `[0,1]` into `N` equispaced cells and
+   forming a `P1` `C^0` finite element space `V_N`, the error
+   `\|u-u_h\|_{H^1}=0` for any `N>0`.
+
+   Explain why this is expected.
+
+.. proof:exercise::
+
+   Let `\mathring{H}^1([0,1])` be the subspace of `H^1([0,1])` such
+   that `u(0)=0`.  Consider the variational problem of finding `u \in
+   \mathring{H}^1([0,1])` with
+   
+   .. math::
+
+      \int_0^1 v'u' \, d x = \int_0^{1/2} v \, d x, \quad \forall v \in \mathring{H}([0,1]).
+
+   The interval `[0,1]` is divided into `3N` equispaced cells (where `N`
+   is a positive integer). After forming a `P1` `C^0` finite element
+   space `V_N`, the error `\|u-u_h\|_{H^1}` is found not to converge to
+   zero. Explain why this is expected.
+
+.. proof:exercise::
+
+   Let `\Omega` be a convex polygonal 2D domain. Consider the
+    following two problems.
+ 
+   #. Find `u \in H^2` such that
+
+      .. math::
+
+	 \|\nabla^2 u + f\|_{L^2(\Omega)} = 0, \quad
+	 \|u\|_{L^2(\partial\Omega)}=0,
+      
+      which we write in a shorthand as
+
+      .. math::
+      
+	 -\nabla^2 u = f, \quad u|_{\partial\Omega} = 0.
+
+   #. Find `u \in \mathring{H}^1(\Omega)` such that
+
+      .. math::
+      
+	 \int_\Omega \nabla u \cdot \nabla v \, d x = \int_\Omega f v \, d x,
+	 \quad \forall v \in \mathring{H}^1(\Omega),
+       
+      where `\mathring{H}^1(\Omega)` is the subspace of `H^1(\Omega)`
+      consisting of functions whose trace vanishes on the boundary.
+
+   Under assumptions on `u` which you should state, show that a solution
+   to problem (1.) is a solution to problem (2.).
+
+   Let `h` be the maximum triangle diameter of a triangulation
+   `T_h` of `\Omega`, with `V_h` the corresponding linear Lagrange
+   finite element space. Construct a finite element approximation to
+   Problem (2.) above.  Briefly give the main arguments as to why the
+   `H^1(\Omega)` norm of the error converges to zero linearly in `h`
+   as `h\to 0`, giving your assumptions.
+   
 Céa's lemma gives us error estimates in the norm of the space where
 the variational problem is defined, where the continuity and coercivity
 results hold. In the case of the Helmholtz problem, this is `H^1`.
 We would also like estimates of the error in the `L^2` norm, and
 it will turn out that these will have a more rapid convergence rate
 as `h\to 0`.
+
+.. Dropdown:: A video recording of the following material is available here.
+		  
+    .. container:: vimeo
+
+        .. raw:: html
+
+            <iframe src="https://player.vimeo.com/video/490668178"
+            frameborder="0" allow="autoplay; fullscreen"
+            allowfullscreen></iframe>
+
+    Imperial students can also `watch this video on Panopto <https://imperial.cloud.panopto.eu/Panopto/Pages/Viewer.aspx?id=256886bb-d6bd-41fa-916a-ac8f0126b14b>`_
 
 To do this we quote the following without proof.
 
@@ -742,14 +924,16 @@ provided that `f\in L^2`.
 We now use this to obtain the following result, using the
 Aubin-Nitsche trick.
 
+.. _thm-L2-estimates:
+
 .. proof:theorem::
    
-   The degree `m` Lagrange finite element approximation `u_h` to the
+   The degree `k` Lagrange finite element approximation `u_h` to the
    solution `u` of the variational Helmholtz problem satisfies
 
    .. math::
       
-      \|u_h-u\|_{L^2(\Omega)} \leq Cd^{m+1}\|u\|_{H^2(\Omega)}.
+      \|u_h-u\|_{L^2(\Omega)} \leq Ch^{k+1}\|u\|_{H^{k+1}(\Omega)}.
 
 .. proof:proof::
    
@@ -783,13 +967,13 @@ Aubin-Nitsche trick.
 
       &\leq Ch\|u-u_h\|_{H^1(\Omega)} |w|_{H^2(\Omega)} 
 
-      &\leq C_1 h^{m+1} \|u-u_h\|_{L^2(\Omega)}|u|_{H^2(\Omega)}
+      &\leq C_1 h^{k+1} |u|_{H^{k+1}(\Omega)\|u-u_h\|_{L^2(\Omega)}}
 
    and dividing both sides by `\|u-u_h\|_{L^2(\Omega)}` gives the result.
 
 Thus we gain one order of convergence rate with `h` by using
 the `L^2` norm instead of the `H^1` norm.
-   
+      
 Epilogue
 --------
    
@@ -890,3 +1074,5 @@ Other rich areas of finite element research include
   or bound the numerical error after the numerical solution has been
   computed, in order to guide iterative mesh refinement in particular
   areas of the domain.
+
+.. end of week 10 material

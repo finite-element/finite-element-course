@@ -3,6 +3,18 @@
 Finite element problems: solvability and stability
 ===================================================
 
+.. dropdown:: A video recording of the following material is available here.
+		  
+    .. container:: vimeo
+
+        .. raw:: html
+
+            <iframe src="https://player.vimeo.com/video/490671279"
+            frameborder="0" allow="autoplay; fullscreen"
+            allowfullscreen></iframe>
+
+    Imperial students can also `watch this video on Panopto <https://imperial.cloud.panopto.eu/Panopto/Pages/Viewer.aspx?id=fd348dc9-840d-41ac-8906-ac8f00b77a93>`_
+
 In section 1, we saw the example of a finite element approximation
 for Poisson's equation in the unit square, which we now recall below.
 
@@ -253,6 +265,18 @@ spaces as subspaces of infinite dimensional Hilbert spaces.
 Linear forms on Hilbert spaces
 ------------------------------
 
+.. dropdown:: A video recording of the following material is available here.
+		  
+    .. container:: vimeo
+
+        .. raw:: html
+
+            <iframe src="https://player.vimeo.com/video/490671029"
+            frameborder="0" allow="autoplay; fullscreen"
+            allowfullscreen></iframe>
+
+    Imperial students can also `watch this video on Panopto <https://imperial.cloud.panopto.eu/Panopto/Pages/Viewer.aspx?id=723914b3-4d55-476e-a8ef-ac8f00bca305>`_
+
 We will now build some structures on Hilbert spaces that allow us to
 discuss variational problems on them, which includes finite element
 approximations such as the Poisson example discussed so far.
@@ -365,6 +389,17 @@ The following famous theorem states that the converse is also true.
 Variational problems on Hilbert spaces
 --------------------------------------
 
+.. dropdown:: A video recording of the following material is available here.
+		  
+    .. container:: vimeo
+
+        .. raw:: html
+
+            <iframe src="https://player.vimeo.com/video/490670887"
+            frameborder="0" allow="autoplay; fullscreen"
+            allowfullscreen></iframe>
+
+    Imperial students can also `watch this video on Panopto <https://imperial.cloud.panopto.eu/Panopto/Pages/Viewer.aspx?id=bd3cfdc3-746d-42f4-96b5-ac8f00c44327>`_
 We will consider finite element methods that can be formulated in the
 following way.
 
@@ -425,6 +460,18 @@ of linear PDEs.
 
       \int_\Omega u \, d x = 0.
 
+.. dropdown:: A video recording of the following material is available here.
+		  
+    .. container:: vimeo
+
+        .. raw:: html
+
+            <iframe src="https://player.vimeo.com/video/490670764"
+            frameborder="0" allow="autoplay; fullscreen"
+            allowfullscreen></iframe>
+
+    Imperial students can also `watch this video on Panopto <https://imperial.cloud.panopto.eu/Panopto/Pages/Viewer.aspx?id=39973b08-a56a-41e6-b1c8-ac8f00c5b325>`_
+      
 We now introduce two important properties of bilinear forms that determine
 whether a linear variational problem is solvable or not. The first is
 continuity.
@@ -496,8 +543,22 @@ In this section we will introduce some tools for showing coercivity
 and continuity of bilinear forms, illustrated with finite element
 approximations of some linear PDEs where they may be applied.
 
+.. dropdown:: A video recording of the following material is available here.
+		  
+    .. container:: vimeo
+
+        .. raw:: html
+
+            <iframe src="https://player.vimeo.com/video/490670624"
+            frameborder="0" allow="autoplay; fullscreen"
+            allowfullscreen></iframe>
+
+    Imperial students can also `watch this video on Panopto <https://imperial.cloud.panopto.eu/Panopto/Pages/Viewer.aspx?id=eca48c8e-3823-4653-8b4e-ac8f00c7c5ce>`_
+
 We start with the simplest example, for which continuity and
 coercivity are immediate.
+
+.. _thm-helm:
 
 .. proof:theorem:: Solving the (modified) Helmholtz problem
 
@@ -534,6 +595,61 @@ coercivity are immediate.
    The continuity and coercivity constants are both 1, independent
    of `h`, so the discretisation is stable.
 
+.. proof:exercise::
+   
+   Let `V` be a `C^0` finite element space on `[0,1]`, defined
+   on a one-dimensional mesh with vertices `0=x_0<x_1<x_2<\ldots<x_{n-1}<x_n=1`. Show that
+   `u\in V` satisfies the fundamental theorem of calculus, `i.e.`
+
+   .. math::
+
+      \int_0^1 u' \, d x = u[1] - u[0],
+  
+  where `u'` is the usual finite element derivative defined in `L^2([0,1])`
+  by taking the usual derivative when restricting `u` to any subinterval
+  `[x_k,x_{k+1}]`.
+
+.. proof:exercise::
+  
+  Let
+
+  .. math::
+     
+     a(u,v) = \int_0^1\left(u'v' + u'v + uv\right)\, d x.
+
+  Let `V` be a `C^0` finite element space on `[0,1]` and let
+  `\mathring{V}` be the subspace of functions that vanish at `x=0` and
+  `x=1`.  Using the finite element version of the fundamental theorem of
+  calculus above, prove that
+
+  .. math::
+
+     a(v,v) = \int_0^1\left((v')^2 + v^2\right)\, d x := \|v\|_{H^1}^2, \quad \forall v\in \mathring{V}.
+
+  Hence conclude that the bilinear form is coercive on `\mathring{V}`.
+
+.. proof:exercise::
+
+   Consider the variational problem with bilinear form
+
+   .. math::
+   
+      a(u,v) = \int_0^1 (u'v' + u'v + uv)\, d x,
+
+   corresponding to the differential equation
+
+   .. math::
+      
+      -u'' + u' + u = f.
+
+   Prove that `a(\cdot,\cdot)` is continuous and coercive on a `C^0` finite element space `V` defined on `[0,1]`, with respect to the `H^1` inner product.
+
+   Hints: for continuity, just use the triangle inequality and the
+   relationship between `L^2` and `H^1` norms. For coercivity, try completing the square for the integrand in `a`.
+
+..
+  End of Week 7 material
+
 For the Helmholtz problem, we have
 
 .. math::
@@ -547,14 +663,46 @@ For the Poisson problem, we have
 
 .. math::
 
-   b(u,v) = \int_\Omega |\nabla u|^2 \, d x = |u|^2_{H^1} \neq \|u\|^2_{H^1}.
-
-Where we recall the `H^1` seminorm from the interpolation
+   b(u,u) = \int_\Omega |\nabla u|^2 \, d x = |u|^2_{H^1} \neq \|u\|^2_{H^1},
+   
+where we recall the `H^1` seminorm from the interpolation
 section. Some additional results are required to show coercivity, as
 `b(u,u)` is not the `H^1` norm squared any more. A seminorm has all
 the properties of a norm except `|u|= 0 \nRightarrow u=0`, which is
-precisely what is needed in the Lax-Milgram theorem.  For the Poisson
-problem, coercivity comes instead from the following mean estimate.
+precisely what is needed in the Lax-Milgram theorem.
+
+.. _exe-pure-neumann:
+
+.. proof:exercise::
+
+   Let `\mathcal{T}_h` be a triangulation on the `1\times 1` unit
+   square domain `\Omega`, and let `V` be a `C^0` Lagrange finite
+   element space of degree `k` defined on `\mathcal{T}_h`. A finite element
+   discretisation for the Poisson equation with Neumann boundary conditions
+   is given by: find `u \in V` such that
+
+  .. math::
+     
+     \int_{\Omega} \nabla v \cdot \nabla u \, d x = \int_\Omega v f \, d x,
+     \quad \forall v \in V,
+  
+  for some known function `f`. Show that the bilinear form for this
+  problem is not coercive in `V`.
+
+For the Poisson problem, coercivity comes instead from the following
+mean estimate.
+
+.. Dropdown:: A video recording of the following material is available here.
+		  
+    .. container:: vimeo
+
+        .. raw:: html
+
+            <iframe src="https://player.vimeo.com/video/490670529"
+            frameborder="0" allow="autoplay; fullscreen"
+            allowfullscreen></iframe>
+
+    Imperial students can also `watch this video on Panopto <https://imperial.cloud.panopto.eu/Panopto/Pages/Viewer.aspx?id=e17f74a6-97ec-47fd-bcf4-ac8f00c9b784>`_
 
 .. proof:lemma:: Mean estimate for finite element spaces
 
@@ -571,6 +719,30 @@ problem, coercivity comes instead from the following mean estimate.
 
       \|u-\bar{u}\|_{L^2} \leq C|u|_{H^1}.
 
+.. Dropdown:: A video recording of the first part of the following material is available here.
+		  
+    .. container:: vimeo
+
+        .. raw:: html
+
+            <iframe src="https://player.vimeo.com/video/490670428"
+            frameborder="0" allow="autoplay; fullscreen"
+            allowfullscreen></iframe>
+
+    Imperial students can also `watch this video on Panopto <https://imperial.cloud.panopto.eu/Panopto/Pages/Viewer.aspx?id=610a0d00-6e89-4e7f-a7d1-ac8f00cc9fe5>`_
+
+.. Dropdown:: A video recording of the second part of section is available here.
+		  
+    .. container:: vimeo
+
+        .. raw:: html
+
+            <iframe src="https://player.vimeo.com/video/490670299"
+            frameborder="0" allow="autoplay; fullscreen"
+            allowfullscreen></iframe>
+
+    Imperial students can also `watch this video on Panopto <https://imperial.cloud.panopto.eu/Panopto/Pages/Viewer.aspx?id=aac8613a-f8f2-474f-bbe5-ac8f00cdbc26>`_
+      
 .. proof:proof::
 
    (Very similar to the proof of the estimate for averaged Taylor polynomials.)
@@ -579,13 +751,13 @@ problem, coercivity comes instead from the following mean estimate.
    `f(s)=u(y+s(x-y))` is a `C^0`, piecewise polynomial function of
    `s`. Let `s_0 = 0 < s_1 < s_2 < \ldots < s_{k-1} < s_k = 1` denote the points
    where `y+s(x-y)` intersects a triangle edge or vertex. Then
-   `f` is a continuous function when restricted to each interval `[s_i,s_i+1]`, `i=0,\ldots,k-1`. This means that
+   `f` is a continuous function when restricted to each interval `[s_i,s_{i+1}]`, `i=0,\ldots,k-1`. This means that
 
    .. math::
 
       f(s_{i+1}) - f(s_i) &= \int_{s_i}^{s_{i+1}} f'(s) \, ds
 
-      &= \int_{s_i}^{s_{i+1}} \nabla u(y+s(x-y)) \, ds,
+      &= \int_{s_i}^{s_{i+1}} (x-y)\cdot\nabla u(y+s(x-y)) \, ds,
 
    where `\nabla u` is the finite element derivative of `u`. Summing
    this up from `i=0` to `i=k-1`, we obtain
@@ -675,6 +847,18 @@ problem, coercivity comes instead from the following mean estimate.
 
    which has the required form.
 
+.. Dropdown:: A video recording of the following material is available here.
+		  
+    .. container:: vimeo
+
+        .. raw:: html
+
+            <iframe src="https://player.vimeo.com/video/490670236"
+            frameborder="0" allow="autoplay; fullscreen"
+            allowfullscreen></iframe>
+
+    Imperial students can also `watch this video on Panopto <https://imperial.cloud.panopto.eu/Panopto/Pages/Viewer.aspx?id=9652e5bd-ef4a-45e8-9a41-ac8f00ceae9d>`_
+   
 The mean estimate can now be used to show solvability for the Poisson
 problem with pure Neumann conditions.
 
@@ -713,7 +897,19 @@ problem with pure Neumann conditions.
       |b(u,v)| \leq |u|_{H^1}|v|_{H^1} \leq \|u\|_{H^1}\|v\|_{H^1}.
 
 The coercivity constant is independent of `h`, so the approximation is stable.
-      
+
+.. Dropdown:: A video recording of the following material is available here.
+		  
+    .. container:: vimeo
+
+        .. raw:: html
+
+            <iframe src="https://player.vimeo.com/video/490669992"
+            frameborder="0" allow="autoplay; fullscreen"
+            allowfullscreen></iframe>
+
+    Imperial students can also `watch this video on Panopto <https://imperial.cloud.panopto.eu/Panopto/Pages/Viewer.aspx?id=58a9dd17-1ae8-4b9e-9781-ac8f0101a3c3>`_
+
 Proving the coercivity for the Poisson problem with Dirichlet or
 partial Dirichlet boundary conditions requires some additional
 results. We start by showing that the divergence theorem also applies
@@ -793,6 +989,18 @@ norm of the function restricted to the boundary.
    where we have used the geometric-arithmetic mean inequality `2ab \leq
    a^2+b^2`. 
 
+.. Dropdown:: A video recording of the following material is available here.
+		  
+    .. container:: vimeo
+
+        .. raw:: html
+
+            <iframe src="https://player.vimeo.com/video/490669782"
+            frameborder="0" allow="autoplay; fullscreen"
+            allowfullscreen></iframe>
+
+    Imperial students can also `watch this video on Panopto <https://imperial.cloud.panopto.eu/Panopto/Pages/Viewer.aspx?id=1bc37dc7-ef3e-43f5-b111-ac8f010287cf>`_
+   
 We can now use the trace inequality to estabilish solvability for the
 Poisson problem with (full or partial) Dirichlet conditions.
       
@@ -846,7 +1054,34 @@ Poisson problem with (full or partial) Dirichlet conditions.
       \|v\|_{H^1(\Omega)}^2 \leq (1+C_1^2)b(v,v).
 
 The coercivity constant is independent of `h`, so the approximation is stable.
+
+.. proof:exercise::
+   
+   For `f\in L^2(\Omega)`, `\sigma\in C^1(\Omega)`, find a finite element
+   formulation of the problem
+
+   .. math::
+   
+      -\sum_{i=1}^n \frac{\partial}{\partial x_i}\left(\sigma(x)\frac{\partial u}{\partial x_i}\right) = f, 
+      \quad \frac{\partial u}{\partial n}=0\mbox{ on }\partial\Omega.
+
+   If there exist `0<a<b` such that `a<\sigma(x)<b` for all `x\in
+   \Omega`, show continuity and coercive for your formulation
+   with respect to the `H^1` norm.
+
+.. proof:exercise::
+
+   Find a `C^0` finite element formulation for the Poisson equation 
+
+   .. math::
       
+      -\nabla^2 u = f, \quad u=g \mbox{ on }\partial \Omega,
+
+   for a function `g` which is `C^2` and whose restriction to
+   `\partial\Omega` is in `L^2(\partial\Omega)`.
+   Derive conditions under the discretisation 
+   has a unique solution.  
+
 In this section, We have developed some techniques for showing that
 variational problems arising from finite element discretisations for
 Helmholtz and Poisson problems have unique solutions, that are stable
@@ -857,3 +1092,6 @@ ask what is happening to the numerical solutions as the mesh is
 refined. What are they converging to?
 
 We will address these questions in the next section.
+
+..
+  end of Week 8 material

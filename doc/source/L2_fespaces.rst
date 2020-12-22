@@ -18,6 +18,18 @@ seeing how function continuity is enforced between cells.
 Ciarlet's finite element
 ------------------------
 
+.. dropdown:: A video recording of the following material is available here.
+		  
+    .. container:: vimeo
+
+        .. raw:: html
+
+            <iframe src="https://player.vimeo.com/video/490693460"
+            frameborder="0" allow="autoplay; fullscreen"
+            allowfullscreen></iframe>
+
+    Imperial students can also `watch this video on Panopto <https://imperial.cloud.panopto.eu/Panopto/Pages/Viewer.aspx?id=e79807c3-c73b-42ec-b5f9-ac8d00c7b4c6>`_
+
 The first part of the definition is formalised by Ciarlet's definition
 of a finite element.
 
@@ -42,7 +54,28 @@ For the cases considered in this course, `K` will be a polygon such as a triangl
    
    Show that the four examples above are all linear functions from `P` to `\mathbb{R}`.
 
+.. proof:exercise::
+   
+   For a domain `K` and shape space `P`, is the following
+   functional a nodal variable? Explain your answer.
+
+   .. math::
+
+      N_0(p) = \int_K p^2 \,d x.
+   
 Ciarlet's finite element provides us with a standard way to define a basis for the `P`, called the nodal basis.
+
+.. dropdown:: A video recording of the following material is available here.
+		  
+    .. container:: vimeo
+
+        .. raw:: html
+
+            <iframe src="https://player.vimeo.com/video/490693258"
+            frameborder="0" allow="autoplay; fullscreen"
+            allowfullscreen></iframe>
+
+    Imperial students can also `watch this video on Panopto <https://imperial.cloud.panopto.eu/Panopto/Pages/Viewer.aspx?id=9d432870-a298-4e6e-b495-ac8d00cc6411>`_
 
 .. proof:definition:: (local) nodal basis
 		      
@@ -53,6 +86,8 @@ Ciarlet's finite element provides us with a standard way to define a basis for t
       N_i(\phi_j) = \delta_{ij}, \quad 0\leq i,j \leq k.
 
 We now introduce our first example of a Ciarlet element.
+
+.. _1d_lagrange:
 
 .. proof:definition:: The 1-dimensional Lagrange element
 		    
@@ -68,6 +103,8 @@ We now introduce our first example of a Ciarlet element.
       N_i(v) = v(x_i), \, x_i = a + (b-a)i/k, \quad \forall v\in \mathcal{P},\,
       i=0,\ldots,k.
 
+.. _exe-1d-lagrange-basis:
+      
 .. proof:exercise:: 
 
    Show that the nodal basis for `\mathcal{P}` is given by
@@ -76,16 +113,33 @@ We now introduce our first example of a Ciarlet element.
       
       \phi_i(x) = \frac{\prod_{j=0,j\ne i}^k (x-x_j)}{\prod_{j=0,j\ne i}^k (x_i-x_j)}, \quad i=0,\ldots,k.
 
+..
+  end of week 2 material
+      
 Vandermonde matrix and unisolvence
 ----------------------------------
-      
+
+.. dropdown:: A video recording of the following material is available here.
+		  
+    .. container:: vimeo
+
+        .. raw:: html
+
+            <iframe src="https://player.vimeo.com/video/490693083"
+            frameborder="0" allow="autoplay; fullscreen"
+            allowfullscreen></iframe>
+
+    Imperial students can also `watch this video on Panopto <https://imperial.cloud.panopto.eu/Panopto/Pages/Viewer.aspx?id=f3fb54fb-f83e-41b8-a537-ac8d00d03589>`_
+
 More generally, It is useful computationally to write the nodal basis
 in terms of another arbitrary basis `\{\psi_i\}_{i=0}^k`. This
 transformation is represented by the Vandermonde matrix.
 
+.. _def-vandermonde:
+
 .. proof:definition:: Vandermonde matrix
 
-   Given a dual basis `\mathcal{N}` and a basis `\{\psi_j\}_{i=0}^k`,
+   Given a dual basis `\mathcal{N}` and a basis `\{\psi_i\}_{i=0}^k`,
   the Vandermonde matrix is the matrix `V` with coefficients
 
    .. math::
@@ -93,7 +147,9 @@ transformation is represented by the Vandermonde matrix.
       V_{ij} = N_j(\psi_i).
 
 This relationship is made clear by the following lemma.
-      
+
+.. _lemma-vandermonde:
+
 .. proof:lemma::
       
    The expansion of the nodal basis `\{\phi_i\}_{i=0}^k` in terms
@@ -121,6 +177,32 @@ This relationship is made clear by the following lemma.
 
    where `\mu` is the matrix with coefficients `\mu_{ij}`, and `V` is the matrix with coefficients `N_j(\psi_i)`.
 
+.. dropdown:: A video recording of the following material is available here.
+		  
+    .. container:: vimeo
+
+        .. raw:: html
+
+            <iframe src="https://player.vimeo.com/video/490692882"
+            frameborder="0" allow="autoplay; fullscreen"
+            allowfullscreen></iframe>
+
+    Imperial students can also `watch this video on Panopto <https://imperial.cloud.panopto.eu/Panopto/Pages/Viewer.aspx?id=6f9d4bb7-4a90-40f7-8eae-ac8d00ce8ac7>`_
+
+.. proof:exercise::
+
+   Consider the following finite element.
+
+   * `K` is the interval `[0,1]`.
+   * `P` is the quadratic polynomials on `K`.
+   * The nodal variables are:
+
+     .. math::
+
+	N_0[p] = p(0), \, N_1[p]=p(1), \, N_2=\int_0^1 p(x) \,d x.
+
+   Find the corresponding nodal basis.
+    
 Given a triple `(K,\mathcal{P},\mathcal{N})`, it is necessary to
 verify that `\mathcal{N}` is indeed a basis for `\mathcal{P}'`,
 i.e. that the Ciarlet element is well-defined. Then the nodal basis is
@@ -187,7 +269,19 @@ provides a useful tool for checking this.
 
    which is equivalent to `V^T` being invertible, which is equivalent to
    `V` being invertible, and so (3) is equivalent to (2).
+   
+.. dropdown:: A video recording of the following material is available here.
+		  
+    .. container:: vimeo
 
+        .. raw:: html
+
+            <iframe src="https://player.vimeo.com/video/490692719"
+            frameborder="0" allow="autoplay; fullscreen"
+            allowfullscreen></iframe>
+
+    Imperial students can also `watch this video on Panopto <https://imperial.cloud.panopto.eu/Panopto/Pages/Viewer.aspx?id=97d9a7b6-7837-4591-9180-ac8e0099484c>`_
+   
 This result leads us to introducing the following terminology.
 
 .. proof:definition:: Unisolvence.
@@ -218,9 +312,36 @@ We can now go and directly apply this lemma to the 1D Lagrange elements.
    a degree `k` polynomial, it must be zero by the fundamental theorem
    of algebra.
 
+.. proof:exercise::
+
+   Consider the following proposed finite element.
+
+   * `K` is the interval `[0,1]`.
+   * `P` is the linear polynomials on `K`.
+   * The nodal variables are:
+
+     .. math::
+
+	N_0[p] = p(0.5), N_1=\int_0^1 p(x) \,d x.
+
+   Is this finite element unisolvent? Explain your answer.
+
+   
 2D and 3D finite elements
 -------------------------
-   
+
+.. dropdown:: A video recording of the following material is available here.
+		  
+    .. container:: vimeo
+
+        .. raw:: html
+
+            <iframe src="https://player.vimeo.com/video/490692347"
+            frameborder="0" allow="autoplay; fullscreen"
+            allowfullscreen></iframe>
+
+    Imperial students can also `watch this video on Panopto <https://imperial.cloud.panopto.eu/Panopto/Pages/Viewer.aspx?id=e5501a7d-81f1-47f1-8000-ac8d00ce89fb>`_
+
 We would like to construct some finite elements with 2D and 3D domains
 `K`. The fundamental theorem of algebra does not directly help us
 there, but the following lemma is useful when checking that
@@ -276,6 +397,28 @@ there, but the following lemma is useful when checking that
 
    with `\deg(Q)=k-1`.
 
+.. dropdown:: A video recording of the following material is available here.
+		  
+    .. container:: vimeo
+
+        .. raw:: html
+
+            <iframe src="https://player.vimeo.com/video/490692245"
+            frameborder="0" allow="autoplay; fullscreen"
+            allowfullscreen></iframe>
+
+    Imperial students can also `watch this video on Panopto <https://imperial.cloud.panopto.eu/Panopto/Pages/Viewer.aspx?id=b2674f92-8a03-4685-98e7-ac8e00a15a88>`_
+
+.. proof:exercise::
+
+   The following polynomial vanishes on the line `y=-1-x`. Show that
+   it satisfies the result of the previous theorem.
+
+   .. math::
+
+      x^{5} + 5 x^{4} y - x^{4} + 6 x^{3} y^{2} - 4 x^{3} y - 2 x^{2}
+      y^{3} - 2 x^{2} y^{2} - 3 x y^{4} + 4 x y^{3} + y^{5} - y^{4}
+
 Equipped with this tool we can consider some finite elements in two
 dimensions.
 
@@ -302,7 +445,19 @@ We illustrate this for the cases `k=1,2`.
 		   
    The nodal basis for P2 elements is point evaluation at the three
    vertices, plus point evaluation at the three edge centres.
-  
+
+.. dropdown:: A video recording of the following material is available here.
+		  
+    .. container:: vimeo
+
+        .. raw:: html
+
+            <iframe src="https://player.vimeo.com/video/490692065"
+            frameborder="0" allow="autoplay; fullscreen"
+            allowfullscreen></iframe>
+
+    Imperial students can also `watch this video on Panopto <https://imperial.cloud.panopto.eu/Panopto/Pages/Viewer.aspx?id=1d6a0060-361f-4c03-af32-ac8d00cc637e>`_
+   
 We now need to check that that the degree `k` Lagrange element is a
 finite element, i.e. that `\mathcal{N}` determines `\mathcal{P}`. We will
 first do this for `P1`.
@@ -311,7 +466,7 @@ first do this for `P1`.
 
 .. proof:lemma::
 
-  The degree `1` Lagrange element is a finite element.
+  The degree `1` Lagrange element on a triangle `K` is a finite element.
 
 .. proof:proof::
   
@@ -330,6 +485,36 @@ first do this for `P1`.
 
    since `L_1(z_1)\neq 0`, and hence `p(x)\equiv 0`. This means
    that `\mathcal{N}` determines `\mathcal{P}`.
+
+.. dropdown:: A video recording of the following material is available here.
+		  
+    .. container:: vimeo
+
+        .. raw:: html
+
+            <iframe src="https://player.vimeo.com/video/490691995"
+            frameborder="0" allow="autoplay; fullscreen"
+            allowfullscreen></iframe>
+
+..
+  end of week 3 material
+	    
+    Imperial students can also `watch this video on Panopto <https://imperial.cloud.panopto.eu/Panopto/Pages/Viewer.aspx?id=5fbdc104-9b38-4e7f-9c61-ac8d00c7d4ac>`_
+
+.. proof:exercise::
+
+   Let `K` be a rectangle, `P` be the polynomial space spanned by
+   `\{1, x, y, xy\}`, let `\mathcal{N}` be the set of dual elements
+   corresponding to point evaluation at each vertex of the
+   rectangle. Show that `\mathcal{N}` determines the finite element.
+
+.. proof:exercise::
+
+   Let `K` be a triangle, and `P` be the space of quadratic
+   polynomials. Let `N` be the set of nodal variables given by point
+   evaluation at each edge midpoint together with the nodal variables
+   given by integral of the function along each edge. Show that `N`
+   does not determine `P`.
 
 This technique can then be extended to degree 2.
    
@@ -358,7 +543,9 @@ The technique extends further to degree 3.
 Going beyond degree 3, we have more than 1 nodal variable taking point
 evaluation inside the triangle. To deal with this, we use the nested
 triangular structure of the Lagrange triangle.
-   
+
+.. _lem-degk-unisolve:
+
 .. proof:lemma::
    
    The degree `k` Lagrange element is a finite element for `k>3`.
@@ -385,6 +572,18 @@ triangular structure of the Lagrange triangle.
 
 Some more exotic elements
 -------------------------
+
+.. dropdown:: A video recording of the following material is available here.
+		  
+    .. container:: vimeo
+
+        .. raw:: html
+
+            <iframe src="https://player.vimeo.com/video/490691590"
+            frameborder="0" allow="autoplay; fullscreen"
+            allowfullscreen></iframe>
+
+    Imperial students can also `watch this video on Panopto <https://imperial.cloud.panopto.eu/Panopto/Pages/Viewer.aspx?id=495e54dd-23b6-4d92-bcdb-ac8e00ab3829>`_
 
 We now consider some finite elements that involve derivative
 evaluation. The Hermite elements involve evaluation of first
@@ -421,6 +620,18 @@ is solved by the Argyris element.
        
 Global continuity
 -----------------
+
+.. dropdown:: A video recording of the following material is available here.
+		  
+    .. container:: vimeo
+
+        .. raw:: html
+
+            <iframe src="https://player.vimeo.com/video/490691454"
+            frameborder="0" allow="autoplay; fullscreen"
+            allowfullscreen></iframe>
+
+    Imperial students can also `watch this video on Panopto <https://imperial.cloud.panopto.eu/Panopto/Pages/Viewer.aspx?id=f384b387-f65a-4f9e-a582-ac8e00b8760e>`_
 
 Next we need to know how to glue finite elements together to form
 spaces defined over a triangulation (mesh). To do this we need to
@@ -475,6 +686,18 @@ variables (and their associated nodal basis functions) appropriately
 to vertices, edges etc. of each triangle `K`. First we need to
 introduce this terminology.
 
+.. dropdown:: A video recording of the following material is available here.
+		  
+    .. container:: vimeo
+
+        .. raw:: html
+
+            <iframe src="https://player.vimeo.com/video/490691352"
+            frameborder="0" allow="autoplay; fullscreen"
+            allowfullscreen></iframe>
+
+    Imperial students can also `watch this video on Panopto <https://imperial.cloud.panopto.eu/Panopto/Pages/Viewer.aspx?id=22aab3d8-2041-4c42-9d18-ac8e00be66ab>`_
+
 .. proof:definition:: local and global mesh entities
 
    Let `K` be a triangle. The local mesh entities of `K` are the
@@ -493,6 +716,35 @@ can be assigned to local mesh entities in a geometric decomposition.
    entity `w\in W` such that for any `f\in\mathcal{P}`, `N_i(f)` can be
    calculated from `f` and derivatives of `f` evaluated on `w`.
 
+.. proof:exercise::
+
+   Consider the finite element defined by:
+
+   #. `K` is the unit interval `[0,1]`
+   #. `P` is the space of quadratic polynomials on `K`,
+   #. The nodal variables are:
+
+      .. math::
+	 
+	 N_0[v] = v(0), N_1[v] = v(1), N_2[v] = \int_0^1 v(x)\,d x.
+
+  Find the corresponding nodal basis for `P` in terms of the monomial
+  basis `\{1, x, x^2\}`. Provide the `C^0` geometric decomposition for
+  the finite element (demonstrating that it is indeed `C^0`).
+
+   
+.. dropdown:: A video recording of the following material is available here.
+		  
+    .. container:: vimeo
+
+        .. raw:: html
+
+            <iframe src="https://player.vimeo.com/video/490691251"
+            frameborder="0" allow="autoplay; fullscreen"
+            allowfullscreen></iframe>
+
+    Imperial students can also `watch this video on Panopto <https://imperial.cloud.panopto.eu/Panopto/Pages/Viewer.aspx?id=9f363ae5-0174-4fe1-94e9-ac8e00e7f271>`_
+   
 To discuss `C^m` continuity, we need to introduce some further
 vocabulary about the topology of `K`.
    
@@ -531,10 +783,29 @@ these correspondences.
 We explore this definition through a couple of exercises.
 
 .. proof:exercise::
-   Show that the Lagrange elements of degree \(k\) have \(C^0\) geometric decompositions.
+   
+   Show that the Lagrange elements of degree `k` have `C^0` geometric decompositions.
 
+.. _exer-argyris:
+   
 .. proof:exercise::
-   Show that the Argyris element has a \(C^1\) geometric decomposition.
+   
+   Show that the Argyris element has a `C^1` geometric decomposition.
+   
+.. dropdown:: A video recording of the following material is available here.
+		  
+    .. container:: vimeo
+
+        .. raw:: html
+
+            <iframe src="https://player.vimeo.com/video/490691153"
+            frameborder="0" allow="autoplay; fullscreen"
+            allowfullscreen></iframe>
+
+..
+  end of week 4 material
+	    
+    Imperial students can also `watch this video on Panopto <https://imperial.cloud.panopto.eu/Panopto/Pages/Viewer.aspx?id=3d816037-2cb7-4eb2-b441-ac8e00ea1551>`_
    
 We now use the geometric decomposition to construct global finite
 element spaces over the whole triangulation (mesh). We just need to
@@ -561,9 +832,9 @@ between triangles, before defining `C^m` continuous subspaces.
    Let `\mathcal{T}` be a triangulation, with Lagrange elements of
    degree `k`, `(K_i,P_i,\mathcal{N}_i)`, for each triangle `K_i\in
    \mathcal{T}`. The corresponding discontinuous finite element space,
-   denoted P`k`DG, is called the discontinuous Lagrange finite element
+   denoted `Pk` DG, is called the discontinuous Lagrange finite element
    space of degree `k`.
-
+   
 Next we need to associate each nodal variable in each element to a
 vertex, edge or triangle of the triangulation `\mathcal{T}_h`,
 i.e. the global mesh entitles. The following definition explains how
@@ -622,7 +893,7 @@ We now apply this to a few examples, which can be proved as exercises.
 .. proof:example::
    
    The finite element space built from the `C^0` global decomposition
-   built from degree `k` Lagrange element is called the degree `k` continuous Lagrange finite element space, denoted P`k`.
+   built from degree `k` Lagrange element is called the degree `k` continuous Lagrange finite element space, denoted `Pk`.
 
 .. proof:example::
    

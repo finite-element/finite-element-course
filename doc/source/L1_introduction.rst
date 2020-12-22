@@ -3,6 +3,18 @@
 Introduction
 ============
 
+.. dropdown:: A video recording of the following material is available here.
+
+    .. container:: vimeo
+
+        .. raw:: html
+
+            <iframe src="https://player.vimeo.com/video/490698097"
+            frameborder="0" allow="autoplay; fullscreen"
+            allowfullscreen></iframe>
+
+    Imperial students can also `watch this video on Panopto <https://imperial.cloud.panopto.eu/Panopto/Pages/Viewer.aspx?id=6aca04a5-7fd9-4d9d-9178-ac2b0115718d>`_
+
 In this section we provide an introduction that establishes some
 initial ideas about how the finite element method works and what it is
 about.
@@ -19,6 +31,17 @@ implementation. In this course we blend these two directions together.
 Poisson's equation in the unit square
 -------------------------------------
 
+.. dropdown:: A video recording of the following material is available here.
+
+    .. container:: vimeo
+
+        .. raw:: html
+
+            <iframe src="https://player.vimeo.com/video/490697959"
+            frameborder="0" allow="autoplay; fullscreen"
+            allowfullscreen></iframe>
+
+    Imperial students can also `watch this video on Panopto <https://imperial.cloud.panopto.eu/Panopto/Pages/Viewer.aspx?id=c6be8b35-aa19-4e33-8d25-ac2b011caba3>`_
 In this introduction we concentrate on the specific model problem of
 Poisson's equation in the unit square.
 
@@ -48,6 +71,18 @@ strengths of the finite element method.
 Triangulations
 --------------
 
+.. dropdown:: A video recording of the following material is available here.
+		  
+    .. container:: vimeo
+
+        .. raw:: html
+
+            <iframe src="https://player.vimeo.com/video/490697890"
+            frameborder="0" allow="autoplay; fullscreen"
+            allowfullscreen></iframe>
+
+    Imperial students can also `watch this video on Panopto <https://imperial.cloud.panopto.eu/Panopto/Pages/Viewer.aspx?id=db13f3fa-b3cb-41d1-b888-ac2b011f11e3>`_
+
 The description of our finite element method starts by considering
 a triangulation.
 
@@ -64,6 +99,18 @@ a triangulation.
 
 Our first finite element space
 ------------------------------
+
+.. dropdown:: A video recording of the following material is available here.
+		  
+    .. container:: vimeo
+
+        .. raw:: html
+
+            <iframe src="https://player.vimeo.com/video/490697877"
+            frameborder="0" allow="autoplay; fullscreen"
+            allowfullscreen></iframe>
+
+    Imperial students can also `watch this video on Panopto <https://imperial.cloud.panopto.eu/Panopto/Pages/Viewer.aspx?id=2a222f38-92ce-478e-946c-ac2b0120bf58>`_
 
 The idea is that we will approximate functions which are polynomial
 (at some chosen degree) when restricted to each triangle, with some
@@ -98,6 +145,18 @@ conditions. These will emerge later.
 
 Integral formulations and `L_2`
 -------------------------------
+
+.. dropdown:: A video recording of the following material is available here.
+		  
+    .. container:: vimeo
+
+        .. raw:: html
+
+            <iframe src="https://player.vimeo.com/video/490697738"
+            frameborder="0" allow="autoplay; fullscreen"
+            allowfullscreen></iframe>
+
+    Imperial students can also `watch this video on Panopto <https://imperial.cloud.panopto.eu/Panopto/Pages/Viewer.aspx?id=10377186-f51a-49e2-8b0b-ac2b012265df>`_
 
 The finite element method is based upon integral formulations of
 partial differential equations. Rather than checking if two functions
@@ -157,6 +216,18 @@ motivates the `L^2` function space.
 Finite element derivative
 -------------------------
 
+.. dropdown:: A video recording of the following material is available here.
+		  
+    .. container:: vimeo
+
+        .. raw:: html
+
+            <iframe src="https://player.vimeo.com/video/490697597"
+            frameborder="0" allow="autoplay; fullscreen"
+            allowfullscreen></iframe>
+
+    Imperial students can also `watch this video on Panopto <https://imperial.cloud.panopto.eu/Panopto/Pages/Viewer.aspx?id=897d8372-11bd-4904-a1db-ac2c00fc7835>`_
+
 Functions in `V_h` do not have derivatives everywhere. This means that
 we have to work with a more general definition (and later we shall
 learn when it does and does not work).
@@ -197,6 +268,18 @@ contains both of these definitions.
 
 Towards the finite element discretisation
 -----------------------------------------
+
+.. dropdown:: A video recording of the following material is available here.
+		  
+    .. container:: vimeo
+
+        .. raw:: html
+
+            <iframe src="https://player.vimeo.com/video/490697493"
+            frameborder="0" allow="autoplay; fullscreen"
+            allowfullscreen></iframe>
+
+    Imperial students can also `watch this video on Panopto <https://imperial.cloud.panopto.eu/Panopto/Pages/Viewer.aspx?id=7740df4e-bc02-4997-8c75-ac2c00fe54eb>`_
 
 We will now use the finite element derivative to develop the finite
 element discretisation. We assume that we have a solution `u` to
@@ -244,6 +327,20 @@ The finite element approximation is then defined by requiring that
 this equation holds for all `v\in \mathring{V}_h` and when we restrict
 `u\in \mathring{V}_h`.
 
+.. dropdown:: A video recording of the following material is available here.
+		  
+    .. container:: vimeo
+
+        .. raw:: html
+
+            <iframe src="https://player.vimeo.com/video/490693961"
+            frameborder="0" allow="autoplay; fullscreen"
+            allowfullscreen></iframe>
+
+    Imperial students can also `watch this video on Panopto <https://imperial.cloud.panopto.eu/Panopto/Pages/Viewer.aspx?id=099aeda2-0a23-4c88-ad0b-ac2c01051715>`_
+
+.. _def-discrete-poisson:
+
 .. proof:definition::
   
    The finite element approximation `u_h \in \mathring{V}_h` to the
@@ -255,6 +352,21 @@ this equation holds for all `v\in \mathring{V}_h` and when we restrict
       \int_\Omega \nabla v \cdot \nabla u_h \, d x =
       \int_\Omega vf \, d x, \quad \forall v\in \mathring{V}_h.
 
+..
+   End of week 1 material
+
+.. dropdown:: A video recording of the following material is available here.
+		  
+    .. container:: vimeo
+
+        .. raw:: html
+
+            <iframe src="https://player.vimeo.com/video/490693998"
+            frameborder="0" allow="autoplay; fullscreen"
+            allowfullscreen></iframe>
+
+    Imperial students can also `watch this video on Panopto <https://imperial.cloud.panopto.eu/Panopto/Pages/Viewer.aspx?id=f4cb8c0c-4664-4a21-8043-ac2c010738da>`_
+      
 We now present some numerical results for the case `f = 2\pi^2\sin(\pi
 x)\sin(\pi y)`.
 
@@ -285,6 +397,18 @@ x)\sin(\pi y)`.
 We see that for this example, the error is decreasing as we increase
 the number of triangles, for the meshes considered.
 
+.. dropdown:: A video recording of the following material is available here.
+		  
+    .. container:: vimeo
+
+        .. raw:: html
+
+            <iframe src="https://player.vimeo.com/video/490693824"
+            frameborder="0" allow="autoplay; fullscreen"
+            allowfullscreen></iframe>
+
+    Imperial students can also `watch this video on Panopto <https://imperial.cloud.panopto.eu/Panopto/Pages/Viewer.aspx?id=8319e621-155a-43a1-b181-ac8d00aed113>`_
+
 In general, our formulation raises a number of questions.
 
 #. Is `u_h` unique?
@@ -310,8 +434,59 @@ cosmology, etc. This course is intended as a starting point to
 introduce the general concepts that can be applied in all of these
 areas.
 
+.. proof:exercise::
+
+   Derive a finite element approximation for the following problem.
+
+   Find `u` such that
+
+      .. math::
+
+	 -\nabla\cdot \left((2+\sin(2\pi x))\nabla u\right) =
+	 \exp(\cos(2\pi x)),
+
+   with boundary conditions `u=0` on the entire boundary.
+
+.. proof:exercise::
+
+   Derive a finite element approximation for the following problem.
+
+   Find `u` such that
+
+      .. math::
+
+	 -\nabla^2 u = \exp(xy),
+
+   in the `1\times 1` square region as above, with boundary conditions
+   `u=x(1-x)` on the entire boundary.
+
+.. proof:exercise::
+
+   Derive a finite element approximation for the following problem.
+
+   Find `u` such that
+
+      .. math::
+
+	 -\nabla^2 u = \frac{1}{1 + x^2 + y^2},
+
+   in the `1\times 1` square region, with boundary conditions
+   `u-\frac{\partial u}{\partial n}=x(1-x)` on the entire boundary.
+   
 Practical implementation
 ------------------------
+
+.. dropdown:: A video recording of the following material is available here.
+		  
+    .. container:: vimeo
+
+        .. raw:: html
+
+            <iframe src="https://player.vimeo.com/video/490693738"
+            frameborder="0" allow="autoplay; fullscreen"
+            allowfullscreen></iframe>
+
+    Imperial students can also `watch this video on Panopto <https://imperial.cloud.panopto.eu/Panopto/Pages/Viewer.aspx?id=11e55d12-a0fc-42ed-b609-ac8d00af7068>`_
 
 The finite element approximation above is only useful if we can
 actually compute it. To do this, we need to construct an efficient
@@ -373,6 +548,18 @@ but we do not currently know that `K` is invertible. This is
 equivalent to the finite element approximation having a unique
 solution `u_h`, which we shall establish in later sections. This
 motivates why we care that `u_h` exists and is unique.
+
+.. dropdown:: A video recording of the following material is available here.
+		  
+    .. container:: vimeo
+
+        .. raw:: html
+
+            <iframe src="https://player.vimeo.com/video/490693615"
+            frameborder="0" allow="autoplay; fullscreen"
+            allowfullscreen></iframe>
+
+    Imperial students can also `watch this video on Panopto <https://imperial.cloud.panopto.eu/Panopto/Pages/Viewer.aspx?id=9be9b911-c291-4c90-b3ac-ac8d00c0e814>`_
 
 Putting solvability aside for the moment, the goal of the
 implementation sections of this course is to explain how to

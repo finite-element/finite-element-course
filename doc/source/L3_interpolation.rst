@@ -4,6 +4,18 @@
 Interpolation operators
 =======================
 
+.. dropdown:: A video recording of the following material is available here.
+		  
+    .. container:: vimeo
+
+        .. raw:: html
+
+            <iframe src="https://player.vimeo.com/video/490673290"
+            frameborder="0" allow="autoplay; fullscreen"
+            allowfullscreen></iframe>
+
+    Imperial students can also `watch this video on Panopto <https://imperial.cloud.panopto.eu/Panopto/Pages/Viewer.aspx?id=f3b6a076-d90c-42c5-90a4-ac8e00ed6b79>`_
+
 In this section we investigate how continuous functions can be
 approximated by finite element functions. We start locally,
 looking at a single finite element, and then move globally to
@@ -12,19 +24,19 @@ function spaces on a triangulation.
 Local and global interpolation operators
 ----------------------------------------
 
-.. proof:definition:: Local interpolant
+.. proof:definition:: Local interpolator
 
    Given a finite element `(K,\mathcal{P},\mathcal{N})`, with
    corresponding nodal basis `\{\phi_i\}_{i=0}^k`. Let `v`
    be a function such that `N_i(v)` is well-defined for all `i`.
-   Then the local interpolant `\mathcal{I}_K` is an operator
+   Then the local interpolator `\mathcal{I}_K` is an operator
    mapping `v` to `\mathcal{P}` such that
 
    .. math::
       
       (I_Kv)(x) = \sum_{i=0}^kN_i(v)\phi_i(x).
 
-We now discuss some useful properties of the local interpolant.
+We now discuss some useful properties of the local interpolator.
       
 .. _Ilinear:
 
@@ -32,8 +44,9 @@ We now discuss some useful properties of the local interpolant.
   
    The operator `I_K` is linear.
 
-.. proof:proof::
-   Exercise.
+.. proof:exercise::
+
+   Prove :numref:`Lemma {number}<Ilinear>`.
 
 .. _I_same_nodes:
    
@@ -43,28 +56,30 @@ We now discuss some useful properties of the local interpolant.
       
       N_i(I_K(v)) = N_i(v), \, \forall\,  0\leq i\leq k.
 
-.. proof:proof::
-   Exercise.
+.. proof:exercise::
 
-.. _I_projection
+   Prove :numref:`Lemma {number}<I_same_nodes>`.
+      
+.. _I_projection:
 
 .. proof:lemma::
       
    `I_K` is the identity when restricted to `\mathcal{P}`.
 
-.. proof:proof::
-   Exercise.
+.. proof:exercise::
 
-By combining together the local interpolants in each triangle of the
-triangulation, we obtain the global interpolant into the finite
+   Prove :numref:`Lemma {number}<I_projection>`.
+
+By combining together the local interpolators in each triangle of the
+triangulation, we obtain the global interpolator into the finite
 element space.
    
-.. proof:definition:: Global interpolant
+.. proof:definition:: Global interpolator
 
    Let `V_h` be a finite element space constructed from a triangulation
    `\mathcal{T}_h` with finite elements
    `(K_i,\mathcal{P}_i,\mathcal{N}_i)`, each with a `C^m` geometric
-   decomposition. The global interpolant `\mathcal{I}_h` is defined by
+   decomposition. The global interpolator `\mathcal{I}_h` is defined by
    `\mathcal{I}_hu \in V_h` such that
    
    .. math::
@@ -75,7 +90,19 @@ element space.
 
 Measuring interpolation errors
 ------------------------------
-   
+
+.. dropdown:: A video recording of the following material is available here.
+		  
+    .. container:: vimeo
+
+        .. raw:: html
+
+            <iframe src="https://player.vimeo.com/video/490673157"
+            frameborder="0" allow="autoplay; fullscreen"
+            allowfullscreen></iframe>
+
+    Imperial students can also `watch this video on Panopto <https://imperial.cloud.panopto.eu/Panopto/Pages/Viewer.aspx?id=e811ac32-0c1c-43ee-b661-ac8e00ee051e>`_
+
 Next we look at how well we can approximate continuous functions using
 the interpolation operator, i.e. we want to measure the approximation
 error `\mathcal{I}_h u - u`. We are interested in integral
@@ -119,6 +146,18 @@ errors.
 
    where we conventionally write `|u|_{H^0}=\|u\|_{L^2}`.
 
+.. dropdown:: A video recording of the following material is available here.
+		  
+    .. container:: vimeo
+
+        .. raw:: html
+
+            <iframe src="https://player.vimeo.com/video/490673099"
+            frameborder="0" allow="autoplay; fullscreen"
+            allowfullscreen></iframe>
+
+    Imperial students can also `watch this video on Panopto <https://imperial.cloud.panopto.eu/Panopto/Pages/Viewer.aspx?id=efbbb34b-ae76-4150-98e2-ac8e00f12d27>`_
+   
 To help to estimate interpolation errors, we quote the following
 important result (which we will return to much later).
 
@@ -169,7 +208,19 @@ derivatives.
 
 Approximation by averaged Taylor polynomials
 --------------------------------------------
-   
+
+.. dropdown:: A video recording of the following material is available here.
+		  
+    .. container:: vimeo
+
+        .. raw:: html
+
+            <iframe src="https://player.vimeo.com/video/490673003"
+            frameborder="0" allow="autoplay; fullscreen"
+            allowfullscreen></iframe>
+
+    Imperial students can also `watch this video on Panopto <https://imperial.cloud.panopto.eu/Panopto/Pages/Viewer.aspx?id=62d286c0-1efd-4b8a-9570-ac8e00f3835d>`_
+
 The basic tool for analysing interpolation error for continuous
 functions is the Taylor series. Rather than taking the Taylor series
 about a single point, since we are interested in integral quantities,
@@ -177,7 +228,9 @@ it makes sense to consider an averaged Taylor series over some region
 inside each cell. This will become important later when we start
 thinking about more general types of derivative that only exist in an
 integral sense.
-   
+
+.. _def-averaged-taylor:
+
 .. proof:definition:: Averaged Taylor polynomial
 
    Let `\Omega\subset \mathbb{R}^n` be a domain with diameter `d`, that
@@ -200,8 +253,46 @@ integral sense.
       
       x^\alpha = \prod_{i=1}^n x_i^{\alpha_i}.
 
+.. proof:exercise::
+
+   Show that
+   
+   .. math::
+  
+      D^\beta Q_{k,B} f = Q_{k-|\beta|,B}  D^\beta f,
+  
+  where `Q^l_B` is the degree `l` averaged Taylor polynomial of
+  `f`, and `D^\beta` is the `\beta`-th derivative where `\beta` is
+  a multi-index.
       
+..
+  End of week 5 material
+   
 Now we develop an estimate of the error `T^kf - f`.
+
+.. dropdown:: A first video recording of the following material is available here.
+		  
+    .. container:: vimeo
+
+        .. raw:: html
+
+            <iframe src="https://player.vimeo.com/video/490672898"
+            frameborder="0" allow="autoplay; fullscreen"
+            allowfullscreen></iframe>
+
+    Imperial students can also `watch this video on Panopto <https://imperial.cloud.panopto.eu/Panopto/Pages/Viewer.aspx?id=80896f93-3f64-421e-846e-ac8e00f12c99>`_
+
+.. dropdown:: A second video recording of the following material is available here.
+		  
+    .. container:: vimeo
+
+        .. raw:: html
+
+            <iframe src="https://player.vimeo.com/video/490672679"
+            frameborder="0" allow="autoplay; fullscreen"
+            allowfullscreen></iframe>
+
+    Imperial students can also `watch this video on Panopto <https://imperial.cloud.panopto.eu/Panopto/Pages/Viewer.aspx?id=cb47271d-b53f-46fc-805b-ac8f00a28be7>`_
 
 .. _taylorerror:
 
@@ -214,9 +305,9 @@ Now we develop an estimate of the error `T^kf - f`.
 
    .. math::
       
-      \|D^\beta(f-Q_{k,B}f)\|_{L^2} \leq C\frac{|\Omega|^{1/2}}{|B|^{1/2}}
+      \|D^\beta(f-Q_{k,B}f)\|_{L^2(\Omega)} \leq C\frac{|\Omega|^{1/2}}{|B|^{1/2}}
       d^{k+1-|\beta|}|f|_{H^{k+1}(\Omega)}.
-
+      
 .. proof:proof::
 
    The Taylor remainder theorem (see a calculus textbook) gives
@@ -333,7 +424,102 @@ of the triangle we are interpolating to.
 
 Local and global interpolation errors
 -------------------------------------
+
+.. dropdown:: A video recording of the following material is available here.
+		  
+    .. container:: vimeo
+
+        .. raw:: html
+
+            <iframe src="https://player.vimeo.com/video/490672385"
+            frameborder="0" allow="autoplay; fullscreen"
+            allowfullscreen></iframe>
+
+    Imperial students can also `watch this video on Panopto <https://imperial.cloud.panopto.eu/Panopto/Pages/Viewer.aspx?id=de44e00c-6a67-43ac-88e1-ac8e00ee04aa>`_
+
+The following exercises give a specific example of the interpolation error
+results of this section without directly using the previous estimate
+(because they specialise to `L^2`, 1D and linear elements).
+
+.. proof:exercise::
+
+   Let `w\in C^2([0,1])`, with `w(0)=w(1)=0`. Show that
+
+   .. math::
+      
+      \int_0^1 w(x) \,d x \leq c\int_0^1 w''(x) \,d x.
+
+   Hints: use the Schwarz inequality,
+
+   .. math::
+
+      (\int_0^1 f(x)g(x) \, dx)^2 \leq (\int_0^1 f(x)^2 \, dx)
+      (\int_0^1 g(x)^2 \, dx)^2,
+
+   (which we shall discuss in more generality in Section 4), together
+   with Rolle's theorem, that says that if `u` has continuous
+   derivative then for all `x`, there exists `0\leq \xi \leq 1` such
+   that
+
+   .. math::
+
+      u(x) = \int_\xi^x u'(y) \, dy.
+
+.. proof:exercise::
+
+   Using the previous exercise, show that for all `u\in C^2([0,1])`, there
+   exists a constant `c` such that
+
+   .. math::
+
+      \int_0^1 (u(x)-\mathcal{I}_{[0,1]}u(x))^2 \, dx
+      \leq c\int_0^1 u''(x)^2 \, dx,
+
+   where `\mathcal{I}_{[0,1]}` is the interpolator to the finite element
+   with `K=[0,1]`, `P` is the linear polynomials on `K`, and the nodal
+   variables are `N_0[p]=p(0)` and `N_1[p]=p(1)`.
+
+.. proof:exercise::
+
+   Using the previous exercise, show that for all `u\in C^2([a,b])`, there
+   exists a constant `c` such that
+
+   .. math::
+
+      \int_a^b (u(x)-\mathcal{I}_{[a,b]}u(x))^2 \, dx
+      \leq c(b-a)^4\int_a^b u''(x)^2 \, dx,
+
+   where `\mathcal{I}_{[a,b]}` is the interpolator to the finite element
+   with `K=[a,b]`, `P` is the linear polynomials on `K`, and the nodal
+   variables are `N_0[p]=p(a)` and `N_1[p]=p(b)`.
+
+.. proof:exercise::
+
+   Using the previous exercise, show that for a P1 finite element space
+   defined on the interval `[a,b]` with maximum mesh cell width `h`, then
+   there exists a constant `c` such that
+
+   .. math::
+
+      \int_a^b (u(x)-\mathcal{I}_{h}u(x))^2 \, dx
+      \leq ch^4 \int_a^b u''(x)^2 \, dx,
+
+   where `\mathcal{I}_h` is the global nodal interpolator to the P1
+   finite element space.
+
+.. proof:exercise::
    
+   Under the same assumptions as the previous exercise, prove the following
+   finite element version of Sobolev's inequality,
+
+   .. math::
+
+      \|v\|^2_{C^\infty} \leq C\int_0^1 (v')^2 \, dx,
+
+   for all `v \in V \cap C^1([0,1])`, where `V` is the
+   subspace of the P1 finite element space defined on a subdivision
+   of the interval `[0,1]` containing only functions `v` with `v(0)=0`.
+    
 Now we will use the Taylor polynomial estimates to
 derive error estimates for the local interpolation operator.
 We start by looking at a triangle with diameter 1, and then use
@@ -353,7 +539,7 @@ a scaling argument to obtain error estimates in terms of the diameter
    .. math::
 
       \|N_i\|_{C^{l,\infty}(K_1)'} = \sup_{\|u\|_{C^{l,\infty}(K_1)}>0}
-      \frac{|N_i(u)|}{\|u\|_{W_\infty^l(K_1)}} \qquad \qquad
+      \frac{|N_i(u)|}{\|u\|_{C^{l,\infty}(K_1)}} \qquad \qquad
       (\mbox{Dual norm of }N_i)
 
    Let `k-l > n/2`, and `u\in C^{k,\infty}(\Omega)`.
@@ -376,7 +562,19 @@ a scaling argument to obtain error estimates in terms of the diameter
       &\leq C \|u\|_{H^k(K_1)},
 
    where the Sobolev inequality was used in the last line.
+   
+.. dropdown:: A video recording of the following material is available here.
+		  
+    .. container:: vimeo
 
+        .. raw:: html
+
+            <iframe src="https://player.vimeo.com/video/490672190"
+            frameborder="0" allow="autoplay; fullscreen"
+            allowfullscreen></iframe>
+
+    Imperial students can also `watch this video on Panopto <https://imperial.cloud.panopto.eu/Panopto/Pages/Viewer.aspx?id=7eecb6d2-3a85-4a5a-b748-ac8f00addb0d>`_
+    
 Now we can directly apply this to the interpolation operator error
 estimate on the triangle with diameter 1. It is the standard trick of
 adding and subtracting something, in this case the Taylor polynomial.
@@ -412,9 +610,24 @@ adding and subtracting something, in this case the Taylor polynomial.
       
       &\leq (1+C^2)|u|_{H^{k+1}(K_1)}^2,
 
-   where we used the fact that `I_{K_1}Q_{k,B}u = Q_{k,B}u` in the
+   where we used the fact that `\mathcal{I}_{K_1}Q_{k,B}u = Q_{k,B}u` in the
    second line and the previous lemma in the third line.
 
+.. dropdown:: A video recording of the following material is available here.
+		  
+    .. container:: vimeo
+
+        .. raw:: html
+
+            <iframe src="https://player.vimeo.com/video/490671682"
+            frameborder="0" allow="autoplay; fullscreen"
+            allowfullscreen></iframe>
+
+..
+  End of week 6 material
+	    
+    Imperial students can also `watch this video on Panopto <https://imperial.cloud.panopto.eu/Panopto/Pages/Viewer.aspx?id=0269bbf5-8928-453a-83c7-ac8f00ad2f1a>`_
+   
 Now we apply a scaling argument to translate this to triangles
 with diameter `h`.
 
@@ -458,8 +671,20 @@ with diameter `h`.
 
    and taking the square root gives the result.
 
+.. dropdown:: A video recording of the following material is available here.
+		  
+    .. container:: vimeo
+
+        .. raw:: html
+
+            <iframe src="https://player.vimeo.com/video/490671577"
+            frameborder="0" allow="autoplay; fullscreen"
+            allowfullscreen></iframe>
+
+    Imperial students can also `watch this video on Panopto <https://imperial.cloud.panopto.eu/Panopto/Pages/Viewer.aspx?id=c1e7b2ce-4169-4fd7-a730-ac8f00b06e45>`_
+   
 So far we have just developed an error estimate for the local
-interpolant on a single triangle. Now we extend this to finite element
+interpolator on a single triangle. Now we extend this to finite element
 spaces defined on the whole triangulation.
 
 .. _Iherr:
