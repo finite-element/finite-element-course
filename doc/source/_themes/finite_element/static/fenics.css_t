@@ -28,7 +28,7 @@ div.documentwrapper {
 }
 
 div.bodywrapper {
-   width: 950px;
+   max-width: 860px;
    margin-left: auto;
    margin-right: auto;
 }
@@ -324,6 +324,48 @@ pre, code {
     border-bottom: 2px solid #c6c9cb;
 }
 
+kbd {
+    background-color: #eaeaea;
+    border-radius: 5px;
+    padding-left: 2px;
+    padding-right: 2px;
+}
+
+
+div.linenodiv {
+    border-top: 2px solid rgba(255, 255, 255, 0);
+    border-bottom: 2px solid rgba(255, 255, 255, 0);
+}
+
+.linenos pre {
+    font-size: 14px;
+    line-height: 17px;
+    padding: 10px;
+    margin: 0;
+    border-top: 2px solid #c6c9cb;
+    border-bottom: 2px solid #c6c9cb;
+}
+
+div.badcode {
+    padding-left: 0px;
+}
+
+div.goodcode {
+    padding-left: 0px;
+}
+
+.badcode .highlight pre {
+    background: #fafafa url(dialog-wrong.png) no-repeat 10px 8px;
+    background-position: right;
+    border-left: 8px solid #ff0000;
+}
+
+.goodcode .highlight pre {
+    background: #fafafa url(dialog-right.png) no-repeat 10px 8px;
+    background-position: right;
+    border-left: 8px solid #00ff00;
+}
+
 tt {
     background-color: transparent;
     color: #222;
@@ -353,6 +395,11 @@ table.imagegrid {
 
 table.imagegrid td{
     text-align: center;
+}
+
+table.center-align-center-col td:last-child {
+    text-align: center;
+    width: 200%;
 }
 
 table.docutils {
@@ -477,7 +524,7 @@ div.menu li {
 
 .wrapper {
 	margin: 0 auto;
-	width: 900px;
+	max-width: 900px;
 }
 
 /* =Leader and Front Page Styles
@@ -722,6 +769,8 @@ div.proof {
 	border-left-style: none;
 	padding: 10px 10px 10px 10px;
 	background: #eeeeee;
+    margin-top: 10px;
+    margin-bottom: 10px;
 }
 
 div.figure {
@@ -740,3 +789,23 @@ div.figure {
 }
 
 span.strikethrough { text-decoration: line-through; }
+
+.vimeo {
+  position: relative;
+  padding-bottom: 57%;
+  height: 0;
+  overflow: hidden;
+  max-width: 90%;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.vimeo iframe,
+.vimeo object,
+.vimeo embed {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
