@@ -296,4 +296,5 @@ bibtex_bibfiles = ['refs.bib']
 intersphinx_mapping = {'python': ('http://docs.python.org/3/', None),
                        'scipy': ('http://docs.scipy.org/doc/scipy-dev/reference/', None),
                        'numpy': ('http://docs.scipy.org/doc/numpy/', None),
-                       'matplotlib': ('http://matplotlib.org/', None)}
+                       'matplotlib': ('http://matplotlib.org/', None),
+                       'fons': ('https://imperial-fons-computing.github.io', None)}

@@ -7,6 +7,21 @@
    .. raw:: latex
 
       \frontmatter
+      \mainmatter
+      \part{Numerical analysis}
+
+.. only:: latex
+
+    .. toctree::
+        :numbered:
+        :maxdepth: 2
+
+        L1_introduction
+        L2_fespaces
+        L3_interpolation
+        L4_feprobs
+        L5_convergence
+
 
 .. only:: html
 
@@ -34,10 +49,11 @@
    Part 1: Numerical analysis
    --------------------------
 
-   The theory part of the module will consist of two hours per week
-   primarily composed of lectures, with occasional tutorials. This part of
+   The theory  part of
    the module will be led by `Prof. Colin Cotter
-   <http://www.imperial.ac.uk/people/colin.cotter>`_.
+   <http://www.imperial.ac.uk/people/colin.cotter>`_. The material is presented
+   by means of a set of lecture notes, with lecture videos interspersed in the
+   notes. 
 
    The text for this part of the module is Brenner and Scott *The
    Mathematical Theory of Finite Element Methods*. Imperial College has
@@ -52,22 +68,15 @@
    Lecture notes:
    ~~~~~~~~~~~~~~
 
-.. raw:: latex
-         
-   \mainmatter
-   \part{Numerical analysis}
-   
-.. toctree::
-   :numbered:
-   :maxdepth: 2
+    .. toctree::
+        :numbered:
+        :maxdepth: 2
 
-   L1_introduction
-   L2_fespaces
-   L3_interpolation
-   L4_feprobs
-   L5_convergence
-
-.. only:: html
+        L1_introduction
+        L2_fespaces
+        L3_interpolation
+        L4_feprobs
+        L5_convergence
 
    Weekly material
    ~~~~~~~~~~~~~~~
@@ -98,24 +107,40 @@
    * `2019 exam paper <_static/FEExam-2019.pdf>`_ and `solutions <_static/FEExam-2019-solns.pdf>`_
    * `revision checklist <_static/revision-checklist.pdf>`_
 
-   Part 2: Implementation
-   ----------------------
+.. only:: html
 
-   The implementation part of the module aims to give the students a
-   deeper understanding of the finite element method through writing
-   software to solve finite element problems in one and two dimensions.
+    Part 2: Implementation
+    ----------------------
 
-   This part of the module will be taught by `Dr David Ham
-   <http://www.imperial.ac.uk/people/david.ham>`_ in two hours per
-   week of computer laboratory time. 
+    The implementation part of the module aims to give the students a
+    deeper understanding of the finite element method through writing
+    software to solve finite element problems in one and two dimensions.
 
-   .. toctree::
-      :maxdepth: 3
+    This part of the module will be taught by `Dr David Ham
+    <http://www.imperial.ac.uk/people/david.ham>`_. The key to this part of the
+    module is to build up a working finite element implementation over the course
+    of the term, and thereby to gain a practical understanding of the method.
 
-      tools
-      implementation
+    The starting point for the implementation method is the skeleton code, an
+    outline of a simple finite element library written in Python. Many of the
+    critical algorithms in the skeleton code are left unimplemented, it will be
+    your task to implement them over the course of the term.
 
-   Implementation exercise contents:
+    Each chapter of the implementation describes how a part of the finite element
+    method is implemented. Along the way are videos which explain the text, or
+    walk through the algorithms presented. Also interspersed in the text are
+    exercises, typically requiring you to implement the algorithm just
+    presented. We will look at how to do this in more detail presently.
+
+
+
+    .. toctree::
+        :maxdepth: 3
+
+        tools
+        implementation
+
+    Implementation exercise contents:
 
 .. raw:: latex
          
@@ -138,4 +163,5 @@
    6_finite_element_problems
    7_boundary_conditions
    8_nonlinear_problems
+   9_mixed_problems
    zbibliography

@@ -1,74 +1,81 @@
 Computational tools
 ===================
 
-Access to computers
--------------------
+Obtaining the right software tools
+----------------------------------
 
-You'll need access to a suitable computer for the implementation
-work. You can either use the machines in the maths department labs, or you can use your own laptop running Windows, Linux, or macOS.
-The core requirements are Python 3, git, and a Python-aware text editor.
+In order to do this module, you'll need some core software tools. As the module
+proceeds we'll also install several more Python packages, but you don't need to
+install those right now. The core tools you will need are:
 
-Using the Windows machines in the computer labs
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    1. Python version 3.6 or later.
+    2. Git (the revision control system we're going to use).
+    3. A Python-aware text editor. Visual Studio Code is recommended, and all
+       the instructions in this course will assume that this is what you are using.
 
-Imperial's lab machines have the software you need installed, in some
-cases via the `Software Hub`. To get started, double click the
-`Software Hub` icon on the desktop or `click here
-<https://softwarehub.imperial.ac.uk/>`_. From there you can run `git`,
-which will give you a terminal to run git and Python commands, and
-`atom`, which will provide you with an editor.
+The Faculty of Natural Sciences at Imperial has 
+:doc:`centralised instructions for installing all of these tools <fons:index>`, and we'll follow those. 
 
-Using your own Windows machine
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Python 
+......
 
-In order to use your own Windows machine, you'll simply need Python 3
-(with the right packages) and git. One option is to install Anaconda, but other Windows Python distributions should also work.
+Follow the :doc:`FoNS Python instructions <fons:python>`. We will exclusively
+use :ref:`virtual environments <fons:python_virtual_environments>` so it doesn't matter at
+all whether you use Python from Anaconda or from another source. Mac users
+should note, though that the built-in Python will not do, so you should use
+either Homebrew or Anaconda.
 
-1. Download and install `Anaconda` from `here <https://www.anaconda.com>`_.
+.. note::
 
-2. Download and install `git` from `here <https://git-scm.com/download/win>`_.
-     
+    The example code in the exercises uses :ref:`f-strings <tut-f-strings>`
+    which were introduced in Python 3.6, so the code will not work in earlier
+    versions of Python.
 
-Using your own Linux machine
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Git
+...
 
-If you plan to use your own machine for the module, you will need a
-basic  Python toolchain. On Ubuntu and its relatives, this can be achieved with::
+Git is a revision control system. Revision control systems enable you to keep
+track of the different versions of a piece of code as you work on them, and to
+have these versions on different computers as well as backed up in the cloud. We
+will use Git and GitHub classroom as a mechanism for distributing, working with
+and submitting code exercises. Install Git and work through the entire Git,
+GitHub, and GitHub Classroom tutorial on the :doc:`FoNS Git instructions webpage
+<fons:git>`.
 
-  sudo apt-get install python3 git
+Next, go and do the `git tutorial <https://swcarpentry.github.io/git-novice/>`_
+over at Software Carpentry.
 
-Using your own Mac
-~~~~~~~~~~~~~~~~~~
+.. hint::
 
-We recommend using `Homebrew <http://brew.sh>`__ as a package manager
-for the required packages on Mac OS systems, however other ways of getting Python 3 may well work.
+   If you are a more confident computer user, you could go ahead and
+   set up git to work with ssh, the secure shell. This will save a lot
+   of password typing but it's not essential so if you are not so
+   confident with computers, you can skip this bit. The instructions
+   are `here
+   <https://help.github.com/articles/generating-an-ssh-key/>`_.
 
-1. Install homebrew, following the instructions at http://brew.sh.
 
-2. Install an up-to-date Python via homebrew::
+Visual Studio Code
+..................
 
-     brew install python3
-
-Editing code
-~~~~~~~~~~~~
-
-In order to write the code required for the implementation exercise,
-you'll need to use a Python-aware text editor. There are many such
-editors available and you can use any you like. One good option is
-called `atom` which is available on the `software hub
-<https://softwarehub.imperial.ac.uk/>`_ At Imperial or can be
-downloaded `here <http://atom.io>`_.
-
+Visual Studio Code is a Python-aware Integrated Development Environment (IDE).
+This means that it incorporates editing files with other programming features
+such as :ref:`debugging`, Git support, and built-in :ref:`terminal
+<terminal-vscode>`. Visual Studio Code also provides an incredibly useful remote
+collaborative coding feature called Live Share. This will be very useful for
+getting remote help from an instructor. Install Visual Studio Code using the
+:doc:`FoNS Visual Studio Code installation instructions <fons:vscode>`.
 
 The command line
 ----------------
 
 A lot of the routine activity involved in this module revolves around
-executing commands on the Bash command line. For example you use the
+executing commands on the command line. For example you use the
 command line to work with the revision control system. If you're not
 familiar with the Linux command line, then a brief guide `is available
 here <http://www.tuxarena.com/static/intro_linux_cli.php>`_. That
-guide focusses on the Bash shell, which is the one we will use.
+guide focusses on the Bash shell, but zsh and the Windows Powershell use very
+similar commands.
 
 Python
 ------
@@ -91,7 +98,6 @@ handy `guide for Matlab users
 <http://wiki.scipy.org/NumPy_for_Matlab_Users>`_. In that context, the
 code provided in this course will always use Numpy arrays, and never
 Numpy matrices.
-
 
 .. _bitbucket-git:
 
@@ -142,16 +148,6 @@ lot easier to read::
   
   git config --global color.ui "auto"
 
-.. hint::
-
-   If you are a more confident computer user, you could go ahead and
-   set up git to work with ssh, the secure shell. This will save a lot
-   of password typing but it's not essential so if you are not so
-   confident with computers, you can skip this bit. The instructions
-   are `here
-   <https://help.github.com/articles/generating-an-ssh-key/>`_.
-
-Now go and do the `git tutorial <https://swcarpentry.github.io/git-novice/>`_ over at Software Carpentry.
 
 
 Sharing your problems with gists

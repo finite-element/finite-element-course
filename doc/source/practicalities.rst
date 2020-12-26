@@ -12,13 +12,10 @@ Accreditation
 -------------
 
 This module is an accredited elective for third and fourth year
-mathematics and JMC undergraduates. It is also approved for the `MSc
+mathematics and JMC undergraduates, and for the `MSc
 in Applied Mathematics
-<http://www.imperial.ac.uk/study/pg/courses/mathematics/applied-mathematics/>`_,
-`MRes in Mathematics of Planet Earth <http://mpecdt.org>`_, and for
-second and third year PhD students in the `CDT in Fluid Dymanics
-Accross Scales <http://www3.imperial.ac.uk/fluidscdt>`_. Other masters
-and PhD students wishing to take the module should contact the
+<http://www.imperial.ac.uk/study/pg/courses/mathematics/applied-mathematics/>`_.
+Other Imperial students wishing to take the module should contact the
 lecturers in the first instance.
 
 Assumed knowledge
@@ -32,7 +29,6 @@ or C++). The implementation will be in Python, a very high level and
 simple language with similarities to Matlab. Students who are not
 familiar with Python will need to acquire some familiarity with the
 language, for example by doing one of the suggested tutorials.
-
 
 Assessment
 ----------
@@ -49,9 +45,7 @@ The assessment of your finite element implementation will occur in a
 single submission at the end of term. However feedback on your
 progress will be available during the term. Informal feedback will be
 available during the labs, and you will have the opportunity to submit
-your code for formal feedback twice during the term. The
-deadline for formal feedback submissions will be midnight on Sunday
-nights and feedback will be provided before the next Thursday lab.
+your code for formal feedback twice during the term, in weeks 4 and 7.
 
 Mastery
 .......

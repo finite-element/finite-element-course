@@ -13,13 +13,9 @@ nonlinear problem.
 
 .. note::
 
-   This section is the mastery exercise for this module. This exercise
-   is explicitly intended to test whether you can bring together what
-   has been learned in the rest of the module in order to go beyond
-   what has been covered in lectures and labs.
-
-   This exercise is not a part of the third year version of this module.
-
+    This chapter forms the mastery component of the module in some years, but
+    not 2020/2021. It is presented here for reference. None of the material here
+    forms part of the module this year.
 
 A model problem
 ---------------
