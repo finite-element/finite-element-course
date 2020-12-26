@@ -290,6 +290,7 @@ texinfo_documents = [
 
 numfig = True
 
+bibtex_bibfiles = ['refs.bib']
 
 # Example configuration for intersphinx: refer to the Python standard library.
 intersphinx_mapping = {'python': ('http://docs.python.org/3/', None),

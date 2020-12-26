@@ -7,3 +7,4 @@ doc/build/*
 *.egg-info/
 doc/webgit
 doc/source/fe_utils.*
+doc/source/bibtex.json
