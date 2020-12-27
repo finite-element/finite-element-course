@@ -1,5 +1,7 @@
 .. default-role:: math
 
+.. _quadrature:
+
 Numerical quadrature
 ====================
 

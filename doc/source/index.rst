@@ -39,6 +39,55 @@
 
       practicalities
 
+   Weekly material
+   ---------------
+
+   The numerical analysis and implementation parts of the module run in
+   parallel. Each has videos and exercises embedded in its notes. This table
+   indicates the progress that you should make through each component each week.
+
+   .. list-table::
+        :widths: 10 45 45
+        :header-rows: 1
+
+        *   - Week
+            - Numerical analysis
+            - Implementation
+        *   - 1
+            - Up to and including :numref:`Definition
+              {number}<def-discrete-poisson>`.
+            - Do the background tutorials and installation work given under
+              :doc:`tools` and :doc:`implementation`.
+        *   - 2
+            - Up to and including :numref:`Exercise
+              {number}<exe-1d-lagrange-basis>`.
+            - Up to the end of :numref:`quadrature`.
+        *   - 3
+            - Up to and including :numref:`Definition {number}<P1unisolve>`.
+            - Up to and including :numref:`Exercise {number}<ex-vandermonde>`.
+        *   - 4
+            - Up to and including :numref:`Exercise {number}<exer-argyris>`.
+            - Up to and including :numref:`Exercise {number}<ex-tabulate>`.
+        *   - 5
+            - Up to and including :numref:`Definition
+              {number}<def-averaged-taylor>`.
+            - Up to the end of :numref:`secfinitelement`.
+        *   - 6
+            - Up to and including :numref:`Lemma {number}<IerrK1>`.
+            - Up to and including :numref:`Exercise {number}<ex-local>`.
+        *   - 7
+            - Up to and including :numref:`Exercise {number}<exe-pure-neumann>`.
+            - Up to the end of :numref:`secfunctionspaces`.
+        *   - 8
+            - Up to the end of :numref:`fe_problems`.
+            - Up to the end of :numref:`secfunctions`.
+        *   - 9
+            - Up to and including :numref:`Theorem {number}<thm-cea>`.
+            - Up to the end of :numref:`secdirichlet`.
+        *   - 10
+            - Up to the end of :numref:`convergence`.
+            - Time for the mastery exercise, (catch up time for year 3).
+
    .. image:: _static/brenner_scott.png
       :align: right
       :width: 20ex
@@ -77,22 +126,6 @@
         L3_interpolation
         L4_feprobs
         L5_convergence
-
-   Weekly material
-   ~~~~~~~~~~~~~~~
-
-   The Spring Term weekly material for 2021 for this part of the course is as follows.
-
-   #. Week 1: Up to and including :numref:`Definition {number}<def-discrete-poisson>`.
-   #. Week 2: Up to and including :numref:`Exercise {number}<exe-1d-lagrange-basis>`.
-   #. Week 3: Up to and including :numref:`Definition {number}<P1unisolve>`.
-   #. Week 4: Up to and including :numref:`Exercise {number}<exer-argyris>`.
-   #. Week 5: Up to and including :numref:`Definition {number}<def-averaged-taylor>`.
-   #. Week 6: Up to and including :numref:`Lemma {number}<IerrK1>`.
-   #. Week 7: Up to and including :numref:`Exercise {number}<exe-pure-neumann>`.
-   #. Week 8: Up to the end of Section 4.
-   #. Week 9: Up to and including :numref:`Theorem {number}<thm-cea>`.
-   #. Week 10: Up to the end of Section 5.
 
    Past exam papers
    ~~~~~~~~~~~~~~~~

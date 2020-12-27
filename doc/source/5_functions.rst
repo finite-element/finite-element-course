@@ -1,5 +1,7 @@
 .. default-role:: math
 
+.. _secfunctions:
+
 Functions in finite element spaces
 ==================================
 

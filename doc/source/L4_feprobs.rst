@@ -1,5 +1,7 @@
 .. default-role:: math
 
+.. _fe_problems:
+
 Finite element problems: solvability and stability
 ===================================================
 

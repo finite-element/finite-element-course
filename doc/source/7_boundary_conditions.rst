@@ -1,5 +1,7 @@
 .. default-role:: math
 
+.. _secdirichlet:
+
 =============================
 Dirichlet boundary conditions
 =============================

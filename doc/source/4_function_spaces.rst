@@ -1,5 +1,7 @@
 .. default-role:: math
 
+.. _secfunctionspaces:
+
 Function spaces: associating data with meshes
 =============================================
 
@@ -125,6 +127,7 @@ the nodes in order given by the direction of the orientation of each edge.
     .. youtube:: dTWoTjARi2w?modestbranding=1;controls=0;rel=0
        :width: 100%
 
+.. _ex-local:
 
 .. proof:exercise::
 

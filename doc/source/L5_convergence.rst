@@ -1,5 +1,7 @@
 .. default-role:: math
 
+.. _convergence:
+
 Convergence of finite element approximations
 ============================================
 
