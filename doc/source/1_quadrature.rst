@@ -5,9 +5,19 @@
 Numerical quadrature
 ====================
 
-.. hint::
+.. only:: html
 
-   A video recording of this tutorial is available `here <https://www.youtube.com/embed/cVn1IhvrwSA>`_
+    .. dropdown:: A video recording of the following material is available here.
+
+        .. container:: vimeo
+
+            .. raw:: html
+
+                <iframe src="https://player.vimeo.com/video/495171130"
+                frameborder="0" allow="autoplay; fullscreen"
+                allowfullscreen></iframe>
+
+        Imperial students can also `watch this video on Panopto <https://imperial.cloud.panopto.eu/Panopto/Pages/Viewer.aspx?id=62cf7d17-d154-4450-b540-ac9f00c206d6>`_
 
 The core computational operation with which we are concerned in the
 finite element method is the integration of a function over a known
@@ -71,6 +81,20 @@ error, then incomplete quadrature may be advantageous.
 Examples in one dimension
 -------------------------
 
+.. only:: html
+
+    .. dropdown:: A video recording of the following material is available here.
+
+        .. container:: vimeo
+
+            .. raw:: html
+
+                <iframe src="https://player.vimeo.com/video/495171317"
+                frameborder="0" allow="autoplay; fullscreen"
+                allowfullscreen></iframe>
+
+        Imperial students can also `watch this video on Panopto <https://imperial.cloud.panopto.eu/Panopto/Pages/Viewer.aspx?id=74f63ac3-31ab-457d-9f45-ac9f00c1c738>`_
+
 We noted above that a few one dimensional quadrature rules are commonly
 taught in introductory integration courses. The first of these is the
 midpoint rule:
@@ -104,6 +128,20 @@ while if we employ a quadratic function then we arrive at Simpson's rule:
 
 Reference elements
 ------------------
+
+.. only:: html
+
+    .. dropdown:: A video recording of the following material is available here.
+
+        .. container:: vimeo
+
+            .. raw:: html
+
+                <iframe src="https://player.vimeo.com/video/495171380"
+                frameborder="0" allow="autoplay; fullscreen"
+                allowfullscreen></iframe>
+
+        Imperial students can also `watch this video on Panopto <https://imperial.cloud.panopto.eu/Panopto/Pages/Viewer.aspx?id=b2e8bfb6-89c2-4d92-8e3a-ac9f00c1c7a3>`_
 
 As a practical matter, we wish to write down quadrature rules as
 arrays of numbers, independent of `h`. In order to achieve this,
@@ -140,6 +178,20 @@ require for this course are the
 
 Quadrature rules on reference elements
 --------------------------------------
+
+.. only:: html
+
+    .. dropdown:: A video recording of the following material is available here.
+
+        .. container:: vimeo
+
+            .. raw:: html
+
+                <iframe src="https://player.vimeo.com/video/495171523"
+                frameborder="0" allow="autoplay; fullscreen"
+                allowfullscreen></iframe>
+
+        Imperial students can also `watch this video on Panopto <https://imperial.cloud.panopto.eu/Panopto/Pages/Viewer.aspx?id=adcb767d-5c36-4a7e-92d2-ac9f00c1c7d3>`_
 
 Having adopted a convention for the reference element, we can simply
 express quadrature rules as lists of quadrature points with
@@ -260,6 +312,20 @@ by one.
 Implementing quadrature rules in Python
 ---------------------------------------
 
+.. only:: html
+
+    .. dropdown:: A video recording about how to do this exercise is available here.
+
+        .. container:: vimeo
+
+            .. raw:: html
+
+                <iframe src="https://player.vimeo.com/video/495171661"
+                frameborder="0" allow="autoplay; fullscreen"
+                allowfullscreen></iframe>
+
+        Imperial students can also `watch this video on Panopto <https://imperial.cloud.panopto.eu/Panopto/Pages/Viewer.aspx?id=e5f1084f-c163-46d3-b317-ac9f00c1c772>`_
+
 The :mod:`fe_utils.quadrature` module provides the
 :class:`~fe_utils.quadrature.QuadratureRule` class which records
 quadrature points and weights for a given
@@ -294,3 +360,17 @@ cell.
 .. hint::
 
    Don't forget to activate your Python venv!
+
+.. only:: html
+
+    .. dropdown:: A video recording of the solution to this exercise is available here.
+
+        .. container:: vimeo
+
+            .. raw:: html
+
+                <iframe src="https://player.vimeo.com/video/495171917"
+                frameborder="0" allow="autoplay; fullscreen"
+                allowfullscreen></iframe>
+
+        Imperial students can also `watch this video on Panopto <https://imperial.cloud.panopto.eu/Panopto/Pages/Viewer.aspx?id=a2b1c67a-a9d3-485b-8784-ac9f00c1dad5>`_

@@ -67,6 +67,20 @@ the same scheme as above.
 Obtaining the skeleton code
 ---------------------------
 
+.. only:: html
+
+    .. dropdown:: A video recording of the following material is available here.
+
+        .. container:: vimeo
+
+            .. raw:: html
+
+                <iframe src="https://player.vimeo.com/video/495157536"
+                frameborder="0" allow="autoplay; fullscreen"
+                allowfullscreen></iframe>
+
+        Imperial students can also `watch this video on Panopto <https://imperial.cloud.panopto.eu/Panopto/Pages/Viewer.aspx?id=c92e73b4-b383-4412-b5f9-ac9f00b08789>`_
+
 This section assumes you've already done everything to :doc:`set up the software
 tools you need <tools>`.
 

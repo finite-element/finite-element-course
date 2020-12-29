@@ -22,9 +22,19 @@ numbering*.
 Local numbering and continuity
 ------------------------------
 
-.. hint::
+.. only:: html
 
-   A video recording of this section is available `here <https://www.youtube.com/embed/JwUmZt2aknU>`_
+    .. dropdown:: A video recording of the following material is available here.
+
+        .. container:: vimeo
+
+            .. raw:: html
+
+                <iframe src="https://player.vimeo.com/video/495269291"
+                frameborder="0" allow="autoplay; fullscreen"
+                allowfullscreen></iframe>
+
+        Imperial students can also `watch this video on Panopto <https://imperial.cloud.panopto.eu/Panopto/Pages/Viewer.aspx?id=69f99985-13ba-4151-8e5a-ac9f01303711>`_
 
 Which nodes should be associated with which topological entities? The
 answer to this question depends on the degree of continuity required
@@ -89,11 +99,19 @@ numbering used here is just one of the obvious choices.
 Implementing local numbering
 ----------------------------
 
+.. only:: html
 
-.. hint::
+    .. dropdown:: A video recording of the following material is available here.
 
-   A video recording of this section is available `here <https://www.youtube.com/embed/HswJShGI8X8>`_
+        .. container:: vimeo
 
+            .. raw:: html
+
+                <iframe src="https://player.vimeo.com/video/495269640"
+                frameborder="0" allow="autoplay; fullscreen"
+                allowfullscreen></iframe>
+
+        Imperial students can also `watch this video on Panopto <https://imperial.cloud.panopto.eu/Panopto/Pages/Viewer.aspx?id=ea5c76aa-db4c-45b8-a0f9-ac9f01303687>`_
 
 Local numbering can be implemented by adding an additional data
 structure to the :class:`~fe_utils.finite_elements.FiniteElement`
@@ -154,9 +172,19 @@ the nodes in order given by the direction of the orientation of each edge.
 Global numbering
 ----------------
 
-.. hint::
+.. only:: html
 
-   A video recording of this section is available `here <https://www.youtube.com/embed/AgkunNycPWo>`_
+    .. dropdown:: A video recording of the following material is available here.
+
+        .. container:: vimeo
+
+            .. raw:: html
+
+                <iframe src="https://player.vimeo.com/video/495269832"
+                frameborder="0" allow="autoplay; fullscreen"
+                allowfullscreen></iframe>
+
+        Imperial students can also `watch this video on Panopto <https://imperial.cloud.panopto.eu/Panopto/Pages/Viewer.aspx?id=930f2ddb-fe7b-4286-b82b-ac9f013036e5>`_
 
 Given a mesh and a finite element, the global numbering task is to
 uniquely associate the appropriate number of global node numbers with
@@ -185,10 +213,19 @@ associated with entity `(d, i)` is therefore:
 The cell-node map
 -----------------
 
-.. hint::
+.. only:: html
 
-   A video recording of this section is available `here <https://www.youtube.com/embed/VHq3xJ-O9xc>`_
+    .. dropdown:: A video recording of the following material is available here.
 
+        .. container:: vimeo
+
+            .. raw:: html
+
+                <iframe src="https://player.vimeo.com/video/495271441"
+                frameborder="0" allow="autoplay; fullscreen"
+                allowfullscreen></iframe>
+
+        Imperial students can also `watch this video on Panopto <https://imperial.cloud.panopto.eu/Panopto/Pages/Viewer.aspx?id=bddd29be-60eb-43f3-b487-ac9f013036b7>`_
 
 The primary use to which we wish to put the finite element spaces we
 are constructing is, naturally, the solution of finite element
@@ -238,10 +275,19 @@ requires a trivial extension to adjacency:
 Implementing function spaces in Python
 --------------------------------------
 
-.. hint::
+.. only:: html
 
-   A video recording of this section is available `here <https://www.youtube.com/embed/cLVi-5DKZO8>`_
+    .. dropdown:: A video recording of the following material is available here.
 
+        .. container:: vimeo
+
+            .. raw:: html
+
+                <iframe src="https://player.vimeo.com/video/495272295"
+                frameborder="0" allow="autoplay; fullscreen"
+                allowfullscreen></iframe>
+
+        Imperial students can also `watch this video on Panopto <https://imperial.cloud.panopto.eu/Panopto/Pages/Viewer.aspx?id=55f96f95-c934-4756-b75e-ac9f01305188>`_
 
 As noted above, a finite element space associates a mesh and a finite
 element, and contains (in some form) a global numbering of the nodes. 

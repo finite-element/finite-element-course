@@ -19,9 +19,19 @@ stitching together the local basis functions defined by the
 A python implementation of functions in finite element spaces
 -------------------------------------------------------------
 
-.. hint::
+.. only:: html
 
-   A video recording of this section is available `here <https://www.youtube.com/embed/HTTCzLZw-ao>`_
+    .. dropdown:: A video recording of the following material is available here.
+
+        .. container:: vimeo
+
+            .. raw:: html
+
+                <iframe src="https://player.vimeo.com/video/495447092"
+                frameborder="0" allow="autoplay; fullscreen"
+                allowfullscreen></iframe>
+
+        Imperial students can also `watch this video on Panopto <https://imperial.cloud.panopto.eu/Panopto/Pages/Viewer.aspx?id=6e7570e9-cc2c-49d2-908b-aca000b63449>`_
 
 The :class:`~fe_utils.function_spaces.Function` class provides a
 simple implementation of function storage. The input is a
@@ -34,9 +44,19 @@ freedom values, one for each node in the
 Interpolating values into finite element spaces
 -----------------------------------------------
 
-.. hint::
+.. only:: html
 
-   A video recording of this section is available `here <https://www.youtube.com/embed/WXiE8Yx_m0Q>`_
+    .. dropdown:: A video recording of the following material is available here.
+
+        .. container:: vimeo
+
+            .. raw:: html
+
+                <iframe src="https://player.vimeo.com/video/495447659"
+                frameborder="0" allow="autoplay; fullscreen"
+                allowfullscreen></iframe>
+
+        Imperial students can also `watch this video on Panopto <https://imperial.cloud.panopto.eu/Panopto/Pages/Viewer.aspx?id=6d13d669-dc8c-43d1-8aae-aca000b634ed>`_
 
 Suppose we have a function `g(x): \mathbb{R}^n \rightarrow \mathbb{R}`
 which we wish to approximate as a function `f(x)` in some finite
@@ -196,10 +216,19 @@ interpolates a user-provided function onto the
 Integration
 -----------
 
-.. hint::
+.. only:: html
 
-   A video recording of this section is available `here <https://www.youtube.com/embed/hvPR8CUwq3Q>`_
+    .. dropdown:: A video recording of the following material is available here.
 
+        .. container:: vimeo
+
+            .. raw:: html
+
+                <iframe src="https://player.vimeo.com/video/495447232"
+                frameborder="0" allow="autoplay; fullscreen"
+                allowfullscreen></iframe>
+
+        Imperial students can also `watch this video on Panopto <https://imperial.cloud.panopto.eu/Panopto/Pages/Viewer.aspx?id=4b2f4755-0682-4e36-ad3e-aca000b634b9>`_
 
 We now come to one of the fundamental operations in the finite element
 method: integrating a :class:`~fe_utils.function_spaces.Function` over
@@ -283,9 +312,19 @@ might choose to evaluate the Jacobian at the cell origin `X=0`.
 Expressing the function in the finite element basis
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-.. hint::
+.. only:: html
 
-   A video recording of this section is available `here <https://www.youtube.com/embed/qKX3BGbbj58>`_
+    .. dropdown:: A video recording of the following material is available here.
+
+        .. container:: vimeo
+
+            .. raw:: html
+
+                <iframe src="https://player.vimeo.com/video/495444345"
+                frameborder="0" allow="autoplay; fullscreen"
+                allowfullscreen></iframe>
+
+        Imperial students can also `watch this video on Panopto <https://imperial.cloud.panopto.eu/Panopto/Pages/Viewer.aspx?id=005f670f-28ac-47c3-9cf1-aca000b7133d>`_
 
 Let `\{\Phi_i(X)\}` be a **local** basis for `V` on the reference element
 `c_0`. Then our integral becomes:
@@ -300,13 +339,9 @@ where `F` is the vector of global coefficient values of `f`, and `M` is :ref:`th
 Numerical quadrature
 ~~~~~~~~~~~~~~~~~~~~
 
-.. hint::
-
-   A video recording of this section is available `here <https://www.youtube.com/embed/5zby5uZUye0>`_
-
 The actual evaluation of the integral will employ the quadrature rules
-we discussed in :doc:`a previous section <1_quadrature>`. Let `\{X_q\},
-\{w_q\}` be a quadrature rule of sufficient degree of precision that
+we discussed in :doc:`a previous section <1_quadrature>`. Let 
+`\{X_q\}, \{w_q\}` be a quadrature rule of sufficient degree of precision that
 the quadrature is exact. Then:
 
 .. math::
@@ -316,11 +351,6 @@ the quadrature is exact. Then:
 
 Implementing integration
 ~~~~~~~~~~~~~~~~~~~~~~~~
-
-.. hint::
-
-   A video recording of this section is available `here <https://www.youtube.com/embed/XTUc2VcWKMU>`_
-
 
 .. proof:exercise::
 

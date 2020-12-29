@@ -5,10 +5,19 @@
 Constructing finite elements
 ============================
 
-.. hint::
+.. only:: html
 
-   A video recording of the introduction to this chapter is available `here <https://www.youtube.com/embed/FIYq9EjXsRo>`_
+    .. dropdown:: A video recording of the following material is available here.
 
+        .. container:: vimeo
+
+            .. raw:: html
+
+                <iframe src="https://player.vimeo.com/video/495194208"
+                frameborder="0" allow="autoplay; fullscreen"
+                allowfullscreen></iframe>
+
+        Imperial students can also `watch this video on Panopto <https://imperial.cloud.panopto.eu/Panopto/Pages/Viewer.aspx?id=2de78b50-5995-43b4-aef5-ac9f00e100b9>`_
 
 At the core of the finite element method is the representation of
 finite-dimensional function spaces over elements. This concept was
@@ -37,9 +46,19 @@ of nodes for an element, and then derive an appropriate basis for
 A worked example
 ----------------
 
-.. hint::
+.. only:: html
 
-   A video recording of this section is available `here <https://www.youtube.com/embed/Zztjq_fQynU>`_
+    .. dropdown:: A video recording of the following material is available here.
+
+        .. container:: vimeo
+
+            .. raw:: html
+
+                <iframe src="https://player.vimeo.com/video/495194350"
+                frameborder="0" allow="autoplay; fullscreen"
+                allowfullscreen></iframe>
+
+        Imperial students can also `watch this video on Panopto <https://imperial.cloud.panopto.eu/Panopto/Pages/Viewer.aspx?id=7b99c0c7-a6df-4b3d-b574-ac9f00e0075c>`_
 
 To illustrate the construction of a nodal basis, let's consider the
 linear polynomials on a triangle. We first need to define our
@@ -153,10 +172,19 @@ In this course we will only consider point evaluation nodes. The implementation 
 The Lagrange element nodes
 --------------------------
 
-.. hint::
+.. only:: html
 
-   A video recording of this section is available `here <https://www.youtube.com/embed/_YeZ7k7cAYw>`_
+    .. dropdown:: A video recording of the following material is available here.
 
+        .. container:: vimeo
+
+            .. raw:: html
+
+                <iframe src="https://player.vimeo.com/video/495194534"
+                frameborder="0" allow="autoplay; fullscreen"
+                allowfullscreen></iframe>
+
+        Imperial students can also `watch this video on Panopto <https://imperial.cloud.panopto.eu/Panopto/Pages/Viewer.aspx?id=d845a6c8-017b-4b50-92f0-ac9f00e00796>`_
 
 The number of coefficients of a degree `p` polynomial in `d`
 dimensions is given by `\begin{pmatrix}p+d\\ d\end{pmatrix}`. The
@@ -204,9 +232,19 @@ relatively low order computations.
 Solving for basis functions
 ---------------------------
 
-.. hint::
+.. only:: html
 
-   A video recording of this section is available `here <https://www.youtube.com/embed/lPI5Th5w-54>`_
+    .. dropdown:: A video recording of the following material is available here.
+
+        .. container:: vimeo
+
+            .. raw:: html
+
+                <iframe src="https://player.vimeo.com/video/495194663"
+                frameborder="0" allow="autoplay; fullscreen"
+                allowfullscreen></iframe>
+
+        Imperial students can also `watch this video on Panopto <https://imperial.cloud.panopto.eu/Panopto/Pages/Viewer.aspx?id=0a419515-add2-4ea0-a39c-ac9f00e007ff>`_
 
 The matrix in :eq:`phimat` is a *generalised Vandermonde* [#vandermonde]_
 matrix . Given a list of points `(x_i,y_i) \in \mathbb{R}^2, 0\leq i< m`
@@ -276,10 +314,19 @@ to include powers of `z`.
 Implementing finite elements in Python
 --------------------------------------
 
-.. hint::
+.. only:: html
 
-   A video recording of this section is available `here <https://www.youtube.com/embed/u4WVv6VxZzA>`_
+    .. dropdown:: A video recording of the following material is available here.
 
+        .. container:: vimeo
+
+            .. raw:: html
+
+                <iframe src="https://player.vimeo.com/video/495194889"
+                frameborder="0" allow="autoplay; fullscreen"
+                allowfullscreen></iframe>
+
+        Imperial students can also `watch this video on Panopto <https://imperial.cloud.panopto.eu/Panopto/Pages/Viewer.aspx?id=9e0ed94f-2a1f-4b7d-8be6-ac9f00e007ce>`_
 
 The :ref:`Ciarlet triple <def-ciarlet>` `(K, P, N)` also provides a
 good abstraction for the implementation of software objects
@@ -312,9 +359,19 @@ which the evaluation should occur.
 Implementing the Lagrange Elements
 ----------------------------------
 
-.. hint::
+.. only:: html
 
-   A video recording of this section is available `here <https://www.youtube.com/embed/Y4Cn0sO9Rl4>`_
+    .. dropdown:: A video recording of the following material is available here.
+
+        .. container:: vimeo
+
+            .. raw:: html
+
+                <iframe src="https://player.vimeo.com/video/495195941"
+                frameborder="0" allow="autoplay; fullscreen"
+                allowfullscreen></iframe>
+
+        Imperial students can also `watch this video on Panopto <https://imperial.cloud.panopto.eu/Panopto/Pages/Viewer.aspx?id=d78e85a7-fa59-433c-ac4c-ac9f00e02668>`_
 
 The :class:`~fe_utils.finite_elements.FiniteElement` class implements
 a general finite element object assuming we have provided the cell,
@@ -344,10 +401,19 @@ the particular case of the equispaced Lagrange elements.
 Tabulating basis functions
 --------------------------
 
-.. hint::
+.. only:: html
 
-   A video recording of this section is available `here <https://www.youtube.com/embed/R7Pln8NJEZQ>`_
+    .. dropdown:: A video recording of the following material is available here.
 
+        .. container:: vimeo
+
+            .. raw:: html
+
+                <iframe src="https://player.vimeo.com/video/495447930"
+                frameborder="0" allow="autoplay; fullscreen"
+                allowfullscreen></iframe>
+
+        Imperial students can also `watch this video on Panopto <https://imperial.cloud.panopto.eu/Panopto/Pages/Viewer.aspx?id=7126cc73-ff67-48a0-b84b-aca000b63478>`_
 
 A core operation in the finite element method is integrating
 expressions involving functions in finite element spaces. This is
@@ -388,10 +454,19 @@ basis given by the matrix `C`. Then the tabulation matrix is given by:
 Gradients of basis functions
 ----------------------------
 
-.. hint::
+.. only:: html
 
-   A video recording of this section is available `here <https://www.youtube.com/embed/oC-0i4XHl4U>`_
+    .. dropdown:: A video recording of the following material is available here.
 
+        .. container:: vimeo
+
+            .. raw:: html
+
+                <iframe src="https://player.vimeo.com/video/495196047"
+                frameborder="0" allow="autoplay; fullscreen"
+                allowfullscreen></iframe>
+
+        Imperial students can also `watch this video on Panopto <https://imperial.cloud.panopto.eu/Panopto/Pages/Viewer.aspx?id=45826405-6d18-45d9-a935-ac9f00e04883>`_
 
 A function `f` defined over a single finite element with basis
 `\{\phi_i\}` is represented by a weighted sum of that basis:
@@ -482,9 +557,19 @@ of the gradient of the Vandermonde matrix.
    extension. Once again, make sure you still pass
    ``test/test_05_tabulate.py``
 
-.. hint::
+.. only:: html
 
-   A video recording of this exercise is available `here <https://www.youtube.com/embed/wWHLhEti_mQ>`_
+    .. dropdown:: A video recording about this exercise is available here.
+
+        .. container:: vimeo
+
+            .. raw:: html
+
+                <iframe src="https://player.vimeo.com/video/495196228"
+                frameborder="0" allow="autoplay; fullscreen"
+                allowfullscreen></iframe>
+
+        Imperial students can also `watch this video on Panopto <https://imperial.cloud.panopto.eu/Panopto/Pages/Viewer.aspx?id=5666bc7b-db54-4acd-a711-ac9f00e064c1>`_
 
 .. hint::
 
@@ -500,10 +585,19 @@ of the gradient of the Vandermonde matrix.
 Interpolating functions to the finite element nodes
 ---------------------------------------------------
 
-.. hint::
+.. only:: html
 
-   A video recording of this section is available `here <https://www.youtube.com/embed/cQaylSfRcRI>`_
+    .. dropdown:: A video recording of the following material is available here.
 
+        .. container:: vimeo
+
+            .. raw:: html
+
+                <iframe src="https://player.vimeo.com/video/495445487"
+                frameborder="0" allow="autoplay; fullscreen"
+                allowfullscreen></iframe>
+
+        Imperial students can also `watch this video on Panopto <https://imperial.cloud.panopto.eu/Panopto/Pages/Viewer.aspx?id=6f7d5b2f-4995-4cd2-9d38-ac9f00e0a666>`_
 
 Recall once again that a function can be represented on a single finite element as:
 

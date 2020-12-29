@@ -3,10 +3,19 @@
 Meshes
 ======
 
-.. hint::
+.. only:: html
 
-   A video recording of this chapter is available `here <https://www.youtube.com/embed/h4L1fCSmvWc>`_
+    .. dropdown:: A video recording of the following material is available here.
 
+        .. container:: vimeo
+
+            .. raw:: html
+
+                <iframe src="https://player.vimeo.com/video/495204015"
+                frameborder="0" allow="autoplay; fullscreen"
+                allowfullscreen></iframe>
+
+        Imperial students can also `watch this video on Panopto <https://imperial.cloud.panopto.eu/Panopto/Pages/Viewer.aspx?id=6965d603-79d9-43be-a9e6-ac9f00eb4b73>`_
 
 When employing the finite element method, we represent the domain on
 which we wish to solve our PDE as a mesh. In order to work with
@@ -109,6 +118,20 @@ understand the way in which this information is encoded.
 Adjacency
 ---------
 
+.. only:: html
+
+    .. dropdown:: A video recording of the following material is available here.
+
+        .. container:: vimeo
+
+            .. raw:: html
+
+                <iframe src="https://player.vimeo.com/video/495204218"
+                frameborder="0" allow="autoplay; fullscreen"
+                allowfullscreen></iframe>
+
+        Imperial students can also `watch this video on Panopto <https://imperial.cloud.panopto.eu/Panopto/Pages/Viewer.aspx?id=e524a811-b08b-4379-b821-ac9f00eb4b0e>`_
+
 In order to implement the finite element method, we need to integrate
 functions over cells, which means knowing which basis functions are
 nonzero in a given cell. For the function spaces used in the finite
@@ -122,21 +145,22 @@ a given cell.
 .. proof:definition::
 
    Given a mesh `M`, then for each `\dim(M) \geq d_1 > d_2 \geq 0`
-   the *adjacency* function `\operatorname{Adj}_{d_1,d_2}:\,
-   \mathbb{N}\rightarrow \mathbb{N}^k` is the function such that:
+   the *adjacency* function
+   `\operatorname{Adj}_{d_1,d_2}:\, \mathbb{N}\rightarrow \mathbb{N}^k` 
+   is the function such that:
 
    .. math::
 
       \operatorname{Adj}_{d_1,d_2}(i) = (i_0, \ldots i_k)
 
-   where `(d_1, i)` is a topological entity and `(d_2, i_0), \ldots,
-   (d_2, i_k)` are the adjacent `d_2`-dimensional topological entities
-   numbered in the corresponding reference cell order. If every cell
-   in the mesh has the same topology then `k` will be fixed for each
-   `(d_1, d_2)` pair. The correspondence between the orientation of
-   the entity `(d_1, i)` and the reference cell of dimension `d_1` is
-   established by specifying that the vertices are numbered in
-   ascending order [#simplexnumbering]_. That is, for any entity `(d_1, i)`:
+   where `(d_1, i)` is a topological entity and `(d_2, i_0), \ldots, (d_2, i_k)`
+   are the adjacent `d_2`-dimensional topological entities numbered in the
+   corresponding reference cell order. If every cell in the mesh has the same
+   topology then `k` will be fixed for each `(d_1, d_2)` pair. The
+   correspondence between the orientation of the entity `(d_1, i)` and the
+   reference cell of dimension `d_1` is established by specifying that the
+   vertices are numbered in ascending order [#simplexnumbering]_. That is, for
+   any entity `(d_1, i)`:
    
    .. math::
 
@@ -165,6 +189,20 @@ a given cell.
 Mesh geometry
 -------------
 
+.. only:: html
+
+    .. dropdown:: A video recording of the following material is available here.
+
+        .. container:: vimeo
+
+            .. raw:: html
+
+                <iframe src="https://player.vimeo.com/video/495204381"
+                frameborder="0" allow="autoplay; fullscreen"
+                allowfullscreen></iframe>
+
+        Imperial students can also `watch this video on Panopto <https://imperial.cloud.panopto.eu/Panopto/Pages/Viewer.aspx?id=aa4f119b-c23e-487d-aa38-ac9f00eb4ae0>`_
+
 The features of meshes we have so far considered are purely
 topological: they deal with the adjacency relationships between
 topological entities, but do not describe the locations of those
@@ -179,6 +217,20 @@ vector-valued piecewise linear finite element space.
 
 A mesh implementation in Python
 -------------------------------
+
+.. only:: html
+
+    .. dropdown:: A video recording of the following material is available here.
+
+        .. container:: vimeo
+
+            .. raw:: html
+
+                <iframe src="https://player.vimeo.com/video/495204532"
+                frameborder="0" allow="autoplay; fullscreen"
+                allowfullscreen></iframe>
+
+        Imperial students can also `watch this video on Panopto <https://imperial.cloud.panopto.eu/Panopto/Pages/Viewer.aspx?id=8cc7003a-5e13-4be3-b853-ac9f00eb4b40>`_
 
 The :class:`~fe_utils.mesh.Mesh` class provides an implementation of
 mesh objects in 1 and 2 dimensions. Given the list of vertices making
@@ -198,7 +250,6 @@ the ``plot_mesh`` script. Run::
   plot_mesh -h
 
 for usage instructions.
-
 
 
 .. rubric:: Footnotes
