@@ -14,7 +14,7 @@ Interpolation operators
             frameborder="0" allow="autoplay; fullscreen"
             allowfullscreen></iframe>
 
-    Imperial students can also `watch this video on Panopto <https://imperial.cloud.panopto.eu/Panopto/Pages/Viewer.aspx?id=f3b6a076-d90c-42c5-90a4-ac8e00ed6b79>`_
+    Imperial students can also `watch this video on Panopto <https://imperial.cloud.panopto.eu/Panopto/Pages/Viewer.aspx?id=f3b6a076-d90c-42c5-90a4-ac8e00ed6b79>`__
 
 In this section we investigate how continuous functions can be
 approximated by finite element functions. We start locally,
@@ -101,7 +101,7 @@ Measuring interpolation errors
             frameborder="0" allow="autoplay; fullscreen"
             allowfullscreen></iframe>
 
-    Imperial students can also `watch this video on Panopto <https://imperial.cloud.panopto.eu/Panopto/Pages/Viewer.aspx?id=e811ac32-0c1c-43ee-b661-ac8e00ee051e>`_
+    Imperial students can also `watch this video on Panopto <https://imperial.cloud.panopto.eu/Panopto/Pages/Viewer.aspx?id=e811ac32-0c1c-43ee-b661-ac8e00ee051e>`__
 
 Next we look at how well we can approximate continuous functions using
 the interpolation operator, i.e. we want to measure the approximation
@@ -156,7 +156,7 @@ errors.
             frameborder="0" allow="autoplay; fullscreen"
             allowfullscreen></iframe>
 
-    Imperial students can also `watch this video on Panopto <https://imperial.cloud.panopto.eu/Panopto/Pages/Viewer.aspx?id=efbbb34b-ae76-4150-98e2-ac8e00f12d27>`_
+    Imperial students can also `watch this video on Panopto <https://imperial.cloud.panopto.eu/Panopto/Pages/Viewer.aspx?id=efbbb34b-ae76-4150-98e2-ac8e00f12d27>`__
    
 To help to estimate interpolation errors, we quote the following
 important result (which we will return to much later).
@@ -219,7 +219,7 @@ Approximation by averaged Taylor polynomials
             frameborder="0" allow="autoplay; fullscreen"
             allowfullscreen></iframe>
 
-    Imperial students can also `watch this video on Panopto <https://imperial.cloud.panopto.eu/Panopto/Pages/Viewer.aspx?id=62d286c0-1efd-4b8a-9570-ac8e00f3835d>`_
+    Imperial students can also `watch this video on Panopto <https://imperial.cloud.panopto.eu/Panopto/Pages/Viewer.aspx?id=62d286c0-1efd-4b8a-9570-ac8e00f3835d>`__
 
 The basic tool for analysing interpolation error for continuous
 functions is the Taylor series. Rather than taking the Taylor series
@@ -280,7 +280,7 @@ Now we develop an estimate of the error `T^kf - f`.
             frameborder="0" allow="autoplay; fullscreen"
             allowfullscreen></iframe>
 
-    Imperial students can also `watch this video on Panopto <https://imperial.cloud.panopto.eu/Panopto/Pages/Viewer.aspx?id=80896f93-3f64-421e-846e-ac8e00f12c99>`_
+    Imperial students can also `watch this video on Panopto <https://imperial.cloud.panopto.eu/Panopto/Pages/Viewer.aspx?id=80896f93-3f64-421e-846e-ac8e00f12c99>`__
 
 .. dropdown:: A second video recording of the following material is available here.
 		  
@@ -292,7 +292,7 @@ Now we develop an estimate of the error `T^kf - f`.
             frameborder="0" allow="autoplay; fullscreen"
             allowfullscreen></iframe>
 
-    Imperial students can also `watch this video on Panopto <https://imperial.cloud.panopto.eu/Panopto/Pages/Viewer.aspx?id=cb47271d-b53f-46fc-805b-ac8f00a28be7>`_
+    Imperial students can also `watch this video on Panopto <https://imperial.cloud.panopto.eu/Panopto/Pages/Viewer.aspx?id=cb47271d-b53f-46fc-805b-ac8f00a28be7>`__
 
 .. _taylorerror:
 
@@ -435,7 +435,7 @@ Local and global interpolation errors
             frameborder="0" allow="autoplay; fullscreen"
             allowfullscreen></iframe>
 
-    Imperial students can also `watch this video on Panopto <https://imperial.cloud.panopto.eu/Panopto/Pages/Viewer.aspx?id=de44e00c-6a67-43ac-88e1-ac8e00ee04aa>`_
+    Imperial students can also `watch this video on Panopto <https://imperial.cloud.panopto.eu/Panopto/Pages/Viewer.aspx?id=de44e00c-6a67-43ac-88e1-ac8e00ee04aa>`__
 
 The following exercises give a specific example of the interpolation error
 results of this section without directly using the previous estimate
@@ -573,7 +573,7 @@ a scaling argument to obtain error estimates in terms of the diameter
             frameborder="0" allow="autoplay; fullscreen"
             allowfullscreen></iframe>
 
-    Imperial students can also `watch this video on Panopto <https://imperial.cloud.panopto.eu/Panopto/Pages/Viewer.aspx?id=7eecb6d2-3a85-4a5a-b748-ac8f00addb0d>`_
+    Imperial students can also `watch this video on Panopto <https://imperial.cloud.panopto.eu/Panopto/Pages/Viewer.aspx?id=7eecb6d2-3a85-4a5a-b748-ac8f00addb0d>`__
     
 Now we can directly apply this to the interpolation operator error
 estimate on the triangle with diameter 1. It is the standard trick of
@@ -626,7 +626,7 @@ adding and subtracting something, in this case the Taylor polynomial.
 ..
   End of week 6 material
 	    
-    Imperial students can also `watch this video on Panopto <https://imperial.cloud.panopto.eu/Panopto/Pages/Viewer.aspx?id=0269bbf5-8928-453a-83c7-ac8f00ad2f1a>`_
+    Imperial students can also `watch this video on Panopto <https://imperial.cloud.panopto.eu/Panopto/Pages/Viewer.aspx?id=0269bbf5-8928-453a-83c7-ac8f00ad2f1a>`__
    
 Now we apply a scaling argument to translate this to triangles
 with diameter `h`.
@@ -681,7 +681,7 @@ with diameter `h`.
             frameborder="0" allow="autoplay; fullscreen"
             allowfullscreen></iframe>
 
-    Imperial students can also `watch this video on Panopto <https://imperial.cloud.panopto.eu/Panopto/Pages/Viewer.aspx?id=c1e7b2ce-4169-4fd7-a730-ac8f00b06e45>`_
+    Imperial students can also `watch this video on Panopto <https://imperial.cloud.panopto.eu/Panopto/Pages/Viewer.aspx?id=c1e7b2ce-4169-4fd7-a730-ac8f00b06e45>`__
    
 So far we have just developed an error estimate for the local
 interpolator on a single triangle. Now we extend this to finite element

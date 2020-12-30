@@ -26,13 +26,13 @@
 .. only:: html
 
    This is the webpage for the `Imperial College London Mathematics
-   <http://www.imperial.ac.uk/maths>`_  module
+   <http://www.imperial.ac.uk/maths>`__  module
    MATH96063/MATH97017/MATH97095 Finite Elements: numerical analysis and
-   implementation. There's an introductory video explaining what the module is about `online here <https://player.vimeo.com/video/426777950?autoplay=1>`_.
+   implementation. There's an introductory video explaining what the module is about `online here <https://player.vimeo.com/video/426777950?autoplay=1>`__.
 
    Other people are welcome to make use of the
    material here. The authors welcome feedback and would particularly
-   appreciate an `email <mailto:david.ham@imperial.ac.uk>`_ if this
+   appreciate an `email <mailto:david.ham@imperial.ac.uk>`__ if this
    material is used to teach anywhere.
 
    .. toctree::
@@ -100,7 +100,7 @@
 
    The theory  part of
    the module will be led by `Prof. Colin Cotter
-   <http://www.imperial.ac.uk/people/colin.cotter>`_. The material is presented
+   <http://www.imperial.ac.uk/people/colin.cotter>`__. The material is presented
    by means of a set of lecture notes, with lecture videos interspersed in the
    notes. 
 
@@ -108,7 +108,7 @@
    Mathematical Theory of Finite Element Methods*. Imperial College has
    fortunately paid for PDF access to this book, so it is accessible from
    the Imperial College network at `Springer Link
-   <http://link.springer.com/book/10.1007%2F978-0-387-75934-0>`_.
+   <http://link.springer.com/book/10.1007%2F978-0-387-75934-0>`__.
 
    However, this course has the material rearranged to synchronise the
    content better between the lecture notes and the implementation
@@ -133,12 +133,12 @@
    examination, and so there were four questions. From 2019 on there are
    four questions plus one mastery question for 4th year/Masters credits.
    
-   * `2015 exam paper <_static/FE2015-exam-revised.pdf>`_ and `solutions <_static/FE2015-exam-soln.pdf>`_
-   * `2016 exam paper <_static/FE2016-exam.pdf>`_ and `solutions <_static/FE2016-exam-soln.pdf>`_
-   * `2017 exam paper <_static/FEExam-2017.pdf>`_ and `solutions <_static/FEExam-2017-soln.pdf>`_
-   * `2018 exam paper <_static/FEExam-2018.pdf>`_ and `solutions <_static/FEExam-2018-soln.pdf>`_
-   * `2019 exam paper <_static/FEExam-2019.pdf>`_ and `solutions <_static/FEExam-2019-solns.pdf>`_
-   * `revision checklist <_static/revision-checklist.pdf>`_
+   * `2015 exam paper <_static/FE2015-exam-revised.pdf>`__ and `solutions <_static/FE2015-exam-soln.pdf>`__
+   * `2016 exam paper <_static/FE2016-exam.pdf>`__ and `solutions <_static/FE2016-exam-soln.pdf>`__
+   * `2017 exam paper <_static/FEExam-2017.pdf>`__ and `solutions <_static/FEExam-2017-soln.pdf>`__
+   * `2018 exam paper <_static/FEExam-2018.pdf>`__ and `solutions <_static/FEExam-2018-soln.pdf>`__
+   * `2019 exam paper <_static/FEExam-2019.pdf>`__ and `solutions <_static/FEExam-2019-solns.pdf>`__
+   * `revision checklist <_static/revision-checklist.pdf>`__
 
 .. only:: html
 
@@ -150,7 +150,7 @@
     software to solve finite element problems in one and two dimensions.
 
     This part of the module will be taught by `Dr David Ham
-    <http://www.imperial.ac.uk/people/david.ham>`_. The key to this part of the
+    <http://www.imperial.ac.uk/people/david.ham>`__. The key to this part of the
     module is to build up a working finite element implementation over the course
     of the term, and thereby to gain a practical understanding of the method.
 

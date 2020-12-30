@@ -15,7 +15,7 @@ Meshes
                 frameborder="0" allow="autoplay; fullscreen"
                 allowfullscreen></iframe>
 
-        Imperial students can also `watch this video on Panopto <https://imperial.cloud.panopto.eu/Panopto/Pages/Viewer.aspx?id=6965d603-79d9-43be-a9e6-ac9f00eb4b73>`_
+        Imperial students can also `watch this video on Panopto <https://imperial.cloud.panopto.eu/Panopto/Pages/Viewer.aspx?id=6965d603-79d9-43be-a9e6-ac9f00eb4b73>`__
 
 When employing the finite element method, we represent the domain on
 which we wish to solve our PDE as a mesh. In order to work with
@@ -93,7 +93,7 @@ higher numbered one.
 
 The :class:`~fe_utils.reference_elements.ReferenceCell` class stores the
 local topology of the reference cell. `Read the source
-<_modules/fe_utils/reference_elements.html>`_ and ensure that you
+<_modules/fe_utils/reference_elements.html>`__ and ensure that you
 understand the way in which this information is encoded.
 
 .. only:: html
@@ -130,7 +130,7 @@ Adjacency
                 frameborder="0" allow="autoplay; fullscreen"
                 allowfullscreen></iframe>
 
-        Imperial students can also `watch this video on Panopto <https://imperial.cloud.panopto.eu/Panopto/Pages/Viewer.aspx?id=e524a811-b08b-4379-b821-ac9f00eb4b0e>`_
+        Imperial students can also `watch this video on Panopto <https://imperial.cloud.panopto.eu/Panopto/Pages/Viewer.aspx?id=e524a811-b08b-4379-b821-ac9f00eb4b0e>`__
 
 In order to implement the finite element method, we need to integrate
 functions over cells, which means knowing which basis functions are
@@ -201,7 +201,7 @@ Mesh geometry
                 frameborder="0" allow="autoplay; fullscreen"
                 allowfullscreen></iframe>
 
-        Imperial students can also `watch this video on Panopto <https://imperial.cloud.panopto.eu/Panopto/Pages/Viewer.aspx?id=aa4f119b-c23e-487d-aa38-ac9f00eb4ae0>`_
+        Imperial students can also `watch this video on Panopto <https://imperial.cloud.panopto.eu/Panopto/Pages/Viewer.aspx?id=aa4f119b-c23e-487d-aa38-ac9f00eb4ae0>`__
 
 The features of meshes we have so far considered are purely
 topological: they deal with the adjacency relationships between
@@ -230,7 +230,7 @@ A mesh implementation in Python
                 frameborder="0" allow="autoplay; fullscreen"
                 allowfullscreen></iframe>
 
-        Imperial students can also `watch this video on Panopto <https://imperial.cloud.panopto.eu/Panopto/Pages/Viewer.aspx?id=8cc7003a-5e13-4be3-b853-ac9f00eb4b40>`_
+        Imperial students can also `watch this video on Panopto <https://imperial.cloud.panopto.eu/Panopto/Pages/Viewer.aspx?id=8cc7003a-5e13-4be3-b853-ac9f00eb4b40>`__
 
 The :class:`~fe_utils.mesh.Mesh` class provides an implementation of
 mesh objects in 1 and 2 dimensions. Given the list of vertices making

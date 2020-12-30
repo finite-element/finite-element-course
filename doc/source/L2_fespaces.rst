@@ -28,7 +28,7 @@ Ciarlet's finite element
             frameborder="0" allow="autoplay; fullscreen"
             allowfullscreen></iframe>
 
-    Imperial students can also `watch this video on Panopto <https://imperial.cloud.panopto.eu/Panopto/Pages/Viewer.aspx?id=e79807c3-c73b-42ec-b5f9-ac8d00c7b4c6>`_
+    Imperial students can also `watch this video on Panopto <https://imperial.cloud.panopto.eu/Panopto/Pages/Viewer.aspx?id=e79807c3-c73b-42ec-b5f9-ac8d00c7b4c6>`__
 
 The first part of the definition is formalised by Ciarlet's definition
 of a finite element.
@@ -75,7 +75,7 @@ Ciarlet's finite element provides us with a standard way to define a basis for t
             frameborder="0" allow="autoplay; fullscreen"
             allowfullscreen></iframe>
 
-    Imperial students can also `watch this video on Panopto <https://imperial.cloud.panopto.eu/Panopto/Pages/Viewer.aspx?id=9d432870-a298-4e6e-b495-ac8d00cc6411>`_
+    Imperial students can also `watch this video on Panopto <https://imperial.cloud.panopto.eu/Panopto/Pages/Viewer.aspx?id=9d432870-a298-4e6e-b495-ac8d00cc6411>`__
 
 .. proof:definition:: (local) nodal basis
 		      
@@ -129,7 +129,7 @@ Vandermonde matrix and unisolvence
             frameborder="0" allow="autoplay; fullscreen"
             allowfullscreen></iframe>
 
-    Imperial students can also `watch this video on Panopto <https://imperial.cloud.panopto.eu/Panopto/Pages/Viewer.aspx?id=f3fb54fb-f83e-41b8-a537-ac8d00d03589>`_
+    Imperial students can also `watch this video on Panopto <https://imperial.cloud.panopto.eu/Panopto/Pages/Viewer.aspx?id=f3fb54fb-f83e-41b8-a537-ac8d00d03589>`__
 
 More generally, It is useful computationally to write the nodal basis
 in terms of another arbitrary basis `\{\psi_i\}_{i=0}^k`. This
@@ -140,7 +140,7 @@ transformation is represented by the Vandermonde matrix.
 .. proof:definition:: Vandermonde matrix
 
    Given a dual basis `\mathcal{N}` and a basis `\{\psi_i\}_{i=0}^k`,
-  the Vandermonde matrix is the matrix `V` with coefficients
+   the Vandermonde matrix is the matrix `V` with coefficients
 
    .. math::
   
@@ -187,7 +187,7 @@ This relationship is made clear by the following lemma.
             frameborder="0" allow="autoplay; fullscreen"
             allowfullscreen></iframe>
 
-    Imperial students can also `watch this video on Panopto <https://imperial.cloud.panopto.eu/Panopto/Pages/Viewer.aspx?id=6f9d4bb7-4a90-40f7-8eae-ac8d00ce8ac7>`_
+    Imperial students can also `watch this video on Panopto <https://imperial.cloud.panopto.eu/Panopto/Pages/Viewer.aspx?id=6f9d4bb7-4a90-40f7-8eae-ac8d00ce8ac7>`__
 
 .. proof:exercise::
 
@@ -280,7 +280,7 @@ provides a useful tool for checking this.
             frameborder="0" allow="autoplay; fullscreen"
             allowfullscreen></iframe>
 
-    Imperial students can also `watch this video on Panopto <https://imperial.cloud.panopto.eu/Panopto/Pages/Viewer.aspx?id=97d9a7b6-7837-4591-9180-ac8e0099484c>`_
+    Imperial students can also `watch this video on Panopto <https://imperial.cloud.panopto.eu/Panopto/Pages/Viewer.aspx?id=97d9a7b6-7837-4591-9180-ac8e0099484c>`__
    
 This result leads us to introducing the following terminology.
 
@@ -340,7 +340,7 @@ We can now go and directly apply this lemma to the 1D Lagrange elements.
             frameborder="0" allow="autoplay; fullscreen"
             allowfullscreen></iframe>
 
-    Imperial students can also `watch this video on Panopto <https://imperial.cloud.panopto.eu/Panopto/Pages/Viewer.aspx?id=e5501a7d-81f1-47f1-8000-ac8d00ce89fb>`_
+    Imperial students can also `watch this video on Panopto <https://imperial.cloud.panopto.eu/Panopto/Pages/Viewer.aspx?id=e5501a7d-81f1-47f1-8000-ac8d00ce89fb>`__
 
 We would like to construct some finite elements with 2D and 3D domains
 `K`. The fundamental theorem of algebra does not directly help us
@@ -407,7 +407,7 @@ there, but the following lemma is useful when checking that
             frameborder="0" allow="autoplay; fullscreen"
             allowfullscreen></iframe>
 
-    Imperial students can also `watch this video on Panopto <https://imperial.cloud.panopto.eu/Panopto/Pages/Viewer.aspx?id=b2674f92-8a03-4685-98e7-ac8e00a15a88>`_
+    Imperial students can also `watch this video on Panopto <https://imperial.cloud.panopto.eu/Panopto/Pages/Viewer.aspx?id=b2674f92-8a03-4685-98e7-ac8e00a15a88>`__
 
 .. proof:exercise::
 
@@ -456,7 +456,7 @@ We illustrate this for the cases `k=1,2`.
             frameborder="0" allow="autoplay; fullscreen"
             allowfullscreen></iframe>
 
-    Imperial students can also `watch this video on Panopto <https://imperial.cloud.panopto.eu/Panopto/Pages/Viewer.aspx?id=1d6a0060-361f-4c03-af32-ac8d00cc637e>`_
+    Imperial students can also `watch this video on Panopto <https://imperial.cloud.panopto.eu/Panopto/Pages/Viewer.aspx?id=1d6a0060-361f-4c03-af32-ac8d00cc637e>`__
    
 We now need to check that that the degree `k` Lagrange element is a
 finite element, i.e. that `\mathcal{N}` determines `\mathcal{P}`. We will
@@ -499,7 +499,7 @@ first do this for `P1`.
 ..
   end of week 3 material
 	    
-    Imperial students can also `watch this video on Panopto <https://imperial.cloud.panopto.eu/Panopto/Pages/Viewer.aspx?id=5fbdc104-9b38-4e7f-9c61-ac8d00c7d4ac>`_
+    Imperial students can also `watch this video on Panopto <https://imperial.cloud.panopto.eu/Panopto/Pages/Viewer.aspx?id=5fbdc104-9b38-4e7f-9c61-ac8d00c7d4ac>`__
 
 .. proof:exercise::
 
@@ -583,7 +583,7 @@ Some more exotic elements
             frameborder="0" allow="autoplay; fullscreen"
             allowfullscreen></iframe>
 
-    Imperial students can also `watch this video on Panopto <https://imperial.cloud.panopto.eu/Panopto/Pages/Viewer.aspx?id=495e54dd-23b6-4d92-bcdb-ac8e00ab3829>`_
+    Imperial students can also `watch this video on Panopto <https://imperial.cloud.panopto.eu/Panopto/Pages/Viewer.aspx?id=495e54dd-23b6-4d92-bcdb-ac8e00ab3829>`__
 
 We now consider some finite elements that involve derivative
 evaluation. The Hermite elements involve evaluation of first
@@ -631,7 +631,7 @@ Global continuity
             frameborder="0" allow="autoplay; fullscreen"
             allowfullscreen></iframe>
 
-    Imperial students can also `watch this video on Panopto <https://imperial.cloud.panopto.eu/Panopto/Pages/Viewer.aspx?id=f384b387-f65a-4f9e-a582-ac8e00b8760e>`_
+    Imperial students can also `watch this video on Panopto <https://imperial.cloud.panopto.eu/Panopto/Pages/Viewer.aspx?id=f384b387-f65a-4f9e-a582-ac8e00b8760e>`__
 
 Next we need to know how to glue finite elements together to form
 spaces defined over a triangulation (mesh). To do this we need to
@@ -696,7 +696,7 @@ introduce this terminology.
             frameborder="0" allow="autoplay; fullscreen"
             allowfullscreen></iframe>
 
-    Imperial students can also `watch this video on Panopto <https://imperial.cloud.panopto.eu/Panopto/Pages/Viewer.aspx?id=22aab3d8-2041-4c42-9d18-ac8e00be66ab>`_
+    Imperial students can also `watch this video on Panopto <https://imperial.cloud.panopto.eu/Panopto/Pages/Viewer.aspx?id=22aab3d8-2041-4c42-9d18-ac8e00be66ab>`__
 
 .. proof:definition:: local and global mesh entities
 
@@ -743,7 +743,7 @@ can be assigned to local mesh entities in a geometric decomposition.
             frameborder="0" allow="autoplay; fullscreen"
             allowfullscreen></iframe>
 
-    Imperial students can also `watch this video on Panopto <https://imperial.cloud.panopto.eu/Panopto/Pages/Viewer.aspx?id=9f363ae5-0174-4fe1-94e9-ac8e00e7f271>`_
+    Imperial students can also `watch this video on Panopto <https://imperial.cloud.panopto.eu/Panopto/Pages/Viewer.aspx?id=9f363ae5-0174-4fe1-94e9-ac8e00e7f271>`__
    
 To discuss `C^m` continuity, we need to introduce some further
 vocabulary about the topology of `K`.
@@ -805,7 +805,7 @@ We explore this definition through a couple of exercises.
 ..
   end of week 4 material
 	    
-    Imperial students can also `watch this video on Panopto <https://imperial.cloud.panopto.eu/Panopto/Pages/Viewer.aspx?id=3d816037-2cb7-4eb2-b441-ac8e00ea1551>`_
+    Imperial students can also `watch this video on Panopto <https://imperial.cloud.panopto.eu/Panopto/Pages/Viewer.aspx?id=3d816037-2cb7-4eb2-b441-ac8e00ea1551>`__
    
 We now use the geometric decomposition to construct global finite
 element spaces over the whole triangulation (mesh). We just need to

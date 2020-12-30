@@ -12,3 +12,5 @@ Mixed problems
    what has been covered in lectures and labs.
 
    This exercise is not a part of the third year version of this module.
+
+This material will be released by the middle of the term.

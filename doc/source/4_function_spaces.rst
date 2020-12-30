@@ -34,7 +34,7 @@ Local numbering and continuity
                 frameborder="0" allow="autoplay; fullscreen"
                 allowfullscreen></iframe>
 
-        Imperial students can also `watch this video on Panopto <https://imperial.cloud.panopto.eu/Panopto/Pages/Viewer.aspx?id=69f99985-13ba-4151-8e5a-ac9f01303711>`_
+        Imperial students can also `watch this video on Panopto <https://imperial.cloud.panopto.eu/Panopto/Pages/Viewer.aspx?id=69f99985-13ba-4151-8e5a-ac9f01303711>`__
 
 Which nodes should be associated with which topological entities? The
 answer to this question depends on the degree of continuity required
@@ -111,7 +111,7 @@ Implementing local numbering
                 frameborder="0" allow="autoplay; fullscreen"
                 allowfullscreen></iframe>
 
-        Imperial students can also `watch this video on Panopto <https://imperial.cloud.panopto.eu/Panopto/Pages/Viewer.aspx?id=ea5c76aa-db4c-45b8-a0f9-ac9f01303687>`_
+        Imperial students can also `watch this video on Panopto <https://imperial.cloud.panopto.eu/Panopto/Pages/Viewer.aspx?id=ea5c76aa-db4c-45b8-a0f9-ac9f01303687>`__
 
 Local numbering can be implemented by adding an additional data
 structure to the :class:`~fe_utils.finite_elements.FiniteElement`
@@ -184,7 +184,7 @@ Global numbering
                 frameborder="0" allow="autoplay; fullscreen"
                 allowfullscreen></iframe>
 
-        Imperial students can also `watch this video on Panopto <https://imperial.cloud.panopto.eu/Panopto/Pages/Viewer.aspx?id=930f2ddb-fe7b-4286-b82b-ac9f013036e5>`_
+        Imperial students can also `watch this video on Panopto <https://imperial.cloud.panopto.eu/Panopto/Pages/Viewer.aspx?id=930f2ddb-fe7b-4286-b82b-ac9f013036e5>`__
 
 Given a mesh and a finite element, the global numbering task is to
 uniquely associate the appropriate number of global node numbers with
@@ -225,7 +225,7 @@ The cell-node map
                 frameborder="0" allow="autoplay; fullscreen"
                 allowfullscreen></iframe>
 
-        Imperial students can also `watch this video on Panopto <https://imperial.cloud.panopto.eu/Panopto/Pages/Viewer.aspx?id=bddd29be-60eb-43f3-b487-ac9f013036b7>`_
+        Imperial students can also `watch this video on Panopto <https://imperial.cloud.panopto.eu/Panopto/Pages/Viewer.aspx?id=bddd29be-60eb-43f3-b487-ac9f013036b7>`__
 
 The primary use to which we wish to put the finite element spaces we
 are constructing is, naturally, the solution of finite element
@@ -287,7 +287,7 @@ Implementing function spaces in Python
                 frameborder="0" allow="autoplay; fullscreen"
                 allowfullscreen></iframe>
 
-        Imperial students can also `watch this video on Panopto <https://imperial.cloud.panopto.eu/Panopto/Pages/Viewer.aspx?id=55f96f95-c934-4756-b75e-ac9f01305188>`_
+        Imperial students can also `watch this video on Panopto <https://imperial.cloud.panopto.eu/Panopto/Pages/Viewer.aspx?id=55f96f95-c934-4756-b75e-ac9f01305188>`__
 
 As noted above, a finite element space associates a mesh and a finite
 element, and contains (in some form) a global numbering of the nodes. 

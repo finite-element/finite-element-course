@@ -31,7 +31,7 @@ A python implementation of functions in finite element spaces
                 frameborder="0" allow="autoplay; fullscreen"
                 allowfullscreen></iframe>
 
-        Imperial students can also `watch this video on Panopto <https://imperial.cloud.panopto.eu/Panopto/Pages/Viewer.aspx?id=6e7570e9-cc2c-49d2-908b-aca000b63449>`_
+        Imperial students can also `watch this video on Panopto <https://imperial.cloud.panopto.eu/Panopto/Pages/Viewer.aspx?id=6e7570e9-cc2c-49d2-908b-aca000b63449>`__
 
 The :class:`~fe_utils.function_spaces.Function` class provides a
 simple implementation of function storage. The input is a
@@ -56,7 +56,7 @@ Interpolating values into finite element spaces
                 frameborder="0" allow="autoplay; fullscreen"
                 allowfullscreen></iframe>
 
-        Imperial students can also `watch this video on Panopto <https://imperial.cloud.panopto.eu/Panopto/Pages/Viewer.aspx?id=6d13d669-dc8c-43d1-8aae-aca000b634ed>`_
+        Imperial students can also `watch this video on Panopto <https://imperial.cloud.panopto.eu/Panopto/Pages/Viewer.aspx?id=6d13d669-dc8c-43d1-8aae-aca000b634ed>`__
 
 Suppose we have a function `g(x): \mathbb{R}^n \rightarrow \mathbb{R}`
 which we wish to approximate as a function `f(x)` in some finite
@@ -145,9 +145,19 @@ for that node.
 Looking up cell coordinates and values
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-.. hint::
+.. only:: html
 
-   A video recording of this section is available `here <https://www.youtube.com/embed/ZmUPyydAasY>`_
+    .. dropdown:: A video recording of the following material is available here.
+
+        .. container:: vimeo
+
+            .. raw:: html
+
+                <iframe src="https://player.vimeo.com/video/495715631"
+                frameborder="0" allow="autoplay; fullscreen"
+                allowfullscreen></iframe>
+
+        Imperial students can also `watch this video on Panopto <https://imperial.cloud.panopto.eu/Panopto/Pages/Viewer.aspx?id=eb8b0e40-b476-4caa-a961-aca1009f6172>`__
 
 In the previous section we used the vertex coordinates of a cell to
 find the node coordinates, and then we calculated
@@ -185,9 +195,19 @@ associated with the nodes of element ``c``::
 A Python implementation of interpolation
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-.. hint::
+.. only:: html
 
-   A video recording of this section is available `here <https://www.youtube.com/embed/Bb_9iRsTUgc>`_
+    .. dropdown:: A video recording of the following material is available here.
+
+        .. container:: vimeo
+
+            .. raw:: html
+
+                <iframe src="https://player.vimeo.com/video/495718032"
+                frameborder="0" allow="autoplay; fullscreen"
+                allowfullscreen></iframe>
+
+        Imperial students can also `watch this video on Panopto <https://imperial.cloud.panopto.eu/Panopto/Pages/Viewer.aspx?id=e74afdcc-7727-49cb-bf3d-aca100a2ec68>`__
 
 Putting together the change of coordinates with the right indirect
 addressing, we can provide the
@@ -228,7 +248,7 @@ Integration
                 frameborder="0" allow="autoplay; fullscreen"
                 allowfullscreen></iframe>
 
-        Imperial students can also `watch this video on Panopto <https://imperial.cloud.panopto.eu/Panopto/Pages/Viewer.aspx?id=4b2f4755-0682-4e36-ad3e-aca000b634b9>`_
+        Imperial students can also `watch this video on Panopto <https://imperial.cloud.panopto.eu/Panopto/Pages/Viewer.aspx?id=4b2f4755-0682-4e36-ad3e-aca000b634b9>`__
 
 We now come to one of the fundamental operations in the finite element
 method: integrating a :class:`~fe_utils.function_spaces.Function` over
@@ -324,7 +344,7 @@ Expressing the function in the finite element basis
                 frameborder="0" allow="autoplay; fullscreen"
                 allowfullscreen></iframe>
 
-        Imperial students can also `watch this video on Panopto <https://imperial.cloud.panopto.eu/Panopto/Pages/Viewer.aspx?id=005f670f-28ac-47c3-9cf1-aca000b7133d>`_
+        Imperial students can also `watch this video on Panopto <https://imperial.cloud.panopto.eu/Panopto/Pages/Viewer.aspx?id=005f670f-28ac-47c3-9cf1-aca000b7133d>`__
 
 Let `\{\Phi_i(X)\}` be a **local** basis for `V` on the reference element
 `c_0`. Then our integral becomes:

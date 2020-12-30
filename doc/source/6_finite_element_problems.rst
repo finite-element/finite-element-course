@@ -4,9 +4,19 @@
  Assembling and solving finite element problems
 ================================================
 
-.. hint::
+.. only:: html
 
-   A video recording of this section is available `here <https://www.youtube.com/embed/Dn_xGn2WayY>`_
+    .. dropdown:: A video recording of the following material is available here.
+
+        .. container:: vimeo
+
+            .. raw:: html
+
+                <iframe src="https://player.vimeo.com/video/495444450"
+                frameborder="0" allow="autoplay; fullscreen"
+                allowfullscreen></iframe>
+
+        Imperial students can also `watch this video on Panopto <https://imperial.cloud.panopto.eu/Panopto/Pages/Viewer.aspx?id=8f4fd5a1-9bd4-460f-84ea-aca000b6ca27>`__
 
 Having constructed functions in finite element spaces and integrated
 them over the domain, we now have the tools in place to actually
@@ -82,9 +92,19 @@ where:
 Assembling the right hand side
 ------------------------------
 
-.. hint::
+.. only:: html
 
-   A video recording of this section is available `here <https://www.youtube.com/embed/H-eLGYwzpcI>`_
+    .. dropdown:: A video recording of the following material is available here.
+
+        .. container:: vimeo
+
+            .. raw:: html
+
+                <iframe src="https://player.vimeo.com/video/495726683"
+                frameborder="0" allow="autoplay; fullscreen"
+                allowfullscreen></iframe>
+
+        Imperial students can also `watch this video on Panopto <https://imperial.cloud.panopto.eu/Panopto/Pages/Viewer.aspx?id=8d403fd1-d0da-4b1d-a032-aca100aef7b7>`__
 
 The assembly of these integrals exploits the same decomposition
 property we exploited previously to integrate functions in finite
@@ -131,10 +151,19 @@ write this as:
 Assembling the left hand side matrix
 ------------------------------------
 
-.. hint::
+.. only:: html
 
-   A video recording of this section is available `here <https://www.youtube.com/embed/yQ5vJpCeJaU>`_
+    .. dropdown:: A video recording of the following material is available here.
 
+        .. container:: vimeo
+
+            .. raw:: html
+
+                <iframe src="https://player.vimeo.com/video/495722122"
+                frameborder="0" allow="autoplay; fullscreen"
+                allowfullscreen></iframe>
+
+        Imperial students can also `watch this video on Panopto <https://imperial.cloud.panopto.eu/Panopto/Pages/Viewer.aspx?id=38a9908f-1490-4438-a7b4-aca000b67753>`__
 
 The left hand side matrix follows a similar pattern, however there are
 two new complications. First, we have two unbound indices (`i` and
@@ -192,10 +221,19 @@ inverse of the cell Jacobian matrix.
 The assembly algorithm
 ~~~~~~~~~~~~~~~~~~~~~~
 
-.. hint::
+.. only:: html
 
-   A video recording of this section is available `here <https://www.youtube.com/embed/e20G9pjr7IA>`_
+    .. dropdown:: A video recording of the following material is available here.
 
+        .. container:: vimeo
+
+            .. raw:: html
+
+                <iframe src="https://player.vimeo.com/video/495723338"
+                frameborder="0" allow="autoplay; fullscreen"
+                allowfullscreen></iframe>
+
+        Imperial students can also `watch this video on Panopto <https://imperial.cloud.panopto.eu/Panopto/Pages/Viewer.aspx?id=546633aa-7816-4084-b77f-aca000b64bbd>`__
 
 We can start by pulling back :eq:`eq_lhs` to local coordinates:
 
@@ -280,10 +318,19 @@ cell node map `M(c, \hat{i})` and `M(c, \hat{j})`.
 Sparse matrices
 ~~~~~~~~~~~~~~~
 
-.. hint::
+.. only:: html
 
-   A video recording of this section is available `here <https://www.youtube.com/embed/YYyDOTrrgzU>`_
+    .. dropdown:: A video recording of the following material is available here.
 
+        .. container:: vimeo
+
+            .. raw:: html
+
+                <iframe src="https://player.vimeo.com/video/495722732"
+                frameborder="0" allow="autoplay; fullscreen"
+                allowfullscreen></iframe>
+
+        Imperial students can also `watch this video on Panopto <https://imperial.cloud.panopto.eu/Panopto/Pages/Viewer.aspx?id=d2f1a287-46ec-47d4-94af-aca000b6594f>`__
 
 Each row of the global matrix corresponds to a single global basis
 function. The number of non-zeros in this row is equal to the number

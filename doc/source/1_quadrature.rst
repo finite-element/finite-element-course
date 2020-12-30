@@ -17,7 +17,7 @@ Numerical quadrature
                 frameborder="0" allow="autoplay; fullscreen"
                 allowfullscreen></iframe>
 
-        Imperial students can also `watch this video on Panopto <https://imperial.cloud.panopto.eu/Panopto/Pages/Viewer.aspx?id=62cf7d17-d154-4450-b540-ac9f00c206d6>`_
+        Imperial students can also `watch this video on Panopto <https://imperial.cloud.panopto.eu/Panopto/Pages/Viewer.aspx?id=62cf7d17-d154-4450-b540-ac9f00c206d6>`__
 
 The core computational operation with which we are concerned in the
 finite element method is the integration of a function over a known
@@ -93,7 +93,7 @@ Examples in one dimension
                 frameborder="0" allow="autoplay; fullscreen"
                 allowfullscreen></iframe>
 
-        Imperial students can also `watch this video on Panopto <https://imperial.cloud.panopto.eu/Panopto/Pages/Viewer.aspx?id=74f63ac3-31ab-457d-9f45-ac9f00c1c738>`_
+        Imperial students can also `watch this video on Panopto <https://imperial.cloud.panopto.eu/Panopto/Pages/Viewer.aspx?id=74f63ac3-31ab-457d-9f45-ac9f00c1c738>`__
 
 We noted above that a few one dimensional quadrature rules are commonly
 taught in introductory integration courses. The first of these is the
@@ -141,7 +141,7 @@ Reference elements
                 frameborder="0" allow="autoplay; fullscreen"
                 allowfullscreen></iframe>
 
-        Imperial students can also `watch this video on Panopto <https://imperial.cloud.panopto.eu/Panopto/Pages/Viewer.aspx?id=b2e8bfb6-89c2-4d92-8e3a-ac9f00c1c7a3>`_
+        Imperial students can also `watch this video on Panopto <https://imperial.cloud.panopto.eu/Panopto/Pages/Viewer.aspx?id=b2e8bfb6-89c2-4d92-8e3a-ac9f00c1c7a3>`__
 
 As a practical matter, we wish to write down quadrature rules as
 arrays of numbers, independent of `h`. In order to achieve this,
@@ -191,7 +191,7 @@ Quadrature rules on reference elements
                 frameborder="0" allow="autoplay; fullscreen"
                 allowfullscreen></iframe>
 
-        Imperial students can also `watch this video on Panopto <https://imperial.cloud.panopto.eu/Panopto/Pages/Viewer.aspx?id=adcb767d-5c36-4a7e-92d2-ac9f00c1c7d3>`_
+        Imperial students can also `watch this video on Panopto <https://imperial.cloud.panopto.eu/Panopto/Pages/Viewer.aspx?id=adcb767d-5c36-4a7e-92d2-ac9f00c1c7d3>`__
 
 Having adopted a convention for the reference element, we can simply
 express quadrature rules as lists of quadrature points with
@@ -233,10 +233,10 @@ The finite element method will result in integrands of different
 polynomial degrees, so it is convenient if we have access to
 quadrature rules of arbitrary degree on demand. In one dimension the
 `Legendre-Gauß quadrature rules
-<http://mathworld.wolfram.com/Legendre-GaussQuadrature.html>`_ are a
+<http://mathworld.wolfram.com/Legendre-GaussQuadrature.html>`__ are a
 family of rules of arbitrary precision which we can employ for this
 purpose. Helpfully, numpy provides `an implementation
-<http://docs.scipy.org/doc/numpy/reference/generated/numpy.polynomial.legendre.leggauss.html>`_
+<http://docs.scipy.org/doc/numpy/reference/generated/numpy.polynomial.legendre.leggauss.html>`__
 which we are able to adopt. The Legendre-Gauß quadrature rules are
 usually defined for the interval `[-1, 1]` so we need to change
 coordinates in order to arrive at a quadrature rule for our reference
@@ -324,7 +324,7 @@ Implementing quadrature rules in Python
                 frameborder="0" allow="autoplay; fullscreen"
                 allowfullscreen></iframe>
 
-        Imperial students can also `watch this video on Panopto <https://imperial.cloud.panopto.eu/Panopto/Pages/Viewer.aspx?id=e5f1084f-c163-46d3-b317-ac9f00c1c772>`_
+        Imperial students can also `watch this video on Panopto <https://imperial.cloud.panopto.eu/Panopto/Pages/Viewer.aspx?id=e5f1084f-c163-46d3-b317-ac9f00c1c772>`__
 
 The :mod:`fe_utils.quadrature` module provides the
 :class:`~fe_utils.quadrature.QuadratureRule` class which records
@@ -355,7 +355,7 @@ cell.
    :meth:`~fe_utils.quadrature.QuadratureRule.integrate` in one line
    using a `list
    comprehension
-   <https://docs.python.org/3/tutorial/datastructures.html#list-comprehensions>`_ and :func:`numpy.dot`.
+   <https://docs.python.org/3/tutorial/datastructures.html#list-comprehensions>`__ and :func:`numpy.dot`.
 
 .. hint::
 
@@ -373,4 +373,4 @@ cell.
                 frameborder="0" allow="autoplay; fullscreen"
                 allowfullscreen></iframe>
 
-        Imperial students can also `watch this video on Panopto <https://imperial.cloud.panopto.eu/Panopto/Pages/Viewer.aspx?id=a2b1c67a-a9d3-485b-8784-ac9f00c1dad5>`_
+        Imperial students can also `watch this video on Panopto <https://imperial.cloud.panopto.eu/Panopto/Pages/Viewer.aspx?id=a2b1c67a-a9d3-485b-8784-ac9f00c1dad5>`__

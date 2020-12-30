@@ -18,7 +18,7 @@ element approximations to the exact solutions of PDEs.
             frameborder="0" allow="autoplay; fullscreen"
             allowfullscreen></iframe>
 
-    Imperial students can also `watch this video on Panopto <https://imperial.cloud.panopto.eu/Panopto/Pages/Viewer.aspx?id=5d2d1721-725f-43ef-bcdd-ac8f01056006>`_
+    Imperial students can also `watch this video on Panopto <https://imperial.cloud.panopto.eu/Panopto/Pages/Viewer.aspx?id=5d2d1721-725f-43ef-bcdd-ac8f01056006>`__
 
 Weak derivatives
 ----------------
@@ -135,7 +135,7 @@ definition.
    
 .. proof:lemma:: 
 
-   For `u\in C^{|\alpha|}(\Omega)`, the usual ``strong'' derivative
+   For `u\in C^{|\alpha|}(\Omega)`, the usual "strong" derivative
    `D^\alpha` of u is equal to the weak derivative `D_w^\alpha` of `u`.
 
 .. proof:exercise::
@@ -160,7 +160,7 @@ Sobolev spaces
             frameborder="0" allow="autoplay; fullscreen"
             allowfullscreen></iframe>
 
-    Imperial students can also `watch this video on Panopto <https://imperial.cloud.panopto.eu/Panopto/Pages/Viewer.aspx?id=ab4667ea-fb50-461e-940f-ac8f010c13fa>`_
+    Imperial students can also `watch this video on Panopto <https://imperial.cloud.panopto.eu/Panopto/Pages/Viewer.aspx?id=ab4667ea-fb50-461e-940f-ac8f010c13fa>`__
 
 We are now in a position to define a space that contains all `C^0`
 finite element spaces. This means that we can consider the limit
@@ -289,7 +289,7 @@ Variational formulations of PDEs
             frameborder="0" allow="autoplay; fullscreen"
             allowfullscreen></iframe>
 
-    Imperial students can also `watch this video on Panopto <https://imperial.cloud.panopto.eu/Panopto/Pages/Viewer.aspx?id=4ac5a081-3109-4b2f-86df-ac8f010fa52c>`_
+    Imperial students can also `watch this video on Panopto <https://imperial.cloud.panopto.eu/Panopto/Pages/Viewer.aspx?id=4ac5a081-3109-4b2f-86df-ac8f010fa52c>`__
 
 We can now consider linear variational problems defined on `H^k`
 spaces, by taking a bilinear form `b(u,v)` and linear form
@@ -394,7 +394,7 @@ This tells us when the integration by parts formula makes sense.
             frameborder="0" allow="autoplay; fullscreen"
             allowfullscreen></iframe>
 
-    Imperial students can also `watch this video on Panopto <https://imperial.cloud.panopto.eu/Panopto/Pages/Viewer.aspx?id=11a1d9f5-c1e9-41c1-9207-ac8f01127eac>`_
+    Imperial students can also `watch this video on Panopto <https://imperial.cloud.panopto.eu/Panopto/Pages/Viewer.aspx?id=11a1d9f5-c1e9-41c1-9207-ac8f01127eac>`__
    
 Now we have everything we need to show that solutions of the strong
 form equation also solve the variational problem. It is just a matter
@@ -479,7 +479,7 @@ Galerkin approximations of linear variational problems
             frameborder="0" allow="autoplay; fullscreen"
             allowfullscreen></iframe>
 
-    Imperial students can also `watch this video on Panopto <https://imperial.cloud.panopto.eu/Panopto/Pages/Viewer.aspx?id=63ad7174-ffe3-44bf-bd94-ac8f011498d9>`_
+    Imperial students can also `watch this video on Panopto <https://imperial.cloud.panopto.eu/Panopto/Pages/Viewer.aspx?id=63ad7174-ffe3-44bf-bd94-ac8f011498d9>`__
 
 Going a bit more general again, assume that we have a well-posed
 linear variational problem on `H^k`, connected to a strong form
@@ -524,7 +524,7 @@ equation.
             frameborder="0" allow="autoplay; fullscreen"
             allowfullscreen></iframe>
 
-    Imperial students can also `watch this video on Panopto <https://imperial.cloud.panopto.eu/Panopto/Pages/Viewer.aspx?id=5c5e4671-ddb4-4cf2-afce-ac8f01165ff0>`_
+    Imperial students can also `watch this video on Panopto <https://imperial.cloud.panopto.eu/Panopto/Pages/Viewer.aspx?id=5c5e4671-ddb4-4cf2-afce-ac8f01165ff0>`__
 
 ..
   end of Week 9 material
@@ -558,7 +558,7 @@ this question is addressed by Céa's lemma.
       b(u_h,v)  = F(v) \quad \forall v \in V_h.
 
    Choosing `v\in V_h\subset V` means we can use it in both equations,
-   and subtraction and linearity lead to the ``Galerkin orthogonality''
+   and subtraction and linearity lead to the "Galerkin orthogonality"
    condition
 
    .. math::
@@ -596,7 +596,7 @@ Interpolation error in `H^k` spaces
             frameborder="0" allow="autoplay; fullscreen"
             allowfullscreen></iframe>
 
-    Imperial students can also `watch this video on Panopto <https://imperial.cloud.panopto.eu/Panopto/Pages/Viewer.aspx?id=b473bf39-8d5b-4d2f-b051-ac8f01192b68>`_
+    Imperial students can also `watch this video on Panopto <https://imperial.cloud.panopto.eu/Panopto/Pages/Viewer.aspx?id=b473bf39-8d5b-4d2f-b051-ac8f01192b68>`__
 
 The interpretation of Céa's lemma is that the error is proportional to
 the minimal error in approximating `u` in `V_h`. To do this, we can
@@ -784,7 +784,7 @@ Convergence of the finite element approximation to the Helmholtz problem
             frameborder="0" allow="autoplay; fullscreen"
             allowfullscreen></iframe>
 
-    Imperial students can also `watch this video on Panopto <https://imperial.cloud.panopto.eu/Panopto/Pages/Viewer.aspx?id=913ad682-d5b9-4849-8dc8-ac8f0120d5e8>`_
+    Imperial students can also `watch this video on Panopto <https://imperial.cloud.panopto.eu/Panopto/Pages/Viewer.aspx?id=913ad682-d5b9-4849-8dc8-ac8f0120d5e8>`__
 
 Now that we have the required interpolation operator results, we
 can return to applying Céa's lemma to the convergence of the
@@ -897,7 +897,7 @@ as `h\to 0`.
             frameborder="0" allow="autoplay; fullscreen"
             allowfullscreen></iframe>
 
-    Imperial students can also `watch this video on Panopto <https://imperial.cloud.panopto.eu/Panopto/Pages/Viewer.aspx?id=256886bb-d6bd-41fa-916a-ac8f0126b14b>`_
+    Imperial students can also `watch this video on Panopto <https://imperial.cloud.panopto.eu/Panopto/Pages/Viewer.aspx?id=256886bb-d6bd-41fa-916a-ac8f0126b14b>`__
 
 To do this we quote the following without proof.
 

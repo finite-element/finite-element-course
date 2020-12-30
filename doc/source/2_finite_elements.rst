@@ -17,7 +17,7 @@ Constructing finite elements
                 frameborder="0" allow="autoplay; fullscreen"
                 allowfullscreen></iframe>
 
-        Imperial students can also `watch this video on Panopto <https://imperial.cloud.panopto.eu/Panopto/Pages/Viewer.aspx?id=2de78b50-5995-43b4-aef5-ac9f00e100b9>`_
+        Imperial students can also `watch this video on Panopto <https://imperial.cloud.panopto.eu/Panopto/Pages/Viewer.aspx?id=2de78b50-5995-43b4-aef5-ac9f00e100b9>`__
 
 At the core of the finite element method is the representation of
 finite-dimensional function spaces over elements. This concept was
@@ -30,7 +30,7 @@ formalised by :cite:`Ciarlet2002`:
    A *finite element* is a triple `(K, P, N)` in which `K` is a cell,
    `P` is a space of functions `K\rightarrow\mathbb{R}^n` and `N`, the
    set of *nodes*, is a basis for `P^*`, the `dual space
-   <http://mathworld.wolfram.com/DualVectorSpace.html>`_ to `P`.
+   <http://mathworld.wolfram.com/DualVectorSpace.html>`__ to `P`.
 
 Note that this definition includes a basis for `P^*`, but not a
 basis for `P`. It turns out to be most convenient to specify the set
@@ -58,7 +58,7 @@ A worked example
                 frameborder="0" allow="autoplay; fullscreen"
                 allowfullscreen></iframe>
 
-        Imperial students can also `watch this video on Panopto <https://imperial.cloud.panopto.eu/Panopto/Pages/Viewer.aspx?id=7b99c0c7-a6df-4b3d-b574-ac9f00e0075c>`_
+        Imperial students can also `watch this video on Panopto <https://imperial.cloud.panopto.eu/Panopto/Pages/Viewer.aspx?id=7b99c0c7-a6df-4b3d-b574-ac9f00e0075c>`__
 
 To illustrate the construction of a nodal basis, let's consider the
 linear polynomials on a triangle. We first need to define our
@@ -125,7 +125,7 @@ Which has solution `\phi_0 = 1 - x - y`. We can write the equations
 for all the basis functions at once as a single matrix equation:
 
 .. math::
-  :label: phimat
+  :label: phimat2
 
   \begin{bmatrix}
   1 & 0 & 0\\
@@ -184,14 +184,14 @@ The Lagrange element nodes
                 frameborder="0" allow="autoplay; fullscreen"
                 allowfullscreen></iframe>
 
-        Imperial students can also `watch this video on Panopto <https://imperial.cloud.panopto.eu/Panopto/Pages/Viewer.aspx?id=d845a6c8-017b-4b50-92f0-ac9f00e00796>`_
+        Imperial students can also `watch this video on Panopto <https://imperial.cloud.panopto.eu/Panopto/Pages/Viewer.aspx?id=d845a6c8-017b-4b50-92f0-ac9f00e00796>`__
 
 The number of coefficients of a degree `p` polynomial in `d`
 dimensions is given by `\begin{pmatrix}p+d\\ d\end{pmatrix}`. The
 simplest set of nodes which we can employ is simply to place these
 nodes in a regular grid over the reference cell. Given the classical
 relationship between binomial coefficients and `Pascal's triangle
-<http://mathworld.wolfram.com/PascalsTriangle.html>`_ (and between
+<http://mathworld.wolfram.com/PascalsTriangle.html>`__ (and between
 trinomial coefficients and Pascal's pyramid), it is unsurprising that
 this produces the correct number of nodes.
 
@@ -244,7 +244,7 @@ Solving for basis functions
                 frameborder="0" allow="autoplay; fullscreen"
                 allowfullscreen></iframe>
 
-        Imperial students can also `watch this video on Panopto <https://imperial.cloud.panopto.eu/Panopto/Pages/Viewer.aspx?id=0a419515-add2-4ea0-a39c-ac9f00e007ff>`_
+        Imperial students can also `watch this video on Panopto <https://imperial.cloud.panopto.eu/Panopto/Pages/Viewer.aspx?id=0a419515-add2-4ea0-a39c-ac9f00e007ff>`__
 
 The matrix in :eq:`phimat` is a *generalised Vandermonde* [#vandermonde]_
 matrix . Given a list of points `(x_i,y_i) \in \mathbb{R}^2, 0\leq i< m`
@@ -326,7 +326,7 @@ Implementing finite elements in Python
                 frameborder="0" allow="autoplay; fullscreen"
                 allowfullscreen></iframe>
 
-        Imperial students can also `watch this video on Panopto <https://imperial.cloud.panopto.eu/Panopto/Pages/Viewer.aspx?id=9e0ed94f-2a1f-4b7d-8be6-ac9f00e007ce>`_
+        Imperial students can also `watch this video on Panopto <https://imperial.cloud.panopto.eu/Panopto/Pages/Viewer.aspx?id=9e0ed94f-2a1f-4b7d-8be6-ac9f00e007ce>`__
 
 The :ref:`Ciarlet triple <def-ciarlet>` `(K, P, N)` also provides a
 good abstraction for the implementation of software objects
@@ -371,14 +371,14 @@ Implementing the Lagrange Elements
                 frameborder="0" allow="autoplay; fullscreen"
                 allowfullscreen></iframe>
 
-        Imperial students can also `watch this video on Panopto <https://imperial.cloud.panopto.eu/Panopto/Pages/Viewer.aspx?id=d78e85a7-fa59-433c-ac4c-ac9f00e02668>`_
+        Imperial students can also `watch this video on Panopto <https://imperial.cloud.panopto.eu/Panopto/Pages/Viewer.aspx?id=d78e85a7-fa59-433c-ac4c-ac9f00e02668>`__
 
 The :class:`~fe_utils.finite_elements.FiniteElement` class implements
 a general finite element object assuming we have provided the cell,
 polynomial, degree and nodes. The
 :class:`~fe_utils.finite_elements.LagrangeElement` class is a
 `subclass
-<https://docs.python.org/3/tutorial/classes.html#inheritance>`_ of
+<https://docs.python.org/3/tutorial/classes.html#inheritance>`__ of
 :class:`~fe_utils.finite_elements.FiniteElement` which will implement
 the particular case of the equispaced Lagrange elements.
 
@@ -413,7 +413,7 @@ Tabulating basis functions
                 frameborder="0" allow="autoplay; fullscreen"
                 allowfullscreen></iframe>
 
-        Imperial students can also `watch this video on Panopto <https://imperial.cloud.panopto.eu/Panopto/Pages/Viewer.aspx?id=7126cc73-ff67-48a0-b84b-aca000b63478>`_
+        Imperial students can also `watch this video on Panopto <https://imperial.cloud.panopto.eu/Panopto/Pages/Viewer.aspx?id=7126cc73-ff67-48a0-b84b-aca000b63478>`__
 
 A core operation in the finite element method is integrating
 expressions involving functions in finite element spaces. This is
@@ -466,7 +466,7 @@ Gradients of basis functions
                 frameborder="0" allow="autoplay; fullscreen"
                 allowfullscreen></iframe>
 
-        Imperial students can also `watch this video on Panopto <https://imperial.cloud.panopto.eu/Panopto/Pages/Viewer.aspx?id=45826405-6d18-45d9-a935-ac9f00e04883>`_
+        Imperial students can also `watch this video on Panopto <https://imperial.cloud.panopto.eu/Panopto/Pages/Viewer.aspx?id=45826405-6d18-45d9-a935-ac9f00e04883>`__
 
 A function `f` defined over a single finite element with basis
 `\{\phi_i\}` is represented by a weighted sum of that basis:
@@ -569,13 +569,13 @@ of the gradient of the Vandermonde matrix.
                 frameborder="0" allow="autoplay; fullscreen"
                 allowfullscreen></iframe>
 
-        Imperial students can also `watch this video on Panopto <https://imperial.cloud.panopto.eu/Panopto/Pages/Viewer.aspx?id=5666bc7b-db54-4acd-a711-ac9f00e064c1>`_
+        Imperial students can also `watch this video on Panopto <https://imperial.cloud.panopto.eu/Panopto/Pages/Viewer.aspx?id=5666bc7b-db54-4acd-a711-ac9f00e064c1>`__
 
 .. hint::
 
    The :func:`numpy.einsum` function implements generalised tensor
    contractions using `Einstein summation notation
-   <http://mathworld.wolfram.com/EinsteinSummation.html>`_. For
+   <http://mathworld.wolfram.com/EinsteinSummation.html>`__. For
    example::
 
      A = numpy.einsum("ijk,jl->ilk", T, C)
@@ -597,7 +597,7 @@ Interpolating functions to the finite element nodes
                 frameborder="0" allow="autoplay; fullscreen"
                 allowfullscreen></iframe>
 
-        Imperial students can also `watch this video on Panopto <https://imperial.cloud.panopto.eu/Panopto/Pages/Viewer.aspx?id=6f7d5b2f-4995-4cd2-9d38-ac9f00e0a666>`_
+        Imperial students can also `watch this video on Panopto <https://imperial.cloud.panopto.eu/Panopto/Pages/Viewer.aspx?id=6f7d5b2f-4995-4cd2-9d38-ac9f00e0a666>`__
 
 Recall once again that a function can be represented on a single finite element as:
 
@@ -645,5 +645,5 @@ elements you can make::
 .. rubric:: Footnotes
 
 .. [#vandermonde] A `Vandermonde
-                  matrix <http://mathworld.wolfram.com/VandermondeMatrix.html>`_
+                  matrix <http://mathworld.wolfram.com/VandermondeMatrix.html>`__
                   is the one-dimensional case of the generalised Vandermonde matrix.

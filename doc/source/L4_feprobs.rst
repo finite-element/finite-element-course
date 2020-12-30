@@ -15,7 +15,7 @@ Finite element problems: solvability and stability
             frameborder="0" allow="autoplay; fullscreen"
             allowfullscreen></iframe>
 
-    Imperial students can also `watch this video on Panopto <https://imperial.cloud.panopto.eu/Panopto/Pages/Viewer.aspx?id=fd348dc9-840d-41ac-8906-ac8f00b77a93>`_
+    Imperial students can also `watch this video on Panopto <https://imperial.cloud.panopto.eu/Panopto/Pages/Viewer.aspx?id=fd348dc9-840d-41ac-8906-ac8f00b77a93>`__
 
 In section 1, we saw the example of a finite element approximation
 for Poisson's equation in the unit square, which we now recall below.
@@ -26,7 +26,7 @@ for Poisson's equation in the unit square, which we now recall below.
    solution `u_h` of Poisson's equation is defined by
    
    .. math::
-      :label: eq:fe_poisson
+      :label: 
 	    
       \int_\Omega \nabla v \cdot \nabla u_h \, d x =
       \int_\Omega vf \, d x, \quad \forall v\in \mathring{V}_h.
@@ -51,18 +51,18 @@ of the word "space").
 
 .. proof:definition:: Vector space
 
-   A vector space over the real numbers `\mathbb{R}` is a set `V`,
-   with an addition operator `+:V\times V\to V`, plus a scalar
-   multiplication operator `\times:\mathbb{R}\times V \to V`, such
-   that:
+    A vector space over the real numbers `\mathbb{R}` is a set `V`,
+    with an addition operator `+:V\times V\to V`, plus a scalar
+    multiplication operator `\times:\mathbb{R}\times V \to V`, such
+    that:
 
-  #. There exists a unique zero element `e\in V` such that:
-    * `k\times e = e` for all `k\in \mathbb{R}`,
-    * `0\times v = e` for all `v \in V`,
-    * `e+v = v` for all `v \in V`.
+    #. There exists a unique zero element `e\in V` such that:
+        * `k\times e = e` for all `k\in \mathbb{R}`,
+        * `0\times v = e` for all `v \in V`,
+        * `e+v = v` for all `v \in V`.
 
-  #. `V` is closed under addition and multiplication, i.e.,
-    `a\times u + v\in V` for all `u,v\in V`, `a\in \mathbb{R}`.
+    #. `V` is closed under addition and multiplication, i.e.,
+        `a\times u + v\in V` for all `u,v\in V`, `a\in \mathbb{R}`.
 
 .. proof:lemma::
 
@@ -277,7 +277,7 @@ Linear forms on Hilbert spaces
             frameborder="0" allow="autoplay; fullscreen"
             allowfullscreen></iframe>
 
-    Imperial students can also `watch this video on Panopto <https://imperial.cloud.panopto.eu/Panopto/Pages/Viewer.aspx?id=723914b3-4d55-476e-a8ef-ac8f00bca305>`_
+    Imperial students can also `watch this video on Panopto <https://imperial.cloud.panopto.eu/Panopto/Pages/Viewer.aspx?id=723914b3-4d55-476e-a8ef-ac8f00bca305>`__
 
 We will now build some structures on Hilbert spaces that allow us to
 discuss variational problems on them, which includes finite element
@@ -401,7 +401,8 @@ Variational problems on Hilbert spaces
             frameborder="0" allow="autoplay; fullscreen"
             allowfullscreen></iframe>
 
-    Imperial students can also `watch this video on Panopto <https://imperial.cloud.panopto.eu/Panopto/Pages/Viewer.aspx?id=bd3cfdc3-746d-42f4-96b5-ac8f00c44327>`_
+    Imperial students can also `watch this video on Panopto <https://imperial.cloud.panopto.eu/Panopto/Pages/Viewer.aspx?id=bd3cfdc3-746d-42f4-96b5-ac8f00c44327>`__
+
 We will consider finite element methods that can be formulated in the
 following way.
 
@@ -472,7 +473,7 @@ of linear PDEs.
             frameborder="0" allow="autoplay; fullscreen"
             allowfullscreen></iframe>
 
-    Imperial students can also `watch this video on Panopto <https://imperial.cloud.panopto.eu/Panopto/Pages/Viewer.aspx?id=39973b08-a56a-41e6-b1c8-ac8f00c5b325>`_
+    Imperial students can also `watch this video on Panopto <https://imperial.cloud.panopto.eu/Panopto/Pages/Viewer.aspx?id=39973b08-a56a-41e6-b1c8-ac8f00c5b325>`__
       
 We now introduce two important properties of bilinear forms that determine
 whether a linear variational problem is solvable or not. The first is
@@ -555,7 +556,7 @@ approximations of some linear PDEs where they may be applied.
             frameborder="0" allow="autoplay; fullscreen"
             allowfullscreen></iframe>
 
-    Imperial students can also `watch this video on Panopto <https://imperial.cloud.panopto.eu/Panopto/Pages/Viewer.aspx?id=eca48c8e-3823-4653-8b4e-ac8f00c7c5ce>`_
+    Imperial students can also `watch this video on Panopto <https://imperial.cloud.panopto.eu/Panopto/Pages/Viewer.aspx?id=eca48c8e-3823-4653-8b4e-ac8f00c7c5ce>`__
 
 We start with the simplest example, for which continuity and
 coercivity are immediate.
@@ -704,7 +705,7 @@ mean estimate.
             frameborder="0" allow="autoplay; fullscreen"
             allowfullscreen></iframe>
 
-    Imperial students can also `watch this video on Panopto <https://imperial.cloud.panopto.eu/Panopto/Pages/Viewer.aspx?id=e17f74a6-97ec-47fd-bcf4-ac8f00c9b784>`_
+    Imperial students can also `watch this video on Panopto <https://imperial.cloud.panopto.eu/Panopto/Pages/Viewer.aspx?id=e17f74a6-97ec-47fd-bcf4-ac8f00c9b784>`__
 
 .. proof:lemma:: Mean estimate for finite element spaces
 
@@ -731,7 +732,7 @@ mean estimate.
             frameborder="0" allow="autoplay; fullscreen"
             allowfullscreen></iframe>
 
-    Imperial students can also `watch this video on Panopto <https://imperial.cloud.panopto.eu/Panopto/Pages/Viewer.aspx?id=610a0d00-6e89-4e7f-a7d1-ac8f00cc9fe5>`_
+    Imperial students can also `watch this video on Panopto <https://imperial.cloud.panopto.eu/Panopto/Pages/Viewer.aspx?id=610a0d00-6e89-4e7f-a7d1-ac8f00cc9fe5>`__
 
 .. Dropdown:: A video recording of the second part of section is available here.
 		  
@@ -743,7 +744,7 @@ mean estimate.
             frameborder="0" allow="autoplay; fullscreen"
             allowfullscreen></iframe>
 
-    Imperial students can also `watch this video on Panopto <https://imperial.cloud.panopto.eu/Panopto/Pages/Viewer.aspx?id=aac8613a-f8f2-474f-bbe5-ac8f00cdbc26>`_
+    Imperial students can also `watch this video on Panopto <https://imperial.cloud.panopto.eu/Panopto/Pages/Viewer.aspx?id=aac8613a-f8f2-474f-bbe5-ac8f00cdbc26>`__
       
 .. proof:proof::
 
@@ -859,7 +860,7 @@ mean estimate.
             frameborder="0" allow="autoplay; fullscreen"
             allowfullscreen></iframe>
 
-    Imperial students can also `watch this video on Panopto <https://imperial.cloud.panopto.eu/Panopto/Pages/Viewer.aspx?id=9652e5bd-ef4a-45e8-9a41-ac8f00ceae9d>`_
+    Imperial students can also `watch this video on Panopto <https://imperial.cloud.panopto.eu/Panopto/Pages/Viewer.aspx?id=9652e5bd-ef4a-45e8-9a41-ac8f00ceae9d>`__
    
 The mean estimate can now be used to show solvability for the Poisson
 problem with pure Neumann conditions.
@@ -910,7 +911,7 @@ The coercivity constant is independent of `h`, so the approximation is stable.
             frameborder="0" allow="autoplay; fullscreen"
             allowfullscreen></iframe>
 
-    Imperial students can also `watch this video on Panopto <https://imperial.cloud.panopto.eu/Panopto/Pages/Viewer.aspx?id=58a9dd17-1ae8-4b9e-9781-ac8f0101a3c3>`_
+    Imperial students can also `watch this video on Panopto <https://imperial.cloud.panopto.eu/Panopto/Pages/Viewer.aspx?id=58a9dd17-1ae8-4b9e-9781-ac8f0101a3c3>`__
 
 Proving the coercivity for the Poisson problem with Dirichlet or
 partial Dirichlet boundary conditions requires some additional
@@ -1001,7 +1002,7 @@ norm of the function restricted to the boundary.
             frameborder="0" allow="autoplay; fullscreen"
             allowfullscreen></iframe>
 
-    Imperial students can also `watch this video on Panopto <https://imperial.cloud.panopto.eu/Panopto/Pages/Viewer.aspx?id=1bc37dc7-ef3e-43f5-b111-ac8f010287cf>`_
+    Imperial students can also `watch this video on Panopto <https://imperial.cloud.panopto.eu/Panopto/Pages/Viewer.aspx?id=1bc37dc7-ef3e-43f5-b111-ac8f010287cf>`__
    
 We can now use the trace inequality to estabilish solvability for the
 Poisson problem with (full or partial) Dirichlet conditions.
