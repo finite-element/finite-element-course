@@ -85,7 +85,8 @@
             - Up to and including :numref:`Theorem {number}<thm-cea>`.
             - Up to the end of :numref:`secdirichlet`.
         *   - 10
-            - Up to the end of :numref:`convergence`.
+            - Up to the end of :numref:`convergence`. For MSc, 4th year MSci
+	      and MRes students - read the mastery material.
             - Time for the mastery exercise, (catch up time for year 3).
 
    .. image:: _static/brenner_scott.png
