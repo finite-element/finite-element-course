@@ -411,7 +411,7 @@ there, but the following lemma is useful when checking that
 
 .. proof:exercise::
 
-   The following polynomial vanishes on the line `y=-1-x`. Show that
+   The following polynomial vanishes on the line `y=1-x`. Show that
    it satisfies the result of the previous theorem.
 
    .. math::
