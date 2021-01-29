@@ -96,7 +96,7 @@ a triangulation.
    #. `\mathrm{int}\, K_i \cap K_j = \emptyset, \quad i\neq j`, where `\mathrm{int }` denotes the interior of a set (no overlaps).
    #. `\cup K_i = \bar{\Omega}`, the closure of `\Omega` (triangulation covers
       `\Omega`).
-   #. No vertex of the interior of any triangle is located in the interior of any other triangle in `\mathcal{T}` (triangle vertices only meet other triangle vertices).
+   #. No vertex of any triangle is located in the interior of any other triangle in `\mathcal{T}` (triangle vertices only meet other triangle vertices).
 
 Our first finite element space
 ------------------------------
@@ -177,7 +177,7 @@ the `L^2` norm, which is a way of measuring the "magnitude" of a function.
 
    .. math::
 
-      \|f\|_{L^2}(\Omega) = \left(\int_\Omega |f(x)|^2\,dx \right)^{1/2}.
+      \|f\|_{L^2(\Omega)} = \left(\int_\Omega |f(x)|^2\,dx \right)^{1/2}.
 
 This motivates us to say that two functions are equal if the `L^2`
 norm of their difference is zero. It only makes sense to do that if
@@ -190,7 +190,7 @@ motivates the `L^2` function space.
 
    .. math::
    
-      L^2(\Omega) = \left\{ f:\|f\|_{L^2}(\Omega)<\infty\right\},
+      L^2(\Omega) = \left\{ f:\|f\|_{L^2(\Omega)}<\infty\right\},
 
   and identify two functions `f` and `g` if `\|f-g\|_{L^2(\Omega)}=0`,
   in which case we write `f\equiv g` in `L^2`.
@@ -256,7 +256,7 @@ triangles. This is verified in the following exercises.
 
 .. proof:exercise::
 
-   Let `u\in C^1(\Omega)` (the space of functions with finite-valued
+   Let `u\in C^1(\Omega)` (the space of functions with continuous
    partial derivatives at every point in `\Omega`). Show that the
    finite element partial derivative and the usual derivative are
    equal in `L^2(\Omega)`.
@@ -284,9 +284,10 @@ Towards the finite element discretisation
 
 We will now use the finite element derivative to develop the finite
 element discretisation. We assume that we have a solution `u` to
-Equation :eq:`eq:strong_Poisson` that is smooth (i.e. `u\in C^1`). (Later,
-we will consider more general types of solutions to this equation, but this
-assumption just motivates things for the time being.)
+Equation :eq:`eq:strong_Poisson` that is sufficiently smooth
+(e.g. `u\in C^1` in this case). (Later, we will consider more general
+types of solutions to this equation, but this assumption just
+motivates things for the time being.)
 
 We take `v\in \mathring{V}_h`, multiply by Equation :eq:`eq:strong_Poisson`, and integrate over the domain. Integration by parts in each triangle then gives
 
@@ -325,8 +326,9 @@ Further, on the boundary, either `v` vanishes (at `x=0` and `x=1`) or
    = \int_\Omega vf \, d x. 
 
 The finite element approximation is then defined by requiring that
-this equation holds for all `v\in \mathring{V}_h` and when we restrict
-`u\in \mathring{V}_h`.
+this equation holds for all `v\in \mathring{V}_h` and when we approximate
+`u` by
+`u_h\in \mathring{V}_h`.
 
 .. dropdown:: A video recording of the following material is available here.
 		  
@@ -345,7 +347,7 @@ this equation holds for all `v\in \mathring{V}_h` and when we restrict
 .. proof:definition::
   
    The finite element approximation `u_h \in \mathring{V}_h` to the
-   solution `u_h` of Poisson's equation is defined by
+   solution `u` of Poisson's equation is defined by
    
    .. math::
       :label: eq:fe_poisson
@@ -523,7 +525,7 @@ into Equation :eq:`eq:fe_poisson`, then we obtain
 
 .. math::
    \sum_{i=1}^{\bar{M}}v_i\left(\sum_{j=1}^{\bar{M}}\int_\Omega \nabla \phi_i\cdot \nabla \phi_j
-   \,dx v_j - \int_\Omega \phi_if\,dx\right) = 0.
+   \,dx u_j - \int_\Omega \phi_if\,dx\right) = 0.
 
 Since this equation must hold for all `v\in \mathring{V}_h`, then
 it must hold for all basis coefficients `v_i`, and we obtain
