@@ -21,7 +21,7 @@
         L3_interpolation
         L4_feprobs
         L5_convergence
-
+	L6_stokes
 
 .. only:: html
 
@@ -127,6 +127,7 @@
         L3_interpolation
         L4_feprobs
         L5_convergence
+	L6_stokes
 
    Past exam papers
    ~~~~~~~~~~~~~~~~
