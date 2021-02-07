@@ -93,12 +93,11 @@ V` and `p\in Q`. If we define `X=V\times Q`, and define `U=(u,p)\in X`
 (as well as `W=(v,q)\in X`, then we can more abstractly write the
 problem as finding `U\in X` such that
 
-.. _eqn_general:
-
    .. math::
+      :label: eqn_general
 
       c(U,W) = F(W),
-
+      
 where for the case of Stokes equation,
 
    .. math::
@@ -121,106 +120,150 @@ where here we use the product norm
 
 This means that we can't use the Lax Milgram Theorem to show existence
 and uniqueness of solutions for the variational formulation or any
-finite element discretisations of it, and we can't use C\`ea's Lemma
+finite element discretisations of it, and we can't use Céa's Lemma
 to estimate numerical errors in the finite element discretisation.
 Instead we have to use a more general tool, the inf-sup theorem.
 
+The inf-sup condition
+---------------------
+
+The critical tool in mixed problems is the inf-sup condition for a
+bilinear form on `V\times Q`, which says that there exists `\beta>0`
+such that
+
+   .. math::
+
+      \inf_{0\neq q\in Q}\sup_{0 \neq v\in V} \frac{b(v,q)}{\|v\|_V\|q\|_Q}
+      \geq \beta.
+
+For brevity, we will drop the `\neq 0` condition in subsequent formulae.
+To understand this condition, we consider the map `B:V\to Q'`
+given by
+
+   .. math::
+
+      Bv[p] = b(v,p), \, \forall p \in Q,
+
+and the transpose operator `B^*:Q\to V'`, by
+
+   .. math::
+
+      B^*p[v] = b(v,p), \quad \forall v \in V.
+
+Here, `Bv` is the map `B` applied to `v`, i.e. an element of the dual space
+`Q'` which maps elements of `Q` to `\mathbb{R}`. `B^*p` is the image of
+the map `B^*` applied to `p`, i.e. an element of the dual space `V'`
+which maps elements of `V` to `\mathbb{R}`.
+
+The norm of `B^*v` is
+
+   .. math::
+
+      \|B^*q\|_{V'} = \sup_{v\in V}\frac{b(v,q)}{\|v\|_V}.
+
+Which allows us to rewrite the inf-sup condition as
+
+   .. math::
+
+      \inf_{q\in Q} \frac{\|B^*q\|_{V'}}{\|q\|_Q} \geq \beta,
+
+which is also equivalent to
+
+   .. math::
+
+      \|B^*q\|_{V'} \geq \beta\|q\|_Q, \, \forall q\in Q.
+
+This tells us that the map `B^*` is injective, since if there
+exist `q_1,q_2` such that `B^*q_1=B^*q_2`, then `B^*(q_1-q_2)=0
+\implies 0 = \|B^*(q_1-q_2) \geq \beta\|q_1-q_2\|_Q`, i.e.
+`q_1=q_2`.
+
+In finite dimensions (such as for our finite element spaces),
+injective `B^*` is equivalent to surjective `B` (via the rank-nullity
+theorem). In infinite dimensions, such as the case
+`\mathring{H}^1\times \mathring{L}^2` that we are considering for
+Stokes equation, the situation is more complicated and is governed by
+the Closed Range Theorem (which we allude to here but do not prove),
+which states that for Hilbert spaces and continuous bilinear forms
+`b(v,q)`, injective `B^*` is indeed equivalent to surjective `B`.
+
+The Closed Range Theorem (and the rank-nullity theorem, its finite
+dimensional version) further characterises these maps using perpendicular
+spaces.
+
+.. proof:definition:: Perpendicular space
+
+   For a subspace `Z\subset Q` of a Hilbert space `Q`, the
+   perpendicular space `Z^\perp` of `Z` in `Q` is
+
+      .. math::
+
+	 Z^{\perp} = \left\{ q\in Q: \langle q,p \rangle_Q = 0, \,
+	 \forall p \in Q\right\}.
+
+In finite dimensions, we have that `B^*` defines a one-to-one mapping
+from `(\mathrm{Ker}B^*)^\perp\subset Q` (the perpendicular space to
+the kernel `\mathrm{Ker}B^*` of `B^*`) to `\mathrm{Im}(B^*)` (the
+image space of `B^*`). This is also true in infinite dimensions under
+the conditions of the Closed Range Theorem.
+
+This means that for any `F\in \mathrm{Im}(B^*)`, we can find `q
+\in (\mathrm{Ker}B^*)^\perp` such that `B^*q=F`. Further, we have
+
+   .. math::
+
+      \|F\|_{V'} \geq \beta\|q\|_Q,
+
+via the inf-sup condition.
+
+Finally, it is useful to characterise `\mathrm{Im}(B^*)`. In
+`\mathbb{R}^n`, we are used to the rank-nullity theorem telling us
+that `\mathrm{Im}(B^*)=(\mathrm{Ker} B^*)^\perp`. However, here `B^*` maps
+to `V'`, not `V`, so this does not make sense. When considering
+maps between dual spaces, we have to generalise this idea to polar
+spaces.
+
+.. proof:definition:: Polar space
+
+   For `Z` a subspace of a Hilbert space `Q`, the polar space `Z^0`
+   is the subspace of `Q'` of continuous linear functionals that
+   vanish on `Z` i.e.
+
+      .. math::
+
+	 Z^0 = \left\{ F\in Q': F[q]=0\, \forall q\in Z\right\}.
+
+Then the dual space version of the rank-nullity theorem (and the
+Closed Range Theorem for infinity dimensional Hilbert spaces) tells
+us that
+
+   .. math::
+
+      \mathrm{Im}(B^*) = (\mathrm{Ker} B^*)^0.
+
+Equipped with this tool, we can look at solveability of mixed problems.
+      
 Solveability of mixed problems
 ------------------------------
-
-.. proof:theorem:: Inf-sup theorem
-
-   Let `c(U,W)` be a continuous bilinear form on a Hilbert space `X`,
-   and `F(U)` be a continuous linear form on `X`. Then
-   :numref:`Equation {number}<eqn_general>` has a unique solution
-   provided that there exists `\gamma>0` such that
-   
-      .. math::
-
-	 \inf_{U\in X}\sup_{W\in X} \frac{c(U,W)}{\|U\|_X\|W\|_X}
-	 \geq \gamma > 0.
-
-   Further, the solution satisfies
-
-      .. math::
-
-	 \|U\|_X \leq \frac{1}{\gamma}.
-
-.. proof:proof::
-
-   We don't give a proof here, but we can provide an idea of why it is
-   true (which can be skipped upon first reading).  If we define the
-   linear operator `\mathcal{C}:X\to X'` (with `X'` the dual space to
-   `X`) by
-   
-      .. math::
-
-	 (\mathcal{C}U)[W] = C(U,W), \quad \forall W\in X,
-
-   then we can rewrite the problem as
-
-      .. math::
-
-	 \mathcal{C}U = F.
-
-   The inf-sup condition can then be written as
-
-      .. math::
-
-	 \inf_{U \in X} \frac{\|\mathcal{C}U\|_{X'}}{\|U\|_X} \geq \gamma.
-
-   Or, in other words, `\mathcal{C}` is bounding,
-
-      .. math::
-
-	 \|\mathcal{C}(U)\|_{X'} \geq \gamma\|U\|_X, \quad \forall U\in X.
-
-   If `X` were a finite dimensional space, then this would show
-   `\mathcal{C}` in injective since otherwise, there exists `U_1,U_2`
-   such that
-
-      .. math::
-
-	 \mathcal{C}U_1 = \mathcal{C}U_2 = F
-	 \implies \mathcal{C}(U_1-U_2)=0 \implies
-	 0 = \|\mathcal{C}(U)\|_{X'} \geq \gamma \|U_1-U_2\|_X,
-
-   i.e. `U_1-U_2=0`, a contradiction. For infinite dimensional Hilbert
-   spaces of functions, the story is more complicated, and rests on the
-   Closed Range Theorem which is not examinable in this course.
-   For symmetric `c(U,W)`, the inf-sup condition is equivalent to the
-   dual condition,
-
-      .. math::
-
-	 \inf_{U\in X}\sup_{W\in X} \frac{c(W,U)}{\|U\|_X\|W\|_X} \geq \gamma
-	 > 0.
-
-   Defining the transposed operator `C^*:X\to X'` by
-
-      .. math::
-
-	 C^*U[W] = C(W,U), \quad \forall W\in X,
-
-   we similarly find that `C^*` is bounding, hence `C^*` is injective
-   (subject to the Close Range Theorem again).
-   If `C` is injective and `C^*` is injective,
-   then `C` is invertible.
 
 For symmetric, mixed problems in two variables, sufficient conditions
 for existence are given by the following result of Franco Brezzi.
 
 .. proof:theorem:: Brezzi's conditions
 
-   Let `C(U,W)` be a continuous bilinear form defined on `X=V\times
-   Q`, of the form
+   Let `a(u,v)` be a continuous bilinear form defined on `V\times V`,
+   and `b(v,q)` be a continuous bilinear form defined on `V\times Q`.
+   Consider the variational problem for `(u,p)\in V\times Q`,
 
    .. math::
 
-      C(U,W) = a(u,v) + b(v,p) + b(u,q), \quad
-      U=(u,p), \, W=(v,q),
+      a(u,v) + b(v,p) + b(u,q) = F[v], \, \forall v \in V,
 
-   and `F` be a continuous linear form on `X`. Define the kernel
+      b(u,q) = G[q], \, \forall q\in Q,
+
+   for `F` and `G` continuous linear forms on `V` and `Q` respectively.
+   
+   Define the kernel
    `Z` by
 
    .. math::
@@ -229,22 +272,14 @@ for existence are given by the following result of Franco Brezzi.
 
    Assume the following conditions:
 
-   #. There exists `\beta>0` such that
-
-         .. math::
-
-	    \inf_{q\in Q}\sup_{v\in V} \frac{b(v,q)}{\|v\|_V\|q\|_Q}
-	    \geq \beta,
-
-   #. `a` is coercive on the kernel `Z`, i.e. there exists `\alpha>0`
-      such that
-
-         .. math::
-
-	    a(v,v) \geq \alpha \|v\|^2_V, \quad \forall v\in Z.
+   #. `a(u,v)` is coercive on the kernel `Z` with coercivity constant
+      `\alpha`.
+   
+   #. There exists `\beta>0` such that the inf-sup condition for
+      `b(v,q)` holds.
 
    Then there exists a unique solution `(u,p)` to the variational
-   problem, and
+   problem and
 
       .. math::
 
@@ -256,51 +291,116 @@ for existence are given by the following result of Franco Brezzi.
 
 .. proof:proof::
 
-   Again we don't give a proof but just provide some arguments as to why
-   this might be true. To do this, we again pretend that the system is
-   finite dimensional. Since it is then square, it is sufficient to
-   show that the linear system has no kernel, i.e.
+   To show existence, we first note that the inf-sup condition implies
+   that `B` is surjective, so we can always find `u_g\in V` such that
+   `Bu_g = g`. Now we write `u=u_g+u_0`, and we have the following
+   mixed problem,
 
       .. math::
+
+	 a(u_0,v) + b(v,p) = F[v] - a(u_g, v), \, \forall v \in V,
+
+	 b(u_0,q) = 0.
+
+   Thus, `Bu_0=0`, i.e. `u_0\in Z`. Choosing `v\in Z\subset V`, we get
+
+      .. math::
+
+	 a(u_0,v) = F'[v] = F[v] - a(u_g,v), \, \forall v\in Z,
+
+   for `u_0 \in Z`. Since `a(u,v)` is coercive on `Z`, and `F'` is
+   continuous (from continuity of `F` and `a(u,v)`), Lax-Milgram tells
+   us that `u_0\in Z` exists and is unique. We now notice that
+
+      .. math::
+
+	 L[v] = F[v] - a(u_g+u_0,v) = 0 \forall v\in Z,
+
+   so `L[v]\in Z^0 = (\mathrm{Ker} B)^0=\mathrm{Im} B^*`. This means that there
+   exists `p\in Q` such that `B^*p = L`. Hence, we have found `(u,p)`
+   that solve our mixed variational problem.
+
+   To show uniqueness, we need to show that if there exists `(u_1,p_1)`
+   and `(u_2,p_2)` that both solve our mixed variational problem,
+   then `(u,p)=(u_1-u_2,p_1-p_2)=0`. To that end, we take the difference
+   of the equations for the two solutions, and get
+
+      .. math::
+
+	 a(u,v) + b(v,p) = 0, \, \forall v\in V,
+
+	 b(u,q) = 0, \forall q\in Q.
+
+   It is our goal to show that `(u,p)=0`. We have again that `u\in Z`,
+   and taking `v=u` gives
+
+      .. math::
+
+	 0 = a(u,u) \geq \alpha\|u\|_V^2 \implies u=0.
+
+   Substituting this into the problem for `(u,p)` gives
+
+      .. math::
+
+	 b(v,p) = 0, \, \forall v\in V.
+
+   Since `b` is injective, this means that `p=0` as required.
+
+   Having shown existence and uniqueness of `(u,p)`, we want to 
+   develop the stability bounds. We now assume that `(u,p)` solves
+   the variational problem. We first use the surjectivity of
+   `B` to find `u_g` such that `Bu_g=G`. This means that
+
+   .. math::
+
+      b(q,u_g) = G[q], \forall q \in Q,
+
+   Then, for all `q\in Q`,
+
+   .. math::
+
+      \|G\|_{Q'} = \sup_{q\in Q}\frac{b(q,u_g)}{\|q\|_Q}
+
+      = \sup_{q\in Q}\frac{b(q,u_g)}{\|q\|_Q\|u_g\|_V}\|u_g\|_V
       
-	 a(u,v) + b(v,p) + b(u,q) = 0, \, \forall (u,p)\in V\times Q
-	 \implies (u,p)=0.
+      \geq \beta \|u_g\|,
 
-   First, taking `v=0`, we get
+   by the inf-sup condition. Now we define `u_Z = u - u_g`, so that
+   `Bu_Z = Bu - Bu_g = G - G = 0`. Therefore `u_Z\in Z`.
 
-      .. math::
-
-	 b(u,q) = 0\, \forall q \in Q, \implies u \in Z.
-
-   If we take `v \in Z`, then we get the reduced problem
+   Then taking `v \in Z`, we have
 
       .. math::
 
-	 a(u,v) = 0, \, \forall v \in Z,
+	 a(u_Z,v) = F[v], \quad \forall v\in Z.
 
-   for `u \in Z`, which has no kernel since `a` is a continuous and
-   coercive bilinear form on the kernel `Z`. Hence, `u=0`. Then,
-   we are reduced to
-
-      .. math::
-
-	 b(v,p) =0, \forall v\in V.
-
-   Defining the operator `B:V\to Q'` by
-	 
-      .. math::
-
-	 Bv[p] = b(v,p), \quad \forall p \in Q,
-
-   we can write this as `Bp=0`. As discussed above (subject to
-   considering the Closed Range Theorem), the inf-sup condition is
-   equivalent to surjectivity of `B^*:Q\to V'`, defined by
+   From the Lax-Milgram theorem we have `\|u_Z\|_V \leq
+   \|F\|_{Q'}/\alpha`.  Returning to general `v\in Q`, we rearrange
+   the variational problem to get
 
       .. math::
 
-	 Bp[v] = b(v,p), \quad \forall v \in V.
+	 b(p,v) = F'[v] = F[v] - a(u_Z + u_g, v), \quad \forall v \in V.
 
-   Then we conclude that `B` is injective `Bp=0` implies that `p=0`.
+   As discussed previously, `F'\in Z^0`, hence this equation is solveable
+   for `p_f` and we have
+
+      .. math::
+
+	 \|F'\|_{V'} \geq \beta\|p_f\|_Q.
+
+   Rearranging and using the triangle inequality and the estimate for
+   `\|u_Z\|_V`, we get
+
+   .. math::
+
+      \|p_f\|_Q \leq \frac{1}{\beta}\left(\|F'\|_{V'}\right)
+
+      \leq \frac{1}{\beta}\left(\|F\|_{V'} + \frac{M}{\alpha}\|F\|_{V'}\right)
+
+      \leq \frac{2M}{\alpha\beta}\|F\|_{V'},
+
+   assuming that `M/\alpha > 1` (otherwise pick a bigger `M`).
 
 Solveability of Stokes equation
 --------------------------------------------------
@@ -326,7 +426,7 @@ Discretisation of Stokes equations
 ----------------------------------
 
 To discretise the Stokes equations, we need to choose finite element
-spaces `V_h \sub V` and `Q_h \sub Q`. Then we apply the Galerkin
+spaces `V_h \subset V` and `Q_h \subset Q`. Then we apply the Galerkin
 approximation, restricting the numerical solution `(u_h,p_h)` to
 `V_h\times Q_h` as well as the test functions `(v_h,q_h)`. If the
 bilinear form `c(X,Y)` were coercive, we could immediately get existence,
@@ -338,6 +438,6 @@ with the uniqueness of `p_h`. To control these issues, we need to choose
    .. math::
 
       \inf_{q\in {Q_h}}\sup_{v\in {V_h}}
-      \frac{b(v,q)}{\|v\|_{V_h}\|q\|_{Q_h}} \geq \hat{\beta},
+      \frac{b(v,q)}{\|v\|_{V}\|q\|_{Q}} \geq \hat{\beta},
 
 with `\hat{\beta}>0`.
