@@ -264,6 +264,8 @@ finite element spaces equipped with `L^2` or `H^1` inner products are
 Hilbert spaces. Later we shall understand our finite element
 spaces as subspaces of infinite dimensional Hilbert spaces.
 
+.. _sec-linearforms:
+
 Linear forms on Hilbert spaces
 ------------------------------
 

@@ -30,7 +30,7 @@ that `\nabla u` is a 2-tensor (i.e. a matrix-valued function), with
 .. math::
 
    (\nabla u)_{ij} = \frac{\partial u_i}{\partial x_j},
-   (\nabla u^T)_{ij} = (\nabla u)_{ij}.
+   (\nabla u^T)_{ij} = (\nabla u)_{ji}.
 
 Note that under the incompressibility constraint `\nabla\cdot u =0`, we
 can write `\nabla\cdot\epsilon(u)=\nabla^2 u`. However, this leads to
@@ -124,8 +124,21 @@ finite element discretisations of it, and we can't use Céa's Lemma
 to estimate numerical errors in the finite element discretisation.
 Instead we have to use a more general tool, the inf-sup theorem.
 
+.. proof:exercise::
+
+   Show that the form `c(\cdot,\cdot)` is not coercive by considering
+   the case `v=0`.
+
 The inf-sup condition
 ---------------------
+
+.. tip::
+
+   The key to understanding this section and the following one is to
+   have a good recollection of the definition of dual spaces and dual
+   space norms given in the earlier section on
+   :ref:`sec-linearforms`. It is a good idea to go back and review
+   that section before you carry on.
 
 The critical tool in mixed problems is the inf-sup condition for a
 bilinear form on `V\times Q`, which says that there exists `\beta>0`
@@ -150,10 +163,11 @@ and the transpose operator `B^*:Q\to V'`, by
 
       B^*p[v] = b(v,p), \quad \forall v \in V.
 
-Here, `Bv` is the map `B` applied to `v`, i.e. an element of the dual space
-`Q'` which maps elements of `Q` to `\mathbb{R}`. `B^*p` is the image of
-the map `B^*` applied to `p`, i.e. an element of the dual space `V'`
-which maps elements of `V` to `\mathbb{R}`.
+Here, `Bv` is the map `B` applied to `v`: `Bv` is an element of the
+dual space `Q'` which itself maps elements of `Q` to
+`\mathbb{R}`. `B^*p` is the image of the map `B^*` applied to `p`:
+`B^*p` is an element of the dual space `V'` which itself maps elements
+of `V` to `\mathbb{R}`.
 
 The norm of `B^*v` is
 
@@ -161,7 +175,7 @@ The norm of `B^*v` is
 
       \|B^*q\|_{V'} = \sup_{v\in V}\frac{b(v,q)}{\|v\|_V}.
 
-Which allows us to rewrite the inf-sup condition as
+This allows us to rewrite the inf-sup condition as
 
    .. math::
 
@@ -175,7 +189,7 @@ which is also equivalent to
 
 This tells us that the map `B^*` is injective, since if there
 exist `q_1,q_2` such that `B^*q_1=B^*q_2`, then `B^*(q_1-q_2)=0
-\implies 0 = \|B^*(q_1-q_2) \geq \beta\|q_1-q_2\|_Q`, i.e.
+\implies 0 = \|B^*(q_1-q_2)\|_V \geq \beta\|q_1-q_2\|_Q`, i.e.
 `q_1=q_2`.
 
 In finite dimensions (such as for our finite element spaces),
@@ -183,7 +197,7 @@ injective `B^*` is equivalent to surjective `B` (via the rank-nullity
 theorem). In infinite dimensions, such as the case
 `\mathring{H}^1\times \mathring{L}^2` that we are considering for
 Stokes equation, the situation is more complicated and is governed by
-the Closed Range Theorem (which we allude to here but do not prove),
+the Closed Range Theorem (which we allude to here but do not state or prove),
 which states that for Hilbert spaces and continuous bilinear forms
 `b(v,q)`, injective `B^*` is indeed equivalent to surjective `B`.
 
@@ -249,6 +263,8 @@ Solveability of mixed problems
 For symmetric, mixed problems in two variables, sufficient conditions
 for existence are given by the following result of Franco Brezzi.
 
+.. _brezzi:
+
 .. proof:theorem:: Brezzi's conditions
 
    Let `a(u,v)` be a continuous bilinear form defined on `V\times V`,
@@ -279,13 +295,15 @@ for existence are given by the following result of Franco Brezzi.
       `b(v,q)` holds.
 
    Then there exists a unique solution `(u,p)` to the variational
-   problem and
+   problem and we have the stability bound
 
       .. math::
 
-	 \|u\| \leq \frac{1}{\alpha}\|f\|_V,
+	 \|u\|  \leq \frac{1}{\alpha}\|F\|_{V'}
+	 + \frac{2M}{\alpha\beta}\|G\|_{Q'},
 
-	 \|p\|_Q \leq \frac{2 M}{\alpha\beta} \|f\|_V,
+	 \|p\|_Q \leq \frac{2M}{\alpha\beta}\|F\|_{V'} +
+	\frac{2M^2}{\alpha\beta^2} \|G\|_{Q'},
 
    where `M` is the continuity constant of `a`.
 
@@ -293,28 +311,29 @@ for existence are given by the following result of Franco Brezzi.
 
    To show existence, we first note that the inf-sup condition implies
    that `B` is surjective, so we can always find `u_g\in V` such that
-   `Bu_g = g`. Now we write `u=u_g+u_0`, and we have the following
+   `Bu_g = g`. Now we write `u=u_g+u_Z`, and we have the following
    mixed problem,
 
       .. math::
 
-	 a(u_0,v) + b(v,p) = F[v] - a(u_g, v), \, \forall v \in V,
+	 a(u_Z,v) + b(v,p) = F[v] - a(u_g, v), \, \forall v \in V,
 
-	 b(u_0,q) = 0.
+	 b(u_Z,q) = 0.
 
-   Thus, `Bu_0=0`, i.e. `u_0\in Z`. Choosing `v\in Z\subset V`, we get
-
-      .. math::
-
-	 a(u_0,v) = F'[v] = F[v] - a(u_g,v), \, \forall v\in Z,
-
-   for `u_0 \in Z`. Since `a(u,v)` is coercive on `Z`, and `F'` is
-   continuous (from continuity of `F` and `a(u,v)`), Lax-Milgram tells
-   us that `u_0\in Z` exists and is unique. We now notice that
+   Thus, `Bu_Z=0`, i.e. `u_Z\in Z`. Choosing `v\in Z\subset V`, we get
 
       .. math::
+	 :label: uZ
+	    
+	 a(u_Z,v) = F'[v] = F[v] - a(u_g,v), \, \forall v\in Z,
 
-	 L[v] = F[v] - a(u_g+u_0,v) = 0 \forall v\in Z,
+   for `u_Z \in Z`. Since `a(u,v)` is coercive on `Z`, and `F'` is
+   continuous (from continuity of `F` and `a(u,v)`), Lax Milgram tells
+   us that `u_Z\in Z` exists and is unique. We now notice that
+
+      .. math::
+	 
+	 L[v] = F[v] - a(u_g+u_Z,v) = 0 \forall v\in Z,
 
    so `L[v]\in Z^0 = (\mathrm{Ker} B)^0=\mathrm{Im} B^*`. This means that there
    exists `p\in Q` such that `B^*p = L`. Hence, we have found `(u,p)`
@@ -365,42 +384,62 @@ for existence are given by the following result of Franco Brezzi.
       
       \geq \beta \|u_g\|,
 
-   by the inf-sup condition. Now we define `u_Z = u - u_g`, so that
-   `Bu_Z = Bu - Bu_g = G - G = 0`. Therefore `u_Z\in Z`.
+   by the inf-sup condition.
 
-   Then taking `v \in Z`, we have
-
-      .. math::
-
-	 a(u_Z,v) = F[v], \quad \forall v\in Z.
-
-   From the Lax-Milgram theorem we have `\|u_Z\|_V \leq
-   \|F\|_{Q'}/\alpha`.  Returning to general `v\in Q`, we rearrange
-   the variational problem to get
+   From the Lax Milgram theorem applied to :eq:`uZ`, we get
 
       .. math::
 
-	 b(p,v) = F'[v] = F[v] - a(u_Z + u_g, v), \quad \forall v \in V.
+	 \|u_Z\|_V \leq \frac{1}{\alpha}\left(\|F\|_{V'} -
+	 \sup_{v\in V}\frac{a(u_g,\cdot)}{\|v\|_V}\right)
+
+	 \leq \frac{1}{\alpha} \|F\|_{V'} + \frac{M}{\alpha}\|u_g\|_{V},
+
+	 \leq \frac{1}{\alpha}\|F\|_{V'} + \frac{M}{\alpha\beta}\|G\|_{Q'},
+
+   where `M` is the continuity constant of `a(\cdot,\cdot)`.
+
+   Then we have
+
+      .. math::
+
+	 \|u\|_V = \|u_Z + u_g \|_V \leq \|u_Z\|_V + \|u_g\|_V,
+
+	 \leq \frac{1}{\alpha}\|F\|_{V'} + \frac{M}{\alpha\beta}\|G\|_{Q'}
+	 + \frac{1}{\beta}\|G\|_{Q'},
+
+	 \leq \frac{1}{\alpha}\|F\|_{V'} + \frac{2M}{\alpha\beta}\|G\|_{Q'},
+
+   assuming that `M>\alpha` (if it is not true, just pick a bigger `M`).
+   This gives the estimate for `\|u\|_V`.
+   
+   To estimate `\|p\|_Q`, we rearrange the variational problem to get
+
+      .. math::
+
+	 b(p,v) = F'[v] = F[v] - a(u, v), \quad \forall v \in V.
 
    As discussed previously, `F'\in Z^0`, hence this equation is solveable
-   for `p_f` and we have
+   for `p` and we have
 
       .. math::
 
-	 \|F'\|_{V'} \geq \beta\|p_f\|_Q.
+	 \|F'\|_{V'} \geq \beta\|p\|_Q,
 
-   Rearranging and using the triangle inequality and the estimate for
-   `\|u_Z\|_V`, we get
+   Hence, 
 
-   .. math::
+     .. math::
 
-      \|p_f\|_Q \leq \frac{1}{\beta}\left(\|F'\|_{V'}\right)
+	\|p\|_Q\leq \frac{1}{\beta}\|F\|_{V'} + \frac{M}{\beta}\|u\|_V,
 
-      \leq \frac{1}{\beta}\left(\|F\|_{V'} + \frac{M}{\alpha}\|F\|_{V'}\right)
+	\leq \frac{1}{\beta}\|F\|_{V'} + \frac{M}{\beta}
+	\left(\frac{1}{\alpha}\|F\|_{V'} + \frac{2M}{\alpha\beta}\|G\|_{V'}
+	\right),
 
-      \leq \frac{2M}{\alpha\beta}\|F\|_{V'},
+	\leq \frac{2M}{\alpha\beta}\|F\|_{V'} + \frac{2M^2}{\alpha\beta^2}
+	\|G\|_{Q'},
 
-   assuming that `M/\alpha > 1` (otherwise pick a bigger `M`).
+   as required, having used `M>\alpha` again.
 
 Solveability of Stokes equation
 --------------------------------------------------
@@ -438,6 +477,287 @@ with the uniqueness of `p_h`. To control these issues, we need to choose
    .. math::
 
       \inf_{q\in {Q_h}}\sup_{v\in {V_h}}
-      \frac{b(v,q)}{\|v\|_{V}\|q\|_{Q}} \geq \hat{\beta},
+      \frac{b(v,q)}{\|v\|_{V}\|q\|_{Q}} \geq \beta_h,
 
-with `\hat{\beta}>0`.
+with `\beta_h>0`. Note that `\beta_h\neq \beta` in general,
+but it does not matter as long as `\beta_h` is independent
+of the mesh size parameter `h`.
+
+If the discrete inf-sup condition is satisfied then we just need to
+also check whether `a(\cdot,\cdot)` is coercive on the discrete kernel
+`Z_h` defined by
+
+   .. math::
+
+      Z_h = \left\{u\in V_h:b(u,q)=0 \,\forall q\in Q_h\right\}.
+
+Note that `Z_h\not\subset Z` in general (unless `V_h` and `Q_h` have
+been specially chosen to allow that). However, the details do not
+matter since we already noted that `a(\cdot,\cdot)` is coercive on all
+of `V`, so must be coercive on `Z_h\subset V` in particular. Hence, as
+long as the discrete inf-sup condition is satisfied, we immediately
+get existence and uniqueness of solutions of the finite element
+approximation of Stokes equation from Theorem :ref:`brezzi`, along
+with the stability bounds on `(u_h,p_h)`, but with `\beta` replaced
+by `\beta_h`.
+
+We are now in a position to estimate errors in the finite element
+approximation in a manner very similar to Céa's Lemma.
+
+.. proof:theorem::
+
+   Let `V_h\subset V` and `Q_h\subset Q` be a pair of finite element
+   spaces satisfying the discrete inf-sup condition for some
+   `\beta_h>0`. Then,
+
+      .. math::
+
+	 \|u_h - u\|_V \leq \frac{4MM_b}{\alpha\beta_h}E_u + \frac{M_b}{\alpha}
+	 E_p,
+
+	 \|p_h - p\|_V \leq
+	 \left(\frac{2M^2}{\alpha\beta_h} + \frac{2MM_b}{\beta^2}\right)E_u
+	 + \frac{3MM_b}{\alpha\beta_h}E_p,
+
+   where `M_b` is the continuity constant of `b(\cdot,\cdot)`, and
+   where we have the best approximation errors of `u` and `p` in `V_h`
+   and `Q_h` respectively,
+
+      .. math::
+
+	 E_u = \inf_{u_I\in V_h}\|u-u_I\|_V,
+
+	 E_p = \inf_{p_I\in Q_h}\|p-p_I\|_Q.
+
+.. proof:proof::
+
+   Since `V_h\subset V` and `Q_h\subset Q`, we can choose `(v,q)\in
+   V_h\times Q_h` in both the original variational problem and the
+   finite element variational problem and subtract one from the other,
+   to obtain
+
+      .. math::
+
+	 a(u_h-u,v) + b(v,p_h-p) = 0, \quad \forall v\in V_h,
+
+	 b(u_h-u,q) = 0, \quad \forall q\in Q_h.
+
+   This is the mixed finite element version of Galerkin orthogonality
+   that we saw earlier in the course. Replacing `u=u-u_I+u_I` and
+   `p=p-p_I+p_I` for `(u_I,p_I)\in V_h\times Q_h` and rearranging,
+   we get
+   
+      .. math::
+
+	 a(u_h-u_I,v) + b(v,p_h-p_I) = F_{u_I,p_I}[v] := a(u-u_I,v) + b(v,p-p_I), \quad \forall v\in V_h,
+
+	 b(u_h-u_I,q) = G_{u_I}[q] := b(u-u_I,q), \quad \forall q\in Q_h.
+
+   Hence, from the stability bound,
+
+      .. math::
+
+	 \|u_h-u_I\|_V  \leq \frac{1}{\alpha}\|F_{u_I,p_I}\|_{V'}
+	 + \frac{2M}{\alpha\beta}\|G_{u_I}\|_{Q'},
+
+	 \|p\|_Q \leq \frac{2M}{\alpha\beta}\|F_{u_I,p_I}\|_{V'} +
+	\frac{2M^2}{\alpha\beta^2} \|G_{u_I}\|_{Q'}.
+
+   Using continuity of `a(\cdot,\cdot)` and `b(\cdot,\cdot)`, we have
+
+      .. math::
+
+	 \|F_{u_I,p_I}\|_{V'} = \sup_{v\in V}\frac{a(u-u_I,v)}{\|v\|_{V}}
+	 + \sup_{v\in V}\frac{b(v,p-p_I)}{\|v\|_V}
+	 \leq M\|u-u_I\|_V + M_b\|p-p_I\|,
+
+	 \|G_{u_I}\|_{Q'} = \sup_{p\in Q}\frac{b(u-u_I,p)}{\|p\|_Q}
+	 \leq M_b\|u-u_I\|_V,
+
+   and substitution gives the result.
+
+This theorem tells us that if we can approximate the solution `(u,p)`
+well in `V_h\times Q_h`, then the finite element approximation error
+will also be small.
+
+For scalar `H^1` elliptic problems like the Poisson equation that we
+studied earlier in the course, finding a suitable `V_h` is easy, as
+any continuous finite element space will do. In contrast, for Stokes
+equation it is not straightforward to find pairs of finite element
+spaces `V_h\times Q_h` that satisfy this discrete inf-sup
+condition. For example, the simplest idea of trying `Q_h` to be P1
+(linear Lagrange elements on triangles) and `V_h` to be `(P1)^d`
+(linear Lagrange elements for each Cartesian component of velocity
+from 1 up to the dimension `d`) does not work in general. We call
+this combination P1-P1.
+
+.. proof:exercise::
+
+   Consider a square domain divided into 4 smaller and equal squares,
+   and then subdivide the squares into right-angled triangles so all
+   the hypotenuses meet in the middle (like the UK flag). Show that
+   there exists `p\in Q_h` such that `b(v,p)=0` for all `v\in V_h`.
+   (Don't forget to include the boundary conditions for `V_h` and the
+   mean zero condition for `p`.) Conclude that the inf-sup condition
+   does not hold.
+
+We now discuss some examples of finite element pairs that do satisfy
+the inf-sup condition with `\beta_h>0` independent of `h`.
+
+The MINI element
+----------------
+
+In general, the choice P1-P1 produces `\beta_h\to 0` as `h\to 0`: the
+discretisation is not stable. This means that the image of the
+divergence applied to `V_h` does not converge to `Q` as `h\to 0`. The
+way to fix this is to enrich the `(P1)^d` space for velocity, so that
+the image is larger. For the MINI element, this is done by considering
+the following finite element, P1+B3.
+
+.. proof:definition:: P1+B3
+
+   The P1+B3 element `(K,P,\mathcal{N})` is given by:
+
+   #. `K` is a triangle.
+
+   #. The shape functions are linear combinations of linear functions
+   and cubic "bubble" functions that vanish on the boundary of `K`.
+
+   #. The nodal variables are point evaluations at the vertices plus
+      point evaluation at the triangle centre.
+
+We then take `V_h` as the `(P1)^d+B3` continuous finite element space,
+leaving `Q_h` as `P1`.
+
+To prove that the MINI element satisfies the inf-sup condition, we use
+the following result.
+
+.. proof:lemma::  Fortin's trick
+
+   If there exists a linear operator `\Pi_h:V\to V_h` such that
+
+      .. math::
+
+	 b(u-\Pi_hu,q) = 0, \quad \forall v\in V,\,q\in Q_h,
+
+	 \|\Pi_hu\|_V \leq C_{\Pi}\|u\|_V,
+
+   then the discrete inf-sup condition holds.
+
+.. proof:proof::
+
+   For any `q_h\in Q_h`, we have
+
+      .. math::
+	 
+	 \sup_{v_h\in V_h}\frac{b(v_h,q_h)}{\|v_h\|_V}
+	 \geq \sup_{v\in V}\frac{b(\Pi_hv,q_h)}{\|\Pi_h v\|_V}
+	 = \sup_{v\in V}\frac{b(v,q_h)}{\|\Pi_hv\|_V}
+	 \geq \sup_{v\in V}\frac{b(v,q_h)}{C_{\Pi}\|v\|_V}
+	 \geq \frac{\beta}{C_\Pi}\|q_h\|_Q,
+
+   and rearranging and taking the infemum over `q_h\in Q_h` gives
+
+      .. math::
+
+	 \inf_{q_h\in Q_h}\sup_{v_h\in V_h}\frac{b(v_h,q_h)}{\|q_h\|_Q\|v_h\|_V}
+	 =\beta_h := \frac{\beta}{C_\Pi}.
+
+The following lemma gives a practical way to find `\Pi_h`.
+
+.. proof:lemma::
+
+   Assume that there exist two maps `\Pi_1,\Pi_2:V\to V_h`, with
+
+      .. math::
+	 :label: pi1pi2
+
+	 \|\Pi_1v\|_V \leq c_1\|v\|_V, \, \forall v\in V,
+
+	 \|\Pi_2(I-\Pi_1)v\|_V \leq c_2\|v\|_V, \, \forall v\in V,
+
+	 b(v-\Pi_2v,q_h) = 0,\, \forall v\in V,\,q_h\in Q_h,
+
+   where the constants `c_1` and `c_2` are independent of `h`. Then
+   the operator `Pi_h`, defined by
+
+      .. math::
+
+	 \Pi_hu = \Pi_1 u + \Pi_2(u - \Pi_1u),
+
+   satisfies the conditions of Fortin's trick.
+
+.. proof:proof::
+
+   We have
+
+      .. math::
+
+	 b(\Pi_hw, q_h) = b(\Pi_2(w-\Pi_1)w, q_h) + b(\Pi_1w,q_h),
+
+	 = b(w-\Pi_1w,q_h) + b(\Pi_1w,q_h)
+
+	 = b(w,q_h),
+
+   which gives the second condition of Fortin's trick, and
+
+      .. math::
+
+	 \|\Pi_hw\|_V \leq
+	 \|\Pi_2(w-\Pi_1w)\|_V + \|\Pi_1w\|_V \leq (c_1+c_2)\|w\|_V.
+
+For continuous finite element spaces, the Clement operator (which
+we shall not describe here) satifies the condition on `\Pi_1`.
+In fact, the Clement operator generally satisfies
+
+.. math::
+   :label: clement
+
+   |v-\Pi_1v|_{H^m(K)} \leq c\left(\sum_{\bar{K'} \cap \bar{K}\neq
+   0}h_{K'}^{1-m} \|v\|_{H^1(K)}\right)
+
+where `\bar{K}` is the closure of any triangle `K`, and the sum is
+taken over all triangles `K'` that share an edge or a vertex with
+triangle `K`.
+	 
+We now use this technique to prove the discrete inf-sup condition for
+the MINI element.
+
+.. proof:theorem::
+
+   The MINI element satisfies the discrete inf-sup condition.
+
+.. proof:proof::
+
+   We can use the Clement operator for `\Pi_1`. `\Pi_2:V \to
+   (B_3)^2\subset V_h` (i.e. the subspace of `V_h` of functions that
+   vanish on all vertices (and hence all edges) is defined via
+
+      .. math::
+
+	 0 = b(\Pi_2v-v,q_h), \, \forall q_h\in Q_h.
+
+   This is well defined since
+
+      .. math::
+
+	 b(\Pi_2v-v,q_h) = \int_{\Omega} q_h\nabla\cdot(\Pi_2v-v)d\,x
+
+	 = \int_\Omega (v-\Pi_2v)\nabla q_h d\, x,
+
+   where we were allowed to integrate by parts since `v,\Pi_2v,q_h`
+   are all in `H^1(\Omega)`. We see that our definition can be
+   satisfied by picking `\Pi_2v` to have the same average over a
+   triangle `K` as `v` for each triangle.
+
+   It can be shown using an inverse inequality (we will take it
+   as read here) that
+
+      .. math::
+
+	 \|\Pi_2v\|_{H^r(K)} \leq ch_K^{-r}\|v\|_{L^2(K)}, \,
+	 \forall v \in V, \, r=0,1.
+
+   Combining this with Equation :ref:`clement` gives Equation :ref:`pi1pi2`
+   and hence we have shown that `\Pi_h` has the properties needed for
+   Fortin's trick.
