@@ -410,8 +410,8 @@ for existence are given by the following result of Franco Brezzi.
 
 	 \leq \frac{1}{\alpha}\|F\|_{V'} + \frac{2M}{\alpha\beta}\|G\|_{Q'},
 
-   assuming that `M>\alpha` (if it is not true, just pick a bigger `M`).
-   This gives the estimate for `\|u\|_V`.
+   making use of `M>\alpha` (we have `\alpha \|u\|^2 \leq a(u,u) \leq M\|u\|^2` for any `u \in V`).  This gives the estimate for
+   `\|u\|_V`.
    
    To estimate `\|p\|_Q`, we rearrange the variational problem to get
 
@@ -512,12 +512,10 @@ approximation in a manner very similar to Céa's Lemma.
 
       .. math::
 
-	 \|u_h - u\|_V \leq \frac{4MM_b}{\alpha\beta_h}E_u + \frac{M_b}{\alpha}
-	 E_p,
+	 \|u_h - u\|_V \leq  \frac{4MM_b}{\alpha\beta}E_u + \frac{M_b}{\alpha}E_p,
 
-	 \|p_h - p\|_V \leq
-	 \left(\frac{2M^2}{\alpha\beta_h} + \frac{2MM_b}{\beta^2}\right)E_u
-	 + \frac{3MM_b}{\alpha\beta_h}E_p,
+	 \|p_h - p\|_V \leq \frac{3M^2M_b}{\alpha\beta^2}E_u
+	+ \frac{3MM_b}{\alpha\beta}E_p.
 
    where `M_b` is the continuity constant of `b(\cdot,\cdot)`, and
    where we have the best approximation errors of `u` and `p` in `V_h`
@@ -560,7 +558,7 @@ approximation in a manner very similar to Céa's Lemma.
 	 \|u_h-u_I\|_V  \leq \frac{1}{\alpha}\|F_{u_I,p_I}\|_{V'}
 	 + \frac{2M}{\alpha\beta}\|G_{u_I}\|_{Q'},
 
-	 \|p\|_Q \leq \frac{2M}{\alpha\beta}\|F_{u_I,p_I}\|_{V'} +
+	 \|p_h-p_I\|_Q \leq \frac{2M}{\alpha\beta}\|F_{u_I,p_I}\|_{V'} +
 	\frac{2M^2}{\alpha\beta^2} \|G_{u_I}\|_{Q'}.
 
    Using continuity of `a(\cdot,\cdot)` and `b(\cdot,\cdot)`, we have
@@ -572,9 +570,52 @@ approximation in a manner very similar to Céa's Lemma.
 	 \leq M\|u-u_I\|_V + M_b\|p-p_I\|,
 
 	 \|G_{u_I}\|_{Q'} = \sup_{p\in Q}\frac{b(u-u_I,p)}{\|p\|_Q}
-	 \leq M_b\|u-u_I\|_V,
+	 \leq M_b\|u-u_I\|_V.
 
-   and substitution gives the result.
+   Substitution then gives (making use of `M_b\geq\beta`, which comes
+   from the fact that for any `u\in V` there exists `q \in Q` such that
+   `\beta\|u\|_V\|q\|_Q\leq b(u,q)\leq M_b\|u\|_V\|q\|_Q`, hence the result)
+
+      .. math::
+
+	 \|u_h-u_I\|_V  \leq \frac{1}{\alpha}\left(M\|u-u_I\|_V +
+	 M_b\|p-p_I\|\right)
+	 + \frac{2M}{\alpha\beta}M_b\|u-u_I\|_V,
+
+	 \leq \frac{3MM_b}{\alpha\beta}\|u-u_I\|_V + \frac{M_b}{\alpha}
+	 \|p-p_I\|_V,
+
+   and
+
+      .. math::
+	   
+	 \|p_h-p_I\|_Q \leq \frac{2M}{\alpha\beta}
+	 \left(M\|u-u_I\|_V +
+	 M_b\|p-p_I\|\right)
+	 +
+	\frac{2M^2}{\alpha\beta^2}M_b\|u-u_I\|_V
+
+	\leq \frac{3M^2M_b}{\alpha\beta^2}\|u-u_I\|_V
+	+ \frac{2MM_b}{\alpha\beta}\|p-p_I\|_V.
+	 
+   We then use the triangle inequality to write
+
+      .. math::
+
+	 \|u-u_h\|_V \leq \|u-u_I\|_V + \|u_h-u_I\|_V,
+
+	 \leq  \frac{4MM_b}{\alpha\beta}\|u-u_I\|_V + \frac{M_b}{\alpha}
+	 \|p-p_I\|_V,
+   
+      .. math::
+
+	 \|p-p_h\|_Q \leq \|p-p_I\|_V + \|p_h-p_I\|_V,
+
+	 \leq \frac{3M^2M_b}{\alpha\beta^2}\|u-u_I\|_V
+	+ \frac{3MM_b}{\alpha\beta}\|p-p_I\|_V.
+
+   Finally, taking the infimum over the all `u_I\in V` and all `p_I\in V`
+   gives the result.
 
 This theorem tells us that if we can approximate the solution `(u,p)`
 well in `V_h\times Q_h`, then the finite element approximation error
