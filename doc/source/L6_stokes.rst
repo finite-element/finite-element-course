@@ -1,5 +1,7 @@
 .. default-role:: math
 
+.. _stokes:
+
 Stokes equation (Mastery topic)
 ===============================
 
@@ -60,6 +62,8 @@ vanish on the boundary, and `Q=\mathring{L}^2(\Omega)`, with
 
    \mathring{L}^2(\Omega)=
    \left\{p\in L^2(\Omega): \int_\Omega p = 0\right\}.
+
+.. _weak_stokes:
 
 .. proof:definition::
 
