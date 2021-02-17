@@ -37,6 +37,8 @@ basis for `P`. It turns out to be most convenient to specify the set
 of nodes for an element, and then derive an appropriate basis for
 `P` from that. In particular:
 
+.. _nodalbasis:
+
 .. proof:definition::
 
    Let `N = \{\phi^*_j\}` be a basis for `P^*`.  A *nodal

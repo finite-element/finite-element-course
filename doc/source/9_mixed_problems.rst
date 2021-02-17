@@ -144,10 +144,10 @@ about how to do that.
 Tabulation
 ..........
 
-In order to tabulate the element, we can use :numref:`vector_basis`. We first
+In order to tabulate the element, we can use :eq:`vector_basis`. We first
 call the tabulate method from the input
 :class:`~fe_utils.finite_elements.FiniteElement`, and we use this and
-:numref:`vector_basis` to produce the array to return. Notice that the array
+:eq:`vector_basis` to produce the array to return. Notice that the array
 will both have a basis functions dimension which is `d` times longer than the
 input element, and will also have an extra dimension to account for the
 multiplication by `\mathbf{e}_{i\,\%\,d}`. This means that the tabulation array
@@ -157,19 +157,123 @@ The :class:`VectorFiniteElement` will need to keep a reference to the
 input :class:`~fe_utils.finite_elements.FiniteElement` in order to facilitate
 tabulation. 
 
+Nodes
+.....
+
+Even though we didn't need the nodes of the :class:`VectorFiniteElement` to
+construct its basis, we will need them to implement interpolation. In
+:numref:`Definition %s <nodalbasis>` we learned that
+the nodes of a finite element are related to the corresponding nodal basis by:
+
+.. math::
+    :label:
+
+    \mathbf{\Phi}^*_i(\mathbf{\Phi}_j) = \delta_{ij}
+
+From :eq:`vector_basis` and assuming, as we have throughout the course,
+that the scalar finite element has point evaluation nodes given by:
+
+.. math::
+    :label:
+
+    \Phi_i(v) = v(X_i),
+
+it follows that:
+
+.. math::
+    :label: vectornodes
+
+    \mathbf{\Phi}^*_i(v) & = \Phi^*_{i\,//\,d}(\mathbf{e}_{i\,\%\,d}\cdot v)
+
+    & = \mathbf{e}_{i\,\%\,d}\cdot v(X_{i\,//\,d})
+
+.. hint::
+
+    To see that this is the correct nodal basis, choose
+    :math:`v=\mathbf{\Phi}_j` in :eq:`vectornodes` and substitute
+    :eq:`vector_basis` for :math:`\mathbf{\Phi}_j`.
+
+This means that the correct :data:`VectorFiniteElement.nodes` attribute is
+the list of nodal points from the input
+:class:`~fe_utils.finite_elements.FiniteElement` but with each point repeated
+`d` times. It will also be necessary to add another attribute, perhaps
+:data:`node_weights` which is a rank 2 array whose `i`-th row is the correct
+canonical basis vector to contract with the function value at the `i`-th node (`\mathbf{e}_{i\,\%\,d}`).
+
+
 Vector-valued function spaces
 -----------------------------
 
-Assuming we correctly implement :class:`VectorFunctionSpace`, 
+Assuming we correctly implement :class:`VectorFiniteElement`, 
 :class:`~fe_utils.function_spaces.FunctionSpace` should work out of the box.
 In particular, the global numbering algorithm only depends on having a correct
 local numbering so this should work unaltered. Indeed, one way to check your
 :class:`VectorElement` implementation is to use
-:filename:`plot_function_space_nodes` and check that you have two adjacent
+:file:`plot_function_space_nodes` and check that you have two adjacent
 numbers printed over each other at each node location.
 
 Functions in vector-valued spaces
 ---------------------------------
 
+The general form of a function in a vector-valued function space is:
 
+.. math::
+    :label:
 
+    f = f_i \mathbf{\Phi}_i(X).
+
+That is to say, the basis functions are vector valued and their coefficients
+are still scalar. This means that if the :class:`VectorFiniteElement` had a
+correct entity-node list then the core functionality of the existing
+:class:`~fe_utils.function_spaces.Function` will automatically be correct. In
+particular, the array of values will have the correct extent. However,
+interpolation and plotting of vector valued fields will require some
+adjustment.
+
+Interpolating into vector-valued spaces
+.......................................
+
+Since the form of the nodes of a :class:`VectorFiniteElement` is different from
+that of a scalar element, there will be some changes required in the
+:meth:`~fe_utils.function_spaces.Function.interpolate()` method. Specifically,
+in these two lines:
+
+.. code-block:: python3
+
+    node_coords = np.dot(coord_map, vertex_coords)
+
+    self.values[fs.cell_nodes[c, :]] = [fn(x) for x in node_coords]
+
+The first of these lines may need adjusting because :data:`coord_map` is the
+result of tabulating the :class:`VectorFiniteElement` and, depending on where
+the additional rank was added to the tabulation matrix, the :func:`np.dot` may
+need to be replaced by a different tensor contraction.
+
+The second line will need to take into account the dot product with the
+canonical basis from :eq:`vectornodes`. These changes will need to be made
+conditional on the class of finite element passed in, so that the code doesn't
+break in the scalar element case.
+
+Plotting functions in vector-valued spaces
+..........................................
+
+.. note:: 
+
+    Quiver plots.
+
+Mixed function spaces
+---------------------
+
+The Stokes' equations are defined over the mixed function space `W = V \times Q`.
+Here "mixed" simply means that there are two solution variables, and therefore
+two solution spaces. Functions in `W` are pairs `(u, p)` where `u\in V` and
+`p\in Q`. If `\{\phi_i\}_{i=0}^{n-1}` is a basis for `V` and
+`\{\psi_j\}_{j=0}^{m-1}` then a basis for `W` is given by:
+
+.. math::
+
+    \{\omega_i\}_{i=0}^{n+m-1}=\{(\phi_i, 0)\}_{i=0}^{n-1} \cup \{(0,
+    \psi_{j-n})\}_{j=n}^{n+m-1}.
+    
+This in turn enables us to write `w\in W` in the form `w=w_i\omega_i` as we
+would expect for a function in a finite element space.
