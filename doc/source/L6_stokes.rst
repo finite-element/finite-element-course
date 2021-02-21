@@ -217,7 +217,7 @@ theorem). In infinite dimensions, such as the case
 `\mathring{H}^1\times \mathring{L}^2` that we are considering for
 Stokes equation, the situation is more complicated and is governed by
 the Closed Range Theorem (which we allude to here but do not state or prove),
-which states that for Hilbert spaces and continuous bilinear forms
+which tells us that for Hilbert spaces and continuous bilinear forms
 `b(v,q)`, injective `B^*` is indeed equivalent to surjective `B`.
 
 The Closed Range Theorem (and the rank-nullity theorem, its finite
