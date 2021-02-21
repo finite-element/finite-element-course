@@ -86,7 +86,7 @@ vanish on the boundary, and `Q=\mathring{L}^2(\Omega)`, with
    .. math::
       :label:
 
-      a(u,v) = \int_\Omega \epsilon(u):\epsilon(v)d\, x,
+      a(u,v) = \mu\int_\Omega \epsilon(u):\epsilon(v)d\, x,
 
       b(v,q) = \int_\Omega q \nabla\cdot v d\, x.
 
@@ -185,7 +185,7 @@ dual space `Q'` which itself maps elements of `Q` to
 `B^*p` is an element of the dual space `V'` which itself maps elements
 of `V` to `\mathbb{R}`.
 
-The norm of `B^*v` is
+The norm of `B^*q` is
 
    .. math::
       :label:
@@ -265,7 +265,7 @@ spaces.
    vanish on `Z` i.e.
 
       .. math::
-   :label:
+	 :label:
 
 	 Z^0 = \left\{ F\in Q': F[q]=0\, \forall q\in Z\right\}.
 
@@ -297,7 +297,7 @@ for existence are given by the following result of Franco Brezzi.
    .. math::
       :label:
 
-      a(u,v) + b(v,p) + b(u,q) = F[v], \, \forall v \in V,
+      a(u,v) + b(v,p) = F[v], \, \forall v \in V,
 
       b(u,q) = G[q], \, \forall q\in Q,
 
@@ -325,7 +325,7 @@ for existence are given by the following result of Franco Brezzi.
       .. math::
 	 :label:
 
-	 \|u\|  \leq \frac{1}{\alpha}\|F\|_{V'}
+	 \|u\|_V  \leq \frac{1}{\alpha}\|F\|_{V'}
 	 + \frac{2M}{\alpha\beta}\|G\|_{Q'},
 
 	 \|p\|_Q \leq \frac{2M}{\alpha\beta}\|F\|_{V'} +
@@ -495,7 +495,7 @@ such that
 
       a(v,v) \geq \alpha \|v\|^2_V.
 
-This result is called the Korn identity (also beyond our scope). Then
+This result is called Korn's identity (also beyond our scope). Then
 of course, `a` is in particular coercive on the divergence-free
 subspace `Z`. Then we immediately get solveability of the variational
 Stokes problem.
@@ -599,7 +599,7 @@ approximation in a manner very similar to Céa's Lemma.
    Hence, from the stability bound,
 
       .. math::
-   :label:
+	 :label:
 
 	 \|u_h-u_I\|_V  \leq \frac{1}{\alpha}\|F_{u_I,p_I}\|_{V'}
 	 + \frac{2M}{\alpha\beta}\|G_{u_I}\|_{Q'},
@@ -624,7 +624,7 @@ approximation in a manner very similar to Céa's Lemma.
    `\beta\|u\|_V\|q\|_Q\leq b(u,q)\leq M_b\|u\|_V\|q\|_Q`, hence the result)
 
       .. math::
-   :label:
+	 :label:
 
 	 \|u_h-u_I\|_V  \leq \frac{1}{\alpha}\left(M\|u-u_I\|_V +
 	 M_b\|p-p_I\|\right)
@@ -713,13 +713,14 @@ the following finite element, P1+B3.
    #. `K` is a triangle.
 
    #. The shape functions are linear combinations of linear functions
-   and cubic "bubble" functions that vanish on the boundary of `K`.
+      and cubic "bubble" functions that vanish on the boundary of `K`.
 
    #. The nodal variables are point evaluations at the vertices plus
       point evaluation at the triangle centre.
 
-We then take `V_h` as the `(P1)^d+B3` continuous finite element space,
-leaving `Q_h` as `P1`.
+We then take `V_h` as the `(P1+B3)^d` continuous finite element space (i.e.
+each Cartesian component of the functions in `V_h` is from `P1+B3`.
+We choose `P1` for `Q_h`.
 
 To prove that the MINI element satisfies the inf-sup condition, we use
 the following result.
@@ -750,10 +751,10 @@ the following result.
 	 \geq \sup_{v\in V}\frac{b(v,q_h)}{C_{\Pi}\|v\|_V}
 	 \geq \frac{\beta}{C_\Pi}\|q_h\|_Q,
 
-   and rearranging and taking the infemum over `q_h\in Q_h` gives
+   and rearranging and taking the infimum over `q_h\in Q_h` gives
 
       .. math::
-   :label:
+	 :label:
 
 	 \inf_{q_h\in Q_h}\sup_{v_h\in V_h}\frac{b(v_h,q_h)}{\|q_h\|_Q\|v_h\|_V}
 	 =\beta_h := \frac{\beta}{C_\Pi}.
@@ -774,7 +775,7 @@ The following lemma gives a practical way to find `\Pi_h`.
 	 b(v-\Pi_2v,q_h) = 0,\, \forall v\in V,\,q_h\in Q_h,
 
    where the constants `c_1` and `c_2` are independent of `h`. Then
-   the operator `Pi_h`, defined by
+   the operator `\Pi_h`, defined by
 
       .. math::
 	 :label:
@@ -808,11 +809,11 @@ For continuous finite element spaces, the Clement operator (which
 we shall not describe here) satifies the condition on `\Pi_1`.
 In fact, the Clement operator generally satisfies
 
-.. math::
-   :label: clement
+   .. math::
+      :label: clement
 
-   |v-\Pi_1v|_{H^m(K)} \leq c\left(\sum_{\bar{K'} \cap \bar{K}\neq
-   0}h_{K'}^{1-m} \|v\|_{H^1(K)}\right)
+      |v-\Pi_1v|_{H^m(K)} \leq c\left(\sum_{\bar{K'} \cap \bar{K}\neq
+      0}h_{K'}^{1-m} \|v\|_{H^1(K)}\right)
 
 where `\bar{K}` is the closure of any triangle `K`, and the sum is
 taken over all triangles `K'` that share an edge or a vertex with
@@ -859,6 +860,6 @@ the MINI element.
 	 \|\Pi_2v\|_{H^r(K)} \leq ch_K^{-r}\|v\|_{L^2(K)}, \,
 	 \forall v \in V, \, r=0,1.
 
-   Combining this with Equation :ref:`clement` gives Equation :ref:`pi1pi2`
+   Combining this with Equation :eq:`clement` gives Equation :eq:`pi1pi2`
    and hence we have shown that `\Pi_h` has the properties needed for
    Fortin's trick.
