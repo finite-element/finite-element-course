@@ -12,6 +12,7 @@ In this section we consider finite element discretisations of the Stokes
 equation of a viscous fluid, given by
 
 .. math::
+   :label:
 
    -\mu\nabla\cdot\epsilon(u) + \nabla p = f, \quad \nabla\cdot u = 0,
     \quad \epsilon(u) = \frac{1}{2}\left( \nabla u + \nabla u^T\right),
@@ -30,6 +31,7 @@ boundary condition `u=0` on the entire boundary `\partial\Omega`. Note
 that `\nabla u` is a 2-tensor (i.e. a matrix-valued function), with
 
 .. math::
+   :label:
 
    (\nabla u)_{ij} = \frac{\partial u_i}{\partial x_j},
    (\nabla u^T)_{ij} = (\nabla u)_{ji}.
@@ -45,6 +47,7 @@ these equations for `p` up to an additive constant. To fix that constant,
 with no slip boundary conditions we additionally require
 
 .. math::
+   :label:
 
    \int_\Omega p d\,x = 0.
 
@@ -59,6 +62,7 @@ which is the subspace of `H^1(\Omega)` consisting of functions that
 vanish on the boundary, and `Q=\mathring{L}^2(\Omega)`, with
 
 .. math::
+   :label:
 
    \mathring{L}^2(\Omega)=
    \left\{p\in L^2(\Omega): \int_\Omega p = 0\right\}.
@@ -71,6 +75,7 @@ vanish on the boundary, and `Q=\mathring{L}^2(\Omega)`, with
    V\times Q` such that
 
    .. math::
+      :label:
 
       a(u,v) + b(v, p) & = \int_\Omega f\cdot v d\, x,
       
@@ -79,6 +84,7 @@ vanish on the boundary, and `Q=\mathring{L}^2(\Omega)`, with
    where
 
    .. math::
+      :label:
 
       a(u,v) = \int_\Omega \epsilon(u):\epsilon(v)d\, x,
 
@@ -105,6 +111,7 @@ problem as finding `U\in X` such that
 where for the case of Stokes equation,
 
    .. math::
+      :label:
 
       c(U,W) = a(u,v) + b(v,p) + b(u,q), \quad F(W)=\int_{\Omega}f\cdot v d\, x.
 
@@ -113,12 +120,14 @@ There is a challenge with Stokes equation which is that it is not
 coercive, i.e. there does not exist a constant `C>0` such that
 
    .. math::
+      :label:
    
       \|U\|^2_X \leq Cc(U,U), \quad \forall U\in X,
 
 where here we use the product norm
 
    .. math::
+      :label:
 
       \|U\|^2_X = \|u\|_{H^1(\Omega)}^2 + \|p\|_{L^2(\Omega)}^2.
 
@@ -149,6 +158,7 @@ bilinear form on `V\times Q`, which says that there exists `\beta>0`
 such that
 
    .. math::
+      :label:
 
       \inf_{0\neq q\in Q}\sup_{0 \neq v\in V} \frac{b(v,q)}{\|v\|_V\|q\|_Q}
       \geq \beta.
@@ -158,12 +168,14 @@ To understand this condition, we consider the map `B:V\to Q'`
 given by
 
    .. math::
+      :label:
 
       Bv[p] = b(v,p), \, \forall p \in Q,
 
 and the transpose operator `B^*:Q\to V'`, by
 
    .. math::
+      :label:
 
       B^*p[v] = b(v,p), \quad \forall v \in V.
 
@@ -176,18 +188,21 @@ of `V` to `\mathbb{R}`.
 The norm of `B^*v` is
 
    .. math::
+      :label:
 
       \|B^*q\|_{V'} = \sup_{v\in V}\frac{b(v,q)}{\|v\|_V}.
 
 This allows us to rewrite the inf-sup condition as
 
    .. math::
+      :label:
 
       \inf_{q\in Q} \frac{\|B^*q\|_{V'}}{\|q\|_Q} \geq \beta,
 
 which is also equivalent to
 
    .. math::
+      :label:
 
       \|B^*q\|_{V'} \geq \beta\|q\|_Q, \, \forall q\in Q.
 
@@ -215,6 +230,7 @@ spaces.
    perpendicular space `Z^\perp` of `Z` in `Q` is
 
       .. math::
+	 :label:
 
 	 Z^{\perp} = \left\{ q\in Q: \langle q,p \rangle_Q = 0, \,
 	 \forall p \in Q\right\}.
@@ -229,6 +245,7 @@ This means that for any `F\in \mathrm{Im}(B^*)`, we can find `q
 \in (\mathrm{Ker}B^*)^\perp` such that `B^*q=F`. Further, we have
 
    .. math::
+      :label:
 
       \|F\|_{V'} \geq \beta\|q\|_Q,
 
@@ -248,6 +265,7 @@ spaces.
    vanish on `Z` i.e.
 
       .. math::
+   :label:
 
 	 Z^0 = \left\{ F\in Q': F[q]=0\, \forall q\in Z\right\}.
 
@@ -256,6 +274,7 @@ Closed Range Theorem for infinity dimensional Hilbert spaces) tells
 us that
 
    .. math::
+      :label:
 
       \mathrm{Im}(B^*) = (\mathrm{Ker} B^*)^0.
 
@@ -276,6 +295,7 @@ for existence are given by the following result of Franco Brezzi.
    Consider the variational problem for `(u,p)\in V\times Q`,
 
    .. math::
+      :label:
 
       a(u,v) + b(v,p) + b(u,q) = F[v], \, \forall v \in V,
 
@@ -287,6 +307,7 @@ for existence are given by the following result of Franco Brezzi.
    `Z` by
 
    .. math::
+      :label:
 
       Z = \left\{u\in V: b(u,q)=0 \forall q\in Q\right\}.
 
@@ -302,6 +323,7 @@ for existence are given by the following result of Franco Brezzi.
    problem and we have the stability bound
 
       .. math::
+	 :label:
 
 	 \|u\|  \leq \frac{1}{\alpha}\|F\|_{V'}
 	 + \frac{2M}{\alpha\beta}\|G\|_{Q'},
@@ -319,6 +341,7 @@ for existence are given by the following result of Franco Brezzi.
    mixed problem,
 
       .. math::
+	 :label:
 
 	 a(u_Z,v) + b(v,p) = F[v] - a(u_g, v), \, \forall v \in V,
 
@@ -336,6 +359,7 @@ for existence are given by the following result of Franco Brezzi.
    us that `u_Z\in Z` exists and is unique. We now notice that
 
       .. math::
+	 :label:
 	 
 	 L[v] = F[v] - a(u_g+u_Z,v) = 0 \forall v\in Z,
 
@@ -349,6 +373,7 @@ for existence are given by the following result of Franco Brezzi.
    of the equations for the two solutions, and get
 
       .. math::
+	 :label:
 
 	 a(u,v) + b(v,p) = 0, \, \forall v\in V,
 
@@ -358,12 +383,14 @@ for existence are given by the following result of Franco Brezzi.
    and taking `v=u` gives
 
       .. math::
+	 :label:
 
 	 0 = a(u,u) \geq \alpha\|u\|_V^2 \implies u=0.
 
    Substituting this into the problem for `(u,p)` gives
 
       .. math::
+	 :label:
 
 	 b(v,p) = 0, \, \forall v\in V.
 
@@ -375,12 +402,14 @@ for existence are given by the following result of Franco Brezzi.
    `B` to find `u_g` such that `Bu_g=G`. This means that
 
    .. math::
+      :label:
 
       b(q,u_g) = G[q], \forall q \in Q,
 
    Then, for all `q\in Q`,
 
    .. math::
+      :label:
 
       \|G\|_{Q'} = \sup_{q\in Q}\frac{b(q,u_g)}{\|q\|_Q}
 
@@ -393,6 +422,7 @@ for existence are given by the following result of Franco Brezzi.
    From the Lax Milgram theorem applied to :eq:`uZ`, we get
 
       .. math::
+	 :label:
 
 	 \|u_Z\|_V \leq \frac{1}{\alpha}\left(\|F\|_{V'} -
 	 \sup_{v\in V}\frac{a(u_g,\cdot)}{\|v\|_V}\right)
@@ -406,6 +436,7 @@ for existence are given by the following result of Franco Brezzi.
    Then we have
 
       .. math::
+	 :label:
 
 	 \|u\|_V = \|u_Z + u_g \|_V \leq \|u_Z\|_V + \|u_g\|_V,
 
@@ -420,6 +451,7 @@ for existence are given by the following result of Franco Brezzi.
    To estimate `\|p\|_Q`, we rearrange the variational problem to get
 
       .. math::
+	 :label:
 
 	 b(p,v) = F'[v] = F[v] - a(u, v), \quad \forall v \in V.
 
@@ -427,12 +459,14 @@ for existence are given by the following result of Franco Brezzi.
    for `p` and we have
 
       .. math::
+	 :label:
 
 	 \|F'\|_{V'} \geq \beta\|p\|_Q,
 
    Hence, 
 
      .. math::
+	:label:
 
 	\|p\|_Q\leq \frac{1}{\beta}\|F\|_{V'} + \frac{M}{\beta}\|u\|_V,
 
@@ -457,6 +491,7 @@ that `a` is coercive on the whole of `V`, i.e. there exists `\alpha>0`
 such that
 
    .. math::
+      :label:
 
       a(v,v) \geq \alpha \|v\|^2_V.
 
@@ -479,6 +514,7 @@ with the uniqueness of `p_h`. To control these issues, we need to choose
 `V_h` and `Q_h` such that we have the discrete inf-sup condition
 
    .. math::
+      :label:
 
       \inf_{q\in {Q_h}}\sup_{v\in {V_h}}
       \frac{b(v,q)}{\|v\|_{V}\|q\|_{Q}} \geq \beta_h,
@@ -492,6 +528,7 @@ also check whether `a(\cdot,\cdot)` is coercive on the discrete kernel
 `Z_h` defined by
 
    .. math::
+      :label:
 
       Z_h = \left\{u\in V_h:b(u,q)=0 \,\forall q\in Q_h\right\}.
 
@@ -515,6 +552,7 @@ approximation in a manner very similar to Céa's Lemma.
    `\beta_h>0`. Then,
 
       .. math::
+	 :label:
 
 	 \|u_h - u\|_V \leq  \frac{4MM_b}{\alpha\beta}E_u + \frac{M_b}{\alpha}E_p,
 
@@ -526,6 +564,7 @@ approximation in a manner very similar to Céa's Lemma.
    and `Q_h` respectively,
 
       .. math::
+	 :label:
 
 	 E_u = \inf_{u_I\in V_h}\|u-u_I\|_V,
 
@@ -539,6 +578,7 @@ approximation in a manner very similar to Céa's Lemma.
    to obtain
 
       .. math::
+	 :label:
 
 	 a(u_h-u,v) + b(v,p_h-p) = 0, \quad \forall v\in V_h,
 
@@ -550,6 +590,7 @@ approximation in a manner very similar to Céa's Lemma.
    we get
    
       .. math::
+	 :label:
 
 	 a(u_h-u_I,v) + b(v,p_h-p_I) = F_{u_I,p_I}[v] := a(u-u_I,v) + b(v,p-p_I), \quad \forall v\in V_h,
 
@@ -558,6 +599,7 @@ approximation in a manner very similar to Céa's Lemma.
    Hence, from the stability bound,
 
       .. math::
+   :label:
 
 	 \|u_h-u_I\|_V  \leq \frac{1}{\alpha}\|F_{u_I,p_I}\|_{V'}
 	 + \frac{2M}{\alpha\beta}\|G_{u_I}\|_{Q'},
@@ -568,6 +610,7 @@ approximation in a manner very similar to Céa's Lemma.
    Using continuity of `a(\cdot,\cdot)` and `b(\cdot,\cdot)`, we have
 
       .. math::
+	 :label:
 
 	 \|F_{u_I,p_I}\|_{V'} = \sup_{v\in V}\frac{a(u-u_I,v)}{\|v\|_{V}}
 	 + \sup_{v\in V}\frac{b(v,p-p_I)}{\|v\|_V}
@@ -581,6 +624,7 @@ approximation in a manner very similar to Céa's Lemma.
    `\beta\|u\|_V\|q\|_Q\leq b(u,q)\leq M_b\|u\|_V\|q\|_Q`, hence the result)
 
       .. math::
+   :label:
 
 	 \|u_h-u_I\|_V  \leq \frac{1}{\alpha}\left(M\|u-u_I\|_V +
 	 M_b\|p-p_I\|\right)
@@ -592,6 +636,7 @@ approximation in a manner very similar to Céa's Lemma.
    and
 
       .. math::
+	 :label:
 	   
 	 \|p_h-p_I\|_Q \leq \frac{2M}{\alpha\beta}
 	 \left(M\|u-u_I\|_V +
@@ -605,6 +650,7 @@ approximation in a manner very similar to Céa's Lemma.
    We then use the triangle inequality to write
 
       .. math::
+	 :label:
 
 	 \|u-u_h\|_V \leq \|u-u_I\|_V + \|u_h-u_I\|_V,
 
@@ -612,6 +658,7 @@ approximation in a manner very similar to Céa's Lemma.
 	 \|p-p_I\|_V,
    
       .. math::
+	 :label:
 
 	 \|p-p_h\|_Q \leq \|p-p_I\|_V + \|p_h-p_I\|_V,
 
@@ -682,6 +729,7 @@ the following result.
    If there exists a linear operator `\Pi_h:V\to V_h` such that
 
       .. math::
+	 :label:
 
 	 b(u-\Pi_hu,q) = 0, \quad \forall v\in V,\,q\in Q_h,
 
@@ -694,6 +742,7 @@ the following result.
    For any `q_h\in Q_h`, we have
 
       .. math::
+	 :label:
 	 
 	 \sup_{v_h\in V_h}\frac{b(v_h,q_h)}{\|v_h\|_V}
 	 \geq \sup_{v\in V}\frac{b(\Pi_hv,q_h)}{\|\Pi_h v\|_V}
@@ -704,6 +753,7 @@ the following result.
    and rearranging and taking the infemum over `q_h\in Q_h` gives
 
       .. math::
+   :label:
 
 	 \inf_{q_h\in Q_h}\sup_{v_h\in V_h}\frac{b(v_h,q_h)}{\|q_h\|_Q\|v_h\|_V}
 	 =\beta_h := \frac{\beta}{C_\Pi}.
@@ -727,6 +777,7 @@ The following lemma gives a practical way to find `\Pi_h`.
    the operator `Pi_h`, defined by
 
       .. math::
+	 :label:
 
 	 \Pi_hu = \Pi_1 u + \Pi_2(u - \Pi_1u),
 
@@ -737,6 +788,7 @@ The following lemma gives a practical way to find `\Pi_h`.
    We have
 
       .. math::
+	 :label:
 
 	 b(\Pi_hw, q_h) = b(\Pi_2(w-\Pi_1)w, q_h) + b(\Pi_1w,q_h),
 
@@ -747,6 +799,7 @@ The following lemma gives a practical way to find `\Pi_h`.
    which gives the second condition of Fortin's trick, and
 
       .. math::
+	 :label:
 
 	 \|\Pi_hw\|_V \leq
 	 \|\Pi_2(w-\Pi_1w)\|_V + \|\Pi_1w\|_V \leq (c_1+c_2)\|w\|_V.
@@ -779,12 +832,14 @@ the MINI element.
    vanish on all vertices (and hence all edges) is defined via
 
       .. math::
+	 :label:
 
 	 0 = b(\Pi_2v-v,q_h), \, \forall q_h\in Q_h.
 
    This is well defined since
 
       .. math::
+	 :label:
 
 	 b(\Pi_2v-v,q_h) = \int_{\Omega} q_h\nabla\cdot(\Pi_2v-v)d\,x
 
@@ -799,6 +854,7 @@ the MINI element.
    as read here) that
 
       .. math::
+	 :label:
 
 	 \|\Pi_2v\|_{H^r(K)} \leq ch_K^{-r}\|v\|_{L^2(K)}, \,
 	 \forall v \in V, \, r=0,1.
