@@ -514,7 +514,7 @@ first do this for `P1`.
    polynomials. Let `N` be the set of nodal variables given by point
    evaluation at each edge midpoint together with the nodal variables
    given by integral of the function along each edge. Show that `N`
-   does not determine `P`.
+   determines `P`.
 
 This technique can then be extended to degree 2.
    
