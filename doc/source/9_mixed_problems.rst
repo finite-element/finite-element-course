@@ -21,7 +21,7 @@ Stokes problem presented in :numref:`Definition %s <weak_stokes>` is find
 `(u,p)\in V\times Q` such that:
 
 .. math::
-    :label:
+    :label: stokes_ch9
 
     a(u,v) + b(v, p) & = \int_\Omega f\cdot v\,\mathrm{d}\, x,
       
@@ -257,7 +257,7 @@ Plotting functions in vector-valued spaces
 
 The coloured surface plots that we've used thus far for two-dimensional scalar
 functions don't extend easily to vector quantities. Instead, a frequently used
-visualisation technique is the quiver plot. This associates draws a set of
+visualisation technique is the quiver plot. This draws a set of
 arrows representing the function value at a set of points. For our purposes,
 the nodes of the function space in question are a good choice of evaluation
 points. :numref:`qplot` provides the code you will need. Notice that at line 3
@@ -306,7 +306,7 @@ Once this code has been inserted, then running the code in
     fs = FunctionSpace(m, ve)
     f = Function(fs)
     f.interpolate(lambda x: (2*pi*(1 - cos(2*pi*x[0]))*sin(2*pi*x[1]),
-                            -2*pi*(1 - cos(2*pi*x[1]))*sin(2*pi*x[0])))
+                             -2*pi*(1 - cos(2*pi*x[1]))*sin(2*pi*x[0])))
     f.plot()
 
 .. _quiverplot:
@@ -403,7 +403,7 @@ where:
 
     U_i = u_i = w_i,
 
-    P_i = p_i = w_{i-m}.
+    P_i = p_i = w_{i+m}.
 
 This means that the assembly of the mixed problem comes down to the assembly of
 several finite operators of the form that we have already encountered. These
@@ -522,15 +522,40 @@ mechanics, so it is usually preferable to select a target solution for which
 field `\gamma: \Omega\rightarrow \mathbb{R}` to use as a streamfunction. We can
 then define `u = \nabla^{\perp}\gamma` and rely on the vector calculus identity
 `\nabla\cdot\nabla^{\perp} \gamma = 0` to guarantee that the velocity field is
-divergence-free. We also need to ensure that $u$ satisfies the boundary
+divergence-free. We also need to ensure that `u` satisfies the boundary
 conditions, which amounts to choosing `\gamma` such that its gradient vanishes
 on the domain boundary. The following function is a suitable choice on a unit
 square domain:
 
-.. _stream:
-
 .. math::
-    :label:
+    :label: stream
 
     \gamma(x,y) = \big(1-\cos(2\pi x)\big)\big(1-\cos(2\pi y)\big)
 
+Implementing a nonlinear problem
+--------------------------------
+
+.. proof:exercise::
+
+    The goal of this exercise is to implement a solver for the Stokes
+    equations, on a unit square. Implement
+    :func:`~fe_utils.solvers.mastery.solve_mastery` so that it solves
+    :eq:`stokes_ch9` using the forcing function derived from :eq:`stream`.
+
+    Your full solution should:
+
+    1. Implement :class:`VectorFiniteElement`. 
+    2. Make the consequential changes to 
+       :class:`~fe_utils.function_spaces.Function` to enable values 
+       to be interpolated into vector-valued functions, and to create quiver plots.
+    3. Assemble and solve the required mixed system.
+    4. Compute the `L^2` error of the mixed solution from the analytic solution.
+    
+    A convergence test for your code is provided in
+    ``test/test_12_mastery_convergence.py``. In order to be compatible with
+    this code, your implementation of
+    :func:`~fe_utils.solvers.mastery.solve_mastery` should return its results
+    as a tuple of the form :data:`(u, p), error`. This is a slight change from
+    the comment in the code which takes into account that the problem is mixed.
+    The obvious consequential change will be needed at the end of
+    :mod:`fe_utils.solvers.mastery`.
