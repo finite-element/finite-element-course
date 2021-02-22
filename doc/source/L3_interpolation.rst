@@ -447,7 +447,7 @@ results of this section without directly using the previous estimate
 
    .. math::
       
-      \int_0^1 w(x) \,d x \leq c\int_0^1 w''(x) \,d x.
+      \int_0^1 w(x)^2 \,d x \leq c\int_0^1 (w''(x))^2 \,d x.
 
    Hints: use the Schwarz inequality,
 
