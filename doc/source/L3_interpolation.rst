@@ -514,7 +514,7 @@ results of this section without directly using the previous estimate
 
    .. math::
 
-      \|v\|^2_{C^\infty} \leq C\int_0^1 (v')^2 \, dx,
+      \|v\|^2_{C^0} \leq C\int_0^1 (v')^2 \, dx,
 
    for all `v \in V \cap C^1([0,1])`, where `V` is the
    subspace of the P1 finite element space defined on a subdivision
