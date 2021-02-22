@@ -457,13 +457,7 @@ results of this section without directly using the previous estimate
       (\int_0^1 g(x)^2 \, dx)^2,
 
    (which we shall discuss in more generality in Section 4), together
-   with Rolle's theorem, that says that if `u` has continuous
-   derivative then for all `x`, there exists `0\leq \xi \leq 1` such
-   that
-
-   .. math::
-
-      u(x) = \int_\xi^x u'(y) \, dy.
+   with Rolle's theorem.
 
 .. proof:exercise::
 
@@ -516,7 +510,7 @@ results of this section without directly using the previous estimate
 
       \|v\|^2_{C^0} \leq C\int_0^1 (v')^2 \, dx,
 
-   for all `v \in V \cap C^1([0,1])`, where `V` is the
+   for all `v \in V`, where `V` is the
    subspace of the P1 finite element space defined on a subdivision
    of the interval `[0,1]` containing only functions `v` with `v(0)=0`.
     
