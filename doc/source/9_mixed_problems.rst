@@ -532,8 +532,8 @@ square domain:
 
     \gamma(x,y) = \big(1-\cos(2\pi x)\big)\big(1-\cos(2\pi y)\big)
 
-Implementing a nonlinear problem
---------------------------------
+Implementing the Stokes problem
+-------------------------------
 
 .. proof:exercise::
 
