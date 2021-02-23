@@ -337,7 +337,7 @@ for existence are given by the following result of Franco Brezzi.
 	 + \frac{2M}{\alpha\beta}\|G\|_{Q'},
 
 	 \|p\|_Q \leq \frac{2M}{\alpha\beta}\|F\|_{V'} +
-	\frac{2M^2}{\alpha\beta^2} \|G\|_{Q'},
+	 \frac{2M^2}{\alpha\beta^2} \|G\|_{Q'},
 
    where `M` is the continuity constant of `a`.
 
