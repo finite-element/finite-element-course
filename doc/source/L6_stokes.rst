@@ -2,8 +2,16 @@
 
 .. _stokes:
 
-Stokes equation (Mastery topic)
-===============================
+Stokes equation
+===============
+
+.. note::
+
+   This section is the mastery topic for this module. It consists of
+   some extra material that is not covered in lectures which will be
+   covered in the mastery question on the exam.
+
+   This section is not a part of the third year version of this module.
 
 Strong form of the equations
 ----------------------------
