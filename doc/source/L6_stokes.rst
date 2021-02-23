@@ -565,7 +565,7 @@ approximation in a manner very similar to Céa's Lemma.
 	 \|u_h - u\|_V \leq  \frac{4MM_b}{\alpha\beta}E_u + \frac{M_b}{\alpha}E_p,
 
 	 \|p_h - p\|_V \leq \frac{3M^2M_b}{\alpha\beta^2}E_u
-	+ \frac{3MM_b}{\alpha\beta}E_p.
+	 + \frac{3MM_b}{\alpha\beta}E_p.
 
    where `M_b` is the continuity constant of `b(\cdot,\cdot)`, and
    where we have the best approximation errors of `u` and `p` in `V_h`
@@ -613,7 +613,7 @@ approximation in a manner very similar to Céa's Lemma.
 	 + \frac{2M}{\alpha\beta}\|G_{u_I}\|_{Q'},
 
 	 \|p_h-p_I\|_Q \leq \frac{2M}{\alpha\beta}\|F_{u_I,p_I}\|_{V'} +
-	\frac{2M^2}{\alpha\beta^2} \|G_{u_I}\|_{Q'}.
+	 \frac{2M^2}{\alpha\beta^2} \|G_{u_I}\|_{Q'}.
 
    Using continuity of `a(\cdot,\cdot)` and `b(\cdot,\cdot)`, we have
 
@@ -650,10 +650,10 @@ approximation in a manner very similar to Céa's Lemma.
 	 \left(M\|u-u_I\|_V +
 	 M_b\|p-p_I\|\right)
 	 +
-	\frac{2M^2}{\alpha\beta^2}M_b\|u-u_I\|_V
+	 \frac{2M^2}{\alpha\beta^2}M_b\|u-u_I\|_V
 
-	\leq \frac{3M^2M_b}{\alpha\beta^2}\|u-u_I\|_V
-	+ \frac{2MM_b}{\alpha\beta}\|p-p_I\|_V.
+	 \leq \frac{3M^2M_b}{\alpha\beta^2}\|u-u_I\|_V
+	 + \frac{2MM_b}{\alpha\beta}\|p-p_I\|_V.
 	 
    We then use the triangle inequality to write
 
@@ -671,7 +671,7 @@ approximation in a manner very similar to Céa's Lemma.
 	 \|p-p_h\|_Q \leq \|p-p_I\|_V + \|p_h-p_I\|_V,
 
 	 \leq \frac{3M^2M_b}{\alpha\beta^2}\|u-u_I\|_V
-	+ \frac{3MM_b}{\alpha\beta}\|p-p_I\|_V.
+	 + \frac{3MM_b}{\alpha\beta}\|p-p_I\|_V.
 
    Finally, taking the infimum over the all `u_I\in V` and all `p_I\in V`
    gives the result.
