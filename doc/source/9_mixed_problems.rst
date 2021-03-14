@@ -92,7 +92,7 @@ where `//` is the integer division operator, `\%` is the modulus operator, and
 `{\mathbf{e}_0, \mathbf{e}_1}` is the standard basis for `\mathbb{R}^2`. That is to say, we
 interleave `x` and `y` component basis functions.
 
-.. figure:: _static/p2vec.*
+.. figure:: p2vec.*
     
     The local numbering of vector degrees of freedom.
 

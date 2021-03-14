@@ -122,6 +122,8 @@ proof_theorem_types = {
     "exercise": "Exercise",
 }
 
+proof_latex_parent = "chapter"
+
 # -- Options for HTML output ----------------------------------------------
 
 # The theme to use for HTML and HTML Help pages.  See the documentation for
@@ -225,7 +227,7 @@ latex_elements = {
 # (source start file, target name, title,
 #  author, documentclass [howto, manual, or own class]).
 latex_documents = [
-  ('index', 'Finiteelementcourse.tex', u'M345A47 Finite Elements: Analysis and Implementation',
+  ('index', 'Finiteelementcourse.tex', u'Finite Elements: Analysis and Implementation',
    u'David A. Ham and Colin J. Cotter', 'manual'),
 ]
 
