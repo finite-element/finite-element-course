@@ -635,7 +635,7 @@ with diameter `h`.
    derivatives of degree `\leq l`, and `\mathcal{P}` contains all
    polynomials of degree `k` and below, with `k>l+n/2`.
    Let `u\in
-   C^{k+1,\infty}(K_1)`.
+   C^{k+1,\infty}(K)`.
    Then for `i \leq k`, the local interpolation operator
    satisfies
 
@@ -653,12 +653,12 @@ with diameter `h`.
 
    .. math::
 
-      \int_K |D^\beta(I_Ku-u)|^2 \, d x  &= d^{-2|\beta|+1}\int_{K_1}|D^\beta(I_{K_1}
+      \int_K |D^\beta(I_Ku-u)|^2 \, d x  &= d^{-2|\beta|+n}\int_{K_1}|D^\beta(I_{K_1}
       u\circ \phi - u\circ \phi)|^2 \, d x,
       
-      &\leq C_1^2d^{-2|\beta+1}\sum_{|\alpha|=k+1}\int_{K_1} |D^\alpha u\circ \phi|^2\, d x, 
+      &\leq C_1^2d^{-2|\beta|+n}\sum_{|\alpha|=k+1}\int_{K_1} |D^\alpha u\circ \phi|^2\, d x, 
 
-      &\leq C_1^2d^{-2|\beta+2(k+1)}\sum_{|\alpha|=k+1}\int_{K} |D^\alpha u|^2
+      &\leq C_1^2d^{-2|\beta|+2(k+1)}\sum_{|\alpha|=k+1}\int_{K} |D^\alpha u|^2
       \, d x,
       
       &= C_1^2d^{2(-|\beta| + k + 1)}|u|^2_{H^{k+1}(K)},
