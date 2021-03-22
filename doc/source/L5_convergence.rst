@@ -837,10 +837,10 @@ finite element approximation to the Helmholtz problem.
 
       \int_0^1 v'u' \, d x = \int_0^{1/2} v \, d x, \quad \forall v \in \mathring{H}([0,1]).
 
-   The interval `[0,1]` is divided into `3N` equispaced cells (where `N`
-   is a positive integer). After forming a `P1` `C^0` finite element
-   space `V_N`, the error `\|u-u_h\|_{H^1}` is found not to converge to
-   zero. Explain why this is expected.
+   The interval `[0,1]` is divided into `3N` equispaced cells (where
+   `N` is a positive integer). After forming a `P2` `C^0` finite
+   element space `V_N`, the error `\|u-u_h\|_{H^1}` only converges at
+   a linear rate. Explain why this is expected.
 
 .. proof:exercise::
 
