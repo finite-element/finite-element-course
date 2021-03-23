@@ -52,6 +52,13 @@ choose to require the pressure at the origin to vanish. This is also an
 effective way to remove the nullspace, but it is simpler to implement. We will
 implement the two-dimensional case (`d=2`) and, for simplicity, we will assume `\mu=1`.
 
+The colon (`:`) indicates an inner product so:
+
+.. math::
+    :label:
+
+    \epsilon(u):\epsilon(v) = \sum_{\alpha\beta} \epsilon(u)_{\alpha\beta}\epsilon(v)_{\alpha\beta}
+
 In choosing a finite element subspace of `V \times Q` we will similarly choose
 a simpler to implement, yet still stable, space than was chosen in
 :numref:`Analysis Section %s <stokes>`. The space we will use is the lowest order
