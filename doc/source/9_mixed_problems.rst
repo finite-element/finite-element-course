@@ -330,7 +330,7 @@ some suitable finite element space `V\subset H^1(\Omega)^2` and
 .. math::
     :label:
 
-    \int_\Omega u\cdot v\,\mathrm{d}x = \int_\Omega f\cdot v\,\mathrm{d}x\quad \forall v\in V.
+    \int_\Omega u\cdot v\,\mathrm{d}x = \int_\Omega \nabla f\cdot v\,\mathrm{d}x\quad \forall v\in V.
 
 If `f` is chosen such that `\nabla f\in V` then this projection is exact up to
 roundoff, and the following calculation should result in a good approximation
@@ -364,9 +364,9 @@ two solution spaces. Functions in `W` are pairs `(u, p)` where `u\in V` and
     
 This in turn enables us to write `w\in W` in the form `w=w_i\omega_i` as we
 would expect for a function in a finite element space. The Cartesian product
-structure of the mixed space `W` means that the first `n` coefficients are
-simply the coefficients of the `V` basis functions, and the latter `m`
-coefficients correspond to the `V` basis functions. This means that our full
+structure of the mixed space `W` means that the first `m` coefficients are
+simply the coefficients of the `V` basis functions, and the latter `n`
+coefficients correspond to the `Q` basis functions. This means that our full
 mixed finite element system is simply a linear system of block matrices and
 block vectors. If we disregard boundary conditions, including the pressure
 constraint, this system has the following form:
