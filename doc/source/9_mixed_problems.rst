@@ -239,23 +239,15 @@ Interpolating into vector-valued spaces
 
 Since the form of the nodes of a :class:`VectorFiniteElement` is different from
 that of a scalar element, there will be some changes required in the
-:meth:`~fe_utils.function_spaces.Function.interpolate()` method. Specifically,
-in these two lines:
+:meth:`~fe_utils.function_spaces.Function.interpolate()` method. Specifically:
 
 .. code-block:: python3
 
-    node_coords = np.dot(coord_map, vertex_coords)
-
     self.values[fs.cell_nodes[c, :]] = [fn(x) for x in node_coords]
 
-The first of these lines may need adjusting because :data:`coord_map` is the
-result of tabulating the :class:`VectorFiniteElement` and, depending on where
-the additional rank was added to the tabulation matrix, the :func:`np.dot` may
-need to be replaced by a different tensor contraction.
-
-The second line will need to take into account the dot product with the
+This line will need to take into account the dot product with the
 canonical basis from :eq:`vectornodes`, which you have implemented as
-:data:`VectorFiniteElement.node_weights`. These changes will need to be made
+:data:`VectorFiniteElement.node_weights`. This change will need to be made
 conditional on the class of finite element passed in, so that the code doesn't
 break in the scalar element case.
 
