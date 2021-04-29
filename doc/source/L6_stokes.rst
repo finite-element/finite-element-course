@@ -96,7 +96,7 @@ vanish on the boundary, and `Q=\mathring{L}^2(\Omega)`, with
 
       a(u,v) = \mu\int_\Omega \epsilon(u):\epsilon(v)d\, x,
 
-      b(v,q) = \int_\Omega q \nabla\cdot v d\, x.
+      b(v,q) = -\int_\Omega q \nabla\cdot v d\, x.
 
 .. proof:exercise::
 
