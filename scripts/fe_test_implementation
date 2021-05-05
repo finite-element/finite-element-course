@@ -6,7 +6,7 @@ from argparse import ArgumentParser, RawDescriptionHelpFormatter
 import subprocess
 import sys
 
-year = 2020
+year = 2021
 instructor = "dham"
 
 parser = ArgumentParser(description="""Helper script to mark finite element assignments.""")
@@ -23,7 +23,7 @@ repo = git.Repo(".")
 
 if args.update:
     g = github.Github(os.environ["GITHUB_OAUTH"])
-    org = g.get_organization("finite-element")
+    org = g.get_organization("Imperial-MATH96063")
 
     for r in org.get_repos():
         if r.name.startswith("fe-%d" % year):
@@ -41,7 +41,7 @@ if args.update:
 
 if args.push_masters:
     g = github.Github(os.environ["GITHUB_OAUTH"])
-    org = g.get_organization("finite-element")
+    org = g.get_organization("Imperial-MATH96063")
 
     remote = repo.remote(instructor)
 
@@ -50,6 +50,8 @@ if args.push_masters:
             uname = r.name[8:]
             print("Pushing master for remote %s" % uname)
             remote.push("remotes/{0}/master:refs/heads/{0}-master".format(uname))
+            print("Pushing feedback for remote %s" % uname)
+            remote.push("remotes/{0}/feedback:refs/heads/{0}-feedback".format(uname))
 
 
 if args.checkout:

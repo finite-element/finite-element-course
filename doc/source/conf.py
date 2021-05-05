@@ -219,8 +219,11 @@ latex_elements = {
 #'pointsize': '10pt',
 
 # Additional stuff for the LaTeX preamble.
-    'preamble': r'\setcounter{MaxMatrixCols}{20}',
+    'preamble': r"""\setcounter{MaxMatrixCols}{20}
+    \definecolor{imperialblue}{cmyk}{1,.61,0,.45}
+    """,
     'releasename': 'Edition',
+    "sphinxsetup": r"TitleColor={cmyk}{1,.61,0,.45},InnerLinkColor={cmyk}{1,.61,0,.45}",
 }
 
 # Grouping the document tree into LaTeX files. List of tuples
