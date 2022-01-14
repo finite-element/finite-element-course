@@ -23,9 +23,11 @@ work with. This module will use Python 3.
 
 If you haven't done any Python before, then go through `the official
 Python tutorial <https://docs.python.org/3/tutorial/index.html>`__. If
-you have done a little Python, one feature we will be using a lot is
-classes, so if that is new to you you should at least review `the
-classes chapter <https://docs.python.org/3/tutorial/classes.html>`__.
+you have done a little Python but perhaps are not so familiar with the
+object-oriented features such as classes, then you might like to refer to the
+online book `Object-oriented Programming in Python for Mathematicians
+<https://object-oriented-python.github.io>`__. We will be using classes
+extensively in this course.
 
 The Matlab-like array features of Python are provided by `Numpy
 <https://www.numpy.org/>`__ for which there is a `helpful tutorial
