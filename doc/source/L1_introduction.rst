@@ -371,7 +371,7 @@ this equation holds for all `v\in \mathring{V}_h` and when we approximate
     Imperial students can also `watch this video on Panopto <https://imperial.cloud.panopto.eu/Panopto/Pages/Viewer.aspx?id=f4cb8c0c-4664-4a21-8043-ac2c010738da>`__
       
 We now present some numerical results for the case `f = 2\pi^2\sin(\pi
-x)\sin(\pi y)`.
+x)\sin(2\pi y)`.
 
 .. _figplots:
 
