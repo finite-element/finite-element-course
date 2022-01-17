@@ -474,7 +474,7 @@ areas.
 	 -\nabla^2 u = \frac{1}{1 + x^2 + y^2},
 
    in the `1\times 1` square region, with boundary conditions
-   `u-\frac{\partial u}{\partial n}=x(1-x)` on the entire boundary.
+   `u+\frac{\partial u}{\partial n}=x(1-x)` on the entire boundary.
    
 Practical implementation
 ------------------------
