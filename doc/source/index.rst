@@ -54,8 +54,8 @@
             - Numerical analysis
             - Implementation
         *   - 1
-            - Up to and including :numref:`Definition
-              {number}<def-discrete-poisson>`.
+            - Up to and including :numref:`Exercise
+              {number}<def-robin>`.
             - Do the background tutorials and installation work given under
               :doc:`tools` and :doc:`implementation`.
         *   - 2

@@ -463,6 +463,8 @@ areas.
    in the `1\times 1` square region as above, with boundary conditions
    `u=x(1-x)` on the entire boundary.
 
+.. _def-robin:
+   
 .. proof:exercise::
 
    Derive a finite element approximation for the following problem.
