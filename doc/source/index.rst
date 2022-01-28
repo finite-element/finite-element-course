@@ -1,7 +1,7 @@
 .. only:: latex
 
    ============================================
-   Finite elements, analysis and implementation
+   Numerical Methods for Variational problems
    ============================================
 
    .. raw:: latex
@@ -25,13 +25,17 @@
 
 .. only:: html
 
-   This is the webpage for the `Imperial College London Mathematics
-   <http://www.imperial.ac.uk/maths>`__  module
-   MATH96063/MATH97017/MATH97095 Finite Elements: numerical analysis and
-   implementation. There's an introductory video explaining what the module is about `online here <https://player.vimeo.com/video/426777950?autoplay=1>`__.
+   This is the webpage for the `University of Luxembourg Master in Mathematics
+   <https://wwwen.uni.lu/studies/fstm/master_in_mathematics/programme2>`__  course
+   Numerical Methods for Variational Problems.
 
-   Other people are welcome to make use of the
-   material here. The authors welcome feedback and would particularly
+   This webpage is adapted with permission from the `original
+   <https://finite-element.github.io>`__ authored by Prof. Colin
+   Cotter and Dr. David Ham at Imperial College London. The section on Modern
+   Finite Element practice was authored by Dr. Jack S. Hale at the University
+   of Luxembourg.
+
+   The authors welcome feedback and would particularly
    appreciate an `email <mailto:david.ham@imperial.ac.uk>`__ if this
    material is used to teach anywhere.
 
@@ -43,8 +47,10 @@
    ---------------
 
    The numerical analysis and implementation parts of the module run in
-   parallel. Each has videos and exercises embedded in its notes. This table
-   indicates the progress that you should make through each component each week.
+   parallel. The modern practice part of the module will take place after the
+   numerical analysis and implementation parts. Each part has videos and
+   exercises embedded in its notes. This table indicates the progress that you
+   should make through each component each week.
 
    .. list-table::
         :widths: 10 45 45
@@ -58,35 +64,34 @@
               {number}<def-robin>`.
             - Do the background tutorials and installation work given under
               :doc:`tools` and :doc:`implementation`.
-        *   - 2
+        *   - 3
             - Up to and including :numref:`Exercise
               {number}<exe-1d-lagrange-basis>`.
             - Up to the end of :numref:`quadrature`.
-        *   - 3
+        *   - 5
             - Up to and including :numref:`Definition {number}<P1unisolve>`.
             - Up to and including :numref:`Exercise {number}<ex-vandermonde>`.
-        *   - 4
+        *   - 7
             - Up to and including :numref:`Exercise {number}<exer-argyris>`.
             - Up to and including :numref:`Exercise {number}<ex-tabulate>`.
-        *   - 5
+        *   - 9
             - Up to and including :numref:`Definition
               {number}<def-averaged-taylor>`.
             - Up to the end of :numref:`secfinitelement`.
-        *   - 6
+        *   - 11
             - Up to and including :numref:`Lemma {number}<IerrK1>`.
             - Up to and including :numref:`Exercise {number}<ex-local>`.
-        *   - 7
+        *   - 13
             - Up to and including :numref:`Exercise {number}<exe-pure-neumann>`.
             - Up to the end of :numref:`secfunctionspaces`.
-        *   - 8
+        *   - 15
             - Up to the end of :numref:`fe_problems`.
             - Up to the end of :numref:`secfunctions`.
-        *   - 9
+        *   - 16
             - Up to and including :numref:`Theorem {number}<thm-cea>`.
             - Up to the end of :numref:`secdirichlet`.
-        *   - 10
-            - Up to the end of :numref:`convergence`. For MSc, 4th year MSci
-	      and MRes students - read the mastery material.
+        *   - 16
+            - Up to the end of :numref:`convergence`.
             - Time for the mastery exercise, (catch up time for year 3).
 
    .. image:: _static/brenner_scott.png
@@ -98,17 +103,14 @@
 
    Part 1: Numerical analysis
    --------------------------
-
-   The theory  part of
-   the module will be led by `Prof. Colin Cotter
-   <http://www.imperial.ac.uk/people/colin.cotter>`__. The material is presented
-   by means of a set of lecture notes, with lecture videos interspersed in the
-   notes. 
+   
+   The material is presented by means of a set of lecture notes, with lecture
+   videos interspersed in the notes. 
 
    The text for this part of the module is Brenner and Scott *The
-   Mathematical Theory of Finite Element Methods*. Imperial College has
-   fortunately paid for PDF access to this book, so it is accessible from
-   the Imperial College network at `Springer Link
+   Mathematical Theory of Finite Element Methods*. The University of Luxembourg has
+   paid for PDF access to this book, so it is accessible from
+   the University of Luxembourg network at `Springer Link
    <http://link.springer.com/book/10.1007%2F978-0-387-75934-0>`__.
 
    However, this course has the material rearranged to synchronise the
@@ -131,16 +133,17 @@
 
    Past exam papers
    ~~~~~~~~~~~~~~~~
-   Please note that for 2015-2018, there was no mastery component in the
-   examination, and so there were four questions. From 2019 on there are
-   four questions plus one mastery question for 4th year/Masters credits.
-   
+   Past examination papers from the Imperial College London course are available here:
+
    * `2015 exam paper <_static/FE2015-exam-revised.pdf>`__ and `solutions <_static/FE2015-exam-soln.pdf>`__
    * `2016 exam paper <_static/FE2016-exam.pdf>`__ and `solutions <_static/FE2016-exam-soln.pdf>`__
    * `2017 exam paper <_static/FEExam-2017.pdf>`__ and `solutions <_static/FEExam-2017-soln.pdf>`__
    * `2018 exam paper <_static/FEExam-2018.pdf>`__ and `solutions <_static/FEExam-2018-soln.pdf>`__
    * `2019 exam paper <_static/FEExam-2019.pdf>`__ and `solutions <_static/FEExam-2019-solns.pdf>`__
    * `revision checklist <_static/revision-checklist.pdf>`__
+   
+   The examination at the University of Luxembourg will be adapted to the
+   specific needs of the students attending the course.
 
 .. only:: html
 
@@ -151,8 +154,7 @@
     deeper understanding of the finite element method through writing
     software to solve finite element problems in one and two dimensions.
 
-    This part of the module will be taught by `Dr David Ham
-    <http://www.imperial.ac.uk/people/david.ham>`__. The key to this part of the
+    The key to this part of the
     module is to build up a working finite element implementation over the course
     of the term, and thereby to gain a practical understanding of the method.
 
@@ -200,3 +202,28 @@
    8_nonlinear_problems
    9_mixed_problems
    zbibliography
+
+.. only:: html
+
+   Part 3: Modern practice
+   -----------------------
+
+   The modern practice part of the module will close the gap between the
+   theoretical and implementation aspects of the finite element method outlined
+   in parts 1 and 2, and the finite element method as an active topic of
+   research and a key tool of modern scientific and engineering investigation.
+
+   The starting point will be a gentle introduction to the open source DOLFINx
+   or Firedrake software systems for the automatic solution of PDEs using the
+   finite element method.
+
+   This section of the course will be shown as Python Jupyter Notebooks run on
+   the Google Colab cloud computing environment. A Google account is required.
+
+.. toctree::
+   :numbered
+   :maxdepth: 2
+
+   P1_poisson
+   
+
