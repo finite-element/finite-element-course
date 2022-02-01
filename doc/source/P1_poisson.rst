@@ -16,10 +16,10 @@ solving their own problems!
 
 Since its inception in the 1960s specialists in finite elements have written an
 almost uncountable number of software packages for solving finite element
-problems. A small number of these packages have gone to underpin the now
-multi-billion dollar engineering design and analysis software sector. Packages
-such as ABAQUS, COMSOL Multiphysics and ADINA are now used everyday by hundreds
-of thousands of engineers and scientists across the globe. 
+problems. A small number of these have gone to underpin the now multi-billion
+dollar engineering design and analysis software sector. Packages such as
+ABAQUS, COMSOL Multiphysics and ADINA are now used everyday by hundreds of
+thousands of engineers and scientists across the globe. 
 
 These software packages offer an end-to-end finite element analysis, including
 computer-aided design tools, advanced mesh creation capabilities, finite
@@ -35,7 +35,7 @@ specific and uncommon problems usually still need to 'code their own', as we
 did in the implementation exercise.
 
 In the last decade a new kind of finite element software relying on automatic
-code generation techniques have emerged. This type of software is aimed at
+code generation techniques has emerged. This type of software is aimed at
 engineers, academics and scientists who need to go beyond what fixed
 functionality software described above can provide. Two examples are the FEniCS
 Project and Firedrake that are written and maintained by groups of academics

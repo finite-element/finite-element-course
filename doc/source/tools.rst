@@ -55,14 +55,14 @@ Numpy matrices.
 Git
 ...
 
-Revision control is a mechanism for recording and managing different
+Version control is a mechanism for recording and managing different
 versions of changing software. This enables changes to be tracked and
 helps in the process of debugging code, and in managing conflicts when
 more than one person is working on the same project. Revision control
 can be combined with online hosting to provide secure backups and to
 enable you to work on code from different locations.
 
-In this module, you'll use revision control to access the skeleton
+In this module, you'll use verion control to access the skeleton
 files, and to update those files if and when they change. You'll also
 use the same revision control system to record the edits you make over
 time and to submit your work for feedback and, eventually, marking.
@@ -123,8 +123,7 @@ command line to work with the revision control system.
 
 .. proof:exercise:: 
 
-    If you're not
-    familiar with the Linux command line, then follow at least the first two
-    sections of the `Software Carpentry Unix Shell lesson`. That
-    guide focusses on the Bash shell, but zsh and the Windows Powershell use very
-    similar commands.
+    If you're not familiar with the Linux command line, then follow at least
+    the first two sections of the `Software Carpentry Unix Shell lesson
+    <https://swcarpentry.github.io/shell-novice/>`. That guide focuses on the
+    Bash shell, but zsh and the Windows Powershell use very similar commands.
