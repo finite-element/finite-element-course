@@ -1,8 +1,8 @@
-# %% 
+# %%
 # !wget "https://fem-on-colab.github.io/releases/fenicsx-install-real.sh" -O "/tmp/fenicsx-install.sh" && bash "/tmp/fenicsx-install.sh"
 # !wget "https://fem-on-colab.github.io/releases/gmsh-install.sh" -O "/tmp/gmsh-install.sh" && bash "/tmp/gmsh-install.sh"
 # !apt install libgl1-mesa-glx xvfb
-# !pip install pyvista 
+# !pip install pyvista
 
 # %% [markdown]
 #
@@ -13,7 +13,7 @@
 # modern automatic finite element code.
 #
 # ## Equation and problem definition
-# 
+#
 # We we solve the Poisson equation subject to both Dirichlet and Neumann
 # boundary conditions
 #
@@ -65,8 +65,9 @@
 import numpy as np
 
 import ufl
-from ufl import grad, inner, dx, ds, exp, sin
-from dolfinx import fem, plot, io, mesh
+from dolfinx import fem, io, mesh, plot
+from ufl import ds, dx, exp, grad, inner, sin
+
 from mpi4py import MPI
 from petsc4py.PETSc import ScalarType
 
@@ -105,12 +106,14 @@ V = fem.FunctionSpace(rectangle_mesh, ("Lagrange", 1))
 # %%
 # Create a function that takes an array of points x and returns an array of
 # `True` or `False` if the point is or is not on the boundary
-marker = lambda x: np.logical_or(np.isclose(x[0], 0.0), np.isclose(x[0], 2.0))
+def marker(x): return np.logical_or(
+    np.isclose(x[0], 0.0), np.isclose(x[0], 2.0))
 
 # %% [markdown]
 # To identify the degrees of freedom, we first find the facets (entities of
 # dimension 1) that live on the boundary of the mesh, and satisfies our
-# criteria for `\Gamma_D`. 
+# criteria for `\Gamma_D`.
+
 
 # %%
 # Define boundary condition on x = 0 or x = 1
@@ -162,13 +165,14 @@ L = inner(f, v) * dx + inner(g, v) * ds
 # defined through the dictionary ``petsc_options``.
 
 # %%
-problem = fem.LinearProblem(a, L, bcs=[bc], petsc_options={"ksp_type": "preonly", "pc_type": "lu"})
+problem = fem.LinearProblem(a, L, bcs=[bc], petsc_options={
+                            "ksp_type": "preonly", "pc_type": "lu"})
 
 # %% [markdown]
 # Now, we have specified the variational forms and can consider the solution of
 # the variational problem. The method `problem.solve()` returns a `Function`
 # `uh` containing the solution. A `Function` represents a function living in a
-# finite element function space. 
+# finite element function space.
 
 # %%
 uh = problem.solve()

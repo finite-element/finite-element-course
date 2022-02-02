@@ -62,4 +62,5 @@ Firedrake, depending on the preferences of your instructor. Please click on the
 appropriate link below to access the Python Jupyter Notebook in the Google Colab
 environment:
 
-
+`Poisson in DOLFINx
+<https://githubtocolab.com/jhale/finite-element-course/blob/jhale/unilu-course/doc/source/notebooks/dolfinx/poisson.ipynb>`__
