@@ -3,12 +3,13 @@
 
 # %%
 # !wget "https://fem-on-colab.github.io/releases/fenicsx-install-real.sh" -O "/tmp/fenicsx-install.sh" && bash "/tmp/fenicsx-install.sh"
+# !wget "https://fem-on-colab.github.io/releases/gmsh-install.sh" -O "/tmp/gmsh-install.sh" && bash "/tmp/gmsh-install.sh"
 # !apt-get install xvfb
 # !pip install pyvista pyvirtualdisplay
 
 # %%
 from pyvirtualdisplay import Display
-display = Display(visible=0, size=(1024, 1024))
+display = Display(visible=0, size=(800, 800))
 display.start()
 
 # %%
