@@ -8,8 +8,8 @@
 
 # %%
 from pyvirtualdisplay import Display
-dis = Display(visible=0, size=(400, 400))
-dis.start()
+display = Display(visible=0, size=(1024, 1024))
+display.start()
 
 # %%
 import dolfinx
@@ -229,27 +229,15 @@ with io.XDMFFile(comm, "poisson.xdmf", "w") as file:
     file.write_function(uh)
 
 
-# Plot solution
-try:
-    import pyvista
-    cells, types, x = plot.create_vtk_mesh(V)
-    grid = pyvista.UnstructuredGrid(cells, types, x)
-    grid.point_data["u"] = uh.x.array.real
-    grid.set_active_scalars("u")
+# %%
+import pyvista
+cells, types, x = plot.create_vtk_mesh(V)
+grid = pyvista.UnstructuredGrid(cells, types, x)
+grid.point_data["u"] = uh.x.array.real
+grid.set_active_scalars("u")
 
-    plotter = pyvista.Plotter()
-    plotter.add_mesh(grid, show_edges=True)
-    warped = grid.warp_by_scalar()
-    plotter.add_mesh(warped)
-
-    # If pyvista environment variable is set to off-screen (static)
-    # plotting save png
-    if pyvista.OFF_SCREEN:
-        # Run demo with 'PYVISTA_OFF_SCREEN=true python demo_poisson.py'
-        pyvista.start_xvfb(wait=0.1)
-        plotter.screenshot("poisson_u.png")
-    else:
-        plotter.show()
-except ModuleNotFoundError:
-    print("'pyvista' is required to visualise the solution")
-    print("Install 'pyvista' with pip: 'python3 -m pip install pyvista'")
+plotter = pyvista.Plotter(notebook=True)
+plotter.add_mesh(grid, show_edges=True)
+warped = grid.warp_by_scalar()
+plotter.add_mesh(warped)
+plotter.show()
