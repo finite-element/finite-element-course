@@ -59,7 +59,7 @@ to find the corresponding unknown function `u` that satisfies the
 equation (including the boundary conditions). Here we have combined a
 mixture of Dirichlet boundary conditions specifying the value of the
 function `u`, and Neumann boundary conditions specifying the value of
-the normal derivative `\partial u/\partial n`. This is because these
+the normal derivative `\partial u/\partial n := n \cdot \nabla u`. This is because these
 two types of boundary conditions are treated differently in the finite
 element method, and we would like to expose both treatments in the
 same example. The treatment of boundary conditions is one of the
@@ -290,6 +290,9 @@ We then use the following integration by parts result.
        \int_{\Omega} (- \Delta u) v \, d x = \int_{\Omega} \nabla u \cdot \nabla v
        \, dx - \int_{\partial \Omega} v \, (n \cdot \nabla u) \, d S.
 
+   .. proof:proof::
+
+   See e.g. Brenner and Scott Section 5.1.
 
 Using this integration by parts in each triangle `K_i` then gives
 
