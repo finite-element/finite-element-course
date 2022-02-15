@@ -54,6 +54,6 @@ semester, in weeks 7 and 13.
 Moodle
 ------
 
-Important announcements and the coursework submission will be
-conducted via the University's moodle. Please ensure you are enrolled
+Important announcements and the coursework submission will be conducted via the
+University's `Moodle <https://moodle.uni.lu>`_. Please ensure you are enrolled
 in this course on Moodle!

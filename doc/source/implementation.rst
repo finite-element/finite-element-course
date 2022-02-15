@@ -282,30 +282,8 @@ raising an issue <pop:issue-report>`.
 
     Please don't post large pieces of code to Piazza. Just post minimal examples
     if they help. However always commit and push your work, and post the
-    :ref:`git commit hash <fons:git-hash>` in the repository. The lecturer can
+    :ref:`git commit hash <fons:git-hash>` in the repository. The instructor can
     always find your work from the git hash, so long as you've pushed to GitHub.
-
-Participating in the live labs
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-
-The lab sessions will use in the module's Microsoft Team. Just like
-in an in-person lab, I will go from person to person providing the help you need
-with your work. The way this will work is that participants who want help should
-post in the Teams meeting asking for help. Before posting:
-
-1. Make sure you know what it is you need help with.
-2. Have the right files open in Visual Studio Code, and the failing test(s) open
-   in the terminal window.
-3. Have already launched a Live Share session and be ready to provide the
-   me with the code to join your session.
-
-I will then go down the list of requests for help in order. I will use Teams to call the
-person asking for help one-to-one and answer your questions. Usually I'll need
-to see what you are working on, which is where the Live Share will come in
-useful, as I will be able to see both your code and the error you are seeing.
-
-I will mark the request for help as I complete them so that those waiting have
-an indication of progress.
 
 Tips and tricks for the implementation exercise
 -----------------------------------------------
