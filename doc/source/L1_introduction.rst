@@ -117,7 +117,7 @@ space.
   Let `\mathcal{T}` be a triangulation of `\Omega`. Then the P1 finite
   element space is a space `V_h` containing all functions `v` such that
 
-  #. `v\in C^0(\Omega)`,
+  #. `v\in C^0(\Omega)` the space of continuous functions at every point in `\Omega`,
   #. `v|_{K_i}` is a linear function for each `K_i\in \mathcal{T}`.
 
   We also define the following subspace,
@@ -292,7 +292,7 @@ We then use the following integration by parts result.
 
    .. proof:proof::
 
-   See e.g. Brenner and Scott Section 5.1.
+   See e.g. Brenner and Scott Section 5.1 including weaker assumptions.
 
 Using this integration by parts in each triangle `K_i` then gives
 
