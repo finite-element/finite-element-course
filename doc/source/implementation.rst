@@ -20,29 +20,30 @@ feedback in weeks 4 and 7.
 Formalities and marking scheme
 ------------------------------
 
-The implementation exercise is due at the end of term. That is, by 1600 on
-Friday 22 March. You must submit your work uploading the git hash on Blackboard.
-You can conveniently :ref:`find this hash on the commits page for your
-repository on GitHub <fons:git-hash>`. For the avoidance of doubt, the commit
-you submit must date from before the deadline!
+The implementation exercise is due immediately prior to the Summer Semester
+study days/revision period. That is, by 1600 on Friday 22 March. You must
+submit your work uploading the github URL and hash on Moodle. You can
+conveniently :ref:`find this hash on the commits page for your repository on
+GitHub <fons:git-hash>`. For the avoidance of doubt, the commit you submit must
+date from before the deadline!
 
 The marking scheme will be as follows:
 
-First/distinction (70-100)  
+Excellent (18-20)  
   All parts of the implementation are correct and all tests pass. The
   code style is always very clear and the implementation of every
   exercise is transparent and elegant.
-Upper second/merit (60-70)
+Good (14-17)
   The implementation is correct but let down somewhat by poor coding
   style. Alternatively, submissions which are correct and well
   written up to and including solving the Helmholtz problem but
   which do not include a correct solution to boundary conditions will
   earn an upper second.
-Lower second/pass (50-60)
+Pass (10-13)
   There are significant failings in the implementation resulting in
   many test failures, and/or the coding style is
   sufficiently poor that the code is hard to understand.
-Fail (0-50)
+Fail (0-9)
   The implementation is substantially incomplete. Correct
   implementations may have been provided for some of the earlier exercises but
   the more advanced parts of the implementation exercise have not been
