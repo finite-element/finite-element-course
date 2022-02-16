@@ -21,8 +21,8 @@ Formalities and marking scheme
 ------------------------------
 
 The implementation exercise is due immediately prior to the Summer Semester
-study days/revision period. That is, by 1600 on Friday 22 March. You must
-submit your work uploading the github URL and hash on Moodle. You can
+study days/revision period. That is, by 1600 on Friday 3 June 2022. You must
+submit your work uploading the GitHub URL and hash on Moodle. You can
 conveniently :ref:`find this hash on the commits page for your repository on
 GitHub <fons:git-hash>`. For the avoidance of doubt, the commit you submit must
 date from before the deadline!
