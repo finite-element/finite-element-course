@@ -188,7 +188,7 @@ with finite `H^k` norm.
       u\in L^1_{loc}: \|u\|_{H^k(\Omega)}<\infty\right\}
 
 Since `\|u\|_{H^k(\Omega)} \leq \|u\|_{H^l(\Omega)}` for `k<l`,
-we have `H^k \subset H^l` for `k<l`.
+we have `H^l \subset H^k` for `k<l`.
       
 If we are to consider limits of finite element functions in these
 Sobolev spaces, then it is important that they are closed, i.e.
