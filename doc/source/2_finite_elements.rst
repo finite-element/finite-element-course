@@ -82,7 +82,7 @@ evaluation of the function at each of the cell vertices. That is:
 
   \phi^*_2(f) = f\left((0,1)\right)
 
-We know that `\phi_i` has the form `a + bx + cy` so now we can
+We know that `\phi_i((x,y))` has the form `a_i + b_ix + c_iy` so now we can
 use the definition of the nodal basis to determine the unknown
 coefficients:
 
@@ -106,6 +106,24 @@ So for `\phi_0` we have:
 .. math::
   :label: phimat
 
+  \begin{pmatrix}
+  \phi^*_0(\phi_0)\\
+  \phi^*_1(\phi_0)\\
+  \phi^*_2(\phi_0)
+  \end{pmatrix}
+  =
+  \begin{pmatrix}
+  \phi_0((0,0))\\
+  \phi_0((1,0))\\
+  \phi_0((0,1))\\
+  \end{pmatrix}
+  =
+  \begin{pmatrix}
+  a_0 + b_0(0) + c_0(0)\\
+  a_0 + b_0(1) + c_0(0)\\
+  a_0 + b_0(0) + c_0(1)\\
+  \end{pmatrix}
+  =
   \begin{bmatrix}
   1 & 0 & 0\\
   1 & 1 & 0\\
@@ -189,7 +207,7 @@ The Lagrange element nodes
         Imperial students can also `watch this video on Panopto <https://imperial.cloud.panopto.eu/Panopto/Pages/Viewer.aspx?id=d845a6c8-017b-4b50-92f0-ac9f00e00796>`__
 
 The number of coefficients of a degree `p` polynomial in `d`
-dimensions is given by `\begin{pmatrix}p+d\\ d\end{pmatrix}`. The
+dimensions is given by the combination `\binom{p+d}{d}`. The
 simplest set of nodes which we can employ is simply to place these
 nodes in a regular grid over the reference cell. Given the classical
 relationship between binomial coefficients and `Pascal's triangle
@@ -290,10 +308,12 @@ to include powers of `z`.
 
 .. note::
 
-   The monomial basis for polynomial spaces employed here becomes
-   increasingly ill-conditioned at higher order, so it may be
-   advantageous to employ a different basis in the construction of the
-   Vandermonde matrix. See :cite:`Kirby2004` for an example.
+   Here we employ a monomial basis to represent polynomial spaces: any
+   polynomial is given as a linear sum of monomials such as `x`, `xy`
+   or `x^2`. This basis becomes increasingly ill-conditioned at higher
+   order, so it may be advantageous to employ a different basis in the
+   construction of the Vandermonde matrix. See :cite:`Kirby2004` for an
+   example.
 
 .. _ex-vandermonde:
 

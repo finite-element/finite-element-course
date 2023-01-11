@@ -56,6 +56,7 @@ each function in the basis then the problem is now, find coefficients `u_i` such
    \int_\Omega \sum_{j}\left(\nabla \phi_i \cdot \nabla (u_j\phi_j) + \phi_i u_j\phi_j\right)\, \mathrm{d} x
    = \int_\Omega \phi_i\, \sum_k f_k\phi_k\, \mathrm{d} x \qquad \forall\, 0\leq i < n 
 
+Note that since :eq:`weak_helmholtz` is linear in `v = \sum_{i}v_i\phi_i` we are able to drop the coefficients `v_i`.
 Since the left hand side is linear in the scalar coefficients `u_j`, we can move them out of the integral:
 
 .. math::
@@ -111,7 +112,7 @@ property we exploited previously to integrate functions in finite
 element spaces. For example, :eq:`eq_rhs` can be rewritten as:
 
 .. math::
-   :label:
+   :label: rhs_init
 
    \mathbf{f}_i = \sum_c \int_c \phi_i \,\sum_k f_k\phi_k\,  \mathrm{d} x
 
@@ -235,7 +236,7 @@ The assembly algorithm
 
         Imperial students can also `watch this video on Panopto <https://imperial.cloud.panopto.eu/Panopto/Pages/Viewer.aspx?id=546633aa-7816-4084-b77f-aca000b64bbd>`__
 
-We can start by pulling back :eq:`eq_lhs` to local coordinates:
+We can start by transforming :eq:`eq_lhs` to local coordinates (referred to as *pulling back*) and considering it in the algorithmic form used for the right hand side in :eq:`rhs_init` to :eq:`rhs_index`:
 
 .. math::
    :label:
@@ -400,7 +401,9 @@ To illustrate this algorithm, suppose we wish to construct `f` such that:
 
    \tilde{u} = \cos(4\pi x_0) x_1^2(1 - x_1)^2
 
-is a solution to :eq:`helmholtz`. It is simple to verify that
+is a solution to :eq:`helmholtz` defined on a domain `\Gamma` bounded 
+by the unit square (a square with vertices at the points `(0,0)`, 
+`(0,1)`, `(1,0)` and `(1,1)`). It is simple to verify that
 `\tilde{u}` satisfies the boundary conditions. We then note that:
 
 .. math::

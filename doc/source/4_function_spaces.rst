@@ -16,8 +16,8 @@ topological entities of the mesh. This is a two stage process. First,
 we associate the nodes of the finite element with the local
 topological entities of the reference cell. This is often referred to
 as *local numbering*. Then we associate the correct number of degrees
-of freedom with each global mesh entity. This is the *global
-numbering*.
+of freedom (i.e. number of basis functions) with each global mesh 
+entity. This is the *global numbering*.
 
 Local numbering and continuity
 ------------------------------
@@ -74,11 +74,11 @@ faces
   already have nodes associated with them, so the number of nodes
   required to be associated with the face itself is actually the
   number required to represent a degree `p-2` polynomial in two
-  dimensions: `\begin{pmatrix}p-1\\ 2\end{pmatrix}`.
+  dimensions given by the combination `\binom{p-1}{2}`.
 
 This pattern holds more generally: for a `C_0` function space, the
 number of nodes which must be associated with a local topological
-entity of degree `d` is `\begin{pmatrix}p-1\\ d\end{pmatrix}`.
+entity of dimension `d` is `\binom{p-1}{d}`.
 
 :numref:`figlagrange-nodes` illustrates the association of nodes with
 reference entities for Lagrange elements on triangles. The numbering
@@ -195,11 +195,12 @@ entity. The formula for the first global node associated with entity
 `(d, i)` is then:
 
 .. math::
-
+   :label:
+   
    G(d, i) = \left(\sum_{\delta < d} N_\delta E_\delta\right) + iN_d
 
 where `N_d` is the number of nodes which this finite element
-associates with each entity of dimension `d`, and `E_d` is the number
+associates with a single entity of dimension `d`, and `E_d` is the number
 of dimension `d` entities in the mesh. The full list of nodes
 associated with entity `(d, i)` is therefore:
 
