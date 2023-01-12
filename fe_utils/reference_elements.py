@@ -9,11 +9,12 @@ class ReferenceCell(object):
         :param vertices: a list of coordinate vectors corresponding to
           the coordinates of the vertices of the cell.
         :param topology: a dictionary of dictionaries such that topology[d][i]
-          is the list of vertices incident to the `i`-th entity of dimension 
+          is the list of vertices incident to the `i`-th entity of dimension
           `d`.
         """
 
-        #: The vertices making up each topological entity of the reference cell.
+        #: The vertices making up each topological entity of the reference
+        #: cell.
         self.topology = topology
 
         #: The list of coordinate veritices of the reference cell.
@@ -25,7 +26,9 @@ class ReferenceCell(object):
         self.dim = self.vertices.shape[1]
 
         if self.dim != len(topology) - 1:
-            raise ValueError("Dimension mismatch between vertices and topology.")
+            raise ValueError(
+                "Dimension mismatch between vertices and topology."
+            )
 
         #: The number of entities of each dimension.
         self.entity_counts = np.array([len(d) for d in topology.values()])
@@ -54,7 +57,9 @@ class ReferenceCell(object):
 
         return self.name
 
-#: A :class:`ReferenceCell` storing the geometry and topology of the interval [0, 1].
+
+#: A :class:`ReferenceCell` storing the geometry and topology of the
+#: interval [0, 1].
 ReferenceInterval = ReferenceCell(vertices=[[0.], [1.]],
                                   topology={0: {0: [0],
                                                 1: [1]},

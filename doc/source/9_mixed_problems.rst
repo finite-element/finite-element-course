@@ -551,7 +551,7 @@ Implementing the Stokes problem
     4. Compute the `L^2` error of the mixed solution from the analytic solution.
     
     A convergence test for your code is provided in
-    ``test/test_12_mastery_convergence.py``. In order to be compatible with
+    ``test/test_13_mastery_convergence.py``. In order to be compatible with
     this code, your implementation of
     :func:`~fe_utils.solvers.mastery.solve_mastery` should return its results
     as a tuple of the form :data:`(u, p), error`. This is a slight change from

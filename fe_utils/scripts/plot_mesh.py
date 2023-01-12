@@ -7,11 +7,15 @@ import numpy as np
 
 
 def plot_mesh():
-    parser = ArgumentParser(description="""Plot the topological entities in a regular mesh.""")
+    parser = ArgumentParser(
+        description="""Plot the topological entities in a regular mesh."""
+    )
     parser.add_argument("dimension", type=int, nargs=1, choices=(1, 2),
                         help="Dimension of the domain.")
-    parser.add_argument("resolution", type=int, nargs=1,
-                        help="The number of cells in each direction of the mesh.")
+    parser.add_argument(
+        "resolution", type=int, nargs=1,
+        help="The number of cells in each direction of the mesh."
+    )
 
     args = parser.parse_args()
     resolution = args.resolution[0]
@@ -30,7 +34,9 @@ def plot_mesh():
             plt.plot(mesh.vertex_coords[e, 0], mesh.vertex_coords[e, 1], 'k')
     else:
         for e in mesh.adjacency(1, 0):
-            plt.plot(mesh.vertex_coords[e, 0], 0. * mesh.vertex_coords[e, 0], 'k')
+            plt.plot(
+                mesh.vertex_coords[e, 0], 0. * mesh.vertex_coords[e, 0], 'k'
+            )
 
     colours = ["black", "red", "blue"]
 

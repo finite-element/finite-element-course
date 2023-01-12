@@ -26,9 +26,10 @@
 .. only:: html
 
    This is the webpage for the `Imperial College London Mathematics
-   <http://www.imperial.ac.uk/maths>`__  module
-   MATH96063/MATH97017/MATH97095 Finite Elements: numerical analysis and
-   implementation. There's an introductory video explaining what the module is about `online here <https://player.vimeo.com/video/426777950?autoplay=1>`__.
+   <http://www.imperial.ac.uk/maths>`__  module MATH60022/MATH70022 Finite
+   Elements: numerical analysis and implementation. There's an introductory
+   video explaining what the module is about `online here
+   <https://player.vimeo.com/video/426777950?autoplay=1>`__.
 
    Other people are welcome to make use of the
    material here. The authors welcome feedback and would particularly

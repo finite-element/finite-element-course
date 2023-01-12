@@ -29,10 +29,13 @@ class QuadratureRule(object):
 
         if self.cell.dim != self.points.shape[1]:
             raise ValueError(
-                "Dimension mismatch between reference cell and quadrature points")
+                "Dimension mismatch between reference cell "
+                "and quadrature points"
+            )
         if self.points.shape[0] != len(self.weights):
             raise ValueError(
-                "Number of quadrature points and quadrature weights must match")
+                "Number of quadrature points and quadrature weights must match"
+            )
 
     def integrate(self, function):
         """Integrate the function provided using this quadrature rule.

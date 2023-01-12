@@ -11,11 +11,10 @@ such as Newton's method to create a sequence of linear problems whose
 solutions converge to the correct solution to the
 nonlinear problem.
 
-.. note::
+.. warning::
 
-    This chapter forms the mastery component of the module in some years, but
-    not 2020/2021. It is presented here for reference. None of the material here
-    forms part of the module this year.
+    This chapter formed the content of the mastery material in some years, but
+    does not currently do so. It is presented for reference only.
 
 A model problem
 ---------------
@@ -341,6 +340,11 @@ Implementing a nonlinear problem
    structure, to derive a method of manufactured solutions answer, and
    to create the convergence tests which demonstrate that your
    solution is correct.
+
+.. warning::
+
+   This problem is not currently an assessable part of the module at Imperial
+   College. It is presented here for reference.
 
 .. proof:exercise::
 

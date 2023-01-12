@@ -1,7 +1,6 @@
 from scipy.spatial import Delaunay
 import numpy as np
 import itertools
-from .finite_elements import LagrangeElement
 from .reference_elements import ReferenceTriangle, ReferenceInterval
 
 
@@ -31,9 +30,11 @@ class Mesh(object):
         """The indices of the vertices incident to cell."""
 
         if self.dim == 2:
-            self.edge_vertices = np.array(list(set(tuple(sorted(e))
-                                                   for t in cell_vertices
-                                                   for e in itertools.combinations(t, 2))))
+            self.edge_vertices = np.array(
+                list(set(tuple(sorted(e))
+                         for t in cell_vertices
+                         for e in itertools.combinations(t, 2)))
+            )
             """The indices of the vertices incident to edge (only for 2D
             meshes)."""
 
