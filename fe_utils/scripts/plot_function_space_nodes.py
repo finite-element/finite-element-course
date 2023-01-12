@@ -5,15 +5,23 @@ from fe_utils import ReferenceTriangle, ReferenceInterval, \
 from argparse import ArgumentParser
 import numpy as np
 
-parser = ArgumentParser(description="""Plot the nodes on the equispaced Lagrange function space of the specified degree on a regular mesh.""")
-parser.add_argument("dimension", type=int, nargs=1, choices=(1, 2),
-                    help="Dimension of the domain.")
-parser.add_argument("resolution", type=int, nargs=1,
-                    help="The number of cells in each direction on the mesh.")
-parser.add_argument("degree", type=int, nargs=1,
-                    help="The degree of the polynomial basis for the function space.")
 
-if __name__ == "__main__":
+def plot_function_space_nodes():
+    parser = ArgumentParser(
+        description="""Plot the nodes on the equispaced Lagrange function space
+of the specified degree on a regular mesh."""
+        )
+    parser.add_argument("dimension", type=int, nargs=1, choices=(1, 2),
+                        help="Dimension of the domain.")
+    parser.add_argument(
+        "resolution", type=int, nargs=1,
+        help="The number of cells in each direction on the mesh."
+    )
+    parser.add_argument(
+        "degree", type=int, nargs=1,
+        help="The degree of the polynomial basis for the function space."
+    )
+
     args = parser.parse_args()
     resolution = args.resolution[0]
     degree = args.degree[0]
@@ -48,18 +56,21 @@ if __name__ == "__main__":
         plt.plot(nodes[:, 0], nodes[:, 1], 'bo')
 
         for i, x in enumerate(nodes):
-            ax.annotate(str(i), xy=x, xytext=(10, 1), textcoords='offset points')
+            ax.annotate(str(i), xy=x, xytext=(10, 1),
+                        textcoords='offset points')
 
         ax.axis([-.1, 1.1, -.1, 1.1])
     else:
         for e in mesh.cell_vertices:
-            plt.plot(mesh.vertex_coords[e, 0], 0 * mesh.vertex_coords[e, 0], 'k')
+            plt.plot(mesh.vertex_coords[e, 0], 0 * mesh.vertex_coords[e, 0],
+                     'k')
 
         plt.plot(nodes[:, 0], 0 * nodes[:, 0], 'bo')
         plt.plot(mesh.vertex_coords[:, 0], 0 * mesh.vertex_coords[:, 0], 'ko')
 
         for i, x in enumerate(nodes):
-            ax.annotate(str(i), xy=(x[0], 0), xytext=(10, 1), textcoords='offset points')
+            ax.annotate(str(i), xy=(x[0], 0), xytext=(10, 1),
+                        textcoords='offset points')
 
         ax.axis([-.1, 1.1, -.1, .1])
 
