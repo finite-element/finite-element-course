@@ -1,9 +1,0 @@
-#! /usr/bin/env bash
-if [[ $VIRTUAL_ENV ]];
-then
-    pip install sphinx sphinxcontrib-bibtex sphinxcontrib-proof sphinx-autobuild sphinx-panels
-    pip install git+https://github.com/sphinx-contrib/youtube.git
-else
-    echo ERROR: please activate the finite element course venv
-    exit 1
-fi

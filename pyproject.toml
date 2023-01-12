@@ -5,8 +5,7 @@ build-backend = "hatchling.build"
 [project]
 name = "finite-element-course"
 version = "2023.0"
-description="""Skeleton finite element implementation in support of 
-MATH60022/MATH70022 at Imperial College London."""
+description="""Skeleton finite element implementation in support of MATH60022/MATH70022 at Imperial College London."""
 license = "MIT"
 authors = [
     { name = "David A. Ham", email = "David.Ham@imperial.ac.uk" },
@@ -29,3 +28,13 @@ plot_lagrange_basis_functions = "fe_utils.scripts.plot_lagrange_basis_functions:
 plot_sin_function = "fe_utils.scripts.plot_sin_function:plot_sin_function"
 plot_interpolate_lagrange = "fe_utils.scripts.plot_interpolate_lagrange:plot_interpolate_lagrange"
 plot_lagrange_points = "fe_utils.scripts.plot_lagrange_points:plot_lagrange_points"
+
+[project.optional-dependencies]
+doc = [
+    "sphinx",
+    "sphinxcontrib-bibtex",
+    "sphinxcontrib-proof",
+    "sphinx-autobuild",
+    "sphinx-panels",
+    "sphinxcontrib-youtube"
+]
