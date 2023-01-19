@@ -45,7 +45,7 @@ The assessment of your finite element implementation will occur in a
 single submission at the end of term. However feedback on your
 progress will be available during the term. Informal feedback will be
 available during the labs, and comments will be left on the feedback pull
-request for your implementation exercise after weeks 7 and 9.
+request for your implementation exercise after weeks 4 and 7.
 
 Mastery
 .......
