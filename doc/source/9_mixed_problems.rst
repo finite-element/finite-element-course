@@ -389,10 +389,8 @@ constraint, this system has the following form:
 
 where:
 
-.. _blocks:
-
 .. math::
-    :label:
+    :label: blocks
 
     A_{ij} = a(\phi_j, \phi_i),
 

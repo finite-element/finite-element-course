@@ -58,7 +58,7 @@ Extension (mastery) exercise
 ----------------------------
 
 Fourth year and masters students must also complete the mastery
-exercise, which will be issued half way through the term. This will be
+exercise, which is :numref:`mixed` This will be
 worth 20% of the implementation exercise marks and will be marked on
 the same scheme as above.   
 

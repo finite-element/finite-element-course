@@ -44,8 +44,8 @@ Submitting code for feedback
 The assessment of your finite element implementation will occur in a
 single submission at the end of term. However feedback on your
 progress will be available during the term. Informal feedback will be
-available during the labs, and you will have the opportunity to submit
-your code for formal feedback twice during the term, in weeks 4 and 7.
+available during the labs, and comments will be left on the feedback pull
+request for your implementation exercise after weeks 7 and 9.
 
 Mastery
 .......
