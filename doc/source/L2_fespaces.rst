@@ -783,14 +783,13 @@ geometric decomposition.
   This idea extends to `C^m` finite elements in an analogous way.
      
 The idea behind this definition is that if two triangles `K_1` and
-`K_2` are joined at a vertex, with finite elements
+`K_2` are joined at a vertex $v$, with finite elements
 `(K_1,\mathcal{P}_1, \mathcal{N}_1)` and `(K_2, \mathcal{P}_2,
-\mathcal{N}_2)`, then if the `\mathcal{N}_1` variables associated with
-the vertex applied to a function `u` agree with the corresponding
-`\mathcal{N}_2` variables also associated with that vertex also
-applied to `u`, then the function `u` will be `C^m` continuous through
-the vertex. Similarly, if `K_1` and `K_2` are joined at an edge, then
-if the corresponding `\mathcal{N}_1` and `\mathcal{N}_2` nodal
+\mathcal{N}_2)`, then the nodal variables `\mathcal{N}_{1,v}` and
+`\mathcal{N}_{1,v}` can be chosen so that `f` (and for `m=1`, the derivatives of `f`) has the same values at `v` in both `K_1` and `K_2`.
+
+Similarly, if `K_1` and `K_2` are joined at an edge `e`, then
+if the corresponding `\mathcal{N}_{1,e}` and `\mathcal{N}_{2,e}` nodal
 variables associated with that edge agree when applied to `u`, then
 `u` will be `C^m` continuous through that edge. We just need to define
 these correspondences.
