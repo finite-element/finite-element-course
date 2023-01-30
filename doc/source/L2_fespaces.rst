@@ -260,7 +260,7 @@ provides a useful tool for checking this.
   
       N_i(v)=0 \iff \sum_{j=0}^k f_jN_i(\psi_j) = 0, \quad i=0,1,\ldots,k,
 
-   by linearity of `N_i`. So (2) is equivalent to
+   by linearity of `N_i`. So (3) is equivalent to
 
    .. math::
    
@@ -760,13 +760,28 @@ geometric decomposition.
 .. proof:definition:: \(C^m\) geometric decomposition
 
    Let `(K,\mathcal{P},\mathcal{N})` be a finite element with
-   geometric decomposition `W`. We say that `W` is a `C^m` geometric
-   decomposition, if for each local mesh entity `w`, for any `f\in
-   \mathcal{P}`, the restriction `f|_w` of `f` (and the restriction
-   `D^kf|_w` of the `k`-th derivative of `f` to `w` for `k\leq m`) can
-   be obtained from the set of dual basis functions associated with
-   entities in the closure of `w`, applied to `f`.
+   geometric decomposition `W`. We say that `W` is a `C^0` geometric
+   decomposition if, for each local mesh entity `w`, there exists
+   `\mathcal{N}_w \subset \mathcal{N}` such that
 
+   #. All `N\in \mathcal{N}_w` are associated to elements in the closure of `w` in `W`,
+   #. `(w,\mathcal{P}|_w,\mathcal{N}_w)` is a finite element, where `\mathcal{P}|_w` is the restriction of `\mathcal{P}` to `w`.
+   
+   We additionally say that `W` is a `C^1` geometric decomposition if
+   for each local mesh entity `w`, there exists
+   `\mathcal{N}_w \subset \mathcal{N}` such that
+   
+   #. All `N\in \mathcal{N}_w` are associated to elements in the closure of `w` in `W`,
+   #. `(w,\nabla\mathcal{P}|_w,\mathcal{N}_w)` is a finite element,
+
+   where `\nabla\mathcal{P}|_w` is the restriction of `\nabla\mathcal{P}` to `w`, and
+
+  .. math::
+
+     \nabla\mathcal{P} = \{ u : u = \nabla v, \, v \in \mathcal{P}\}.
+
+  This idea extends to `C^m` finite elements in an analogous way.
+     
 The idea behind this definition is that if two triangles `K_1` and
 `K_2` are joined at a vertex, with finite elements
 `(K_1,\mathcal{P}_1, \mathcal{N}_1)` and `(K_2, \mathcal{P}_2,
