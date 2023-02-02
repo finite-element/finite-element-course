@@ -508,14 +508,6 @@ first do this for `P1`.
    corresponding to point evaluation at each vertex of the
    rectangle. Show that `\mathcal{N}` determines the finite element.
 
-.. proof:exercise::
-
-   Let `K` be a triangle, and `P` be the space of quadratic
-   polynomials. Let `N` be the set of nodal variables given by point
-   evaluation at each edge midpoint together with the nodal variables
-   given by integral of the function along each edge. Show that `N`
-   determines `P`.
-
 This technique can then be extended to degree 2.
    
 .. proof:lemma::
