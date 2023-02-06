@@ -2,7 +2,6 @@ import numpy as np
 from . import ReferenceTriangle, ReferenceInterval
 from .finite_elements import LagrangeElement, lagrange_points
 from matplotlib import pyplot as plt
-from mpl_toolkits.mplot3d import Axes3D
 from matplotlib.tri import Triangulation
 
 
@@ -12,7 +11,8 @@ class FunctionSpace(object):
         """A finite element space.
 
         :param mesh: The :class:`~.mesh.Mesh` on which this space is built.
-        :param element: The :class:`~.finite_elements.FiniteElement` of this space.
+        :param element: The :class:`~.finite_elements.FiniteElement` of this
+            space.
 
         Most of the implementation of this class is left as an :ref:`exercise
         <ex-function-space>`.
@@ -103,7 +103,9 @@ class Function(object):
 
         fs = self.function_space
 
-        d = subdivisions or (2 * (fs.element.degree + 1) if fs.element.degree > 1 else 2)
+        d = subdivisions or (
+            2 * (fs.element.degree + 1) if fs.element.degree > 1 else 2
+        )
 
         if fs.element.cell is ReferenceInterval:
             fig = plt.figure()
@@ -157,10 +159,13 @@ class Function(object):
                      for j in range(degree)
                      for i in range(degree - j)]
                     # Down triangles.
-                    + [np.add(np.sum(range(degree + 2 - j, degree + 2)),
-                              (i+1, i + degree + 1 - j + 1, i + degree + 1 - j))
-                       for j in range(degree - 1)
-                       for i in range(degree - 1 - j)]))
+                    + [
+                        np.add(
+                            np.sum(range(degree + 2 - j, degree + 2)),
+                            (i+1, i + degree + 1 - j + 1, i + degree + 1 - j))
+                        for j in range(degree - 1)
+                        for i in range(degree - 1 - j)
+                    ]))
 
     def integrate(self):
         """Integrate this :class:`Function` over the domain.

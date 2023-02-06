@@ -35,5 +35,3 @@ def errornorm(f1, f2):
                        Q.weights) * detJ
 
     return norm**0.5
-
-

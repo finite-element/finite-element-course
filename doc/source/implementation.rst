@@ -21,11 +21,11 @@ Formalities and marking scheme
 ------------------------------
 
 The implementation exercise is due immediately prior to the Summer Semester
-study days/revision period. That is, by 1600 on Friday 3 June 2022. You must
-submit your work uploading the GitHub URL and hash on Moodle. You can
-conveniently :ref:`find this hash on the commits page for your repository on
-GitHub <fons:git-hash>`. For the avoidance of doubt, the commit you submit must
-date from before the deadline!
+study days/revision period. That is, by 1600 on Friday 2 June 2023. You must
+submit your work by emailing jack.hale@uni.lu the link to your GitHub
+repository and the git hash you are submitting. You can conveniently :ref:`find
+this hash on the commits page for your repository on GitHub <fons:git-hash>`.
+The commit you submit must date from before the deadline!
 
 The marking scheme will be as follows:
 
@@ -56,14 +56,6 @@ students submit code that uses quadratic algorithms where linear ones would be
 possible. The result is that examples that should run in seconds and take
 megabytes of memory instead take gigabytes of memory and many hours to complete.
 Such submissions are incorrect, and will be marked as such.
-
-Extension (mastery) exercise
-----------------------------
-
-Fourth year and masters students must also complete the mastery
-exercise, which will be issued half way through the term. This will be
-worth 20% of the implementation exercise marks and will be marked on
-the same scheme as above.   
 
 Obtaining the skeleton code
 ---------------------------
@@ -114,25 +106,6 @@ create the folder we'll use for this course. Suppose we choose to call it
 
     $ cd finite-element
 
-
-Setting up your repository
-~~~~~~~~~~~~~~~~~~~~~~~~~~
-
-We're using a tool called `GitHub classroom <https://classroom.github.com>`_ to automate the creation of your
-copies of the repository. To create your repository, `click here <https://classroom.github.com/a/XifNjyLs>`_.
-
-Cloning a local copy
-~~~~~~~~~~~~~~~~~~~~
-
-At the command line on your working machine type:
-
-.. code-block:: console
-
-    $ git clone <url> finite-element-course
-
-Substituting your git repository url for <url>. Your git repository
-url can be found by clicking on `clone or download` at the top right of your repository page on GitHub. 
-
 Setting up your venv
 ~~~~~~~~~~~~~~~~~~~~
 
@@ -140,21 +113,14 @@ We're going to use a Python venv. This is a private Python environment
 in which we'll install the packages we need, including our own
 implementation exercise. This minimises interference between this
 project and anything else which might be using Python on the
-system. We can run a script from the git repository to make the venv:
+system. With your current working folder set to the course folder, run:
 
 .. code-block:: console
 
-    $ ./finite-element-course/scripts/fe_install_venv fe_venv
+    $ python3 -m venv fe_venv
 
-This has to install several packages in the venv, so it might take a
-few minutes to run.
-
-On Windows, the set of commands is somewhat different. In this case
-you would run:
-
-.. code-block:: console
-
-    > ./finite-element-course/scripts/fe_install_venv_win fe_venv
+If your Python interpreter has a different name (e.g. `python3.11` or `py`)
+then you type that instead.
 
 Activating your venv
 ~~~~~~~~~~~~~~~~~~~~
@@ -174,7 +140,37 @@ while on Windows the command is:
 
 Obviously if you are typing this in a directory other than the one
 containing the venv, you need to modify the path accordingly.
-   
+
+Setting up your repository
+~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+We're using a tool called `GitHub classroom <https://classroom.github.com>`_ to automate the creation of your
+copies of the repository. To create your repository, `click here <https://classroom.github.com/a/y6zvqAa5>`_.
+
+Cloning a local copy
+~~~~~~~~~~~~~~~~~~~~
+
+At the command line on your working machine type:
+
+.. code-block:: console
+
+    $ git clone <url> finite-element-course
+
+Substituting your git repository url for <url>. Your git repository
+url can be found by clicking on `clone or download` at the top right of your repository page on GitHub. 
+
+Installing the course Python package
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+Your git repository contains a Python package. Installing this will cause the
+other Python packages on which it depends to be installed into your venv, and
+will create various visualisation scripts you'll need later in the module. Run:
+
+.. console::
+
+    $ python -m pip install -e finite-element-course/
+
+
 Skeleton code documentation
 ---------------------------
 
@@ -248,25 +244,23 @@ Getting help
 ------------
 
 It's expected that you will find there are tasks in the implementation exercise
-that you don't know how to do. Your first port of call should be the Piazza
+that you don't know how to do. Your first port of call should be the Ed
 forum, followed by the weekly live lab sessions.
 
-Using Piazza
-~~~~~~~~~~~~
+Using Ed
+~~~~~~~~
 
-The key advantage of asking for help on Piazza is that you can do this at any
-point during the week, whenever you are stuck. The whole class can see Piazza,
+The key advantage of asking for help on Ed is that you can do this at any
+point during the week, whenever you are stuck. The whole class can see the forum,
 but you can choose to publish anonymously so nobody need know who asked the
-question. You should also watch the other questions as they appear on Piazza,
+question. You should also watch the other questions as they appear on Ed,
 because you will find that you learn a lot from what other people ask, as well
 as the answers they get. Other students might notice issues that didn't even
-occur to you! Also do please try to answer other students' questions. Doing so
+occur to you! 
+
+Do please try to answer other students' questions. Doing so
 is actually a really effective way of understanding the work better, since you
 will be looking at the tasks from another student's perspective.
-
-I will attempt to check and respond to Piazza at least once every work day, so
-you should get a response at the latest by the end of the work day following the
-one on which you post your question. 
 
 Formulating a good question
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~

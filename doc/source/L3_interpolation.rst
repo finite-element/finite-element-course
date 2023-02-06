@@ -453,8 +453,8 @@ results of this section without directly using the previous estimate
 
    .. math::
 
-      (\int_0^1 f(x)g(x) \, dx)^2 \leq (\int_0^1 f(x)^2 \, dx)
-      (\int_0^1 g(x)^2 \, dx)^2,
+      \left(\int_0^1 f(x)g(x) \, dx\right)^2 \leq \left(\int_0^1 f(x)^2 \, dx\right)
+      \left(\int_0^1 g(x)^2 \, dx\right),
 
    (which we shall discuss in more generality in Section 4), together
    with Rolle's theorem.

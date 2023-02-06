@@ -5,14 +5,18 @@ from fe_utils import ReferenceTriangle, UnitSquareMesh, \
 from argparse import ArgumentParser
 import numpy as np
 
-parser = ArgumentParser(description="""Plot the topological entities in a regular mesh.""")
-parser.add_argument("dimension", type=int, nargs=1, choices=(1, 2),
-                    help="Dimension of the domain.")
-parser.add_argument("resolution", type=int, nargs=1,
-                    help="The number of cells in each direction of the mesh.")
 
+def plot_mesh():
+    parser = ArgumentParser(
+        description="""Plot the topological entities in a regular mesh."""
+    )
+    parser.add_argument("dimension", type=int, nargs=1, choices=(1, 2),
+                        help="Dimension of the domain.")
+    parser.add_argument(
+        "resolution", type=int, nargs=1,
+        help="The number of cells in each direction of the mesh."
+    )
 
-if __name__ == "__main__":
     args = parser.parse_args()
     resolution = args.resolution[0]
     cell = (None, ReferenceInterval, ReferenceTriangle)[args.dimension[0]]
@@ -30,7 +34,9 @@ if __name__ == "__main__":
             plt.plot(mesh.vertex_coords[e, 0], mesh.vertex_coords[e, 1], 'k')
     else:
         for e in mesh.adjacency(1, 0):
-            plt.plot(mesh.vertex_coords[e, 0], 0. * mesh.vertex_coords[e, 0], 'k')
+            plt.plot(
+                mesh.vertex_coords[e, 0], 0. * mesh.vertex_coords[e, 0], 'k'
+            )
 
     colours = ["black", "red", "blue"]
 

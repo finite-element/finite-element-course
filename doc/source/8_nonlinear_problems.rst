@@ -11,11 +11,10 @@ such as Newton's method to create a sequence of linear problems whose
 solutions converge to the correct solution to the
 nonlinear problem.
 
-.. note::
+.. warning::
 
-    This chapter forms the mastery component of the module in some years, but
-    not 2020/2021. It is presented here for reference. None of the material here
-    forms part of the module this year.
+    This chapter formed the content of the mastery material in some years, but
+    does not currently do so. It is presented for reference only.
 
 A model problem
 ---------------
@@ -47,8 +46,8 @@ find `u\in V` such that:
    u_\Gamma = b.
 
 Once more, `V_0` is the subspace of `V` spanned by basis functions which
-vanish on the boundary, `V = V_0 \oplus V_\Gamma`, and `u = u_0 +
-u_\Gamma` with `u_0\in V_0` and `u_\Gamma\in V_\Gamma`. This is
+vanish on the boundary, `V = V_0 \oplus V_\Gamma`, and `u = u_0 + u_\Gamma` 
+with `u_0\in V_0` and `u_\Gamma\in V_\Gamma`. This is
 corresponds directly with the weak form of the Poisson equation we
 already met. However, :eq:`weakdiffusion` is still nonlinear in `u` so
 we cannot simply substitute `u = u_i\phi_i` in order to obtain a
@@ -189,18 +188,21 @@ where `\hat{u} \in V` is the solution to:
 
 In fact, :eq:`newton_update` is simply a linear finite element
 problem! To make this explicit, we can expand `v` and `\hat{u}` in
-terms of basis functions:
+terms of basis functions `\{\phi_i\}_{i=0}^{n-1} \in V` such that 
+`v = \sum_{i}v_i\phi_i` and `\hat{u} = \sum_{j}\hat{u}_j\phi_j`. We 
+note, as previously, that we we can drop the coefficients `v_i` giving:
 
 .. math::
    :label:
 
-   J(u^n; \phi_i, \phi_j) \hat{u}_j = - f(u^n; \phi_i).
+   \sum_{j} J(u^n; \phi_i, \phi_j) \hat{u}_j = - f(u^n; \phi_i) \qquad \forall\, 0\leq i < n .
 
 For our nonlinear diffusion problem, the matrix `J` is given by:
 
 .. math::
    :label:
 
+   J_{ij} = 
    J(u^n; \phi_i, \phi_j) =
    \begin{cases}
    \displaystyle\int_\Omega \nabla \phi_i \cdot \left(\phi_j \nabla u^n + (u^n + 1) \nabla \phi_j \right) \, \mathrm{d} x & \phi_i\in V_0\\
@@ -338,6 +340,11 @@ Implementing a nonlinear problem
    structure, to derive a method of manufactured solutions answer, and
    to create the convergence tests which demonstrate that your
    solution is correct.
+
+.. warning::
+
+   This problem is not currently an assessable part of the module at Imperial
+   College. It is presented here for reference.
 
 .. proof:exercise::
 

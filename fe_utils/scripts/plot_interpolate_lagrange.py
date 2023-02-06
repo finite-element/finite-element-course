@@ -1,21 +1,27 @@
 #! /usr/bin/env python
 from matplotlib import pyplot as plt
-from mpl_toolkits.mplot3d import Axes3D
 from argparse import ArgumentParser
 from fe_utils.finite_elements import lagrange_points
 from fe_utils import ReferenceTriangle, ReferenceInterval, LagrangeElement
 from matplotlib import cm
 import numpy as np
-from math import *
+from math import *  # NOQA F403
 
-parser = ArgumentParser(description="""Plot a function interpolated onto the reference element.""")
-parser.add_argument("function", type=str, nargs=1,
-                    help='An expression in the coordinate vector x. The function should be a quoted string. E.g. "sin(x[0])".')
-parser.add_argument("dimension", type=int, nargs=1, choices=(1, 2),
-                    help="Dimension of reference cell.")
-parser.add_argument("degree", type=int, nargs=1,
-                    help="Degree of basis functions.")
-if __name__=="__main__":
+
+def plot_interpolate_lagrange():
+    parser = ArgumentParser(
+        description="Plot a function interpolated onto the reference element."
+    )
+    parser.add_argument(
+        "function", type=str, nargs=1,
+        help='An expression in the coordinate vector x. The '
+        'function should be a quoted string. E.g. "sin(x[0])".'
+    )
+    parser.add_argument("dimension", type=int, nargs=1, choices=(1, 2),
+                        help="Dimension of reference cell.")
+    parser.add_argument("degree", type=int, nargs=1,
+                        help="Degree of basis functions.")
+
     args = parser.parse_args()
     dim = args.dimension[0]
     degree = args.degree[0]
@@ -45,6 +51,7 @@ if __name__=="__main__":
         fig = plt.figure()
         ax = fig.gca(projection='3d')
 
-        ax.plot_trisurf(x[:, 0], x[:, 1], np.dot(z, coefs), cmap=cm.RdBu, linewidth=0)
+        ax.plot_trisurf(x[:, 0], x[:, 1], np.dot(z, coefs), cmap=cm.RdBu,
+                        linewidth=0)
 
     plt.show()
