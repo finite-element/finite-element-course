@@ -39,7 +39,7 @@ def plot_lagrange_basis_functions():
         z = fe.tabulate(x)
 
         fig = plt.figure(figsize=(20, 4))
-        ax = fig.gca(projection='3d')
+        ax = fig.add_subplot(projection='3d')
 
         offsets = fe.nodes * fe.degree * 1.1
 

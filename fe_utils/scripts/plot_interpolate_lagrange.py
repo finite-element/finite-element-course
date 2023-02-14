@@ -49,7 +49,7 @@ def plot_interpolate_lagrange():
         z = fe.tabulate(x)
 
         fig = plt.figure()
-        ax = fig.gca(projection='3d')
+        ax = fig.add_subplot(projection='3d')
 
         ax.plot_trisurf(x[:, 0], x[:, 1], np.dot(z, coefs), cmap=cm.RdBu,
                         linewidth=0)
