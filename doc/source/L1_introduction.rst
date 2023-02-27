@@ -93,10 +93,10 @@ a triangulation.
    `\mathcal{T}` of `\Omega` is a set of triangles `\{K_i\}_{i=1}^N`, such
    that:
 
-   #. `\mathrm{int}\, K_i \cap K_j = \emptyset, \quad i\neq j`, where `\mathrm{int }` denotes the interior of a set (no overlaps).
+   #. `\mathrm{int}\, K_i \cap \mathrm{int}\, K_j = \emptyset, \quad i\neq j`, where `\mathrm{int }` denotes the interior of a set (no overlaps).
    #. `\cup K_i = \bar{\Omega}`, the closure of `\Omega` (triangulation covers
       `\Omega`).
-   #. No vertex of any triangle is located in the interior of any other triangle in `\mathcal{T}` (triangle vertices only meet other triangle vertices).
+   #. No vertex of any triangle lies in the interior of an edge of another triangle (triangle vertices only meet other triangle vertices).
 
 Our first finite element space
 ------------------------------
