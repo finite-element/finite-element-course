@@ -94,7 +94,7 @@ vanish on the boundary, and `Q=\mathring{L}^2(\Omega)`, with
    .. math::
       :label:
 
-      a(u,v) = \mu\int_\Omega \epsilon(u):\epsilon(v)d\, x,
+      a(u,v) = 2\mu\int_\Omega \epsilon(u):\epsilon(v)d\, x,
 
       b(v,q) = -\int_\Omega q \nabla\cdot v d\, x.
 
