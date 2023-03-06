@@ -323,7 +323,7 @@ and continuity.
 
    On the other hand, `L` continuous `\implies |L(u-v)| \leq C\|u-v\|_{H}
    \quad \forall u,v\in H`. Pick `v=0`, then `|L(u)| = |L(u-0)| \leq
-   C|u-0|_H = C|u|_H`, i.e. `L` is bounded.
+   C\|u-0\|_H = C\|u\|_H`, i.e. `L` is bounded.
 
 We can also interpret bounded linear functionals as elements of a vector space.
 
@@ -359,7 +359,7 @@ There is a simple mapping from `H` to `H'`.
 
    .. math::
 
-      L_u(v+\alpha w) = (u,v+\alpha w) = (u,v) + \alpha(u,v) = L_u(v)
+      L_u(v+\alpha w) = (u,v+\alpha w) = (u,v) + \alpha(u,w) = L_u(v)
       + \alpha L_u(w).
 
    Hence `L_u` is linear.
