@@ -661,7 +661,7 @@ For the Helmholtz problem, we have
    
    b(u,v) = \int_\Omega uv + \nabla u\cdot \nabla v \, d x = (u,v)_{H^1},
 
-i.e. `b(u,v)` is the `H^1` inner of `u` and `v`, which makes the
+i.e. `b(u,v)` is the `H^1` inner product of `u` and `v`, which makes the
 continuity and coercivity immediate.
   
 For the Poisson problem, we have
