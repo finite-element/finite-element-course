@@ -1033,8 +1033,8 @@ Poisson problem with (full or partial) Dirichlet conditions.
       &\leq C|v|_{H^1(\Omega)} + \frac{|\Omega|^{1/2}}{|\Gamma_0|}
       \left|\int_{\Gamma_0}\bar{v}\, d S\right|,
  
-      &\leq C|v|_{H^1(\Omega)} + \frac{|\Omega|^{1/2}}{|\Gamma_0|}
-      \left(\left|\int_{\Gamma_0}v\, d S + \int_{\Gamma_0}\bar{v}-v\, d S\right|\right).
+      &= C|v|_{H^1(\Omega)} + \frac{|\Omega|^{1/2}}{|\Gamma_0|}
+      \left(\left|\int_{\Gamma_0}\bar{v} - \underbrace{v}_{=0}\, d S\right|\right).
 
    We have
 
@@ -1042,7 +1042,11 @@ Poisson problem with (full or partial) Dirichlet conditions.
    
       \left|
       \int_{\Gamma_0} (v-\bar{v})\, d s
-      \right|  \leq |\Gamma_0|^{1/2}\|v-\bar{v}\|_{L^2(\partial\Omega)},
+      \right|
+   =\left|
+      1 \times \int_{\Gamma_0} (v-\bar{v})\, d s
+      \right|
+      \leq |\Gamma_0|^{1/2}\|v-\bar{v}\|_{L^2(\partial\Omega)},
       
       \leq |\Gamma_0|^{1/2}C |v|_{H^1(\Omega)}.
 
