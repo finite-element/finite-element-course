@@ -1044,7 +1044,7 @@ Poisson problem with (full or partial) Dirichlet conditions.
       \int_{\Gamma_0} (v-\bar{v})\, d s
       \right|
       =\left|
-      1 \times \int_{\Gamma_0} (v-\bar{v})\, d s
+      \int_{\Gamma_0} 1 \times (v-\bar{v})\, d s
       \right|
       \leq |\Gamma_0|^{1/2}\|v-\bar{v}\|_{L^2(\partial\Omega)},
       
