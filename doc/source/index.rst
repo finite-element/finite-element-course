@@ -144,7 +144,7 @@
    * `2019 exam paper <_static/FEExam-2019.pdf>`__ and `solutions <_static/FEExam-2019-solns.pdf>`__
    * `2020 exam paper <_static/FEExam-2020.pdf>`__ and `solutions <_static/FEExam-2020-solns.pdf>`__
    * `2021 exam paper <_static/FEExam-2021.pdf>`__ and `solutions <_static/FEExam-2021-solns.pdf>`__
-   * `2022 exam paper <_static/FEExam-2022.pdf>`__ and `solutions <_static/FEExam-2022-soln.pdf>`__
+   * `2022 exam paper <_static/FEExam-2022-soln.pdf>`__ and `solutions <_static/FEExam-2022.pdf>`__
    * `revision checklist  <_static/revision-checklist.pdf>`__
 
 .. only:: html
