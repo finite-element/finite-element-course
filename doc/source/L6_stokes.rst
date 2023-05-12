@@ -22,7 +22,7 @@ equation of a viscous fluid, given by
 .. math::
    :label:
 
-   -\mu\nabla\cdot\epsilon(u) + \nabla p = f, \quad \nabla\cdot u = 0,
+   -2\mu\nabla\cdot\epsilon(u) + \nabla p = f, \quad \nabla\cdot u = 0,
     \quad \epsilon(u) = \frac{1}{2}\left( \nabla u + \nabla u^T\right),
 
 where `u` is the (vector-valued) fluid velocity, `p` is the pressure,
@@ -241,7 +241,7 @@ spaces.
 	 :label:
 
 	 Z^{\perp} = \left\{ q\in Q: \langle q,p \rangle_Q = 0, \,
-	 \forall p \in Q\right\}.
+	 \forall p \in Z\right\}.
 
 In finite dimensions, we have that `B^*` defines a one-to-one mapping
 from `(\mathrm{Ker}B^*)^\perp\subset Q` (the perpendicular space to
@@ -284,7 +284,7 @@ us that
    .. math::
       :label:
 
-      \mathrm{Im}(B^*) = (\mathrm{Ker} B^*)^0.
+      \mathrm{Im}(B^*) = (\mathrm{Ker} B)^0.
 
 Equipped with this tool, we can look at solveability of mixed problems.
       
@@ -432,7 +432,7 @@ for existence are given by the following result of Franco Brezzi.
       .. math::
 	 :label:
 
-	 \|u_Z\|_V \leq \frac{1}{\alpha}\left(\|F\|_{V'} -
+	 \|u_Z\|_V \leq \frac{1}{\alpha}\left(\|F\|_{V'} +
 	 \sup_{v\in V}\frac{a(u_g,\cdot)}{\|v\|_V}\right)
 
 	 \leq \frac{1}{\alpha} \|F\|_{V'} + \frac{M}{\alpha}\|u_g\|_{V},
@@ -562,10 +562,10 @@ approximation in a manner very similar to Céa's Lemma.
       .. math::
 	 :label:
 
-	 \|u_h - u\|_V \leq  \frac{4MM_b}{\alpha\beta}E_u + \frac{M_b}{\alpha}E_p,
+	 \|u_h - u\|_V \leq  \frac{4MM_b}{\alpha\beta_h}E_u + \frac{M_b}{\alpha}E_p,
 
-	 \|p_h - p\|_V \leq \frac{3M^2M_b}{\alpha\beta^2}E_u
-	 + \frac{3MM_b}{\alpha\beta}E_p.
+	 \|p_h - p\|_V \leq \frac{3M^2M_b}{\alpha\beta_h^2}E_u
+	 + \frac{3MM_b}{\alpha\beta_h}E_p.
 
    where `M_b` is the continuity constant of `b(\cdot,\cdot)`, and
    where we have the best approximation errors of `u` and `p` in `V_h`
@@ -610,50 +610,58 @@ approximation in a manner very similar to Céa's Lemma.
 	 :label:
 
 	 \|u_h-u_I\|_V  \leq \frac{1}{\alpha}\|F_{u_I,p_I}\|_{V'}
-	 + \frac{2M}{\alpha\beta}\|G_{u_I}\|_{Q'},
+	 + \frac{2M}{\alpha\beta_h}\|G_{u_I}\|_{Q'},
 
-	 \|p_h-p_I\|_Q \leq \frac{2M}{\alpha\beta}\|F_{u_I,p_I}\|_{V'} +
-	 \frac{2M^2}{\alpha\beta^2} \|G_{u_I}\|_{Q'}.
+	 \|p_h-p_I\|_Q \leq \frac{2M}{\alpha\beta_h}\|F_{u_I,p_I}\|_{V'} +
+	 \frac{2M^2}{\alpha\beta_h^2} \|G_{u_I}\|_{Q'}.
 
    Using continuity of `a(\cdot,\cdot)` and `b(\cdot,\cdot)`, we have
 
       .. math::
 	 :label:
 
-	 \|F_{u_I,p_I}\|_{V'} = \sup_{v\in V}\frac{a(u-u_I,v)}{\|v\|_{V}}
+	 \|F_{u_I,p_I}\|_{V'} \leq \sup_{v\in V}\frac{a(u-u_I,v)}{\|v\|_{V}}
 	 + \sup_{v\in V}\frac{b(v,p-p_I)}{\|v\|_V}
-	 \leq M\|u-u_I\|_V + M_b\|p-p_I\|,
+	 \leq M\|u-u_I\|_V + M_b\|p-p_I\|_Q,
 
 	 \|G_{u_I}\|_{Q'} = \sup_{p\in Q}\frac{b(u-u_I,p)}{\|p\|_Q}
 	 \leq M_b\|u-u_I\|_V.
 
-   Substitution then gives (making use of `M_b\geq\beta`, which comes
-   from the fact that for any `u\in V` there exists `q \in Q` such that
-   `\beta\|u\|_V\|q\|_Q\leq b(u,q)\leq M_b\|u\|_V\|q\|_Q`, hence the result)
+   Substitution then gives 
 
       .. math::
 	 :label:
 
 	 \|u_h-u_I\|_V  \leq \frac{1}{\alpha}\left(M\|u-u_I\|_V +
-	 M_b\|p-p_I\|\right)
-	 + \frac{2M}{\alpha\beta}M_b\|u-u_I\|_V,
+	 M_b\|p-p_I\|_Q\right)
+	 + \frac{2M}{\alpha\beta_h}M_b\|u-u_I\|_V.
+	 
+   We have
 
-	 \leq \frac{3MM_b}{\alpha\beta}\|u-u_I\|_V + \frac{M_b}{\alpha}
-	 \|p-p_I\|_V,
+      .. math::
+	 \beta_h \leq \inf_{q\in Q_h}\sup_{v\in V_h}\frac{b(v,q)}{\|q\|_Q\|v\|_V} \leq M_b,
+
+   and hence,
+
+      .. math::
+	 :label:
+
+	 \|u_h-u_I\|_V\leq \frac{3MM_b}{\alpha\beta_h}\|u-u_I\|_V + \frac{M_b}{\alpha}
+	 \|p-p_I\|_Q,
 
    and
 
       .. math::
 	 :label:
 	   
-	 \|p_h-p_I\|_Q \leq \frac{2M}{\alpha\beta}
+	 \|p_h-p_I\|_Q \leq \frac{2M}{\alpha\beta_h}
 	 \left(M\|u-u_I\|_V +
-	 M_b\|p-p_I\|\right)
+	 M_b\|p-p_I\|_Q\right)
 	 +
-	 \frac{2M^2}{\alpha\beta^2}M_b\|u-u_I\|_V
+	 \frac{2M^2}{\alpha\beta_h^2}M_b\|u-u_I\|_V
 
-	 \leq \frac{3M^2M_b}{\alpha\beta^2}\|u-u_I\|_V
-	 + \frac{2MM_b}{\alpha\beta}\|p-p_I\|_V.
+	 \leq \frac{3M^2M_b}{\alpha\beta_h^2}\|u-u_I\|_V
+	 + \frac{2MM_b}{\alpha\beta_h}\|p-p_I\|_Q.
 	 
    We then use the triangle inequality to write
 
@@ -662,18 +670,18 @@ approximation in a manner very similar to Céa's Lemma.
 
 	 \|u-u_h\|_V \leq \|u-u_I\|_V + \|u_h-u_I\|_V,
 
-	 \leq  \frac{4MM_b}{\alpha\beta}\|u-u_I\|_V + \frac{M_b}{\alpha}
-	 \|p-p_I\|_V,
+	 \leq  \frac{4MM_b}{\alpha\beta_h}\|u-u_I\|_V + \frac{M_b}{\alpha}
+	 \|p-p_I\|_Q,
    
       .. math::
 	 :label:
 
-	 \|p-p_h\|_Q \leq \|p-p_I\|_V + \|p_h-p_I\|_V,
+	 \|p-p_h\|_Q \leq \|p-p_I\|_Q + \|p_h-p_I\|_Q,
 
-	 \leq \frac{3M^2M_b}{\alpha\beta^2}\|u-u_I\|_V
-	 + \frac{3MM_b}{\alpha\beta}\|p-p_I\|_V.
+	 \leq \frac{3M^2M_b}{\alpha\beta_h^2}\|u-u_I\|_V
+	 + \frac{3MM_b}{\alpha\beta_h}\|p-p_I\|_Q.
 
-   Finally, taking the infimum over the all `u_I\in V` and all `p_I\in V`
+   Finally, taking the infimum over the all `u_I\in V` and all `p_I\in Q`
    gives the result.
 
 This theorem tells us that if we can approximate the solution `(u,p)`
@@ -735,6 +743,8 @@ the following result.
 
 .. proof:lemma::  Fortin's trick
 
+   Assume that the inf-sup condition holds for $b(v,q)$ over $V\times Q$
+   with inf-sup constant $\beta>0$.
    If there exists a linear operator `\Pi_h:V\to V_h` such that
 
       .. math::
@@ -856,8 +866,15 @@ the MINI element.
 
    where we were allowed to integrate by parts since `v,\Pi_2v,q_h`
    are all in `H^1(\Omega)`. We see that our definition can be
-   satisfied by picking `\Pi_2v` to have the same average over a
-   triangle `K` as `v` for each triangle.
+   satisfied by picking `\Pi_2v` to be the function in $(B_3)^2$ such
+   that
+
+      .. math::
+	 :label:
+
+	 \int_K \Phi_2v d\, x x = \int_K v d\, x x,
+
+   for each triangle $K$.
 
    It can be shown using an inverse inequality (we will take it
    as read here) that
