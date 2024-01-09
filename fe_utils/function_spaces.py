@@ -115,7 +115,7 @@ class Function(object):
 
         elif fs.element.cell is ReferenceTriangle:
             fig = plt.figure()
-            ax = fig.gca(projection='3d')
+            ax = fig.add_subplot(projection='3d')
             local_coords, triangles = self._lagrange_triangles(d)
 
         else:

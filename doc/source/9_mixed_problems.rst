@@ -278,7 +278,7 @@ list of basis function coefficients.
         coords = Function(fs)
         coords.interpolate(lambda x: x)
         fig = plt.figure()
-        ax = fig.gca()
+        ax = fig.add_subplot()
         x = coords.values.reshape(-1, 2)
         v = self.values.reshape(-1, 2)
         plt.quiver(x[:, 0], x[:, 1], v[:, 0], v[:, 1])
