@@ -1,10 +1,8 @@
-"""Solve a model poisson problem with Dirichlet boundary conditions
-using the finite element method.
+"""Solve a model Poisson problem with Dirichlet boundary conditions.
 
 If run as a script, the result is plotted. This file can also be
 imported as a module and convergence tests run on the solver.
 """
-from __future__ import division
 from fe_utils import *
 import numpy as np
 from numpy import sin, pi
@@ -86,6 +84,7 @@ def solve_poisson(degree, resolution, analytic=False, return_error=False):
 
     # Return the solution and the error in the solution.
     return u, error
+
 
 if __name__ == "__main__":
 

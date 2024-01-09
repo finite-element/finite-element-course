@@ -171,7 +171,7 @@ Your git repository contains a Python package. Installing this will cause the
 other Python packages on which it depends to be installed into your venv, and
 will create various visualisation scripts you'll need later in the module. Run:
 
-.. console::
+.. code-block:: console
 
     $ python -m pip install -e finite-element-course/
 
