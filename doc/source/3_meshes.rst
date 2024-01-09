@@ -41,35 +41,8 @@ immersed in `\mathbb{R}^3`) so the topological dimension of the
 mesh will always match the geometric dimension of space in which we
 are working, so we will simply refer to the *dimension* of the mesh.
 
-.. proof:definition::
-
-   A topological entity of *codimension* `n` is a topological
-   entity of dimension `d-n` where `d` is the dimension of the
-   mesh.
-
-Armed with these definitions we are able to define names for
-topological entities of various dimension and codimension:
-
-=========== ========= ===========
-entity name dimension codimension
-=========== ========= ===========
-vertex      0
-edge        1
-face        2
-facet                 1
-cell                  0
-=========== ========= ===========
-
-The cells of a mesh can be polygons or polyhedra of any shape, however
-in this course we will restrict ourselves to meshes whose cells are
-intervals or triangles. The only other two-dimensional cells
-frequently employed are quadrilaterals.
-
-The topological entities of each dimension will be given unique
-numbers in order that degrees of freedom can later be associated with
-them. We will identify topological entities by an index pair `(d, i)`
-where `i` is the index of the entity within the set of `d`-dimensional
-entities. For example, entity `(0, 10)` is vertex number 10, and
+NUMBERING HERE
+ For example, entity `(0, 10)` is vertex number 10, and
 entity `(1, 10)` is edge 10. :numref:`figmesh` shows an example
 mesh with the topological entities labelled.
 
@@ -80,40 +53,6 @@ mesh with the topological entities labelled.
 
    A triangular mesh showing labelled topological entities: vertices
    (black), edges (red), and cells (blue).
-
-Reference cell entities
------------------------
-
-The reference cells similarly have locally numbered topological
-entities, these are shown in :numref:`figreferenceentities`. The
-numbering is a matter of convention: that adopted here is that edges
-share the number of the opposite vertex. The orientation of the edges
-is also shown, this is always from the lower numbered vertex to the
-higher numbered one.
-
-The :class:`~fe_utils.reference_elements.ReferenceCell` class stores the
-local topology of the reference cell. `Read the source
-<_modules/fe_utils/reference_elements.html>`__ and ensure that you
-understand the way in which this information is encoded.
-
-.. only:: html
-
-  The following animation of the numbering of the topological entities
-  on the reference cell may help in understanding this.
-          
-  .. container:: youtube
-
-    .. youtube:: 7A7JU7bGw0E?modestbranding=1;controls=0;rel=0
-       :width: 600px
-
-.. _figreferenceentities:
-
-.. figure:: entities.*
-   :width: 50%
-
-   Local numbering and orientation of the reference entities.
-
-.. _secadjacency:
 
 Adjacency
 ---------
