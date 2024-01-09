@@ -13,8 +13,6 @@ Introduction
             frameborder="0" allow="autoplay; fullscreen"
             allowfullscreen></iframe>
 
-    Imperial students can also `watch this video on Panopto <https://imperial.cloud.panopto.eu/Panopto/Pages/Viewer.aspx?id=6aca04a5-7fd9-4d9d-9178-ac2b0115718d>`__
-
 In this section we provide an introduction that establishes some
 initial ideas about how the finite element method works and what it is
 about.
@@ -41,8 +39,6 @@ Poisson's equation in the unit square
             frameborder="0" allow="autoplay; fullscreen"
             allowfullscreen></iframe>
 
-    Imperial students can also `watch this video on Panopto <https://imperial.cloud.panopto.eu/Panopto/Pages/Viewer.aspx?id=c6be8b35-aa19-4e33-8d25-ac2b011caba3>`__
-
 In this introduction we concentrate on the specific model problem of
 Poisson's equation in the unit square.
 
@@ -50,7 +46,7 @@ Poisson's equation in the unit square.
 
    Let `\Omega=[0,1]\times[0,1]`. For a given function `f`, we seek `u` such
    that
-   
+
    .. math::
        :label: eq:strong_Poisson
 
@@ -63,7 +59,7 @@ to find the corresponding unknown function `u` that satisfies the
 equation (including the boundary conditions). Here we have combined a
 mixture of Dirichlet boundary conditions specifying the value of the
 function `u`, and Neumann boundary conditions specifying the value of
-the normal derivative `\partial u/\partial n`. This is because these
+the normal derivative `\partial u/\partial n := n \cdot \nabla u`. This is because these
 two types of boundary conditions are treated differently in the finite
 element method, and we would like to expose both treatments in the
 same example. The treatment of boundary conditions is one of the
@@ -73,7 +69,7 @@ Triangulations
 --------------
 
 .. dropdown:: A video recording of the following material is available here.
-		  
+
     .. container:: vimeo
 
         .. raw:: html
@@ -81,8 +77,6 @@ Triangulations
             <iframe src="https://player.vimeo.com/video/490697890"
             frameborder="0" allow="autoplay; fullscreen"
             allowfullscreen></iframe>
-
-    Imperial students can also `watch this video on Panopto <https://imperial.cloud.panopto.eu/Panopto/Pages/Viewer.aspx?id=db13f3fa-b3cb-41d1-b888-ac2b011f11e3>`__
 
 The description of our finite element method starts by considering
 a triangulation.
@@ -102,7 +96,7 @@ Our first finite element space
 ------------------------------
 
 .. dropdown:: A video recording of the following material is available here.
-		  
+
     .. container:: vimeo
 
         .. raw:: html
@@ -110,8 +104,6 @@ Our first finite element space
             <iframe src="https://player.vimeo.com/video/490697877"
             frameborder="0" allow="autoplay; fullscreen"
             allowfullscreen></iframe>
-
-    Imperial students can also `watch this video on Panopto <https://imperial.cloud.panopto.eu/Panopto/Pages/Viewer.aspx?id=2a222f38-92ce-478e-946c-ac2b0120bf58>`__
 
 The idea is that we will approximate functions which are polynomial
 (at some chosen degree) when restricted to each triangle, with some
@@ -125,7 +117,7 @@ space.
   Let `\mathcal{T}` be a triangulation of `\Omega`. Then the P1 finite
   element space is a space `V_h` containing all functions `v` such that
 
-  #. `v\in C^0(\Omega)`,
+  #. `v\in C^0(\Omega)` the space of continuous functions at every point in `\Omega`,
   #. `v|_{K_i}` is a linear function for each `K_i\in \mathcal{T}`.
 
   We also define the following subspace,
@@ -148,7 +140,7 @@ Integral formulations and `L_2`
 -------------------------------
 
 .. dropdown:: A video recording of the following material is available here.
-		  
+
     .. container:: vimeo
 
         .. raw:: html
@@ -157,12 +149,10 @@ Integral formulations and `L_2`
             frameborder="0" allow="autoplay; fullscreen"
             allowfullscreen></iframe>
 
-    Imperial students can also `watch this video on Panopto <https://imperial.cloud.panopto.eu/Panopto/Pages/Viewer.aspx?id=10377186-f51a-49e2-8b0b-ac2b012265df>`__
-
 The finite element method is based upon integral formulations of
 partial differential equations. Rather than checking if two functions
 are equal by checking their value at every point, we will just check
-that they are equal in an integral sense. We do  this by introducing
+that they are equal in an integral sense. We do this by introducing
 the `L^2` norm, which is a way of measuring the "magnitude" of a function.
 
 .. proof:definition::
@@ -183,25 +173,25 @@ This motivates us to say that two functions are equal if the `L^2`
 norm of their difference is zero. It only makes sense to do that if
 the functions individually have finite `L^2` norm, which then also
 motivates the `L^2` function space.
-  
+
 .. proof:definition::
 
    We define `L^2(\Omega)` as the set of functions
 
    .. math::
-   
+
       L^2(\Omega) = \left\{ f:\|f\|_{L^2(\Omega)}<\infty\right\},
 
   and identify two functions `f` and `g` if `\|f-g\|_{L^2(\Omega)}=0`,
   in which case we write `f\equiv g` in `L^2`.
 
 .. proof:example::
-  
+
    Consider the two functions `f` and `g` defined on
    `\Omega=[0,1]\times[0,1]` with
 
    .. math::
-   
+
       f(x,y) = \left\{\begin{array}{cc}
       1 & x\geq 0.5, \\
       0 & x < 0.5, \\
@@ -210,7 +200,7 @@ motivates the `L^2` function space.
       1 & x> 0.5, \\
       0 & x \leq 0.5. \\
       \end{array}\right.
-  
+
    Since `f` and `g` only differ on the line `x=0.5` which has zero
    area, then `\|f-g\|_{L^2(\Omega)}=0`, and so `f\equiv g` in `L^2`.
 
@@ -218,7 +208,7 @@ Finite element derivative
 -------------------------
 
 .. dropdown:: A video recording of the following material is available here.
-		  
+
     .. container:: vimeo
 
         .. raw:: html
@@ -226,8 +216,6 @@ Finite element derivative
             <iframe src="https://player.vimeo.com/video/490697597"
             frameborder="0" allow="autoplay; fullscreen"
             allowfullscreen></iframe>
-
-    Imperial students can also `watch this video on Panopto <https://imperial.cloud.panopto.eu/Panopto/Pages/Viewer.aspx?id=897d8372-11bd-4904-a1db-ac2c00fc7835>`__
 
 Functions in `V_h` do not have derivatives everywhere. This means that
 we have to work with a more general definition (and later we shall
@@ -240,7 +228,7 @@ learn when it does and does not work).
    `L^2(\Omega)` such that restricted to `K_i`, we have
 
    .. math::
-   
+
       \frac{\partial^{FE}u}{\partial x_i}|_{K_i}= \frac{\partial u}{\partial x_i}.
 
 Here we see why we needed to introduce `L^2`: we have a definition
@@ -260,7 +248,7 @@ triangles. This is verified in the following exercises.
    partial derivatives at every point in `\Omega`). Show that the
    finite element partial derivative and the usual derivative are
    equal in `L^2(\Omega)`.
-  
+
 In view of this second exercise, in this section we will consider all
 derivatives to be finite element derivatives. In later sections we
 shall consider an even more general definition of the derivative which
@@ -271,7 +259,7 @@ Towards the finite element discretisation
 -----------------------------------------
 
 .. dropdown:: A video recording of the following material is available here.
-		  
+
     .. container:: vimeo
 
         .. raw:: html
@@ -280,8 +268,6 @@ Towards the finite element discretisation
             frameborder="0" allow="autoplay; fullscreen"
             allowfullscreen></iframe>
 
-    Imperial students can also `watch this video on Panopto <https://imperial.cloud.panopto.eu/Panopto/Pages/Viewer.aspx?id=7740df4e-bc02-4997-8c75-ac2c00fe54eb>`__
-
 We will now use the finite element derivative to develop the finite
 element discretisation. We assume that we have a solution `u` to
 Equation :eq:`eq:strong_Poisson` that is sufficiently smooth
@@ -289,7 +275,26 @@ Equation :eq:`eq:strong_Poisson` that is sufficiently smooth
 types of solutions to this equation, but this assumption just
 motivates things for the time being.)
 
-We take `v\in \mathring{V}_h`, multiply by Equation :eq:`eq:strong_Poisson`, and integrate over the domain. Integration by parts in each triangle then gives
+We take `v\in \mathring{V}_h`, multiply by Equation :eq:`eq:strong_Poisson`,
+and integrate over the domain.
+
+We then use the following integration by parts result.
+
+.. proof:theorem:: Integration by parts
+
+   Let `u\in C^1(\Omega)` and `n` an outward normal to the boundary `\partial
+   \Omega`. Then
+
+   .. math::
+
+       \int_{\Omega} (- \Delta u) v \, d x = \int_{\Omega} \nabla u \cdot \nabla v
+       \, dx - \int_{\partial \Omega} v \, (n \cdot \nabla u) \, d S.
+
+   .. proof:proof::
+
+   See e.g. Brenner and Scott Section 5.1 including weaker assumptions.
+
+Using this integration by parts in each triangle `K_i` then gives
 
 .. math::
 
@@ -299,7 +304,7 @@ We take `v\in \mathring{V}_h`, multiply by Equation :eq:`eq:strong_Poisson`, and
    \int_\Omega vf \, d x,
 
 where `n` is the unit outward pointing normal to `K_i`.
-  
+
 Next, we consider each interior edge `f` in the triangulation, formed
 as the intersection between two neighbouring triangles `K_i\cap
 K_j`. If `i>j`, then we label the `K_i` side of `f` with a `+`, and
@@ -310,20 +315,20 @@ such interior edges, we can rewrite our equation as
 
    \int_\Omega \nabla v \cdot \nabla u \, d x - \int_\Gamma vn^+\cdot\nabla u
    + vn^-\cdot\nabla u \, d S
-   - \int_{\partial\Omega} vn\cdot \nabla u \, d S 
+   - \int_{\partial\Omega} vn\cdot \nabla u \, d S
     = \int_\Omega vf \, d x,
 
 where `n^{\pm}` is the unit normal to `f` pointing from the `\pm` side
 into the `\mp` side. Since `n^-=-n^+`, the interior edge integrals
 vanish.
-  
+
 Further, on the boundary, either `v` vanishes (at `x=0` and `x=1`) or
 `n\cdot\nabla u` vanishes (at `y=0` and `y=1`), and we obtain
 
 .. math::
-   
-   \int_\Omega \nabla v \cdot \nabla u \, d x 
-   = \int_\Omega vf \, d x. 
+
+   \int_\Omega \nabla v \cdot \nabla u \, d x
+   = \int_\Omega vf \, d x.
 
 The finite element approximation is then defined by requiring that
 this equation holds for all `v\in \mathring{V}_h` and when we approximate
@@ -331,7 +336,7 @@ this equation holds for all `v\in \mathring{V}_h` and when we approximate
 `u_h\in \mathring{V}_h`.
 
 .. dropdown:: A video recording of the following material is available here.
-		  
+
     .. container:: vimeo
 
         .. raw:: html
@@ -340,18 +345,16 @@ this equation holds for all `v\in \mathring{V}_h` and when we approximate
             frameborder="0" allow="autoplay; fullscreen"
             allowfullscreen></iframe>
 
-    Imperial students can also `watch this video on Panopto <https://imperial.cloud.panopto.eu/Panopto/Pages/Viewer.aspx?id=099aeda2-0a23-4c88-ad0b-ac2c01051715>`__
-
 .. _def-discrete-poisson:
 
 .. proof:definition::
-  
+
    The finite element approximation `u_h \in \mathring{V}_h` to the
    solution `u` of Poisson's equation is defined by
-   
+
    .. math::
       :label: eq:fe_poisson
-	    
+
       \int_\Omega \nabla v \cdot \nabla u_h \, d x =
       \int_\Omega vf \, d x, \quad \forall v\in \mathring{V}_h.
 
@@ -359,7 +362,7 @@ this equation holds for all `v\in \mathring{V}_h` and when we approximate
    End of week 1 material
 
 .. dropdown:: A video recording of the following material is available here.
-		  
+
     .. container:: vimeo
 
         .. raw:: html
@@ -368,8 +371,6 @@ this equation holds for all `v\in \mathring{V}_h` and when we approximate
             frameborder="0" allow="autoplay; fullscreen"
             allowfullscreen></iframe>
 
-    Imperial students can also `watch this video on Panopto <https://imperial.cloud.panopto.eu/Panopto/Pages/Viewer.aspx?id=f4cb8c0c-4664-4a21-8043-ac2c010738da>`__
-      
 We now present some numerical results for the case `f = 2\pi^2\sin(\pi
 x)\sin(2\pi y)`.
 
@@ -401,7 +402,7 @@ We see that for this example, the error is decreasing as we increase
 the number of triangles, for the meshes considered.
 
 .. dropdown:: A video recording of the following material is available here.
-		  
+
     .. container:: vimeo
 
         .. raw:: html
@@ -409,8 +410,6 @@ the number of triangles, for the meshes considered.
             <iframe src="https://player.vimeo.com/video/490693824"
             frameborder="0" allow="autoplay; fullscreen"
             allowfullscreen></iframe>
-
-    Imperial students can also `watch this video on Panopto <https://imperial.cloud.panopto.eu/Panopto/Pages/Viewer.aspx?id=8319e621-155a-43a1-b181-ac8d00aed113>`__
 
 In general, our formulation raises a number of questions.
 
@@ -464,7 +463,7 @@ areas.
    `u=x(1-x)` on the entire boundary.
 
 .. _def-robin:
-   
+
 .. proof:exercise::
 
    Derive a finite element approximation for the following problem.
@@ -477,12 +476,12 @@ areas.
 
    in the `1\times 1` square region, with boundary conditions
    `u+\frac{\partial u}{\partial n}=x(1-x)` on the entire boundary.
-   
+
 Practical implementation
 ------------------------
 
 .. dropdown:: A video recording of the following material is available here.
-		  
+
     .. container:: vimeo
 
         .. raw:: html
@@ -490,8 +489,6 @@ Practical implementation
             <iframe src="https://player.vimeo.com/video/490693738"
             frameborder="0" allow="autoplay; fullscreen"
             allowfullscreen></iframe>
-
-    Imperial students can also `watch this video on Panopto <https://imperial.cloud.panopto.eu/Panopto/Pages/Viewer.aspx?id=11e55d12-a0fc-42ed-b609-ac8d00af7068>`__
 
 The finite element approximation above is only useful if we can
 actually compute it. To do this, we need to construct an efficient
@@ -534,7 +531,7 @@ it must hold for all basis coefficients `v_i`, and we obtain
 the matrix-vector system
 
 .. math::
-   
+
    K\mathrm{u} = \mathrm{f},
 
 where
@@ -542,9 +539,9 @@ where
 .. math::
 
    K_{ij} = \int_\Omega \nabla\phi_i\cdot\nabla\phi_j\, d x,
-   
+
    \mathrm{u}  = \left(u_1,u_2,\ldots,u_{\bar{M}}\right)^T,
-   
+
    \mathrm{f}  = \left(f_1,f_2,\ldots,f_{\bar{M}}\right)^T, \quad f_i = \int_\Omega \phi_i f\, d x.
 
 Once we have solved for `\mathrm{u}`, we can use these basis
@@ -555,7 +552,7 @@ solution `u_h`, which we shall establish in later sections. This
 motivates why we care that `u_h` exists and is unique.
 
 .. dropdown:: A video recording of the following material is available here.
-		  
+
     .. container:: vimeo
 
         .. raw:: html
@@ -563,8 +560,6 @@ motivates why we care that `u_h` exists and is unique.
             <iframe src="https://player.vimeo.com/video/490693615"
             frameborder="0" allow="autoplay; fullscreen"
             allowfullscreen></iframe>
-
-    Imperial students can also `watch this video on Panopto <https://imperial.cloud.panopto.eu/Panopto/Pages/Viewer.aspx?id=9be9b911-c291-4c90-b3ac-ac8d00c0e814>`__
 
 Putting solvability aside for the moment, the goal of the
 implementation sections of this course is to explain how to
@@ -575,7 +570,7 @@ as sums over elements,
 
 .. math::
    K_{ij} = \sum_{K\in\mathcal{T}}\int_K \nabla \phi_i\cdot\nabla \phi_j \, d x,
-   
+
    \mathrm{where}\,f_i = \sum_{K\in\mathcal{T}}\int_K \phi_i f \, d x.
 
 For each entry in the sum for `K_{ij}`, the integrand is composed
@@ -601,4 +596,3 @@ algorithms that can exploit this sparsity.
 Having set out the main challenges of the computational
 implementation, we now move on to define and discuss a broader
 range of possible finite element spaces.
-

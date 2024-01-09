@@ -20,27 +20,30 @@ feedback in weeks 4 and 7.
 Formalities and marking scheme
 ------------------------------
 
-The implementation exercise is due at 1300 on Monday 20 March 2023. Submission
-is via GitHub: the last commit pushed to GitHub and dated before the deadline
-will be marked.
+The implementation exercise is due immediately prior to the Summer Semester
+study days/revision period. That is, by 1600 on Friday 2 June 2023. You must
+submit your work by emailing jack.hale@uni.lu the link to your GitHub
+repository and the git hash you are submitting. You can conveniently :ref:`find
+this hash on the commits page for your repository on GitHub <fons:git-hash>`.
+The commit you submit must date from before the deadline!
 
 The marking scheme will be as follows:
 
-First/distinction (70-100)  
+Excellent (18-20)  
   All parts of the implementation are correct and all tests pass. The
   code style is always very clear and the implementation of every
   exercise is transparent and elegant.
-Upper second/merit (60-70)
+Good (14-17)
   The implementation is correct but let down somewhat by poor coding
   style. Alternatively, submissions which are correct and well
   written up to and including solving the Helmholtz problem but
   which do not include a correct solution to boundary conditions will
   earn an upper second.
-Lower second/pass (50-60)
+Pass (10-13)
   There are significant failings in the implementation resulting in
   many test failures, and/or the coding style is
   sufficiently poor that the code is hard to understand.
-Fail (0-50)
+Fail (0-9)
   The implementation is substantially incomplete. Correct
   implementations may have been provided for some of the earlier exercises but
   the more advanced parts of the implementation exercise have not been
@@ -53,14 +56,6 @@ students submit code that uses quadratic algorithms where linear ones would be
 possible. The result is that examples that should run in seconds and take
 megabytes of memory instead take gigabytes of memory and many hours to complete.
 Such submissions are incorrect, and will be marked as such.
-
-Extension (mastery) exercise
-----------------------------
-
-Fourth year and masters students must also complete the mastery
-exercise, which is :numref:`mixed` This will be
-worth 20% of the implementation exercise marks and will be marked on
-the same scheme as above.   
 
 Obtaining the skeleton code
 ---------------------------
@@ -282,7 +277,7 @@ raising an issue <pop:issue-report>`.
 
     Please don't post large pieces of code to Piazza. Just post minimal examples
     if they help. However always commit and push your work, and post the
-    :ref:`git commit hash <fons:git-hash>` in the repository. The lecturer can
+    :ref:`git commit hash <fons:git-hash>` in the repository. The instructor can
     always find your work from the git hash, so long as you've pushed to GitHub.
 
 Tips and tricks for the implementation exercise
