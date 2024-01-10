@@ -238,7 +238,16 @@ orientation order. That is to say, the node number increases as one moves along
 the edge in the direction of the arrow. In two dimensions, the ordering of
 nodes in the cell interior is arbitrary.
 
+.. _figlagrange-nodes:
 
+.. figure:: lagrange_nodes.*
+   :width: 70%
+
+   The numbering of nodes for the degree 1, 2, and 3 equispaced Lagrange
+   elements on triangles. Black nodes are associated with vertices, red nodes
+   with edges and blue nodes with the cell (face). Note that the numbering of
+   nodes on edges follows the numbering of the edges in
+   :numref:`figreferenceentities`.
 
 .. note::
 

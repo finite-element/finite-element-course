@@ -27,8 +27,10 @@ finite element method.
 Mesh entities
 -------------
 
-A mesh is composed of *topological entities*, such as vertices, edges,
-polygons and polyhedra.
+Like a cell, a mesh is composed of *topological entities*, such as vertices,
+edges, polygons and polyhedra. The distinction is that a mesh is made of
+potentially many cells, and a commensurate number of lower-dimensional
+entities.
 
 .. proof:definition:: 
 
@@ -41,10 +43,10 @@ immersed in `\mathbb{R}^3`) so the topological dimension of the
 mesh will always match the geometric dimension of space in which we
 are working, so we will simply refer to the *dimension* of the mesh.
 
-NUMBERING HERE
- For example, entity `(0, 10)` is vertex number 10, and
-entity `(1, 10)` is edge 10. :numref:`figmesh` shows an example
-mesh with the topological entities labelled.
+The numbering of mesh entities is similar to that of cell entities, except that
+the indices range over all of the entities of that dimension in the mesh. For
+example, entity `(0, 10)` is vertex number 10, and entity `(1, 10)` is edge 10.
+:numref:`figmesh` shows an example mesh with the topological entities labelled.
 
 .. _figmesh:
 
