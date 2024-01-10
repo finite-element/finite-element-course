@@ -10,18 +10,18 @@
       \mainmatter
       \part{Numerical analysis}
 
-.. only:: latex
+.. .. only:: latex
 
-    .. toctree::
-        :numbered:
-        :maxdepth: 2
+..     .. toctree::
+..         :numbered:
+..         :maxdepth: 2
 
-        L1_introduction
-        L2_fespaces
-        L3_interpolation
-        L4_feprobs
-        L5_convergence
-	L6_stokes
+..         L1_introduction
+..         L2_fespaces
+..         L3_interpolation
+..         L4_feprobs
+..         L5_convergence
+.. 	L6_stokes
 
 .. only:: html
 
@@ -119,16 +119,18 @@
    Lecture notes:
    ~~~~~~~~~~~~~~
 
-    .. toctree::
-        :numbered:
-        :maxdepth: 2
+.. toctree::
+    :numbered:
+    :maxdepth: 2
 
-        L1_introduction
-        L2_fespaces
-        L3_interpolation
-        L4_feprobs
-        L5_convergence
-	L6_stokes
+    L1_introduction
+    L2_fespaces
+    L3_interpolation
+    L4_feprobs
+    L5_convergence
+    L6_stokes
+
+.. only:: html
 
    Past exam papers
    ~~~~~~~~~~~~~~~~
@@ -205,3 +207,10 @@
    8_nonlinear_problems
    9_mixed_problems
    zbibliography
+
+.. only:: html
+
+    .. toctree:: 
+        :maxdepth: 1
+
+        Skeleton code documentation <fe_utils>

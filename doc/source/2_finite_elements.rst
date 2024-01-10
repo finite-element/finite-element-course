@@ -192,19 +192,19 @@ In this course we will only consider point evaluation nodes. The implementation 
 The Lagrange element nodes
 --------------------------
 
-.. only:: html
+.. .. only:: html
 
-    .. dropdown:: A video recording of the following material is available here.
+..     .. dropdown:: A video recording of the following material is available here.
 
-        .. container:: vimeo
+..         .. container:: vimeo
 
-            .. raw:: html
+..             .. raw:: html
 
-                <iframe src="https://player.vimeo.com/video/495194534"
-                frameborder="0" allow="autoplay; fullscreen"
-                allowfullscreen></iframe>
+..                 <iframe src="https://player.vimeo.com/video/495194534"
+..                 frameborder="0" allow="autoplay; fullscreen"
+..                 allowfullscreen></iframe>
 
-        Imperial students can also `watch this video on Panopto <https://imperial.cloud.panopto.eu/Panopto/Pages/Viewer.aspx?id=d845a6c8-017b-4b50-92f0-ac9f00e00796>`__
+..         Imperial students can also `watch this video on Panopto <https://imperial.cloud.panopto.eu/Panopto/Pages/Viewer.aspx?id=d845a6c8-017b-4b50-92f0-ac9f00e00796>`__
 
 The number of coefficients of a degree `p` polynomial in `d`
 dimensions is given by the combination `\binom{p+d}{d}`. The
@@ -226,6 +226,29 @@ The finite elements with this set of nodes are called the *equispaced
 Lagrange* elements and are the most commonly used elements for
 relatively low order computations. 
 
+While this is the simplest node ordering to construct, when we come to
+build finite element spaces over a whole computational mesh in
+:numref:`secfunctionspaces`, it will be much more straightforward if the nodes
+are numbered in topological order. That is to say, the lowest numbered nodes
+are those associated with the vertices, followed by those associated with the
+edges and finally, in two dimensions, those associated with the cell. For
+reasons that will become apparent when we consider the continuity of finite
+element spaces, the nodes associated with the edges need to be in edge
+orientation order. That is to say, the node number increases as one moves along
+the edge in the direction of the arrow. In two dimensions, the ordering of
+nodes in the cell interior is arbitrary.
+
+.. _figlagrange-nodes:
+
+.. figure:: lagrange_nodes.*
+   :width: 70%
+
+   The numbering of nodes for the degree 1, 2, and 3 equispaced Lagrange
+   elements on triangles. Black nodes are associated with vertices, red nodes
+   with edges and blue nodes with the cell (face). Note that the numbering of
+   nodes on edges follows the numbering of the edges in
+   :numref:`figreferenceentities`.
+
 .. note::
 
    At higher order the equispaced Lagrange basis is poorly conditioned
@@ -236,7 +259,7 @@ relatively low order computations.
 
 .. proof:exercise::
    
-   Use :eq:`lattice` to implement
+   Implement
    :func:`~fe_utils.finite_elements.lagrange_points`. Make sure your
    algorithm also works for one-dimensional elements. Some basic tests
    for your code are to be found in

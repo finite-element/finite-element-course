@@ -126,8 +126,8 @@ while if we employ a quadratic function then we arrive at Simpson's rule:
    \int_0^h f(X) \mathrm{d} X = \frac{h}{6}f(0) + \frac{2h}{3}f\left(\frac{h}{2}\right) + \frac{h}{6}f(h) + O(h^5)
 
 
-Reference elements
-------------------
+Reference cells
+---------------
 
 .. only:: html
 
@@ -146,7 +146,7 @@ Reference elements
 As a practical matter, we wish to write down quadrature rules as
 arrays of numbers, independent of `h`. In order to achieve this,
 we will write the quadrature rules for a single, *reference
-element*. When we wish to actually integrate a function over cell, we
+cell*. When we wish to actually integrate a function over cell, we
 will change coordinates to the reference cell. We will return to the
 mechanics of this process later, but for now it means that we need
 only consider quadrature rules on the reference cells we choose.
@@ -164,14 +164,91 @@ the unit interval the natural correspondence is with the triangle with
 vertices `[(0,0), (1,0), (0,1)]`, though different choices of
 vertex numbering are possible.
 
+Reference cell topology
+~~~~~~~~~~~~~~~~~~~~~~~
+
+A cell is composed of *topological entities*, that is to say vertices, edges,
+faces and so forth. The topology of the cell is given by the connectivity of
+its entities, for example which vertices make up each edge. It is useful to
+define some terms to describe the cell topology:
+
+.. proof:definition:: 
+   
+   The *dimension* of a cell is the maximal dimension of the topological 
+   entities that make up the cell.
+
+.. proof:definition::
+
+   A topological entity of *codimension* `n` is a topological
+   entity of dimension `d-n` where `d` is the dimension of the
+   cell.
+
+
+Armed with these definitions we are able to define names for
+topological entities of various dimension and codimension:
+
+=========== ========= ===========
+entity name dimension codimension
+=========== ========= ===========
+vertex      0
+edge        1
+face        2
+facet                 1
+cell                  0
+=========== ========= ===========
+
+The cells can be polygons or polyhedra of any shape, however
+in this course we will restrict ourselves to 
+intervals and triangles. The only other two-dimensional cells
+frequently employed are quadrilaterals.
+
+Reference cell entities
+~~~~~~~~~~~~~~~~~~~~~~~
+
+The topological entities of each dimension in a cell are distinguished by
+giving them unique numbers. We will identify topological entities by an index
+pair `(d, i)` where `i` is the index of the entity within the set of
+`d`-dimensional entities.
+
+The particular choices of numbering we will use are shown in
+:numref:`figreferenceentities`. The numbering is a matter of convention: that
+adopted here is that edges share the number of the opposite vertex. The
+orientation of the edges is also shown, this is always from the lower numbered
+vertex to the higher numbered one.
+
+The :class:`~fe_utils.reference_elements.ReferenceCell` class stores the
+local topology of the reference cell. `Read the source
+<_modules/fe_utils/reference_elements.html>`__ and ensure that you
+understand the way in which this information is encoded.
+
+.. only:: html
+
+  The following animation of the numbering of the topological entities
+  on the reference cell may help in understanding this.
+          
+  .. container:: youtube
+
+    .. youtube:: 7A7JU7bGw0E?modestbranding=1;controls=0;rel=0
+       :width: 600px
+
+.. _figreferenceentities:
+
+.. figure:: entities.*
+   :width: 50%
+
+   Local numbering and orientation of the reference entities.
+
+.. _secadjacency:
+
+
 Python implementations of reference elements
---------------------------------------------
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 The :class:`~fe_utils.reference_elements.ReferenceCell` class provides
 Python objects encoding the geometry and topology of the reference
 cell. At this stage, the relevant information is the dimension of the
 reference cell and the list of vertices. The topology will become
-important when we consider :doc:`meshes <3_meshes>`. The reference cells we will
+important in the following chapters. The reference cells we will
 require for this course are the
 :data:`~fe_utils.reference_elements.ReferenceInterval` and
 :data:`~fe_utils.reference_elements.ReferenceTriangle`.

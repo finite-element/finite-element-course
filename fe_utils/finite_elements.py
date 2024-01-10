@@ -1,5 +1,3 @@
-# Cause division to always mean floating point division.
-from __future__ import division
 import numpy as np
 from .reference_elements import ReferenceInterval, ReferenceTriangle
 np.seterr(invalid='ignore', divide='ignore')

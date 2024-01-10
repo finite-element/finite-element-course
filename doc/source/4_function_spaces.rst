@@ -80,13 +80,10 @@ This pattern holds more generally: for a `C_0` function space, the
 number of nodes which must be associated with a local topological
 entity of dimension `d` is `\binom{p-1}{d}`.
 
-:numref:`figlagrange-nodes` illustrates the association of nodes with
-reference entities for Lagrange elements on triangles. The numbering
-of nodes will depend on how
-:func:`~fe_utils.finite_elements.lagrange_points` is implemented. The
-numbering used here is just one of the obvious choices.
+:numref:`figlagrange-nodes-association` illustrates the association of nodes with
+reference entities for Lagrange elements on triangles.
 
-.. _figlagrange-nodes:
+.. _figlagrange-nodes-association:
 
 .. figure:: lagrange_nodes.*
    :width: 70%
@@ -94,7 +91,7 @@ numbering used here is just one of the obvious choices.
    Association of nodes with reference entities for the degree 1, 2,
    and 3 equispaced Lagrange elements on triangles. Black nodes are
    associated with vertices, red nodes with edges and blue nodes with
-   the cell (face). The numbering of the nodes is arbitrary.
+   the cell (face). This is the same figure as :numref:`figlagrange-nodes`.
    
 Implementing local numbering
 ----------------------------
@@ -123,12 +120,12 @@ dictionary for the degree three equispaced Lagrange element on a triangle is
 given by::
 
   entity_node = {0: {0: [0],
-                     1: [3],
-                     2: [9]},
-                 1: {0: [6, 8],
-                     1: [4, 7],
-                     2: [1, 2]},
-                 2: {0: [5]}}
+                     1: [1],
+                     2: [2]},
+                 1: {0: [3, 4],
+                     1: [5, 6],
+                     2: [7, 8]},
+                 2: {0: [9]}}
 
 Note that the order of the nodes in each list is important: it must
 always consistently reflect the orientation of the relevant entity in
@@ -136,14 +133,14 @@ order that all the cells which share that entity consistently
 interpret the nodes. In this case this has been achieved by listing
 the nodes in order given by the direction of the orientation of each edge. 
 
-.. only:: html
+.. .. only:: html
 
-  The following animation illustrates the construction of the ``entity_node`` dictionary.
+..   The following animation illustrates the construction of the ``entity_node`` dictionary.
           
-  .. container:: youtube
+..   .. container:: youtube
 
-    .. youtube:: dTWoTjARi2w?modestbranding=1;controls=0;rel=0
-       :width: 100%
+..     .. youtube:: dTWoTjARi2w?modestbranding=1;controls=0;rel=0
+..        :width: 100%
 
 .. _ex-local:
 
@@ -156,18 +153,18 @@ the nodes in order given by the direction of the orientation of each edge.
 
    The ``test/test_08_entity_nodes.py`` script tests this functionality.
 
-.. hint::
+.. .. hint::
 
-   You can either work out the right algorithm to generate
-   ``entity_nodes`` with the right node indices, or you can modify
-   :func:`~fe_utils.finite_elements.lagrange_points` so that it
-   produces the nodes in entity order, thus making the construction of
-   ``entity_nodes`` straightforward.
+..    You can either work out the right algorithm to generate
+..    ``entity_nodes`` with the right node indices, or you can modify
+..    :func:`~fe_utils.finite_elements.lagrange_points` so that it
+..    produces the nodes in entity order, thus making the construction of
+..    ``entity_nodes`` straightforward.
 
-   You may find the
-   :meth:`~fe_utils.reference_elements.ReferenceCell.point_in_entity`
-   method of the :class:`~fe_utils.reference_elements.ReferenceCell`
-   class useful.
+..    You may find the
+..    :meth:`~fe_utils.reference_elements.ReferenceCell.point_in_entity`
+..    method of the :class:`~fe_utils.reference_elements.ReferenceCell`
+..    class useful.
 
 Global numbering
 ----------------
