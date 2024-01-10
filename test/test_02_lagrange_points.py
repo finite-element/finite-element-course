@@ -48,6 +48,21 @@ def test_point_average(cell, degree):
     assert all(np.round(average - 1./(cell.dim + 1), 12) == 0)
 
 
+# Check that the first three points are the vertices.
+# This basic test follows by symmetry.
+@pytest.mark.parametrize('cell, degree',
+                         [(c, d)
+                          for c in (ReferenceInterval, ReferenceTriangle)
+                          for d in range(1, 8)])
+def test_vertices_come_first(cell, degree):
+
+    p = lagrange_points(cell, degree)
+
+    for i in range(len(cell.vertices)):
+        assert np.all(np.asarray(p[i]) == cell.vertices[i]), \
+            "First nodes must coincide with vertices."
+
+
 if __name__ == '__main__':
     import sys
     pytest.main(sys.argv)
