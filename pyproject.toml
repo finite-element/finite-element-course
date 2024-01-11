@@ -39,3 +39,6 @@ doc = [
     "sphinx-panels",
     "sphinxcontrib-youtube"
 ]
+
+[tool.hatch.build.targets.wheel]
+      packages = ["fe_utils"]
