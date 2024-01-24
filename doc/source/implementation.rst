@@ -20,7 +20,7 @@ feedback in weeks 4 and 7.
 Formalities and marking scheme
 ------------------------------
 
-The implementation exercise is due at 1300 on Monday 22 March 2024. Submission
+The implementation exercise is due at 1300 on Friday 22 March 2024. Submission
 is via GitHub: the last commit pushed to GitHub and dated before the deadline
 will be marked.
 
