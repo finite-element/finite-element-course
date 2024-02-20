@@ -74,8 +74,7 @@ of the word "space").
    satisfies the above properties. Further, let `u,v\in V`, and
    `a\in\mathbb{R}`. Then, when restricted to each triangle `K_i`,
    `u+av\in P_i`. Also, for each shared mesh entity, the shared nodal
-   variables agree, i.e. `N_{i,j}[u+av]=N_{i,j}[u+av]`, by linearity of
-   nodal variables. Therefore, `u+av\in V`.
+   variables agree between triangles. Therefore, `u+av\in V`.
 
 We now introduce bilinear forms on vector spaces. Bilinear forms are
 important because they will represent the left hand side of finite
