@@ -34,7 +34,7 @@ extensions = [
     'sphinx.ext.mathjax',
     'sphinxcontrib.youtube',
     'sphinx.ext.viewcode',
-    'sphinx_panels',
+    'sphinx_design',
     'sphinxcontrib.proof',
     'sphinxcontrib.bibtex'
 ]

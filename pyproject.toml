@@ -36,7 +36,7 @@ doc = [
     "sphinxcontrib-bibtex",
     "sphinxcontrib-proof",
     "sphinx-autobuild",
-    "sphinx-panels",
+    "sphinx-design",
     "sphinxcontrib-youtube"
 ]
 
