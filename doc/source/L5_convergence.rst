@@ -579,7 +579,7 @@ this question is addressed by Céa's lemma.
 
    .. math::
 
-      \gamma\|u-u_h\|_V \leq M|u-v\|_V.
+      \gamma\|u-u_h\|_V \leq M\|u-v\|_V.
       
    Minimising over all `v` completes the proof.
 
