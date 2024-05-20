@@ -141,7 +141,6 @@
    of the Mastery question in 2021-23, i.e. finite element methods for
    Stokes equations. The topic was different in previous years. 
 
-   * `2017 exam paper <_static/FEExam-2017.pdf>`__ and `solutions <_static/FEExam-2017-soln.pdf>`__
    * `2018 exam paper <_static/FEExam-2018.pdf>`__ and `solutions <_static/FEExam-2018-soln.pdf>`__
    * `2019 exam paper <_static/FEExam-2019.pdf>`__ and `solutions <_static/FEExam-2019-solns.pdf>`__
    * `2020 exam paper <_static/FEExam-2020.pdf>`__ and `solutions <_static/FEExam-2020-solns.pdf>`__
