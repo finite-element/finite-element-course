@@ -33,26 +33,6 @@ class ReferenceCell(object):
         #: The number of entities of each dimension.
         self.entity_counts = np.array([len(d) for d in topology.values()])
 
-    def point_in_entity(self, x, e):
-        """ Return true if the point x lies on the entity e.
-
-        :param x: The coordinate vector of the point.
-        :param e: The (d, i) pair describing the entity of dimension `d` and
-            index `i`.
-        """
-
-        vertices = self.topology[e[0]][e[1]]
-
-        # Offset from first vertex.
-        dx = np.subtract(x, self.vertices[vertices[0]])
-
-        # Project onto space spanned by remaining vertices.
-        for v in vertices[1:]:
-            dv = np.subtract(self.vertices[v], self.vertices[vertices[0]])
-            dx -= dv * np.dot(dx, dv) / np.dot(dv, dv)
-
-        return (np.round(dx, 12) == 0).all()
-
     def __repr__(self):
 
         return self.name

@@ -19,6 +19,28 @@ def test_nodes_per_entity(cell, degree):
             assert len(e) == node_count
 
 
+def point_in_entity(cell, x, e):
+    """ Return true if the point x lies on the entity e.
+
+    :param x: The coordinate vector of the point.
+    :param e: The (d, i) pair describing the entity of dimension `d` and
+        index `i`.
+    """
+
+    vertices = cell.topology[e[0]][e[1]]
+
+    # Offset from first vertex.
+    dx = np.subtract(x, cell.vertices[vertices[0]])
+
+    # Project onto space spanned by remaining vertices.
+    for v in vertices[1:]:
+        dv = np.subtract(cell.vertices[v], cell.vertices[vertices[0]])
+        dx -= dv * np.dot(dx, dv) / np.dot(dv, dv)
+
+    return (np.round(dx, 12) == 0).all()
+
+
+
 @pytest.mark.parametrize('cell, degree',
                          [(c, d)
                           for c in (ReferenceInterval, ReferenceTriangle)
@@ -30,7 +52,7 @@ def test_nodes_on_correct_entity(cell, degree):
     for d in range(cell.dim+1):
         for e, nodes in fe.entity_nodes[d].items():
             for n in nodes:
-                assert cell.point_in_entity(fe.nodes[n], (d, e))
+                assert point_in_entity(cell, fe.nodes[n], (d, e))
 
 
 @pytest.mark.parametrize('cell, degree',
