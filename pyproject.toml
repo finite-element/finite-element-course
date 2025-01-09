@@ -32,7 +32,7 @@ plot_lagrange_points = "fe_utils.scripts.plot_lagrange_points:plot_lagrange_poin
 
 [project.optional-dependencies]
 doc = [
-    "sphinx",
+    "sphinx<8",
     "sphinxcontrib-bibtex",
     "sphinxcontrib-proof",
     "sphinx-autobuild",
