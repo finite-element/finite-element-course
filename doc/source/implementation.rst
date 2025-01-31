@@ -20,7 +20,7 @@ feedback in weeks 4 and 7.
 Formalities and marking scheme
 ------------------------------
 
-The implementation exercise is due at 1300 on Friday 22 March 2024. Submission
+The implementation exercise is due at 1300 on Monday 24 March 2025. Submission
 is via GitHub: the last commit pushed to GitHub and dated before the deadline
 will be marked.
 
@@ -150,7 +150,7 @@ Setting up your repository
 ~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 We're using a tool called `GitHub classroom <https://classroom.github.com>`_ to automate the creation of your
-copies of the repository. To create your repository, `click here <https://classroom.github.com/a/ZEeJSgi5>`_.
+copies of the repository. To create your repository, `click here <https://classroom.github.com/a/_YGo4VOZ>`_.
 
 Cloning a local copy
 ~~~~~~~~~~~~~~~~~~~~

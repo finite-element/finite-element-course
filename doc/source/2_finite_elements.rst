@@ -270,6 +270,12 @@ nodes in the cell interior is arbitrary.
    
    Where :data:`degree` is the degree of the points to plot.
 
+.. note::
+
+   It should not be necessary to special-case your code for different
+   dimensions of cell: the same code should produce the points on the interval 
+   and the triangle.
+
 .. _sec-vandermonde:
 
 Solving for basis functions
