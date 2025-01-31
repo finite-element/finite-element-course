@@ -79,7 +79,7 @@ Ciarlet's finite element provides us with a standard way to define a basis for t
 
 .. proof:definition:: (local) nodal basis
 		      
-   Let `(K,\mathcal{P},\mathcal{N})` be a finite element. The nodal basis is the basis `\{\phi_0,\phi_2,\ldots,\phi_k\}` of `\mathcal{P}` that is dual to `\mathcal{N}`, i.e.
+   Let `(K,\mathcal{P},\mathcal{N})` be a finite element. The nodal basis is the basis `\{\phi_0,\phi_1,\ldots,\phi_k\}` of `\mathcal{P}` that is dual to `\mathcal{N}`, i.e.
 
    .. math::
 

@@ -237,11 +237,11 @@ learn when it does and does not work).
 
    The finite element partial derivative
    `\frac{\partial^{FE}}{\partial x_i}u` of `u` is defined in
-   `L^2(\Omega)` such that restricted to `K_i`, we have
+   `L^2(\Omega)` such that restricted to each triangle `K \in \mathcal{T}`, we have
 
    .. math::
    
-      \frac{\partial^{FE}u}{\partial x_i}|_{K_i}= \frac{\partial u}{\partial x_i}.
+      \frac{\partial^{FE}u}{\partial x_i}|_{K}= \frac{\partial u}{\partial x_i}|_K, \quad \forall K \in \mathcal{T}.
 
 Here we see why we needed to introduce `L^2`: we have a definition
 that does not have a unique value on the edge between two adjacent
