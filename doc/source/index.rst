@@ -147,7 +147,7 @@
    * `2021 exam paper <_static/FEExam-2021.pdf>`__ and `solutions <_static/FEExam-2021-solns.pdf>`__ (Note that this was an open book examination for remote exam during the COVID19 era.)
    * `2022 exam paper <_static/FEExam-2022.pdf>`__ and `solutions <_static/FEExam-2022-solns.pdf>`__
    * `2023 exam paper <_static/FEExam-2023.pdf>`__ and `solutions <_static/FEExam-2023-solns.pdf>`__
-   * `revision checklist  <_static/revision-checklist.pdf>`__
+   * `2024 exam paper <_static/FEExam-2024.pdf>`__ and `solutions <_static/FEExam-2024-solns.pdf>`__
 
 .. only:: html
 
