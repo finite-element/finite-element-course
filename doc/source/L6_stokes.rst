@@ -45,7 +45,7 @@ that `\nabla u` is a 2-tensor (i.e. a matrix-valued function), with
    (\nabla u^T)_{ij} = (\nabla u)_{ji}.
 
 Note that under the incompressibility constraint `\nabla\cdot u =0`, we
-can write `\nabla\cdot\epsilon(u)=\nabla^2 u`. However, this leads to
+can write `2\nabla\cdot\epsilon(u)=\nabla^2 u`. However, this leads to
 various issues in the finite element discretisation, and makes it harder
 to apply stress-free boundary conditions.
 
