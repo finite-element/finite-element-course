@@ -380,21 +380,21 @@ Now we develop an estimate of the error `T^kf - f`.
 
    .. math::
       
-      II &=  \int_B \int_{1/2}^1 \int_{\mathbb{R}^n} |g_\alpha(ty+(1-t)x)|^2
+      II &=  \int_\Omega \int_{1/2}^1 \int_{\mathbb{R}^n} |g_\alpha(ty+(1-t)x)|^2
       \, d x \, d t\, d y,
       
-      &=  \int_B \int_{1/2}^1 \int_{\mathbb{R}^n} |g_\alpha(ty)|^2\, d x \, d t
+      &=  \int_\Omega \int_{1/2}^1 \int_{\mathbb{R}^n} |g_\alpha(ty)|^2\, d x \, d t
       \, d y, 
 
-      &=  \int_B \int_{1/2}^1 \int_{\mathbb{R}^n} |g_\alpha(z)|^2
+      &=  \int_\Omega \int_{1/2}^1 \int_{\mathbb{R}^n} |g_\alpha(z)|^2
       t^{-n}
       \, d z \, d t
       \, d y,
       
-      &\leq  2^{n-1}|B|\int_\Omega |D^\alpha f(z)|^2\, d z.
+      &\leq  2^{n-1}|\Omega|\int_\Omega |D^\alpha f(z)|^2\, d z.
 
 
-   Hence, we obtain the required bounds for `|\beta|=0`. For higher
+   Hence, we obtain the required bounds for `|\beta|=0`, after using $|\Omega|\geq |B|$. For higher
    derivatives we use the fact that
 
    .. math::
