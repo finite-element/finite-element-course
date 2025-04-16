@@ -394,7 +394,7 @@ Now we develop an estimate of the error `T^kf - f`.
       &\leq  2^{n-1}|\Omega|\int_\Omega |D^\alpha f(z)|^2\, d z.
 
 
-   Hence, we obtain the required bounds for `|\beta|=0`, after using $|\Omega|\geq |B|$. For higher
+   Hence, we obtain the required bounds for `|\beta|=0`, after using `|\Omega|\geq |B|`. For higher
    derivatives we use the fact that
 
    .. math::
