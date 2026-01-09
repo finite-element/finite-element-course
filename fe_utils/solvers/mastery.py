@@ -2,6 +2,7 @@
 If run as a script, the result is plotted. This file can also be
 imported as a module and convergence tests run on the solver.
 """
+
 from argparse import ArgumentParser
 
 
@@ -23,17 +24,23 @@ def solve_mastery(resolution, analytic=False, return_error=False):
 
 if __name__ == "__main__":
 
-    parser = ArgumentParser(
-        description="""Solve the mastery problem.""")
+    parser = ArgumentParser(description="""Solve the mastery problem.""")
     parser.add_argument(
-        "--analytic", action="store_true",
+        "--analytic",
+        action="store_true",
         help="Plot the analytic solution instead of solving the finite"
-        " element problem.")
-    parser.add_argument("--error", action="store_true",
-                        help="Plot the error instead of the solution.")
+        " element problem.",
+    )
     parser.add_argument(
-        "resolution", type=int, nargs=1,
-        help="The number of cells in each direction on the mesh."
+        "--error",
+        action="store_true",
+        help="Plot the error instead of the solution.",
+    )
+    parser.add_argument(
+        "resolution",
+        type=int,
+        nargs=1,
+        help="The number of cells in each direction on the mesh.",
     )
     args = parser.parse_args()
     resolution = args.resolution[0]

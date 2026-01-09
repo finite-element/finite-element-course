@@ -1,6 +1,7 @@
 import numpy as np
 from .reference_elements import ReferenceInterval, ReferenceTriangle
-np.seterr(invalid='ignore', divide='ignore')
+
+np.seterr(invalid="ignore", divide="ignore")
 
 
 def lagrange_points(cell, degree):
@@ -72,8 +73,9 @@ class FiniteElement(object):
         if entity_nodes:
             #: ``nodes_per_entity[d]`` is the number of entities
             #: associated with an entity of dimension d.
-            self.nodes_per_entity = np.array([len(entity_nodes[d][0])
-                                              for d in range(cell.dim+1)])
+            self.nodes_per_entity = np.array(
+                [len(entity_nodes[d][0]) for d in range(cell.dim + 1)]
+            )
 
         # Replace this exception with some code which sets
         # self.basis_coefs
@@ -124,9 +126,7 @@ class FiniteElement(object):
         raise NotImplementedError
 
     def __repr__(self):
-        return "%s(%s, %s)" % (self.__class__.__name__,
-                               self.cell,
-                               self.degree)
+        return "%s(%s, %s)" % (self.__class__.__name__, self.cell, self.degree)
 
 
 class LagrangeElement(FiniteElement):

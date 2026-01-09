@@ -40,20 +40,20 @@ class ReferenceCell(object):
 
 #: A :class:`ReferenceCell` storing the geometry and topology of the
 #: interval [0, 1].
-ReferenceInterval = ReferenceCell(vertices=[[0.], [1.]],
-                                  topology={0: {0: [0],
-                                                1: [1]},
-                                            1: {0: [0, 1]}},
-                                  name="ReferenceInterval")
+ReferenceInterval = ReferenceCell(
+    vertices=[[0.0], [1.0]],
+    topology={0: {0: [0], 1: [1]}, 1: {0: [0, 1]}},
+    name="ReferenceInterval",
+)
 
 #: A :class:`ReferenceCell` storing the geometry and topology of the triangle
 #: with vertices [[0., 0.], [1., 0.], [0., 1.]].
-ReferenceTriangle = ReferenceCell(vertices=[[0., 0.], [1., 0.], [0., 1.]],
-                                  topology={0: {0: [0],
-                                                1: [1],
-                                                2: [2]},
-                                            1: {0: [1, 2],
-                                                1: [0, 2],
-                                                2: [0, 1]},
-                                            2: {0: [0, 1, 2]}},
-                                  name="ReferenceTriangle")
+ReferenceTriangle = ReferenceCell(
+    vertices=[[0.0, 0.0], [1.0, 0.0], [0.0, 1.0]],
+    topology={
+        0: {0: [0], 1: [1], 2: [2]},
+        1: {0: [1, 2], 1: [0, 2], 2: [0, 1]},
+        2: {0: [0, 1, 2]},
+    },
+    name="ReferenceTriangle",
+)

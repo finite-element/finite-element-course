@@ -2,6 +2,7 @@
 If run as a script, the result is plotted. This file can also be
 imported as a module and convergence tests run on the solver.
 """
+
 from fe_utils import *
 import numpy as np
 from numpy import cos, pi
@@ -44,7 +45,9 @@ def solve_helmholtz(degree, resolution, analytic=False, return_error=False):
 
     # Create a function to hold the analytic solution for comparison purposes.
     analytic_answer = Function(fs)
-    analytic_answer.interpolate(lambda x: cos(4*pi*x[0])*x[1]**2*(1.-x[1])**2)
+    analytic_answer.interpolate(
+        lambda x: cos(4 * pi * x[0]) * x[1] ** 2 * (1.0 - x[1]) ** 2
+    )
 
     # If the analytic answer has been requested then bail out now.
     if analytic:
@@ -53,8 +56,15 @@ def solve_helmholtz(degree, resolution, analytic=False, return_error=False):
     # Create the right hand side function and populate it with the
     # correct values.
     f = Function(fs)
-    f.interpolate(lambda x: ((16*pi**2 + 1)*(x[1] - 1)**2*x[1]**2 - 12*x[1]**2 + 12*x[1] - 2) *
-                  cos(4*pi*x[0]))
+    f.interpolate(
+        lambda x: (
+            (16 * pi**2 + 1) * (x[1] - 1) ** 2 * x[1] ** 2
+            - 12 * x[1] ** 2
+            + 12 * x[1]
+            - 2
+        )
+        * cos(4 * pi * x[0])
+    )
 
     # Assemble the finite element system.
     A, l = assemble(fs, f)
@@ -77,18 +87,34 @@ def solve_helmholtz(degree, resolution, analytic=False, return_error=False):
     # Return the solution and the error in the solution.
     return u, error
 
+
 if __name__ == "__main__":
 
     parser = ArgumentParser(
-        description="""Solve a Helmholtz problem on the unit square.""")
-    parser.add_argument("--analytic", action="store_true",
-                        help="Plot the analytic solution instead of solving the finite element problem.")
-    parser.add_argument("--error", action="store_true",
-                        help="Plot the error instead of the solution.")
-    parser.add_argument("resolution", type=int, nargs=1,
-                        help="The number of cells in each direction on the mesh.")
-    parser.add_argument("degree", type=int, nargs=1,
-                        help="The degree of the polynomial basis for the function space.")
+        description="""Solve a Helmholtz problem on the unit square."""
+    )
+    parser.add_argument(
+        "--analytic",
+        action="store_true",
+        help="Plot the analytic solution instead of solving the finite element problem.",
+    )
+    parser.add_argument(
+        "--error",
+        action="store_true",
+        help="Plot the error instead of the solution.",
+    )
+    parser.add_argument(
+        "resolution",
+        type=int,
+        nargs=1,
+        help="The number of cells in each direction on the mesh.",
+    )
+    parser.add_argument(
+        "degree",
+        type=int,
+        nargs=1,
+        help="The degree of the polynomial basis for the function space.",
+    )
     args = parser.parse_args()
     resolution = args.resolution[0]
     degree = args.degree[0]
