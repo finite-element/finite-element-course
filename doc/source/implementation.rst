@@ -14,7 +14,7 @@ will invite you to implement another part of a finite element implementation, so
 that by the end of the term we will be solving finite element problems.
 
 Along the way, there will be the opportunity to get help and feedback through
-the module Piazza board, weekly online labs, and through pull requests for
+the module Ed board, weekly online labs, and through pull requests for
 feedback in weeks 4 and 7. 
 
 Formalities and marking scheme
@@ -280,7 +280,7 @@ raising an issue <pop:issue-report>`.
 
 .. note::
 
-    Please don't post large pieces of code to Piazza. Just post minimal examples
+    Please don't post large pieces of code to Ed. Just post minimal examples
     if they help. However always commit and push your work, and post the
     :ref:`git commit hash <fons:git-hash>` in the repository. The lecturer can
     always find your work from the git hash, so long as you've pushed to GitHub.

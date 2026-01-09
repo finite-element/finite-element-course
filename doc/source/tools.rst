@@ -5,16 +5,18 @@ In order to do this module, you'll need some core software tools. As the module
 proceeds we'll also install several more Python packages, but you don't need to
 install those right now. The core tools you will need are:
 
-    1. Python version 3.7 or later. Python 3.11 is recommended as the feedback
-       that the interpreter provides if your code crashes has improved
+    1. A recent version of Python. Python 3.11 or later is recommended as the
+       feedback that the interpreter provides if your code crashes has improved
        considerably.
     2. Git (the revision control system we're going to use).
     3. A Python-aware text editor. Visual Studio Code is recommended, and all
-       the instructions in this course will assume that this is what you are using.
+       the instructions in this course will assume that this is what you are
+       using.
 
 Links to installation instructions for all of these packages on a variety of
-operating systems are available on the website of the textbook :doc:`Object-oriented
-Programming in Python for Mathematicians <pop:installation>`.
+operating systems are available on the website of the textbook
+:doc:`Object-oriented Programming in Python for Mathematicians
+<pop:installation>`.
 
 Python 
 ......
@@ -34,11 +36,11 @@ extensively in this course.
 
 The Matlab-like array features of Python are provided by `Numpy
 <https://www.numpy.org/>`__ for which there is a `helpful tutorial
-<https://numpy.org/devdocs/user/quickstart.html>`__. There is also a
-handy `guide for Matlab users
-<https://numpy.org/devdocs/user/numpy-for-matlab-users.html>`__. In that context, the
-code provided in this course will always use Numpy arrays, and never
-Numpy matrices.
+<https://numpy.org/devdocs/user/quickstart.html>`__. There is also a handy
+`guide for Matlab users
+<https://numpy.org/devdocs/user/numpy-for-matlab-users.html>`__. In that
+context, the code provided in this course will always use Numpy arrays, and
+never Numpy matrices.
 
 Git
 ...

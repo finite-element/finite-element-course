@@ -4,8 +4,8 @@ Practical matters
 Lecturers
 ---------
 
-The module is led by `Dr Colin Cotter
-<http://www.imperial.ac.uk/people/colin.cotter>`_ and `Dr David Ham
+The module is led by `Prof. Colin Cotter
+<http://www.imperial.ac.uk/people/colin.cotter>`_ and `Prof. David Ham
 <http://www.imperial.ac.uk/people/david.ham>`_.
 
 Accreditation
@@ -25,8 +25,7 @@ The theory component of the module will assume only a familiarity with
 PDEs, vector calculus and basic undergraduate analysis. The
 implementation part of the module additionally assumes some ability to
 program in a high level language (for example Python, Matlab, Java, C
-or C++). The implementation will be in Python, a very high level and
-simple language with similarities to Matlab. Students who are not
+or C++). The implementation will be in Python. Students who are not
 familiar with Python will need to acquire some familiarity with the
 language, for example by doing one of the suggested tutorials.
 
@@ -45,7 +44,7 @@ The assessment of your finite element implementation will occur in a
 single submission at the end of term. However feedback on your
 progress will be available during the term. Informal feedback will be
 available during the labs, and comments will be left on the feedback pull
-request for your implementation exercise after weeks 4 and 7.
+request for your implementation exercise towards the middle of the term.
 
 Mastery
 .......

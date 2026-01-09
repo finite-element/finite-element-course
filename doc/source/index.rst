@@ -158,7 +158,7 @@
     deeper understanding of the finite element method through writing
     software to solve finite element problems in one and two dimensions.
 
-    This part of the module will be taught by `Dr David Ham
+    This part of the module will be taught by `Prof. David Ham
     <http://www.imperial.ac.uk/people/david.ham>`__. The key to this part of the
     module is to build up a working finite element implementation over the course
     of the term, and thereby to gain a practical understanding of the method.

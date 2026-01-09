@@ -124,7 +124,7 @@ epub: apidoc
 	@echo "Build finished. The epub file is in $(BUILDDIR)/epub."
 
 latex: apidoc
-	$(SPHINXBUILD) $(ALLSPHINXOPTS) $(BUILDDIR)/latex
+	PYTHONPATH=$(PWD)/..:$(PYTHONPATH) $(SPHINXBUILD) -b latex $(ALLSPHINXOPTS) $(BUILDDIR)/latex
 	@echo
 	@echo "Build finished; the LaTeX files are in $(BUILDDIR)/latex."
 	@echo "Run \`make' in that directory to run these through (pdf)latex" \
