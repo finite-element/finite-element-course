@@ -149,8 +149,40 @@ containing the venv, you need to modify the path accordingly.
 Setting up your repository
 ~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-We're using a tool called `GitHub classroom <https://classroom.github.com>`_ to automate the creation of your
-copies of the repository. To create your repository, `click here <https://classroom.github.com/a/_YGo4VOZ>`_.
+If you're taking the Imperial module then we're using a tool called `GitHub
+classroom <https://classroom.github.com>`_ to automate the creation of your
+copies of the repository. To create your repository, `click here
+<https://classroom.github.com/a/WOdAhT90>`_.
+
+.. note::
+
+    When attempt to accept an assignment you might instead receive an error
+    message starting:
+
+    .. warning::
+
+       Your GitHub account cannot this invitation at this time. The
+       Classroom's Organization restricts membership to users within the same
+       enterprise.
+
+    This means that you need to associate your GitHub account with the Imperial
+    College London GitHub enterprise. You should click on the Imperial
+    GitHub `single sign on page
+    <https://github.com/orgs/ImperialCollegeLondon/sso>`__ and sign in using
+    your Imperial credentials. If prompted to do so, also sign in with your
+    GitHub username. You should now be able to go back and click on the
+    assignment acceptance link.
+
+If you're not taking the Imperial module and simply want to attempt the
+exercised for your own purposes, then you can obtain the skeleton code by
+forking `the course repository
+<https://github.com/finite-element/finite-element-course>`__.
+
+.. warning::
+
+    If you are taking the Imperial module for credit, you must use the GitHub
+    classroom link. If you do not do so then your commits will not show as
+    submission of the exercise.
 
 Cloning a local copy
 ~~~~~~~~~~~~~~~~~~~~
