@@ -15,49 +15,75 @@ Mixed problems
 
    This exercise is not a part of the third year version of this module.
 
-As an example of a mixed problem, let's take the Stokes problem presented in
-:numref:`stokes` of the analysis part of the course. The weak form of the
-Stokes problem presented in :numref:`Definition %s <weak_stokes>` is find
-`(u,p)\in V\times Q` such that:
+As an example of a mixed problem, we'll consider the Stokes equations. In order
+to make the treatment of boundary conditions somewhat simpler, we'll employ a
+slightly different formulation of the equation than was presented in
+:numref:`stokes` of the analysis part of the course. Rather than the symmetric
+gradient form of the equations, we employ the laplacian form:
 
 .. math::
     :label: stokes_ch9
 
+    -\mu\nabla\cdot\nabla u + \nabla p = f, \quad \nabla\cdot u = 0,
+
+Where `u` is the velocity, `p` is the pressure, `\mu` is the viscosity, and `f`
+is a vector-valued forcing term. We will consider two forms of boundary
+condition. First, Dirichlet conditions on the velocity:
+
+.. math::
+
+    u = g(x) \quad \textrm{on}\ \Gamma_D
+
+for a given vector-valued function of space `g`. This can be used to impose
+zero slip conditions or a prescribed inflow. Second, the natural outflow
+condition:
+
+.. math::
+
+    (pI - \mu\nabla u)\cdot n = 0 \quad \textrm{on}\ \Gamma\setminus\Gamma_D
+
+The weak form of this equation is find
+`(u,p)\in V\times Q` such that:
+
+.. math::
+    :label: weak_stokes_ch9
+
     a(u,v) + b(v, p) & = \int_\Omega f\cdot v\,\mathrm{d}\, x,
       
-    b(u,q) & = 0, \quad \forall (v,q) \in V\times Q,
+    b(u,q) & = 0, \quad \forall (v,q) \in V_0\times Q,
 
 where
 
 .. math::
     :label:
 
-    a(u,v) & = \mu\int_\Omega \epsilon(u):\epsilon(v)\,\mathrm{d}\, x,
+    a(u,v) & = \mu\int_\Omega \nabla u:\nabla v\,\mathrm{d}\, x,
 
     b(v,q) & = \int_\Omega q \nabla\cdot v\,\mathrm{d}\, x,
 
-    V & =(\mathring{H}^1(\Omega))^d,
+    u &= g\quad \textrm{on}\ \Gamma_D,
 
-    Q & =\mathring{L}^2(\Omega),
+    V & = V_0 \oplus V_D = H^1(\Omega)^d,
 
-and where `(\mathring{H}^1(\Omega))^d` is the subspace of `H^1(\Omega)^d` for
-which all components vanish on the boundary, and `\mathring{L}^2(\Omega)` is
-the subspace of `L^2(\Omega)` for which the integral of the function over the
-domain vanishes. This last constraint was introduced to remove the null space
-of constant pressure functions from the system. This constraint introduces a
-little complexity into the implementation. So instead, we will redefine
-`\mathring{L}^2(\Omega)` to be the subspace of `L^2(\Omega)` constrained to
-take the value 0 at some arbitrary but specified point. For example, one might
-choose to require the pressure at the origin to vanish. This is also an
-effective way to remove the nullspace, but it is simpler to implement. We will
-implement the two-dimensional case (`d=2`) and, for simplicity, we will assume `\mu=1`.
+    Q & = L^2(\Omega),
+
+and where `V_0` is the subspace of `H^1(\Omega)^d` for which all components
+vanish on `\Gamma`. The outflow condition is the "do nothing" condition which
+is imposed simply by not including the surface terms created by integrating the
+velocity equation by parts when formulating the weak form.
+
+These equations are well posed so long as $\Gamma\setminus \Gamma_D \neq
+\emptyset$. That is to say, there must be some outflow boundary. If $\Gamma
+=\Gamma_D$ then there will be a null space comprising all of the constant
+pressure functions. We will implement the two-dimensional case (`d=2`) and, for
+simplicity, we will assume `\mu=1`.
 
 The colon (`:`) indicates an inner product so:
 
 .. math::
     :label:
 
-    \epsilon(u):\epsilon(v) = \sum_{\alpha\beta} \epsilon(u)_{\alpha\beta}\epsilon(v)_{\alpha\beta}
+    \nabla u:\nabla v = \sum_{\alpha\beta} \nabla_{\alpha} u_{\beta}\nabla{\alpha} v_{\beta}
 
 In choosing a finite element subspace of `V \times Q` we will similarly choose
 a simpler to implement, yet still stable, space than was chosen in
@@ -79,7 +105,7 @@ fact in `V \times Q`.
 
 In addition to the finite element functionality we have already implemented,
 there are two further challenges we need to address. First, the implementation
-of the vector-valued space `P2(\Omega)^2`m and second, the implementation of
+of the vector-valued space `P2(\Omega)^2` and second, the implementation of
 functions and matrices defined over the mixed space `V^h \times Q^h`.
 
 Vector-valued finite elements
@@ -449,21 +475,12 @@ matrix is in :data:`"lil"` format.
 Boundary conditions
 ...................
 
-The imposition of the constraint in `(\mathring{H}^1(\Omega))^2` that solutions
+The imposition of the constraint in `V_0` that solutions
 vanish on the boundary is a Dirichlet condition of the type that you have
 encountered before. Observe that the condition changes the test space, which
 affects whole rows of the block system, so you will want to impose the boundary
 condition *after* assembling the block matrix. You will also need to ensure
 that the constraint is applied to both the `x` and `y` components of the space.
-
-The imposition of the constraint in `\mathring{L}^2(\Omega)` that the solution
-is zero at some prescribed point can be achieved by selecting an arbitrary
-basis function and applying a zero Dirichlet condition for that degree of
-freedom. In this regard we can observe that there is nothing about the
-implementation of Dirichlet conditions that constrains them to lie on the
-boundary. Rather, they should be understood as specifying a subspace on which
-the solution is prescribed rather than solved for. In this particular case,
-that subspace is one-dimensional.
 
 Solving the matrix system
 .........................
@@ -509,25 +526,71 @@ The direct result of this is that if `w = (u, p)` then:
 
     \|w\|_{L^2}^2 = \|u\|_{L^2}^2 + \|p\|_{L^2}^2.
 
+Plane Poiseuille flow
+---------------------
+
+One scenario for which the Stokes equations have a unique solution is plane
+Poiseuille flow. In this scenario, the domain is a rectangle whose upper and
+lower boundaries are no-slip (i.e. velocity zero). The right hand boundary is
+an outflow and the left hand boundary is a prescribed (Dirichlet) parabolic
+inflow which is zero at the top and bottom and maximal at the midpoint.
+
+We can rescale the problem so that the domain is a unit square, in which case
+the boundary conditions are:
+
+.. math::
+    :label:
+
+    u(0, y) = \begin{bmatrix}c y(1-y) \\ 0\end{bmatrix}
+
+    u(x, 0) = u(x, 1) = \begin{bmatrix} 0 \\ 0\end{bmatrix}
+
+    (pI - \nabla u)\cdot n = 0 \quad \textrm{on}\ x = 1
+
+the constant `c` is arbitrary.
+
+.. figure:: poiseuille_bcs.*
+    
+    Schematic of boundary conditions for plane Poiseuille flow.
+
+It is straightforward to show that the velocity part of this solution is:
+
+.. math::
+    :label:
+
+    u(x, y) = \begin{bmatrix}c y(1-y) \\ 0\end{bmatrix}
+
+and that the pressure part is a linear function of `x`.
+
+.. hint::
+
+    When checking the correctness of the Poiseuille solution, don't forget to
+    check that the solution satisfies the outflow boundary condition.
+
+.. _stokes_mms:
+
 Manufacturing a solution to the Stokes equations
 ------------------------------------------------
 
-As previously, we will wish to check our code using the method of manufactured
-solutions. The Stokes equations represent a form of incompressible fluid
-mechanics, so it is usually preferable to select a target solution for which
-`\nabla\cdot u = 0`. The straightforward way to do this is to choose a scalar
-field `\gamma: \Omega\rightarrow \mathbb{R}` to use as a streamfunction. We can
-then define `u = \nabla^{\perp}\gamma` and rely on the vector calculus identity
-`\nabla\cdot\nabla^{\perp} \gamma = 0` to guarantee that the velocity field is
-divergence-free. We also need to ensure that `u` satisfies the boundary
-conditions, which amounts to choosing `\gamma` such that its gradient vanishes
-on the domain boundary. The following function is a suitable choice on a unit
-square domain:
+Because the Poiseuille flow solution is quadratic in `u` and linear in `p`, it
+actually lies exactly in the finite element space, so we expect the numerical
+finite element solution to be exact up to roundoff error. This sounds
+convenient, but actually it means that this scenario is not a very extensive
+test of an implementation.
+
+The simplest modification to this scenario which avoids this difficulty is to
+choose a different solution function for `u` still of the form:
 
 .. math::
-    :label: stream
+    :label:
 
-    \gamma(x,y) = \big(1-\cos(2\pi x)\big)\big(1-\cos(2\pi y)\big)
+    u(x, y) = \begin{bmatrix} h(y) \\ 0\end{bmatrix}
+
+but with `h(y)` not quadratic, so that it does not lie exactly in the finite
+element space. This form of solution ensures that `\nabla\cdot u = 0` and that
+the outflow boundary condition can be satisfied. It will be necessary to modify
+the Dirichlet conditions to conform to the chosen solution. As before, the
+forcing term `f` is computed using the method of manufactured solutions.
 
 Implementing the Stokes problem
 -------------------------------
@@ -537,7 +600,8 @@ Implementing the Stokes problem
     The goal of this exercise is to implement a solver for the Stokes
     equations, on a unit square. Implement
     :func:`~fe_utils.solvers.mastery.solve_mastery` so that it solves
-    :eq:`stokes_ch9` using the forcing function derived from :eq:`stream`.
+    :eq:`weak_stokes_ch9` for a forcing function and boundary conditions
+    manufactured as described in section :ref:`stokes_mms`.
 
     Your full solution should:
 
@@ -545,14 +609,12 @@ Implementing the Stokes problem
     2. Make the consequential changes to 
        :class:`~fe_utils.function_spaces.Function` to enable values 
        to be interpolated into vector-valued functions, and to create quiver plots.
-    3. Assemble and solve the required mixed system.
+    3. Assemble and solve the required mixed system for your chosen
+       manufactured solution to the Stokes equation.
     4. Compute the `L^2` error of the mixed solution from the analytic solution.
     
     A convergence test for your code is provided in
     ``test/test_13_mastery_convergence.py``. In order to be compatible with
     this code, your implementation of
     :func:`~fe_utils.solvers.mastery.solve_mastery` should return its results
-    as a tuple of the form :data:`(u, p), error`. This is a slight change from
-    the comment in the code which takes into account that the problem is mixed.
-    The obvious consequential change will be needed at the end of
-    :mod:`fe_utils.solvers.mastery`.
+    as a tuple of the form :data:`(u, p), error`.

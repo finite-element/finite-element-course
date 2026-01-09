@@ -18,7 +18,7 @@ def solve_mastery(resolution, analytic=False, return_error=False):
     """
 
     raise NotImplementedError
-    # return (u, p) error
+    # return (u, p), error
 
 
 if __name__ == "__main__":
@@ -40,6 +40,6 @@ if __name__ == "__main__":
     analytic = args.analytic
     plot_error = args.error
 
-    u, error = solve_mastery(resolution, analytic, plot_error)
+    (u, p), error = solve_mastery(resolution, analytic, plot_error)
 
     u.plot()
