@@ -72,9 +72,9 @@ vanish on `\Gamma`. The outflow condition is the "do nothing" condition which
 is imposed simply by not including the surface terms created by integrating the
 velocity equation by parts when formulating the weak form.
 
-These equations are well posed so long as $\Gamma\setminus \Gamma_D \neq
-\emptyset$. That is to say, there must be some outflow boundary. If $\Gamma
-=\Gamma_D$ then there will be a null space comprising all of the constant
+These equations are well posed so long as `\Gamma\setminus \Gamma_D \neq
+\emptyset`. That is to say, there must be some outflow boundary. If `\Gamma
+=\Gamma_D` then there will be a null space comprising all of the constant
 pressure functions. We will implement the two-dimensional case (`d=2`) and, for
 simplicity, we will assume `\mu=1`.
 
@@ -83,7 +83,7 @@ The colon (`:`) indicates an inner product so:
 .. math::
     :label:
 
-    \nabla u:\nabla v = \sum_{\alpha\beta} \nabla_{\alpha} u_{\beta}\nabla{\alpha} v_{\beta}
+    \nabla u:\nabla v = \sum_{\alpha\beta} \nabla_{\alpha} u_{\beta}\nabla_{\alpha} v_{\beta}
 
 In choosing a finite element subspace of `V \times Q` we will similarly choose
 a simpler to implement, yet still stable, space than was chosen in
