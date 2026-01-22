@@ -432,8 +432,8 @@ dimensions.
    #. `\mathcal{N}=\left\{N_{i,j}:0\leq i \leq k, \, 0\leq j \leq i\right\}` defined by `N_{i,j}(v)=v(x_{i,j})` where
 
    .. math::
-      
-      x_{i,j} = z_1 + (z_2-z_1)\frac{i}{k} + (z_3-z_1)\frac{j}{k}.
+
+      x_{i,j} = z_1 + (z_2-z_1)\frac{i}{k} + (z_3-z_2)\frac{j}{k}.
 
 We illustrate this for the cases `k=1,2`.
       
