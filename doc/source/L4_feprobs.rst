@@ -498,7 +498,7 @@ The second is coercivity.
 
    .. math::
 
-      |b(u,u)| \geq \gamma\|u\|_V\|u\|_V.
+      b(u,u) \geq \gamma\|u\|_V\|u\|_V.
 
 These two properties combine in the following theorem providing sufficient
 conditions for existence and uniqueness for solutions of linear variational
@@ -837,7 +837,7 @@ mean estimate.
       II &= \int_\Omega \int_{s=1/2}^2 \frac{1}{s^2}
       \int_{\Omega'_s} |\nabla u(x')|^2 \, d x' \, d s \, d y, 
 
-      &\leq \int_\Omega \int_{s=0}^{1/2} \frac{1}{s^2}
+      &\leq \int_\Omega \int_{s=1/2}^2 \frac{1}{s^2}
       \int_{\Omega} |\nabla u(x')|^2 \, d x' \, d s \, d y,
    
       &=|\Omega| |\nabla u|^2_{H^1(\Omega)}.
