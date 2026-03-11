@@ -743,8 +743,8 @@ the following result.
 
 .. proof:lemma::  Fortin's trick
 
-   Assume that the inf-sup condition holds for $b(v,q)$ over $V\times Q$
-   with inf-sup constant $\beta>0$.
+   Assume that the inf-sup condition holds for `b(v,q)` over `V\times Q`
+   with inf-sup constant `\beta>0`.
    If there exists a linear operator `\Pi_h:V\to V_h` such that
 
       .. math::
@@ -866,7 +866,7 @@ the MINI element.
 
    where we were allowed to integrate by parts since `v,\Pi_2v,q_h`
    are all in `H^1(\Omega)`. We see that our definition can be
-   satisfied by picking `\Pi_2v` to be the function in $(B_3)^2$ such
+   satisfied by picking `\Pi_2v` to be the function in `(B_3)^2` such
    that
 
       .. math::
@@ -874,7 +874,7 @@ the MINI element.
 
 	 \int_K \Phi_2v d\, x x = \int_K v d\, x x,
 
-   for each triangle $K$.
+   for each triangle `K`.
 
    It can be shown using an inverse inequality (we will take it
    as read here) that
