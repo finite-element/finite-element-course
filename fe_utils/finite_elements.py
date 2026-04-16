@@ -71,7 +71,7 @@ class FiniteElement(object):
         self.entity_nodes = entity_nodes
 
         if entity_nodes:
-            #: ``nodes_per_entity[d]`` is the number of entities
+            #: ``nodes_per_entity[d]`` is the number of nodes
             #: associated with an entity of dimension d.
             self.nodes_per_entity = np.array(
                 [len(entity_nodes[d][0]) for d in range(cell.dim + 1)]
