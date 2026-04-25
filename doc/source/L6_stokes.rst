@@ -860,9 +860,9 @@ the MINI element.
       .. math::
 	 :label:
 
-	 b(\Pi_2v-v,q_h) = \int_{\Omega} q_h\nabla\cdot(\Pi_2v-v)d\,x
+	 b(\Pi_2v-v,q_h) = -\int_{\Omega} q_h\nabla\cdot(\Pi_2v-v)d\,x
 
-	 = \int_\Omega (v-\Pi_2v)\nabla q_h d\, x,
+	 = -\int_\Omega (v-\Pi_2v)\nabla q_h d\, x,
 
    where we were allowed to integrate by parts since `v,\Pi_2v,q_h`
    are all in `H^1(\Omega)`. We see that our definition can be
