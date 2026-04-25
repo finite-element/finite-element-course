@@ -191,15 +191,15 @@ Since `\|u\|_{H^k(\Omega)} \leq \|u\|_{H^l(\Omega)}` for `k<l`,
 we have `H^l \subset H^k` for `k<l`.
       
 If we are to consider limits of finite element functions in these
-Sobolev spaces, then it is important that they are closed, i.e.
+Sobolev spaces, then it is important that they are complete, i.e.
 limits remain in the spaces.
 
 .. proof:lemma:: \(H^k\) spaces are Hilbert spaces
 
-   The space `H^k(\Omega)` is closed.
+   The space `H^k(\Omega)` is complete.
 
    Let `\{u_i\}` be a Cauchy sequence in `H^k`. Then `\{D^\alpha u_i\}`
-   is a Cauchy sequence in `L^2(\Omega)` (which is closed), so `\exists
+   is a Cauchy sequence in `L^2(\Omega)` (which is complete), so `\exists
    v^\alpha \in L^2(\Omega)` such that `D^\alpha u_i\to v^\alpha` for
    `|\alpha|\leq k`.  If `w_j\to w` in `L^2(\Omega)`, then for `\phi\in
    C^\infty_0(\Omega)`,

@@ -593,16 +593,16 @@ adding and subtracting something, in this case the Taylor polynomial.
 
    .. math::
 
-      |\mathcal{I}_{K_1}u-u|_{H^i(K_1)}^2 &\leq \|\mathcal{I}_{K_1}u-u\|_{H^k(K_1)}^2
+      |\mathcal{I}_{K_1}u-u|_{H^i(K_1)} &\leq \|\mathcal{I}_{K_1}u-u\|_{H^k(K_1)}
       
       &=
-      \|\mathcal{I}_{K_1}u-Q_{k,B}u + Q_{k,B}u - u\|_{H^k(K_1)}^2
+      \|\mathcal{I}_{K_1}u-Q_{k,B}u + Q_{k,B}u - u\|_{H^k(K_1)}
       
-      &\leq \|Q_{k,B}u-u\|_{H^k(K_1)}^2 + \|\mathcal{I}(u-Q_{k,B}u)\|_{H^k(K_1)}^2,
+      &\leq \|Q_{k,B}u-u\|_{H^k(K_1)} + \|\mathcal{I}(u-Q_{k,B}u)\|_{H^k(K_1)},
  
-      &\leq \|Q_{k,B}u-u\|_{H^k(K_1)}^2 + C^2\|Q_{k,B}u-u\|_{H^k(K_1)}^2,
+      &\leq \|Q_{k,B}u-u\|_{H^k(K_1)} + C\|Q_{k,B}u-u\|_{H^k(K_1)},
       
-      &\leq (1+C^2)|u|_{H^{k+1}(K_1)}^2,
+      &\leq (1+C)|u|_{H^{k+1}(K_1)},
 
    where we used the fact that `\mathcal{I}_{K_1}Q_{k,B}u = Q_{k,B}u` in the
    second line and the previous lemma in the third line.
